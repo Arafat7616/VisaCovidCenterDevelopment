@@ -2,4 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Receptionist route
+Route::group(['prefix' => 'receptionist/', 'namespace' => 'Receptionist', 'as' => 'receptionist.', 'middleware' => ['auth', 'receptionist']], function () {
+
+});

@@ -2,4 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Pathologist route
+Route::group(['prefix' => 'pathologist/', 'namespace' => 'Pathologist', 'as' => 'pathologist.', 'middleware' => ['auth', 'pathologist']], function () {
+
+});
