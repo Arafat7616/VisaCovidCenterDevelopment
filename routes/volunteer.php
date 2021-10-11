@@ -2,4 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Volunteer route
+Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'volunteer.', 'middleware' => ['auth', 'volunteer']], function () {
+
+});

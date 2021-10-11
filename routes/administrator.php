@@ -2,4 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Administrator route
+Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as' => 'administrator.', 'middleware' => ['auth', 'administrator']], function () {
+
+});
