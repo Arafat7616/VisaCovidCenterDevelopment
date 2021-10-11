@@ -25,14 +25,9 @@
 
 <!-- End JS -->
 
-
-
 <script src="{{ asset('assets/helper.js') }}"></script>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
-
 @include('sweetalert::alert')
+
 @stack('script')
-<!-- Core JS -->
-<script src="{{ asset('assets/backend/js/core.js') }}"></script>
