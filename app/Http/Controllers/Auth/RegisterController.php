@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,7 +30,24 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
+
+    public function redirectTo()
+    {
+        if (Auth::user()->user_type == 'super-admin') {
+            return 'super-admin/dashboard';
+        } elseif (Auth::user()->user_type == 'receptionist') {
+            return 'receptionist/dashboard';
+        } elseif (Auth::user()->user_type == 'pathologist') {
+            return 'pathologist/dashboard';
+        } elseif (Auth::user()->user_type == 'volunteer') {
+            return 'volunteer/dashboard';
+        } elseif (Auth::user()->user_type == 'administrator') {
+            return 'administrator/dashboard';
+        } else {
+            return route('login');
+        }
+    }
 
     /**
      * Create a new controller instance.

@@ -79,7 +79,12 @@
                             <li><a href="javascript:void(0)"><span class="badge badge-success pull-right">5</span> Settings </a></li>
                             <li><a href="javascript:void(0)"> Lock screen</a></li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(0)"> Logout</a></li>
+
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="profile-icon logout-btn"><img src="assets/backend/images/svg-icon/logout.svg" class="img-fluid" alt="logout"></a></li>
+
+
+
+                            <li><a class="logout-btn" href="javascript:void(0)"> Logout</a></li>
                         </ul>
                     </li>
                 </ul>

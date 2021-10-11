@@ -7,6 +7,11 @@
 
 
 <body class="fixed-left">
+    @if(Auth::check())
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+    @endif
 
     <!-- Begin page -->
     <div id="wrapper">

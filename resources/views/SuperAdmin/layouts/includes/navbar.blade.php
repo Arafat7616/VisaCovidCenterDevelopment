@@ -12,7 +12,7 @@
                         <li><a href="javascript:void(0)"> Settings</a></li>
                         <li><a href="javascript:void(0)"> Lock screen</a></li>
                         <li class="divider"></li>
-                        <li><a href="javascript:void(0)"> Logout</a></li>
+                        <li><a class="logout-btn" href="javascript:void(0)"> Logout</a></li>
                     </ul>
                 </div>
 
