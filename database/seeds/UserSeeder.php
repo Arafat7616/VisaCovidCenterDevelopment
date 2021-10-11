@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->user_type = 'super-admin';
         $user->status = 1;
+        $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->user_type = 'administrator';
         $user->status = 1;
+        $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
@@ -38,6 +40,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->user_type = 'volunteer';
         $user->status = 1;
+        $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
@@ -47,6 +50,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->user_type = 'receptionist';
         $user->status = 1;
+        $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
@@ -56,6 +60,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->user_type = 'pathologist';
         $user->status = 1;
+        $user->otp = rand(5, 9999);
         $user->save();
     }
 }
