@@ -1,5 +1,9 @@
 @extends('SuperAdmin.layouts.master')
 
+@push('title')
+    Super Admin
+@endpush
+
 @push('css')
 
 @endpush

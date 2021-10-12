@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('SuperAdmin.layouts.includes.head')
+    @include('Administrator.layouts.includes.head')
 </head>
 
 
@@ -17,11 +17,11 @@
     <div id="wrapper">
 
         <!-- Top Bar Start -->
-        @include('SuperAdmin.layouts.includes.topbar')
+        @include('Administrator.layouts.includes.topbar')
         <!-- Top Bar End -->
         <!-- ========== Left Sidebar Start ========== -->
 
-        @include('SuperAdmin.layouts.includes.navbar')
+        @include('Administrator.layouts.includes.navbar')
         <!-- Left Sidebar End -->
 
         <!-- Start right Content here -->
@@ -29,13 +29,13 @@
         <div class="content-page">
             <!-- Start content -->
             @yield('content')
-            @include('SuperAdmin\layouts\includes\footer')
+            @include('Administrator\layouts\includes\footer')
         </div>
         <!-- End Right content here -->
     </div>
     <!-- END wrapper -->
     <!-- jQuery  -->
-    @include('SuperAdmin.layouts.includes.foot')
+    @include('Administrator.layouts.includes.foot')
 </body>
 
 </html>

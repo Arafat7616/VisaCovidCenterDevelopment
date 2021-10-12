@@ -1,0 +1,319 @@
+
+.cal-main{
+    width: 100%;
+    padding: 40px;
+    margin-top: 80px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0  0 2px rgba(240, 240, 240, 0.981);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+.cal-header{
+    font-size: 20px;
+    font-weight: 600px;
+    margin-left: 28px;
+    color: rgb(170, 169, 169);
+}
+.cal-body{
+    background-color: #EFEDF9;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.month{
+    margin-left: 28px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+    color: #448cf8;
+}
+.calender_14{
+    width: 100%;
+}
+
+.calender .cal-tr .cal-td{
+    border-style: none;
+    background: none;
+}
+
+.cal-tr{
+    width: 10px;
+    text-align: center;
+
+}
+
+.cal-btn{
+    border: none;
+    margin-bottom: 20px;
+    background: none;
+    color: #707070;
+}
+
+.cla-text{
+    width: 30px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: white;
+    color: #707070;
+    font-size:15px;
+}
+
+
+.cal-slot{
+   margin-top: 40px;
+    padding: 14px;
+}
+.cal-morning-slot {
+    width: 40%;
+    margin-right: 100px;
+    border-radius: 10px;
+    background-color: #EFEDF9;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+}
+.morning{
+    margin-left: 28px;
+    margin-top: 20px;
+    color: #707070;
+    font-size:15px;
+}
+
+.cal-morn-in{
+    margin-left: 28px;
+}
+.cal-morn-in-left{
+    border: none;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+    margin-bottom: 40px;
+    font-size: 15px;
+    text-align: center;
+    width: 40%;
+}
+
+
+
+.cal-day-slot {
+    background-color: #EFEDF9;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+}
+.day{
+    margin-left: 28px;
+    color: #707070;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.cal-day-in{
+    margin-left: 28px;
+}  
+.cal-morn-day-right{
+    margin-bottom: 40px;
+    width: 40%;
+    text-align: center; 
+    font-size: 15px;
+    border: none;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+}
+.cal-footer{
+    color: #707070;
+    margin-left: 28px; 
+    font-size: 17px;
+}
+
+
+.cal-min-slot {
+    background-color: #EFEDF9;
+    width: 40%;
+    margin-top: 65px;
+    margin-top: 30px;
+    margin-left: 1px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.total{
+    list-style: none;
+   
+}
+.cal-min-l{
+    display: inline;
+    color: #707070;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.cal-min-m{
+    display: inline;
+    text-align: center;
+    float: right;
+    font-size: 15px;
+    color: #707070;
+    margin-right: 40px;
+}
+.cal-min-r{
+    display: inline;
+    text-align: center;
+    float: right;
+    font-size: 15px;
+    color: #707070;
+    margin-right: 40px;
+}
+.cal-min-t{
+    width: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.cal-service-slot {
+    width: 60%;
+    margin-left: -50px;
+    margin-top: 50px;
+   
+}
+.cal-mx-x{
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #EFEDF9;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+}
+.t-cal{
+    margin-left: 50px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0  0 2px rgba(175, 198, 242, 0.227);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.t-m-b{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.cal-x-y-z{
+    font-size: 15px;
+    color: #707070;
+
+
+}
+
+.p-mx{
+    margin-left: 50px;
+}
+.p-mxx{
+    width: 70px;
+    text-align: center;
+    margin-left: 50px;
+    border: 1px solid rgb(136, 136, 167);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+/* .p-mxs{
+    margin-left: 50px;
+    text-align: center;
+} */
+.ca-ms-s{
+    text-align: center;
+}
+.s-cx{
+    background-color: rgb(181, 181, 181);
+    color: white;
+    padding: 3px;
+    width: 10px;
+    height: 20px;
+}
+.t-cal-m{
+    margin-left: 50px;
+}
+
+.y-s{
+    border: 1px solid rgb(84, 84, 84);
+    width: 70px;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.cal-mx-x-i{
+    margin-left: 20px;
+    border-radius: 20px;
+    background-color: #f3ecec;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.cal-mx-x-p{
+    margin-left: 20px;
+    border-radius: 20px;
+    background-color: #ecf0f3;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.check-cal{
+    margin-top: 30px;
+}
+.check-x{
+    
+    font-size: 15px;
+    color: #707070;
+}
+.cal-save{
+    margin-bottom: 20px;
+}
+.cal-x-btn{
+    float: right;
+    border: none;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(64, 120, 224);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.cal-left-l{
+    border: none;
+}
+
+
+.cal-right-r{
+    border: none;
+}
+
+.cal-left-l i{
+    font-size: 15px;
+}
+
+.cal-right-r i{
+    font-size: 15px;
+}
