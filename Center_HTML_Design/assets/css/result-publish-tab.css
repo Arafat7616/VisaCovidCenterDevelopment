@@ -1,0 +1,26 @@
+.hero_pure{
+    overflow: hidden;
+}
+.tap-result-1{
+    position: absolute;
+    transform: translateX(500%);
+    -webkit-transform: translateX(500%);
+    -moz-transform: translateX(500%);
+    -ms-transform: translateX(500%);
+    -o-transform: translateX(500%);
+}
+
+
+#tap_result_1{
+    transform: translateX(0PX);
+}
+
+#tap_result_2{
+    transform: translateX(0PX);
+    margin-top: -390px;
+}
+    
+.tab-on-btn{
+    border: none;
+    background: none;
+}

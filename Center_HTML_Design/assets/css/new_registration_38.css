@@ -1,0 +1,107 @@
+/* Page Wrapper design Starts */
+.page-wrapper-rg-n{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 10px #1223BD1A;
+    border-radius: 19px;
+    opacity: 1;
+    padding: 27px 33px;
+    margin-bottom: 80px;
+}
+
+.breadcrumb-new{
+    float: right;
+    width: 260px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.search-boxn{
+    width: 100%;
+    background-color: #F3F1F9;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.form-control-feedback-new {
+    background-color: #F3F1F9;
+}
+.search-new-r{
+    border: none;
+    background: none;
+    color: #a29eae;
+}
+
+.has-search-new{
+    list-style: none;
+}
+
+.i-new-r {
+    background-color: #F3F1F9;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+}
+.td_new1{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.td_new3{
+    width: 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.td_new{
+    text-align: center;
+}
+.tr_new-w{
+    background-color: #00569F;
+    color: white;
+}
+.new-reg-tbl-head {
+    background: #00569F;
+    padding: 20px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+.new-r-icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 10px #1223BD1A;
+    background-color: white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+
+.upload-result-pub{
+    width: 20px;
+    height: 20px;
+}
+
+.upload-file-57{
+    display: none;
+    visibility: none;
+}
+
+.up-57{
+    border: none;
+    background: none;
+}
