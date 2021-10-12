@@ -3,6 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/center-part/css/register.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/footer.css') }}">
 

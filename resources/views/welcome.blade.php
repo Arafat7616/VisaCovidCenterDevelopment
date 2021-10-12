@@ -1,4 +1,4 @@
-@extends('auth.master')
+@extends('auth.home-master')
 
 @push('title')
     Home

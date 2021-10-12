@@ -12,8 +12,6 @@
             </form>
         @endif
 
-        @include('auth.includes.logo-navbar')
-
         @yield('content')
 
         @include('auth.includes.footer')
