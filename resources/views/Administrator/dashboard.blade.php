@@ -1,4 +1,8 @@
-@extends('SuperAdmin.layouts.master')
+@extends('Administrator.layouts.master')
+
+@push('title')
+    Dashboard
+@endpush
 
 @push('css')
 

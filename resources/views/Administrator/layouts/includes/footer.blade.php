@@ -1,5 +1,11 @@
 <!-- Start Footerbar -->
-<footer class="footer">
-    2016 © Xadmino.
+<footer>
+    <div class="row fixed-bottom shadow-sm">
+        <div class="col-12">
+            <div class="footer text-center">
+                <p class="py-4">&copy; Covid Visa {{ date('Y') }} </p>
+            </div>
+        </div>
+    </div>
 </footer>
 <!-- End Footerbar -->

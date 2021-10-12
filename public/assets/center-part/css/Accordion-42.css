@@ -1,0 +1,277 @@
+/* Page Wrapper design Starts */
+.page-wrapper {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 10px #1223BD1A;
+    border-radius: 19px;
+    opacity: 1;
+    padding: 27px 33px;
+}
+
+/* Accordion breadcrumb css starts */
+
+.accordion-table-breadcrumb{
+    margin-bottom: 25px;
+}
+
+.accordion-table-breadcrumb .filter-buttons{
+    padding: 5px;
+    width: 100%;
+    background: #F3F1F9 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.accordion-table-breadcrumb .filter-buttons a{
+   text-decoration: none;
+   text-align: left;
+   font: normal normal 600 24px/29px Gilroy ☞;
+   letter-spacing: 0px;
+   color: #00569F;
+   opacity: 0.8;
+   padding: 7px 13px; 
+}
+
+.accordion-table-breadcrumb .filter-buttons .filter-active{
+    background: #00569F 0% 0% no-repeat padding-box;
+    box-shadow: 3px 3px 10px #1223BD1A;
+    border-radius: 8px;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.accordion-table-breadcrumb .swap-box{
+    width: 100%;
+    background: #F3F1F9 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-table-breadcrumb .swap-box .swapto{
+    padding-top: 2px;
+    font: normal normal medium 22px/26px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    font-size: 22px;
+}
+
+.accordion-table-breadcrumb .swap-box .swap-date{
+    margin-top: 5px;   
+}
+
+.accordion-table-breadcrumb .swap-box .swap-icon{
+    padding: 8px 12px;
+    color: #204463;
+    font-size: 30px;
+}
+
+.accordion-table-breadcrumb .search-box{
+    width: 100%;
+    background: #F3F1F9 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 5px;
+}
+
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    background-color: #F3F1F9;
+    border: none;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    background-color: #F3F1F9;
+}
+
+/* Accordion breadcrumb css ends */
+
+
+/* Accordion css starts */
+
+.table-accordion-body {
+    padding: 0;
+}
+
+.table-accordion-item {
+    border: none;
+    background: #FFFFFF 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+.table-accordion-button:not(.collapsed) {
+    width: 100%;
+    height: 82px;
+    color: #0c63e4;
+    background: #204463 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 30px 30px;
+    opacity: 1;
+}
+
+.collapsed {
+    margin: 20px auto;
+    width: 100%;
+    height: 82px;
+    background: #F4F5FA 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+.table-accordion-button:not(.collapsed)::after {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-size: 27px;
+    margin-left: 20px;
+}
+
+.table-accordion-button .collapsed::after {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-size: 27px;
+    margin-left: 20px;
+    background: #707070 0% 0% no-repeat padding-box;
+}
+
+.table-accordion-button::after {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-size: 27px;
+    margin-left: 20px;
+}
+
+.table-accordion-date {
+    text-align: left;
+    font: normal normal 600 28px/34px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.collapsed .table-accordion-date {
+    text-align: left;
+    font: normal normal 600 28px/34px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+.table-accordion-people {
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px dashed #FFFFFF;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.collapsed .table-accordion-people {
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px dashed #FFFFFF;
+    border-radius: 10px;
+    font: normal normal medium 24px/29px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+/* Accordion css ends */
+
+/* Accordion table css Starts */
+.accordion-table {
+    background: #F4F5FA 0% 0% no-repeat padding-box;
+    padding: 20px;
+    border-collapse: separate;
+}
+
+.accordion-table thead {
+    font: normal normal 600 24px/29px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 0.8;
+}
+
+.accordion-table tbody {
+    font: normal normal medium 24px/29px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.accordion-table .enter-icon-div {
+    width: 70px;
+    height: 48px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 6px #1223BD1A;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: center;
+}
+
+.accordion-table .enter-icon {
+    width: 29px;
+    height: 31px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+/* Accordion table css ends */
+
+
+/* Page Wrapper design ends */
+
+
+ 
+
+
+.accorion-btn {
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    color: #00569F;
+    padding: 5px;
+    text-decoration: none;
+   font-weight: bold;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active, .accorion-btn:hover {
+    background-color:#00569F;
+    color: white;
+    border-radius: 5px;
+
+  }
+.swap-bg{
+    background: #F3F1F9;
+    border-radius: 5px;
+}
+.swap-btn{
+    background: #00569F;
+    color: white;
+}
+/* .accordion-search{
+    position: fixed;
+    right: 10%;
+    top: %;
+  
+} */

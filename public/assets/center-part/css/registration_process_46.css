@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #FAFAFC 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+.registration_process{
+
+}
+
+.registration_process__card{
+    background: #fff;
+    padding: 40px 40px 30px 40px;
+    border-radius: 8px;
+}
+
+.registration_process__card h6{
+    color: #707070;
+    opacity: 0.8;
+    padding: 20px 0px;
+}
+
+.registration_process__card__content{
+
+}
+
+.registration_process__title{
+    font-weight: 700;
+    color: #00569F;
+    font-size: 32px;
+}
+
+.registration_process__bottom{
+    height: 1px;
+    width: 100%;
+    background: #aba1a185;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-bottom: 45px;
+}
+
+.registration_process__img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.registration_process__info{
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px 30px 20px;
+    margin-top: 45px;
+}
+
+.registration_process__info p{
+    color: #707070;
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 42px;
+}
+
+.registration_process__info select{
+    width: 60%;
+    border: 1px solid #ddd;
+    padding: 7px;
+    border-radius: 18px;
+    color: #9b9b9b;
+    font-weight: 600;
+}
+
+.registration_process__info select option{
+    border-radius: 5px;
+    color: #9b9b9b;
+    font-weight: 600;
+    padding: 10px 0px;
+    font-size: 16px;
+}
+
+.registration_process__info__checkbox{
+    padding-top: 10px;
+}
+
+.registration_process__info__checkbox input{
+
+}
+
+.registration_process__info__checkbox label{
+    color: #707070;
+    font-weight: 600;
+    font-size: 17px;
+}
+.registration_process__button{
+    background: #00569F 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 600;
+    padding: 12px 120px;
+    margin-top: 35px;
+    margin-bottom: 78px;
+    border: none;
+}

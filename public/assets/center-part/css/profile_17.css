@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FAFAFC 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+.profile__title {
+    font-weight: 700;
+    color: #00569F;
+    font-size: 32px;
+}
+
+.profile__title__bottom {
+    height: 1px;
+    width: 100%;
+    background: #aba1a185;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-bottom: 25px;
+}
+
+.profile .profile-card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 5px 5px 20px #445DFF1A;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+.profile .profile-card .profile-card-image {
+    width: 168px;
+    height: 168px;
+    border: 20px solid #F8F8F9;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.profile .profile-card .profile-details {
+    padding: 0px 50px;
+
+    text-align: left;
+    font: normal normal medium 24px/29px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+}
+
+.profile .profile-card .profile-details .details-key {
+    opacity: 0.8;
+}
+
+.profile .profile-card .profile-details h5 {
+    padding: 10px 0;
+}
+
+.profile .profile-card .profile-name {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font: normal normal medium 48px/58px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+
+.profile .profile-qr .profile-qr-img {
+   margin: 25px 0;
+    width: 240px;
+    height: 240px;
+    opacity: 0.8;
+}
+
+.profile .profile-qr-para {
+    padding: 30px;
+    line-height: 15px;
+    text-align: justify;
+    font: normal normal 300 20px/30px Gilroy;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 0.8;
+}
+
+.profile .logout-btn {
+    background: #00569F 0% 0% no-repeat padding-box;
+    box-shadow: 5px 5px 20px #445DFF1A;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 10px 15px;
+    color: #FFFFFF;
+    font: normal normal 600 32px/39px Gilroy ☞;
+}

@@ -1,0 +1,64 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #FAFAFC 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+/*header section start*/
+.header__logo{
+    width: 60px;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #707070;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: #00569F;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #00569F;
+}
+
+.profile{
+    /*line-height: 23px;
+    height: 10px;*/
+    line-height: 0px;
+}
+
+.profile__name{
+    position: absolute;
+    top: 23px;
+    right: 70px;
+}
+
+.profile__image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ddd;
+    margin-left: 19px;
+    float: right;
+}
+
+.profile__designation{
+    font-size: 12px;
+    color: #b6b5b5;
+    padding-left: 22px;
+    position: absolute;
+    top: 42px;
+    right: 70px;
+}
+
+.dropdown-toggle::after{
+    display: none;
+}
+
+/*header section end*/
