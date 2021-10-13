@@ -25,7 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['register' => false]);
 
 
-Route::get('/center', 'Auth\CenterRegistrationController@centerRegistrationDataStore')->name('centerRegistrationDataStore');
+Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
