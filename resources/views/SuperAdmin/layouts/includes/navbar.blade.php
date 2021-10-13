@@ -26,6 +26,15 @@
                     <a href="index.html" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
                 </li>
 
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/payment/*') ? 'active subdrop': ''}}"><i class="fa fa-credit-card"></i> <span> Payment Method </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.payment.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/payment/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Payment Method </span></a></li>
+                        <li><a href="{{route('superAdmin.payment.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/payment/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Method </span></a></li>
+                    </ul>
+                </li>
+
+
                 <li>
                     <a href="typography.html" class="waves-effect"><i class="ti-ruler-pencil"></i><span> Typography <span class="badge badge-primary pull-right">6</span></span></a>
                 </li>
