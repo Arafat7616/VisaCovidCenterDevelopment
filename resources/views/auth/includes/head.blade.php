@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/register.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/footer.css') }}">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <title> @stack('title') |  {{ config('app.name') }}</title>
 
