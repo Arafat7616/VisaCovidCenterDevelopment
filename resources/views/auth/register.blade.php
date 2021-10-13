@@ -1,7 +1,7 @@
 @extends('auth.master')
 
 @push('title')
-    Home
+    Center Registration
 @endpush
 
 @push('css')
@@ -24,10 +24,9 @@
                             <div class="mx-5">
                                 <div class='center-Details-form'>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Name</label>
+                                        <label for="centerName" class="col-sm-3 col-form-label text-muted">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" "inputPassword"
-                                                placeholder='Unity throught population center' />
+                                            <input type="text" id="centerName" name="centerName" class="form-control" placeholder='Enter Center Name' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -210,7 +209,7 @@
             <!--========================== Documents Form details input end ==========================================-->
             <!-- {/*............... Documents form details end ..............................*/} -->
             <div class="text-center mt-5">
-                <button onClick={handleClickOtp} class='reg-sub-btn'>Submit</button>
+                <button class='reg-sub-btn full-form-submit'>Submit</button>
             </div>
         </form>
         <!--========================== full form end ==========================================-->
@@ -242,7 +241,51 @@
 @endsection
 
 @push('script')
-
+    <script>
+         $('#full-form-submit').click(function(){
+               var formData = new FormData();
+               formData.append('name', $('#category-name').val())
+               formData.append('icon', $('#icon')[0].files[0])
+               $.ajax({
+                   method: 'POST',
+                   url: '/admin/special-service',
+                   headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                   data: formData,
+                   processData: false,
+                   contentType: false,
+                   success: function (data) {
+                       $('#modal').modal('hide');
+                       $('#category-name').val('');
+                       Swal.fire({
+                           position: 'top-end',
+                           icon: 'success',
+                           title: 'Successfully add '+data.name,
+                           showConfirmButton: false,
+                           timer: 1500
+                       })
+                       setTimeout(function() {
+                           location.reload();
+                       }, 800);//
+                   },
+                   error: function (xhr) {
+                       var errorMessage = '<div class="card bg-danger">\n' +
+                           '                        <div class="card-body text-center p-5">\n' +
+                           '                            <span class="text-white">';
+                       $.each(xhr.responseJSON.errors, function(key,value) {
+                           errorMessage +=(''+value+'<br>');
+                       });
+                       errorMessage +='</span>\n' +
+                       '                        </div>\n' +
+                       '                    </div>';
+                       Swal.fire({
+                           icon: 'error',
+                           title: 'Oops...',
+                           footer: errorMessage
+                       })
+                   },
+               })
+           });
+    </script>
 @endpush
 
 
