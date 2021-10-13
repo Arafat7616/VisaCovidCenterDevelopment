@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -62,5 +63,6 @@ class UserSeeder extends Seeder
         $user->status = 1;
         $user->otp = rand(5, 9999);
         $user->save();
+
     }
 }

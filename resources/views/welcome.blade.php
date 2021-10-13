@@ -38,7 +38,7 @@
                         <h1 class="home-card"><a href="{{ route('login') }}">Center Administrator</a></h1>
                     </div>
                     <div class="row card-div">
-                        <h1 class="home-card"><a href="{{ route('register') }}">Center Registration</a></h1>
+                        <h1 class="home-card"><a href="{{ route('centerRegister') }}">Center Registration</a></h1>
                     </div>
                 </div>
             </div>
