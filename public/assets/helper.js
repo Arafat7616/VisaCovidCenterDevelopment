@@ -44,6 +44,7 @@
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (data) {
                         if (data.type == 'success'){
+
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted. '+data.message,

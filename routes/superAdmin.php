@@ -7,4 +7,6 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
 
+    Route::resource('payment', 'PaymentMethodController');
+
 });

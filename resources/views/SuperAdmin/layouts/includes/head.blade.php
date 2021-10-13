@@ -5,7 +5,10 @@
 <meta content="ThemeDesign" name="author" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+
 <link rel="shortcut icon" href=" {{ asset('assets/super-admin/images/favicon.ico') }}">
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- DataTables -->
 <link href=" {{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
