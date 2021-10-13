@@ -36,7 +36,7 @@
                                         @method('put')
                                         <div class="form-group">
                                             <label for="name">Payment Method Name</label>
-                                            <input type="text" name="name" value="{{$paymentMethod->name ? $paymentMethod->name : old('name') }}" class="form-control @error('name') is-invalid @enderror" id="ex1" placeholder="Enter Category Name">
+                                            <input type="text" name="name" value="{{$paymentMethod->name ? $paymentMethod->name : old('name') }}" class="form-control @error('name') is-invalid @enderror" id="ex1" placeholder="Enter Payment Method Name">
                                         </div>
                                         @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
