@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\Include_;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+include('superAdmin.php');
+include('administrator.php');
+include('receptionist.php');
+include('volunteer.php');
+include('pathologist.php');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Auth::routes();
+Auth::routes(['register' => false]);
+
+
+Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');

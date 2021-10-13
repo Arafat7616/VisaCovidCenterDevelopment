@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FAFAFC 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+.profile__title {
+    font-weight: 700;
+    color: #00569F;
+    font-size: 32px;
+}
+
+.profile__title__bottom {
+    height: 1px;
+    width: 100%;
+    background: #aba1a185;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-bottom: 25px;
+}
+
+.profile .profile-card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 5px 5px 20px #445DFF1A;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+.profile .profile-card .profile-card-image {
+    width: 168px;
+    height: 168px;
+    border: 20px solid #F8F8F9;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.profile .profile-card .profile-details {
+    padding: 0px 50px;
+    text-align: left;
+    font: normal normal medium 24px/29px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+}
+
+.profile .profile-card .profile-details .details-key {
+    opacity: 0.8;
+}
+
+.profile .profile-card .profile-details h5 {
+    padding: 10px 0;
+}
+
+.profile .profile-card .profile-name {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font: normal normal medium 48px/58px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+.profile .profile-other-info {
+    padding: 10px 40px;
+    color: #707070;
+}
+
+.profile .test-completed-box {
+    width: 100%;
+    padding: 10px;
+}
+
+.profile .test-completed-box .tast-completed-image{
+    width: 100%;
+}
+
+.profile .profile-other-info .task-heading{
+    text-align: left;
+    font: normal normal medium 40px/49px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #27B045;
+    opacity: 1;
+}
+
+.profile .profile-other-info .task-title{
+    margin-top: 15px;
+    text-align: left;
+    font: normal normal medium 24px/29px Gilroy ☞;
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: #707070;
+    opacity: 0.8;
+}
+
+/* 
+.profile .liveness-card {
+    margin-top: 60px;
+    width: 70%;
+    box-shadow: 5px 5px 20px #445DFF1A;
+    border-radius: 15px;
+    opacity: 1;
+    padding: 10px;
+}
+
+
+
+.profile .liveness-card .liveness-take-btn {
+    margin-top: 10px;
+    background: #4095C6 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 8px 12px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    font: normal normal medium 28px/34px Gilroy ☞;
+    width: 100%;
+}
+
+.profile .liveness-card .bg-liveness-1st {
+    background: #4095C6 0% 0% no-repeat padding-box;
+}
+
+.profile .liveness-card .bg-liveness-2nd {
+    background: #3BCFCF 0% 0% no-repeat padding-box;
+} */

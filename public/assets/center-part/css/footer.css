@@ -1,0 +1,15 @@
+/*footer section start*/
+.footer{
+    height: 80px;
+    width: 100%;
+    color: #00569fa1;
+    background: #fff;
+    padding-top: 14px;
+}
+
+.footer p{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 10px;
+}
+/*footer section end*/

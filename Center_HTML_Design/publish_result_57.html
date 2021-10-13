@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/accordion_table_16.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/new_registration_38.css" />
+    <link rel="stylesheet" href="assets/css/result-publish-tab.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>Publish Result 57 page</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/image/logo.png" alt="" class="header__logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Regsitered</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Premium</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">User's</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="profile__name">Farzana Akter</span>
+                                <img class="profile__image" src="assets/image/profile/doctor.jpg" alt="" />
+                                <br />
+                                <span class="text-capitalize profile__designation">Volunteer</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero_pure">
+        <!--Waiting Result-->
+        <div class="tap_result_1" id="tap_result_1">
+            <div class="container py-4">
+                <div class="card page-wrapper" style="margin-bottom: 100px">
+                    <div class="accordion-table-breadcrumb">
+                        <div class="accordion-table-header">
+                            <div class="container">
+                                <div class="row justify-content-between">
+                                    <div class="col-4">
+                                        <div class="accorion-link mt-2" id="active-div">
+                                            <button id="tap_on_s" onclick="openWaiting()" class="tab-on-btn">
+                                                <a href="#" class="accorion-btn breadcrumb-active">Waiting</a>
+                                            </button>
+                                            <button id="tap_on_s1" onclick="openPublish()" class="tab-on-btn">
+                                                <a href="#" class="accorion-btn">Published</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="ID/Name/Phone/Date" />
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary" type="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item table-accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button table-accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    <span class="table-accordion-date">06-10-2021</span>
+                                    <span class="table-accordion-people">490 People</span>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <thead class="new-reg-tbl-head" style="background-color: white; color: gray">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Upload</th>
+                                                <th scope="col">Share</th>
+                                            </tr>
+                                        </thead>
+
+                                        <div class="scroll_new_ta">
+                                            <tbody class="scroll_new_ber">
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <a href="#">
+                                                            <img src="assets/image/icon/upload.png" alt=""
+                                                                class="upload-result-pub" />
+                                                        </a>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--publish Result-->
+        <div class="tap_result_1" id="tap_result_2">
+            <div class="container py-4">
+                <div class="card page-wrapper" style="margin-bottom: 100px">
+                    <div class="accordion-table-breadcrumb">
+                        <div class="accordion-table-header">
+                            <div class="container">
+                                <div class="row justify-content-between">
+                                    <div class="col-4">
+                                        <div class="accorion-link mt-2" id="active-div">
+                                            <button id="tap_on_s" onclick="openWaiting()" class="tab-on-btn">
+                                                <a href="#" class="accorion-btn">Waiting</a>
+                                            </button>
+                                            <button id="tap_on_s1" onclick="openPublish()" class="tab-on-btn">
+                                                <a href="#" class="accorion-btn breadcrumb-active">Published</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="ID/Name/Phone/Date" />
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary" type="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item table-accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button table-accordion-button" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    <span class="table-accordion-date">06-10-2021</span>
+                                    <span class="table-accordion-people">490 People</span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body table-accordion-body">
+                                    <table class="table">
+                                        <thead class="new-reg-tbl-head" style="background-color: white; color: gray">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Upload</th>
+                                                <th scope="col">Share</th>
+                                            </tr>
+                                        </thead>
+
+                                        <div class="scroll_new_ta">
+                                            <tbody class="scroll_new_ber">
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item table-accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button table-accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    <span class="table-accordion-date">06-10-2021</span>
+                                    <span class="table-accordion-people">490 People</span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <thead class="new-reg-tbl-head" style="background-color: white; color: gray">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Upload</th>
+                                                <th scope="col">Share</th>
+                                            </tr>
+                                        </thead>
+
+                                        <div class="scroll_new_ta">
+                                            <tbody class="scroll_new_ber">
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item table-accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button table-accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    <span class="table-accordion-date">06-10-2021</span>
+                                    <span class="table-accordion-people">490 People</span>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <thead class="new-reg-tbl-head" style="background-color: white; color: gray">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Upload</th>
+                                                <th scope="col">Share</th>
+                                            </tr>
+                                        </thead>
+
+                                        <div class="scroll_new_ta">
+                                            <tbody class="scroll_new_ber">
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_new">234 234 234</td>
+                                                    <td class="td_new">Mark Jock</td>
+                                                    <td class="td_new">01785521452</td>
+                                                    <td class="td_new">
+                                                        <label for="file-up-57"><img src="assets/image/icon/edit.png"
+                                                                alt="" class="upload-result-pub" /></label>
+                                                    </td>
+                                                    <td class="td_new">
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                        <a href=""><img src="assets/image/logo.png" alt=""
+                                                                class="new-r-icon" /></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="row fixed-bottom shadow-sm">
+            <div class="col-12">
+                <div class="footer text-center">
+                    <p class="py-4">&copy; Covid Visa 2021</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $("button").on("click", function () {
+            $("button").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+    </script>
+
+    <script>
+        var tap_result_1 = document.getElementById("tap_result_1");
+        var tap_result_2 = document.getElementById("tap_result_2");
+        var tap_on_s = document.getElementById("openWaiting");
+        var tap_on_s1 = document.getElementById("openWaiting");
+
+        function openWaiting() {
+            tap_result_1.style.transform = "translateX(0)";
+            tap_result_2.style.transform = "translateX(100%)";
+        }
+
+        function openPublish() {
+            tap_result_1.style.transform = "translateX(100%)";
+            tap_result_2.style.transform = "translateX(0)";
+        }
+
+    </script>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+</body>
+
+</html>

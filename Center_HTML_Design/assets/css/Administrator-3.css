@@ -1,0 +1,62 @@
+
+.main{
+height:500px;
+}
+.center-header{
+    background-color: #FFFFFF;
+padding: 10px;
+}
+.administrator-card-head{
+ color: #00569F;
+ background-color: #F6F5FD;
+}
+
+.otp-card-place{
+    background-color: #F3F2F6;
+}
+.otp-card-place::placeholder{
+text-align: center;
+}
+.otp-btn-verify{
+    background-color: #7CB72C;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    border-radius: 8px;
+}
+
+.apply-reg-btn{
+    background-color: #00569F;
+    border:none;
+   width: 50%;
+    padding: 8px;
+    border-radius: 15px;
+    color: white;
+}
+.addministator-form-sub-btn{
+    border: 3px solid #FFFFFF;
+    background-color: #F1F5F7;
+padding: 5px 20px 5px 20px;
+border-radius: 15px;
+    cursor: pointer;
+border-color: white;
+    color: #00569F;
+    font-weight: bold;
+    box-shadow: 0px 3px 10px #1223BD26;
+}
+.close-eye{
+    cursor: pointer;
+   position: absolute;
+   top: 42%;
+   left: 87%;
+ 
+   color: gray;
+}
+
+.close-eye2{
+    cursor: pointer;
+    position: absolute;
+    top: 68%;
+    left: 87%;
+    color: gray;
+ }
+
