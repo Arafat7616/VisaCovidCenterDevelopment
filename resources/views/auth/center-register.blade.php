@@ -30,29 +30,33 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword"
+                                        <label for="country"
                                             class="col-sm-3 col-form-label text-muted">Country</label>
                                         <div class="col-sm-5">
-                                            <select class="form-select text-muted" aria-label="Default select example">
-                                                <option value="1">Bangladesh</option>
-                                                <option value="2">Country-2</option>
-                                                <option value="3">Country-3</option>
+                                            <select class="form-control form-select text-muted" name="country"  id="country" >
+                                                <option disabled value="">Select country</option>
+                                                @foreach($countries as $country)
+                                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Zip
-                                            code</label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" "inputPassword" placeholder='1230' />
+                                        <label for="state"
+                                            class="col-sm-3 col-form-label text-muted">State</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control form-select text-muted" name="state"  id="state" >
+                                                <option disabled value="">Select state</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword"
-                                            class="col-sm-3 col-form-label text-muted">HotLine</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="inputPassword"
-                                                placeholder='00 91123 498 762' />
+                                        <label for="city"
+                                            class="col-sm-3 col-form-label text-muted">City</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control form-select text-muted" name="city"  id="city" >
+                                                <option disabled value="">Select city</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -61,21 +65,22 @@
                         </div>
                         <div class="col-md-6 d-flex  align-items-center">
                             <div class='right-side-form'>
-
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label text-muted">City</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-select text-muted" aria-label="Default select example">
-                                            <option value="1">Dhaka</option>
-                                            <option value="2">City-2</option>
-                                            <option value="3">City-3</option>
-                                        </select>
+                                    <label for="zipCode" class="col-sm-3 col-form-label text-muted">Zip code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="zipCode" name="zipCode" class="form-control" placeholder='Enter Zip Code' />
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Area</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="inputPassword" placeholder='Uttara' />
+                                    <label for="hotLine" class="col-sm-3 col-form-label text-muted">HotLine</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="hotLine" name="hotLine" class="form-control" placeholder='Enter HotLine' />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="area" class="col-sm-3 col-form-label text-muted">Area</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="area" name="area" class="form-control" placeholder='Enter Area' />
                                     </div>
                                 </div>
                             </div>
@@ -98,32 +103,27 @@
                             <div class="mx-5">
                                 <div class='center-Details-form'>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputPassword"
-                                                placeholder='HM Asaduzzaman Kamal' />
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Email</label>
+                                        <label for="PersonName" class="col-sm-3 col-form-label text-muted">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="mail" class="form-control" id="inputPassword"
-                                                placeholder='asaduzzaman.uttps@gmail.com' />
+                                            <input type="text" id="PersonName" name="PersonName" class="form-control" placeholder='Enter Name' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">NID</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="inputPassword"
-                                                placeholder='123 234 234' />
+                                        <label for="PersonEmail" class="col-sm-3 col-form-label text-muted">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" id="PersonEmail" name="PersonEmail" class="form-control" placeholder='Enter Email' />
                                         </div>
                                     </div>
-
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Mobile</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="inputPassword"
-                                                placeholder='018 2700 7441' />
+                                        <label for="PersonNID" class="col-sm-3 col-form-label text-muted">NID</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" id="PersonNID" name="PersonNID" class="form-control" placeholder='Enter NID Number' />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="PersonPhone" class="col-sm-3 col-form-label text-muted">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" id="PersonPhone" name="PersonPhone" class="form-control" placeholder='Enter Phone Number' />
                                         </div>
                                     </div>
                                 </div>
@@ -132,19 +132,16 @@
                         <div class="col-md-6 d-flex  justify-content-center">
                             <div class='right-side-form'>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-5 col-form-label text-muted">Create
-                                        password</label>
-                                    <div class="col-sm-7">
-                                        <input type="password" class="form-control" id="inputPassword"
-                                            placeholder='p a s s w o r d' />
+                                    <label for="password" class="col-sm-3 col-form-label text-muted">Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder='Enter Password' />
                                     </div>
                                 </div>
+
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-5 col-form-label text-muted">Confirm
-                                        password</label>
-                                    <div class="col-sm-7">
-                                        <input type="password" class="form-control" id="inputPassword"
-                                            placeholder='p a s s w o r d' />
+                                    <label for="confirmPassword" class="col-sm-3 col-form-label text-muted">Confirm password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder='Confirm Password' />
                                     </div>
                                 </div>
                             </div>
@@ -167,18 +164,15 @@
                             <div class="mx-5">
                                 <div class='center-Details-form'>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label text-muted">Trade
-                                            License</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputPassword"
-                                                placeholder='987 654 567' />
+                                        <label for="tradeLicenseNumber" class="col-sm-3 col-form-label text-muted">Trade License</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="tradeLicenseNumber" name="tradeLicenseNumber" class="form-control" placeholder='Enter Trade License' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label text-muted">Document
-                                            1</label>
+                                        <label for="document1" class="col-sm-4 col-form-label text-muted">Document 1</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" type="file" id="formFile"></input>
+                                            <input name="document1" id="document1" class="form-control" type="file" id="formFile"/>
                                         </div>
                                     </div>
                                 </div>
@@ -187,18 +181,15 @@
                         <div class="col-md-6 d-flex  justify-content-center">
                             <div class='right-side-form'>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Document
-                                        2</label>
+                                    <label for="document2" class="col-sm-4 col-form-label text-muted">Document 2</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="file" id="formFile"></input>
+                                        <input name="document2" id="document2" class="form-control" type="file" id="formFile"/>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label text-muted">Document
-                                        3</label>
+                                    <label for="document3" class="col-sm-4 col-form-label text-muted">Document 3</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="file" id="formFile"></input>
-
+                                        <input name="document3" id="document3" class="form-control" type="file" id="formFile"/>
                                     </div>
                                 </div>
                             </div>
