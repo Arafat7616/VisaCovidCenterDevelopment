@@ -10,7 +10,7 @@
 @section('content')
     <div class="container container-bg-color my-3">
         <!--========================== full form start ==========================================-->
-        <form>
+        <form id="main-form" action="javascript:void(0)">
             <div class="card mt-2 card-title1">
                 <div class="card-body center-title">
                     <h5 class='card-title fw-bold mx-5'>Center Details</h5>
@@ -26,35 +26,33 @@
                                     <div class="mb-3 row">
                                         <label for="centerName" class="col-sm-3 col-form-label text-muted">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="centerName" name="centerName" class="form-control" placeholder='Enter Center Name' />
+                                            <input type="text" id="centerName" name="centerName" class="form-control"
+                                                placeholder='Enter Center Name' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="country"
-                                            class="col-sm-3 col-form-label text-muted">Country</label>
+                                        <label for="country" class="col-sm-3 col-form-label text-muted">Country</label>
                                         <div class="col-sm-5">
-                                            <select class="form-control form-select text-muted" name="country"  id="country" >
+                                            <select class="form-control form-select text-muted" name="country" id="country">
                                                 <option disabled value="">Select country</option>
-                                                @foreach($countries as $country)
-                                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="state"
-                                            class="col-sm-3 col-form-label text-muted">State</label>
+                                        <label for="state" class="col-sm-3 col-form-label text-muted">State</label>
                                         <div class="col-sm-5">
-                                            <select class="form-control form-select text-muted" name="state"  id="state" >
+                                            <select class="form-control form-select text-muted" name="state" id="state">
                                                 <option disabled value="">Select state</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="city"
-                                            class="col-sm-3 col-form-label text-muted">City</label>
+                                        <label for="city" class="col-sm-3 col-form-label text-muted">City</label>
                                         <div class="col-sm-5">
-                                            <select class="form-control form-select text-muted" name="city"  id="city" >
+                                            <select class="form-control form-select text-muted" name="city" id="city">
                                                 <option disabled value="">Select city</option>
                                             </select>
                                         </div>
@@ -68,19 +66,22 @@
                                 <div class="mb-3 row">
                                     <label for="zipCode" class="col-sm-3 col-form-label text-muted">Zip code</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="zipCode" name="zipCode" class="form-control" placeholder='Enter Zip Code' />
+                                        <input type="text" id="zipCode" name="zipCode" class="form-control"
+                                            placeholder='Enter Zip Code' />
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="hotLine" class="col-sm-3 col-form-label text-muted">HotLine</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="hotLine" name="hotLine" class="form-control" placeholder='Enter HotLine' />
+                                        <input type="text" id="hotLine" name="hotLine" class="form-control"
+                                            placeholder='Enter HotLine' />
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="area" class="col-sm-3 col-form-label text-muted">Area</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="area" name="area" class="form-control" placeholder='Enter Area' />
+                                        <input type="text" id="area" name="area" class="form-control"
+                                            placeholder='Enter Area' />
                                     </div>
                                 </div>
                             </div>
@@ -103,27 +104,31 @@
                             <div class="mx-5">
                                 <div class='center-Details-form'>
                                     <div class="mb-3 row">
-                                        <label for="PersonName" class="col-sm-3 col-form-label text-muted">Name</label>
+                                        <label for="personName" class="col-sm-3 col-form-label text-muted">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="PersonName" name="PersonName" class="form-control" placeholder='Enter Name' />
+                                            <input type="text" id="personName" name="personName" class="form-control"
+                                                placeholder='Enter Name' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="PersonEmail" class="col-sm-3 col-form-label text-muted">Email</label>
+                                        <label for="personEmail" class="col-sm-3 col-form-label text-muted">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" id="PersonEmail" name="PersonEmail" class="form-control" placeholder='Enter Email' />
+                                            <input type="email" id="personEmail" name="personEmail" class="form-control"
+                                                placeholder='Enter Email' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="PersonNID" class="col-sm-3 col-form-label text-muted">NID</label>
+                                        <label for="personNID" class="col-sm-3 col-form-label text-muted">NID</label>
                                         <div class="col-sm-9">
-                                            <input type="email" id="PersonNID" name="PersonNID" class="form-control" placeholder='Enter NID Number' />
+                                            <input type="email" id="personNID" name="personNID" class="form-control"
+                                                placeholder='Enter NID Number' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="PersonPhone" class="col-sm-3 col-form-label text-muted">Phone</label>
+                                        <label for="personPhone" class="col-sm-3 col-form-label text-muted">Phone</label>
                                         <div class="col-sm-9">
-                                            <input type="email" id="PersonPhone" name="PersonPhone" class="form-control" placeholder='Enter Phone Number' />
+                                            <input type="email" id="personPhone" name="personPhone" class="form-control"
+                                                placeholder='Enter Phone Number' />
                                         </div>
                                     </div>
                                 </div>
@@ -134,14 +139,17 @@
                                 <div class="mb-3 row">
                                     <label for="password" class="col-sm-3 col-form-label text-muted">Password</label>
                                     <div class="col-sm-9">
-                                        <input type="password" id="password" name="password" class="form-control" placeholder='Enter Password' />
+                                        <input type="password" id="password" name="password" class="form-control"
+                                            placeholder='Enter Password' />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="confirmPassword" class="col-sm-3 col-form-label text-muted">Confirm password</label>
+                                    <label for="confirmPassword" class="col-sm-3 col-form-label text-muted">Confirm
+                                        password</label>
                                     <div class="col-sm-9">
-                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder='Confirm Password' />
+                                        <input type="password" id="confirmPassword" name="confirmPassword"
+                                            class="form-control" placeholder='Confirm Password' />
                                     </div>
                                 </div>
                             </div>
@@ -164,15 +172,18 @@
                             <div class="mx-5">
                                 <div class='center-Details-form'>
                                     <div class="mb-3 row">
-                                        <label for="tradeLicenseNumber" class="col-sm-3 col-form-label text-muted">Trade License</label>
+                                        <label for="tradeLicenseNumber" class="col-sm-3 col-form-label text-muted">Trade
+                                            License</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="tradeLicenseNumber" name="tradeLicenseNumber" class="form-control" placeholder='Enter Trade License' />
+                                            <input type="text" id="tradeLicenseNumber" name="tradeLicenseNumber"
+                                                class="form-control" placeholder='Enter Trade License No.' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="document1" class="col-sm-4 col-form-label text-muted">Document 1</label>
                                         <div class="col-sm-8">
-                                            <input name="document1" id="document1" class="form-control" type="file" id="formFile"/>
+                                            <input name="document1" id="document1" class="form-control" type="file"
+                                                id="formFile" />
                                         </div>
                                     </div>
                                 </div>
@@ -183,13 +194,15 @@
                                 <div class="mb-3 row">
                                     <label for="document2" class="col-sm-4 col-form-label text-muted">Document 2</label>
                                     <div class="col-sm-8">
-                                        <input name="document2" id="document2" class="form-control" type="file" id="formFile"/>
+                                        <input name="document2" id="document2" class="form-control" type="file"
+                                            id="formFile" />
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="document3" class="col-sm-4 col-form-label text-muted">Document 3</label>
                                     <div class="col-sm-8">
-                                        <input name="document3" id="document3" class="form-control" type="file" id="formFile"/>
+                                        <input name="document3" id="document3" class="form-control" type="file"
+                                            id="formFile" />
                                     </div>
                                 </div>
                             </div>
@@ -233,48 +246,66 @@
 
 @push('script')
     <script>
-         $('#full-form-submit').click(function(){
-               var formData = new FormData();
-               formData.append('name', $('#category-name').val())
-               formData.append('icon', $('#icon')[0].files[0])
-               $.ajax({
-                   method: 'POST',
-                   url: '/admin/special-service',
-                   headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                   data: formData,
-                   processData: false,
-                   contentType: false,
-                   success: function (data) {
-                       $('#modal').modal('hide');
-                       $('#category-name').val('');
-                       Swal.fire({
-                           position: 'top-end',
-                           icon: 'success',
-                           title: 'Successfully add '+data.name,
-                           showConfirmButton: false,
-                           timer: 1500
-                       })
-                       setTimeout(function() {
-                           location.reload();
-                       }, 800);//
-                   },
-                   error: function (xhr) {
-                       var errorMessage = '<div class="card bg-danger">\n' +
-                           '                        <div class="card-body text-center p-5">\n' +
-                           '                            <span class="text-white">';
-                       $.each(xhr.responseJSON.errors, function(key,value) {
-                           errorMessage +=(''+value+'<br>');
-                       });
-                       errorMessage +='</span>\n' +
-                       '                        </div>\n' +
-                       '                    </div>';
-                       Swal.fire({
-                           icon: 'error',
-                           title: 'Oops...',
-                           footer: errorMessage
-                       })
-                   },
-               })
-           });
+        $('.full-form-submit').click(function() {
+            var formData = new FormData();
+            formData.append('centerName', $('#centerName').val())
+            formData.append('country', $('#country').val())
+            formData.append('state', $('#state').val())
+            formData.append('city', $('#city').val())
+            formData.append('zipCode', $('#zipCode').val())
+            formData.append('hotLine', $('#hotLine').val())
+            formData.append('area', $('#area').val())
+            formData.append('personName', $('#personName').val())
+            formData.append('personEmail', $('#personEmail').val())
+            formData.append('personNID', $('#personNID').val())
+            formData.append('personPhone', $('#personPhone').val())
+            formData.append('password', $('#password').val())
+            formData.append('confirmPassword', $('#confirmPassword').val())
+            formData.append('tradeLicenseNumber', $('#tradeLicenseNumber').val())
+            formData.append('document1', $('#document1')[0].files[0])
+            formData.append('document2', $('#document2')[0].files[0])
+            formData.append('document3', $('#document3')[0].files[0])
+
+            console.log(formData.centerName);
+            $.ajax({
+                method: 'POST',
+                url: '/center-register-data-store',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    $('#main-form').trigger("reset");
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Successfully add ' + data.name,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setTimeout(function() {
+                        location.reload();
+                    }, 800); //
+                },
+                error: function(xhr) {
+                    var errorMessage = '<div class="card bg-danger">\n' +
+                        '                        <div class="card-body text-center p-5">\n' +
+                        '                            <span class="text-white">';
+                    $.each(xhr.responseJSON.errors, function(key, value) {
+                        errorMessage += ('' + value + '<br>');
+                    });
+                    errorMessage += '</span>\n' +
+                        '                        </div>\n' +
+                        '                    </div>';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        footer: errorMessage
+                    })
+                },
+            })
+        });
     </script>
 @endpush
