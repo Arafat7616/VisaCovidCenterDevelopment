@@ -30,9 +30,9 @@ class CenterRegistrationController extends Controller
             'password'  => 'required',
             'confirmPassword'  => 'required',
             'tradeLicenseNumber'  => 'required',
-            // 'document1'  => 'mimes',
-            // 'document2'  => 'mimes',
-            // 'document3'  => 'mimes',
+            'document1' => 'nullable:mimes:pdf',
+            'document2' => 'nullable:mimes:pdf',
+            'document3' => 'nullable:mimes:pdf',
         ]);
 
         return response()->json([
