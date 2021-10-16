@@ -14,10 +14,32 @@ class CenterRegistrationController extends Controller
         return view('auth.center-register', compact('countries'));
     }
 
-    public function centerRegistrationDataStore(Request $request){
+    public function centerRegisterDataStore(Request $request){
         $request->validate([
-
-            'enquiryEndDate'    =>  'required',
+            'centerName'  => 'required',
+            'country'  => 'required',
+            'state'  => 'required',
+            // 'city'  => '',
+            'zipCode'  => 'required',
+            'hotLine'  => 'required',
+            'area'  => 'required',
+            'personName'  => 'required',
+            'personEmail'  => 'required',
+            'personNID'  => 'required',
+            'personPhone'  => 'required',
+            'password'  => 'required',
+            'confirmPassword'  => 'required',
+            'tradeLicenseNumber'  => 'required',
+            // 'document1'  => 'mimes',
+            // 'document2'  => 'mimes',
+            // 'document3'  => 'mimes',
         ]);
+
+        return response()->json([
+            'type' => 'success',
+            'message' => 'You can change own status.',
+        ]);
+
+
     }
 }

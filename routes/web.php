@@ -30,3 +30,4 @@ Auth::routes(['register' => false]);
 
 
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
+Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
