@@ -31,7 +31,7 @@ class CenterRegistrationController extends Controller
             'centerName'  => 'required',
             'country'  => 'required',
             'state'  => 'required',
-            // 'city'  => '',
+            'city'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
             'area'  => 'required',
@@ -46,6 +46,8 @@ class CenterRegistrationController extends Controller
             'document2' => 'nullable:mimes:pdf',
             'document3' => 'nullable:mimes:pdf',
         ]);
+
+
 
         return response()->json([
             'type' => 'success',
