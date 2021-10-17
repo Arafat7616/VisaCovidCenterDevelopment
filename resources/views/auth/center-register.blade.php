@@ -248,23 +248,23 @@
     <script>
         $('.full-form-submit').click(function() {
             var formData = new FormData();
-            formData.append('centerName', $('#centerName').val())
-            formData.append('country', $('#country').val())
-            formData.append('state', $('#state').val())
-            formData.append('city', $('#city').val())
-            formData.append('zipCode', $('#zipCode').val())
-            formData.append('hotLine', $('#hotLine').val())
-            formData.append('area', $('#area').val())
-            formData.append('personName', $('#personName').val())
-            formData.append('personEmail', $('#personEmail').val())
-            formData.append('personNID', $('#personNID').val())
-            formData.append('personPhone', $('#personPhone').val())
-            formData.append('password', $('#password').val())
-            formData.append('confirmPassword', $('#confirmPassword').val())
-            formData.append('tradeLicenseNumber', $('#tradeLicenseNumber').val())
-            formData.append('document1', $('#document1')[0].files[0])
-            formData.append('document2', $('#document2')[0].files[0])
-            formData.append('document3', $('#document3')[0].files[0])
+            formData.append('centerName', $('#centerName').val());
+            formData.append('country', $('#country').val());
+            formData.append('state', $('#state').val());
+            formData.append('city', $('#city').val());
+            formData.append('zipCode', $('#zipCode').val());
+            formData.append('hotLine', $('#hotLine').val());
+            formData.append('area', $('#area').val());
+            formData.append('personName', $('#personName').val());
+            formData.append('personEmail', $('#personEmail').val());
+            formData.append('personNID', $('#personNID').val());
+            formData.append('personPhone', $('#personPhone').val());
+            formData.append('password', $('#password').val());
+            formData.append('confirmPassword', $('#confirmPassword').val());
+            formData.append('tradeLicenseNumber', $('#tradeLicenseNumber').val());
+            formData.append('document1', $('#document1')[0].files[0]);
+            formData.append('document2', $('#document2')[0].files[0]);
+            formData.append('document3', $('#document3')[0].files[0]);
 
             console.log(formData.centerName);
             $.ajax({
@@ -306,6 +306,57 @@
                     })
                 },
             })
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('#country').change(function() {
+            var countryID = $(this).val();
+            if (countryID) {
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('api/get-state-list') }}/" + countryID,
+                    success: function(res) {
+                        if (res) {
+                            $("#state").empty();
+                            //$("#state").append('<option>Select</option>');
+                            $.each(res, function(key, value) {
+                                $("#state").append('<option value="' + value.id + '">' + value
+                                    .name + '</option>');
+                            });
+                        } else {
+                            $("#state").empty();
+                        }
+                    }
+                });
+            } else {
+                $("#state").empty();
+                $("#city").empty();
+            }
+        });
+        $('#state').on('change', function() {
+            var stateID = $(this).val();
+            if (stateID) {
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('api/get-city-list') }}/" + stateID,
+                    success: function(res) {
+                        if (res) {
+                            $("#city").empty();
+                            $.each(res, function(key, value) {
+                                $("#city").append('<option value="' + value.id + '">' + value
+                                    .name + '</option>');
+                            });
+
+                        } else {
+                            $("#city").empty();
+                        }
+                    }
+                });
+            } else {
+                $("#city").empty();
+            }
+
         });
     </script>
 @endpush
