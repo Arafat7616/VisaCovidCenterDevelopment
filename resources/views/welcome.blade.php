@@ -21,12 +21,11 @@
             @endauth
         </div>
     @endif --}}
-
     <div class="container">
         <img class="background-image" src="{{ asset('assets/center-part/image/homepage-background.png') }}" alt="Logo" />
         <div class="showcase">
             <div class="logo-container">
-                <img class="logo" src="{{ asset('assets/center-part/image/logo.png') }}" alt="Logo" />
+                <img class="logo" src="{{ asset(get_static_option('logo') ?? 'assets/center-part/image/logo.png') }}" alt="Logo" />
             </div>
 
             <div class="text-container text-center">
