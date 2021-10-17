@@ -78,10 +78,24 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="area" class="col-sm-3 col-form-label text-muted">Area</label>
+                                    <label for="centerEmail" class="col-sm-3 col-form-label text-muted">Email</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="area" name="area" class="form-control"
-                                            placeholder='Enter Area' />
+                                        <input type="email" id="centerEmail" name="centerEmail" class="form-control"
+                                            placeholder='Enter Email' />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="address" class="col-sm-3 col-form-label text-muted">Address</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="address" name="address" class="form-control"
+                                            placeholder='Enter Address' />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="mapLocation" class="col-sm-3 col-form-label text-muted">Location Link</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="mapLocation" name="mapLocation" class="form-control"
+                                            placeholder='Enter Map Location Link' />
                                     </div>
                                 </div>
                             </div>
@@ -253,8 +267,10 @@
             formData.append('state', $('#state').val());
             formData.append('city', $('#city').val());
             formData.append('zipCode', $('#zipCode').val());
+            formData.append('address', $('#address').val());
+            formData.append('mapLocation', $('#mapLocation').val());
             formData.append('hotLine', $('#hotLine').val());
-            formData.append('area', $('#area').val());
+            formData.append('centerEmail', $('#centerEmail').val());
             formData.append('personName', $('#personName').val());
             formData.append('personEmail', $('#personEmail').val());
             formData.append('personNID', $('#personNID').val());
@@ -266,7 +282,7 @@
             formData.append('document2', $('#document2')[0].files[0]);
             formData.append('document3', $('#document3')[0].files[0]);
 
-            console.log(formData.centerName);
+            console.log(formData.city);
             $.ajax({
                 method: 'POST',
                 url: '/center-register-data-store',

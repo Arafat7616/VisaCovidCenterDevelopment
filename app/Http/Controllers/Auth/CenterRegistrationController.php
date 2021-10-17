@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\State;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CenterRegistrationController extends Controller
@@ -29,12 +31,12 @@ class CenterRegistrationController extends Controller
     public function centerRegisterDataStore(Request $request){
         $request->validate([
             'centerName'  => 'required',
-            'country'  => 'required',
-            'state'  => 'required',
-            'city'  => 'required',
+            'country'  => 'nullable',
+            'state'  => 'nullable',
+            'city'  => 'nullable',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
-            'area'  => 'required',
+            'centerEmail'  => 'required|email',
             'personName'  => 'required',
             'personEmail'  => 'required',
             'personNID'  => 'required',
@@ -46,6 +48,30 @@ class CenterRegistrationController extends Controller
             'document2' => 'nullable:mimes:pdf',
             'document3' => 'nullable:mimes:pdf',
         ]);
+
+        $center = new Center();
+        $center->name = $request->centerName;
+        $center->email = $request->centerEmail;
+
+        if(is_numeric($request->country)){
+            $center->country_id = $request->country;
+        }
+
+        if(is_numeric($request->state)){
+            $center->country_id = $request->state;
+        }
+
+        if(is_numeric($request->city)){
+            $center->country_id = $request->city;
+        }
+        $center->address = $request->address;
+        $center->zip_code = $request->zipCode;
+        $center->map_location = $request->mapLocation;
+        $center->status = false;
+        $center->save();
+
+        $user = new User();
+        $user->name = $request->personName;
 
 
 
