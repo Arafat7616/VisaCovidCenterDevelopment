@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('Administrator.layouts.includes.head')
+    @include('Pathologist.layouts.includes.head')
 </head>
 
 
@@ -13,14 +13,14 @@
     </form>
     @endif
 
-    @include('Administrator.layouts.includes.navbar')
+    @include('Pathologist.layouts.includes.navbar')
     <div>
         @yield('content')
     </div>
 
-    @include('Administrator\layouts\includes\footer')
+    @include('Pathologist\layouts\includes\footer')
 
-    @include('Administrator.layouts.includes.foot')
+    @include('Pathologist.layouts.includes.foot')
 </body>
 
 </html>

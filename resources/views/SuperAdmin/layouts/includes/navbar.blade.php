@@ -23,7 +23,15 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                    <a href="{{asset('superAdmin.dashboard')}}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-credit-card"></i> <span> Slider </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.slider.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Slider </span></a></li>
+                        <li><a href="{{route('superAdmin.slider.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Slider </span></a></li>
+                    </ul>
                 </li>
 
                 <li class="has_sub">
@@ -33,6 +41,7 @@
                         <li><a href="{{route('superAdmin.payment.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/payment/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Method </span></a></li>
                     </ul>
                 </li>
+
 
 
                 <li>

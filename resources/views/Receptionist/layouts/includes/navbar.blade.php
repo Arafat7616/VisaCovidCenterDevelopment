@@ -11,26 +11,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Volunteers</a>
+                        <a class="nav-link active" aria-current="page" href="#">New Regsitration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registered</a>
+                        <a class="nav-link" href="#">Printing</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Regular</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Premium</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pathologist</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Reception</a>
+                        <a class="nav-link" href="#">Users</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
