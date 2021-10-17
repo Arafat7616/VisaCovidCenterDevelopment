@@ -196,8 +196,7 @@
                                     <div class="mb-3 row">
                                         <label for="document1" class="col-sm-4 col-form-label text-muted">Document 1</label>
                                         <div class="col-sm-8">
-                                            <input name="document1" id="document1" class="form-control" type="file"
-                                                id="formFile" />
+                                            <input name="document1" id="document1" class="form-control" type="file"/>
                                         </div>
                                     </div>
                                 </div>
@@ -208,15 +207,13 @@
                                 <div class="mb-3 row">
                                     <label for="document2" class="col-sm-4 col-form-label text-muted">Document 2</label>
                                     <div class="col-sm-8">
-                                        <input name="document2" id="document2" class="form-control" type="file"
-                                            id="formFile" />
+                                        <input name="document2" id="document2" class="form-control" type="file"/>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="document3" class="col-sm-4 col-form-label text-muted">Document 3</label>
                                     <div class="col-sm-8">
-                                        <input name="document3" id="document3" class="form-control" type="file"
-                                            id="formFile" />
+                                        <input name="document3" id="document3" class="form-control" type="file"/>
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +279,6 @@
             formData.append('document2', $('#document2')[0].files[0]);
             formData.append('document3', $('#document3')[0].files[0]);
 
-            console.log(formData.city);
             $.ajax({
                 method: 'POST',
                 url: '/center-register-data-store',
@@ -293,11 +289,12 @@
                 processData: false,
                 contentType: false,
                 success: function(data) {
-                    $('#main-form').trigger("reset");
+                    // $('#main-form').trigger("reset");
+                    console.log(data.message);
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Successfully add ' + data.name,
+                        title: data.message,
                         showConfirmButton: false,
                         timer: 1500
                     })

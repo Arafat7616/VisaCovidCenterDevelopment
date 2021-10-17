@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->text('image')->nullable();
             $table->string('user_type');
-            $table->integer('otp');
+            $table->integer('otp')->nullable();
             $table->timestamp('otp_verified_at')->nullable();
             $table->enum('status', [0,1])->default(0);
             $table->timestamps();

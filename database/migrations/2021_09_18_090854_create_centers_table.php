@@ -23,6 +23,7 @@ class CreateCentersTable extends Migration
             $table->string('zip_code');
             $table->string('address');
             $table->text('map_location');
+            $table->string('trade_licence_no')->nullable();
             $table->string('status')->default(0);
             $table->timestamps();
         });

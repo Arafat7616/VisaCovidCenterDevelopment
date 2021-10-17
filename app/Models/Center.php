@@ -15,6 +15,7 @@ class Center extends Model
         'zip_code',
         'address',
         'map_location',
+        'trade_licence_no',
         'status'
     ];
 }
