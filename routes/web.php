@@ -28,6 +28,10 @@ Route::get('/', function () {
 // Auth::routes();
 Auth::routes(['register' => false]);
 
-
+// Route for center registration
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
-Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
+Route::post('/center-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
+
+Route::get('/api/get-state-list/{country_id}','Auth\CenterRegistrationController@getStateList');
+Route::get('/api/get-city-list/{state_id}','Auth\CenterRegistrationController@getCityList');
+
