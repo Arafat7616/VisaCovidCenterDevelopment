@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Serve_no extends Model
+class ServeNo extends Model
 {
     protected $fillable = [
         'pcr',

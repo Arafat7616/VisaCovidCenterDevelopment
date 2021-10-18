@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Reason_for extends Model
+class UserType extends Model
 {
     protected $fillable = [
-        'name','status'
+        'name',
+        'status'
     ];
 }
