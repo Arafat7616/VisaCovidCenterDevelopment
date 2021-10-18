@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booster_registration extends Model
+class BoosterRegistration extends Model
 {
     protected $fillable = [
         'name_of_vaccine',
