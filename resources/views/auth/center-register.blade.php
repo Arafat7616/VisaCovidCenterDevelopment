@@ -231,7 +231,7 @@
         <!-- {/* Otp design div */} -->
         <div class="otp-reg my-5">
             <p class="text-muted text-center">
-                An Otp is just sent to your mobile <span class="otp-sent-number"></span>. Enter the OTP here.
+                An Otp is just sent to your mobile <span class="otp-sent-number text-danger"></span>. Enter the OTP here.
             </p>
             <div class="otp-card text-center d-flex justify-content-center">
                 <!-- ================Otp card start======================= -->
@@ -302,7 +302,7 @@
                         })
 
                         $('.otp-reg').show();
-                        $('.otp-sent-number').innerText($('#personPhone').val());
+                        $('.otp-sent-number').text($('#personPhone').val());
                         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                         // setTimeout(function() {
                         //     location.reload();
