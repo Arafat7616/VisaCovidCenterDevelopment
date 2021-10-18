@@ -60,9 +60,10 @@
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
-                                        <td> <a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
+                                        <td>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/imo.png') }}" alt=""></a>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/whatsapp.png') }}" alt=""></a>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/gmail.png') }}" alt=""></a>
                                         </td>
                                         <td class="text-center">
                                             <a href="#">
@@ -79,9 +80,10 @@
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
+                                        <td>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/imo.png') }}" alt=""></a>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/whatsapp.png') }}" alt=""></a>
+                                            <a href="#"><img class="share-option-image" src="{{ asset('uploads/images/gmail.png') }}" alt=""></a>
                                         </td>
                                         <td class="text-center">
                                             <a href="#">
@@ -92,98 +94,6 @@
                                             <a href="#"><i class="fa fa-eye text-dark"></i></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-print"></i>
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#"><i class="fa fa-eye text-dark"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-print"></i>
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#"><i class="fa fa-eye text-dark"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-print"></i>
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#"><i class="fa fa-eye text-dark"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-print"></i>
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#"><i class="fa fa-eye text-dark"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td><a href="#"><img src="./assets//image/icon/gmail (1).png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                            <a href="#"><img src="./assets//image/icon/imo.png" alt=""></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-print"></i>
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#"><i class="fa fa-eye text-dark"></i></a>
-                                        </td>
-                                    </tr>
-
                                 </tbody>
                             </table>
                         </div>
