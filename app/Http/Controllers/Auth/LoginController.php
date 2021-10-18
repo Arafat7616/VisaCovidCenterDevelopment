@@ -32,10 +32,10 @@ class LoginController extends Controller
      */
     protected $redirectTo;
 
-    public function username()
-    {
-        return 'phone';
-    }
+    // public function username()
+    // {
+    //     return 'phone';
+    // }
 
 
     public function redirectTo()
@@ -65,32 +65,32 @@ class LoginController extends Controller
      * @return void
      */
 
-    protected function attemptLogin(Request $request)
-    {
-        $user = User::where('phone', $request->phone)
-                    ->where('password', $request->password)
-                    ->first();
-        //dd($user);
+    // protected function attemptLogin(Request $request)
+    // {
+    //     $user = User::where('phone', $request->phone)
+    //                 ->where('password', $request->password)
+    //                 ->first();
+    //     //dd($user);
 
-        return response()->json([
-            'type' => 'success',
-            'message' => 'Data matched'.$user->name,
-        ]);
+    //     return response()->json([
+    //         'type' => 'success',
+    //         'message' => 'Data matched'.$user->name,
+    //     ]);
 
-        // if(!isset($user)){
-        //     return false;
-        // }
+    //     // if(!isset($user)){
+    //     //     return false;
+    //     // }
 
-        // if (!Session::get('user')){
-        //     Session::put('user', $user);
-        // }
-        // // return    Auth::login($user);
+    //     // if (!Session::get('user')){
+    //     //     Session::put('user', $user);
+    //     // }
+    //     // // return    Auth::login($user);
 
-        // return response()->json([
-        //     'type' => 'success',
-        //     'message' => 'Data matched',
-        // ]);
-    }
+    //     // return response()->json([
+    //     //     'type' => 'success',
+    //     //     'message' => 'Data matched',
+    //     // ]);
+    // }
 
     public function __construct()
     {
