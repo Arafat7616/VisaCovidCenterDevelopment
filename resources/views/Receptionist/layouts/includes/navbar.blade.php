@@ -14,7 +14,7 @@
                         <a class="nav-link active" aria-current="page" href="#">New Regsitration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Printing</a>
+                        <a class="nav-link" href="{{ route('receptionist.printing.index') }}">Printing</a>
                     </li>
 
                     <li class="nav-item">
