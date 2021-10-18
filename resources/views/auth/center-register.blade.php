@@ -134,14 +134,14 @@
                                     <div class="mb-3 row">
                                         <label for="personNID" class="col-sm-3 col-form-label text-muted">NID</label>
                                         <div class="col-sm-9">
-                                            <input type="email" id="personNID" name="personNID" class="form-control"
+                                            <input type="text" id="personNID" name="personNID" class="form-control"
                                                 placeholder='Enter NID Number' />
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="personPhone" class="col-sm-3 col-form-label text-muted">Phone</label>
                                         <div class="col-sm-9">
-                                            <input type="email" id="personPhone" name="personPhone" class="form-control"
+                                            <input type="text" id="personPhone" name="personPhone" class="form-control"
                                                 placeholder='Enter Phone Number' />
                                         </div>
                                     </div>
@@ -298,9 +298,9 @@
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    setTimeout(function() {
-                        location.reload();
-                    }, 800); //
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // }, 800); //
                 },
                 error: function(xhr) {
                     var errorMessage = '<div class="card bg-danger">\n' +

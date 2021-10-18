@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Model\CenterDocument;
+use App\Models\CenterDocument;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
@@ -105,7 +105,6 @@ class CenterRegistrationController extends Controller
         $userInfo->save();
 
         // document data store
-
         if ($request->hasFile('document1')) {
             $document = new CenterDocument();
             $pdf             = $request->document1;
@@ -118,7 +117,6 @@ class CenterRegistrationController extends Controller
             $document->status   = 1;
             $document->save();
         }
-
         if ($request->hasFile('document2')) {
             $document = new CenterDocument();
             $pdf             = $request->document2;
@@ -131,7 +129,6 @@ class CenterRegistrationController extends Controller
             $document->status   = 1;
             $document->save();
         }
-
         if ($request->hasFile('document3')) {
             $document = new CenterDocument();
             $pdf             = $request->document3;
