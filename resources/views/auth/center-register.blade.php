@@ -223,15 +223,15 @@
             </div>
             <!--========================== Documents Form details input end ==========================================-->
             <!-- {/*............... Documents form details end ..............................*/} -->
-            <div class="text-center mt-5">
-                <button class='reg-sub-btn full-form-submit'>Submit</button>
+            <div class="text-center mt-5 mb-5">
+                <button class='reg-sub-btn full-form-submit mb-5'>Submit</button>
             </div>
         </form>
         <!--========================== full form end ==========================================-->
         <!-- {/* Otp design div */} -->
         <div class="otp-reg my-5">
             <p class="text-muted text-center">
-                An Otp is just sent to your mobile 01827 007 441. Enter the OTP here.
+                An Otp is just sent to your mobile <span class="otp-sent-number"></span>. Enter the OTP here.
             </p>
             <div class="otp-card text-center d-flex justify-content-center">
                 <!-- ================Otp card start======================= -->
@@ -239,7 +239,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-muted">OTP verification</h5>
                         <div class='text-center otp-card-place my-2'>
-                            <input type="text" class='form-control otp-card-place' placeholder='12345' />
+                            <input type="text" class='form-control otp-card-place' value="" />
                         </div>
 
                         <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
@@ -257,69 +257,78 @@
 
 @push('script')
     <script>
-        $('.full-form-submit').click(function() {
-            var formData = new FormData();
-            formData.append('centerName', $('#centerName').val());
-            formData.append('country', $('#country').val());
-            formData.append('state', $('#state').val());
-            formData.append('city', $('#city').val());
-            formData.append('zipCode', $('#zipCode').val());
-            formData.append('address', $('#address').val());
-            formData.append('mapLocation', $('#mapLocation').val());
-            formData.append('hotLine', $('#hotLine').val());
-            formData.append('centerEmail', $('#centerEmail').val());
-            formData.append('personName', $('#personName').val());
-            formData.append('personEmail', $('#personEmail').val());
-            formData.append('personNID', $('#personNID').val());
-            formData.append('personPhone', $('#personPhone').val());
-            formData.append('password', $('#password').val());
-            formData.append('confirmPassword', $('#confirmPassword').val());
-            formData.append('tradeLicenseNumber', $('#tradeLicenseNumber').val());
-            formData.append('document1', $('#document1')[0].files[0]);
-            formData.append('document2', $('#document2')[0].files[0]);
-            formData.append('document3', $('#document3')[0].files[0]);
+        $( document ).ready(function() {
+            $('.otp-reg').hide();
+            $('.full-form-submit').click(function() {
+                var formData = new FormData();
+                formData.append('centerName', $('#centerName').val());
+                formData.append('country', $('#country').val());
+                formData.append('state', $('#state').val());
+                formData.append('city', $('#city').val());
+                formData.append('zipCode', $('#zipCode').val());
+                formData.append('address', $('#address').val());
+                formData.append('mapLocation', $('#mapLocation').val());
+                formData.append('hotLine', $('#hotLine').val());
+                formData.append('centerEmail', $('#centerEmail').val());
+                formData.append('personName', $('#personName').val());
+                formData.append('personEmail', $('#personEmail').val());
+                formData.append('personNID', $('#personNID').val());
+                formData.append('personPhone', $('#personPhone').val());
+                formData.append('password', $('#password').val());
+                formData.append('confirmPassword', $('#confirmPassword').val());
+                formData.append('tradeLicenseNumber', $('#tradeLicenseNumber').val());
+                formData.append('document1', $('#document1')[0].files[0]);
+                formData.append('document2', $('#document2')[0].files[0]);
+                formData.append('document3', $('#document3')[0].files[0]);
 
-            $.ajax({
-                method: 'POST',
-                url: '/center-register-data-store',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(data) {
-                    // $('#main-form').trigger("reset");
-                    console.log(data.message);
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: data.message,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    // setTimeout(function() {
-                    //     location.reload();
-                    // }, 800); //
-                },
-                error: function(xhr) {
-                    var errorMessage = '<div class="card bg-danger">\n' +
-                        '                        <div class="card-body text-center p-5">\n' +
-                        '                            <span class="text-white">';
-                    $.each(xhr.responseJSON.errors, function(key, value) {
-                        errorMessage += ('' + value + '<br>');
-                    });
-                    errorMessage += '</span>\n' +
-                        '                        </div>\n' +
-                        '                    </div>';
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        footer: errorMessage
-                    })
-                },
-            })
+                $.ajax({
+                    method: 'POST',
+                    url: '/center-register-data-store',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        // $('#main-form').trigger("reset");
+                        console.log(data.message);
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                        $('.otp-reg').show();
+                        $('.otp-sent-number').innerText($('#personPhone').val());
+                        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // }, 800); //
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
+                })
+            });
         });
+
+
     </script>
 
     <script type="text/javascript">

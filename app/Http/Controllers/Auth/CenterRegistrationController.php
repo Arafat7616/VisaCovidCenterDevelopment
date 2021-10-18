@@ -77,6 +77,7 @@ class CenterRegistrationController extends Controller
         $center->zip_code = $request->zipCode;
         $center->map_location = $request->mapLocation;
         $center->status = false;
+        $center->varification_status = false;
         $center->save();
 
         // user data store
@@ -84,6 +85,7 @@ class CenterRegistrationController extends Controller
         $user->name = $request->personName;
         $user->email = $request->personEmail;
         $user->phone = $request->personPhone;
+        $user->center_id = $center->id;
         $user->user_type = 'administrator';
         $user->password = Hash::make($request->password);
         $user->save();

@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('otp')->nullable();
             $table->timestamp('otp_verified_at')->nullable();
             $table->enum('status', [0,1])->default(0);
+            $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
         });
     }

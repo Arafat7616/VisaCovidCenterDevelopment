@@ -22,6 +22,7 @@ class User extends Authenticatable
         'password',
         'image',
         'user_type',
+        'center_id',
         'otp',
         'status',
     ];

@@ -25,6 +25,7 @@ class CreateCentersTable extends Migration
             $table->text('map_location');
             $table->string('trade_licence_no')->nullable();
             $table->string('status')->default(0);
+            $table->string('varification_status')->default(0);
             $table->timestamps();
         });
     }
