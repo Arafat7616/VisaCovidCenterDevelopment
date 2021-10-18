@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Serve_no extends Model
+class MedicalStaff extends Model
 {
     protected $fillable = [
-        'pcr',
-        'vaccine',
-        'booster_normal',
-        'booster',
-        'date',
         'center_id',
+        'users_id',
+        'user_type_id',
+        'status',
     ];
 }

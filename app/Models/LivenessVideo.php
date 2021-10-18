@@ -4,16 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booster_registration extends Model
+class LivenessVideo extends Model
 {
     protected $fillable = [
-        'name_of_vaccine',
-        'registration_type (nor, pre)',
+        'video',
+        'type (pcr, vacci, booster)',
         'date',
-        'antibody_last_date',
         'users_id',
         'center_id',
-        'staff_id',
+        'medical_staff_id',
         'status',
     ];
 }
