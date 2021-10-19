@@ -14,11 +14,11 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('receptionist.dashboard') }}">New Regsitration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Printing</a>
+                        <a class="nav-link" href="{{ route('receptionist.printing.index') }}">Printing</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Users</a>
+                        <a class="nav-link" href="{{ route('receptionist.user.index') }}">Users</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">

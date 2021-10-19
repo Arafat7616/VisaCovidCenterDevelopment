@@ -31,7 +31,7 @@
    letter-spacing: 0px;
    color: #00569F;
    opacity: 0.8;
-   padding: 7px 13px; 
+   padding: 7px 13px;
 }
 
 .accordion-table-breadcrumb .filter-buttons .filter-active{
@@ -61,7 +61,7 @@
 }
 
 .accordion-table-breadcrumb .swap-box .swap-date{
-    margin-top: 5px;   
+    margin-top: 5px;
 }
 
 .accordion-table-breadcrumb .swap-box .swap-icon{
@@ -240,7 +240,7 @@
 /* Page Wrapper design ends */
 
 
- 
+
 
 
 .accorion-btn {
@@ -253,7 +253,7 @@
     text-decoration: none;
    font-weight: bold;
   }
-  
+
   /* Style the active class, and buttons on mouse-over */
   .active, .accorion-btn:hover {
     background-color:#00569F;
@@ -269,9 +269,14 @@
     background: #00569F;
     color: white;
 }
+
+.share-option-image{
+    height: 30px;
+    width: 30px;
+}
 /* .accordion-search{
     position: fixed;
     right: 10%;
     top: %;
-  
+
 } */
