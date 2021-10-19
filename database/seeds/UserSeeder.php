@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = 'Super Admin';
+        $user->name = 'Mr. Super Admin';
         $user->email = 'superadmin@gmail.com';
         $user->phone = null;
         $user->password = Hash::make('12345');
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         $user->save();
 
         $user = new User();
-        $user->name = 'Administrator';
+        $user->name = 'Mr. Administrator';
         $user->email = 'administrator@gmail.com';
         $user->phone = null;
         $user->password = Hash::make('12345');
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         $user->save();
 
         $user = new User();
-        $user->name = 'Volunteer';
+        $user->name = 'Mr. Volunteer';
         $user->email = 'volunteer@gmail.com';
         $user->phone = null;
         $user->password = Hash::make('12345');
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
         $user->save();
 
         $user = new User();
-        $user->name = 'Receptionist';
+        $user->name = 'Mr. Receptionist';
         $user->email = 'receptionist@gmail.com';
         $user->phone = null;
         $user->password = Hash::make('12345');
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
         $user->save();
 
         $user = new User();
-        $user->name = 'Pathologist';
+        $user->name = 'Mr. Pathologist';
         $user->email = 'pathologist@gmail.com';
         $user->phone = null;
         $user->password = Hash::make('12345');
@@ -64,5 +64,17 @@ class UserSeeder extends Seeder
         $user->otp = rand(5, 9999);
         $user->save();
 
+        // customer/user fake
+        for ($i=1; $i<=10 ; $i++) {
+            $user = new User();
+            $user->name = 'Mr. User '.$i;
+            $user->email = 'user'.$i.'@gmail.com';
+            $user->phone = null;
+            $user->password = Hash::make('12345');
+            $user->user_type = 'user';
+            $user->status = 1;
+            $user->otp = rand(5, 9999);
+            $user->save();
+        }
     }
 }
