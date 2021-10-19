@@ -37,6 +37,7 @@ class CenterRegistrationController extends Controller
 
     public function centerRegisterDataStore(Request $request)
     {
+        // validation request data
         $request->validate([
             'centerName'  => 'required',
             'country'  => 'nullable',
