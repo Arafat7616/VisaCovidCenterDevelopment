@@ -18,9 +18,8 @@ class CreateCovidEffectedsTable extends Migration
             $table->enum('effect_status', [0,1]);
             $table->date('effected_date')->nullable();
             $table->date('recovery_date')->nullable();
-            $table->text('document');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->text('document')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

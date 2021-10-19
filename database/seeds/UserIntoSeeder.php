@@ -3,7 +3,6 @@
 use Carbon\Carbon;
 use App\Models\UserInfo;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
@@ -19,7 +18,7 @@ class UserIntoSeeder extends Seeder
         // customer/user
         for ($i = 1; $i <= 10; $i++) {
             $userInfo = new UserInfo();
-            $userInfo->dob = Carbon::now()->addDays(5);
+            $userInfo->dob = Carbon::now()->addDays(-3650);
             $userInfo->gender = 'Male';
             $userInfo->nid_no =  rand(1000000, 2000000);
             $userInfo->passport_no = rand(1000000, 2000000);

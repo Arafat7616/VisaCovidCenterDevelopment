@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StaticOptionSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UserIntoSeeder::class);
+        $this->call(CenterSeeder::class);
+        $this->call(CovidEffectedSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(CitySeeder::class);
