@@ -8,7 +8,7 @@ class BoosterRegistration extends Model
 {
     protected $fillable = [
         'name_of_vaccine',
-        'registration_type (nor, pre)',
+        'registration_type',
         'date',
         'antibody_last_date',
         'users_id',

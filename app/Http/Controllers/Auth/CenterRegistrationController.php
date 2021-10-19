@@ -116,6 +116,7 @@ class CenterRegistrationController extends Controller
             $request->document1->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
+            $document->center_id   = $center->id;
             $document->status   = 1;
             $document->save();
         }
@@ -128,6 +129,7 @@ class CenterRegistrationController extends Controller
             $request->document2->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
+            $document->center_id   = $center->id;
             $document->status   = 1;
             $document->save();
         }
@@ -140,6 +142,7 @@ class CenterRegistrationController extends Controller
             $request->document3->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
+            $document->center_id   = $center->id;
             $document->status   = 1;
             $document->save();
         }
