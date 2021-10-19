@@ -18,4 +18,8 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
         Route::get('vaccine', 'PremiumController@vaccine')->name('vaccine');
         Route::get('booster', 'PremiumController@booster')->name('booster');
     });
+    Route::group(['prefix' => 'user/', 'as' => 'user.'], function () {
+        Route::get('index', 'UserController@index')->name('index');
+
+    });
 });

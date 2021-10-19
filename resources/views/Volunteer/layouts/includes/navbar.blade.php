@@ -18,7 +18,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">User's</a>
+                        <a class="nav-link" href="{{ route('volunteer.user.index') }}">User's</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
