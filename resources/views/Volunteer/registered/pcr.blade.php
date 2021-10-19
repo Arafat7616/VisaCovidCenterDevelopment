@@ -1,7 +1,7 @@
 @extends('Volunteer.layouts.master')
 
 @push('title')
-    Dashboard
+    PCR | Registered
 @endpush
 
 @push('css')
@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-    {{-- <div class="container py-4">
+    <div class="container py-4">
         <div class="card page-wrapper">
             <div class="accordion-table-breadcrumb">
                 <div class="accordion-table-header ">
@@ -18,9 +18,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="#" class="accorion-btn breadcrumb-active">PCR</a>
-                                    <a href="#" class="accorion-btn">Vaccine</a>
-                                    <a href="#" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('volunteer.registered.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                    <a href="{{ route('volunteer.registered.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.registered.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -253,7 +253,7 @@
             </div>
         </div>
 
-    </div> --}}
+    </div>
 @endsection
 
 @push('script')
