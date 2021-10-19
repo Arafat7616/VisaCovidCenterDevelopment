@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'Super Admin';
         $user->email = 'superadmin@gmail.com';
-        $user->phone = null;
+        $user->phone = 934759375;
         $user->password = Hash::make('12345');
         $user->user_type = 'super-admin';
         $user->status = 1;
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'Administrator';
         $user->email = 'administrator@gmail.com';
-        $user->phone = null;
+        $user->phone = 903475937;
         $user->password = Hash::make('12345');
         $user->user_type = 'administrator';
         $user->status = 1;
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'Volunteer';
         $user->email = 'volunteer@gmail.com';
-        $user->phone = null;
+        $user->phone = 30458703485;
         $user->password = Hash::make('12345');
         $user->user_type = 'volunteer';
         $user->status = 1;
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'Receptionist';
         $user->email = 'receptionist@gmail.com';
-        $user->phone = null;
+        $user->phone = 370457395;
         $user->password = Hash::make('12345');
         $user->user_type = 'receptionist';
         $user->status = 1;
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'Pathologist';
         $user->email = 'pathologist@gmail.com';
-        $user->phone = null;
+        $user->phone = 93759375;
         $user->password = Hash::make('12345');
         $user->user_type = 'pathologist';
         $user->status = 1;
