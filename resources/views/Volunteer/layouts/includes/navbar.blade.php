@@ -14,7 +14,7 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('volunteer.registered.pcr') }}">Registered</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Premium</a>
+                        <a class="nav-link" href="{{ route('volunteer.premium.pcr') }}">Premium</a>
                     </li>
 
                     <li class="nav-item">
