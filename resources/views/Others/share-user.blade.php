@@ -53,19 +53,23 @@
                 <div class="col-4 p-0 ps-3">
                     <h5 class="new_registration__head">Dose 1</h5>
                     <div class="new_registration__body px-3">
-                        <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
-                        <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
-                        <span>Served By: {{ $user->vaccination->first_served_by_id }}</span> <br>
-                        <span>Date: {{ $user->vaccination->date_of_first_dose }}</span>
+                        @if($user->vaccination)
+                            <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
+                            <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
+                            <span>Served By: {{ $user->vaccination->first_served_by_id }}</span> <br>
+                            <span>Date: {{ $user->vaccination->date_of_first_dose }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-0">
                     <h5 class="new_registration__head new_registration__border">Dose 2</h5>
                     <div class="new_registration__body px-3">
-                        <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
-                        <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
-                        <span>Served By: {{ $user->vaccination->second_served_by_id }}</span> <br>
-                        <span>Date: {{ $user->vaccination->date_of_second_dose }}</span>
+                        @if($user->vaccination)
+                            <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
+                            <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
+                            <span>Served By: {{ $user->vaccination->second_served_by_id }}</span> <br>
+                            <span>Date: {{ $user->vaccination->date_of_second_dose }}</span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-3">
