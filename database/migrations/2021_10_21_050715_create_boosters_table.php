@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMedicalStaffTable extends Migration
+class CreateBoostersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateMedicalStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_staff', function (Blueprint $table) {
+        Schema::create('boosters', function (Blueprint $table) {
             $table->id();
+            $table->string('name_of_vaccine');
+            $table->string('registration_type')->default('normal');
+            $table->date('date');
+            $table->string('antibody_last_date');
+            $table->unsignedBigInteger('users_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
-            $table->unsignedBigInteger('usre_id')->nullable();
-            $table->unsignedBigInteger('user_type_id')->nullable();
+            $table->unsignedBigInteger('staff_id')->nullable();
             $table->enum('status', [0,1]);
             $table->timestamps();
         });
@@ -30,6 +34,6 @@ class CreateMedicalStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_staff');
+        Schema::dropIfExists('boosters');
     }
 }

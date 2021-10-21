@@ -1,68 +1,15 @@
-<!doctype html>
-<html lang="en">
+@extends('Volunteer.layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/accordion_table_16.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@push('title')
+    Booster | Registered
+@endpush
 
-    <title>Accordion table page 23 </title>
-</head>
+@push('css')
+    <link rel="stylesheet" href="{{ asset('assets/center-part/css/accordion_table_16.css') }}">
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/image/logo.png" alt="" class="header__logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Registered</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  active" href="#">Premium</a>
-                        </li>
+@endpush
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">User's</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="profile__name">Farzana Akter</span>
-                                <img class="profile__image" src="assets/image/profile/doctor.jpg" alt="">
-                                <br> <span class="text-capitalize profile__designation">Volunteer</span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+@section('content')
     <div class="container py-4">
         <div class="card page-wrapper">
             <div class="accordion-table-breadcrumb">
@@ -71,9 +18,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="#" class="accorion-btn breadcrumb-active">PCR</a>
-                                    <a href="#" class="accorion-btn">Vaccine</a>
-                                    <a href="#" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('volunteer.registered.pcr') }}" class="accorion-btn">PCR</a>
+                                    <a href="{{ route('volunteer.registered.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.registered.booster') }}" class="accorion-btn  breadcrumb-active">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -123,33 +70,36 @@
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
@@ -191,33 +141,36 @@
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
@@ -259,33 +212,36 @@
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                checked></td>
+                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                        </td>
                                         <td>345 234 124</td>
                                         <td>Ahmed Abdali</td>
                                         <td>018 2700 7441</td>
                                         <td>Male</td>
                                         <td class="enter-icon-div">
                                             <a href="#">
-                                                <img class="enter-icon" src="assets/image/enter.png" alt="">
+                                                <img class="enter-icon"
+                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
                                             </a>
                                         </td>
                                     </tr>
@@ -298,23 +254,8 @@
         </div>
 
     </div>
-    <footer>
-        <div class="row fixed-bottom shadow-sm">
-            <div class="col-12">
-                <div class="footer text-center">
-                    <p class="py-4">&copy; Covid Visa 2021</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-        $('button').on('click', function () {
-            $('button').removeClass('selected');
-            $(this).addClass('selected');
-        });
-    </script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-</body>
+@endsection
 
-</html>
+@push('script')
+
+@endpush

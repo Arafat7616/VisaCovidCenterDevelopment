@@ -16,6 +16,7 @@ class Center extends Model
         'address',
         'map_location',
         'trade_licence_no',
-        'status'
+        'status',
+        'varification_status',
     ];
 }

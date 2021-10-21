@@ -16,6 +16,7 @@ class CreateCenterDocumentsTable extends Migration
         Schema::create('center_documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('center_id')->nullable();
             $table->string('document')->nullable();
             $table->string('status')->nullable()->default(0);
             $table->timestamps();
