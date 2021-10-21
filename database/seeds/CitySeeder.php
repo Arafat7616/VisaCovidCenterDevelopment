@@ -39788,15 +39788,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6630,
             'name' => 'Helensvale',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6631,
@@ -39804,15 +39800,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6632,
             'name' => 'Ingham',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6633,
@@ -39820,15 +39812,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6634,
             'name' => 'Ipswich',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6635,
@@ -39836,15 +39824,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6636,
             'name' => 'Julatten',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6637,
@@ -39852,15 +39836,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6638,
             'name' => 'Kingaroy',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6639,
@@ -39868,15 +39848,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6640,
             'name' => 'Loganholme',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6641,
@@ -39884,15 +39860,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6642,
             'name' => 'Mareeba',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6643,
@@ -39900,15 +39872,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6644,
             'name' => 'Maroochydore-Mooloolaba',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6645,
@@ -39916,15 +39884,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6646,
             'name' => 'Miami',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6647,
@@ -39932,15 +39896,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6648,
             'name' => 'Molendinar',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6649,
@@ -39948,15 +39908,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6650,
             'name' => 'Morayfield',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6651,
@@ -39964,15 +39920,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6652,
             'name' => 'Mount Glorious',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6653,
@@ -39980,15 +39932,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6654,
             'name' => 'Murarrie',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6655,
@@ -39996,15 +39944,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6656,
             'name' => 'Nambour',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6657,
@@ -40012,15 +39956,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6658,
             'name' => 'Nobby Beach',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6659,
@@ -40028,15 +39968,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6660,
             'name' => 'Noosaville',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6661,
@@ -40044,15 +39980,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6662,
             'name' => 'Port Douglas',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6663,
@@ -40060,15 +39992,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6664,
             'name' => 'Rockhampton',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6665,
@@ -40076,15 +40004,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6666,
             'name' => 'Roma',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6667,
@@ -40092,15 +40016,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6668,
             'name' => 'Sanctuary Cove',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6669,
@@ -40108,15 +40028,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6670,
             'name' => 'Southport',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6671,
@@ -40124,15 +40040,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6672,
             'name' => 'Sunshine Coast',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6673,
@@ -40140,15 +40052,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6674,
             'name' => 'The Summit',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6675,
@@ -40156,15 +40064,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6676,
             'name' => 'Toowoomba',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6677,
@@ -40172,15 +40076,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6678,
             'name' => 'Victoria Point',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6679,
@@ -40188,15 +40088,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6680,
             'name' => 'Willawong',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6681,
@@ -40204,15 +40100,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6682,
             'name' => 'Yeppoon',
             'state_id' => 269
         ]);
-
-
 
         City::create([
             'id' => 6683,
@@ -40220,15 +40112,11 @@ class CitySeeder extends Seeder
             'state_id' => 269
         ]);
 
-
-
         City::create([
             'id' => 6684,
             'name' => 'Bridgewater-Gagebrook',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6685,
@@ -40236,15 +40124,11 @@ class CitySeeder extends Seeder
             'state_id' => 271
         ]);
 
-
-
         City::create([
             'id' => 6686,
             'name' => 'Burnie-Devonport',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6687,
@@ -40252,15 +40136,11 @@ class CitySeeder extends Seeder
             'state_id' => 271
         ]);
 
-
-
         City::create([
             'id' => 6688,
             'name' => 'Hobart',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6689,
@@ -40268,15 +40148,11 @@ class CitySeeder extends Seeder
             'state_id' => 271
         ]);
 
-
-
         City::create([
             'id' => 6690,
             'name' => 'Launceston',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6691,
@@ -40284,15 +40160,11 @@ class CitySeeder extends Seeder
             'state_id' => 271
         ]);
 
-
-
         City::create([
             'id' => 6692,
             'name' => 'Rowella',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6693,
@@ -40300,15 +40172,11 @@ class CitySeeder extends Seeder
             'state_id' => 271
         ]);
 
-
-
         City::create([
             'id' => 6694,
             'name' => 'Ulverstone',
             'state_id' => 271
         ]);
-
-
 
         City::create([
             'id' => 6695,
@@ -40316,15 +40184,11 @@ class CitySeeder extends Seeder
             'state_id' => 272
         ]);
 
-
-
         City::create([
             'id' => 6696,
             'name' => 'Albion',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6697,
@@ -40332,15 +40196,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6698,
             'name' => 'Avenel',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6699,
@@ -40348,15 +40208,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6700,
             'name' => 'Baccus Marsh',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6701,
@@ -40364,15 +40220,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6702,
             'name' => 'Ballarat',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6703,
@@ -40380,15 +40232,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6704,
             'name' => 'Batman',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6705,
@@ -40396,15 +40244,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6706,
             'name' => 'Belmont',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6707,
@@ -40412,15 +40256,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6708,
             'name' => 'Bendigo',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6709,
@@ -40428,15 +40268,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6710,
             'name' => 'Berwick',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6711,
@@ -40444,15 +40280,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6712,
             'name' => 'Blue Mountains',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6713,
@@ -40460,15 +40292,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6714,
             'name' => 'Boronia',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6715,
@@ -40476,15 +40304,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6716,
             'name' => 'Brighton East',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6717,
@@ -40492,15 +40316,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6718,
             'name' => 'Campbellfield',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6719,
@@ -40508,15 +40328,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6720,
             'name' => 'Caroline Springs',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6721,
@@ -40524,15 +40340,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6722,
             'name' => 'Castlemaine',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6723,
@@ -40540,15 +40352,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6724,
             'name' => 'Cheltenham',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6725,
@@ -40556,15 +40364,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6726,
             'name' => 'Clayton South',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6727,
@@ -40572,15 +40376,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6728,
             'name' => 'Coburg',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6729,
@@ -40588,15 +40388,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6730,
             'name' => 'Collingwood',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6731,
@@ -40604,15 +40400,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6732,
             'name' => 'Cranbourne',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6733,
@@ -40620,15 +40412,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6734,
             'name' => 'Dandenong',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6735,
@@ -40636,15 +40424,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6736,
             'name' => 'Diamond Creek',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6737,
@@ -40652,15 +40436,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6738,
             'name' => 'Doncester',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6739,
@@ -40668,15 +40448,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6740,
             'name' => 'Echuca-Moama',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6741,
@@ -40684,15 +40460,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6742,
             'name' => 'Eltham',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6743,
@@ -40700,15 +40472,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6744,
             'name' => 'Fitzroy',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6745,
@@ -40716,15 +40484,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6746,
             'name' => 'Geelong',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6747,
@@ -40732,15 +40496,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6748,
             'name' => 'Glenorchy',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6749,
@@ -40748,15 +40508,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6750,
             'name' => 'Hamilton',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6751,
@@ -40764,15 +40520,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6752,
             'name' => 'Healesville',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6753,
@@ -40780,15 +40532,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6754,
             'name' => 'Hughesdale',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6755,
@@ -40796,15 +40544,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6756,
             'name' => 'Keilor',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6757,
@@ -40812,15 +40556,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6758,
             'name' => 'Kerang',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6759,
@@ -40828,15 +40568,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6760,
             'name' => 'Kilsyth',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6761,
@@ -40844,15 +40580,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6762,
             'name' => 'Lakes Entrance',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6763,
@@ -40860,15 +40592,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6764,
             'name' => 'Lara',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6765,
@@ -40876,15 +40604,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6766,
             'name' => 'Leopold',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6767,
@@ -40892,15 +40616,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6768,
             'name' => 'Maidstone',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6769,
@@ -40908,15 +40628,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6770,
             'name' => 'Maryborough',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6771,
@@ -40924,15 +40640,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6772,
             'name' => 'Melton',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6773,
@@ -40940,15 +40652,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6774,
             'name' => 'Mildura',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6775,
@@ -40956,15 +40664,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6776,
             'name' => 'Moe-Yallourn',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6777,
@@ -40972,15 +40676,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6778,
             'name' => 'Mordialloc',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6779,
@@ -40988,15 +40688,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6780,
             'name' => 'Mulgrave',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6781,
@@ -41004,15 +40700,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6782,
             'name' => 'Neerim South',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6783,
@@ -41020,15 +40712,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6784,
             'name' => 'Notting Hill',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6785,
@@ -41036,15 +40724,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6786,
             'name' => 'Ocean Grove-Barwon Heads',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6787,
@@ -41052,15 +40736,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6788,
             'name' => 'Pakenham',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6789,
@@ -41068,15 +40748,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6790,
             'name' => 'Port Melbourne',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6791,
@@ -41084,15 +40760,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6792,
             'name' => 'Prahran',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6793,
@@ -41100,15 +40772,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6794,
             'name' => 'Pritbourne',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6795,
@@ -41116,15 +40784,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6796,
             'name' => 'Reservoir',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6797,
@@ -41132,15 +40796,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6798,
             'name' => 'Rowville',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6799,
@@ -41148,15 +40808,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6800,
             'name' => 'Sandringham',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6801,
@@ -41164,15 +40820,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6802,
             'name' => 'Sebastopol',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6803,
@@ -41180,15 +40832,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6804,
             'name' => 'Shepparton-Mooroopna',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6805,
@@ -41196,15 +40844,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6806,
             'name' => 'South Yarra',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6807,
@@ -41212,15 +40856,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6808,
             'name' => 'St. Albans',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6809,
@@ -41228,15 +40868,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6810,
             'name' => 'Stawell',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6811,
@@ -41244,15 +40880,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6812,
             'name' => 'Sunshine West',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6813,
@@ -41260,15 +40892,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6814,
             'name' => 'Tatura',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6815,
@@ -41276,15 +40904,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6816,
             'name' => 'Thornbury',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6817,
@@ -41292,15 +40916,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6818,
             'name' => 'Torquay',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6819,
@@ -41308,15 +40928,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6820,
             'name' => 'Tullamarine',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6821,
@@ -41324,15 +40940,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6822,
             'name' => 'Wangaratta',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6823,
@@ -41340,15 +40952,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6824,
             'name' => 'Warragul',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6825,
@@ -41356,15 +40964,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6826,
             'name' => 'Welshpool',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6827,
@@ -41372,15 +40976,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6828,
             'name' => 'Wonthaggi',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6829,
@@ -41388,15 +40988,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6830,
             'name' => 'Yarrawonga-Mulwala',
             'state_id' => 273
         ]);
-
-
 
         City::create([
             'id' => 6831,
@@ -41404,15 +41000,11 @@ class CitySeeder extends Seeder
             'state_id' => 273
         ]);
 
-
-
         City::create([
             'id' => 6832,
             'name' => 'Wheeler',
             'state_id' => 276
         ]);
-
-
 
         City::create([
             'id' => 6833,
@@ -41420,15 +41012,11 @@ class CitySeeder extends Seeder
             'state_id' => 280
         ]);
 
-
-
         City::create([
             'id' => 6834,
             'name' => 'GroBpetersdorf',
             'state_id' => 280
         ]);
-
-
 
         City::create([
             'id' => 6835,
@@ -41436,15 +41024,11 @@ class CitySeeder extends Seeder
             'state_id' => 280
         ]);
 
-
-
         City::create([
             'id' => 6836,
             'name' => 'Kemeten',
             'state_id' => 280
         ]);
-
-
 
         City::create([
             'id' => 6837,
@@ -41452,15 +41036,11 @@ class CitySeeder extends Seeder
             'state_id' => 280
         ]);
 
-
-
         City::create([
             'id' => 6838,
             'name' => 'Neudorfl',
             'state_id' => 280
         ]);
-
-
 
         City::create([
             'id' => 6839,
@@ -41468,15 +41048,11 @@ class CitySeeder extends Seeder
             'state_id' => 280
         ]);
 
-
-
         City::create([
             'id' => 6840,
             'name' => 'Oberwart',
             'state_id' => 280
         ]);
-
-
 
         City::create([
             'id' => 6841,
@@ -41484,15 +41060,11 @@ class CitySeeder extends Seeder
             'state_id' => 280
         ]);
 
-
-
         City::create([
             'id' => 6842,
             'name' => 'Rust',
             'state_id' => 280
         ]);
-
-
 
         City::create([
             'id' => 6843,
@@ -41500,15 +41072,11 @@ class CitySeeder extends Seeder
             'state_id' => 281
         ]);
 
-
-
         City::create([
             'id' => 6844,
             'name' => 'Poggersdorf',
             'state_id' => 281
         ]);
-
-
 
         City::create([
             'id' => 6845,
@@ -41516,15 +41084,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6846,
             'name' => 'Arnoldstein',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6847,
@@ -41532,15 +41096,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6848,
             'name' => 'Bleiburg',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6849,
@@ -41548,15 +41108,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6850,
             'name' => 'Eberndorf',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6851,
@@ -41564,15 +41120,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6852,
             'name' => 'Ferlach',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6853,
@@ -41580,15 +41132,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6854,
             'name' => 'Friesach',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6855,
@@ -41596,15 +41144,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6856,
             'name' => 'Klagenfurt',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6857,
@@ -41612,15 +41156,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6858,
             'name' => 'Lohnsburg',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6859,
@@ -41628,15 +41168,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6860,
             'name' => 'Paternion',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6861,
@@ -41644,15 +41180,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6862,
             'name' => 'Sankt Andra',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6863,
@@ -41660,15 +41192,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6864,
             'name' => 'Sankt Veit',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6865,
@@ -41676,15 +41204,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6866,
             'name' => 'Spittal',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6867,
@@ -41692,15 +41216,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6868,
             'name' => 'Villach',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6869,
@@ -41708,15 +41228,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6870,
             'name' => 'Wernberg',
             'state_id' => 282
         ]);
-
-
 
         City::create([
             'id' => 6871,
@@ -41724,15 +41240,11 @@ class CitySeeder extends Seeder
             'state_id' => 282
         ]);
 
-
-
         City::create([
             'id' => 6872,
             'name' => 'Amstetten',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6873,
@@ -41740,15 +41252,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6874,
             'name' => 'Baden',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6875,
@@ -41756,15 +41264,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6876,
             'name' => 'Boheimkirchen',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6877,
@@ -41772,15 +41276,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6878,
             'name' => 'Brunn',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6879,
@@ -41788,15 +41288,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6880,
             'name' => 'Ebreichsdorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6881,
@@ -41804,15 +41300,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6882,
             'name' => 'Fischamend',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6883,
@@ -41820,15 +41312,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6884,
             'name' => 'Ganserndorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6885,
@@ -41836,15 +41324,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6886,
             'name' => 'Gloggnitz',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6887,
@@ -41852,15 +41336,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6888,
             'name' => 'Greifenstein',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6889,
@@ -41868,15 +41348,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6890,
             'name' => 'GroB-Gerungs',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6891,
@@ -41884,15 +41360,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6892,
             'name' => 'Haag',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6893,
@@ -41900,15 +41372,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6894,
             'name' => 'Heidenreichstein',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6895,
@@ -41916,15 +41384,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6896,
             'name' => 'Himberg',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6897,
@@ -41932,15 +41396,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6898,
             'name' => 'Horn',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6899,
@@ -41948,15 +41408,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6900,
             'name' => 'Korneuburg',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6901,
@@ -41964,15 +41420,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6902,
             'name' => 'Krems',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6903,
@@ -41980,15 +41432,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6904,
             'name' => 'Langenlois',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6905,
@@ -41996,15 +41444,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6906,
             'name' => 'Leobendorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6907,
@@ -42012,15 +41456,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6908,
             'name' => 'Lilienfeld',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6909,
@@ -42028,15 +41468,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6910,
             'name' => 'Maria Enzersdorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6911,
@@ -42044,15 +41480,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6912,
             'name' => 'Mistelbach',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6913,
@@ -42060,15 +41492,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6914,
             'name' => 'Neulengbach',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6915,
@@ -42076,15 +41504,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6916,
             'name' => 'Niederleis',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6917,
@@ -42092,15 +41516,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6918,
             'name' => 'Perchtoldsdorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6919,
@@ -42108,15 +41528,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6920,
             'name' => 'Pottendorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6921,
@@ -42124,15 +41540,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6922,
             'name' => 'Pressbaum',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6923,
@@ -42140,15 +41552,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6924,
             'name' => 'Purkersdorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6925,
@@ -42156,15 +41564,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6926,
             'name' => 'Retz',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6927,
@@ -42172,15 +41576,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6928,
             'name' => 'Sankt Peter in der Au',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6929,
@@ -42188,15 +41588,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6930,
             'name' => 'Sankt Valentin',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6931,
@@ -42204,15 +41600,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6932,
             'name' => 'Schrems',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6933,
@@ -42220,15 +41612,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6934,
             'name' => 'Seitenstetten',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6935,
@@ -42236,15 +41624,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6936,
             'name' => 'Stockerau',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6937,
@@ -42252,15 +41636,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6938,
             'name' => 'Ternitz',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6939,
@@ -42268,15 +41648,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6940,
             'name' => 'Traismauer',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6941,
@@ -42284,15 +41660,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6942,
             'name' => 'Vosendorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6943,
@@ -42300,15 +41672,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6944,
             'name' => 'Wiener Neudorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6945,
@@ -42316,15 +41684,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6946,
             'name' => 'Wieselburg',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6947,
@@ -42332,15 +41696,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6948,
             'name' => 'Wolkersdorf',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6949,
@@ -42348,15 +41708,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6950,
             'name' => 'Ybbsitz',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6951,
@@ -42364,15 +41720,11 @@ class CitySeeder extends Seeder
             'state_id' => 285
         ]);
 
-
-
         City::create([
             'id' => 6952,
             'name' => 'Zwettl',
             'state_id' => 285
         ]);
-
-
 
         City::create([
             'id' => 6953,
@@ -42380,15 +41732,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6954,
             'name' => 'Altheim',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6955,
@@ -42396,15 +41744,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6956,
             'name' => 'Andorf',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6957,
@@ -42412,15 +41756,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6958,
             'name' => 'Asten',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6959,
@@ -42428,15 +41768,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6960,
             'name' => 'Aurolzmunster',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6961,
@@ -42444,15 +41780,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6962,
             'name' => 'Bad Hall',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6963,
@@ -42460,15 +41792,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6964,
             'name' => 'Braunau',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6965,
@@ -42476,15 +41804,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6966,
             'name' => 'Ebensee',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6967,
@@ -42492,15 +41816,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6968,
             'name' => 'Engerwitzdorf',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6969,
@@ -42508,15 +41828,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6970,
             'name' => 'Feldkirchen an der Donau',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6971,
@@ -42524,15 +41840,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6972,
             'name' => 'Freistadt',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6973,
@@ -42540,15 +41852,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6974,
             'name' => 'Garsten',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6975,
@@ -42556,15 +41864,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6976,
             'name' => 'Gramastetten',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6977,
@@ -42572,15 +41876,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6978,
             'name' => 'Gunskirchen',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6979,
@@ -42588,15 +41888,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6980,
             'name' => 'Kirchdorf an der Krems',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6981,
@@ -42604,15 +41900,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6982,
             'name' => 'Krenglbach',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6983,
@@ -42620,15 +41912,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6984,
             'name' => 'Lenzing',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6985,
@@ -42636,15 +41924,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6986,
             'name' => 'Linz',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6987,
@@ -42652,15 +41936,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6988,
             'name' => 'Marchtrenk',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6989,
@@ -42668,15 +41948,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6990,
             'name' => 'Mauthausen',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6991,
@@ -42684,15 +41960,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6992,
             'name' => 'Neuhofen an der Krems',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6993,
@@ -42700,15 +41972,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6994,
             'name' => 'Ottensheim',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6995,
@@ -42716,15 +41984,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6996,
             'name' => 'Perg',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6997,
@@ -42732,15 +41996,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 6998,
             'name' => 'Pram',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 6999,
@@ -42748,15 +42008,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7000,
             'name' => 'Puchenau',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7001,
@@ -42764,15 +42020,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7002,
             'name' => 'Ried',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7003,
@@ -42780,15 +42032,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7004,
             'name' => 'Rutzenmoos',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7005,
@@ -42796,15 +42044,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7006,
             'name' => 'Sankt Georgen',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7007,
@@ -42812,15 +42056,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7008,
             'name' => 'Scharding',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7009,
@@ -42828,15 +42068,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7010,
             'name' => 'Schwertberg',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7011,
@@ -42844,15 +42080,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7012,
             'name' => 'Sierning',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7013,
@@ -42860,15 +42092,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7014,
             'name' => 'Steyr',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7015,
@@ -42876,15 +42104,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7016,
             'name' => 'Steyrermuhl',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7017,
@@ -42892,15 +42116,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7018,
             'name' => 'Timelkam',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7019,
@@ -42908,15 +42128,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7020,
             'name' => 'Vocklabruck',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7021,
@@ -42924,15 +42140,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7022,
             'name' => 'Vorchdorf',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7023,
@@ -42940,15 +42152,11 @@ class CitySeeder extends Seeder
             'state_id' => 286
         ]);
 
-
-
         City::create([
             'id' => 7024,
             'name' => 'Wilhering',
             'state_id' => 286
         ]);
-
-
 
         City::create([
             'id' => 7025,
@@ -42956,15 +42164,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7026,
             'name' => 'Anif',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7027,
@@ -42972,15 +42176,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7028,
             'name' => 'Bad Hofgastein',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7029,
@@ -42988,15 +42188,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7030,
             'name' => 'Bischofshofen',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7031,
@@ -43004,15 +42200,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7032,
             'name' => 'Burmoos',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7033,
@@ -43020,15 +42212,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7034,
             'name' => 'Eugendorf',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7035,
@@ -43036,15 +42224,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7036,
             'name' => 'Grodig',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7037,
@@ -43052,15 +42236,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7038,
             'name' => 'Hallwang',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7039,
@@ -43068,15 +42248,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7040,
             'name' => 'Kuchl',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7041,
@@ -43084,15 +42260,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7042,
             'name' => 'Mittersill',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7043,
@@ -43100,15 +42272,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7044,
             'name' => 'Oberndorf',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7045,
@@ -43116,15 +42284,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7046,
             'name' => 'Piesendorf',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7047,
@@ -43132,15 +42296,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7048,
             'name' => 'Radstadt',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7049,
@@ -43148,15 +42308,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7050,
             'name' => 'Salzburg',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7051,
@@ -43164,15 +42320,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7052,
             'name' => 'Seekirchen',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7053,
@@ -43180,15 +42332,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7054,
             'name' => 'StraBwalchen',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7055,
@@ -43196,15 +42344,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7056,
             'name' => 'Tamsweg',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7057,
@@ -43212,15 +42356,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7058,
             'name' => 'Wals-Siezenheim',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7059,
@@ -43228,15 +42368,11 @@ class CitySeeder extends Seeder
             'state_id' => 287
         ]);
 
-
-
         City::create([
             'id' => 7060,
             'name' => 'Zell am See',
             'state_id' => 287
         ]);
-
-
 
         City::create([
             'id' => 7061,
@@ -43244,15 +42380,11 @@ class CitySeeder extends Seeder
             'state_id' => 288
         ]);
 
-
-
         City::create([
             'id' => 7062,
             'name' => 'Bad Aussee',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7063,
@@ -43260,15 +42392,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7064,
             'name' => 'Bruck an der Mur',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7065,
@@ -43276,15 +42404,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7066,
             'name' => 'Eisenerz',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7067,
@@ -43292,15 +42416,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7068,
             'name' => 'Feldkirchen bei Graz',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7069,
@@ -43308,15 +42428,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7070,
             'name' => 'Frohnleiten',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7071,
@@ -43324,15 +42440,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7072,
             'name' => 'Gleisdorf',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7073,
@@ -43340,15 +42452,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7074,
             'name' => 'Graz',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7075,
@@ -43356,15 +42464,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7076,
             'name' => 'Judenburg',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7077,
@@ -43372,15 +42476,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7078,
             'name' => 'Kapfenberg',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7079,
@@ -43388,15 +42488,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7080,
             'name' => 'Kindberg',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7081,
@@ -43404,15 +42500,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7082,
             'name' => 'Koflach',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7083,
@@ -43420,15 +42512,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7084,
             'name' => 'Lannach',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7085,
@@ -43436,15 +42524,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7086,
             'name' => 'Leoben',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7087,
@@ -43452,15 +42536,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7088,
             'name' => 'Murzzuschlag',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7089,
@@ -43468,15 +42548,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7090,
             'name' => 'Schladming',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7091,
@@ -43484,15 +42560,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7092,
             'name' => 'Spielberg',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7093,
@@ -43500,15 +42572,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7094,
             'name' => 'Voitsberg',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7095,
@@ -43516,15 +42584,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7096,
             'name' => 'Weiz',
             'state_id' => 289
         ]);
-
-
 
         City::create([
             'id' => 7097,
@@ -43532,15 +42596,11 @@ class CitySeeder extends Seeder
             'state_id' => 289
         ]);
 
-
-
         City::create([
             'id' => 7098,
             'name' => 'Deutschfeistritz',
             'state_id' => 290
         ]);
-
-
 
         City::create([
             'id' => 7099,
@@ -43548,15 +42608,11 @@ class CitySeeder extends Seeder
             'state_id' => 290
         ]);
 
-
-
         City::create([
             'id' => 7100,
             'name' => 'Sankt Bartholoma',
             'state_id' => 290
         ]);
-
-
 
         City::create([
             'id' => 7101,
@@ -43564,15 +42620,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7102,
             'name' => 'Axams',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7103,
@@ -43580,15 +42632,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7104,
             'name' => 'Fugen',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7105,
@@ -43596,15 +42644,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7106,
             'name' => 'Haselgehr',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7107,
@@ -43612,15 +42656,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7108,
             'name' => 'Imst',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7109,
@@ -43628,15 +42668,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7110,
             'name' => 'Jenbach',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7111,
@@ -43644,15 +42680,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7112,
             'name' => 'Kirchbichl',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7113,
@@ -43660,15 +42692,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7114,
             'name' => 'Kramsach',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7115,
@@ -43676,15 +42704,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7116,
             'name' => 'Landeck',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7117,
@@ -43692,15 +42716,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7118,
             'name' => 'Matrei',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7119,
@@ -43708,15 +42728,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7120,
             'name' => 'Reutte',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7121,
@@ -43724,15 +42740,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7122,
             'name' => 'Sankt Johann in Tirol',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7123,
@@ -43740,15 +42752,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7124,
             'name' => 'Schwaz',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7125,
@@ -43756,15 +42764,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7126,
             'name' => 'Telfs',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7127,
@@ -43772,15 +42776,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7128,
             'name' => 'Vomp',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7129,
@@ -43788,15 +42788,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7130,
             'name' => 'Worgl',
             'state_id' => 291
         ]);
-
-
 
         City::create([
             'id' => 7131,
@@ -43804,15 +42800,11 @@ class CitySeeder extends Seeder
             'state_id' => 291
         ]);
 
-
-
         City::create([
             'id' => 7132,
             'name' => 'Altach',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7133,
@@ -43820,15 +42812,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7134,
             'name' => 'Bregenz',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7135,
@@ -43836,15 +42824,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7136,
             'name' => 'Dietmannsried',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7137,
@@ -43852,15 +42836,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7138,
             'name' => 'Feldkirch',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7139,
@@ -43868,15 +42848,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7140,
             'name' => 'Gotzis',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7141,
@@ -43884,15 +42860,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7142,
             'name' => 'Hochst',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7143,
@@ -43900,15 +42872,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7144,
             'name' => 'Horbranz',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7145,
@@ -43916,15 +42884,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7146,
             'name' => 'Lauterach',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7147,
@@ -43932,15 +42896,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7148,
             'name' => 'Lustenau',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7149,
@@ -43948,15 +42908,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7150,
             'name' => 'Nenzing',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7151,
@@ -43964,15 +42920,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7152,
             'name' => 'Rankweil',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7153,
@@ -43980,15 +42932,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7154,
             'name' => 'Thuringen',
             'state_id' => 293
         ]);
-
-
 
         City::create([
             'id' => 7155,
@@ -43996,15 +42944,11 @@ class CitySeeder extends Seeder
             'state_id' => 293
         ]);
 
-
-
         City::create([
             'id' => 7156,
             'name' => 'Vienna',
             'state_id' => 294
         ]);
-
-
 
         City::create([
             'id' => 7157,
@@ -44012,15 +42956,11 @@ class CitySeeder extends Seeder
             'state_id' => 294
         ]);
 
-
-
         City::create([
             'id' => 7158,
             'name' => 'Alat',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7159,
@@ -44028,15 +42968,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7160,
             'name' => 'Baki',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7161,
@@ -44044,15 +42980,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7162,
             'name' => 'Balaxani',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7163,
@@ -44060,15 +42992,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7164,
             'name' => 'Bilqax',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7165,
@@ -44076,15 +43004,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7166,
             'name' => 'Buzovna',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7167,
@@ -44092,15 +43016,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7168,
             'name' => 'Hovsan',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7169,
@@ -44108,15 +43028,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7170,
             'name' => 'Mastaga',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7171,
@@ -44124,15 +43040,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7172,
             'name' => 'Qarasuxur',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7173,
@@ -44140,15 +43052,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7174,
             'name' => 'Rasulzada',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7175,
@@ -44156,15 +43064,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7176,
             'name' => 'Sanqacal',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7177,
@@ -44172,15 +43076,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7178,
             'name' => 'Suraxani',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7179,
@@ -44188,15 +43088,11 @@ class CitySeeder extends Seeder
             'state_id' => 295
         ]);
 
-
-
         City::create([
             'id' => 7180,
             'name' => 'Zirya',
             'state_id' => 295
         ]);
-
-
 
         City::create([
             'id' => 7181,
@@ -44204,15 +43100,11 @@ class CitySeeder extends Seeder
             'state_id' => 297
         ]);
 
-
-
         City::create([
             'id' => 7182,
             'name' => 'Ganca',
             'state_id' => 297
         ]);
-
-
 
         City::create([
             'id' => 7183,
@@ -44220,15 +43112,11 @@ class CitySeeder extends Seeder
             'state_id' => 297
         ]);
 
-
-
         City::create([
             'id' => 7184,
             'name' => 'Ganja',
             'state_id' => 298
         ]);
-
-
 
         City::create([
             'id' => 7185,
@@ -44236,15 +43124,11 @@ class CitySeeder extends Seeder
             'state_id' => 299
         ]);
 
-
-
         City::create([
             'id' => 7186,
             'name' => 'Kalbacar',
             'state_id' => 299
         ]);
-
-
 
         City::create([
             'id' => 7187,
@@ -44252,15 +43136,11 @@ class CitySeeder extends Seeder
             'state_id' => 299
         ]);
 
-
-
         City::create([
             'id' => 7188,
             'name' => 'Astara',
             'state_id' => 300
         ]);
-
-
 
         City::create([
             'id' => 7189,
@@ -44268,15 +43148,11 @@ class CitySeeder extends Seeder
             'state_id' => 300
         ]);
 
-
-
         City::create([
             'id' => 7190,
             'name' => 'Lankaran',
             'state_id' => 300
         ]);
-
-
 
         City::create([
             'id' => 7191,
@@ -44284,15 +43160,11 @@ class CitySeeder extends Seeder
             'state_id' => 300
         ]);
 
-
-
         City::create([
             'id' => 7192,
             'name' => 'Neftcala',
             'state_id' => 300
         ]);
-
-
 
         City::create([
             'id' => 7193,
@@ -44300,15 +43172,11 @@ class CitySeeder extends Seeder
             'state_id' => 301
         ]);
 
-
-
         City::create([
             'id' => 7194,
             'name' => 'Agdam',
             'state_id' => 301
         ]);
-
-
 
         City::create([
             'id' => 7195,
@@ -44316,15 +43184,11 @@ class CitySeeder extends Seeder
             'state_id' => 301
         ]);
 
-
-
         City::create([
             'id' => 7196,
             'name' => 'Mingacevir',
             'state_id' => 301
         ]);
-
-
 
         City::create([
             'id' => 7197,
@@ -44332,15 +43196,11 @@ class CitySeeder extends Seeder
             'state_id' => 301
         ]);
 
-
-
         City::create([
             'id' => 7198,
             'name' => 'Yevlax',
             'state_id' => 301
         ]);
-
-
 
         City::create([
             'id' => 7199,
@@ -44348,15 +43208,11 @@ class CitySeeder extends Seeder
             'state_id' => 302
         ]);
 
-
-
         City::create([
             'id' => 7200,
             'name' => 'Bilasuvar',
             'state_id' => 302
         ]);
-
-
 
         City::create([
             'id' => 7201,
@@ -44364,15 +43220,11 @@ class CitySeeder extends Seeder
             'state_id' => 302
         ]);
 
-
-
         City::create([
             'id' => 7202,
             'name' => 'Qarasu',
             'state_id' => 302
         ]);
-
-
 
         City::create([
             'id' => 7203,
@@ -44380,15 +43232,11 @@ class CitySeeder extends Seeder
             'state_id' => 302
         ]);
 
-
-
         City::create([
             'id' => 7204,
             'name' => 'Saatli',
             'state_id' => 302
         ]);
-
-
 
         City::create([
             'id' => 7205,
@@ -44396,15 +43244,11 @@ class CitySeeder extends Seeder
             'state_id' => 302
         ]);
 
-
-
         City::create([
             'id' => 7206,
             'name' => 'Salyan',
             'state_id' => 302
         ]);
-
-
 
         City::create([
             'id' => 7207,
@@ -44412,15 +43256,11 @@ class CitySeeder extends Seeder
             'state_id' => 303
         ]);
 
-
-
         City::create([
             'id' => 7208,
             'name' => 'Xankandi',
             'state_id' => 303
         ]);
-
-
 
         City::create([
             'id' => 7209,
@@ -44428,15 +43268,11 @@ class CitySeeder extends Seeder
             'state_id' => 303
         ]);
 
-
-
         City::create([
             'id' => 7210,
             'name' => 'Culfa',
             'state_id' => 304
         ]);
-
-
 
         City::create([
             'id' => 7211,
@@ -44444,15 +43280,11 @@ class CitySeeder extends Seeder
             'state_id' => 304
         ]);
 
-
-
         City::create([
             'id' => 7212,
             'name' => 'Ordubad',
             'state_id' => 304
         ]);
-
-
 
         City::create([
             'id' => 7213,
@@ -44460,15 +43292,11 @@ class CitySeeder extends Seeder
             'state_id' => 304
         ]);
 
-
-
         City::create([
             'id' => 7214,
             'name' => 'Sarur',
             'state_id' => 304
         ]);
-
-
 
         City::create([
             'id' => 7215,
@@ -44476,15 +43304,11 @@ class CitySeeder extends Seeder
             'state_id' => 305
         ]);
 
-
-
         City::create([
             'id' => 7216,
             'name' => 'Fuzuli',
             'state_id' => 305
         ]);
-
-
 
         City::create([
             'id' => 7217,
@@ -44492,15 +43316,11 @@ class CitySeeder extends Seeder
             'state_id' => 305
         ]);
 
-
-
         City::create([
             'id' => 7218,
             'name' => 'Agstafa',
             'state_id' => 306
         ]);
-
-
 
         City::create([
             'id' => 7219,
@@ -44508,15 +43328,11 @@ class CitySeeder extends Seeder
             'state_id' => 306
         ]);
 
-
-
         City::create([
             'id' => 7220,
             'name' => 'Kovlar',
             'state_id' => 306
         ]);
-
-
 
         City::create([
             'id' => 7221,
@@ -44524,15 +43340,11 @@ class CitySeeder extends Seeder
             'state_id' => 306
         ]);
 
-
-
         City::create([
             'id' => 7222,
             'name' => 'Qazax',
             'state_id' => 306
         ]);
-
-
 
         City::create([
             'id' => 7223,
@@ -44540,15 +43352,11 @@ class CitySeeder extends Seeder
             'state_id' => 306
         ]);
 
-
-
         City::create([
             'id' => 7224,
             'name' => 'Tovuz',
             'state_id' => 306
         ]);
-
-
 
         City::create([
             'id' => 7225,
@@ -44556,15 +43364,11 @@ class CitySeeder extends Seeder
             'state_id' => 307
         ]);
 
-
-
         City::create([
             'id' => 7226,
             'name' => 'Balakan',
             'state_id' => 307
         ]);
-
-
 
         City::create([
             'id' => 7227,
@@ -44572,15 +43376,11 @@ class CitySeeder extends Seeder
             'state_id' => 307
         ]);
 
-
-
         City::create([
             'id' => 7228,
             'name' => 'Oguz',
             'state_id' => 307
         ]);
-
-
 
         City::create([
             'id' => 7229,
@@ -44588,15 +43388,11 @@ class CitySeeder extends Seeder
             'state_id' => 307
         ]);
 
-
-
         City::create([
             'id' => 7230,
             'name' => 'Qax',
             'state_id' => 307
         ]);
-
-
 
         City::create([
             'id' => 7231,
@@ -44604,15 +43400,11 @@ class CitySeeder extends Seeder
             'state_id' => 307
         ]);
 
-
-
         City::create([
             'id' => 7232,
             'name' => 'Zaqatala',
             'state_id' => 307
         ]);
-
-
 
         City::create([
             'id' => 7233,
@@ -44620,15 +43412,11 @@ class CitySeeder extends Seeder
             'state_id' => 308
         ]);
 
-
-
         City::create([
             'id' => 7234,
             'name' => 'Agsu',
             'state_id' => 308
         ]);
-
-
 
         City::create([
             'id' => 7235,
@@ -44636,15 +43424,11 @@ class CitySeeder extends Seeder
             'state_id' => 308
         ]);
 
-
-
         City::create([
             'id' => 7236,
             'name' => 'Ismayilli',
             'state_id' => 308
         ]);
-
-
 
         City::create([
             'id' => 7237,
@@ -44652,15 +43436,11 @@ class CitySeeder extends Seeder
             'state_id' => 308
         ]);
 
-
-
         City::create([
             'id' => 7238,
             'name' => 'Samaxi',
             'state_id' => 308
         ]);
-
-
 
         City::create([
             'id' => 7239,
@@ -44668,15 +43448,11 @@ class CitySeeder extends Seeder
             'state_id' => 308
         ]);
 
-
-
         City::create([
             'id' => 7240,
             'name' => 'Zardab',
             'state_id' => 308
         ]);
-
-
 
         City::create([
             'id' => 7241,
@@ -44684,15 +43460,11 @@ class CitySeeder extends Seeder
             'state_id' => 309
         ]);
 
-
-
         City::create([
             'id' => 7242,
             'name' => 'Quba',
             'state_id' => 309
         ]);
-
-
 
         City::create([
             'id' => 7243,
@@ -44700,15 +43472,11 @@ class CitySeeder extends Seeder
             'state_id' => 309
         ]);
 
-
-
         City::create([
             'id' => 7244,
             'name' => 'Siyazan',
             'state_id' => 309
         ]);
-
-
 
         City::create([
             'id' => 7245,
@@ -44716,15 +43484,11 @@ class CitySeeder extends Seeder
             'state_id' => 309
         ]);
 
-
-
         City::create([
             'id' => 7246,
             'name' => 'Xudat',
             'state_id' => 309
         ]);
-
-
 
         City::create([
             'id' => 7247,
@@ -44732,15 +43496,11 @@ class CitySeeder extends Seeder
             'state_id' => 310
         ]);
 
-
-
         City::create([
             'id' => 7248,
             'name' => 'Marsh Harbour',
             'state_id' => 310
         ]);
-
-
 
         City::create([
             'id' => 7249,
@@ -44748,15 +43508,11 @@ class CitySeeder extends Seeder
             'state_id' => 312
         ]);
 
-
-
         City::create([
             'id' => 7250,
             'name' => 'Nicholls Town',
             'state_id' => 312
         ]);
-
-
 
         City::create([
             'id' => 7251,
@@ -44764,15 +43520,11 @@ class CitySeeder extends Seeder
             'state_id' => 314
         ]);
 
-
-
         City::create([
             'id' => 7252,
             'name' => 'Freetown',
             'state_id' => 317
         ]);
-
-
 
         City::create([
             'id' => 7253,
@@ -44780,15 +43532,11 @@ class CitySeeder extends Seeder
             'state_id' => 317
         ]);
 
-
-
         City::create([
             'id' => 7254,
             'name' => 'Pirates Well',
             'state_id' => 322
         ]);
-
-
 
         City::create([
             'id' => 7255,
@@ -44796,15 +43544,11 @@ class CitySeeder extends Seeder
             'state_id' => 327
         ]);
 
-
-
         City::create([
             'id' => 7256,
             'name' => 'Badiyah',
             'state_id' => 328
         ]);
-
-
 
         City::create([
             'id' => 7257,
@@ -44812,15 +43556,11 @@ class CitySeeder extends Seeder
             'state_id' => 329
         ]);
 
-
-
         City::create([
             'id' => 7258,
             'name' => 'Mahama',
             'state_id' => 331
         ]);
-
-
 
         City::create([
             'id' => 7259,
@@ -44828,15 +43568,11 @@ class CitySeeder extends Seeder
             'state_id' => 332
         ]);
 
-
-
         City::create([
             'id' => 7260,
             'name' => 'Sitrah',
             'state_id' => 333
         ]);
-
-
 
         City::create([
             'id' => 7261,
@@ -44844,15 +43580,11 @@ class CitySeeder extends Seeder
             'state_id' => 334
         ]);
 
-
-
         City::create([
             'id' => 7262,
             'name' => 'al-Muharraq',
             'state_id' => 335
         ]);
-
-
 
         City::create([
             'id' => 7263,
@@ -44860,15 +43592,11 @@ class CitySeeder extends Seeder
             'state_id' => 336
         ]);
 
-
-
         City::create([
             'id' => 7264,
             'name' => 'Bandarban',
             'state_id' => 338
         ]);
-
-
 
         City::create([
             'id' => 7265,
@@ -44876,15 +43604,11 @@ class CitySeeder extends Seeder
             'state_id' => 339
         ]);
 
-
-
         City::create([
             'id' => 7266,
             'name' => 'Barisal',
             'state_id' => 340
         ]);
-
-
 
         City::create([
             'id' => 7267,
@@ -44892,15 +43616,11 @@ class CitySeeder extends Seeder
             'state_id' => 340
         ]);
 
-
-
         City::create([
             'id' => 7268,
             'name' => 'Mehendiganj',
             'state_id' => 340
         ]);
-
-
 
         City::create([
             'id' => 7269,
@@ -44908,15 +43628,11 @@ class CitySeeder extends Seeder
             'state_id' => 340
         ]);
 
-
-
         City::create([
             'id' => 7270,
             'name' => 'Bhola',
             'state_id' => 341
         ]);
-
-
 
         City::create([
             'id' => 7271,
@@ -44924,15 +43640,11 @@ class CitySeeder extends Seeder
             'state_id' => 341
         ]);
 
-
-
         City::create([
             'id' => 7272,
             'name' => 'Char Fasson',
             'state_id' => 341
         ]);
-
-
 
         City::create([
             'id' => 7273,
@@ -44940,15 +43652,11 @@ class CitySeeder extends Seeder
             'state_id' => 341
         ]);
 
-
-
         City::create([
             'id' => 7274,
             'name' => 'Adamighi',
             'state_id' => 342
         ]);
-
-
 
         City::create([
             'id' => 7275,
@@ -44956,15 +43664,11 @@ class CitySeeder extends Seeder
             'state_id' => 342
         ]);
 
-
-
         City::create([
             'id' => 7276,
             'name' => 'Sherpur',
             'state_id' => 342
         ]);
-
-
 
         City::create([
             'id' => 7277,
@@ -44972,15 +43676,11 @@ class CitySeeder extends Seeder
             'state_id' => 344
         ]);
 
-
-
         City::create([
             'id' => 7278,
             'name' => 'Hajiganj',
             'state_id' => 344
         ]);
-
-
 
         City::create([
             'id' => 7279,
@@ -44988,15 +43688,11 @@ class CitySeeder extends Seeder
             'state_id' => 345
         ]);
 
-
-
         City::create([
             'id' => 7280,
             'name' => 'Chattagam',
             'state_id' => 345
         ]);
-
-
 
         City::create([
             'id' => 7281,
@@ -45004,15 +43700,11 @@ class CitySeeder extends Seeder
             'state_id' => 345
         ]);
 
-
-
         City::create([
             'id' => 7282,
             'name' => 'Lohagara',
             'state_id' => 345
         ]);
-
-
 
         City::create([
             'id' => 7283,
@@ -45020,15 +43712,11 @@ class CitySeeder extends Seeder
             'state_id' => 345
         ]);
 
-
-
         City::create([
             'id' => 7284,
             'name' => 'Rangunia',
             'state_id' => 345
         ]);
-
-
 
         City::create([
             'id' => 7285,
@@ -45036,15 +43724,11 @@ class CitySeeder extends Seeder
             'state_id' => 345
         ]);
 
-
-
         City::create([
             'id' => 7286,
             'name' => 'Sandip',
             'state_id' => 345
         ]);
-
-
 
         City::create([
             'id' => 7287,
@@ -45052,15 +43736,11 @@ class CitySeeder extends Seeder
             'state_id' => 345
         ]);
 
-
-
         City::create([
             'id' => 7288,
             'name' => 'Alamdanga',
             'state_id' => 347
         ]);
-
-
 
         City::create([
             'id' => 7289,
@@ -45068,15 +43748,11 @@ class CitySeeder extends Seeder
             'state_id' => 347
         ]);
 
-
-
         City::create([
             'id' => 7290,
             'name' => 'Damurhuda',
             'state_id' => 347
         ]);
-
-
 
         City::create([
             'id' => 7291,
@@ -45084,15 +43760,11 @@ class CitySeeder extends Seeder
             'state_id' => 348
         ]);
 
-
-
         City::create([
             'id' => 7292,
             'name' => 'Dhamrai',
             'state_id' => 348
         ]);
-
-
 
         City::create([
             'id' => 7293,
@@ -45100,15 +43772,11 @@ class CitySeeder extends Seeder
             'state_id' => 348
         ]);
 
-
-
         City::create([
             'id' => 7294,
             'name' => 'Bochanganj',
             'state_id' => 349
         ]);
-
-
 
         City::create([
             'id' => 7295,
@@ -45116,15 +43784,11 @@ class CitySeeder extends Seeder
             'state_id' => 349
         ]);
 
-
-
         City::create([
             'id' => 7296,
             'name' => 'Fulbari',
             'state_id' => 349
         ]);
-
-
 
         City::create([
             'id' => 7297,
@@ -45132,15 +43796,11 @@ class CitySeeder extends Seeder
             'state_id' => 349
         ]);
 
-
-
         City::create([
             'id' => 7298,
             'name' => 'Bhanga',
             'state_id' => 350
         ]);
-
-
 
         City::create([
             'id' => 7299,
@@ -45148,15 +43808,11 @@ class CitySeeder extends Seeder
             'state_id' => 350
         ]);
 
-
-
         City::create([
             'id' => 7300,
             'name' => 'Faridpur',
             'state_id' => 350
         ]);
-
-
 
         City::create([
             'id' => 7301,
@@ -45164,15 +43820,11 @@ class CitySeeder extends Seeder
             'state_id' => 351
         ]);
 
-
-
         City::create([
             'id' => 7302,
             'name' => 'Feni',
             'state_id' => 351
         ]);
-
-
 
         City::create([
             'id' => 7303,
@@ -45180,15 +43832,11 @@ class CitySeeder extends Seeder
             'state_id' => 352
         ]);
 
-
-
         City::create([
             'id' => 7304,
             'name' => 'Gazipur',
             'state_id' => 353
         ]);
-
-
 
         City::create([
             'id' => 7305,
@@ -45196,15 +43844,11 @@ class CitySeeder extends Seeder
             'state_id' => 353
         ]);
 
-
-
         City::create([
             'id' => 7306,
             'name' => 'Gopalganj',
             'state_id' => 354
         ]);
-
-
 
         City::create([
             'id' => 7307,
@@ -45212,15 +43856,11 @@ class CitySeeder extends Seeder
             'state_id' => 354
         ]);
 
-
-
         City::create([
             'id' => 7308,
             'name' => 'Baniachang',
             'state_id' => 355
         ]);
-
-
 
         City::create([
             'id' => 7309,
@@ -45228,15 +43868,11 @@ class CitySeeder extends Seeder
             'state_id' => 355
         ]);
 
-
-
         City::create([
             'id' => 7310,
             'name' => 'Jamalpur',
             'state_id' => 357
         ]);
-
-
 
         City::create([
             'id' => 7311,
@@ -45244,15 +43880,11 @@ class CitySeeder extends Seeder
             'state_id' => 357
         ]);
 
-
-
         City::create([
             'id' => 7312,
             'name' => 'Abhaynagar',
             'state_id' => 358
         ]);
-
-
 
         City::create([
             'id' => 7313,
@@ -45260,15 +43892,11 @@ class CitySeeder extends Seeder
             'state_id' => 358
         ]);
 
-
-
         City::create([
             'id' => 7314,
             'name' => 'Jhikargachha',
             'state_id' => 358
         ]);
-
-
 
         City::create([
             'id' => 7315,
@@ -45276,15 +43904,11 @@ class CitySeeder extends Seeder
             'state_id' => 358
         ]);
 
-
-
         City::create([
             'id' => 7316,
             'name' => 'Jhalakati',
             'state_id' => 359
         ]);
-
-
 
         City::create([
             'id' => 7317,
@@ -45292,15 +43916,11 @@ class CitySeeder extends Seeder
             'state_id' => 360
         ]);
 
-
-
         City::create([
             'id' => 7318,
             'name' => 'Kaliganj',
             'state_id' => 360
         ]);
-
-
 
         City::create([
             'id' => 7319,
@@ -45308,15 +43928,11 @@ class CitySeeder extends Seeder
             'state_id' => 360
         ]);
 
-
-
         City::create([
             'id' => 7320,
             'name' => 'Shailkupa',
             'state_id' => 360
         ]);
-
-
 
         City::create([
             'id' => 7321,
@@ -45324,15 +43940,11 @@ class CitySeeder extends Seeder
             'state_id' => 361
         ]);
 
-
-
         City::create([
             'id' => 7322,
             'name' => 'Manikchhari',
             'state_id' => 361
         ]);
-
-
 
         City::create([
             'id' => 7323,
@@ -45340,15 +43952,11 @@ class CitySeeder extends Seeder
             'state_id' => 361
         ]);
 
-
-
         City::create([
             'id' => 7324,
             'name' => 'Khulna',
             'state_id' => 362
         ]);
-
-
 
         City::create([
             'id' => 7325,
@@ -45356,15 +43964,11 @@ class CitySeeder extends Seeder
             'state_id' => 362
         ]);
 
-
-
         City::create([
             'id' => 7326,
             'name' => 'Bajitpur',
             'state_id' => 363
         ]);
-
-
 
         City::create([
             'id' => 7327,
@@ -45372,15 +43976,11 @@ class CitySeeder extends Seeder
             'state_id' => 363
         ]);
 
-
-
         City::create([
             'id' => 7328,
             'name' => 'Itna',
             'state_id' => 363
         ]);
-
-
 
         City::create([
             'id' => 7329,
@@ -45388,15 +43988,11 @@ class CitySeeder extends Seeder
             'state_id' => 363
         ]);
 
-
-
         City::create([
             'id' => 7330,
             'name' => 'Komilla',
             'state_id' => 365
         ]);
-
-
 
         City::create([
             'id' => 7331,
@@ -45404,15 +44000,11 @@ class CitySeeder extends Seeder
             'state_id' => 365
         ]);
 
-
-
         City::create([
             'id' => 7332,
             'name' => 'Chilmari',
             'state_id' => 366
         ]);
-
-
 
         City::create([
             'id' => 7333,
@@ -45420,15 +44012,11 @@ class CitySeeder extends Seeder
             'state_id' => 366
         ]);
 
-
-
         City::create([
             'id' => 7334,
             'name' => 'Nageshwari',
             'state_id' => 366
         ]);
-
-
 
         City::create([
             'id' => 7335,
@@ -45436,15 +44024,11 @@ class CitySeeder extends Seeder
             'state_id' => 366
         ]);
 
-
-
         City::create([
             'id' => 7336,
             'name' => 'Bheramara',
             'state_id' => 367
         ]);
-
-
 
         City::create([
             'id' => 7337,
@@ -45452,15 +44036,11 @@ class CitySeeder extends Seeder
             'state_id' => 367
         ]);
 
-
-
         City::create([
             'id' => 7338,
             'name' => 'Lakshmipur',
             'state_id' => 368
         ]);
-
-
 
         City::create([
             'id' => 7339,
@@ -45468,15 +44048,11 @@ class CitySeeder extends Seeder
             'state_id' => 368
         ]);
 
-
-
         City::create([
             'id' => 7340,
             'name' => 'Ramgati',
             'state_id' => 368
         ]);
-
-
 
         City::create([
             'id' => 7341,
@@ -45484,15 +44060,11 @@ class CitySeeder extends Seeder
             'state_id' => 368
         ]);
 
-
-
         City::create([
             'id' => 7342,
             'name' => 'Madaripur',
             'state_id' => 370
         ]);
-
-
 
         City::create([
             'id' => 7343,
@@ -45500,15 +44072,11 @@ class CitySeeder extends Seeder
             'state_id' => 371
         ]);
 
-
-
         City::create([
             'id' => 7344,
             'name' => 'Bhaluka',
             'state_id' => 372
         ]);
-
-
 
         City::create([
             'id' => 7345,
@@ -45516,15 +44084,11 @@ class CitySeeder extends Seeder
             'state_id' => 372
         ]);
 
-
-
         City::create([
             'id' => 7346,
             'name' => 'Gafargaon',
             'state_id' => 372
         ]);
-
-
 
         City::create([
             'id' => 7347,
@@ -45532,15 +44096,11 @@ class CitySeeder extends Seeder
             'state_id' => 372
         ]);
 
-
-
         City::create([
             'id' => 7348,
             'name' => 'Maimansingh',
             'state_id' => 372
         ]);
-
-
 
         City::create([
             'id' => 7349,
@@ -45548,15 +44108,11 @@ class CitySeeder extends Seeder
             'state_id' => 372
         ]);
 
-
-
         City::create([
             'id' => 7350,
             'name' => 'Trishal',
             'state_id' => 372
         ]);
-
-
 
         City::create([
             'id' => 7351,
@@ -45564,15 +44120,11 @@ class CitySeeder extends Seeder
             'state_id' => 373
         ]);
 
-
-
         City::create([
             'id' => 7352,
             'name' => 'Meherpur',
             'state_id' => 375
         ]);
-
-
 
         City::create([
             'id' => 7353,
@@ -45580,15 +44132,11 @@ class CitySeeder extends Seeder
             'state_id' => 376
         ]);
 
-
-
         City::create([
             'id' => 7354,
             'name' => 'Kalia',
             'state_id' => 377
         ]);
-
-
 
         City::create([
             'id' => 7355,
@@ -45596,15 +44144,11 @@ class CitySeeder extends Seeder
             'state_id' => 377
         ]);
 
-
-
         City::create([
             'id' => 7356,
             'name' => 'Narayanganj',
             'state_id' => 378
         ]);
-
-
 
         City::create([
             'id' => 7357,
@@ -45612,15 +44156,11 @@ class CitySeeder extends Seeder
             'state_id' => 378
         ]);
 
-
-
         City::create([
             'id' => 7358,
             'name' => 'Narsingdi',
             'state_id' => 379
         ]);
-
-
 
         City::create([
             'id' => 7359,
@@ -45628,15 +44168,11 @@ class CitySeeder extends Seeder
             'state_id' => 379
         ]);
 
-
-
         City::create([
             'id' => 7360,
             'name' => 'Gurudaspur',
             'state_id' => 380
         ]);
-
-
 
         City::create([
             'id' => 7361,
@@ -45644,15 +44180,11 @@ class CitySeeder extends Seeder
             'state_id' => 380
         ]);
 
-
-
         City::create([
             'id' => 7362,
             'name' => 'Naugaon',
             'state_id' => 381
         ]);
-
-
 
         City::create([
             'id' => 7363,
@@ -45660,15 +44192,11 @@ class CitySeeder extends Seeder
             'state_id' => 382
         ]);
 
-
-
         City::create([
             'id' => 7364,
             'name' => 'Nawabganj',
             'state_id' => 382
         ]);
-
-
 
         City::create([
             'id' => 7365,
@@ -45676,15 +44204,11 @@ class CitySeeder extends Seeder
             'state_id' => 382
         ]);
 
-
-
         City::create([
             'id' => 7366,
             'name' => 'Netrakona',
             'state_id' => 383
         ]);
-
-
 
         City::create([
             'id' => 7367,
@@ -45692,15 +44216,11 @@ class CitySeeder extends Seeder
             'state_id' => 384
         ]);
 
-
-
         City::create([
             'id' => 7368,
             'name' => 'Nilphamari',
             'state_id' => 384
         ]);
-
-
 
         City::create([
             'id' => 7369,
@@ -45708,15 +44228,11 @@ class CitySeeder extends Seeder
             'state_id' => 384
         ]);
 
-
-
         City::create([
             'id' => 7370,
             'name' => 'Begamganj',
             'state_id' => 385
         ]);
-
-
 
         City::create([
             'id' => 7371,
@@ -45724,15 +44240,11 @@ class CitySeeder extends Seeder
             'state_id' => 385
         ]);
 
-
-
         City::create([
             'id' => 7372,
             'name' => 'Senbagh',
             'state_id' => 385
         ]);
-
-
 
         City::create([
             'id' => 7373,
@@ -45740,15 +44252,11 @@ class CitySeeder extends Seeder
             'state_id' => 386
         ]);
 
-
-
         City::create([
             'id' => 7374,
             'name' => 'Bhangura',
             'state_id' => 386
         ]);
-
-
 
         City::create([
             'id' => 7375,
@@ -45756,15 +44264,11 @@ class CitySeeder extends Seeder
             'state_id' => 386
         ]);
 
-
-
         City::create([
             'id' => 7376,
             'name' => 'Pabna',
             'state_id' => 386
         ]);
-
-
 
         City::create([
             'id' => 7377,
@@ -45772,15 +44276,11 @@ class CitySeeder extends Seeder
             'state_id' => 387
         ]);
 
-
-
         City::create([
             'id' => 7378,
             'name' => 'Patuakhali',
             'state_id' => 388
         ]);
-
-
 
         City::create([
             'id' => 7379,
@@ -45788,15 +44288,11 @@ class CitySeeder extends Seeder
             'state_id' => 389
         ]);
 
-
-
         City::create([
             'id' => 7380,
             'name' => 'Mathbaria',
             'state_id' => 389
         ]);
-
-
 
         City::create([
             'id' => 7381,
@@ -45804,15 +44300,11 @@ class CitySeeder extends Seeder
             'state_id' => 389
         ]);
 
-
-
         City::create([
             'id' => 7382,
             'name' => 'Pirojpur',
             'state_id' => 389
         ]);
-
-
 
         City::create([
             'id' => 7383,
@@ -45820,15 +44312,11 @@ class CitySeeder extends Seeder
             'state_id' => 390
         ]);
 
-
-
         City::create([
             'id' => 7384,
             'name' => 'Rajbari',
             'state_id' => 390
         ]);
-
-
 
         City::create([
             'id' => 7385,
@@ -45836,15 +44324,11 @@ class CitySeeder extends Seeder
             'state_id' => 391
         ]);
 
-
-
         City::create([
             'id' => 7386,
             'name' => 'Kaptai',
             'state_id' => 392
         ]);
-
-
 
         City::create([
             'id' => 7387,
@@ -45852,15 +44336,11 @@ class CitySeeder extends Seeder
             'state_id' => 392
         ]);
 
-
-
         City::create([
             'id' => 7388,
             'name' => 'Badarganj',
             'state_id' => 393
         ]);
-
-
 
         City::create([
             'id' => 7389,
@@ -45868,15 +44348,11 @@ class CitySeeder extends Seeder
             'state_id' => 393
         ]);
 
-
-
         City::create([
             'id' => 7390,
             'name' => 'Rangpur',
             'state_id' => 393
         ]);
-
-
 
         City::create([
             'id' => 7391,
@@ -45884,15 +44360,11 @@ class CitySeeder extends Seeder
             'state_id' => 394
         ]);
 
-
-
         City::create([
             'id' => 7392,
             'name' => 'Palang',
             'state_id' => 395
         ]);
-
-
 
         City::create([
             'id' => 7393,
@@ -45900,15 +44372,11 @@ class CitySeeder extends Seeder
             'state_id' => 396
         ]);
 
-
-
         City::create([
             'id' => 7394,
             'name' => 'Sherpur',
             'state_id' => 396
         ]);
-
-
 
         City::create([
             'id' => 7395,
@@ -45916,15 +44384,11 @@ class CitySeeder extends Seeder
             'state_id' => 397
         ]);
 
-
-
         City::create([
             'id' => 7396,
             'name' => 'Shahjadpur',
             'state_id' => 398
         ]);
-
-
 
         City::create([
             'id' => 7397,
@@ -45932,15 +44396,11 @@ class CitySeeder extends Seeder
             'state_id' => 398
         ]);
 
-
-
         City::create([
             'id' => 7398,
             'name' => 'Chhatak',
             'state_id' => 399
         ]);
-
-
 
         City::create([
             'id' => 7399,
@@ -45948,15 +44408,11 @@ class CitySeeder extends Seeder
             'state_id' => 399
         ]);
 
-
-
         City::create([
             'id' => 7400,
             'name' => 'Gopalpur',
             'state_id' => 400
         ]);
-
-
 
         City::create([
             'id' => 7401,
@@ -45964,15 +44420,11 @@ class CitySeeder extends Seeder
             'state_id' => 400
         ]);
 
-
-
         City::create([
             'id' => 7402,
             'name' => 'Sakhipur',
             'state_id' => 400
         ]);
-
-
 
         City::create([
             'id' => 7403,
@@ -45980,15 +44432,11 @@ class CitySeeder extends Seeder
             'state_id' => 400
         ]);
 
-
-
         City::create([
             'id' => 7404,
             'name' => 'Pirganj',
             'state_id' => 401
         ]);
-
-
 
         City::create([
             'id' => 7405,
@@ -45996,15 +44444,11 @@ class CitySeeder extends Seeder
             'state_id' => 401
         ]);
 
-
-
         City::create([
             'id' => 7406,
             'name' => 'Baranavichy',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7407,
@@ -46012,15 +44456,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7408,
             'name' => 'Bjeloozersk',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7409,
@@ -46028,15 +44468,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7410,
             'name' => 'David-Haradok',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7411,
@@ -46044,15 +44480,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7412,
             'name' => 'Hancavichy',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7413,
@@ -46060,15 +44492,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7414,
             'name' => 'Ivanava',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7415,
@@ -46076,15 +44504,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7416,
             'name' => 'Kobryn',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7417,
@@ -46092,15 +44516,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7418,
             'name' => 'Ljahavichy',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7419,
@@ -46108,15 +44528,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7420,
             'name' => 'Malaryta',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7421,
@@ -46124,15 +44540,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7422,
             'name' => 'Pinsk',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7423,
@@ -46140,15 +44552,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7424,
             'name' => 'Stolin',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7425,
@@ -46156,15 +44564,11 @@ class CitySeeder extends Seeder
             'state_id' => 413
         ]);
 
-
-
         City::create([
             'id' => 7426,
             'name' => 'Zhabinka',
             'state_id' => 413
         ]);
-
-
 
         City::create([
             'id' => 7427,
@@ -46172,15 +44576,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7428,
             'name' => 'Chechersk',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7429,
@@ -46188,15 +44588,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7430,
             'name' => 'Hojniki',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7431,
@@ -46204,15 +44600,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7432,
             'name' => 'Jelsk',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7433,
@@ -46220,15 +44612,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7434,
             'name' => 'Kascjukovka',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7435,
@@ -46236,15 +44624,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7436,
             'name' => 'Narovlja',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7437,
@@ -46252,15 +44636,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7438,
             'name' => 'Rahachow',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7439,
@@ -46268,15 +44648,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7440,
             'name' => 'Svetlahorsk',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7441,
@@ -46284,15 +44660,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7442,
             'name' => 'Vjetka',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7443,
@@ -46300,15 +44672,11 @@ class CitySeeder extends Seeder
             'state_id' => 414
         ]);
 
-
-
         City::create([
             'id' => 7444,
             'name' => 'Zhytkavichy',
             'state_id' => 414
         ]);
-
-
 
         City::create([
             'id' => 7445,
@@ -46316,15 +44684,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7446,
             'name' => 'Berjozovka',
             'state_id' => 415
         ]);
-
-
 
         City::create([
             'id' => 7447,
@@ -46332,15 +44696,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7448,
             'name' => 'Lida',
             'state_id' => 415
         ]);
-
-
 
         City::create([
             'id' => 7449,
@@ -46348,15 +44708,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7450,
             'name' => 'Navahrudak',
             'state_id' => 415
         ]);
-
-
 
         City::create([
             'id' => 7451,
@@ -46364,15 +44720,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7452,
             'name' => 'Skidel',
             'state_id' => 415
         ]);
-
-
 
         City::create([
             'id' => 7453,
@@ -46380,15 +44732,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7454,
             'name' => 'Smarhon',
             'state_id' => 415
         ]);
-
-
 
         City::create([
             'id' => 7455,
@@ -46396,15 +44744,11 @@ class CitySeeder extends Seeder
             'state_id' => 415
         ]);
 
-
-
         City::create([
             'id' => 7456,
             'name' => 'Asipovichy',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7457,
@@ -46412,15 +44756,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7458,
             'name' => 'Byhau',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7459,
@@ -46428,15 +44768,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7460,
             'name' => 'Cherikov',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7461,
@@ -46444,15 +44780,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7462,
             'name' => 'Kascjukovichy',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7463,
@@ -46460,15 +44792,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7464,
             'name' => 'Krychaw',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7465,
@@ -46476,15 +44804,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7466,
             'name' => 'Mstislav',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7467,
@@ -46492,15 +44816,11 @@ class CitySeeder extends Seeder
             'state_id' => 416
         ]);
 
-
-
         City::create([
             'id' => 7468,
             'name' => 'Slaeuharad',
             'state_id' => 416
         ]);
-
-
 
         City::create([
             'id' => 7469,
@@ -46508,15 +44828,11 @@ class CitySeeder extends Seeder
             'state_id' => 418
         ]);
 
-
-
         City::create([
             'id' => 7470,
             'name' => 'Petrikov',
             'state_id' => 420
         ]);
-
-
 
         City::create([
             'id' => 7471,
@@ -46524,15 +44840,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7472,
             'name' => 'Braslav',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7473,
@@ -46540,15 +44852,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7474,
             'name' => 'Disna',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7475,
@@ -46556,15 +44864,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7476,
             'name' => 'Dubrovna',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7477,
@@ -46572,15 +44876,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7478,
             'name' => 'Hlybokaje',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7479,
@@ -46588,15 +44888,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7480,
             'name' => 'Mjory',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7481,
@@ -46604,15 +44900,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7482,
             'name' => 'Novalukoml',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7483,
@@ -46620,15 +44912,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7484,
             'name' => 'Pastavy',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7485,
@@ -46636,15 +44924,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7486,
             'name' => 'Polotsk',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7487,
@@ -46652,15 +44936,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7488,
             'name' => 'Talachyn',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7489,
@@ -46668,15 +44948,11 @@ class CitySeeder extends Seeder
             'state_id' => 421
         ]);
 
-
-
         City::create([
             'id' => 7490,
             'name' => 'Vicebsk',
             'state_id' => 421
         ]);
-
-
 
         City::create([
             'id' => 7491,
@@ -46684,15 +44960,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7492,
             'name' => 'Antwerpen',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7493,
@@ -46700,15 +44972,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7494,
             'name' => 'Baarle-Hertog',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7495,
@@ -46716,15 +44984,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7496,
             'name' => 'Beerse',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7497,
@@ -46732,15 +44996,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7498,
             'name' => 'Boechout',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7499,
@@ -46748,15 +45008,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7500,
             'name' => 'Boom',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7501,
@@ -46764,15 +45020,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7502,
             'name' => 'Borsbeek',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7503,
@@ -46780,15 +45032,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7504,
             'name' => 'Brecht',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7505,
@@ -46796,15 +45044,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7506,
             'name' => 'Deurne',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7507,
@@ -46812,15 +45056,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7508,
             'name' => 'Edegem',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7509,
@@ -46828,15 +45068,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7510,
             'name' => 'Essen',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7511,
@@ -46844,15 +45080,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7512,
             'name' => 'Geluvele',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7513,
@@ -46860,15 +45092,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7514,
             'name' => 'Heist-op-den-Berg',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7515,
@@ -46876,15 +45104,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7516,
             'name' => 'Herentals',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7517,
@@ -46892,15 +45116,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7518,
             'name' => 'Herselt',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7519,
@@ -46908,15 +45128,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7520,
             'name' => 'Hove',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7521,
@@ -46924,15 +45140,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7522,
             'name' => 'Kalmpthout',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7523,
@@ -46940,15 +45152,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7524,
             'name' => 'Kapellen',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7525,
@@ -46956,15 +45164,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7526,
             'name' => 'Kontich',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7527,
@@ -46972,15 +45176,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7528,
             'name' => 'Lier',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7529,
@@ -46988,15 +45188,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7530,
             'name' => 'Lint',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7531,
@@ -47004,15 +45200,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7532,
             'name' => 'Mechelen',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7533,
@@ -47020,15 +45212,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7534,
             'name' => 'Merksplas',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7535,
@@ -47036,15 +45224,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7536,
             'name' => 'Mortsel',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7537,
@@ -47052,15 +45236,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7538,
             'name' => 'Nijlen',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7539,
@@ -47068,15 +45248,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7540,
             'name' => 'Oud-Turnhout',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7541,
@@ -47084,15 +45260,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7542,
             'name' => 'Puurs',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7543,
@@ -47100,15 +45272,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7544,
             'name' => 'Ravels',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7545,
@@ -47116,15 +45284,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7546,
             'name' => 'Rijkevorsel',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7547,
@@ -47132,15 +45296,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7548,
             'name' => 'Rumst',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7549,
@@ -47148,15 +45308,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7550,
             'name' => 'Schilde',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7551,
@@ -47164,15 +45320,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7552,
             'name' => 'Sint-Amands',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7553,
@@ -47180,15 +45332,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7554,
             'name' => 'Stabroek',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7555,
@@ -47196,15 +45344,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7556,
             'name' => 'Vorselaar',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7557,
@@ -47212,15 +45356,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7558,
             'name' => 'Westerlo',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7559,
@@ -47228,15 +45368,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7560,
             'name' => 'Willebroek',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7561,
@@ -47244,15 +45380,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7562,
             'name' => 'Wommelgem',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7563,
@@ -47260,15 +45392,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7564,
             'name' => 'Zandhoven',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7565,
@@ -47276,15 +45404,11 @@ class CitySeeder extends Seeder
             'state_id' => 422
         ]);
 
-
-
         City::create([
             'id' => 7566,
             'name' => 'Zwijndrecht',
             'state_id' => 422
         ]);
-
-
 
         City::create([
             'id' => 7567,
@@ -47292,15 +45416,11 @@ class CitySeeder extends Seeder
             'state_id' => 423
         ]);
 
-
-
         City::create([
             'id' => 7568,
             'name' => 'Alsemberg',
             'state_id' => 424
         ]);
-
-
 
         City::create([
             'id' => 7569,
@@ -47308,15 +45428,11 @@ class CitySeeder extends Seeder
             'state_id' => 424
         ]);
 
-
-
         City::create([
             'id' => 7570,
             'name' => 'Brussels',
             'state_id' => 424
         ]);
-
-
 
         City::create([
             'id' => 7571,
@@ -47324,15 +45440,11 @@ class CitySeeder extends Seeder
             'state_id' => 424
         ]);
 
-
-
         City::create([
             'id' => 7572,
             'name' => 'Diegem',
             'state_id' => 424
         ]);
-
-
 
         City::create([
             'id' => 7573,
@@ -47340,15 +45452,11 @@ class CitySeeder extends Seeder
             'state_id' => 425
         ]);
 
-
-
         City::create([
             'id' => 7574,
             'name' => 'Asse Zellik',
             'state_id' => 425
         ]);
-
-
 
         City::create([
             'id' => 7575,
@@ -47356,15 +45464,11 @@ class CitySeeder extends Seeder
             'state_id' => 425
         ]);
 
-
-
         City::create([
             'id' => 7576,
             'name' => 'Bruxelles',
             'state_id' => 425
         ]);
-
-
 
         City::create([
             'id' => 7577,
@@ -47372,15 +45476,11 @@ class CitySeeder extends Seeder
             'state_id' => 425
         ]);
 
-
-
         City::create([
             'id' => 7578,
             'name' => 'Brussel',
             'state_id' => 426
         ]);
-
-
 
         City::create([
             'id' => 7579,
@@ -47388,15 +45488,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7580,
             'name' => 'Anderlues',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7581,
@@ -47404,15 +45500,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7582,
             'name' => 'Ath',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7583,
@@ -47420,15 +45512,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7584,
             'name' => 'Beloeil',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7585,
@@ -47436,15 +45524,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7586,
             'name' => 'Binche',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7587,
@@ -47452,15 +45536,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7588,
             'name' => 'Braine-le-Comte',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7589,
@@ -47468,15 +45548,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7590,
             'name' => 'Brunehaut',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7591,
@@ -47484,15 +45560,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7592,
             'name' => 'Chapelle-lez-Herlaimont',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7593,
@@ -47500,15 +45572,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7594,
             'name' => 'Chatelet',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7595,
@@ -47516,15 +45584,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7596,
             'name' => 'Chimay',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7597,
@@ -47532,15 +45596,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7598,
             'name' => 'Comines-Warneton',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7599,
@@ -47548,15 +45608,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7600,
             'name' => 'Dour',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7601,
@@ -47564,15 +45620,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7602,
             'name' => 'Ellezelles',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7603,
@@ -47580,15 +45632,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7604,
             'name' => 'Erquelinnes',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7605,
@@ -47596,15 +45644,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7606,
             'name' => 'Estinnes',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7607,
@@ -47612,15 +45656,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7608,
             'name' => 'Fleurus',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7609,
@@ -47628,15 +45668,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7610,
             'name' => 'Fontaine-lEveque',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7611,
@@ -47644,15 +45680,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7612,
             'name' => 'Frasnes-lez-Anvaing',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7613,
@@ -47660,15 +45692,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7614,
             'name' => 'Gerpinnes',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7615,
@@ -47676,15 +45704,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7616,
             'name' => 'Ham-sur-Heure-Nalinnes',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7617,
@@ -47692,15 +45716,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7618,
             'name' => 'Honnelles',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7619,
@@ -47708,15 +45728,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7620,
             'name' => 'La Louviere',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7621,
@@ -47724,15 +45740,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7622,
             'name' => 'Lens',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7623,
@@ -47740,15 +45752,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7624,
             'name' => 'Lessines',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7625,
@@ -47756,15 +45764,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7626,
             'name' => 'Lobbes',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7627,
@@ -47772,15 +45776,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7628,
             'name' => 'Merbes-le-Chateau',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7629,
@@ -47788,15 +45788,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7630,
             'name' => 'Mons',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7631,
@@ -47804,15 +45800,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7632,
             'name' => 'Montigny-le-Tilleul',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7633,
@@ -47820,15 +45812,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7634,
             'name' => 'Mouscron',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7635,
@@ -47836,15 +45824,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7636,
             'name' => 'Peruwelz',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7637,
@@ -47852,15 +45836,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7638,
             'name' => 'Quaregnon',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7639,
@@ -47868,15 +45848,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7640,
             'name' => 'Quievrain',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7641,
@@ -47884,15 +45860,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7642,
             'name' => 'Saint-Ghislain',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7643,
@@ -47900,15 +45872,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7644,
             'name' => 'Silly',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7645,
@@ -47916,15 +45884,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7646,
             'name' => 'Soignies',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7647,
@@ -47932,15 +45896,11 @@ class CitySeeder extends Seeder
             'state_id' => 428
         ]);
 
-
-
         City::create([
             'id' => 7648,
             'name' => 'Tournai',
             'state_id' => 428
         ]);
-
-
 
         City::create([
             'id' => 7649,
@@ -47948,15 +45908,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7650,
             'name' => 'Amel',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7651,
@@ -47964,15 +45920,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7652,
             'name' => 'Ans',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7653,
@@ -47980,15 +45932,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7654,
             'name' => 'Aubel',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7655,
@@ -47996,15 +45944,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7656,
             'name' => 'Aywaille',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7657,
@@ -48012,15 +45956,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7658,
             'name' => 'Bassenge',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7659,
@@ -48028,15 +45968,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7660,
             'name' => 'Beyne-Heusay',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7661,
@@ -48044,15 +45980,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7662,
             'name' => 'Braives',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7663,
@@ -48060,15 +45992,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7664,
             'name' => 'Burdinne',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7665,
@@ -48076,15 +46004,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7666,
             'name' => 'Butgenbach',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7667,
@@ -48092,15 +46016,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7668,
             'name' => 'Clavier',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7669,
@@ -48108,15 +46028,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7670,
             'name' => 'Crisnee',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7671,
@@ -48124,15 +46040,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7672,
             'name' => 'Dison',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7673,
@@ -48140,15 +46052,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7674,
             'name' => 'Engis',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7675,
@@ -48156,15 +46064,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7676,
             'name' => 'Eupen',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7677,
@@ -48172,15 +46076,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7678,
             'name' => 'Ferrieres',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7679,
@@ -48188,15 +46088,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7680,
             'name' => 'Flemalle',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7681,
@@ -48204,15 +46100,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7682,
             'name' => 'Geer',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7683,
@@ -48220,15 +46112,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7684,
             'name' => 'Hamoir',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7685,
@@ -48236,15 +46124,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7686,
             'name' => 'Heron',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7687,
@@ -48252,15 +46136,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7688,
             'name' => 'Herve',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7689,
@@ -48268,15 +46148,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7690,
             'name' => 'Jalhay',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7691,
@@ -48284,15 +46160,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7692,
             'name' => 'Kelmis',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7693,
@@ -48300,15 +46172,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7694,
             'name' => 'Lierneux',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7695,
@@ -48316,15 +46184,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7696,
             'name' => 'Lincent',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7697,
@@ -48332,15 +46196,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7698,
             'name' => 'Malmedy',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7699,
@@ -48348,15 +46208,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7700,
             'name' => 'Modave',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7701,
@@ -48364,15 +46220,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7702,
             'name' => 'Nandrin',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7703,
@@ -48380,15 +46232,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7704,
             'name' => 'Olne',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7705,
@@ -48396,15 +46244,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7706,
             'name' => 'Ouffet',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7707,
@@ -48412,15 +46256,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7708,
             'name' => 'Pepinster',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7709,
@@ -48428,15 +46268,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7710,
             'name' => 'Racour',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7711,
@@ -48444,15 +46280,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7712,
             'name' => 'Remicourt',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7713,
@@ -48460,15 +46292,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7714,
             'name' => 'Saint-Nicolas',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7715,
@@ -48476,15 +46304,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7716,
             'name' => 'Seraing',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7717,
@@ -48492,15 +46316,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7718,
             'name' => 'Spa',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7719,
@@ -48508,15 +46328,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7720,
             'name' => 'Stavelot',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7721,
@@ -48524,15 +46340,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7722,
             'name' => 'Theux',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7723,
@@ -48540,15 +46352,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7724,
             'name' => 'Tinlot',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7725,
@@ -48556,15 +46364,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7726,
             'name' => 'Trooz',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7727,
@@ -48572,15 +46376,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7728,
             'name' => 'Verviers',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7729,
@@ -48588,15 +46388,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7730,
             'name' => 'Vise',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7731,
@@ -48604,15 +46400,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7732,
             'name' => 'Wanze',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7733,
@@ -48620,15 +46412,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7734,
             'name' => 'Wasseiges',
             'state_id' => 429
         ]);
-
-
 
         City::create([
             'id' => 7735,
@@ -48636,15 +46424,11 @@ class CitySeeder extends Seeder
             'state_id' => 429
         ]);
 
-
-
         City::create([
             'id' => 7736,
             'name' => 'Alken',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7737,
@@ -48652,15 +46436,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7738,
             'name' => 'Beringen',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7739,
@@ -48668,15 +46448,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7740,
             'name' => 'Bocholt',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7741,
@@ -48684,15 +46460,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7742,
             'name' => 'Bree',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7743,
@@ -48700,15 +46472,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7744,
             'name' => 'Dilsen-Stokkem',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7745,
@@ -48716,15 +46484,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7746,
             'name' => 'Gingelom',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7747,
@@ -48732,15 +46496,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7748,
             'name' => 'Ham',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7749,
@@ -48748,15 +46508,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7750,
             'name' => 'Hasselt',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7751,
@@ -48764,15 +46520,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7752,
             'name' => 'Heers',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7753,
@@ -48780,15 +46532,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7754,
             'name' => 'Herstappe',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7755,
@@ -48796,15 +46544,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7756,
             'name' => 'Hoeselt',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7757,
@@ -48812,15 +46556,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7758,
             'name' => 'Kinrooi',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7759,
@@ -48828,15 +46568,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7760,
             'name' => 'Kuringen',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7761,
@@ -48844,15 +46580,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7762,
             'name' => 'Leopoldsburg',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7763,
@@ -48860,15 +46592,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7764,
             'name' => 'Lummen',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7765,
@@ -48876,15 +46604,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7766,
             'name' => 'Maasmechelen',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7767,
@@ -48892,15 +46616,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7768,
             'name' => 'Neerpelt',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7769,
@@ -48908,15 +46628,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7770,
             'name' => 'Opglabbeek',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7771,
@@ -48924,15 +46640,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7772,
             'name' => 'Peer',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7773,
@@ -48940,15 +46652,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7774,
             'name' => 'Sint-Truiden',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7775,
@@ -48956,15 +46664,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7776,
             'name' => 'Tongeren',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7777,
@@ -48972,15 +46676,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7778,
             'name' => 'Wellen',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7779,
@@ -48988,15 +46688,11 @@ class CitySeeder extends Seeder
             'state_id' => 430
         ]);
 
-
-
         City::create([
             'id' => 7780,
             'name' => 'Zutendaal',
             'state_id' => 430
         ]);
-
-
 
         City::create([
             'id' => 7781,
@@ -49004,15 +46700,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7782,
             'name' => 'Attert',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7783,
@@ -49020,15 +46712,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7784,
             'name' => 'Bastogne',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7785,
@@ -49036,15 +46724,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7786,
             'name' => 'Bertrix',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7787,
@@ -49052,15 +46736,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7788,
             'name' => 'Chiny',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7789,
@@ -49068,15 +46748,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7790,
             'name' => 'Durbuy',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7791,
@@ -49084,15 +46760,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7792,
             'name' => 'Etalle',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7793,
@@ -49100,15 +46772,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7794,
             'name' => 'Florenville',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7795,
@@ -49116,15 +46784,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7796,
             'name' => 'Grapfontaine',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7797,
@@ -49132,15 +46796,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7798,
             'name' => 'Herbeumont',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7799,
@@ -49148,15 +46808,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7800,
             'name' => 'Houffalize',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7801,
@@ -49164,15 +46820,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7802,
             'name' => 'Leglise',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7803,
@@ -49180,15 +46832,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7804,
             'name' => 'Libramont-Chevigny',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7805,
@@ -49196,15 +46844,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7806,
             'name' => 'Marche-en-Famenne',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7807,
@@ -49212,15 +46856,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7808,
             'name' => 'Martelange',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7809,
@@ -49228,15 +46868,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7810,
             'name' => 'Messancy',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7811,
@@ -49244,15 +46880,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7812,
             'name' => 'Nassogne',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7813,
@@ -49260,15 +46892,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7814,
             'name' => 'Paliseul',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7815,
@@ -49276,15 +46904,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7816,
             'name' => 'Rouvroy',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7817,
@@ -49292,15 +46916,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7818,
             'name' => 'Saint-Leger',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7819,
@@ -49308,15 +46928,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7820,
             'name' => 'Tellin',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7821,
@@ -49324,15 +46940,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7822,
             'name' => 'Tintigny',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7823,
@@ -49340,15 +46952,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7824,
             'name' => 'Vielsalm',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7825,
@@ -49356,15 +46964,11 @@ class CitySeeder extends Seeder
             'state_id' => 431
         ]);
 
-
-
         City::create([
             'id' => 7826,
             'name' => 'Wellin',
             'state_id' => 431
         ]);
-
-
 
         City::create([
             'id' => 7827,
@@ -49372,15 +46976,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7828,
             'name' => 'Anhee',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7829,
@@ -49388,15 +46988,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7830,
             'name' => 'Beauraing',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7831,
@@ -49404,15 +47000,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7832,
             'name' => 'Cerfontaine',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7833,
@@ -49420,15 +47012,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7834,
             'name' => 'Couvin',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7835,
@@ -49436,15 +47024,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7836,
             'name' => 'Doische',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7837,
@@ -49452,15 +47036,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7838,
             'name' => 'Fernelmont',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7839,
@@ -49468,15 +47048,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7840,
             'name' => 'Florennes',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7841,
@@ -49484,15 +47060,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7842,
             'name' => 'Gedinne',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7843,
@@ -49500,15 +47072,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7844,
             'name' => 'Gesves',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7845,
@@ -49516,15 +47084,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7846,
             'name' => 'Hastiere',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7847,
@@ -49532,15 +47096,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7848,
             'name' => 'Houyet',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7849,
@@ -49548,15 +47108,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7850,
             'name' => 'Jemeppe-sur-Sambre',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7851,
@@ -49564,15 +47120,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7852,
             'name' => 'Malonne',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7853,
@@ -49580,15 +47132,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7854,
             'name' => 'Namur',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7855,
@@ -49596,15 +47144,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7856,
             'name' => 'Onhaye',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7857,
@@ -49612,15 +47156,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7858,
             'name' => 'Profondeville',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7859,
@@ -49628,15 +47168,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7860,
             'name' => 'Sambreville',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7861,
@@ -49644,15 +47180,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7862,
             'name' => 'Somme-Leuze',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7863,
@@ -49660,15 +47192,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7864,
             'name' => 'Viroinval',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7865,
@@ -49676,15 +47204,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7866,
             'name' => 'Walcourt',
             'state_id' => 432
         ]);
-
-
 
         City::create([
             'id' => 7867,
@@ -49692,15 +47216,11 @@ class CitySeeder extends Seeder
             'state_id' => 432
         ]);
 
-
-
         City::create([
             'id' => 7868,
             'name' => 'Gullegem',
             'state_id' => 433
         ]);
-
-
 
         City::create([
             'id' => 7869,
@@ -49708,15 +47228,11 @@ class CitySeeder extends Seeder
             'state_id' => 433
         ]);
 
-
-
         City::create([
             'id' => 7870,
             'name' => 'Aalst',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7871,
@@ -49724,15 +47240,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7872,
             'name' => 'Assenede',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7873,
@@ -49740,15 +47252,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7874,
             'name' => 'Beveren',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7875,
@@ -49756,15 +47264,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7876,
             'name' => 'Buggenhout',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7877,
@@ -49772,15 +47276,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7878,
             'name' => 'Deinze',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7879,
@@ -49788,15 +47288,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7880,
             'name' => 'Dendermonde',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7881,
@@ -49804,15 +47300,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7882,
             'name' => 'Drongen',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7883,
@@ -49820,15 +47312,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7884,
             'name' => 'Erembodegem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7885,
@@ -49836,15 +47324,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7886,
             'name' => 'Evergem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7887,
@@ -49852,15 +47336,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7888,
             'name' => 'Gent',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7889,
@@ -49868,15 +47348,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7890,
             'name' => 'Ghent',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7891,
@@ -49884,15 +47360,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7892,
             'name' => 'Hamme',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7893,
@@ -49900,15 +47372,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7894,
             'name' => 'Horebeke',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7895,
@@ -49916,15 +47384,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7896,
             'name' => 'Kerksken',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7897,
@@ -49932,15 +47396,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7898,
             'name' => 'Knesselare',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7899,
@@ -49948,15 +47408,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7900,
             'name' => 'Kruishoutem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7901,
@@ -49964,15 +47420,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7902,
             'name' => 'Lebbeke',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7903,
@@ -49980,15 +47432,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7904,
             'name' => 'Lierde',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7905,
@@ -49996,15 +47444,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7906,
             'name' => 'Lokeren',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7907,
@@ -50012,15 +47456,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7908,
             'name' => 'Maarkedal',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7909,
@@ -50028,15 +47468,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7910,
             'name' => 'Melle',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7911,
@@ -50044,15 +47480,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7912,
             'name' => 'Moerbeke',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7913,
@@ -50060,15 +47492,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7914,
             'name' => 'Nevele',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7915,
@@ -50076,15 +47504,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7916,
             'name' => 'Oosterzele',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7917,
@@ -50092,15 +47516,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7918,
             'name' => 'Ronse',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7919,
@@ -50108,15 +47528,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7920,
             'name' => 'Sint-Gillis-Waas',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7921,
@@ -50124,15 +47540,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7922,
             'name' => 'Sint-Lievens-Houtem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7923,
@@ -50140,15 +47552,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7924,
             'name' => 'Sint-Niklaas',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7925,
@@ -50156,15 +47564,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7926,
             'name' => 'Temse',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7927,
@@ -50172,15 +47576,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7928,
             'name' => 'Waasmunster',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7929,
@@ -50188,15 +47588,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7930,
             'name' => 'Wetteren',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7931,
@@ -50204,15 +47600,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7932,
             'name' => 'Wortegem-Petegem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7933,
@@ -50220,15 +47612,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7934,
             'name' => 'Zelzate',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7935,
@@ -50236,15 +47624,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7936,
             'name' => 'Zomergem',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7937,
@@ -50252,15 +47636,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7938,
             'name' => 'Zulte',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7939,
@@ -50268,15 +47648,11 @@ class CitySeeder extends Seeder
             'state_id' => 434
         ]);
 
-
-
         City::create([
             'id' => 7940,
             'name' => 'Zwijnaarde',
             'state_id' => 434
         ]);
-
-
 
         City::create([
             'id' => 7941,
@@ -50284,15 +47660,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7942,
             'name' => 'Affligem',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7943,
@@ -50300,15 +47672,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7944,
             'name' => 'Beersel',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7945,
@@ -50316,15 +47684,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7946,
             'name' => 'Bekkevoort',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7947,
@@ -50332,15 +47696,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7948,
             'name' => 'Bever',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7949,
@@ -50348,15 +47708,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7950,
             'name' => 'Boortmeerbeek',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7951,
@@ -50364,15 +47720,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7952,
             'name' => 'Diest',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7953,
@@ -50380,15 +47732,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7954,
             'name' => 'Drogenbos',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7955,
@@ -50396,15 +47744,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7956,
             'name' => 'Geetbets',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7957,
@@ -50412,15 +47756,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7958,
             'name' => 'Gooik',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7959,
@@ -50428,15 +47768,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7960,
             'name' => 'Haacht',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7961,
@@ -50444,15 +47780,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7962,
             'name' => 'Herent',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7963,
@@ -50460,15 +47792,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7964,
             'name' => 'Hoegaarden',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7965,
@@ -50476,15 +47804,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7966,
             'name' => 'Holsbeek',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7967,
@@ -50492,15 +47816,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7968,
             'name' => 'Kampenhout',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7969,
@@ -50508,15 +47828,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7970,
             'name' => 'Keerbergen',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7971,
@@ -50524,15 +47840,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7972,
             'name' => 'Kortenberg',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7973,
@@ -50540,15 +47852,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7974,
             'name' => 'Landen',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7975,
@@ -50556,15 +47864,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7976,
             'name' => 'Leuven',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7977,
@@ -50572,15 +47876,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7978,
             'name' => 'Linkebeek',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7979,
@@ -50588,15 +47888,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7980,
             'name' => 'Londerzeel',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7981,
@@ -50604,15 +47900,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7982,
             'name' => 'Machelen',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7983,
@@ -50620,15 +47912,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7984,
             'name' => 'Merchtem',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7985,
@@ -50636,15 +47924,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7986,
             'name' => 'Oud-Heverlee',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7987,
@@ -50652,15 +47936,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7988,
             'name' => 'Pepingen',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7989,
@@ -50668,15 +47948,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7990,
             'name' => 'Rotselaar',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7991,
@@ -50684,15 +47960,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7992,
             'name' => 'Sint-Genesius-Rode',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7993,
@@ -50700,15 +47972,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7994,
             'name' => 'Steenokkerzeel',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7995,
@@ -50716,15 +47984,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7996,
             'name' => 'Tervuren',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7997,
@@ -50732,15 +47996,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 7998,
             'name' => 'Tienen',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 7999,
@@ -50748,15 +48008,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 8000,
             'name' => 'Vilvoorde',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 8001,
@@ -50764,15 +48020,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 8002,
             'name' => 'Wezembeek-Oppem',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 8003,
@@ -50780,15 +48032,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 8004,
             'name' => 'Zemst',
             'state_id' => 436
         ]);
-
-
 
         City::create([
             'id' => 8005,
@@ -50796,15 +48044,11 @@ class CitySeeder extends Seeder
             'state_id' => 436
         ]);
 
-
-
         City::create([
             'id' => 8006,
             'name' => 'Callenelle',
             'state_id' => 437
         ]);
-
-
 
         City::create([
             'id' => 8007,
@@ -50812,15 +48056,11 @@ class CitySeeder extends Seeder
             'state_id' => 437
         ]);
 
-
-
         City::create([
             'id' => 8008,
             'name' => 'Strepy-Bracquegnies',
             'state_id' => 437
         ]);
-
-
 
         City::create([
             'id' => 8009,
@@ -50828,15 +48068,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8010,
             'name' => 'Anzegem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8011,
@@ -50844,15 +48080,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8012,
             'name' => 'Avelgem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8013,
@@ -50860,15 +48092,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8014,
             'name' => 'Blankenberge',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8015,
@@ -50876,15 +48104,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8016,
             'name' => 'Brugge',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8017,
@@ -50892,15 +48116,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8018,
             'name' => 'De Haan',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8019,
@@ -50908,15 +48128,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8020,
             'name' => 'Deerlijk',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8021,
@@ -50924,15 +48140,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8022,
             'name' => 'Diksmuide',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8023,
@@ -50940,15 +48152,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8024,
             'name' => 'Gistel',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8025,
@@ -50956,15 +48164,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8026,
             'name' => 'Heuvelland',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8027,
@@ -50972,15 +48176,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8028,
             'name' => 'Houthulst',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8029,
@@ -50988,15 +48188,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8030,
             'name' => 'Ieper',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8031,
@@ -51004,15 +48200,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8032,
             'name' => 'Ingooigem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8033,
@@ -51020,15 +48212,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8034,
             'name' => 'Jabbeke',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8035,
@@ -51036,15 +48224,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8036,
             'name' => 'Koekelare',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8037,
@@ -51052,15 +48236,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8038,
             'name' => 'Kortemark',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8039,
@@ -51068,15 +48248,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8040,
             'name' => 'Kuurne',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8041,
@@ -51084,15 +48260,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8042,
             'name' => 'Ledegem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8043,
@@ -51100,15 +48272,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8044,
             'name' => 'Lichtervelde',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8045,
@@ -51116,15 +48284,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8046,
             'name' => 'Menen',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8047,
@@ -51132,15 +48296,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8048,
             'name' => 'Meulebeke',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8049,
@@ -51148,15 +48308,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8050,
             'name' => 'Moorslede',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8051,
@@ -51164,15 +48320,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8052,
             'name' => 'Oostende',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8053,
@@ -51180,15 +48332,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8054,
             'name' => 'Oostrozebeke',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8055,
@@ -51196,15 +48344,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8056,
             'name' => 'Pittem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8057,
@@ -51212,15 +48356,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8058,
             'name' => 'Roeselare',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8059,
@@ -51228,15 +48368,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8060,
             'name' => 'Spiere-Helkijn',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8061,
@@ -51244,15 +48380,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8062,
             'name' => 'Tielt',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8063,
@@ -51260,15 +48392,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8064,
             'name' => 'Veurne',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8065,
@@ -51276,15 +48404,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8066,
             'name' => 'Waregem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8067,
@@ -51292,15 +48416,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8068,
             'name' => 'Wevelgem',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8069,
@@ -51308,15 +48428,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8070,
             'name' => 'Wingene',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8071,
@@ -51324,15 +48440,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8072,
             'name' => 'Zeebrugge',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8073,
@@ -51340,15 +48452,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8074,
             'name' => 'Zuienkerke',
             'state_id' => 438
         ]);
-
-
 
         City::create([
             'id' => 8075,
@@ -51356,15 +48464,11 @@ class CitySeeder extends Seeder
             'state_id' => 438
         ]);
 
-
-
         City::create([
             'id' => 8076,
             'name' => 'Belize',
             'state_id' => 439
         ]);
-
-
 
         City::create([
             'id' => 8077,
@@ -51372,15 +48476,11 @@ class CitySeeder extends Seeder
             'state_id' => 439
         ]);
 
-
-
         City::create([
             'id' => 8078,
             'name' => 'Belmopan',
             'state_id' => 440
         ]);
-
-
 
         City::create([
             'id' => 8079,
@@ -51388,15 +48488,11 @@ class CitySeeder extends Seeder
             'state_id' => 440
         ]);
 
-
-
         City::create([
             'id' => 8080,
             'name' => 'San Ignacio',
             'state_id' => 440
         ]);
-
-
 
         City::create([
             'id' => 8081,
@@ -51404,15 +48500,11 @@ class CitySeeder extends Seeder
             'state_id' => 441
         ]);
 
-
-
         City::create([
             'id' => 8082,
             'name' => 'Punta Gorda',
             'state_id' => 444
         ]);
-
-
 
         City::create([
             'id' => 8083,
@@ -51420,15 +48512,11 @@ class CitySeeder extends Seeder
             'state_id' => 445
         ]);
 
-
-
         City::create([
             'id' => 8084,
             'name' => 'Malanville',
             'state_id' => 445
         ]);
-
-
 
         City::create([
             'id' => 8085,
@@ -51436,15 +48524,11 @@ class CitySeeder extends Seeder
             'state_id' => 446
         ]);
 
-
-
         City::create([
             'id' => 8086,
             'name' => 'Boukombe',
             'state_id' => 446
         ]);
-
-
 
         City::create([
             'id' => 8087,
@@ -51452,15 +48536,11 @@ class CitySeeder extends Seeder
             'state_id' => 446
         ]);
 
-
-
         City::create([
             'id' => 8088,
             'name' => 'Natitingou',
             'state_id' => 446
         ]);
-
-
 
         City::create([
             'id' => 8089,
@@ -51468,15 +48548,11 @@ class CitySeeder extends Seeder
             'state_id' => 447
         ]);
 
-
-
         City::create([
             'id' => 8090,
             'name' => 'Cotonou',
             'state_id' => 447
         ]);
-
-
 
         City::create([
             'id' => 8091,
@@ -51484,15 +48560,11 @@ class CitySeeder extends Seeder
             'state_id' => 447
         ]);
 
-
-
         City::create([
             'id' => 8092,
             'name' => 'Tanguiete',
             'state_id' => 447
         ]);
-
-
 
         City::create([
             'id' => 8093,
@@ -51500,15 +48572,11 @@ class CitySeeder extends Seeder
             'state_id' => 448
         ]);
 
-
-
         City::create([
             'id' => 8094,
             'name' => 'Nikki',
             'state_id' => 448
         ]);
-
-
 
         City::create([
             'id' => 8095,
@@ -51516,15 +48584,11 @@ class CitySeeder extends Seeder
             'state_id' => 448
         ]);
 
-
-
         City::create([
             'id' => 8096,
             'name' => 'Tchaourou',
             'state_id' => 448
         ]);
-
-
 
         City::create([
             'id' => 8097,
@@ -51532,15 +48596,11 @@ class CitySeeder extends Seeder
             'state_id' => 449
         ]);
 
-
-
         City::create([
             'id' => 8098,
             'name' => 'Savalou',
             'state_id' => 449
         ]);
-
-
 
         City::create([
             'id' => 8099,
@@ -51548,15 +48608,11 @@ class CitySeeder extends Seeder
             'state_id' => 449
         ]);
 
-
-
         City::create([
             'id' => 8100,
             'name' => 'Aplahoue',
             'state_id' => 450
         ]);
-
-
 
         City::create([
             'id' => 8101,
@@ -51564,15 +48620,11 @@ class CitySeeder extends Seeder
             'state_id' => 450
         ]);
 
-
-
         City::create([
             'id' => 8102,
             'name' => 'Djougou',
             'state_id' => 451
         ]);
-
-
 
         City::create([
             'id' => 8103,
@@ -51580,15 +48632,11 @@ class CitySeeder extends Seeder
             'state_id' => 452
         ]);
 
-
-
         City::create([
             'id' => 8104,
             'name' => 'Athieme',
             'state_id' => 453
         ]);
-
-
 
         City::create([
             'id' => 8105,
@@ -51596,15 +48644,11 @@ class CitySeeder extends Seeder
             'state_id' => 453
         ]);
 
-
-
         City::create([
             'id' => 8106,
             'name' => 'Grand Popo',
             'state_id' => 453
         ]);
-
-
 
         City::create([
             'id' => 8107,
@@ -51612,15 +48656,11 @@ class CitySeeder extends Seeder
             'state_id' => 453
         ]);
 
-
-
         City::create([
             'id' => 8108,
             'name' => 'Adjohoun',
             'state_id' => 454
         ]);
-
-
 
         City::create([
             'id' => 8109,
@@ -51628,15 +48668,11 @@ class CitySeeder extends Seeder
             'state_id' => 454
         ]);
 
-
-
         City::create([
             'id' => 8110,
             'name' => 'Ketou',
             'state_id' => 455
         ]);
-
-
 
         City::create([
             'id' => 8111,
@@ -51644,15 +48680,11 @@ class CitySeeder extends Seeder
             'state_id' => 455
         ]);
 
-
-
         City::create([
             'id' => 8112,
             'name' => 'Sakete',
             'state_id' => 455
         ]);
-
-
 
         City::create([
             'id' => 8113,
@@ -51660,15 +48692,11 @@ class CitySeeder extends Seeder
             'state_id' => 456
         ]);
 
-
-
         City::create([
             'id' => 8114,
             'name' => 'Bohicon',
             'state_id' => 456
         ]);
-
-
 
         City::create([
             'id' => 8115,
@@ -51676,15 +48704,11 @@ class CitySeeder extends Seeder
             'state_id' => 456
         ]);
 
-
-
         City::create([
             'id' => 8116,
             'name' => 'Zagnanado',
             'state_id' => 456
         ]);
-
-
 
         City::create([
             'id' => 8117,
@@ -51692,15 +48716,11 @@ class CitySeeder extends Seeder
             'state_id' => 457
         ]);
 
-
-
         City::create([
             'id' => 8118,
             'name' => 'Jakar',
             'state_id' => 459
         ]);
-
-
 
         City::create([
             'id' => 8119,
@@ -51708,15 +48728,11 @@ class CitySeeder extends Seeder
             'state_id' => 460
         ]);
 
-
-
         City::create([
             'id' => 8120,
             'name' => 'Phuentsholing',
             'state_id' => 460
         ]);
-
-
 
         City::create([
             'id' => 8121,
@@ -51724,15 +48740,11 @@ class CitySeeder extends Seeder
             'state_id' => 461
         ]);
 
-
-
         City::create([
             'id' => 8122,
             'name' => 'Taga Dzong',
             'state_id' => 462
         ]);
-
-
 
         City::create([
             'id' => 8123,
@@ -51740,15 +48752,11 @@ class CitySeeder extends Seeder
             'state_id' => 463
         ]);
 
-
-
         City::create([
             'id' => 8124,
             'name' => 'Ha',
             'state_id' => 464
         ]);
-
-
 
         City::create([
             'id' => 8125,
@@ -51756,15 +48764,11 @@ class CitySeeder extends Seeder
             'state_id' => 465
         ]);
 
-
-
         City::create([
             'id' => 8126,
             'name' => 'Mongar',
             'state_id' => 466
         ]);
-
-
 
         City::create([
             'id' => 8127,
@@ -51772,15 +48776,11 @@ class CitySeeder extends Seeder
             'state_id' => 467
         ]);
 
-
-
         City::create([
             'id' => 8128,
             'name' => 'Gasa',
             'state_id' => 468
         ]);
-
-
 
         City::create([
             'id' => 8129,
@@ -51788,15 +48788,11 @@ class CitySeeder extends Seeder
             'state_id' => 468
         ]);
 
-
-
         City::create([
             'id' => 8130,
             'name' => 'Paro',
             'state_id' => 469
         ]);
-
-
 
         City::create([
             'id' => 8131,
@@ -51804,15 +48800,11 @@ class CitySeeder extends Seeder
             'state_id' => 470
         ]);
 
-
-
         City::create([
             'id' => 8132,
             'name' => 'Samchi',
             'state_id' => 470
         ]);
-
-
 
         City::create([
             'id' => 8133,
@@ -51820,15 +48812,11 @@ class CitySeeder extends Seeder
             'state_id' => 472
         ]);
 
-
-
         City::create([
             'id' => 8134,
             'name' => 'Tashigang',
             'state_id' => 473
         ]);
-
-
 
         City::create([
             'id' => 8135,
@@ -51836,15 +48824,11 @@ class CitySeeder extends Seeder
             'state_id' => 474
         ]);
 
-
-
         City::create([
             'id' => 8136,
             'name' => 'Timphu',
             'state_id' => 474
         ]);
-
-
 
         City::create([
             'id' => 8137,
@@ -51852,15 +48836,11 @@ class CitySeeder extends Seeder
             'state_id' => 475
         ]);
 
-
-
         City::create([
             'id' => 8138,
             'name' => 'Wangdiphodrang',
             'state_id' => 476
         ]);
-
-
 
         City::create([
             'id' => 8139,
@@ -51868,15 +48848,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8140,
             'name' => 'Magdalena',
             'state_id' => 477
         ]);
-
-
 
         City::create([
             'id' => 8141,
@@ -51884,15 +48860,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8142,
             'name' => 'Riberalta',
             'state_id' => 477
         ]);
-
-
 
         City::create([
             'id' => 8143,
@@ -51900,15 +48872,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8144,
             'name' => 'San Borja',
             'state_id' => 477
         ]);
-
-
 
         City::create([
             'id' => 8145,
@@ -51916,15 +48884,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8146,
             'name' => 'San Ramon',
             'state_id' => 477
         ]);
-
-
 
         City::create([
             'id' => 8147,
@@ -51932,15 +48896,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8148,
             'name' => 'Santa Rosa',
             'state_id' => 477
         ]);
-
-
 
         City::create([
             'id' => 8149,
@@ -51948,15 +48908,11 @@ class CitySeeder extends Seeder
             'state_id' => 477
         ]);
 
-
-
         City::create([
             'id' => 8150,
             'name' => 'Camargo',
             'state_id' => 478
         ]);
-
-
 
         City::create([
             'id' => 8151,
@@ -51964,15 +48920,11 @@ class CitySeeder extends Seeder
             'state_id' => 478
         ]);
 
-
-
         City::create([
             'id' => 8152,
             'name' => 'Muyupampa',
             'state_id' => 478
         ]);
-
-
 
         City::create([
             'id' => 8153,
@@ -51980,15 +48932,11 @@ class CitySeeder extends Seeder
             'state_id' => 478
         ]);
 
-
-
         City::create([
             'id' => 8154,
             'name' => 'Sucre',
             'state_id' => 478
         ]);
-
-
 
         City::create([
             'id' => 8155,
@@ -51996,15 +48944,11 @@ class CitySeeder extends Seeder
             'state_id' => 478
         ]);
 
-
-
         City::create([
             'id' => 8156,
             'name' => 'Villa Serano',
             'state_id' => 478
         ]);
-
-
 
         City::create([
             'id' => 8157,
@@ -52012,15 +48956,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8158,
             'name' => 'Arani',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8159,
@@ -52028,15 +48968,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8160,
             'name' => 'Chimore',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8161,
@@ -52044,15 +48980,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8162,
             'name' => 'Cochabamba',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8163,
@@ -52060,15 +48992,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8164,
             'name' => 'Entre Rios',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8165,
@@ -52076,15 +49004,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8166,
             'name' => 'Ivirgarzama',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8167,
@@ -52092,15 +49016,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8168,
             'name' => 'Punata',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8169,
@@ -52108,15 +49028,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8170,
             'name' => 'Sipe Sipe',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8171,
@@ -52124,15 +49040,11 @@ class CitySeeder extends Seeder
             'state_id' => 479
         ]);
 
-
-
         City::create([
             'id' => 8172,
             'name' => 'Ucurena',
             'state_id' => 479
         ]);
-
-
 
         City::create([
             'id' => 8173,
@@ -52140,15 +49052,11 @@ class CitySeeder extends Seeder
             'state_id' => 481
         ]);
 
-
-
         City::create([
             'id' => 8174,
             'name' => 'Challapata',
             'state_id' => 481
         ]);
-
-
 
         City::create([
             'id' => 8175,
@@ -52156,15 +49064,11 @@ class CitySeeder extends Seeder
             'state_id' => 481
         ]);
 
-
-
         City::create([
             'id' => 8176,
             'name' => 'Huanuni',
             'state_id' => 481
         ]);
-
-
 
         City::create([
             'id' => 8177,
@@ -52172,15 +49076,11 @@ class CitySeeder extends Seeder
             'state_id' => 481
         ]);
 
-
-
         City::create([
             'id' => 8178,
             'name' => 'Oruro',
             'state_id' => 481
         ]);
-
-
 
         City::create([
             'id' => 8179,
@@ -52188,15 +49088,11 @@ class CitySeeder extends Seeder
             'state_id' => 481
         ]);
 
-
-
         City::create([
             'id' => 8180,
             'name' => 'Santiago de Huari',
             'state_id' => 481
         ]);
-
-
 
         City::create([
             'id' => 8181,
@@ -52204,15 +49100,11 @@ class CitySeeder extends Seeder
             'state_id' => 481
         ]);
 
-
-
         City::create([
             'id' => 8182,
             'name' => 'Cobija',
             'state_id' => 482
         ]);
-
-
 
         City::create([
             'id' => 8183,
@@ -52220,15 +49112,11 @@ class CitySeeder extends Seeder
             'state_id' => 483
         ]);
 
-
-
         City::create([
             'id' => 8184,
             'name' => 'Betanzos',
             'state_id' => 483
         ]);
-
-
 
         City::create([
             'id' => 8185,
@@ -52236,15 +49124,11 @@ class CitySeeder extends Seeder
             'state_id' => 483
         ]);
 
-
-
         City::create([
             'id' => 8186,
             'name' => 'Llallagua',
             'state_id' => 483
         ]);
-
-
 
         City::create([
             'id' => 8187,
@@ -52252,15 +49136,11 @@ class CitySeeder extends Seeder
             'state_id' => 483
         ]);
 
-
-
         City::create([
             'id' => 8188,
             'name' => 'Santa Barbara',
             'state_id' => 483
         ]);
-
-
 
         City::create([
             'id' => 8189,
@@ -52268,15 +49148,11 @@ class CitySeeder extends Seeder
             'state_id' => 483
         ]);
 
-
-
         City::create([
             'id' => 8190,
             'name' => 'Uncia',
             'state_id' => 483
         ]);
-
-
 
         City::create([
             'id' => 8191,
@@ -52284,15 +49160,11 @@ class CitySeeder extends Seeder
             'state_id' => 483
         ]);
 
-
-
         City::create([
             'id' => 8192,
             'name' => 'Villazon',
             'state_id' => 483
         ]);
-
-
 
         City::create([
             'id' => 8193,
@@ -52300,15 +49172,11 @@ class CitySeeder extends Seeder
             'state_id' => 485
         ]);
 
-
-
         City::create([
             'id' => 8194,
             'name' => 'Entre Rios',
             'state_id' => 485
         ]);
-
-
 
         City::create([
             'id' => 8195,
@@ -52316,15 +49184,11 @@ class CitySeeder extends Seeder
             'state_id' => 485
         ]);
 
-
-
         City::create([
             'id' => 8196,
             'name' => 'Tarija',
             'state_id' => 485
         ]);
-
-
 
         City::create([
             'id' => 8197,
@@ -52332,15 +49196,11 @@ class CitySeeder extends Seeder
             'state_id' => 485
         ]);
 
-
-
         City::create([
             'id' => 8198,
             'name' => 'Yacuiba',
             'state_id' => 485
         ]);
-
-
 
         City::create([
             'id' => 8199,
@@ -52348,15 +49208,11 @@ class CitySeeder extends Seeder
             'state_id' => 493
         ]);
 
-
-
         City::create([
             'id' => 8200,
             'name' => 'Kasane',
             'state_id' => 493
         ]);
-
-
 
         City::create([
             'id' => 8201,
@@ -52364,15 +49220,11 @@ class CitySeeder extends Seeder
             'state_id' => 493
         ]);
 
-
-
         City::create([
             'id' => 8202,
             'name' => 'Kazungula',
             'state_id' => 493
         ]);
-
-
 
         City::create([
             'id' => 8203,
@@ -52380,15 +49232,11 @@ class CitySeeder extends Seeder
             'state_id' => 493
         ]);
 
-
-
         City::create([
             'id' => 8204,
             'name' => 'Muchinje-Mabale',
             'state_id' => 493
         ]);
-
-
 
         City::create([
             'id' => 8205,
@@ -52396,15 +49244,11 @@ class CitySeeder extends Seeder
             'state_id' => 493
         ]);
 
-
-
         City::create([
             'id' => 8206,
             'name' => 'Pandamatenga Botswana Defence ',
             'state_id' => 493
         ]);
-
-
 
         City::create([
             'id' => 8207,
@@ -52412,15 +49256,11 @@ class CitySeeder extends Seeder
             'state_id' => 493
         ]);
 
-
-
         City::create([
             'id' => 8208,
             'name' => 'Satau',
             'state_id' => 493
         ]);
-
-
 
         City::create([
             'id' => 8209,
@@ -52428,15 +49268,11 @@ class CitySeeder extends Seeder
             'state_id' => 494
         ]);
 
-
-
         City::create([
             'id' => 8210,
             'name' => 'Gaborone',
             'state_id' => 495
         ]);
-
-
 
         City::create([
             'id' => 8211,
@@ -52444,15 +49280,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8212,
             'name' => 'Charles Hill',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8213,
@@ -52460,15 +49292,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8214,
             'name' => 'Dekar',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8215,
@@ -52476,15 +49304,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8216,
             'name' => 'Ghanzi',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8217,
@@ -52492,15 +49316,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8218,
             'name' => 'Kacgae',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8219,
@@ -52508,15 +49328,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8220,
             'name' => 'Kuke Quarantine Camp',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8221,
@@ -52524,15 +49340,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8222,
             'name' => 'Makunda',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8223,
@@ -52540,15 +49352,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8224,
             'name' => 'New Xade',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8225,
@@ -52556,15 +49364,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8226,
             'name' => 'Qabo',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8227,
@@ -52572,15 +49376,11 @@ class CitySeeder extends Seeder
             'state_id' => 496
         ]);
 
-
-
         City::create([
             'id' => 8228,
             'name' => 'West Hanahai',
             'state_id' => 496
         ]);
-
-
 
         City::create([
             'id' => 8229,
@@ -52588,15 +49388,11 @@ class CitySeeder extends Seeder
             'state_id' => 497
         ]);
 
-
-
         City::create([
             'id' => 8230,
             'name' => 'Artisia',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8231,
@@ -52604,15 +49400,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8232,
             'name' => 'Dikgonye',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8233,
@@ -52620,15 +49412,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8234,
             'name' => 'Kgomodiatshaba',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8235,
@@ -52636,15 +49424,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8236,
             'name' => 'Leshibitse',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8237,
@@ -52652,15 +49436,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8238,
             'name' => 'Malolwane',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8239,
@@ -52668,15 +49448,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8240,
             'name' => 'Matebeleng',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8241,
@@ -52684,15 +49460,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8242,
             'name' => 'Mmathubudukwane',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8243,
@@ -52700,15 +49472,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8244,
             'name' => 'Modipane',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8245,
@@ -52716,15 +49484,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8246,
             'name' => 'Oliphants Drift',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8247,
@@ -52732,15 +49496,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8248,
             'name' => 'Pilane',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8249,
@@ -52748,15 +49508,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8250,
             'name' => 'Ramotlabaki',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8251,
@@ -52764,15 +49520,11 @@ class CitySeeder extends Seeder
             'state_id' => 500
         ]);
 
-
-
         City::create([
             'id' => 8252,
             'name' => 'Sikwane',
             'state_id' => 500
         ]);
-
-
 
         City::create([
             'id' => 8253,
@@ -52780,15 +49532,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8254,
             'name' => 'Botlhapatlou',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8255,
@@ -52796,15 +49544,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8256,
             'name' => 'Diphudugodu',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8257,
@@ -52812,15 +49556,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8258,
             'name' => 'Ditshegwane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8259,
@@ -52828,15 +49568,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8260,
             'name' => 'Dumadumane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8261,
@@ -52844,15 +49580,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8262,
             'name' => 'Gabane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8263,
@@ -52860,15 +49592,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8264,
             'name' => 'Gakuto',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8265,
@@ -52876,15 +49604,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8266,
             'name' => 'Gamodubu',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8267,
@@ -52892,15 +49616,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8268,
             'name' => 'Hatsalatladi',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8269,
@@ -52908,15 +49628,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8270,
             'name' => 'Kaudwane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8271,
@@ -52924,15 +49640,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8272,
             'name' => 'Kgope',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8273,
@@ -52940,15 +49652,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8274,
             'name' => 'Khudumelapye',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8275,
@@ -52956,15 +49664,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8276,
             'name' => 'Kotolaname',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8277,
@@ -52972,15 +49676,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8278,
             'name' => 'Kumakwane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8279,
@@ -52988,15 +49688,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8280,
             'name' => 'Lentsweletau',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8281,
@@ -53004,15 +49700,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8282,
             'name' => 'Lesirane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8283,
@@ -53020,15 +49712,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8284,
             'name' => 'Losilakgokong',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8285,
@@ -53036,15 +49724,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8286,
             'name' => 'Mahetlwe',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8287,
@@ -53052,15 +49736,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8288,
             'name' => 'Malwelwe',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8289,
@@ -53068,15 +49748,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8290,
             'name' => 'Manaledi',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8291,
@@ -53084,15 +49760,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8292,
             'name' => 'Marejwane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8293,
@@ -53100,15 +49772,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8294,
             'name' => 'Medie',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8295,
@@ -53116,15 +49784,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8296,
             'name' => 'Metsimotlhaba',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8297,
@@ -53132,15 +49796,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8298,
             'name' => 'Mmankgodi',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8299,
@@ -53148,15 +49808,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8300,
             'name' => 'Mmokolodi',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8301,
@@ -53164,15 +49820,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8302,
             'name' => 'Mmopane Lands',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8303,
@@ -53180,15 +49832,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8304,
             'name' => 'Mogoditshane Botswana Defence ',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8305,
@@ -53196,15 +49844,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8306,
             'name' => 'Mogonono',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8307,
@@ -53212,15 +49856,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8308,
             'name' => 'Mononyane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8309,
@@ -53228,15 +49868,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8310,
             'name' => 'Morabane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8311,
@@ -53244,15 +49880,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8312,
             'name' => 'Moshaweng',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8313,
@@ -53260,15 +49892,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8314,
             'name' => 'Motokwe',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8315,
@@ -53276,15 +49904,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8316,
             'name' => 'Nkoyaphiri',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8317,
@@ -53292,15 +49916,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8318,
             'name' => 'Salajwe',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8319,
@@ -53308,15 +49928,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8320,
             'name' => 'Sesung',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8321,
@@ -53324,15 +49940,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8322,
             'name' => 'Sojwe',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8323,
@@ -53340,15 +49952,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8324,
             'name' => 'Suping',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8325,
@@ -53356,15 +49964,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8326,
             'name' => 'Thamaga',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8327,
@@ -53372,15 +49976,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8328,
             'name' => 'Tlowaneng',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8329,
@@ -53388,15 +49988,11 @@ class CitySeeder extends Seeder
             'state_id' => 501
         ]);
 
-
-
         City::create([
             'id' => 8330,
             'name' => 'Tswaane',
             'state_id' => 501
         ]);
-
-
 
         City::create([
             'id' => 8331,
@@ -53404,15 +50000,11 @@ class CitySeeder extends Seeder
             'state_id' => 502
         ]);
 
-
-
         City::create([
             'id' => 8332,
             'name' => 'Bodibeng',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8333,
@@ -53420,15 +50012,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8334,
             'name' => 'Botlhatlogo',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8335,
@@ -53436,15 +50024,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8336,
             'name' => 'Chuchubega',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8337,
@@ -53452,15 +50036,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8338,
             'name' => 'Ditshiping',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8339,
@@ -53468,15 +50048,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8340,
             'name' => 'Jao',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8341,
@@ -53484,15 +50060,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8342,
             'name' => 'Katamaga',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8343,
@@ -53500,15 +50072,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8344,
             'name' => 'Khwai Camp',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8345,
@@ -53516,15 +50084,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8346,
             'name' => 'Legotlhwana',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8347,
@@ -53532,15 +50096,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8348,
             'name' => 'Makalamabedi',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8349,
@@ -53548,15 +50108,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8350,
             'name' => 'Matsaudi',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8351,
@@ -53564,15 +50120,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8352,
             'name' => 'Mokgalo-Haka',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8353,
@@ -53580,15 +50132,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8354,
             'name' => 'Nxharaga',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8355,
@@ -53596,15 +50144,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8356,
             'name' => 'Samodupi',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8357,
@@ -53612,15 +50156,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8358,
             'name' => 'Sehithwa',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8359,
@@ -53628,15 +50168,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8360,
             'name' => 'Sexaxa',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8361,
@@ -53644,15 +50180,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8362,
             'name' => 'Shorobe',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8363,
@@ -53660,15 +50192,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8364,
             'name' => 'Toteng',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8365,
@@ -53676,15 +50204,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8366,
             'name' => 'Tsao',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8367,
@@ -53692,15 +50216,11 @@ class CitySeeder extends Seeder
             'state_id' => 503
         ]);
 
-
-
         City::create([
             'id' => 8368,
             'name' => 'Xhobe',
             'state_id' => 503
         ]);
-
-
 
         City::create([
             'id' => 8369,
@@ -53708,15 +50228,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8370,
             'name' => 'Borobadilepe',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8371,
@@ -53724,15 +50240,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8372,
             'name' => 'Digawana',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8373,
@@ -53740,15 +50252,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8374,
             'name' => 'Dinatshana',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8375,
@@ -53756,15 +50264,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8376,
             'name' => 'Ditlharapa',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8377,
@@ -53772,15 +50276,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8378,
             'name' => 'Gasita',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8379,
@@ -53788,15 +50288,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8380,
             'name' => 'Good Hope',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8381,
@@ -53804,15 +50300,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8382,
             'name' => 'Gopong',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8383,
@@ -53820,15 +50312,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8384,
             'name' => 'Itholoke',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8385,
@@ -53836,15 +50324,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8386,
             'name' => 'Kangwe',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8387,
@@ -53852,15 +50336,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8388,
             'name' => 'Keng',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8389,
@@ -53868,15 +50348,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8390,
             'name' => 'Kgoro',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8391,
@@ -53884,15 +50360,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8392,
             'name' => 'Khonkhwa',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8393,
@@ -53900,15 +50372,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8394,
             'name' => 'Lehoko',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8395,
@@ -53916,15 +50384,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8396,
             'name' => 'Lekgolobotlo',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8397,
@@ -53932,15 +50396,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8398,
             'name' => 'Logagane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8399,
@@ -53948,15 +50408,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8400,
             'name' => 'Lorwana',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8401,
@@ -53964,15 +50420,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8402,
             'name' => 'Lotlhakane West',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8403,
@@ -53980,15 +50432,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8404,
             'name' => 'Mabutsane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8405,
@@ -53996,15 +50444,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8406,
             'name' => 'Magoriapitse',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8407,
@@ -54012,15 +50456,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8408,
             'name' => 'Mahotshwane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8409,
@@ -54028,15 +50468,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8410,
             'name' => 'Makokwe',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8411,
@@ -54044,15 +50480,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8412,
             'name' => 'Manyana',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8413,
@@ -54060,15 +50492,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8414,
             'name' => 'Marojane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8415,
@@ -54076,15 +50504,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8416,
             'name' => 'Metlobo',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8417,
@@ -54092,15 +50516,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8418,
             'name' => 'Mmakgori',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8419,
@@ -54108,15 +50528,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8420,
             'name' => 'Mogojogojo',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8421,
@@ -54124,15 +50540,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8422,
             'name' => 'Mogwalale',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8423,
@@ -54140,15 +50552,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8424,
             'name' => 'Mokgomane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8425,
@@ -54156,15 +50564,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8426,
             'name' => 'Molapowabojang',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8427,
@@ -54172,15 +50576,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8428,
             'name' => 'Morwamosu',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8429,
@@ -54188,15 +50588,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8430,
             'name' => 'Moshupa',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8431,
@@ -54204,15 +50600,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8432,
             'name' => 'Motsentshe',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8433,
@@ -54220,15 +50612,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8434,
             'name' => 'Ngwatsau',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8435,
@@ -54236,15 +50624,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8436,
             'name' => 'Papatlo',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8437,
@@ -54252,15 +50636,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8438,
             'name' => 'Pitsana-Potokwe',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8439,
@@ -54268,15 +50648,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8440,
             'name' => 'Pitseng-Ralekgetho',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8441,
@@ -54284,15 +50660,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8442,
             'name' => 'Rakhuna',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8443,
@@ -54300,15 +50672,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8444,
             'name' => 'Ramatlabama',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8445,
@@ -54316,15 +50684,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8446,
             'name' => 'Sedibeng',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8447,
@@ -54332,15 +50696,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8448,
             'name' => 'Segwagwa',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8449,
@@ -54348,15 +50708,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8450,
             'name' => 'Sekhutlane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8451,
@@ -54364,15 +50720,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8452,
             'name' => 'Selokolela',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8453,
@@ -54380,15 +50732,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8454,
             'name' => 'Sese',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8455,
@@ -54396,15 +50744,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8456,
             'name' => 'Sheep Farm',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8457,
@@ -54412,15 +50756,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8458,
             'name' => 'Tlhareseleele',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8459,
@@ -54428,15 +50768,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8460,
             'name' => 'Tshwaane',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8461,
@@ -54444,15 +50780,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8462,
             'name' => 'Tswaaneng',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8463,
@@ -54460,15 +50792,11 @@ class CitySeeder extends Seeder
             'state_id' => 504
         ]);
 
-
-
         City::create([
             'id' => 8464,
             'name' => 'Tswanyaneng',
             'state_id' => 504
         ]);
-
-
 
         City::create([
             'id' => 8465,
@@ -54476,15 +50804,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8466,
             'name' => 'Eretsha',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8467,
@@ -54492,15 +50816,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8468,
             'name' => 'Etsha 13',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8469,
@@ -54508,15 +50828,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8470,
             'name' => 'Etsha 8',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8471,
@@ -54524,15 +50840,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8472,
             'name' => 'Gane',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8473,
@@ -54540,15 +50852,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8474,
             'name' => 'Gowe',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8475,
@@ -54556,15 +50864,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8476,
             'name' => 'Gumare',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8477,
@@ -54572,15 +50876,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8478,
             'name' => 'Kajaja',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8479,
@@ -54588,15 +50888,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8480,
             'name' => 'Kauxwhi',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8481,
@@ -54604,15 +50900,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8482,
             'name' => 'Maun',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8483,
@@ -54620,15 +50912,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8484,
             'name' => 'Mohembo East',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8485,
@@ -54636,15 +50924,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8486,
             'name' => 'Mokgacha',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8487,
@@ -54652,15 +50936,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8488,
             'name' => 'Nokaneng',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8489,
@@ -54668,15 +50948,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8490,
             'name' => 'Nxaunxau',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8491,
@@ -54684,15 +50960,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8492,
             'name' => 'Qangwa',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8493,
@@ -54700,15 +50972,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8494,
             'name' => 'Samochema',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8495,
@@ -54716,15 +50984,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8496,
             'name' => 'Sepopa',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8497,
@@ -54732,15 +50996,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8498,
             'name' => 'Shaowe',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8499,
@@ -54748,15 +51008,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8500,
             'name' => 'Tubu',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8501,
@@ -54764,15 +51020,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8502,
             'name' => 'Xadau',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8503,
@@ -54780,15 +51032,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8504,
             'name' => 'Xaxa',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8505,
@@ -54796,15 +51044,11 @@ class CitySeeder extends Seeder
             'state_id' => 506
         ]);
 
-
-
         City::create([
             'id' => 8506,
             'name' => 'Xurube',
             'state_id' => 506
         ]);
-
-
 
         City::create([
             'id' => 8507,
@@ -54812,15 +51056,11 @@ class CitySeeder extends Seeder
             'state_id' => 507
         ]);
 
-
-
         City::create([
             'id' => 8508,
             'name' => 'Sowa',
             'state_id' => 510
         ]);
-
-
 
         City::create([
             'id' => 8509,
@@ -54828,15 +51068,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8510,
             'name' => 'Brasileia',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8511,
@@ -54844,15 +51080,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8512,
             'name' => 'Epitaciolandia',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8513,
@@ -54860,15 +51092,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8514,
             'name' => 'Mancio Lima',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8515,
@@ -54876,15 +51104,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8516,
             'name' => 'Marechal Thaumaturgo',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8517,
@@ -54892,15 +51116,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8518,
             'name' => 'Porto Walter',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8519,
@@ -54908,15 +51128,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8520,
             'name' => 'Rodrigues Alves',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8521,
@@ -54924,15 +51140,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8522,
             'name' => 'Senador Guiomard',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8523,
@@ -54940,15 +51152,11 @@ class CitySeeder extends Seeder
             'state_id' => 512
         ]);
 
-
-
         City::create([
             'id' => 8524,
             'name' => 'Xapuri',
             'state_id' => 512
         ]);
-
-
 
         City::create([
             'id' => 8525,
@@ -54956,15 +51164,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8526,
             'name' => 'Anadia',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8527,
@@ -54972,15 +51176,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8528,
             'name' => 'Atalaia',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8529,
@@ -54988,15 +51188,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8530,
             'name' => 'Batalha',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8531,
@@ -55004,15 +51200,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8532,
             'name' => 'Cacimbinhas',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8533,
@@ -55020,15 +51212,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8534,
             'name' => 'Campo Alegre',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8535,
@@ -55036,15 +51224,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8536,
             'name' => 'Canapi',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8537,
@@ -55052,15 +51236,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8538,
             'name' => 'Coite do Noia',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8539,
@@ -55068,15 +51248,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8540,
             'name' => 'Coruripe',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8541,
@@ -55084,15 +51260,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8542,
             'name' => 'Delmiro Gouveia',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8543,
@@ -55100,15 +51272,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8544,
             'name' => 'Estrela de Alagoas',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8545,
@@ -55116,15 +51284,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8546,
             'name' => 'Flexeiras',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8547,
@@ -55132,15 +51296,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8548,
             'name' => 'Ibateguara',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8549,
@@ -55148,15 +51308,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8550,
             'name' => 'Igreja Nova',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8551,
@@ -55164,15 +51320,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8552,
             'name' => 'Joaquim Gomes',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8553,
@@ -55180,15 +51332,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8554,
             'name' => 'Junqueiro',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8555,
@@ -55196,15 +51344,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8556,
             'name' => 'Limoeiro de Anadia',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8557,
@@ -55212,15 +51356,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8558,
             'name' => 'Major Isidoro',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8559,
@@ -55228,15 +51368,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8560,
             'name' => 'Maravilha',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8561,
@@ -55244,15 +51380,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8562,
             'name' => 'Maribondo',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8563,
@@ -55260,15 +51392,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8564,
             'name' => 'Matriz de Camaragibe',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8565,
@@ -55276,15 +51404,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8566,
             'name' => 'Minador do Negrao',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8567,
@@ -55292,15 +51416,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8568,
             'name' => 'Novo Lino',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8569,
@@ -55308,15 +51428,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8570,
             'name' => 'Olivenca',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8571,
@@ -55324,15 +51440,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8572,
             'name' => 'Pao de Acucar',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8573,
@@ -55340,15 +51452,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8574,
             'name' => 'Penedo',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8575,
@@ -55356,15 +51464,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8576,
             'name' => 'Pilar',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8577,
@@ -55372,15 +51476,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8578,
             'name' => 'Poco das Trincheiras',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8579,
@@ -55388,15 +51488,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8580,
             'name' => 'Porto Real do Colegio',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8581,
@@ -55404,15 +51500,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8582,
             'name' => 'Rio Largo',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8583,
@@ -55420,15 +51512,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8584,
             'name' => 'Santana do Mundau',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8585,
@@ -55436,15 +51524,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8586,
             'name' => 'Sao Jose da Tapera',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8587,
@@ -55452,15 +51536,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8588,
             'name' => 'Sao Miguel dos Campos',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8589,
@@ -55468,15 +51548,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8590,
             'name' => 'Satuba',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8591,
@@ -55484,15 +51560,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8592,
             'name' => 'Taquarana',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8593,
@@ -55500,15 +51572,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8594,
             'name' => 'Traipu',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8595,
@@ -55516,15 +51584,11 @@ class CitySeeder extends Seeder
             'state_id' => 513
         ]);
 
-
-
         City::create([
             'id' => 8596,
             'name' => 'Vicosa',
             'state_id' => 513
         ]);
-
-
 
         City::create([
             'id' => 8597,
@@ -55532,15 +51596,11 @@ class CitySeeder extends Seeder
             'state_id' => 514
         ]);
 
-
-
         City::create([
             'id' => 8598,
             'name' => 'Laranjal do Jari',
             'state_id' => 514
         ]);
-
-
 
         City::create([
             'id' => 8599,
@@ -55548,15 +51608,11 @@ class CitySeeder extends Seeder
             'state_id' => 514
         ]);
 
-
-
         City::create([
             'id' => 8600,
             'name' => 'Mazagao',
             'state_id' => 514
         ]);
-
-
 
         City::create([
             'id' => 8601,
@@ -55564,15 +51620,11 @@ class CitySeeder extends Seeder
             'state_id' => 514
         ]);
 
-
-
         City::create([
             'id' => 8602,
             'name' => 'Santana',
             'state_id' => 514
         ]);
-
-
 
         City::create([
             'id' => 8603,
@@ -55580,15 +51632,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8604,
             'name' => 'Anori',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8605,
@@ -55596,15 +51644,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8606,
             'name' => 'Autazes',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8607,
@@ -55612,15 +51656,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8608,
             'name' => 'Barreirinha',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8609,
@@ -55628,15 +51668,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8610,
             'name' => 'Boca do Acre',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8611,
@@ -55644,15 +51680,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8612,
             'name' => 'Canutama',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8613,
@@ -55660,15 +51692,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8614,
             'name' => 'Careiro',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8615,
@@ -55676,15 +51704,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8616,
             'name' => 'Coari',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8617,
@@ -55692,15 +51716,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8618,
             'name' => 'Eirunepe',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8619,
@@ -55708,15 +51728,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8620,
             'name' => 'Fonte Boa',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8621,
@@ -55724,15 +51740,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8622,
             'name' => 'Humaita',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8623,
@@ -55740,15 +51752,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8624,
             'name' => 'Iranduba',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8625,
@@ -55756,15 +51764,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8626,
             'name' => 'Japura',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8627,
@@ -55772,15 +51776,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8628,
             'name' => 'Labrea',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8629,
@@ -55788,15 +51788,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8630,
             'name' => 'Manaquiri',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8631,
@@ -55804,15 +51800,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8632,
             'name' => 'Manicore',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8633,
@@ -55820,15 +51812,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8634,
             'name' => 'Maues',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8635,
@@ -55836,15 +51824,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8636,
             'name' => 'Nova Olinda do Norte',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8637,
@@ -55852,15 +51836,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8638,
             'name' => 'Novo Aripuana',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8639,
@@ -55868,15 +51848,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8640,
             'name' => 'Pauini',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8641,
@@ -55884,15 +51860,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8642,
             'name' => 'Santa Isabel do Rio Negro',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8643,
@@ -55900,15 +51872,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8644,
             'name' => 'Sao Gabriel da Cachoeira',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8645,
@@ -55916,15 +51884,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8646,
             'name' => 'Tabatinga',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8647,
@@ -55932,15 +51896,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8648,
             'name' => 'Tefe',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8649,
@@ -55948,15 +51908,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8650,
             'name' => 'Uarini',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8651,
@@ -55964,15 +51920,11 @@ class CitySeeder extends Seeder
             'state_id' => 515
         ]);
 
-
-
         City::create([
             'id' => 8652,
             'name' => 'Urucurituba',
             'state_id' => 515
         ]);
-
-
 
         City::create([
             'id' => 8653,
@@ -55980,15 +51932,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8654,
             'name' => 'Alagoinhas',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8655,
@@ -55996,15 +51944,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8656,
             'name' => 'Amelia Rodrigues',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8657,
@@ -56012,15 +51956,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8658,
             'name' => 'Anage',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8659,
@@ -56028,15 +51968,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8660,
             'name' => 'Aurelino Leal',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8661,
@@ -56044,15 +51980,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8662,
             'name' => 'Barra',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8663,
@@ -56060,15 +51992,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8664,
             'name' => 'Barra do Choca',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8665,
@@ -56076,15 +52004,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8666,
             'name' => 'Belmonte',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8667,
@@ -56092,15 +52016,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8668,
             'name' => 'Bom Jesus da Lapa',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8669,
@@ -56108,15 +52028,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8670,
             'name' => 'Brumado',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8671,
@@ -56124,15 +52040,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8672,
             'name' => 'Cachoeira',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8673,
@@ -56140,15 +52052,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8674,
             'name' => 'Caetite',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8675,
@@ -56156,15 +52064,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8676,
             'name' => 'Camacan',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8677,
@@ -56172,15 +52076,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8678,
             'name' => 'Camamu',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8679,
@@ -56188,15 +52088,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8680,
             'name' => 'Campo Formoso',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8681,
@@ -56204,15 +52100,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8682,
             'name' => 'Canavieiras',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8683,
@@ -56220,15 +52112,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8684,
             'name' => 'Candido Sales',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8685,
@@ -56236,15 +52124,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8686,
             'name' => 'Capim Grosso',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8687,
@@ -56252,15 +52136,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8688,
             'name' => 'Carinhanha',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8689,
@@ -56268,15 +52148,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8690,
             'name' => 'Castro Alves',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8691,
@@ -56284,15 +52160,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8692,
             'name' => 'Cicero Dantas',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8693,
@@ -56300,15 +52172,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8694,
             'name' => 'Coaraci',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8695,
@@ -56316,15 +52184,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8696,
             'name' => 'Conceicao do Almeida',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8697,
@@ -56332,15 +52196,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8698,
             'name' => 'Conceicao do Jacuipe',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8699,
@@ -56348,15 +52208,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8700,
             'name' => 'Coracao de Maria',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8701,
@@ -56364,15 +52220,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8702,
             'name' => 'Correntina',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8703,
@@ -56380,15 +52232,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8704,
             'name' => 'Curaca',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8705,
@@ -56396,15 +52244,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8706,
             'name' => 'Encruzilhada',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8707,
@@ -56412,15 +52256,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8708,
             'name' => 'Esplanada',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8709,
@@ -56428,15 +52268,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8710,
             'name' => 'Eunapolis',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8711,
@@ -56444,15 +52280,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8712,
             'name' => 'Filadelfia',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8713,
@@ -56460,15 +52292,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8714,
             'name' => 'Gandu',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8715,
@@ -56476,15 +52304,11 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8716,
             'name' => 'Guaratinga',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8717,
@@ -56492,23 +52316,17 @@ class CitySeeder extends Seeder
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8718,
             'name' => 'Ibicarai',
             'state_id' => 516
         ]);
 
-
-
         City::create([
             'id' => 8719,
             'name' => 'Ibicui',
             'state_id' => 516
         ]);
-
-
 
         City::create([
             'id' => 8720,

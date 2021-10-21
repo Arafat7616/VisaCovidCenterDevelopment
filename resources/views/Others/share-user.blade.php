@@ -6,7 +6,6 @@
 
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/center-part/css/new_registration_model_39.css') }}">
-
 @endpush
 @section('content')
     <div class="container">
@@ -21,9 +20,9 @@
                     </div>
                     <div class="col-8">
                         <h6>{{ $user->name }}</h6>
-                        <h6>{{ $user->userInfo }}</h6>
-                        <h6>3459034853</h6>
-                        <h6>408533450</h6>
+                        <h6>{{ $user->userInfo->father_name }}</h6>
+                        <h6>{{ $user->userInfo->passport_no }}</h6>
+                        <h6>{{ $user->nid_no }}</h6>
                     </div>
                 </div>
             </div>
@@ -36,10 +35,10 @@
                         <h6>Address</h6>
                     </div>
                     <div class="col-8">
-                        <h6>22-02-22</h6>
-                        <h6>bangladesh</h6>
-                        <h6>3459034853</h6>
-                        <h6>Uttara, Dhaka</h6>
+                        <h6>{{ $user->userInfo->dob }}</h6>
+                        <h6>{{ $user->userInfo->city->name }}</h6>
+                        <h6>{{ $user->phone }}</h6>
+                        <h6>{{ $user->userInfo->present_address }}</h6>
                     </div>
                 </div>
             </div>

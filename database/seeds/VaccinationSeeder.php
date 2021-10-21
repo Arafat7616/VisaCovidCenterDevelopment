@@ -23,6 +23,7 @@ class VaccinationSeeder extends Seeder
             $vaccination->status = 1;
             $vaccination->user_id = $i;
             $vaccination->center_id = 1;
+            $vaccination->serve_by_id = 3;
             $vaccination->save();
         }
     }

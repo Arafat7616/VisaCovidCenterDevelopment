@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -46,13 +45,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function medicalCenter()
-    {
-        return $this->belongsTo(Center::class, 'center_id');
-    }
+    // public function medicalCenter()
+    // {
+    //     return $this->hasOne(Center::class, 'center_id');
+    // }
 
     public function userInfo()
     {
-        return $this->belongsTo(UserInfo::class, 'user_id');
+        return $this->hasOne(UserInfo::class, 'user_id');
     }
 }
