@@ -13,15 +13,6 @@ class PcrTestSeeder extends Seeder
      */
     public function run()
     {
-
-        $fillable = [
-            'date_of_pcr_test',
-            'pcr_result',
-            'status',
-            'user_id',
-            'center_id'
-        ];
-
         // demo pcrTest adding
         for ($i = 1; $i <= 5; $i++) {
             $pcrTest = new PcrTest();
