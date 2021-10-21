@@ -45,4 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function medicalCenter()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
+
+    public function userInfo()
+    {
+        return $this->belongsTo(UserInfo::class, 'user_id');
+    }
 }
