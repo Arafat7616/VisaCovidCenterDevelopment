@@ -22,6 +22,7 @@ class CreateVaccinationsTable extends Migration
             $table->enum('status', [0,1]);
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('serve_by_id')->nullable();
             $table->timestamps();
         });
     }

@@ -1,7 +1,6 @@
 .new_registration__model{
     padding: 0px 25px;
 }
-.new_registration__model__content{}
 .new_registration__model h6{
     color: #707070;
     opacity: 0.8;
@@ -55,10 +54,6 @@
     align-items: center;
     font-weight: bold;
     min-height: 145px;
-}
-
-.new_registration__qr{
-
 }
 
 .new_registration__qr img{

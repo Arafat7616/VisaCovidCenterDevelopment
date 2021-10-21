@@ -32,6 +32,9 @@ Auth::routes(['register' => false]);
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
 Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
 
+
+Route::get('/share/user/{id}','ShareController@shareUser')->name('share.user');
+
 Route::get('/api/get-state-list/{country_id}','Auth\CenterRegistrationController@getStateList');
 Route::get('/api/get-city-list/{state_id}','Auth\CenterRegistrationController@getCityList');
 

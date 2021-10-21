@@ -13,6 +13,7 @@ class Vaccination extends Model
         'antibody_last_date',
         'status',
         'user_id',
-        'center_id'
+        'center_id',
+        'serve_by_id',
     ];
 }
