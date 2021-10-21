@@ -17,11 +17,9 @@ class CreatePcrTestsTable extends Migration
             $table->id();
             $table->date('date_of_pcr_test')->nullable();
             $table->enum('pcr_result', [0,1])->nullable();
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('center_id')->unsigned();
             $table->enum('status', [0,1]);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
         });
     }
