@@ -109,7 +109,7 @@
                     </div>
                     <!--======================== otp card end here==================== -->
                     <div class="apply-next-btn-a d-none">
-                        <a href="#" class="mt-5 btn apply-next-btn">Next</a>
+                        <a href="{{route('administrator.qrScan')}}" class="mt-5 btn apply-next-btn">Next</a>
                     </div>
                 </div>
             </div>
@@ -202,23 +202,36 @@
                     processData: false,
                     contentType: false,
                     success: function(data) {
-                        /*$('#registrationForm').trigger("reset");*/
-                        $('.apply-next-btn-a').removeClass("d-none");
-                        $('.apply-next-btn-a').addClass("d-block");
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: data.message,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        $('.otp-reg').show();
-                        $('.otp-sent-number').innerText($('#personPhone').val());
-                        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+                        if(data.type == 'success')
+                        {
+                            /*$('#registrationForm').trigger("reset");*/
+                            $('.apply-next-btn-a').removeClass("d-none");
+                            $('.apply-next-btn-a').addClass("d-block");
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $('.otp-reg').show();
+                            $('.otp-sent-number').innerText($('#personPhone').val());
+                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
 
-                        // setTimeout(function() {
-                        //     location.reload();
-                        // }, 800); //
+                            // setTimeout(function() {
+                            //     location.reload();
+                            // }, 800); //
+                        }else (data.type == 'warning')
+                        {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'warning',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+
                     },
                     error: function(xhr) {
                         var errorMessage = '<div class="card bg-danger">\n' +

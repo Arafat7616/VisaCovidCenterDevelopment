@@ -9,8 +9,15 @@
 @endpush
 
 @section('content')
-    <div class="volunteers">
+    <div class="volunteers mb-5">
         <div class="container">
+            <div class="row">
+                @if(Session::has('message'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
+            </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @if($trustedPeoples->count() > 0)
                     @foreach($trustedPeoples as $people)
@@ -27,7 +34,7 @@
                             </div>
                             <div class="card-footer text-center">
                                 <a class="btn btn-sm btn-success" href="{{route('administrator.trustedPeople.edit', $people->id)}}"><i class="far fa-edit"></i> Edit</a>
-                                <a class="btn btn-sm btn-danger" href="{{route('administrator.trustedPeople.destroy', $people->id)}}"><i class="fas fa-trash-alt"></i> Delete</a>
+                                <button class="btn btn-sm btn-danger" onclick="delete_function(this)" value="{{ route('administrator.trustedPeople.destroy', $people->id) }}"><i class="fa fa-trash"></i> Delete </button>
                             </div>
                         </div>
                     </div>
