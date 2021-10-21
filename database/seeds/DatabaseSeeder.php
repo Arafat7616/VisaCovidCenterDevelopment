@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CovidEffectedSeeder::class);
         $this->call(PcrTestSeeder::class);
         $this->call(PricingSeeder::class);
+        $this->call(VaccinationSeeder::class);
+        $this->call(BoosterSeeder::class);
 
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);

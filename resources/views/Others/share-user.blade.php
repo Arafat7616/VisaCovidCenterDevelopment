@@ -22,7 +22,7 @@
                         <h6>{{ $user->name }}</h6>
                         <h6>{{ $user->userInfo->father_name }}</h6>
                         <h6>{{ $user->userInfo->passport_no }}</h6>
-                        <h6>{{ $user->nid_no }}</h6>
+                        <h6>{{ $user->userInfo->nid_no }}</h6>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-8">
                         <h6>{{ $user->userInfo->dob }}</h6>
-                        <h6>{{ $user->userInfo->city->name }}</h6>
+                        {{-- <h6>{{ $user->userInfo->city->name }}</h6> --}}
                         <h6>{{ $user->phone }}</h6>
                         <h6>{{ $user->userInfo->present_address }}</h6>
                     </div>
@@ -53,28 +53,28 @@
                 <div class="col-4 p-0 ps-3">
                     <h5 class="new_registration__head">Dose 1</h5>
                     <div class="new_registration__body px-3">
-                        <span>Cinopharma 982</span> <br>
-                        <span>Vaccine Center: Kuet Moitri Hospital</span> <br>
-                        <span>Served By: 93274</span> <br>
-                        <span>Date: 01-04-2021</span>
+                        <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
+                        <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
+                        <span>Served By: {{ $user->vaccination->first_served_by_id }}</span> <br>
+                        <span>Date: {{ $user->vaccination->date_of_first_dose }}</span>
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-0">
                     <h5 class="new_registration__head new_registration__border">Dose 2</h5>
                     <div class="new_registration__body px-3">
-                        <span>Cinopharma 982</span> <br>
-                        <span>Vaccine Center: Kuet Moitri Hospital</span> <br>
-                        <span>Served By: 93274</span> <br>
-                        <span>Date: 01-04-2021</span>
+                        <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
+                        <span>Vaccine Center: {{ $user->vaccination->center->name }}</span> <br>
+                        <span>Served By: {{ $user->vaccination->second_served_by_id }}</span> <br>
+                        <span>Date: {{ $user->vaccination->date_of_second_dose }}</span>
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-3">
                     <h5 class="new_registration__head">Booster</h5>
                     <div class="new_registration__body px-3">
-                        <span>Cinopharma 982</span> <br>
-                        <span>Vaccine Center: Kuet Moitri Hospital</span> <br>
-                        <span>Served By: 93274</span> <br>
-                        <span>Date: 01-04-2021</span>
+                        <span>{{ $user->booster->name_of_vaccine }}</span> <br>
+                        <span>Vaccine Center: {{ $user->booster->center->name }}</span> <br>
+                        <span>Served By: {{ $user->booster->served_by_id }}</span> <br>
+                        <span>Date: {{ $user->booster->date }}</span>
                     </div>
                 </div>
             </div>
@@ -86,23 +86,27 @@
                 <div class="col-4 p-0 ps-3">
                     <h5 class="new_registration__head">Date</h5>
                     <div class="new_registration__body px-3">
-                        <span>Taken:  10-15-10</span> <br>
-                        <span>Received: 10-15-10</span> <br>
-                        <span>Active Till: 01-04-2021</span>
+                        <span>Sample Collection:  {{ $user->pcrTest->sample_clloection_date }}</span> <br>
+                        <span>Tested Date:  {{ $user->pcrTest->date_of_pcr_test }}</span> <br>
+                        <span>Result Published:  {{ $user->pcrTest->result_published_date }}</span> <br>
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-0">
                     <h5 class="new_registration__head new_registration__border">Authorised</h5>
                     <div class="new_registration__body px-3">
-                        <span>Vaccine Center: Kuet Moitri Hospital</span> <br>
-                        <span>Served By: 93274</span> <br>
-                        <span>System: Visa Covid</span>
+                        <span>Medical Center: {{ $user->pcrTest->center->name }}</span> <br>
+                        <span>Served By: {{ $user->pcrTest->tested_by }}</span> <br>
+                        <span>System: {{ config('app.name') }}</span>
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-3">
                     <h5 class="new_registration__head">Result</h5>
                     <div class="new_registration__body px-3">
-                        <p class="text-success">Positive</p>
+                        @if($user->pcrTest->pcr_result == 'positive')
+                            <p class="text-danger">Positive</p>
+                        @elseif ($user->pcrTest->pcr_result == 'negative')
+                            <p class="text-success">Negative</p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -116,7 +120,7 @@
         <div class="row my-5">
             <div class="new_registration__modal__bottom text-center d-flex align-items-center">
                 <div class="col-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deleniti est in ipsa quos sunt tempore voluptas voluptatem. Corporis, cum dignissimos</p>
+                    <p>{{ get_static_option('report_wish_tag') }}</p>
                 </div>
                 <div class="col-6 me-0">
                     <img src="{{ asset(get_static_option('logo') ?? get_static_oprion('no_image')) }}" alt="">

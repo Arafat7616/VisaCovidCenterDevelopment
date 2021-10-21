@@ -13,5 +13,6 @@ class StaticOptionSeeder extends Seeder
     {
         set_static_option('no_image', 'uploads/images/setting/no-image.png');
         set_static_option('logo', 'uploads/images/logo.png');
+        set_static_option('report_wish_tag', 'Thanks for using Visa covid app.Thank you');
     }
 }

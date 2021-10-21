@@ -20,9 +20,9 @@ class BoosterSeeder extends Seeder
             $booster->registration_type = 'normal';
             $booster->date = Carbon::now()->addDays(-3);
             $booster->antibody_last_date = Carbon::now()->addDays(180);
-            $booster->users_id = $i;
+            $booster->user_id = $i;
             $booster->center_id = 1;
-            $booster->staff_id = 3;
+            $booster->served_by_id = 3;
             $booster->status = true;
             $booster->save();
         }
@@ -33,9 +33,9 @@ class BoosterSeeder extends Seeder
             $booster->registration_type = 'premium';
             $booster->date = Carbon::now()->addDays(-3);
             $booster->antibody_last_date = Carbon::now()->addDays(180);
-            $booster->users_id = $i;
+            $booster->user_id = $i;
             $booster->center_id = 1;
-            $booster->staff_id = 3;
+            $booster->served_by_id = 3;
             $booster->status = true;
             $booster->save();
         }

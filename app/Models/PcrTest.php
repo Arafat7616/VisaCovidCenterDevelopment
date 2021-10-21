@@ -8,11 +8,23 @@ class PcrTest extends Model
 {
     protected $fillable = [
         'registration_type',
-        'day_starting_time',
+        'sample_clloection_date',
         'date_of_pcr_test',
+        'result_published_date',
         'pcr_result',
         'user_id',
         'center_id',
+        'tested_by',
         'status',
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
+
+    public function testedBy()
+    {
+        return $this->belongsTo(Center::class, 'tested_by');
+    }
 }

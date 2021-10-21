@@ -11,9 +11,14 @@ class Booster extends Model
         'registration_type',
         'date',
         'antibody_last_date',
-        'users_id',
+        'user_id',
         'center_id',
-        'staff_id',
+        'served_by_id',
         'status',
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
 }
