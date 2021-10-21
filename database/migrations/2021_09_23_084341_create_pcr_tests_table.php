@@ -18,7 +18,7 @@ class CreatePcrTestsTable extends Migration
             $table->string('registration_type')->default('normal')->comment('normal','premium');
             $table->string('day_starting_time')->nullable();
             $table->date('date_of_pcr_test')->nullable();
-            $table->enum('pcr_result', [0,1])->nullable();
+            $table->string('pcr_result')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->enum('status', [0,1]);

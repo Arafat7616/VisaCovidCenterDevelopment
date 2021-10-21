@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBoosterRegistrationsTable extends Migration
+class CreateBoostersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateBoosterRegistrationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('booster_registrations', function (Blueprint $table) {
+        Schema::create('boosters', function (Blueprint $table) {
             $table->id();
             $table->string('name_of_vaccine');
-            $table->string('registration_type (nor, pre)');
+            $table->string('registration_type')->default('normal');
             $table->date('date');
             $table->string('antibody_last_date');
             $table->unsignedBigInteger('users_id')->nullable();
@@ -34,6 +34,6 @@ class CreateBoosterRegistrationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booster_registrations');
+        Schema::dropIfExists('boosters');
     }
 }
