@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class PcrTest extends Model
 {
     protected $fillable = [
+        'registration_type',
+        'day_starting_time',
         'date_of_pcr_test',
         'pcr_result',
-        'status',
         'user_id',
-        'center_id'
+        'center_id',
+        'status',
     ];
 }
