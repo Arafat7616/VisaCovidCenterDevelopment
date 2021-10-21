@@ -49,12 +49,16 @@
                                     <td class="td_new">{{ $user->phone }}</td>
                                     <td class="td_new">{{ $user->email }}</td>
                                     <td class="td_new">
-                                        <a href="{{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}"><img src="{{ asset('uploads/images/imo.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
-                                        <a href="#"><img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
-                                        <a href="#"><img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
+                                        {{-- <a href="{{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}"> --}}
+                                        <a href="imo://{{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}">
+                                            <img src="{{ asset('uploads/images/imo.png' ?? get_static_option('no_image')) }}" alt="" class="new-r-icon">
+                                        </a>
+                                        <a href="whatsapp://send?text={{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}">
+                                            <img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}" alt="" class="new-r-icon">
+                                        </a>
+                                        <a href="mailto:{{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}">
+                                            <img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}" alt="" class="new-r-icon">
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
