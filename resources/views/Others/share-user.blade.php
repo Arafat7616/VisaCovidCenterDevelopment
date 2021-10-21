@@ -71,10 +71,12 @@
                 <div class="col-4 ps-0 pe-3">
                     <h5 class="new_registration__head">Booster</h5>
                     <div class="new_registration__body px-3">
-                        <span>{{ $user->booster->name_of_vaccine }}</span> <br>
-                        <span>Vaccine Center: {{ $user->booster->center->name }}</span> <br>
-                        <span>Served By: {{ $user->booster->served_by_id }}</span> <br>
-                        <span>Date: {{ $user->booster->date }}</span>
+                        @if($user->booster)
+                            <span>{{ $user->booster->name_of_vaccine }}</span> <br>
+                            <span>Vaccine Center: {{ $user->booster->center->name }}</span> <br>
+                            <span>Served By: {{ $user->booster->served_by_id }}</span> <br>
+                            <span>Date: {{ $user->booster->date }}</span>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -86,26 +88,33 @@
                 <div class="col-4 p-0 ps-3">
                     <h5 class="new_registration__head">Date</h5>
                     <div class="new_registration__body px-3">
-                        <span>Sample Collection:  {{ $user->pcrTest->sample_clloection_date }}</span> <br>
-                        <span>Tested Date:  {{ $user->pcrTest->date_of_pcr_test }}</span> <br>
-                        <span>Result Published:  {{ $user->pcrTest->result_published_date }}</span> <br>
+                        @if($user->pcrTest)
+                            <span>Sample Collection:  {{ $user->pcrTest->sample_clloection_date }}</span> <br>
+                            <span>Tested Date:  {{ $user->pcrTest->date_of_pcr_test }}</span> <br>
+                            <span>Result Published:  {{ $user->pcrTest->result_published_date }}</span> <br>
+                        @endif
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-0">
                     <h5 class="new_registration__head new_registration__border">Authorised</h5>
                     <div class="new_registration__body px-3">
-                        <span>Medical Center: {{ $user->pcrTest->center->name }}</span> <br>
-                        <span>Served By: {{ $user->pcrTest->tested_by }}</span> <br>
-                        <span>System: {{ config('app.name') }}</span>
+                        @if($user->pcrTest)
+                            <span>Medical Center: {{ $user->pcrTest->center->name }}</span> <br>
+                            <span>Served By: {{ $user->pcrTest->tested_by }}</span> <br>
+                            <span>System: {{ config('app.name') }}</span>
+                        @endif
+
                     </div>
                 </div>
                 <div class="col-4 ps-0 pe-3">
                     <h5 class="new_registration__head">Result</h5>
                     <div class="new_registration__body px-3">
-                        @if($user->pcrTest->pcr_result == 'positive')
-                            <p class="text-danger">Positive</p>
-                        @elseif ($user->pcrTest->pcr_result == 'negative')
-                            <p class="text-success">Negative</p>
+                        @if($user->pcrTest)
+                            @if($user->pcrTest->pcr_result == 'positive')
+                                <p class="text-danger">Positive</p>
+                            @elseif ($user->pcrTest->pcr_result == 'negative')
+                                <p class="text-success">Negative</p>
+                            @endif
                         @endif
                     </div>
                 </div>
