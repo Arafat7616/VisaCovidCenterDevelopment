@@ -21,7 +21,7 @@ class NewRegistrationController extends Controller
                 ->where('email', 'LIKE' ,"%" . $searchKey . "%")
                 ->orWhere('phone', 'LIKE' ,"%" . $searchKey . "%")
                 ->orWhere('name', 'LIKE' ,"%" . $searchKey . "%")
-                ->orWhere('email', 'LIKE' ,"%" . $searchKey . "%")
+                ->orWhere('id', 'LIKE' ,"%" . $searchKey . "%")
                 ->get();
             return response()->json([
                 'data' => $users,
