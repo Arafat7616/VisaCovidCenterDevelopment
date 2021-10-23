@@ -15,15 +15,14 @@ class NewRegistrationController extends Controller
     }
 
     public function filter($searchKey){
-
-        $users = User::where('center_id', Auth::user()->center_id)
-            ->where('user_type', 'user')
-            ->where('email', 'LIKE' ,"%" . $searchKey . "%")
-            ->orWhere('phone', 'LIKE' ,"%" . $searchKey . "%")
-            ->orWhere('name', 'LIKE' ,"%" . $searchKey . "%")
-            ->orWhere('email', 'LIKE' ,"%" . $searchKey . "%")
-            ->get();
         if($searchKey){
+            $users = User::where('center_id', Auth::user()->center_id)
+                ->where('user_type', 'user')
+                ->where('email', 'LIKE' ,"%" . $searchKey . "%")
+                ->orWhere('phone', 'LIKE' ,"%" . $searchKey . "%")
+                ->orWhere('name', 'LIKE' ,"%" . $searchKey . "%")
+                ->orWhere('email', 'LIKE' ,"%" . $searchKey . "%")
+                ->get();
             return response()->json([
                 'data' => $users,
             ]);
