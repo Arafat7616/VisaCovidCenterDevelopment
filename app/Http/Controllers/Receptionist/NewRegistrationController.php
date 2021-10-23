@@ -13,4 +13,26 @@ class NewRegistrationController extends Controller
         $users = User::where('center_id', Auth::user()->center_id)->where('user_type', 'user')->get();
         return view('Receptionist.new-registration.index', compact('users'));
     }
+
+    public function filter($searchKey){
+
+        $users = User::where('center_id', Auth::user()->center_id)
+            ->where('user_type', 'user')
+            ->where('email', 'LIKE' ,"%" . $searchKey . "%")
+            ->orWhere('phone', 'LIKE' ,"%" . $searchKey . "%")
+            ->orWhere('name', 'LIKE' ,"%" . $searchKey . "%")
+            ->orWhere('email', 'LIKE' ,"%" . $searchKey . "%")
+            ->get();
+        if($searchKey){
+            return response()->json([
+                'data' => $users,
+            ]);
+        }else{
+            $allUsers = User::where('center_id', Auth::user()->center_id)->where('user_type', 'user')->get();
+            return response()->json([
+                'data' => $allUsers,
+            ]);
+        }
+
+    }
 }
