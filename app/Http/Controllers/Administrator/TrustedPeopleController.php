@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\State;
 use App\Models\User;
 use App\Models\UserInfo;
 use App\TrustedPeople;
@@ -123,7 +126,10 @@ class TrustedPeopleController extends Controller
     {
         $user = User::where('id', $id)->first();
         $userInfo = UserInfo::where('user_id', $user->id)->first();
-        return view('Administrator.volunteer.edit', compact('user', 'userInfo'));
+        $countries = Country::all();
+        $cities = City::all();
+        $states = State::all();
+        return view('Administrator.volunteer.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
     }
 
     /**
@@ -135,40 +141,54 @@ class TrustedPeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //return $request;
         $request->validate([
             'name'  => 'required',
             'father_name'  => 'required',
             'passport_no'  => 'required',
             'nid_no'  => 'required',
-            'country'  => 'required',
-            'state'  => 'required',
+            'country_id'  => 'required',
+            'state_id'  => 'required',
+            'city_id'  => 'required',
+            'blood_group'  => 'required',
 
             'email'  => 'required',
             'dob'  => 'required',
             'phone'  => 'required',
             'gender'  => 'required',
             'present_address'  => 'required',
+            'permanent_address'  => 'required',
         ]);
 
+
         $user = User::where('id', $id)->first();
+        $user->name = $request->name;
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->save();
 
-        /*if ($request->phone != null)
-        {
-            $user->phone = $request->phone;
-        }*/
+
+
 
         $userInfo = UserInfo::where('id', $request->user_info_id)->first();
-        $userInfo->passport_no = $request->passport;
+        $userInfo->passport_no = $request->passport_no;
+        $userInfo->dob = $request->dob;
+        $userInfo->blood_group = $request->blood_group;
         $userInfo->gender = $request->gender;
-        $userInfo->nid_no = $request->nid;
+        $userInfo->nid_no = $request->nid_no;
         $userInfo->father_name = $request->father_name;
         $userInfo->mother_name  = $request->mother_name;
+        $userInfo->present_address  = $request->present_address;
         $userInfo->permanent_address  = $request->permanent_address;
-        $userInfo->country   = $request->country ;
+        $userInfo->country_id  = $request->country_id;
+        $userInfo->state_id  = $request->state_id;
+        $userInfo->city_id  = $request->city_id;
         $userInfo->save();
+
+        Session::flash('message', 'Successfully Updated!');
+
+//        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
+        return redirect()->route('administrator.dashboard');
 
     }
 
