@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Center extends Model
 {
     protected $fillable = [
-        'name', 'email', 'password', 'country', 'zone', 'location', 'map_location' ,'status'
+        'name',
+        'email',
+        'country_id',
+        'state_id',
+        'city_id',
+        'zip_code',
+        'address',
+        'map_location',
+        'trade_licence_no',
+        'status',
+        'varification_status',
     ];
 }

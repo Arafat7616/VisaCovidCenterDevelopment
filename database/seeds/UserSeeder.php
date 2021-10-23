@@ -2,6 +2,8 @@
 
 use App\Models\City;
 use App\Models\User;
+use App\Models\UserInfo;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,9 +17,10 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = 'Super Admin';
+        $user->name = 'Mr. Super Admin';
         $user->email = 'superadmin@gmail.com';
-        $user->phone = 934759375;
+        $user->phone = '01785521424';
+
         $user->password = Hash::make('12345');
         $user->user_type = 'super-admin';
         $user->status = 1;
@@ -25,44 +28,61 @@ class UserSeeder extends Seeder
         $user->save();
 
         $user = new User();
-        $user->name = 'Administrator';
+        $user->name = 'Mr. Administrator';
         $user->email = 'administrator@gmail.com';
-        $user->phone = 903475937;
+        $user->phone = '01785521423';
         $user->password = Hash::make('12345');
         $user->user_type = 'administrator';
         $user->status = 1;
+        $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
-        $user->name = 'Volunteer';
+        $user->name = 'Mr. Volunteer';
         $user->email = 'volunteer@gmail.com';
-        $user->phone = 30458703485;
+        $user->phone = '01785521422';
         $user->password = Hash::make('12345');
         $user->user_type = 'volunteer';
         $user->status = 1;
+        $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
-        $user->name = 'Receptionist';
+        $user->name = 'Mr. Receptionist';
         $user->email = 'receptionist@gmail.com';
-        $user->phone = 370457395;
+        $user->phone = '01785521421';
         $user->password = Hash::make('12345');
         $user->user_type = 'receptionist';
         $user->status = 1;
+        $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
 
         $user = new User();
-        $user->name = 'Pathologist';
+        $user->name = 'Mr. Pathologist';
         $user->email = 'pathologist@gmail.com';
-        $user->phone = 93759375;
+        $user->phone = '01785521420';
         $user->password = Hash::make('12345');
         $user->user_type = 'pathologist';
         $user->status = 1;
+        $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
 
+        // customer/user fake
+        for ($i=1; $i<=10 ; $i++) {
+            $user = new User();
+            $user->name = 'Mr. User '.$i;
+            $user->email = 'user'.$i.'@gmail.com';
+            $user->phone = '0178552145'.$i;
+            $user->password = Hash::make('12345');
+            $user->user_type = 'user';
+            $user->status = 1;
+            $user->center_id = 1;
+            $user->otp = rand(5, 9999);
+            $user->save();
+        }
     }
 }

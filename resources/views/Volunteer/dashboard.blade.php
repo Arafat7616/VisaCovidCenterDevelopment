@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-    <div class="container py-4">
+    {{-- <div class="container py-4">
         <div class="card page-wrapper">
             <div class="accordion-table-breadcrumb">
                 <div class="accordion-table-header ">
@@ -253,7 +253,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 @endsection
 
 @push('script')
