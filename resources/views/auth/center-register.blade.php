@@ -332,6 +332,7 @@
     </script>
 
     <script type="text/javascript">
+
         $('#country').change(function() {
             var countryID = $(this).val();
             if (countryID) {
