@@ -10,7 +10,7 @@ class LivenessVideo extends Model
         'video',
         'type (pcr, vacci, booster)',
         'date',
-        'users_id',
+        'user_id',
         'center_id',
         'medical_staff_id',
         'status',

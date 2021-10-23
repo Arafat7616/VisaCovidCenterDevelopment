@@ -23,8 +23,7 @@ class CitySeeder extends Seeder
             'id' => 2,
             'name' => 'Garacharma',
             'state_id' => 1
-        ]);
-        
+        ]);        
 
         City::create([
             'id' => 3,

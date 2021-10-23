@@ -8,7 +8,7 @@ class MedicalStaff extends Model
 {
     protected $fillable = [
         'center_id',
-        'users_id',
+        'user_id',
         'user_type_id',
         'status',
     ];

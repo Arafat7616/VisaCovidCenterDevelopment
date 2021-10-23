@@ -17,11 +17,13 @@ class PcrTestSeeder extends Seeder
         for ($i = 1; $i <= 5; $i++) {
             $pcrTest = new PcrTest();
             $pcrTest->registration_type = 'normal';
-            $pcrTest->day_starting_time = Carbon::now()->addDays(-3);
+            $pcrTest->sample_clloection_date = Carbon::now()->addDays(-3);
             $pcrTest->date_of_pcr_test = Carbon::now()->addDays(-3);
-            $pcrTest->pcr_result = true;
+            $pcrTest->result_published_date = Carbon::now()->addDays(-2);
+            $pcrTest->pcr_result = 'positive';
             $pcrTest->user_id = $i;
             $pcrTest->center_id = 1;
+            $pcrTest->tested_by = 3;
             $pcrTest->status = true;
             $pcrTest->save();
         }
@@ -29,12 +31,14 @@ class PcrTestSeeder extends Seeder
         for ($i = 6; $i <= 10; $i++) {
             $pcrTest = new PcrTest();
             $pcrTest->registration_type = 'premium';
-            $pcrTest->day_starting_time = Carbon::now()->addDays(-3);
+            $pcrTest->sample_clloection_date = Carbon::now()->addDays(-3);
             $pcrTest->date_of_pcr_test = Carbon::now()->addDays(-3);
-            $pcrTest->pcr_result = false;
+            $pcrTest->result_published_date = Carbon::now()->addDays(-2);
+            $pcrTest->pcr_result = 'negative';
             $pcrTest->user_id = $i;
             $pcrTest->center_id = 1;
-            $pcrTest->status = true;
+            $pcrTest->tested_by = 3;
+            $pcrTest->status = false;
             $pcrTest->save();
         }
     }

@@ -16,4 +16,19 @@ class Vaccination extends Model
         'center_id',
         'serve_by_id',
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
+
+    public function firstServedBy()
+    {
+        return $this->belongsTo(User::class, 'first_served_by_id');
+    }
+
+    public function secondServedBy()
+    {
+        return $this->belongsTo(User::class, 'second_served_by_id');
+    }
 }

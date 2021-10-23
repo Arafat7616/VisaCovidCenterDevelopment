@@ -1,7 +1,7 @@
 ## Follow belows steps to install this project
 * Download the project or clone it ```git clone git@github.com:MRRaihan/VisaCovidCenterDevelopment```
 * __Run:__ ```cp .env.example .env``` then configure your database
-* __Run:__ ```nmp install && npm run dev```
+* __Run:__ ```npm install && npm run dev```
 * __Run:__ ```composer install```
 * __Run:__ ```php artisan key:generate```
 * __Run:__ ```php artisan migrate:fresh --seed```

@@ -45,13 +45,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function medicalCenter()
-    // {
-    //     return $this->hasOne(Center::class, 'center_id');
-    // }
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
 
     public function userInfo()
     {
         return $this->hasOne(UserInfo::class, 'user_id');
     }
+
+    public function vaccination()
+    {
+        return $this->hasOne(Vaccination::class, 'user_id');
+    }
+
+    public function pcrTest()
+    {
+        return $this->hasOne(PcrTest::class, 'user_id');
+    }
+
+    public function booster()
+    {
+        return $this->hasOne(Booster::class, 'user_id');
+    }
+
 }

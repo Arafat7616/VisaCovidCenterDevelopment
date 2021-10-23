@@ -19,9 +19,9 @@ class CreateBoostersTable extends Migration
             $table->string('registration_type')->default('normal');
             $table->date('date');
             $table->string('antibody_last_date');
-            $table->unsignedBigInteger('users_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
-            $table->unsignedBigInteger('staff_id')->nullable();
+            $table->unsignedBigInteger('served_by_id')->nullable();
             $table->enum('status', [0,1]);
             $table->timestamps();
         });

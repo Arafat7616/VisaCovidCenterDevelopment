@@ -49,12 +49,19 @@
                                     <td class="td_new">{{ $user->phone }}</td>
                                     <td class="td_new">{{ $user->email }}</td>
                                     <td class="td_new">
-                                        <a href="{{ route('share.user', ['id'=> Crypt::encrypt($user->id)]) }}"><img src="{{ asset('uploads/images/imo.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
-                                        <a href="#"><img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
-                                        <a href="#"><img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
-                                                alt="" class="new-r-icon"></a>
+                                        <a
+                                            href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($user->id)]) }}">
+                                            <img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
+                                                alt="" class="new-r-icon">
+                                        </a>
+                                        <a href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($user->id)]) }}">
+                                            <img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
+                                                alt="" class="new-r-icon">
+                                        </a>
+                                        <button class="btn btn-success copy-btn"
+                                            value="{{ route('share.user', ['id' => Crypt::encrypt($user->id)]) }}">
+                                            <i class="fa fa-copy"></i> Copy
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -67,5 +74,23 @@
 @endsection
 
 @push('script')
+    <script>
+        $(document).ready(function() {
+            $(".copy-btn").click(function() {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                var url = $(this).val();
+                $temp.val(url).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text('Copied');
 
+                Swal.fire(
+                    'Copied !',
+                    'Link has been copied.',
+                    'success'
+                );
+            });
+        });
+    </script>
 @endpush

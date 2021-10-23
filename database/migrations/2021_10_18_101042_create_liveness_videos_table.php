@@ -18,7 +18,7 @@ class CreateLivenessVideosTable extends Migration
             $table->string('video');
             $table->string('type (pcr, vacci, booster)');
             $table->date('date');
-            $table->unsignedBigInteger('users_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->unsignedBigInteger('medical_staff_id')->nullable();
             $table->enum('status', [0,1]);
