@@ -20,10 +20,10 @@ class CreateVaccinationsTable extends Migration
             $table->date('date_of_second_dose')->nullable();
             $table->date('antibody_last_date')->nullable();
             $table->enum('status', [0,1]);
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('center_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('first_served_by_id')->nullable();
+            $table->unsignedBigInteger('second_served_by_id')->nullable();
             $table->timestamps();
         });
     }

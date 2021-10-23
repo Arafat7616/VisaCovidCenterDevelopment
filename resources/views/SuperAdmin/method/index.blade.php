@@ -58,18 +58,7 @@
                                                 <td><span class="label {{$paymentMethod->status ? 'label-success':'label-warning'}}">{{$paymentMethod->status ? 'Active':'Inactive'}}</span></td>
                                                 <td>
                                                     <a href="{{route('superAdmin.payment.edit', $paymentMethod->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                    {{--<button class="btn btn-danger" type="button" onclick="delete_function({{$paymentMethod->id}})">
-                                                        <i class="fa fa-trash-o"></i>
-                                                    </button>--}}
-
-                                                    <button class="btn btn-danger" onclick="delete_function(this)"
-                                                            value="{{ route('superAdmin.payment.destroy', $paymentMethod) }}"><i
-                                                            class="fa fa-trash"></i> </button>
-                                                   {{-- <form id="delete_from_{{$paymentMethod->id}}" style="display: none" action="{{route('superAdmin.payment.destroy', $paymentMethod->id)}}" method="post">
-                                                        @csrf
-                                                        @method('delete')
-                                                    </form>--}}
-
+                                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.payment.destroy', $paymentMethod) }}"><i class="fa fa-trash"></i> </button>
                                                 </td>
                                             </tr>
                                         @endforeach
