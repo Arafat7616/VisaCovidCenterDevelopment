@@ -38,6 +38,7 @@
                                     <h6>NID</h6>
                                     <h6>Country</h6>
                                     <h6>State</h6>
+                                    <h6>User Type</h6>
                                 </div>
                                 <div class="col-8 administrator__profile__card__input">
                                     <h6><input class="@error('name') is-invalid @enderror" type="text" name="name" value="{{$user->name}}"></h6>
@@ -72,6 +73,14 @@
                                             @foreach($states as $state)
                                                 <option {{$userInfo->state_id == $state->id ? 'selected' : ''}} value="{{$state->id}}">{{$state->name}}</option>
                                             @endforeach
+                                        </select>
+                                    </h6>
+                                    <h6>
+                                        <select class="@error('user_type') is-invalid @enderror" name="user_type">
+                                            <option value="">Select One</option>
+                                            <option {{$user->user_type == 'volunteer' ? 'selected' : ''}} value="volunteer">Volunteer</option>
+                                            <option {{$user->user_type == 'receptionist' ? 'selected' : ''}} value="receptionist">Receptionist</option>
+                                            <option {{$user->user_type == 'pathologist' ? 'selected' : ''}} value="pathologist">Pathologist</option>
                                         </select>
                                     </h6>
                                 </div>
