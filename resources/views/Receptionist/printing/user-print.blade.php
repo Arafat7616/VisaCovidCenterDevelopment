@@ -144,5 +144,10 @@
 @endsection
 
 @push('script')
-
+    <script>
+        window.addEventListener('load', function() {
+            // alert('asdfsf');
+            window.print();
+        })
+    </script>
 @endpush
