@@ -7,6 +7,7 @@ use App\Models\CenterDocument;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Price;
 use App\Models\State;
 use App\Models\User;
 use App\Models\UserInfo;
@@ -106,6 +107,12 @@ class CenterRegistrationController extends Controller
         }
 
         $userInfo->save();
+
+        $price = New Price();
+        $price->center_id = $center->id;
+        $price->status = "1";
+        $price->save();
+
 
         // document data store
         if ($request->hasFile('document1')) {
