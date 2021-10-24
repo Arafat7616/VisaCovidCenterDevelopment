@@ -4,10 +4,42 @@ namespace App\Http\Controllers\Volunteer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\UserInfo;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function index(){
-        return view('Volunteer.user.index');
+        $users = User::where('center_id', Auth::user()->center_id)->where('user_type', 'user')->get();
+        return view('Volunteer.user.index', compact('users'));
+    }
+
+    public function getUserDetails($id){
+
+        $user = User::findOrFail($id);
+
+        $data['user'] = User::findOrFail($id);
+        $data['userInfo'] = $user->userInfo;
+        $data['vaccination'] = $user->vaccination;
+        $data['pcrTest'] = $user->pcrTest;
+        $data['booster'] = $user->booster;
+        $data['center'] = $user->center;
+        $data['city'] = $user->city;
+        if($user->booster){
+            $data['boosterCenter'] = $user->booster->center;
+        }
+
+        if($user->vaccination){
+            $data['vaccinationCenter'] = $user->vaccination->center;
+        }
+        if($user->pcrTest){
+            $data['pcrCenter'] = $user->pcrTest->center;
+        }
+        return response()->json([
+            'type' => 'success',
+            'data' => $data,
+        ]);
+
     }
 }
