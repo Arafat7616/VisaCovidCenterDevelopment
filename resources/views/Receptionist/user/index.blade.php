@@ -247,7 +247,6 @@
     <!-- Datatable init js -->
     <script src="{{ asset('assets/super-admin/pages/datatables.init.js') }}"></script>
     <script>
-
         $(document).ready(function() {
             $(".copy-btn").click(function() {
                 var $temp = $("<input>");
