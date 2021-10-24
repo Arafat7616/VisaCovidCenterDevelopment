@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Pricing;
+use App\Models\Price;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class PricingSeeder extends Seeder
+class PriceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +14,13 @@ class PricingSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i <= 5; $i++) {
-            $pcrTest = new Pricing();
+            $pcrTest = new Price();
             $pcrTest->pcr_normal = 500;
             $pcrTest->vaccine_normal = 1000;
             $pcrTest->booster_normal = 700;
-            $pcrTest->pcr_premimum = 1000;
-            $pcrTest->vaccine_premimum = 2000;
-            $pcrTest->boster_premimum = 1400;
+            $pcrTest->pcr_premium = 1000;
+            $pcrTest->vaccine_premium = 2000;
+            $pcrTest->booster_premium = 1400;
             $pcrTest->center_id = $i;
             $pcrTest->status = true;
             $pcrTest->save();
