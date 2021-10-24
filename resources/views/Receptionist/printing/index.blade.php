@@ -97,7 +97,7 @@
                                                     </button>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="#">
+                                                    <a href="{{ route('receptionist.printing.generatePDF', $pcrTest->user_id) }}">
                                                         <i class="fa fa-print"></i>
                                                     </a>
                                                 </td>
