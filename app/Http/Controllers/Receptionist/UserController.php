@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Receptionist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserInfo;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -33,6 +34,34 @@ class UserController extends Controller
                 'data' => $allUsers,
             ]);
         }
+
+    }
+
+    public function getUserDetails($id){
+
+        $user = User::findOrFail($id);
+
+        $data['user'] = User::findOrFail($id);
+        $data['userInfo'] = $user->userInfo;
+        $data['vaccination'] = $user->vaccination;
+        $data['pcrTest'] = $user->pcrTest;
+        $data['booster'] = $user->booster;
+        $data['center'] = $user->center;
+        $data['city'] = $user->city;
+        if($user->booster){
+            $data['boosterCenter'] = $user->booster->center;
+        }
+
+        if($user->vaccination){
+            $data['vaccinationCenter'] = $user->vaccination->center;
+        }
+        if($user->pcrTest){
+            $data['pcrCenter'] = $user->pcrTest->center;
+        }
+        return response()->json([
+            'type' => 'success',
+            'data' => $data,
+        ]);
 
     }
 }

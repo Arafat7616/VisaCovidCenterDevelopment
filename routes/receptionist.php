@@ -10,7 +10,8 @@ Route::group(['prefix' => 'receptionist/', 'namespace' => 'Receptionist', 'as' =
     Route::get('printing', 'PrintController@index')->name('printing.index');
 
     Route::get('user', 'UserController@index')->name('user.index');
-    Route::get('user-filter/{searchKey}', 'UserController@filter')->name('newRegistration.filter');
+    Route::get('user-filter/{searchKey}', 'UserController@filter')->name('user.filter');
+    Route::get('user-get/{id}', 'UserController@getUserDetails')->name('user.getUserDetails');
 
 
 

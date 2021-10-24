@@ -27,4 +27,9 @@ class PcrTest extends Model
     {
         return $this->belongsTo(Center::class, 'tested_by');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

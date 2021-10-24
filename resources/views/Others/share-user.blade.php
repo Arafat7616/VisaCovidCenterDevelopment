@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-8">
                         <h6>{{ $user->userInfo->dob }}</h6>
-                        {{-- <h6>{{ $user->userInfo->city->name }}</h6> --}}
+                        <h6>{{ $user->userInfo->city->name }}</h6>
                         <h6>{{ $user->phone }}</h6>
                         <h6>{{ $user->userInfo->present_address }}</h6>
                     </div>
