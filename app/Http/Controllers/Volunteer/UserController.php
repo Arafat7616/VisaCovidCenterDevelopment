@@ -3,43 +3,31 @@
 namespace App\Http\Controllers\Volunteer;
 
 use App\Http\Controllers\Controller;
+use App\Models\PcrTest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserInfo;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index(){
-        $users = User::where('center_id', Auth::user()->center_id)->where('user_type', 'user')->get();
-        return view('Volunteer.user.index', compact('users'));
+    public function pcr(){
+        $pcrTests = PcrTest::orderBy('id', 'DESC')->get();
+        $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
+            return Carbon::parse($val->result_published_date)->format('d/m/Y');
+        });
+        return view('Volunteer.user.pcr', compact('pcrTestsOrderByDate'));
+
+
+        // return view('Volunteer.user.pcr');
     }
 
-    public function getUserDetails($id){
+    public function vaccine(){
+        return view('Volunteer.user.vaccine');
+    }
 
-        $user = User::findOrFail($id);
-
-        $data['user'] = User::findOrFail($id);
-        $data['userInfo'] = $user->userInfo;
-        $data['vaccination'] = $user->vaccination;
-        $data['pcrTest'] = $user->pcrTest;
-        $data['booster'] = $user->booster;
-        $data['center'] = $user->center;
-        $data['city'] = $user->city;
-        if($user->booster){
-            $data['boosterCenter'] = $user->booster->center;
-        }
-
-        if($user->vaccination){
-            $data['vaccinationCenter'] = $user->vaccination->center;
-        }
-        if($user->pcrTest){
-            $data['pcrCenter'] = $user->pcrTest->center;
-        }
-        return response()->json([
-            'type' => 'success',
-            'data' => $data,
-        ]);
-
+    public function booster(){
+        return view('Volunteer.user.booster');
     }
 }

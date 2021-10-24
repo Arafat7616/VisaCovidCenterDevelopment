@@ -18,9 +18,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('volunteer.registered.pcr') }}" class="accorion-btn">PCR</a>
-                                    <a href="{{ route('volunteer.registered.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('volunteer.registered.booster') }}" class="accorion-btn  breadcrumb-active">Booster</a>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn">PCR</a>
+                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn  breadcrumb-active">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
