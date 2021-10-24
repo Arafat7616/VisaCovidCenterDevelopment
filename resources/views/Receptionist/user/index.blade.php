@@ -1,7 +1,7 @@
 @extends('Receptionist.layouts.master')
 
 @push('title')
-    users
+    User's
 @endpush
 
 @push('css')

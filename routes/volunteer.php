@@ -22,6 +22,8 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
     // route for user
     Route::group(['prefix' => 'user/', 'as' => 'user.'], function () {
         Route::get('index', 'UserController@index')->name('index');
+        Route::get('get/{id}', 'UserController@getUserDetails')->name('getUserDetails');
+
 
     });
 });

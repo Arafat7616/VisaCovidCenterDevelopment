@@ -1,7 +1,7 @@
 @extends('Volunteer.layouts.master')
 
 @push('title')
-    users
+    User's
 @endpush
 
 @push('css')
@@ -245,7 +245,7 @@
                 var userId = $(this).parent().find('.user-id').text();
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('receptionist/user-get/') }}/" + userId,
+                    url: "{{ url('volunteer/user/get/') }}/" + userId,
                     success: function(res) {
                         if (res.type == 'success') {
                             // console.log(res.data.pcrTest);
