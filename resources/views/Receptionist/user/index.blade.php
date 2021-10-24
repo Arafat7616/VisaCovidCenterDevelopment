@@ -202,12 +202,6 @@
                             </div>
                         </div>
                         <div class="row my-5">
-                            <div class="new_registration__qr text-center">
-                                <img src="{{ asset('assets/center-part/image/qr/qr_img.png') }}" alt="">
-                            </div>
-                        </div>
-
-                        <div class="row my-5">
                             <div class="new_registration__modal__bottom text-center d-flex align-items-center">
                                 <div class="col-6">
                                     <p>{{ get_static_option('report_wish_tag') }}</p>
