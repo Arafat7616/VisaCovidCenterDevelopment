@@ -8,6 +8,10 @@ Route::group(['prefix' => 'receptionist/', 'namespace' => 'Receptionist', 'as' =
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
     Route::get('new-registration', 'NewRegistrationController@index')->name('newRegistration.index');
     Route::get('printing', 'PrintController@index')->name('printing.index');
+
     Route::get('user', 'UserController@index')->name('user.index');
+    Route::get('user-filter/{searchKey}', 'UserController@filter')->name('newRegistration.filter');
+
+
 
 });

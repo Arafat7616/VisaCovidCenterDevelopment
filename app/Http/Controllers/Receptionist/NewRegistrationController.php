@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class NewRegistrationController extends Controller
 {
-    public function index(){
-        $users = User::where('center_id', Auth::user()->center_id)->where('user_type', 'user')->get();
-        return view('Receptionist.new-registration.index', compact('users'));
+    public  function index()
+    {
+        return view('Receptionist.new-registration.index');
     }
 }
