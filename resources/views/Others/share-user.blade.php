@@ -126,8 +126,7 @@
         </div>
         <div class="row my-5">
             <div class="new_registration__qr text-center">
-                <img src="{{ asset('assets/center-part/image/qr/qr_img.png') }}" alt="">
-            </div>
+                {!! QrCode::size(200)->generate(route('share.user', ['id' => Crypt::encrypt($user->id)])); !!}            </div>
         </div>
 
         <div class="row my-5">
