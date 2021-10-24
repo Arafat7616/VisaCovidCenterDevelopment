@@ -42,7 +42,7 @@
                     </div>
                 </nav> --}}
 
-                <table class="table" id="datatable-buttons">
+                <table class="table" id="datatable">
                     <thead class="new-reg-tbl-head">
                         <tr>
                             <th scope="col">ID</th>
