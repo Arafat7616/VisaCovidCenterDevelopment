@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function pcr(){
-        $pcrTests = PcrTest::orderBy('id', 'DESC')->get();
+        $pcrTests = PcrTest::where('center_id', Auth::user()->center_id)->whereNotIn('pcr_result', ['positive','negative'])->orderBy('created_at', 'DESC')->get();
         $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
-            return Carbon::parse($val->result_published_date)->format('d/m/Y');
+            return Carbon::parse($val->created_at)->format('d/m/Y');
         });
         return view('Volunteer.user.pcr', compact('pcrTestsOrderByDate'));
-
-
-        // return view('Volunteer.user.pcr');
     }
 
     public function vaccine(){

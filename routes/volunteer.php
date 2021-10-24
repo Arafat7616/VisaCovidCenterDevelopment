@@ -25,8 +25,13 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
         Route::get('pcr', 'UserController@pcr')->name('pcr');
         Route::get('vaccine', 'UserController@vaccine')->name('vaccine');
         Route::get('booster', 'UserController@booster')->name('booster');
-        // Route::get('get/{id}', 'UserController@getUserDetails')->name('getUserDetails');
+    });
 
+    // payment
+    Route::group(['prefix' => 'payment/', 'as' => 'payment.'], function () {
+
+        Route::get('take-from-user/{user_id}/{purpose}', 'PaymentController@takePaymentFromUser')->name('takePaymentFromUser');
 
     });
+
 });
