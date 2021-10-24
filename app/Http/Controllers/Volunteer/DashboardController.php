@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        return view('Volunteer.registered.pcr');
+
+        return redirect()->route('volunteer.registered.index');
+        // return view('Volunteer.registered.index');
         // return view('Volunteer.dashboard');
     }
 }

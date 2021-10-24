@@ -11,4 +11,7 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     Route::get('verification/qr-scan', 'QrController@qrScan')->name('qrScan');
     Route::get('account/info', 'AccontInfoController@info')->name('info');
     Route::put('account/update', 'AccontInfoController@infoUpdate')->name('infoUpdate');
+
+
+    Route::resource('price', 'PriceController');
 });

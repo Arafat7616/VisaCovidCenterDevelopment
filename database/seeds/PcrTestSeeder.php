@@ -14,7 +14,7 @@ class PcrTestSeeder extends Seeder
     public function run()
     {
         // demo pcrTest adding
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 6; $i <= 10; $i++) {
             $pcrTest = new PcrTest();
             $pcrTest->registration_type = 'normal';
             $pcrTest->sample_clloection_date = Carbon::now()->addDays(-3);
@@ -25,10 +25,11 @@ class PcrTestSeeder extends Seeder
             $pcrTest->center_id = 1;
             $pcrTest->tested_by = 3;
             $pcrTest->status = true;
+            $pcrTest->created_at = Carbon::now()->addDays(-4);
             $pcrTest->save();
         }
 
-        for ($i = 6; $i <= 10; $i++) {
+        for ($i = 11; $i <= 15; $i++) {
             $pcrTest = new PcrTest();
             $pcrTest->registration_type = 'premium';
             $pcrTest->sample_clloection_date = Carbon::now()->addDays(-4);
@@ -39,6 +40,7 @@ class PcrTestSeeder extends Seeder
             $pcrTest->center_id = 1;
             $pcrTest->tested_by = 3;
             $pcrTest->status = false;
+            $pcrTest->created_at = Carbon::now()->addDays(-5);
             $pcrTest->save();
         }
     }

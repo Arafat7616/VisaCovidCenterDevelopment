@@ -1,7 +1,7 @@
 @extends('Receptionist.layouts.master')
 
 @push('title')
-    users
+    User's
 @endpush
 
 @push('css')
@@ -25,23 +25,6 @@
     <div class="container py-4 ">
         <div class="card page-wrapper-rg-n">
             <div class="page-wrapper-rg-np">
-                {{-- <nav aria-label="">
-                    <div class="row breadcrumb-new">
-                        <div class="col-12">
-                            <div class="search-boxn">
-                                <table>
-                                    <tr class="search-boxn">
-                                        <td class="td_new1"><input id="searchInput" type="text"
-                                                class="form-control i-new-r" placeholder="ID/Name/Phone/Email"></td>
-                                        <td class="td_new3"><button class="search-new-r"><i
-                                                    class="fa fa-search form-control-feedback-new"></i></button></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </nav> --}}
-
                 <table class="table" id="datatable">
                     <thead class="new-reg-tbl-head">
                         <tr>
