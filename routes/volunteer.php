@@ -9,19 +9,24 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
 
     // route for registered user service
     Route::group(['prefix' => 'registered/', 'as' => 'registered.'], function () {
-        Route::get('pcr', 'RegisteredController@pcr')->name('pcr');
-        Route::get('vaccine', 'RegisteredController@vaccine')->name('vaccine');
-        Route::get('booster', 'RegisteredController@booster')->name('booster');
+        Route::get('index', 'RegisteredController@index')->name('index');
     });
+
     // route for premium user service
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
         Route::get('pcr', 'PremiumController@pcr')->name('pcr');
         Route::get('vaccine', 'PremiumController@vaccine')->name('vaccine');
         Route::get('booster', 'PremiumController@booster')->name('booster');
     });
+
     // route for user
     Route::group(['prefix' => 'user/', 'as' => 'user.'], function () {
-        Route::get('index', 'UserController@index')->name('index');
+
+        Route::get('pcr', 'UserController@pcr')->name('pcr');
+        Route::get('vaccine', 'UserController@vaccine')->name('vaccine');
+        Route::get('booster', 'UserController@booster')->name('booster');
+        // Route::get('get/{id}', 'UserController@getUserDetails')->name('getUserDetails');
+
 
     });
 });

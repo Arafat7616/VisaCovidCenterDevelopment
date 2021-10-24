@@ -6,9 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\PcrTest;
 use App\Models\User;
 use Carbon\Carbon;
-use Barryvdh\DomPDF\PDF as PDF;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PrintController extends Controller
 {

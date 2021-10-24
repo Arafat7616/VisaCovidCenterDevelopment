@@ -1,7 +1,7 @@
-@extends('Receptionist.layouts.master')
+@extends('Volunteer.layouts.master')
 
 @push('title')
-    Printing
+    PCR | Registered
 @endpush
 
 @push('css')
@@ -25,6 +25,31 @@
 @section('content')
     <div class="container py-4">
         <div class="card page-wrapper">
+            <div class="accordion-table-breadcrumb">
+                <div class="accordion-table-header ">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-12">
+                                <div class="accorion-link mt-2" id='active-div'>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
+                                </div>
+                            </div>
+                            {{-- <div class="col-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="ID/Name/Phone/Date">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
             @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
                 <div class="accordion" id="accordionExample{{ $loop->iteration }}">
                     <div class="accordion-item table-accordion-item">
