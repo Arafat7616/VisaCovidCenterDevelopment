@@ -1,4 +1,4 @@
-{{-- @extends('auth.master')
+@extends('auth.master')
 
 @push('title')
     Log In
@@ -21,15 +21,24 @@
                 <!-- =================card form start======================== -->
                 <div class="card w-75 shadow mx-auto">
                     <div class="card-body">
-                        <form action="javascript:void(0)">
+                        <form action="{{route('login')}}" method="post" id="loginForm">
+                            @csrf
                             <div class="mb-3">
                                 <label for="phone" class="form-label text-muted">Phone Number</label>
-                                <input name="phone" id="phone" type="text" class="form-control @error('email') is-invalid @enderror" placeholder='Enter Phone Number'>
+                                <input name="phone" id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder='Enter Phone Number'>
                             </div>
+                            @error('phone')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+
                             <div class="mb-3">
                                 <label for="password" class="form-label text-muted">Password</label>
-                                <input type="password" class="form-control @error('email') is-invalid @enderror" id="password">
+                                <input type="password" name="password" class="form-control @error('email') is-invalid @enderror" id="password">
                             </div>
+                            @error('password')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+
                             <div class="text-center">
                                 <button type="submit" class="addministator-form-sub-btn">Submit</button>
                             </div>
@@ -49,17 +58,17 @@
                             <div class="card-body">
                                 <h5 class="card-title text-muted">OTP verification</h5>
                                 <div class='text-center otp-card-place my-2'>
-                                    <input type="text" class='form-control otp-card-place' placeholder='12345' />
+                                    <input type="text" class='form-control otp-card-place' id="otp" placeholder='12345' />
                                 </div>
                                 <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
                                 <a href="#" class="card-link"><button
-                                        class=' otp-btn-verify text-light'>Verify</button></a>
+                                        class='otp-btn-verify text-light'>Verify</button></a>
                             </div>
                         </div>
                     </div>
                     <!--======================== otp card end here==================== -->
                 </div>
-                <button class="mt-5  apply-reg-btn">Administrator Login</button>
+                <button class="mt-5  apply-reg-btn">Login</button>
             </div>
             <!--================== Otp right side div end==================== -->
         </div>
@@ -69,14 +78,18 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('.otp-reg').hide();
-            $('.addministator-form-sub-btn').click(function() {
+            $('.right-side-form').hide();
+            $('.apply-reg-btn').hide();
+
+            $('.addministator-form-sub-btn').click(function (e){
+                e.preventDefault();
                 var formData = new FormData();
                 formData.append('phone', $('#phone').val());
                 formData.append('password', $('#password').val());
+
                 $.ajax({
                     method: 'POST',
-                    url: '/login',
+                    url: '/login/getOtp',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -84,22 +97,38 @@
                     processData: false,
                     contentType: false,
                     success: function(data) {
-                        // $('#main-form').trigger("reset");
-                        console.log(data.message);
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: data.message,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
 
-                        $('.otp-reg').show();
-                        $('.otp-sent-number').text($('#phone').val());
-                        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-                        // setTimeout(function() {
-                        //     location.reload();
-                        // }, 800); //
+                        console.log(data.message);
+                        if(data.type == 'success')
+                        {
+                            $('.right-side-form').show();
+                            console.log(data);
+                            /*$('#registrationForm').trigger("reset");*/
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            /*$('.otp-reg').show();
+                            $('.otp-sent-number').innerText($('#personPhone').val());
+                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");*/
+
+                            // setTimeout(function() {
+                            //     location.reload();
+                            // }, 800); //
+                        }else (data.type == 'warning')
+                        {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'warning',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+
                     },
                     error: function(xhr) {
                         var errorMessage = '<div class="card bg-danger">\n' +
@@ -117,14 +146,84 @@
                             footer: errorMessage
                         })
                     },
-                })
+                });
+            });
+
+            $('.otp-btn-verify').click(function (e){
+                e.preventDefault();
+                var formData = new FormData();
+                formData.append('phone', $('#phone').val());
+                formData.append('otp', $('#otp').val());
+
+                $.ajax({
+                    method: 'POST',
+                    url: '/login/checkOtp',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        if(data.type == 'success')
+                        {
+                            $('.apply-reg-btn').show();
+                            console.log(data);
+                            /*$('#registrationForm').trigger("reset");*/
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            /*$('.otp-reg').show();
+                            $('.otp-sent-number').innerText($('#personPhone').val());
+                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");*/
+
+                            // setTimeout(function() {
+                            //     location.reload();
+                            // }, 800); //
+                        }else (data.type == 'warning')
+                        {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'warning',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
+                });
+            });
+
+            $('.apply-reg-btn').click(function (){
+                $('#loginForm').submit();
             });
         });
     </script>
 @endpush
- --}}
 
 
+{{--
 @extends('layouts.app')
 
 @section('content')
@@ -198,3 +297,4 @@
     </div>
 </div>
 @endsection
+--}}

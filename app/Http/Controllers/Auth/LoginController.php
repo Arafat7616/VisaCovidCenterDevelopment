@@ -37,6 +37,11 @@ class LoginController extends Controller
     //     return 'phone';
     // }
 
+    public function username()
+    {
+        return 'phone';
+    }
+
 
     public function redirectTo()
     {
@@ -57,6 +62,8 @@ class LoginController extends Controller
         }else{
             return route('login');
         }
+
+
 
     }
     /**
