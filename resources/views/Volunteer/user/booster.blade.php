@@ -50,68 +50,66 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="accordion" id="accordionExample">
                 @foreach ($boostersOrderByDate as $boosterOrderByDate)
-                    <div class="accordion" id="accordionExample{{ $loop->iteration }}">
-                        <div class="accordion-item table-accordion-item">
-                            <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
-                                <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
-                                    aria-controls="collapse{{ $loop->iteration }}">
-                                    <span class="table-accordion-date">{{ Carbon\Carbon::parse($boosterOrderByDate->first()->updated_at)->format('d/m/Y') }}</span>
-                                    <span class="table-accordion-people">{{ $boosterOrderByDate->count() }} People</span>
-                                </button>
-                            </h2>
-                            <div id="collapse{{ $loop->iteration }}"
-                                class="accordion-collapse collapse @if ($loop->iteration == 1) show @endif"
-                                aria-labelledby="heading{{ $loop->iteration }}"
-                                data-bs-parent="#accordionExample{{ $loop->iteration }}">
-                                <div class="accordion-body table-accordion-body">
-                                    <table class="table accordion-table" id="datatable">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"> <input type="checkbox" class="custom-control-input"
-                                                        id="customCheck1" checked></th>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Phone</th>
-                                                <th scope="col">Gender</th>
-                                                <th scope="col">Action</th>
+                    <div class="accordion-item table-accordion-item">
+                        <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
+                            <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
+                                aria-controls="collapse{{ $loop->iteration }}">
+                                <span class="table-accordion-date">{{ Carbon\Carbon::parse($boosterOrderByDate->first()->updated_at)->format('d/m/Y') }}</span>
+                                <span class="table-accordion-people">{{ $boosterOrderByDate->count() }} People</span>
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $loop->iteration }}"
+                            class="accordion-collapse collapse @if ($loop->iteration == 1) show @endif"
+                            aria-labelledby="heading{{ $loop->iteration }}"
+                            data-bs-parent="#accordionExample{{ $loop->iteration }}">
+                            <div class="accordion-body table-accordion-body">
+                                <table class="table accordion-table" id="datatable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> <input type="checkbox" class="custom-control-input"
+                                                    id="customCheck1" checked></th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($boosterOrderByDate as $booster)
+                                            <tr class="table-row">
+                                                <td><input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                </td>
+                                                <td>{{ $booster->user_id }}</td>
+                                                <td>{{ $booster->user->name }}</td>
+                                                <td>{{ $booster->user->phone }}</td>
+                                                <td>{{ $booster->user->userInfo->gender ?? '-' }}</td>
+                                                <td>
+                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$booster->user_id, 'normal-booster']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($boosterOrderByDate as $booster)
-                                                <tr class="table-row">
-                                                    <td><input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    </td>
-                                                    <td>{{ $booster->user_id }}</td>
-                                                    <td>{{ $booster->user->name }}</td>
-                                                    <td>{{ $booster->user->phone }}</td>
-                                                    <td>{{ $booster->user->userInfo->gender ?? '-' }}</td>
-                                                    <td>
-                                                        <a href="{{ route('volunteer.payment.takePaymentFromUser', [$booster->user_id, 'normal-booster']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                        @endforeach
 
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th scope="col"> <input type="checkbox" class="custom-control-input" id="customCheck1" checked></th>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Phone</th>
-                                                <th scope="col">Gender</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th scope="col"> <input type="checkbox" class="custom-control-input" id="customCheck1" checked></th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                             </div>
                         </div>
                     </div>
                 @endforeach
-        
+            </div>
         </div>
     </div>
 @endsection

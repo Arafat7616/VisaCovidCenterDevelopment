@@ -40,8 +40,8 @@
                     </div>
                 </div>
             </div>
-            @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
-                <div class="accordion" id="accordionExample{{ $loop->iteration }}">
+            <div class="accordion" id="accordionExample">
+                @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
                     <div class="accordion-item table-accordion-item">
                         <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
                             <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
@@ -100,8 +100,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
