@@ -15,6 +15,11 @@ class PcrResultController extends Controller
         return view('Pathologist.pcrResult.waiting', compact('pcrTests'));
     }
 
+    public function published(){
+        $pcrTests = PcrTest::where('center_id', Auth::user()->center_id)->where('pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
+        return view('Pathologist.pcrResult.published', compact('pcrTests'));
+    }
+
     public function getPcrDetails($id){
 
         $pcrTest = PcrTest::findOrFail($id);
