@@ -254,12 +254,13 @@
                             $('.modal-passport').html(res.data.userInfo.passport_no);
                             $('.modal-nid').html(res.data.userInfo.nid_no);
                             $('.modal-dob').html(res.data.userInfo.dob);
-                            $('.modal-dob').html(res.data.userInfo.dob);
                             $('.modal-mobile').html(res.data.user.phone);
                             $('.modal-address').html(res.data.userInfo.present_address);
+
                             if (res.data.user.image) {
-                                $('.new_registration__model__img').attr('src', '/' + res.data
-                                    .user.image);
+                                $('.new_registration__model__img').attr('src', '/' + res.data.user.image);
+                            }else{
+                                $('.new_registration__model__img').attr('src', '/uploads/images/setting/no-image.png');
                             }
 
                             // vaccination

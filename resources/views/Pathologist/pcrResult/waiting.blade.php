@@ -115,7 +115,7 @@
     </div>
 
     <!-- modal div start -->
-    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 80%;" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -126,43 +126,43 @@
                         <div class="row">
                             <div class="col-md-6 modal-bg">
                                 <div class="profile-pic d-flex justify-content-center align-items-center">
-                                    <img src="{{ asset(get_static_option('no_image')) }}" alt=""
-                                        class="img-fluid profile-img-modal">
+                                    <img height="200px;" width="200px;" src="{{ asset(get_static_option('no_image')) }}"
+                                        alt="" class="img-fluid profile-img-modal model__img">
                                 </div>
                                 <!-- information start -->
                                 <div class="modal-information my-4">
-                                    <h5 class="text-center text-muted">Abdur Rahman</h5>
+                                    <h5 class="text-center text-muted modal-name"></h5>
                                     <div class="container d-flex justify-content-center">
                                         <div class="all-info">
                                             <div class="my-3 row ">
-                                                <small class="col-sm-4 ">Covid ID</small>
+                                                <small class="col-sm-4">PCR Test ID</small>
                                                 <div class="col-sm-8">
-                                                    <small>987 1234 123</small>
+                                                    <small class="modal-pcr-test-id"></small>
                                                 </div>
                                             </div>
 
                                             <div class="mb-3 row ">
                                                 <small class="col-sm-4 ">Passport</small>
                                                 <div class="col-sm-8">
-                                                    <small>2345 987 1234 123</small>
+                                                    <small class="modal-passport"></small>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row ">
                                                 <small class="col-sm-4 ">Phone</small>
                                                 <div class="col-sm-8">
-                                                    <small>880 182 700 7441</small>
+                                                    <small class="modal-phone"></small>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row ">
-                                                <small class="col-sm-4 ">Age</small>
+                                                <small class="col-sm-4 ">Date of Birth</small>
                                                 <div class="col-sm-8">
-                                                    <small>35</small>
+                                                    <small class="modal-dob"></small>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row ">
-                                                <small class="col-sm-4 ">Date</small>
+                                                <small class="col-sm-4 ">Test date </small>
                                                 <div class="col-sm-8">
-                                                    <small>21-10-2021</small>
+                                                    <small class="modal-test-date"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -171,29 +171,28 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="container mt-2">
-                                    <img src="{{ asset('assets/center-part/image/Illustrations/undraw_medicine_b1ol(1).svg') }}" class="img-fluid"
-                                        alt="">
+                                    <img src="{{ asset('assets/center-part/image/Illustrations/undraw_medicine_b1ol(1).svg') }}"
+                                        class="img-fluid" alt="">
                                 </div>
                                 <form>
                                     <div class="my-5 row">
-                                        <small for="inputPassword" class="col-sm-4 col-form-label">Test type:</small>
+                                        <small for="testType" class="col-sm-4 col-form-label">Test type:</small>
                                         <div class="col-sm-6">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Negative</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select disabled class="form-select" name="testType" id="testType"
+                                                class="testType">
+                                                <option>Select One</option>
+                                                <option id="premium" value="premium">Premium</option>
+                                                <option id="normal" value="normal">Normal</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="my-3 row">
-                                        <small for="inputPassword" class="col-sm-4 col-form-label">Test result:</small>
+                                        <small for="testResult" class="col-sm-4 col-form-label">Test result:</small>
                                         <div class="col-sm-6">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>RT-PCR</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select class="form-select" name="testResult" id="testResult">
+                                                <option disabled>Select One</option>
+                                                <option value="negative">Negative</option>
+                                                <option value="positive">Positive</option>
                                             </select>
                                         </div>
                                     </div>
@@ -203,8 +202,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-success">Confirm</button>
+                    <button type="button" class="btn btn-success confirm-upload-result">Confirm</button>
                 </div>
             </div>
         </div>
@@ -249,66 +247,38 @@
             });
 
             $('.open-modal').click(function() {
-                var pcrId = $(this).parent().find('.pcr-test-id').text();
+                var pcrId = $(this).parent().parent().find('.pcr-test-id').text();
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('pathologist/get-pcr-details') }}/" + pcrId,
+                    url: "{{ url('pathologist/pcr-result/get-pcr-details') }}/" + pcrId,
                     success: function(res) {
                         if (res.type == 'success') {
-                            // console.log(res.data.pcrTest);
-                            $('.modal-name').html(res.data.user.name);
-                            $('.modal-father-name').html(res.data.userInfo.father_name);
-                            $('.modal-passport').html(res.data.userInfo.passport_no);
-                            $('.modal-nid').html(res.data.userInfo.nid_no);
-                            $('.modal-dob').html(res.data.userInfo.dob);
-                            $('.modal-dob').html(res.data.userInfo.dob);
-                            $('.modal-mobile').html(res.data.user.phone);
-                            $('.modal-address').html(res.data.userInfo.present_address);
-                            if (res.data.user.image) {
-                                $('.new_registration__model__img').attr('src', '/' + res.data
-                                    .user.image);
-                            }
-
-                            // vaccination
-                            if (res.data.vaccination) {
-                                $('.modal-vaccine-name').html(res.data.vaccination
-                                    .name_of_vaccine);
-                                $('.modal-first-serve-by').html(res.data.vaccination
-                                    .first_served_by_id);
-                                $('.modal-second-serve-by').html(res.data.vaccination
-                                    .second_served_by_id);
-                                $('.modal-first-date').html(res.data.vaccination
-                                    .date_of_first_dose);
-                                $('.modal-second-date').html(res.data.vaccination
-                                    .date_of_second_dose);
-                                $('.modal-vaccine-center').html(res.data.vaccinationCenter
-                                    .name);
-                            }
-                            // booster
-                            if (res.data.booster) {
-                                $('.modal-booster-name').html(res.data.booster.name_of_vaccine);
-                                $('.modal-booster-center').html(res.data.boosterCenter.name);
-                                $('.modal-booster-serve-by').html(res.data.booster
-                                    .served_by_id);
-                                $('.modal-booster-date').html(res.data.booster.date);
-                            }
-                            // pcrTest
-                            if (res.data.pcrTest) {
-                                $('.modal-sample-collection-date').html(res.data.pcrTest
-                                    .sample_clloection_date);
-                                $('.modal-date-of-pcr').html(res.data.pcrTest.date_of_pcr_test);
-                                $('.modal-result-date').html(res.data.pcrTest
-                                    .result_published_date);
-                                $('.modal-pcr-serve').html(res.data.pcrTest.tested_by);
-                                $('.modal-pcr-center').html(res.data.pcrCenter.name);
-
-                                if (res.data.pcrTest.pcr_result == 'positive') {
-                                    $('.modal-pcr-result').text("Positive").removeClass(
-                                        "text-success").addClass("text-danger")
-                                } else if (res.data.pcrTest.pcr_result == 'negative') {
-                                    $('.modal-pcr-result').text("Negative").removeClass(
-                                        "text-danger").addClass("text-success");
+                            // res.data.user
+                            if (res.data.user) {
+                                $('.modal-name').html(res.data.user.name);
+                                if (res.data.user.image) {
+                                    $('.model__img').attr('src', '/' + res.data.user.image);
+                                } else {
+                                    $('.model__img').attr('src',
+                                        '/uploads/images/setting/no-image.png');
                                 }
+                            }
+                            // res.data.pcrTest
+                            if (res.data.pcrTest) {
+                                $('.modal-pcr-test-id').html(res.data.pcrTest.id);
+                                $('.modal-test-date').html(res.data.pcrTest.date_of_pcr_test);
+                                $('.modal-test-date').html(res.data.pcrTest.date_of_pcr_test);
+                                if (res.data.pcrTest.registration_type == 'normal') {
+                                    $('#normal').attr('selected', true);
+                                } else if (res.data.pcrTest.registration_type == 'premium') {
+                                    $('#premium').attr('selected', true);
+                                }
+                            }
+
+                            if (res.data.userInfo) {
+                                $('.modal-passport').html(res.data.userInfo.passport_no);
+                                $('.modal-dob').html(res.data.userInfo.dob);
+                                $('.modal-phone').html(res.data.user.phone);
                             }
                             $('#modal').modal('show');
                         } else {
@@ -318,6 +288,61 @@
                                 text: data.message,
                                 footer: 'Something went wrong!'
                             });
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        });
+                    },
+                });
+            });
+            $('.confirm-upload-result').click(function() {
+                // update result positive /negative
+                var pcrId = $('.modal-pcr-test-id').text();
+
+                var formData = new FormData();
+                formData.append('testResult', $('.testResult').val());
+
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ url('pathologist/pcr-result/update') }}/" + pcrId,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(res) {
+                        if (res.type == 'success') {
+                            Swal.fire({
+                                icon: res.type,
+                                title: 'Updated !',
+                                text: res.message,
+                                // footer: 'PCR result uploaded successfully!'
+                            });
+                            setTimeout(function() {
+                                location.reload();
+                            }, 200); //
+                        } else {
+                            Swal.fire({
+                                icon: res.type,
+                                title: 'Oops...',
+                                text: res.message,
+                                // footer: 'Something went wrong!'
+                            });
+
                         }
                     },
                     error: function(xhr) {
