@@ -20,7 +20,7 @@
                 @endif
             </div>
 
-            <form action={{route('administrator.price.update', $centerPrice->id)}} method="post">
+            <form action="{{route('administrator.price.update', $centerPrice->id)}}" method="post">
                 @csrf
                 @method('put')
                 <div class="setting_up_price__body shadow-sm">
@@ -34,7 +34,7 @@
                                     <p>PCR Test</p>
                                 </div>
                                 <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->pcr_normal}}" name="pcr_normal" placeholder="300">
+                                    <input type="text" value="{{$centerPrice->pcr_normal}}" name="pcr_normal">
                                     <small>Regular</small>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                     <p>Vaccine</p>
                                 </div>
                                 <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->vaccine_normal}}" name="vaccine_normal" placeholder="1000">
+                                    <input type="text" value="{{$centerPrice->vaccine_normal}}" name="vaccine_normal">
                                     <small>Regular</small>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                     <p>Booster</p>
                                 </div>
                                 <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->booster_normal}}" name="booster_normal" placeholder="1200">
+                                    <input type="text" value="{{$centerPrice->booster_normal}}" name="booster_normal">
                                     <small>Regular</small>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
                                     <i class="fas fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->pcr_premium}}" name="pcr_premium" placeholder="2000">
+                                    <input type="text" value="{{$centerPrice->pcr_premium}}" name="pcr_premium">
                                     <small>Premium</small>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
                                     <i class="fas fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->vaccine_premium}}" name="vaccine_premium" placeholder="3000">
+                                    <input type="text" value="{{$centerPrice->vaccine_premium}}" name="vaccine_premium">
                                     <small>Premium</small>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
                                     <i class="fas fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->booster_premium}}" name="booster_premium" placeholder="3500">
+                                    <input type="text" value="{{$centerPrice->booster_premium}}" name="booster_premium">
                                     <small>Premium</small>
                                 </div>
                             </div>
