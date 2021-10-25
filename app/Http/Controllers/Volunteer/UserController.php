@@ -7,6 +7,7 @@ use App\Models\PcrTest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserInfo;
+use App\Models\Vaccination;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,11 @@ class UserController extends Controller
     }
 
     public function vaccine(){
-        return view('Volunteer.user.vaccine');
+        $vaccinations = Vaccination::where('center_id', Auth::user()->center_id)->where('date_of_second_dose','=', null)->orderBy('updated_at', 'DESC')->get();
+        $vaccinationsOrderByDate = $vaccinations->groupBy(function ($val) {
+            return Carbon::parse($val->updated_at)->format('d/m/Y');
+        });
+        return view('Volunteer.user.vaccine', compact('vaccinationsOrderByDate'));
     }
 
     public function booster(){
