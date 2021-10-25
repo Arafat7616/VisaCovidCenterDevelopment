@@ -190,7 +190,7 @@
                                         <small for="testResult" class="col-sm-4 col-form-label">Test result:</small>
                                         <div class="col-sm-6">
                                             <select class="form-select" name="testResult" id="testResult">
-                                                <option disabled>Select One</option>
+                                                <option disabled selected>Select One</option>
                                                 <option value="negative">Negative</option>
                                                 <option value="positive">Positive</option>
                                             </select>
@@ -334,7 +334,7 @@
                             });
                             setTimeout(function() {
                                 location.reload();
-                            }, 200); //
+                            }, 800);
                         } else {
                             Swal.fire({
                                 icon: res.type,

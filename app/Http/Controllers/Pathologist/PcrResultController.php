@@ -31,27 +31,35 @@ class PcrResultController extends Controller
     }
 
     public function update(Request $request, $id){
-        $request->validate([
-            'testResult' => 'required|string'
-        ]);
+        // $request->validate([
+        //     'testResult' => 'required|string',
+        // ]);
+        if($request->testResult == 'positive' && $request->testResult == 'negative'){
+            $pcrTest = PcrTest::find($id);
+            $pcrTest->pcr_result = $request->testResult;
+            $pcrTest->result_published_date = Carbon::now();
+            $pcrTest->status = 1;
 
-        $pcrTest = PcrTest::find($id);
-        $pcrTest->pcr_result = $request->testResult;
-        $pcrTest->result_published_date = Carbon::now();
-        $pcrTest->status = 1;
-
-        try {
-            $pcrTest->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Result uploaded successfully !',
-            ]);
-        } catch (\Exception $exception) {
+            try {
+                $pcrTest->save();
+                return response()->json([
+                    'type' => 'success',
+                    'message' => 'Result uploaded successfully !',
+                ]);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'warning',
+                    'message' => 'Something going wrong. ' . $exception->getMessage(),
+                ]);
+            }
+        }else{
             return response()->json([
                 'type' => 'warning',
-                'message' => 'Something going wrong. ' . $exception->getMessage(),
+                'message' => 'Have to select Positive or Negative !',
             ]);
         }
+
+
     }
 
 }
