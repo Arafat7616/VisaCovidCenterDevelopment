@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        return view('Pathologist.dashboard');
+        return redirect()->route('pathologist.pcrResult.waiting');
+        // return view('Pathologist.dashboard');
     }
 }
