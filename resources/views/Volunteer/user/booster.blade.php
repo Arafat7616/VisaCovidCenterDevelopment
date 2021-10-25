@@ -7,6 +7,19 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/center-part/css/accordion_table_16.css') }}">
 
+    {{-- datatables --}}
+    <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/super-admin/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/super-admin/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/super-admin/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/super-admin/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
 @endpush
 
 @section('content')
@@ -24,238 +37,99 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="input-group">
+                                {{-- <div class="input-group">
                                     <input type="text" class="form-control" placeholder="ID/Name/Phone/Date">
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="button">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item table-accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span class="table-accordion-date">06-10-2021</span>
-                            <span class="table-accordion-people">490 People</span>
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body table-accordion-body">
-                            <table class="table accordion-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> <input type="checkbox" class="custom-control-input"
-                                                id="customCheck1" checked></th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                @foreach ($boostersOrderByDate as $boosterOrderByDate)
+                    <div class="accordion-item table-accordion-item">
+                        <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
+                            <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
+                                aria-controls="collapse{{ $loop->iteration }}">
+                                <span class="table-accordion-date">{{ Carbon\Carbon::parse($boosterOrderByDate->first()->updated_at)->format('d/m/Y') }}</span>
+                                <span class="table-accordion-people">{{ $boosterOrderByDate->count() }} People</span>
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $loop->iteration }}"
+                            class="accordion-collapse collapse @if ($loop->iteration == 1) show @endif"
+                            aria-labelledby="heading{{ $loop->iteration }}"
+                            data-bs-parent="#accordionExample{{ $loop->iteration }}">
+                            <div class="accordion-body table-accordion-body">
+                                <table class="table accordion-table" id="datatable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> <input type="checkbox" class="custom-control-input"
+                                                    id="customCheck1" checked></th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($boosterOrderByDate as $booster)
+                                            <tr class="table-row">
+                                                <td><input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                </td>
+                                                <td>{{ $booster->user_id }}</td>
+                                                <td>{{ $booster->user->name }}</td>
+                                                <td>{{ $booster->user->phone }}</td>
+                                                <td>{{ $booster->user->userInfo->gender ?? '-' }}</td>
+                                                <td>
+                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$booster->user_id, 'normal-booster']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th scope="col"> <input type="checkbox" class="custom-control-input" id="customCheck1" checked></th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item  table-accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button table-accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            <span class="table-accordion-date">06-10-2021</span>
-                            <span class="table-accordion-people">490 People</span>
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <table class="table accordion-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> <input type="checkbox" class="custom-control-input"
-                                                id="customCheck1" checked></th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item  table-accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button table-accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                            aria-controls="collapseThree">
-                            <span class="table-accordion-date">06-10-2021</span>
-                            <span class="table-accordion-people">490 People</span>
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <table class="table accordion-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> <input type="checkbox" class="custom-control-input"
-                                                id="customCheck1" checked></th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                        </td>
-                                        <td>345 234 124</td>
-                                        <td>Ahmed Abdali</td>
-                                        <td>018 2700 7441</td>
-                                        <td>Male</td>
-                                        <td class="enter-icon-div">
-                                            <a href="#">
-                                                <img class="enter-icon"
-                                                    src="{{ asset('assets/center-part/image/enter.png') }}" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-
     </div>
 @endsection
 
 @push('script')
-
+    {{-- datatables --}}
+    <script src="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
+    <!-- Datatable init js -->
+    <script src="{{ asset('assets/super-admin/pages/datatables.init.js') }}"></script>
 @endpush

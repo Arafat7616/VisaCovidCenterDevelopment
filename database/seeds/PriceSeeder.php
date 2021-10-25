@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Price;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class PriceSeeder extends Seeder

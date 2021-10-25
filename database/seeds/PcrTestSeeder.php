@@ -34,8 +34,8 @@ class PcrTestSeeder extends Seeder
             $pcrTest->registration_type = 'premium';
             $pcrTest->sample_clloection_date = Carbon::now()->addDays(-4);
             $pcrTest->date_of_pcr_test = Carbon::now()->addDays(-4);
-            $pcrTest->result_published_date = Carbon::now()->addDays(-3);
-            $pcrTest->pcr_result = 'negative';
+            // $pcrTest->result_published_date = Carbon::now()->addDays(-3);
+            $pcrTest->pcr_result = null;
             $pcrTest->user_id = $i;
             $pcrTest->center_id = 1;
             $pcrTest->tested_by = 3;

@@ -21,7 +21,7 @@ class CreateManpowerSchedularsTable extends Migration
             $table->string('day_starting_time');
             $table->string('day_ending_time');
             $table->string('total_volunteer');
-            $table->date('date');
+            $table->string('date');
             $table->string('pcr_time');
             $table->string('vaccine_time');
             $table->string('booster_time');

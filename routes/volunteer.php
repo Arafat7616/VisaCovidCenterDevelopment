@@ -7,11 +7,6 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
 
-    // route for registered user service
-    Route::group(['prefix' => 'registered/', 'as' => 'registered.'], function () {
-        Route::get('index', 'RegisteredController@index')->name('index');
-    });
-
     // route for premium user service
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
         Route::get('pcr', 'PremiumController@pcr')->name('pcr');
@@ -29,9 +24,6 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
 
     // payment
     Route::group(['prefix' => 'payment/', 'as' => 'payment.'], function () {
-
         Route::get('take-from-user/{user_id}/{purpose}', 'PaymentController@takePaymentFromUser')->name('takePaymentFromUser');
-
     });
-
 });

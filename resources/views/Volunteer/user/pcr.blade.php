@@ -5,7 +5,7 @@
 @endpush
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('assets/center-part/css/Accordion-42.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/center-part/css/accordion_table_16.css') }}">
 
     {{-- datatables --}}
     <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"
@@ -31,7 +31,7 @@
                         <div class="row justify-content-between">
                             <div class="col-12">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn  breadcrumb-active">PCR</a>
                                     <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
                                     <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
@@ -40,8 +40,8 @@
                     </div>
                 </div>
             </div>
-            @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
-                <div class="accordion" id="accordionExample{{ $loop->iteration }}">
+            <div class="accordion" id="accordionExample">
+                @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
                     <div class="accordion-item table-accordion-item">
                         <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
                             <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
@@ -100,8 +100,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
