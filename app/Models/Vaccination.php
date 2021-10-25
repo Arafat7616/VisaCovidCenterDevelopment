@@ -8,6 +8,7 @@ class Vaccination extends Model
 {
     protected $fillable = [
         'name_of_vaccine',
+        'registration_type',
         'date_of_first_dose',
         'date_of_second_dose',
         'antibody_last_date',

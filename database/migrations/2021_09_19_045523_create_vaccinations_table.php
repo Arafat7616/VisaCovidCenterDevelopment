@@ -15,6 +15,7 @@ class CreateVaccinationsTable extends Migration
     {
         Schema::create('vaccinations', function (Blueprint $table) {
             $table->id();
+            $table->string('registration_type')->default('normal')->comment('normal','premium');
             $table->string('name_of_vaccine')->nullable();
             $table->string('date_of_first_dose')->nullable();
             $table->string('date_of_second_dose')->nullable();
