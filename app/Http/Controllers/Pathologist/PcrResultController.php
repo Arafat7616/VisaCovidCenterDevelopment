@@ -34,7 +34,7 @@ class PcrResultController extends Controller
         // $request->validate([
         //     'testResult' => 'required|string',
         // ]);
-        if($request->testResult == 'positive' && $request->testResult == 'negative'){
+        if($request->testResult == 'positive' || $request->testResult == 'negative'){
             $pcrTest = PcrTest::find($id);
             $pcrTest->pcr_result = $request->testResult;
             $pcrTest->result_published_date = Carbon::now();

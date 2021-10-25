@@ -313,7 +313,7 @@
                 var pcrId = $('.modal-pcr-test-id').text();
 
                 var formData = new FormData();
-                formData.append('testResult', $('.testResult').val());
+                formData.append('testResult', $('#testResult').val());
 
                 $.ajax({
                     method: 'POST',
