@@ -21,4 +21,14 @@ class Booster extends Model
     {
         return $this->belongsTo(Center::class, 'center_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function servedBy()
+    {
+        return $this->belongsTo(User::class, 'served_by_id');
+    }
 }
