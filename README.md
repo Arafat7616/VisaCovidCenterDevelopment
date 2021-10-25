@@ -10,8 +10,8 @@
 
 ## Credintials to login
 * __Password:__ Password is ```12345``` for all portal
-* __Super admin:__ ```superadmin@gmail.com```
-* __Administrator:__ ```administrator@gmail.com```
-* __Volunteer:__ ```volunteer@gmail.com```
-* __Pathologist:__ ```pathologist@gmail.com```
-* __Receptionist:__ ```receptionist@gmail.com```
+* __Super admin:__ ```01785521424```
+* __Administrator:__ ```01785521423```
+* __Volunteer:__ ```01785521422```
+* __Receptionist:__ ```01785521421```
+* __Pathologist:__ ```01785521420```
