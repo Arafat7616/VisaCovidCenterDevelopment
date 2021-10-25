@@ -1,7 +1,7 @@
-@extends('Receptionist.layouts.master')
+@extends('Volunteer.layouts.master')
 
 @push('title')
-    Printing
+    PCR | Registered
 @endpush
 
 @push('css')
@@ -25,6 +25,21 @@
 @section('content')
     <div class="container py-4">
         <div class="card page-wrapper">
+            <div class="accordion-table-breadcrumb">
+                <div class="accordion-table-header ">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-12">
+                                <div class="accorion-link mt-2" id='active-div'>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @foreach ($pcrTestsOrderByDate as $pcrTestOrderByDate)
                 <div class="accordion" id="accordionExample{{ $loop->iteration }}">
                     <div class="accordion-item table-accordion-item">
@@ -51,9 +66,8 @@
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
-                                            <th scope="col">Share</th>
-                                            <th scope="col">Print</th>
-                                            <th scope="col">View</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -64,27 +78,9 @@
                                                 <td>{{ $pcrTest->user_id }}</td>
                                                 <td>{{ $pcrTest->user->name }}</td>
                                                 <td>{{ $pcrTest->user->phone }}</td>
+                                                <td>{{ $pcrTest->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user_id)]) }}">
-                                                        <img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
-                                                            alt="" class="new-r-icon">
-                                                    </a>
-                                                    <a href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user_id)]) }}">
-                                                        <img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
-                                                            alt="" class="new-r-icon">
-                                                    </a>
-                                                    <button class="btn btn-success copy-btn"
-                                                        value="{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user_id)]) }}">
-                                                        <i class="fa fa-copy"></i> Copy
-                                                    </button>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="{{ route('receptionist.printing.generatePDF', $pcrTest->user_id) }}">
-                                                        <i class="fa fa-print"></i>
-                                                    </a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user_id)]) }}"><i class="fa fa-eye text-dark"></i></a>
+                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$pcrTest->user_id, 'normal-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -92,14 +88,12 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th scope="col"> <input type="checkbox" class="custom-control-input"
-                                                    id="customCheck1" checked></th>
+                                            <th scope="col"> <input type="checkbox" class="custom-control-input" id="customCheck1" checked></th>
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
-                                            <th scope="col">Share</th>
-                                            <th scope="col">Print</th>
-                                            <th scope="col">View</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -130,24 +124,4 @@
     <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/super-admin/pages/datatables.init.js') }}"></script>
-
-    <script>
-         $(document).ready(function() {
-            $(".copy-btn").click(function() {
-                var $temp = $("<input>");
-                $("body").append($temp);
-                var url = $(this).val();
-                $temp.val(url).select();
-                document.execCommand("copy");
-                $temp.remove();
-                $(this).text('Copied');
-
-                Swal.fire(
-                    'Copied !',
-                    'Link has been copied.',
-                    'success'
-                );
-            });
-        });
-    </script>
 @endpush
