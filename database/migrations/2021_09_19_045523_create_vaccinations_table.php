@@ -16,9 +16,9 @@ class CreateVaccinationsTable extends Migration
         Schema::create('vaccinations', function (Blueprint $table) {
             $table->id();
             $table->string('name_of_vaccine')->nullable();
-            $table->date('date_of_first_dose')->nullable();
-            $table->date('date_of_second_dose')->nullable();
-            $table->date('antibody_last_date')->nullable();
+            $table->string('date_of_first_dose')->nullable();
+            $table->string('date_of_second_dose')->nullable();
+            $table->string('antibody_last_date')->nullable();
             $table->enum('status', [0,1]);
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();

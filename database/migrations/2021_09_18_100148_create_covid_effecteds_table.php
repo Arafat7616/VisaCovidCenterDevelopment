@@ -16,8 +16,8 @@ class CreateCovidEffectedsTable extends Migration
         Schema::create('covid_effecteds', function (Blueprint $table) {
             $table->id();
             $table->string('effect_status')->nullable();
-            $table->date('effected_date')->nullable();
-            $table->date('recovery_date')->nullable();
+            $table->string('effected_date')->nullable();
+            $table->string('recovery_date')->nullable();
             $table->text('document')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();

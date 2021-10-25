@@ -29,9 +29,6 @@ Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'vol
 
     // payment
     Route::group(['prefix' => 'payment/', 'as' => 'payment.'], function () {
-
         Route::get('take-from-user/{user_id}/{purpose}', 'PaymentController@takePaymentFromUser')->name('takePaymentFromUser');
-
     });
-
 });

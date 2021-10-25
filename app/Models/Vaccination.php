@@ -22,6 +22,11 @@ class Vaccination extends Model
         return $this->belongsTo(Center::class, 'center_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function firstServedBy()
     {
         return $this->belongsTo(User::class, 'first_served_by_id');
