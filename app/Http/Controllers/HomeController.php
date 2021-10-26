@@ -42,7 +42,7 @@ class HomeController extends Controller
                 $users = User::find(Auth::user()->id);
                 $users->password = bcrypt($request->password);
                 User::where('id', Auth::user()->id)->update(array('password' =>  $users->password));
-                return back()->withSuccess('Password updated successfully');
+                return back()->withToastSuccess('Password updated successfully');
             } else {
                 return redirect()->back()->withErrors('New password can not be the old password!');
             }

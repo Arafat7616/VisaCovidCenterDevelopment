@@ -2576,24 +2576,6 @@
                 "issues": "https://github.com/realrashid/sweet-alert/issues",
                 "source": "https://github.com/realrashid/sweet-alert"
             },
-            "funding": [
-                {
-                    "url": "https://ko-fi.com/realrashid",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.buymeacoffee.com/realrashid",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://issuehunt.io/r/realrashid",
-                    "type": "issuehunt"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/realrashid/sweet-alert",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2021-06-14T19:01:35+00:00"
         },
         {

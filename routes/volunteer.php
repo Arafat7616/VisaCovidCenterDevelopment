@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'volunteer.', 'middleware' => ['auth', 'volunteer']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::get('profile', 'DashboardController@profile')->name('profile');
 
     // route for premium user service
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
