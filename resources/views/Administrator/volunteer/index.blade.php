@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Dashboard
+    Volunteer's
 @endpush
 
 @push('css')
@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-    {{-- <div class="volunteers mb-5">
+    <div class="volunteers mb-5">
         <div class="container">
             <div class="row">
                 @if(Session::has('message'))
@@ -56,9 +56,6 @@
                 </div>
             </div>
         </div>
-    </div> --}}
-    <div>
-        This is dashboard page
     </div>
 @endsection
 

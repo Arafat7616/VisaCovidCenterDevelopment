@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        $trustedPeoples = User::whereIn('user_type', ['volunteer', 'receptionist', 'pathologist'])->orderBy('user_type', 'DESC')->get();
-        return view('Administrator.dashboard', compact('trustedPeoples'));
+        return redirect()->route('administrator.volunteer.index');
+        // return view('Administrator.dashboard');
     }
 
     public function profile(){
