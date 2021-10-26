@@ -1,7 +1,7 @@
 @extends('Pathologist.layouts.master')
 
 @push('title')
-    Waiting List
+    Published List
 @endpush
 
 @push('css')
@@ -35,9 +35,9 @@
                                     <div class="col-4">
                                         <div class="accorion-link mt-2" id='active-div'>
                                             <a href="{{ route('pathologist.pcrResult.waiting') }}"
-                                                class="accorion-btn breadcrumb-active">Waiting</a>
+                                                class="accorion-btn">Waiting</a>
                                             <a href="{{ route('pathologist.pcrResult.published') }}"
-                                                class="accorion-btn">Published</a>
+                                                class="accorion-btn breadcrumb-active">Published</a>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -61,7 +61,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Upload</th>
+                                <th scope="col">Edit</th>
                                 <th scope="col">Share</th>
                             </tr>
                         </thead>
@@ -75,7 +75,7 @@
                                         <td class="td_new">{{ $pcrTest->user->phone }}</td>
                                         <td class="td_new">
                                             <button class="btn btn-success  open-modal">
-                                                <i class="fa fa-upload"></i> Upload
+                                                <i class="fa fa-edit"></i> Edit
                                             </button>
                                         </td>
                                         <td class="td_new">
@@ -102,7 +102,7 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Phone</th>
-                                    <th scope="col">Upload</th>
+                                    <th scope="col">Edit</th>
                                     <th scope="col">Share</th>
                                 </tr>
                             </tfoot>
@@ -191,8 +191,8 @@
                                         <div class="col-sm-6">
                                             <select class="form-select" name="testResult" id="testResult">
                                                 <option disabled selected>Select One</option>
-                                                <option value="negative">Negative</option>
-                                                <option value="positive">Positive</option>
+                                                <option id="negative" value="negative">Negative</option>
+                                                <option id="positive" value="positive">Positive</option>
                                             </select>
                                         </div>
                                     </div>
@@ -259,8 +259,7 @@
                                 if (res.data.user.image) {
                                     $('.model__img').attr('src', '/' + res.data.user.image);
                                 } else {
-                                    $('.model__img').attr('src',
-                                        '/uploads/images/setting/no-image.png');
+                                    $('.model__img').attr('src', '/uploads/images/setting/no-image.png');
                                 }
                             }
                             // res.data.pcrTest
@@ -272,6 +271,12 @@
                                     $('#normal').attr('selected', true);
                                 } else if (res.data.pcrTest.registration_type == 'premium') {
                                     $('#premium').attr('selected', true);
+                                }
+
+                                if (res.data.pcrTest.pcr_result == 'negative') {
+                                    $('#negative').attr('selected', true);
+                                } else if (res.data.pcrTest.pcr_result == 'positive') {
+                                    $('#positive').attr('selected', true);
                                 }
                             }
 

@@ -15,30 +15,56 @@ class PcrResultController extends Controller
         return view('Pathologist.pcrResult.waiting', compact('pcrTests'));
     }
 
+    public function published(){
+        $pcrTests = PcrTest::where('center_id', Auth::user()->center_id)->where('pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
+        return view('Pathologist.pcrResult.published', compact('pcrTests'));
+    }
+
     public function getPcrDetails($id){
 
         $pcrTest = PcrTest::findOrFail($id);
 
         $data['pcrTest'] = $pcrTest;
-        // $data['vaccination'] = $user->vaccination;
-        // $data['pcrTest'] = $user->pcrTest;
-        // $data['booster'] = $user->booster;
-        // $data['center'] = $user->center;
-        // $data['city'] = $user->city;
-        // if($user->booster){
-        //     $data['boosterCenter'] = $user->booster->center;
-        // }
+        $data['user'] = $pcrTest->user;
+        $data['userInfo'] = $pcrTest->user->userInfo;
 
-        // if($user->vaccination){
-        //     $data['vaccinationCenter'] = $user->vaccination->center;
-        // }
-        // if($user->pcrTest){
-        //     $data['pcrCenter'] = $user->pcrTest->center;
-        // }
         return response()->json([
             'type' => 'success',
             'data' => $data,
         ]);
 
     }
+
+    public function update(Request $request, $id){
+        // $request->validate([
+        //     'testResult' => 'required|string',
+        // ]);
+        if($request->testResult == 'positive' || $request->testResult == 'negative'){
+            $pcrTest = PcrTest::find($id);
+            $pcrTest->pcr_result = $request->testResult;
+            $pcrTest->result_published_date = Carbon::now();
+            $pcrTest->status = 1;
+
+            try {
+                $pcrTest->save();
+                return response()->json([
+                    'type' => 'success',
+                    'message' => 'Result uploaded successfully !',
+                ]);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'warning',
+                    'message' => 'Something going wrong. ' . $exception->getMessage(),
+                ]);
+            }
+        }else{
+            return response()->json([
+                'type' => 'warning',
+                'message' => 'Have to select Positive or Negative !',
+            ]);
+        }
+
+
+    }
+
 }
