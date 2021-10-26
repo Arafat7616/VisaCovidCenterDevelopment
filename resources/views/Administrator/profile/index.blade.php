@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card profile-card">
                         <div class="card-header">
                             <h1 class="text-muted">Change password</h1>
                         </div>
