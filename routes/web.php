@@ -38,7 +38,10 @@ Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@ce
 
 
 Route::get('/share/user/{id}','ShareController@shareUser')->name('share.user');
+Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 
+
+// country -state - city list related api
 Route::get('/api/get-state-list/{country_id}','Auth\CenterRegistrationController@getStateList');
 Route::get('/api/get-city-list/{state_id}','Auth\CenterRegistrationController@getCityList');
 
