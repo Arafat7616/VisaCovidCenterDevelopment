@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateManpowerSchedularsTable extends Migration
+class CreateManPowerSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateManpowerSchedularsTable extends Migration
      */
     public function up()
     {
-        Schema::create('manpower_schedulars', function (Blueprint $table) {
+        Schema::create('man_power_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('type (regular or premium)');
+            $table->string('type')->comment('regular / premium');
             $table->string('morning_starting_time');
             $table->string('morning_ending_time');
             $table->string('day_starting_time');
             $table->string('day_ending_time');
             $table->string('total_volunteer');
-            $table->string('date');
+            $table->timestamp('date');
             $table->string('pcr_time');
             $table->string('vaccine_time');
             $table->string('booster_time');
@@ -37,6 +37,6 @@ class CreateManpowerSchedularsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manpower_schedulars');
+        Schema::dropIfExists('man_power_schedules');
     }
 }

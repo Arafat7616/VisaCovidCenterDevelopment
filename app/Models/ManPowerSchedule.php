@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ManpowerSchedular extends Model
+class ManPowerSchedule extends Model
 {
     protected $fillable = [
-        'type (regular or premium)',
+        'type',
         'morning_starting_time',
         'morning_ending_time',
         'day_starting_time',
