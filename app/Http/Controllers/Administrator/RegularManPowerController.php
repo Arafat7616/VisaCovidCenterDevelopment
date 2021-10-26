@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class RegularManPowerController extends Controller
 {
-    //
+    public function index(){
+        return view('Administrator.regularManPower.index');
+    }
 }

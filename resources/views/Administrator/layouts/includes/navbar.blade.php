@@ -25,7 +25,7 @@
                         <a class="nav-link" href="{{route('administrator.price.index')}}">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Regular</a>
+                        <a class="nav-link" href="{{ route('administrator.regular.index') }}">Regular</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Premium</a>
