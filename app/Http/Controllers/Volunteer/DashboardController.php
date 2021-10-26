@@ -19,5 +19,4 @@ class DashboardController extends Controller
         return view('Volunteer.profile.index', compact('user'));
     }
 
-
 }
