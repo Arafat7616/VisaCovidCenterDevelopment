@@ -1,4 +1,4 @@
-@extends('Pathologist.layouts.master')
+@extends('Administrator.layouts.master')
 
 @push('title')
     Trusted Profile
@@ -36,7 +36,7 @@
                                 <div class="col-6 details-value">
                                     <h5>{{ $user->id }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>Pathologist</h5>
+                                    <h5>Administrator</h5>
                                     <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
                                     </h5>
                                     <h5>{{ $user->center->name }}</h5>
