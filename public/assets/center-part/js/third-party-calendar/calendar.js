@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     function c(passed_month, passed_year, calNum) {
         var calendar = calNum == 0 ? calendars.cal1 : calendars.cal2;
         makeWeek(calendar.weekline);
@@ -43,7 +43,7 @@ $(document).ready(function() {
         selectDates(selected);
 
         clickedElement = calendar.datesBody.find('div');
-        clickedElement.on("click", function() {
+        clickedElement.on("click", function () {
             clicked = $(this);
             var whichCalendar = calendar.name;
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
                     firstClickDateObj) {
                     secondClicked = thirdClicked;
                     // then choose dates again from the start :)
-                    bothCals.find(".calendar_content").find("div").each(function() {
+                    bothCals.find(".calendar_content").find("div").each(function () {
                         $(this).removeClass("selected");
                     });
                     selected = {};
@@ -75,7 +75,7 @@ $(document).ready(function() {
                     secondClicked = [];
                     firstClick = false;
                     secondClick = false;
-                    bothCals.find(".calendar_content").find("div").each(function() {
+                    bothCals.find(".calendar_content").find("div").each(function () {
                         $(this).removeClass("selected");
                     });
                 }
@@ -133,7 +133,7 @@ $(document).ready(function() {
                 if (passed_year in selected && passed_month in selected[passed_year]) {
                     var daysToCompare = selected[passed_year][passed_month];
                     for (var d in daysToCompare) {
-                        dateElements.each(function(index) {
+                        dateElements.each(function (index) {
                             if (parseInt($(this).text()) == daysToCompare[d]) {
                                 $(this).addClass('selected');
                             }
@@ -278,9 +278,9 @@ $(document).ready(function() {
     b();
     c(month, year, 0);
     c(nextMonth, nextYear, 1);
-    switchButton.on("click", function() {
+    switchButton.on("click", function () {
         var clicked = $(this);
-        var generateCalendars = function(e) {
+        var generateCalendars = function (e) {
             var nextDatesFirst = getAdjacentMonth(month, year, e);
             var nextDatesSecond = getAdjacentMonth(nextMonth, nextYear, e);
             month = nextDatesFirst[0];

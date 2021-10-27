@@ -15,16 +15,18 @@ class CreateManPowerSchedulesTable extends Migration
     {
         Schema::create('man_power_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->comment('regular / premium');
-            $table->string('morning_starting_time');
-            $table->string('morning_ending_time');
-            $table->string('day_starting_time');
-            $table->string('day_ending_time');
-            $table->string('total_volunteer');
-            $table->timestamp('date');
-            $table->string('pcr_time');
-            $table->string('vaccine_time');
-            $table->string('booster_time');
+            $table->string('type')->comment('regular / premium')->nullable();
+            $table->string('morning_starting_time')->nullable();
+            $table->string('morning_ending_time')->nullable();
+            $table->string('day_starting_time')->nullable();
+            $table->string('day_ending_time')->nullable();
+            $table->string('volunteer_for_pcr')->nullable();
+            $table->string('volunteer_for_vaccine')->nullable();
+            $table->string('volunteer_for_booster')->nullable();
+            $table->timestamp('date')->nullable();
+            $table->string('pcr_time')->nullable();
+            $table->string('vaccine_time')->nullable();
+            $table->string('booster_time')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
         });

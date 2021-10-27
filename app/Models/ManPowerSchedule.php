@@ -12,11 +12,18 @@ class ManPowerSchedule extends Model
         'morning_ending_time',
         'day_starting_time',
         'day_ending_time',
-        'total_volunteer',
+        'volunteer_for_pcr',
+        'volunteer_for_vaccine',
+        'volunteer_for_booster',
         'date',
         'pcr_time',
         'vaccine_time',
         'booster_time',
         'center_id'
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
 }

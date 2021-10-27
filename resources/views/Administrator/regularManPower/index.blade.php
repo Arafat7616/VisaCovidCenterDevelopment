@@ -188,34 +188,50 @@
                             <div class="cal-morning-slot">
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
-                                    <input type="time" class="cal-morn-in-left" placeholder="9:45 AM"> -
-                                    <input type="time" class="cal-morn-in-left" placeholder="12:00 PM">
+                                    <input type="time" class="cal-morn-in-left" id="morningSlotStart" @if($manPowerShedule) value="{{ $manPowerShedule->morning_starting_time }}" @endif name="morningSlotStart"> -
+                                    <input type="time" class="cal-morn-in-left" id="morningSlotEnd" @if($manPowerShedule) value="{{ $manPowerShedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
-                                <p class="cal-footer">Working period: 545 Minutes</p>
+                                @php
+                                    if($manPowerShedule){
+                                        $morning_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->morning_starting_time);
+                                        $morning_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->morning_ending_time);
+                                        $morning_slot_minutes = $morning_starting_time->diffInMinutes($morning_ending_time);
+                                    }
+                                @endphp
+                                <p class="cal-footer">Working period: <span id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
                             </div>
 
                             <div class="cal-day-slot">
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
-                                    <input type="time" class="cal-morn-day-right" placeholder="9:45 AM"> -
-                                    <input type="time" class="cal-morn-day-right" placeholder="12:00 PM">
+                                    <input type="time" class="cal-morn-day-right" id="daySlotStart" @if($manPowerShedule) value="{{ $manPowerShedule->day_starting_time }}" @endif name="daySlotStart"> -
+                                    <input type="time" class="cal-morn-day-right" id="daySlotEnd" @if($manPowerShedule) value="{{ $manPowerShedule->day_ending_time }}" @endif name="daySlotEnd">
                                 </div>
-                                <p class="cal-footer">Working period: 135 Minutes</p>
+                                @php
+                                    if($manPowerShedule){
+                                        $day_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->day_starting_time);
+                                        $day_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->day_ending_time);
+                                        $day_slot_minutes = $day_starting_time->diffInMinutes($day_ending_time);
+                                    }
+                                @endphp
+                                <p class="cal-footer">Working period: <span id="totalDaySlotTime">{{ $day_slot_minutes ?? '' }}</span> Minutes</p>
 
                             </div>
                         </div>
                         <div class="cal-min-slot row">
                             <ul class="total">
                                 <li class="cal-min-l">Total minutes</li>
-                                <li class="cal-min-r">815</li>
-                            </ul>
-                            <ul class="total">
-                                <li class="cal-min-l">Total volunteers on center</li>
-                                <li class="cal-min-r"><input type="text" class="cal-min-t" placeholder="5"></li>
+                                @php
+                                    if($manPowerShedule){
+                                        $totalDayMinutes = $morning_slot_minutes + $day_slot_minutes;
+                                        $totalManMinutePerDay = $totalDayMinutes*get_total_volenteers();
+                                    }
+                                @endphp
+                                <li class="cal-min-r totalMinute" id="totalMinute">{{ $totalDayMinutes ?? '' }}</li>
                             </ul>
                             <ul class="total">
                                 <li class="cal-min-l">Total man minutes per day</li>
-                                <li class="cal-min-r">4075</li>
+                                <li class="cal-min-r totalManMinutePerDay" id="totalManMinutePerDay">{{ $totalManMinutePerDay ?? '' }}</li>
                             </ul>
                         </div>
                         <div class="cal-service-slot row">
@@ -228,6 +244,9 @@
                                         <p class="p-mx"> <small>Estimated time</small><br><b>Per Process</b> </p>
                                     </td>
                                     <td class="cal-x-y">
+                                        <p class="p-mx"><b>Number of Volunteer</b> </p>
+                                    </td>
+                                    <td class="cal-x-y">
                                         <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
                                     </td>
                                 </tr>
@@ -236,10 +255,17 @@
                                         <p class="p-mx"> PCR </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx">20 <small class="s-cx">min</small></p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t" id="timeForPcr" @if($manPowerShedule) value="{{ $manPowerShedule->pcr_time }}" @endif name="timeForPcr"> <small class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mx"> 204 </p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t" id="volunteerForPcr" @if($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_pcr }}" @endif name="volunteerForPcr"></p>
+                                    </td>
+                                    <td class="cal-x-y">
+                                        @if($manPowerShedule)
+                                            <p class="p-mx"> {{ get_max_service_per_day($manPowerShedule->pcr_time, $manPowerShedule->volunteer_for_pcr) }} </p>
+                                        @else
+                                            <p class="p-mx">0</p>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -247,10 +273,17 @@
                                         <p class="p-mx"> Vaccine </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"> 15 <small class="s-cx">min</small></p>
+                                        <p class="p-mxx"> <input type="number" class="cal-min-t" id="timeForVaccine" @if($manPowerShedule) value="{{ $manPowerShedule->vaccine_time }}" @endif name="timeForVaccine"> <small class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mx"> 272 </p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t" id="volunteerForVaccine" @if($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                    </td>
+                                    <td class="cal-x-y">
+                                        @if($manPowerShedule)
+                                            <p class="p-mx"> {{ get_max_service_per_day($manPowerShedule->vaccine_time, $manPowerShedule->volunteer_for_vaccine) }} </p>
+                                        @else
+                                            <p class="p-mx">0</p>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -258,39 +291,46 @@
                                         <p class="p-mx"> Booster </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"> 15 <small class="s-cx">min</small> </p>
+                                        <p class="p-mxx"> <input type="number" class="cal-min-t" id="timeForBooster" @if($manPowerShedule) value="{{ $manPowerShedule->booster_time }}" @endif name="timeForBooster"> <small class="s-cx">min</small> </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mx"> 272 </p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t" id="volunteerForBooster" @if($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
+                                    </td>
+                                    <td class="cal-x-y">
+                                        @if($manPowerShedule)
+                                            <p class="p-mx"> {{ get_max_service_per_day($manPowerShedule->booster_time, $manPowerShedule->volunteer_for_booster) }} </p>
+                                        @else
+                                            <p class="p-mx">0</p>
+                                        @endif
                                     </td>
                                 </tr>
-                                <tr class="cal-mx-x-i">
+                                {{-- <tr class="cal-mx-x-i">
                                     <td></td>
                                     <td>
                                         <p class="p-mx">Average service per day </p>
                                     </td>
+                                    <td></td>
                                     <td>
                                         <p class="p-mx">249 </p>
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr class="cal-mx-x-p">
                                     <td></td>
                                     <td>
                                         <p class="p-mx">Want to service per day </p>
                                     </td>
+                                    <td></td>
                                     <td>
-                                        <p class="p-mx y-s">230 </p>
+                                        <p class="p-mx y-s" id="wantToServePerDay"></p>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="check-cal">
-                            <input type="checkbox" checked="checked" value="Bike" class="check-x"> Set this as
-                            default
-                            for everyday<br>
+                            <input id="isDefault" name="isDefault" type="checkbox" class="check-x"> Set this as default for everyday<br>
                         </div>
                         <div class="cal-save">
-                            <button class="cal-x-btn">Save</button>
+                            <button class="cal-x-btn schedule-save-btn">Save</button>
                         </div>
                     </form>
                 </div>
@@ -303,13 +343,72 @@
     <script src="{{ asset('assets/center-part/js/third-party-calendar/calendar.js') }}"></script>
     <script>
         $(document).ready(function() {
-            // $('.selected').text()
-            var today_date = console.log($('.today').text())
+            // schedule-save-btn clicked
+            $('.schedule-save-btn').on('click', function(event) {
+                event.preventDefault();
+                var todayDate = $('.today').text()
 
-            $('.calendar_content').find('div').on('click', function() {
-                // alert($(this).html());
-                console.log($('.calendar_content').find('div.selected').text());
+                var formData = new FormData();
+                formData.append('todayDate', todayDate);
+                formData.append('morningSlotStart', $('#morningSlotStart').val());
+                formData.append('morningSlotEnd', $('#morningSlotEnd').val());
+                formData.append('daySlotStart', $('#daySlotStart').val());
+                formData.append('daySlotEnd', $('#daySlotEnd').val());
+                formData.append('timeForPcr', $('#timeForPcr').val());
+                formData.append('timeForVaccine', $('#timeForVaccine').val());
+                formData.append('timeForBooster', $('#timeForBooster').val());
+                formData.append('volunteerForPcr', $('#volunteerForPcr').val());
+                formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
+                formData.append('volunteerForBooster', $('#volunteerForBooster').val());
 
+                console.log(formData);
+
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ url('administrator/regular/store') }}",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(res) {
+                        if (res.type == 'success') {
+                            Swal.fire({
+                                icon: res.type,
+                                title: 'Updated !',
+                                text: res.message,
+                                // footer: 'PCR result uploaded successfully!'
+                            });
+                            setTimeout(function() {
+                                location.reload();
+                            }, 800);
+                        } else {
+                            Swal.fire({
+                                icon: res.type,
+                                title: 'Oops...',
+                                text: res.message,
+                                // footer: 'Something went wrong!'
+                            });
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        });
+                    },
+                });
             });
         });
     </script>
