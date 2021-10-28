@@ -79,8 +79,9 @@ if (!function_exists('random_code')){
         return User::where('user_type', 'volunteer')->where('center_id', Auth::user()->center_id)->count();
     }
 
-    function get_max_service_per_day($per_precess_minute, $number_of_volunteers)
+    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_volunteers)
     {
-        return $per_precess_minute*$number_of_volunteers;
+        $man_power_minute_for_precess = $number_of_volunteers*$totalDayMinutes;
+        return $man_power_minute_for_precess/$per_precess_minute;
     }
 }
