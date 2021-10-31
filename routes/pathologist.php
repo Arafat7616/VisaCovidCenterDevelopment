@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'pathologist/', 'namespace' => 'Pathologist', 'as' => 'pathologist.', 'middleware' => ['auth', 'pathologist']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::get('profile', 'DashboardController@profile')->name('profile');
+
     // pcrResult
     Route::group(['prefix' => 'pcr-result/', 'as' => 'pcrResult.'], function () {
         Route::get('waiting', 'PcrResultController@waiting')->name('waiting');

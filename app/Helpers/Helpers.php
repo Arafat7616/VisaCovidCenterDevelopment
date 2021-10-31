@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\StaticOption;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Cache;
 // use Illuminate\Support\Facades\Mail;
 // use GuzzleHttp\Client;
@@ -70,5 +72,16 @@ if (!function_exists('random_code')){
         $str = substr($str, 0, -1);
         if (!file_put_contents($envFile, $str)) return false;
         return true;
+    }
+
+    function get_total_volenteers()
+    {
+        return User::where('user_type', 'volunteer')->where('center_id', Auth::user()->center_id)->count();
+    }
+
+    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_volunteers)
+    {
+        $man_power_minute_for_precess = $number_of_volunteers*$totalDayMinutes;
+        return $man_power_minute_for_precess/$per_precess_minute;
     }
 }

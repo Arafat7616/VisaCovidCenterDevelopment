@@ -2570,6 +2570,12 @@
                 "sweet-alert2",
                 "toast"
             ],
+            "support": {
+                "docs": "https://realrashid.github.io/sweet-alert/",
+                "email": "realrashid05@gmail.com",
+                "issues": "https://github.com/realrashid/sweet-alert/issues",
+                "source": "https://github.com/realrashid/sweet-alert"
+            },
             "time": "2021-06-14T19:01:35+00:00"
         },
         {

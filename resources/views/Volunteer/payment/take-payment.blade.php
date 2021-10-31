@@ -36,8 +36,7 @@
                                     <h5>{{ $user->userInfo->blood_group }}</h5>
                                     <h5>{{ $user->userInfo->passport_no }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
-                                    </h5>
+                                    <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}</h5>
                                     <h5>{{ $user->userInfo->present_address }}</h5>
                                 </div>
                             </div>
