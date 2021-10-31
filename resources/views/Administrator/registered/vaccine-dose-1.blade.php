@@ -34,8 +34,8 @@
                                 <div class="row justify-content-between">
                                     <div class="col-5">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('administrator.registered.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
-                                            <a href="{{ route('administrator.registered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
+                                            <a href="{{ route('administrator.registered.pcr') }}" class="accorion-btn">PCR</a>
+                                            <a href="{{ route('administrator.registered.vaccine.dose1') }}" class="accorion-btn breadcrumb-active">Vaccine Dose 1</a>
                                             <a href="{{ route('administrator.registered.vaccine.dose2') }}" class="accorion-btn">Vaccine Dose 2</a>
                                             <a href="{{ route('administrator.registered.booster') }}" class="accorion-btn">Booster</a>
                                         </div>
@@ -87,29 +87,29 @@
 
                         <div class="scroll_new_ta">
                             <tbody class="scroll_new_ber">
-                                @foreach ($pcrTests as $pcrTest)
+                                @foreach ($vaccinations as $vaccination)
                                     <tr>
                                         <td> 
-                                            <input type="checkbox" class="demo-checkbox" name="id[]" id="id-{{ $pcrTest->id }}" value="{{ $pcrTest->id }}">
+                                            <input type="checkbox" class="demo-checkbox" name="id[]" id="id-{{ $vaccination->id }}" value="{{ $vaccination->id }}">
                                         </td>
-                                        <td class="td_new pcr-test-id">{{ $pcrTest->id }}</td>
-                                        <td class="td_new">{{ $pcrTest->user->name }}</td>
-                                        <td class="td_new">{{ $pcrTest->user->phone }}</td>
-                                        <td class="td_new">{{ $pcrTest->user->userInfo->gender }}</td>
-                                        <td class="td_new">{{ $pcrTest->sample_collection_date }}</td>
+                                        <td class="td_new vaccination-id">{{ $vaccination->id }}</td>
+                                        <td class="td_new">{{ $vaccination->user->name }}</td>
+                                        <td class="td_new">{{ $vaccination->user->phone }}</td>
+                                        <td class="td_new">{{ $vaccination->user->userInfo->gender }}</td>
+                                        <td class="td_new">{{ $vaccination->date_of_first_dose }}</td>
                                         <td class="td_new">
                                             <a
-                                                href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                                href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                                 <img src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
                                                     alt="" class="new-r-icon">
                                             </a>
                                             <a
-                                                href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                                href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                                 <img src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
                                                     alt="" class="new-r-icon">
                                             </a>
                                             <button class="btn btn-success copy-btn"
-                                                value="{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                                value="{{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                                 <i class="fa fa-copy"></i> Copy
                                             </button>
                                         </td>
@@ -193,10 +193,10 @@
                         console.log()
                         $.ajax({
                             method: 'POST',
-                            url: "{{ route('administrator.registered.pcr.swap') }}",
+                            url: "{{ route('administrator.registered.vaccine.swapDose1') }}",
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: { 
-                                pcrs: ids,
+                                vaccinations: ids,
                                 date: date
                             },
                             dataType: 'JSON',

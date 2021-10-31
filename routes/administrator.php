@@ -16,7 +16,9 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     Route::group(['prefix' => 'registered/', 'as' => 'registered.'], function () {
         Route::get('pcr', 'RegisteredController@pcr')->name('pcr');
         Route::post('pcr-swap', 'RegisteredController@pcrSwap')->name('pcr.swap');
-        Route::get('vaccine', 'RegisteredController@vaccine')->name('vaccine');
+        Route::get('vaccine-dose-1', 'RegisteredController@vaccineDose1')->name('vaccine.dose1');
+        Route::post('vaccine-dose-1-swap', 'RegisteredController@vaccineSwapDose1')->name('vaccine.swapDose1');
+        Route::get('vaccine-dose-2', 'RegisteredController@vaccineDose2')->name('vaccine.dose2');
         Route::get('booster', 'RegisteredController@booster')->name('booster');
     });
 
