@@ -15,7 +15,9 @@
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/accordion_table_16.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/new_registration_38.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/result-publish-tab.css') }}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+{{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 <title> @stack('title') |  {{ config('app.name') }}</title>

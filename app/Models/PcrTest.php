@@ -8,7 +8,7 @@ class PcrTest extends Model
 {
     protected $fillable = [
         'registration_type',
-        'sample_clloection_date',
+        'sample_collection_date',
         'date_of_pcr_test',
         'result_published_date',
         'pcr_result',

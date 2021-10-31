@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    PCR
+    PCR | Registered
 @endpush
 
 @push('css')
@@ -40,6 +40,23 @@
                                         </div>
                                     </div>
                                     <div class="col-4">
+                                        <div class="swap-bg  d-flex align-items-center justify-content-center">
+                                            <span class="text-muted">Swap to</span>
+                                            <input type="date" id="swapDate" name="swapDate" class="form-control h-25 w-50 mx-2">
+                                            <a class="btn swap-btn swap-now-btn" href="#"><i class="fa fa-exchange swap-icon"></i></a>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-primary btn-block select-all">Select All</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-danger btn-block un-select-all">Un select all</button>
+                                            </div>
+                                            <br>
+                                        </div>
                                         {{-- <div class="input-group">
                                             <input type="text" class="form-control" placeholder="ID/Name/Phone/Date">
                                             <div class="input-group-append">
@@ -57,10 +74,12 @@
                     <table class="table" id="datatable">
                         <thead class="new-reg-tbl-head">
                             <tr>
+                                <th scope="col">All</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Upload</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Date</th>
                                 <th scope="col">Share</th>
                             </tr>
                         </thead>
@@ -69,14 +88,14 @@
                             <tbody class="scroll_new_ber">
                                 @foreach ($pcrTests as $pcrTest)
                                     <tr>
+                                        <td> 
+                                            <input type="checkbox" class="demo-checkbox" name="id[]" id="id-{{ $pcrTest->id }}" value="{{ $pcrTest->id }}">
+                                        </td>
                                         <td class="td_new pcr-test-id">{{ $pcrTest->id }}</td>
                                         <td class="td_new">{{ $pcrTest->user->name }}</td>
                                         <td class="td_new">{{ $pcrTest->user->phone }}</td>
-                                        <td class="td_new">
-                                            <button class="btn btn-success  open-modal">
-                                                <i class="fa fa-upload"></i> Upload
-                                            </button>
-                                        </td>
+                                        <td class="td_new">{{ $pcrTest->user->userInfo->gender }}</td>
+                                        <td class="td_new">{{ $pcrTest->sample_collection_date }}</td>
                                         <td class="td_new">
                                             <a
                                                 href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
@@ -98,10 +117,12 @@
                             </tbody>
                             <tfoot class="new-reg-tbl-head">
                                 <tr>
+                                    <th scope="col">All</th>
                                     <th scope="col">ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Phone</th>
-                                    <th scope="col">Upload</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Date</th>
                                     <th scope="col">Share</th>
                                 </tr>
                             </tfoot>
@@ -110,10 +131,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-   
+    </div>   
 @endsection
 
 @push('script')
@@ -152,122 +170,78 @@
                 );
             });
 
-            $('.open-modal').click(function() {
-                var pcrId = $(this).parent().parent().find('.pcr-test-id').text();
-                $.ajax({
-                    type: "GET",
-                    url: "{{ url('pathologist/pcr-result/get-pcr-details') }}/" + pcrId,
-                    success: function(res) {
-                        if (res.type == 'success') {
-                            // res.data.user
-                            if (res.data.user) {
-                                $('.modal-name').html(res.data.user.name);
-                                if (res.data.user.image) {
-                                    $('.model__img').attr('src', '/' + res.data.user.image);
-                                } else {
-                                    $('.model__img').attr('src',
-                                        '/uploads/images/setting/no-image.png');
-                                }
+            $('.swap-now-btn').click(function (){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Swap it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        var date = $('#swapDate').val();
+                        var ids = []
+                        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            if (checkboxes[i].value != 'null'){
+                                ids.push(checkboxes[i].value)
                             }
-                            // res.data.pcrTest
-                            if (res.data.pcrTest) {
-                                $('.modal-pcr-test-id').html(res.data.pcrTest.id);
-                                $('.modal-test-date').html(res.data.pcrTest.date_of_pcr_test);
-                                $('.modal-test-date').html(res.data.pcrTest.date_of_pcr_test);
-                                if (res.data.pcrTest.registration_type == 'normal') {
-                                    $('#normal').attr('selected', true);
-                                } else if (res.data.pcrTest.registration_type == 'premium') {
-                                    $('#premium').attr('selected', true);
-                                }
-                            }
-
-                            if (res.data.userInfo) {
-                                $('.modal-passport').html(res.data.userInfo.passport_no);
-                                $('.modal-dob').html(res.data.userInfo.dob);
-                                $('.modal-phone').html(res.data.user.phone);
-                            }
-                            $('#modal').modal('show');
-                        } else {
-                            Swal.fire({
-                                icon: data.type,
-                                title: 'Oops...',
-                                text: data.message,
-                                footer: 'Something went wrong!'
-                            });
                         }
-                    },
-                    error: function(xhr) {
-                        var errorMessage = '<div class="card bg-danger">\n' +
-                            '                        <div class="card-body text-center p-5">\n' +
-                            '                            <span class="text-white">';
-                        $.each(xhr.responseJSON.errors, function(key, value) {
-                            errorMessage += ('' + value + '<br>');
-                        });
-                        errorMessage += '</span>\n' +
-                            '                        </div>\n' +
-                            '                    </div>';
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            footer: errorMessage
-                        });
-                    },
-                });
-            });
-            $('.confirm-upload-result').click(function() {
-                // update result positive /negative
-                var pcrId = $('.modal-pcr-test-id').text();
-
-                var formData = new FormData();
-                formData.append('testResult', $('#testResult').val());
-
-                $.ajax({
-                    method: 'POST',
-                    url: "{{ url('pathologist/pcr-result/update') }}/" + pcrId,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function(res) {
-                        if (res.type == 'success') {
-                            Swal.fire({
-                                icon: res.type,
-                                title: 'Updated !',
-                                text: res.message,
-                                // footer: 'PCR result uploaded successfully!'
-                            });
-                            setTimeout(function() {
-                                location.reload();
-                            }, 800);
-                        } else {
-                            Swal.fire({
-                                icon: res.type,
-                                title: 'Oops...',
-                                text: res.message,
-                                // footer: 'Something went wrong!'
-                            });
-
-                        }
-                    },
-                    error: function(xhr) {
-                        var errorMessage = '<div class="card bg-danger">\n' +
-                            '                        <div class="card-body text-center p-5">\n' +
-                            '                            <span class="text-white">';
-                        $.each(xhr.responseJSON.errors, function(key, value) {
-                            errorMessage += ('' + value + '<br>');
-                        });
-                        errorMessage += '</span>\n' +
-                            '                        </div>\n' +
-                            '                    </div>';
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            footer: errorMessage
-                        });
-                    },
-                });
+                        console.log()
+                        $.ajax({
+                            method: 'POST',
+                            url: "{{ route('administrator.registered.pcr.swap') }}",
+                            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                            data: { 
+                                pcrs: ids,
+                                date: date
+                            },
+                            dataType: 'JSON',
+                            beforeSend: function (){
+                                $(".swap-now-btn").prop("disabled",true);
+                            },
+                            complete: function (){
+                                $(".swap-now-btn").prop("disabled",false);
+                            },
+                            success: function (response) {
+                                if (response.type == 'success'){
+                                    Swal.fire(
+                                        'Updated !',
+                                        'Date has been updated.',
+                                        'success'
+                                    ), setTimeout(function() {
+                                        //your code to be executed after 1 second
+                                        location.reload();
+                                    }, 500); //1 second
+                                }else{
+                                    Swal.fire(
+                                        'Sorry !',
+                                        response.message,
+                                        response.type
+                                    )
+                                }
+                            },
+                            error: function (xhr) {
+                                var errorMessage = '<div class="card bg-danger">\n' +
+                                    '                        <div class="card-body text-center p-5">\n' +
+                                    '                            <span class="text-white">';
+                                $.each(xhr.responseJSON.errors, function(key,value) {
+                                    errorMessage +=(''+value+'<br>');
+                                });
+                                errorMessage +='</span>\n' +
+                                    '                        </div>\n' +
+                                    '                    </div>';
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    footer: errorMessage
+                                })
+                            },
+                        })
+                    }
+                })
             });
         });
     </script>
