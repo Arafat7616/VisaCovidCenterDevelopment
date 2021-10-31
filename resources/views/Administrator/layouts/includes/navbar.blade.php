@@ -28,7 +28,7 @@
                         <a class="nav-link" href="{{ route('administrator.regular.index') }}">Regular</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Premium</a>
+                        <a class="nav-link" href="{{ route('administrator.premium.index') }}">Premium</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">

@@ -21,6 +21,8 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     // regular man power
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
         Route::get('index', 'PremiumManPowerController@index')->name('index');
+        Route::post('store', 'PremiumManPowerController@store')->name('store');
+
     });
 
     Route::get('profile', 'DashboardController@profile')->name('profile');

@@ -62,7 +62,7 @@ class RegularManPowerController extends Controller
             $manPowerSchedule->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Result uploaded successfully !',
+                'message' => 'Schedule uploaded successfully !',
             ]);
         } catch (\Exception $exception) {
             return response()->json([
