@@ -14,15 +14,13 @@
                         <a class="nav-link" href="{{ route('administrator.volunteer.index') }}">Volunteers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registered</a>
+                        <a class="nav-link" href="{{ route('administrator.registered.pcr') }}">Registered</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Premium Registered</a>
+                        <a class="nav-link" href="{{ route('administrator.premiumRegistered.pcr') }}">Premium Registered</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('administrator.price.index')}}">Pricing</a>
+                        <a class="nav-link" href="{{ route('administrator.price.index') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('administrator.regular.index') }}">Regular</a>

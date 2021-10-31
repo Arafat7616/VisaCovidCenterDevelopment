@@ -289,7 +289,7 @@
                             // pcrTest
                             if (res.data.pcrTest) {
                                 $('.modal-sample-collection-date').html(res.data.pcrTest
-                                    .sample_clloection_date);
+                                    .sample_collection_date);
                                 $('.modal-date-of-pcr').html(res.data.pcrTest.date_of_pcr_test);
                                 $('.modal-result-date').html(res.data.pcrTest
                                     .result_published_date);
