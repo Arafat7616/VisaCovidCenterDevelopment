@@ -33,7 +33,7 @@ class BoosterSeeder extends Seeder
             $booster->name_of_vaccine = 'Astrazeneca';
             $booster->registration_type = 'premium';
             $booster->date = null;
-            // $booster->date = Carbon::now()->addDays(-3);
+            $booster->date = Carbon::now()->addDays(10);
             $booster->antibody_last_date = Carbon::now()->addDays(180);
             $booster->user_id = $i;
             $booster->center_id = 1;
