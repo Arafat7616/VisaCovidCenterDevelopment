@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booster;
 use App\Models\PcrTest;
 use App\Models\Vaccination;
 use Carbon\Carbon;
@@ -24,6 +25,11 @@ class RegisteredController extends Controller
     public function vaccineDose2(){
         $vaccinations = Vaccination::where('registration_type', 'normal')->where('center_id', Auth::user()->center_id)->whereDate('date_of_second_dose', '>=', Carbon::today())->orderBy('date_of_second_dose', 'ASC')->get();
         return view('Administrator.registered.vaccine-dose-2', compact('vaccinations'));
+    }
+
+    public function booster(){
+        $boosters = Booster::where('registration_type', 'normal')->where('center_id', Auth::user()->center_id)->whereDate('date', '>=', Carbon::today())->orderBy('date', 'ASC')->get();
+        return view('Administrator.registered.booster', compact('boosters'));
     }
 
     public function pcrSwap(Request $request){
@@ -100,4 +106,30 @@ class RegisteredController extends Controller
         else
             return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
     }
+
+    public function boosterSwap(Request $request){
+        if (!$request->input(['boosters'])){
+            return response()->json(['message'=>'Please select Booster.', 'type'=>'warning']);
+        }
+        if (!$request->input(['date'])){
+            return response()->json(['message'=>'Please select date to Swap.', 'type'=>'warning']);
+        }
+        $is_update_any_one =null;
+        foreach($request->input(['boosters']) as $booster){
+            //Database
+            $booster = Booster::find($booster);
+            if ($booster){
+                $booster->date = $request->date;
+                $booster->save();
+                $is_update_any_one = 'Yes';
+            }else{
+                continue;
+            }
+        }
+        if ($is_update_any_one != null)
+            return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
+        else
+            return response()->json(['message'=>'Please select Booster.', 'type'=>'warning']);
+    }
+
 }

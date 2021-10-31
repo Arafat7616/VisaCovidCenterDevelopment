@@ -20,8 +20,9 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
         Route::post('vaccine-swap-dose-1', 'RegisteredController@vaccineSwapDose1')->name('vaccine.swapDose1');
         Route::get('vaccine-dose-2', 'RegisteredController@vaccineDose2')->name('vaccine.dose2');
         Route::post('vaccine-swap-dose-2', 'RegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
-
         Route::get('booster', 'RegisteredController@booster')->name('booster');
+        Route::post('booster-swap', 'RegisteredController@boosterSwap')->name('booster.swap');
+
     });
 
     // regular man power

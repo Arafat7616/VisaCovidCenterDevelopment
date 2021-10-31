@@ -19,7 +19,7 @@ class BoosterSeeder extends Seeder
             $booster->name_of_vaccine = 'Mordana';
             $booster->registration_type = 'normal';
             $booster->date = null;
-            // $booster->date = Carbon::now()->addDays(-3);
+            $booster->date = Carbon::now()->addDays(7);
             $booster->antibody_last_date = Carbon::now()->addDays(180);
             $booster->user_id = $i;
             $booster->center_id = 1;
