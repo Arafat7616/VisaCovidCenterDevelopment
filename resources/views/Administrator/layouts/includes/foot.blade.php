@@ -6,5 +6,6 @@
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @include('sweetalert::alert')
+{{-- @include('Others.sweetalert-js'); --}}
 
 @stack('script')

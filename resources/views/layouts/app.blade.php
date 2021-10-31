@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('sweetalert::alert')
+{{-- @include('Others.sweetalert-js'); --}}
 </head>
 <body>
     <div id="app">

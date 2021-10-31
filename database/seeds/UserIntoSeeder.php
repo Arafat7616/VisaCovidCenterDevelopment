@@ -33,5 +33,23 @@ class UserIntoSeeder extends Seeder
             $userInfo->user_id = $i + 5;
             $userInfo->save();
         }
+
+        for ($i = 1; $i <= 5; $i++) {
+            $userInfo = new UserInfo();
+            $userInfo->dob = Carbon::now()->addDays(-3660);
+            $userInfo->gender = 'Female';
+            $userInfo->nid_no =  rand(1000000, 2000000);
+            $userInfo->passport_no = rand(1000000, 2000000);
+            $userInfo->father_name = Str::random(15);
+            $userInfo->mother_name = Str::random(15);
+            $userInfo->blood_group = 'A-';
+            $userInfo->present_address = 'Dhaka Bangladesh';
+            $userInfo->permanent_address = 'Dhaka Tejgaon';
+            $userInfo->country_id = 18;
+            $userInfo->state_id = 338;
+            $userInfo->city_id = 7264;
+            $userInfo->user_id = $i;
+            $userInfo->save();
+        }
     }
 }
