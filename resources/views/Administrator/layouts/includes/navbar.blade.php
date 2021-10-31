@@ -14,7 +14,7 @@
                         <a class="nav-link" href="{{ route('administrator.volunteer.index') }}">Volunteers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registered</a>
+                        <a class="nav-link" href="{{route('administrator.registered.pcr')}}">Registered</a>
                     </li>
 
                     <li class="nav-item">

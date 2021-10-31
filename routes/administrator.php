@@ -12,6 +12,13 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
         Route::get('index', 'VolunteerController@index')->name('index');
     });
 
+    // route for registered
+    Route::group(['prefix' => 'registered/', 'as' => 'registered.'], function () {
+        Route::get('pcr', 'RegisteredController@pcr')->name('pcr');
+        Route::get('vaccine', 'RegisteredController@vaccine')->name('vaccine');
+        Route::get('booster', 'RegisteredController@booster')->name('booster');
+    });
+
     // regular man power
     Route::group(['prefix' => 'regular/', 'as' => 'regular.'], function () {
         Route::get('index', 'RegularManPowerController@index')->name('index');
@@ -31,6 +38,7 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     Route::get('verification/qr-scan', 'QrController@qrScan')->name('qrScan');
     Route::get('account/info', 'AccontInfoController@info')->name('info');
     Route::put('account/update', 'AccontInfoController@infoUpdate')->name('infoUpdate');
+
 
     Route::resource('price', 'PriceController');
 });
