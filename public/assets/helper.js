@@ -71,10 +71,6 @@ function delete_function(objButton) {
     })
 }
 
-
-
-
-
 // Listen for click on toggle checkbox
 $('.select-all').click(function(event) {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');

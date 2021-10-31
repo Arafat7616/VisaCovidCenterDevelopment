@@ -25,6 +25,19 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
 
     });
 
+     // route for premium registered
+     Route::group(['prefix' => 'premium-registered/', 'as' => 'premiumRegistered.'], function () {
+        Route::get('pcr', 'PremiumRegisteredController@pcr')->name('pcr');
+        Route::post('pcr-swap', 'PremiumRegisteredController@pcrSwap')->name('pcr.swap');
+        Route::get('vaccine-dose-1', 'PremiumRegisteredController@vaccineDose1')->name('vaccine.dose1');
+        Route::post('vaccine-swap-dose-1', 'PremiumRegisteredController@vaccineSwapDose1')->name('vaccine.swapDose1');
+        Route::get('vaccine-dose-2', 'PremiumRegisteredController@vaccineDose2')->name('vaccine.dose2');
+        Route::post('vaccine-swap-dose-2', 'PremiumRegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
+        Route::get('booster', 'PremiumRegisteredController@booster')->name('booster');
+        Route::post('booster-swap', 'PremiumRegisteredController@boosterSwap')->name('booster.swap');
+
+    });
+
     // regular man power
     Route::group(['prefix' => 'regular/', 'as' => 'regular.'], function () {
         Route::get('index', 'RegularManPowerController@index')->name('index');

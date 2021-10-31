@@ -31,7 +31,7 @@ class PcrTestSeeder extends Seeder
 
         for ($i = 11; $i <= 15; $i++) {
             $pcrTest = new PcrTest();
-            $pcrTest->registration_type = 'normal';
+            $pcrTest->registration_type = 'premium';
             $pcrTest->sample_collection_date = Carbon::now()->addDays(3);
             $pcrTest->date_of_pcr_test = null;
             // $pcrTest->result_published_date = Carbon::now()->addDays(-3);
