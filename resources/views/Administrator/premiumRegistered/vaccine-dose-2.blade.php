@@ -34,10 +34,10 @@
                                 <div class="row justify-content-between">
                                     <div class="col-5">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('administrator.registered.pcr') }}" class="accorion-btn">PCR</a>
-                                            <a href="{{ route('administrator.registered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
-                                            <a href="{{ route('administrator.registered.vaccine.dose2') }}" class="accorion-btn breadcrumb-active">Vaccine Dose 2</a>
-                                            <a href="{{ route('administrator.registered.booster') }}" class="accorion-btn">Booster</a>
+                                            <a href="{{ route('administrator.premiumRegistered.pcr') }}" class="accorion-btn">PCR</a>
+                                            <a href="{{ route('administrator.premiumRegistered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
+                                            <a href="{{ route('administrator.premiumRegistered.vaccine.dose2') }}" class="accorion-btn breadcrumb-active">Vaccine Dose 2</a>
+                                            <a href="{{ route('administrator.premiumRegistered.booster') }}" class="accorion-btn">Booster</a>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -193,7 +193,7 @@
                         console.log()
                         $.ajax({
                             method: 'POST',
-                            url: "{{ route('administrator.registered.vaccine.swapDose2') }}",
+                            url: "{{ route('administrator.premiumRegistered.vaccine.swapDose2') }}",
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: { 
                                 vaccinations: ids,

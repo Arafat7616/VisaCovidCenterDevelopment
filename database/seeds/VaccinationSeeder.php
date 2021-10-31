@@ -17,7 +17,7 @@ class VaccinationSeeder extends Seeder
         for ($i = 6; $i <=10; $i++) {
             $vaccination = new Vaccination();
             $vaccination->name_of_vaccine = 'Mordana';
-            $vaccination->registration_type = 'premium';
+            $vaccination->registration_type = 'normal';
 
             $vaccination->date_of_first_dose = Carbon::now()->addDays(-90);
             // $vaccination->date_of_second_dose = Carbon::now()->addDays(-60);
@@ -35,7 +35,7 @@ class VaccinationSeeder extends Seeder
         for ($i = 11; $i <=15; $i++) {
             $vaccination = new Vaccination();
             $vaccination->name_of_vaccine = 'Astrazeneca';
-            $vaccination->registration_type = 'normal';
+            $vaccination->registration_type = 'premium';
             $vaccination->date_of_first_dose = Carbon::now()->addDays(10);
             $vaccination->date_of_second_dose = Carbon::now()->addDays(58);
             // $vaccination->date_of_first_dose = null;
