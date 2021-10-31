@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Vaccine Dose-1 | Registered
+    Vaccine Dose-1 | Premium
 @endpush
 
 @push('css')

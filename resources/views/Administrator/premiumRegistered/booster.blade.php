@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Booster | Registered
+    Booster | Premium
 @endpush
 
 @push('css')
