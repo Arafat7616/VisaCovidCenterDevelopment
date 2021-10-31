@@ -37,9 +37,9 @@ class VaccinationSeeder extends Seeder
             $vaccination->name_of_vaccine = 'Astrazeneca';
             $vaccination->registration_type = 'normal';
             $vaccination->date_of_first_dose = Carbon::now()->addDays(10);
-            // $vaccination->date_of_second_dose = Carbon::now()->addDays(-58);
+            $vaccination->date_of_second_dose = Carbon::now()->addDays(58);
             // $vaccination->date_of_first_dose = null;
-            $vaccination->date_of_second_dose = null;
+            // $vaccination->date_of_second_dose = null;
             $vaccination->antibody_last_date = Carbon::now()->addDays(70);
             $vaccination->status = 1;
             $vaccination->user_id = $i;

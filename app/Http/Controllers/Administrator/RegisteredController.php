@@ -21,6 +21,11 @@ class RegisteredController extends Controller
         return view('Administrator.registered.vaccine-dose-1', compact('vaccinations'));
     }
 
+    public function vaccineDose2(){
+        $vaccinations = Vaccination::where('registration_type', 'normal')->where('center_id', Auth::user()->center_id)->whereDate('date_of_second_dose', '>=', Carbon::today())->orderBy('date_of_second_dose', 'ASC')->get();
+        return view('Administrator.registered.vaccine-dose-2', compact('vaccinations'));
+    }
+
     public function pcrSwap(Request $request){
         if (!$request->input(['pcrs'])){
             return response()->json(['message'=>'Please select PCR Test.', 'type'=>'warning']);
@@ -59,6 +64,31 @@ class RegisteredController extends Controller
             $vaccination = Vaccination::find($vaccination);
             if ($vaccination){
                 $vaccination->date_of_first_dose = $request->date;
+                $vaccination->save();
+                $is_update_any_one = 'Yes';
+            }else{
+                continue;
+            }
+        }
+        if ($is_update_any_one != null)
+            return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
+        else
+            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
+    }
+
+    public function vaccineSwapDose2(Request $request){
+        if (!$request->input(['vaccinations'])){
+            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
+        }
+        if (!$request->input(['date'])){
+            return response()->json(['message'=>'Please select date to Swap.', 'type'=>'warning']);
+        }
+        $is_update_any_one =null;
+        foreach($request->input(['vaccinations']) as $vaccination){
+            //Database
+            $vaccination = Vaccination::find($vaccination);
+            if ($vaccination){
+                $vaccination->date_of_second_dose = $request->date;
                 $vaccination->save();
                 $is_update_any_one = 'Yes';
             }else{
