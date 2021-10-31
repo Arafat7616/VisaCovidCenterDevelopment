@@ -188,11 +188,9 @@
                             <div class="cal-morning-slot">
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
-                                    <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()"
-                                        @if ($manPowerShedule) value="{{ $manPowerShedule->morning_starting_time }}" @endif name="morningSlotStart"> -
-                                    <input type="time" class="cal-morn-in-left" min="12:00" max="24:00" id="morningSlotEnd" onchange="setMorningSlotTime()"
-                                        @if ($manPowerShedule) value="{{ $manPowerShedule->morning_ending_time }}" @endif
-                                        name="morningSlotEnd">
+                                    <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->morning_starting_time }}" @endif
+                                        name="morningSlotStart"> -
+                                    <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
                                 @php
                                     if ($manPowerShedule) {
@@ -201,15 +199,16 @@
                                         $morning_slot_minutes = $morning_starting_time->diffInMinutes($morning_ending_time);
                                     }
                                 @endphp
-                                <p class="cal-footer">Working period: <span id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
+                                <p class="cal-footer">Working period: <span
+                                        id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
                             </div>
 
                             <div class="cal-day-slot">
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
-                                    <input type="time" class="cal-morn-day-right" id="daySlotStart" @if ($manPowerShedule) value="{{ $manPowerShedule->day_starting_time }}" @endif
+                                    <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->day_starting_time }}" @endif
                                         name="daySlotStart"> -
-                                    <input type="time" class="cal-morn-day-right" id="daySlotEnd" @if ($manPowerShedule) value="{{ $manPowerShedule->day_ending_time }}" @endif
+                                    <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->day_ending_time }}" @endif
                                         name="daySlotEnd">
                                 </div>
                                 @php
@@ -262,15 +261,19 @@
                                         <p class="p-mx"> PCR </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t" onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->pcr_time }}" @endif name="timeForPcr"> <small class="s-cx">min</small></p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->pcr_time }}" @endif
+                                                name="timeForPcr"> <small class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t" onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_pcr }}" @endif name="volunteerForPcr"></p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_pcr }}" @endif
+                                                name="volunteerForPcr"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-pcr-serve">
                                             @if ($manPowerShedule)
-                                            {{ get_max_service_per_day($totalDayMinutes,$manPowerShedule->pcr_time, $manPowerShedule->volunteer_for_pcr) }}
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->pcr_time, $manPowerShedule->volunteer_for_pcr) }}
                                             @endif
                                         </p>
                                     </td>
@@ -280,17 +283,20 @@
                                         <p class="p-mx"> Vaccine </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t" onchange="setMaxVaccineService()" id="timeForVaccine" @if ($manPowerShedule) value="{{ $manPowerShedule->vaccine_time }}" @endif name="timeForVaccine"> <small
+                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                onchange="setMaxVaccineService()" id="timeForVaccine"
+                                                @if ($manPowerShedule) value="{{ $manPowerShedule->vaccine_time }}" @endif name="timeForVaccine"> <small
                                                 class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t" onchange="setMaxVaccineService()" id="volunteerForVaccine" @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_vaccine }}" @endif
-                                                name="volunteerForVaccine"></p>
+                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                onchange="setMaxVaccineService()" id="volunteerForVaccine"
+                                                @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-vaccine-serve">
                                             @if ($manPowerShedule)
-                                            {{ get_max_service_per_day($totalDayMinutes,$manPowerShedule->vaccine_time, $manPowerShedule->volunteer_for_vaccine) }}
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->vaccine_time, $manPowerShedule->volunteer_for_vaccine) }}
                                             @endif
                                         </p>
                                     </td>
@@ -300,17 +306,20 @@
                                         <p class="p-mx"> Booster </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t" onchange="setMaxBoosterService()" id="timeForBooster" @if ($manPowerShedule) value="{{ $manPowerShedule->booster_time }}" @endif name="timeForBooster"> <small
+                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                onchange="setMaxBoosterService()" id="timeForBooster"
+                                                @if ($manPowerShedule) value="{{ $manPowerShedule->booster_time }}" @endif name="timeForBooster"> <small
                                                 class="s-cx">min</small> </p>
                                     </td>
                                     <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t"  onchange="setMaxBoosterService()" id="volunteerForBooster" @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_booster }}" @endif
-                                                name="volunteerForBooster"></p>
+                                        <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                onchange="setMaxBoosterService()" id="volunteerForBooster"
+                                                @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-booster-serve">
                                             @if ($manPowerShedule)
-                                            {{ get_max_service_per_day($totalDayMinutes,$manPowerShedule->booster_time, $manPowerShedule->volunteer_for_booster) }}
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->booster_time, $manPowerShedule->volunteer_for_booster) }}
                                             @endif
                                         </p>
                                     </td>
@@ -430,43 +439,99 @@
             var maxPcrServe = parseInt(document.getElementById('max-pcr-serve').innerHTML);
             var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
             var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
-            var wantToServePerDay = maxPcrServe+maxVaccineServe+maxBoosterServe;
+            var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
 
         wantToServePerDay();
-        function setMaxPcrService( ){
+
+        function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
             var volunteerForPcr = parseInt(document.getElementById('volunteerForPcr').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForPcr = totalMinute*volunteerForPcr;
-            document.getElementById('max-pcr-serve').innerHTML = manPowerMinuteForPcr/timeForPcr;
+            var manPowerMinuteForPcr = totalMinute * volunteerForPcr;
+            document.getElementById('max-pcr-serve').innerHTML = parseInt(manPowerMinuteForPcr / timeForPcr) ;
             wantToServePerDay();
+            setTotalManMinutePerDay()
         }
 
-        function setMaxVaccineService( ){
+        function setMaxVaccineService() {
             var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
             var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForVaccine = totalMinute*volunteerForVaccine;
-            document.getElementById('max-vaccine-serve').innerHTML = manPowerMinuteForVaccine/timeForVaccine;
+            var manPowerMinuteForVaccine = totalMinute * volunteerForVaccine;
+            document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
             wantToServePerDay();
+            setTotalManMinutePerDay();
         }
 
-        function setMaxBoosterService( ){
+        function setMaxBoosterService() {
             var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
             var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForBooster = totalMinute*volunteerForBooster;
-            document.getElementById('max-booster-serve').innerHTML = manPowerMinuteForBooster/timeForBooster;
+            var manPowerMinuteForBooster = totalMinute * volunteerForBooster;
+            document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
             wantToServePerDay();
+            setTotalManMinutePerDay();
         }
 
-        function setMorningSlotTime(){
-            var morningSlotStart = parseInt(document.getElementById('morningSlotStart').value);
-            console.log(morningSlotStart);
+        function setTotalManMinutePerDay() {
+            var volunteerForPcr     = parseInt(document.getElementById('volunteerForPcr').value);
+            var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
+            var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
+            var totalMinute         = document.getElementById('totalMinute').innerHTML;
+            var totalVolunteer = volunteerForPcr+volunteerForVaccine+volunteerForBooster;
+            document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalVolunteer;
+
         }
 
+        function setTotalMinute() {
+            var totalMorningSlotTime = parseInt(document.getElementById('totalMorningSlotTime').innerHTML);
+            var totalDaySlotTime = parseInt(document.getElementById('totalDaySlotTime').innerHTML);
+            document.getElementById('totalMinute').innerHTML = totalMorningSlotTime + totalDaySlotTime;
+            console.log(totalMinute)
 
+        }
+
+        function setMorningSlotTime() {
+            var morningSlotStart = document.getElementById('morningSlotStart').value;
+            var morningSlotEnd = document.getElementById('morningSlotEnd').value;
+
+            //create minute format          
+            var timeStart = new Date("01/01/2007 " + morningSlotStart).getMinutes();
+            var timeEnd = new Date("01/01/2007 " + morningSlotEnd).getMinutes();
+            var minuteDifferent = timeEnd - timeStart;
+            var timeStart = new Date("01/01/2007 " + morningSlotStart).getHours();
+            var timeEnd = new Date("01/01/2007 " + morningSlotEnd).getHours();
+            var hourDifferent = timeEnd - timeStart;
+            var actualMinute = (hourDifferent * 60) + minuteDifferent;
+            document.getElementById('totalMorningSlotTime').innerHTML = actualMinute;
+            setMaxPcrService();
+            setMaxVaccineService();
+            setMaxBoosterService();
+            setTotalMinute();
+            setTotalManMinutePerDay()
+
+        }
+
+        function setDaySlotTime() {
+            var daySlotStart = document.getElementById('daySlotStart').value;
+            var daySlotEnd = document.getElementById('daySlotEnd').value;
+
+            //create minute format          
+            var timeStart = new Date("01/01/2007 " + daySlotStart).getMinutes();
+            var timeEnd = new Date("01/01/2007 " + daySlotEnd).getMinutes();
+            var minuteDifferent = timeEnd - timeStart;
+            var timeStart = new Date("01/01/2007 " + daySlotStart).getHours();
+            var timeEnd = new Date("01/01/2007 " + daySlotEnd).getHours();
+            var hourDifferent = timeEnd - timeStart;
+            var actualMinute = (hourDifferent * 60) + minuteDifferent;
+            document.getElementById('totalDaySlotTime').innerHTML = actualMinute;
+            setMaxPcrService();
+            setMaxVaccineService();
+            setMaxBoosterService();
+            setTotalMinute();
+            setTotalManMinutePerDay()
+        }
     </script>
 @endpush
