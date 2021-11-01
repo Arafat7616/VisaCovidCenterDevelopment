@@ -2,11 +2,11 @@
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="text-center">
-                <img src="{{ asset('assets/super-admin/images/users/avatar-1.jpg') }}" alt="" class="img-circle">
+                <img src="{{ asset(Auth::user()->image ?? get_static_option('user')) }}" alt="" class="img-circle">
             </div>
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kenny Rigdon</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name ?? '' }}</a>
                     <ul class="dropdown-menu">
                         <li><a href="javascript:void(0)"> Profile</a></li>
                         <li><a href="javascript:void(0)"> Settings</a></li>
@@ -23,11 +23,11 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="{{asset('superAdmin.dashboard')}}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                    <a href="{{ route('superAdmin.dashboard') }}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-credit-card"></i> <span> Slider </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Slider </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.slider.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Slider </span></a></li>
                         <li><a href="{{route('superAdmin.slider.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Slider </span></a></li>

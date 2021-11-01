@@ -2,8 +2,8 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="index.html" class="logo"><img src="{{ asset( get_static_option('logo') ?? 'assets/super-admin/images/logo_white_2.png') }}" style="width: 100%; height: 70px;" height="28"></a>
-            <a href="index.html" class="logo-sm"><img src="{{ asset('assets/super-admin/images/logo_sm.png') }}" height="36"></a>
+            <a href="{{ route('superAdmin.dashboard') }}" class="logo"><img src="{{ asset( get_static_option('logo') ?? 'assets/super-admin/images/logo_white_2.png') }}" style="width: 100%; height: 70px;" height="28"></a>
+            <a href="{{ route('superAdmin.dashboard') }}" class="logo-sm"><img src="{{ asset('assets/super-admin/images/logo_sm.png') }}" height="36"></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -73,17 +73,12 @@
                         <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="fa fa-crosshairs"></i></a>
                     </li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('assets/super-admin/images/users/avatar-1.jpg') }}" alt="user-img" class="img-circle"> </a>
+                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset(Auth::user()->image ?? get_static_option('user')) }}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)"> Profile</a></li>
                             <li><a href="javascript:void(0)"><span class="badge badge-success pull-right">5</span> Settings </a></li>
                             <li><a href="javascript:void(0)"> Lock screen</a></li>
                             <li class="divider"></li>
-
-                            <li class="list-inline-item"><a href="javascript:void(0)" class="profile-icon logout-btn"><img src="assets/backend/images/svg-icon/logout.svg" class="img-fluid" alt="logout"></a></li>
-
-
-
                             <li><a class="logout-btn" href="javascript:void(0)"> Logout</a></li>
                         </ul>
                     </li>
