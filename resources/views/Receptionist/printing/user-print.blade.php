@@ -94,7 +94,7 @@
                     <h5 class="new_registration__head">Date</h5>
                     <div class="new_registration__body px-3">
                         @if ($user->pcrTest)
-                            <span>Sample Collection: {{ $user->pcrTest->sample_clloection_date }}</span> <br>
+                            <span>Sample Collection: {{ $user->pcrTest->sample_collection_date }}</span> <br>
                             <span>Tested Date: {{ $user->pcrTest->date_of_pcr_test }}</span> <br>
                             <span>Result Published: {{ $user->pcrTest->result_published_date }}</span> <br>
                         @endif
