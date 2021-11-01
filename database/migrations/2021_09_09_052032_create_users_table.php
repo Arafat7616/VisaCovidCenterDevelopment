@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->integer('otp')->nullable();
             $table->timestamp('otp_verified_at')->nullable();
-            $table->enum('status', [0,1])->default(1);
+            $table->boolean('status')->default(0);
             $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
         });

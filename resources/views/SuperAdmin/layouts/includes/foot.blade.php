@@ -12,13 +12,6 @@
 <script src="{{ asset('assets/super-admin/js/jquery.scrollTo.min.js') }}"></script>
 
 <script src="{{ asset('assets/super-admin/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-
-<!-- Datatables-->
-<script src="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
-<script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('assets/super-admin/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
-
 <script src="{{ asset('assets/super-admin/pages/dashborad.js') }}"></script>
 
 <script src="{{ asset('assets/super-admin/js/app.js') }}"></script>
@@ -31,4 +24,6 @@
 @include('sweetalert::alert')
 {{-- @include('Others.sweetalert-js'); --}}
 
+@stack('datatableJS')
 @stack('script')
+

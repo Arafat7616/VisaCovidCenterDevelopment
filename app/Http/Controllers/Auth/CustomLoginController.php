@@ -23,21 +23,28 @@ class CustomLoginController extends Controller
 
         if ($user)
         {
-            if (Hash::check($request->password, $hashPassword))
-            {
-                $user->otp = rand(100000,1000000);
-                $user ->save();
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'OTP send in '.$request->phone
-                ]);
-            }else{
+            if($user->status == 0){
                 return response()->json([
                     'type' => 'warning',
-                    'message' => 'Please Insert valid password'
+                    'message' => 'Sorry ! You are not Approved .'
                 ]);
+            }else{
+                if (Hash::check($request->password, $hashPassword))
+                {
+                    $user->otp = rand(100000,1000000);
+                    $user ->save();
+                    return response()->json([
+                        'type' => 'success',
+                        'message' => 'OTP send in '.$request->phone
+                    ]);
+                }else{
+                    return response()->json([
+                        'type' => 'warning',
+                        'message' => 'Please Insert valid password'
+                    ]);
+                }
+    
             }
-
         }else{
             return response()->json([
                 'type' => 'warning',

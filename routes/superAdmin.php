@@ -10,4 +10,9 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     Route::resource('payment', 'PaymentMethodController');
     Route::resource('slider', 'SliderController');
 
+    // route for manage user
+    Route::group(['prefix' => 'manage-user/', 'as' => 'manageUser.'], function () {
+        Route::get('administrator', 'UserController@administrator')->name('administrator');
+      
+    });
 });
