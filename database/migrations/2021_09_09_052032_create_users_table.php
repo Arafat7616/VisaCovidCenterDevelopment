@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration
             $table->boolean('status')->default(0);
             $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

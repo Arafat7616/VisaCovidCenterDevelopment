@@ -7,9 +7,6 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/center-part/css/Accordion-42.css') }}">
 
-    @endpush
-
-@push('datatableCSS')
     {{-- datatables --}}
     <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"
         type="text/css" />
@@ -115,7 +112,7 @@
     </div>
 @endsection
 
-@push('datatableJS')
+@push('script')
     {{-- datatables --}}
     <script src="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
@@ -133,9 +130,6 @@
     <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/super-admin/pages/datatables.init.js') }}"></script>
-@endpush
-
-@push('script')
 
     <script>
          $(document).ready(function() {

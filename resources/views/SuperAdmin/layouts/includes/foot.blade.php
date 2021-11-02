@@ -12,6 +12,9 @@
 <script src="{{ asset('assets/super-admin/js/jquery.scrollTo.min.js') }}"></script>
 
 <script src="{{ asset('assets/super-admin/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('assets/super-admin/pages/dashborad.js') }}"></script>
+
+<script src="{{ asset('assets/super-admin/js/app.js') }}"></script>
 
 <!-- End JS -->
 
@@ -22,8 +25,5 @@
 {{-- @include('Others.sweetalert-js'); --}}
 
 @stack('datatableJS')
-
-<script src="{{ asset('assets/super-admin/js/app.js') }}"></script>
-
 @stack('script')
 
