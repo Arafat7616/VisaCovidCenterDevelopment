@@ -40,7 +40,9 @@ function delete_function(objButton) {
             $.ajax({
                 method: 'DELETE',
                 url: url,
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(data) {
                     if (data.type == 'success') {
 
@@ -63,6 +65,124 @@ function delete_function(objButton) {
                             'Wrong!',
                             'Something going wrong. ' + data.message,
                             'warning'
+                        )
+                    }
+                },
+            })
+        }
+    })
+}
+
+
+function activeNow(objButton) {
+    var url = objButton.value;
+    // alert(objButton.value)
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Active !'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.ajax({
+                method: 'POST',
+                url: url,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if (data.type == 'success') {
+                        Swal.fire(
+                            'Activated !', 'This account has been Activated. ' + data.message, 'success'
+                        )
+                        setTimeout(function() {
+                            location.reload();
+                        }, 800); //
+                    } else {
+                        Swal.fire(
+                            'Wrong !', 'Something going wrong. ' + data.message, 'warning'
+                        )
+                    }
+                },
+            })
+        }
+    })
+}
+
+function deactiveNow(objButton) {
+    var url = objButton.value;
+    // alert(objButton.value)
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Deactive !'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.ajax({
+                method: 'POST',
+                url: url,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if (data.type == 'success') {
+                        Swal.fire(
+                            'Deactivated !', 'This account has been Deactivated. ' + data.message, 'success'
+                        )
+                        setTimeout(function() {
+                            location.reload();
+                        }, 800); //
+                    } else {
+                        Swal.fire(
+                            'Wrong !', 'Something going wrong. ' + data.message, 'warning'
+                        )
+                    }
+                },
+            })
+        }
+    })
+}
+
+function deleteNow(objButton) {
+    var url = objButton.value;
+    // alert(objButton.value)
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Delete !'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.ajax({
+                method: 'POST',
+                url: url,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if (data.type == 'success') {
+                        Swal.fire(
+                            'Deleted !', 'This account has been Deleted. ' + data.message, 'success'
+                        )
+                        setTimeout(function() {
+                            location.reload();
+                        }, 800); //
+                    } else {
+                        Swal.fire(
+                            'Wrong !', 'Something going wrong. ' + data.message, 'warning'
                         )
                     }
                 },

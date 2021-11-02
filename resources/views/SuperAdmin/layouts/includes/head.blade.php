@@ -10,9 +10,10 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+@stack('datatableCSS')
+
 <link href=" {{ asset('assets/super-admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/icons.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/style.css') }}" rel="stylesheet" type="text/css">
 
 @stack('css')
-@stack('datatableCSS')

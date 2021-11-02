@@ -8,5 +8,9 @@
 @include('sweetalert::alert')
 {{-- @include('Others.sweetalert-js'); --}}
 
-@stack('datatables')
+@stack('datatableJS')
+
+<script src="{{ asset('assets/super-admin/js/app.js') }}"></script>
+
 @stack('script')
+
