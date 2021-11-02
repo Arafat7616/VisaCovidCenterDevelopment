@@ -40,7 +40,9 @@ function delete_function(objButton) {
             $.ajax({
                 method: 'DELETE',
                 url: url,
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(data) {
                     if (data.type == 'success') {
 
@@ -70,6 +72,7 @@ function delete_function(objButton) {
         }
     })
 }
+
 
 // Listen for click on toggle checkbox
 $('.select-all').click(function(event) {
