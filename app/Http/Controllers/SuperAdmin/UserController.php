@@ -16,6 +16,7 @@ class UserController extends Controller
 
     public function profile($id){
         $user = User::findOrFail($id);
+        return view('SuperAdmin.manageUser.profile', compact('user'));
     }
     public function activeNow($id){
         $user = User::findOrFail($id);

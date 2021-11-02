@@ -16,6 +16,6 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::post('active/{id}', 'UserController@activeNow')->name('activeNow');
         Route::post('deactive/{id}', 'UserController@deactiveNow')->name('deactiveNow');
         Route::post('delete/{id}', 'UserController@deleteNow')->name('deleteNow');
-        Route::post('profile/{id}', 'UserController@profile')->name('profile');
+        Route::get('profile/{id}', 'UserController@profile')->name('profile');
     });
 });

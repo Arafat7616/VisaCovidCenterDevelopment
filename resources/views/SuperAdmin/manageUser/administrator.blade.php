@@ -85,7 +85,7 @@ Administrator list
                                         @endif
                                     </td>
                                     <td>{{ $user->userInfo->gender }}</td>
-                                    <td>
+                                    <td class="text-center">
                                         @if ($user->status == 0)
                                         <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('superAdmin.manageUser.activeNow', $user->id) }}">
                                             <i class="mdi mdi-check"></i>
@@ -99,6 +99,9 @@ Administrator list
                                         <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('superAdmin.manageUser.deleteNow', $user->id) }}">
                                             <i class="fa fa-trash"></i>
                                         </button>
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.profile', $user->id) }}">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -169,8 +172,8 @@ Administrator list
                     method: 'POST'
                     , url: url
                     , headers: {
-                          'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                    }
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    , }
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
@@ -208,8 +211,8 @@ Administrator list
                     method: 'POST'
                     , url: url
                     , headers: {
-                          'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                    }
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    , }
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
@@ -247,8 +250,8 @@ Administrator list
                     method: 'POST'
                     , url: url
                     , headers: {
-                          'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                    }
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    , }
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
@@ -267,5 +270,6 @@ Administrator list
             }
         })
     }
+
 </script>
 @endpush
