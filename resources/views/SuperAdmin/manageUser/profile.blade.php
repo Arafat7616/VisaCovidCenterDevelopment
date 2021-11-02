@@ -155,7 +155,7 @@ User's Profile
                                             @endif
                                             Document 
                                         </li>
-                                    @endforeach                                                                        
+                                    @endforeach   
                                 </ul>
                             </div>
                         </div> <!-- end row -->
