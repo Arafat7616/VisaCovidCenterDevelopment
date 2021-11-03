@@ -12,4 +12,9 @@ class CenterDocument extends Model
         'document',
         'status'
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
 }
