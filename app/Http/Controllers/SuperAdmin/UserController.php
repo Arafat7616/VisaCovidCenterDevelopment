@@ -18,6 +18,11 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         return view('SuperAdmin.manageUser.profile', compact('user'));
     }
+
+    public function edit($id){
+        $user = User::findOrFail($id);
+        return view('SuperAdmin.manageUser.edit', compact('user'));
+    }
     public function activeNow($id){
         $user = User::findOrFail($id);
         $user->status = 1;

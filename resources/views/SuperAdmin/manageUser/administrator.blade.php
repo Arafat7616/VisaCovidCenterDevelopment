@@ -102,6 +102,9 @@ Administrator list
                                         <a class="btn btn-info" href="{{ route('superAdmin.manageUser.profile', $user->id) }}">
                                             <i class="fa fa-eye"></i>
                                         </a>
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.edit', $user->id) }}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
