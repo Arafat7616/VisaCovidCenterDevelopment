@@ -8,4 +8,5 @@
 @include('sweetalert::alert')
 {{-- @include('Others.sweetalert-js'); --}}
 
+@stack('datatables')
 @stack('script')

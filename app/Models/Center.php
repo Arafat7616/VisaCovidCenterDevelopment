@@ -19,4 +19,9 @@ class Center extends Model
         'status',
         'varification_status',
     ];
+
+    public function documents()
+    {
+        return $this->hasMany(CenterDocument::class, 'center_id');
+    }
 }
