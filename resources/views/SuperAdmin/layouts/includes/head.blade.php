@@ -9,6 +9,7 @@
 <link rel="shortcut icon" href=" {{ asset('assets/super-admin/images/favicon.ico') }}">
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
+@stack('datatableCSS')
 
 <link href=" {{ asset('assets/super-admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/icons.css') }}" rel="stylesheet" type="text/css">
@@ -19,4 +20,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @stack('css')
-@stack('datatableCSS')
+

@@ -46,7 +46,7 @@
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/*') ? 'active subdrop': ''}}"><i class="fa fa-users"></i> <span> Manage User's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
-                        {{-- <li><a href="{{route('superAdmin.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Method </span></a></li> --}}
+                        <li><a href="{{route('superAdmin.manageUser.volunteer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
                     </ul>
                 </li>
 
