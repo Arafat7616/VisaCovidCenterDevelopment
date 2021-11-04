@@ -34,6 +34,18 @@ class UserController extends Controller
         return view('SuperAdmin.manageUser.receptionist', compact('users'));
     }
 
+    public function pathologist()
+    {
+        $users = User::where('user_type', 'pathologist')->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.manageUser.pathologist', compact('users'));
+    }
+
+    public function user()
+    {
+        $users = User::where('user_type', 'user')->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.manageUser.user', compact('users'));
+    }
+
     public function profile($id)
     {
         $user = User::findOrFail($id);
