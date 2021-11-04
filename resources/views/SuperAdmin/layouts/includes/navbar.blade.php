@@ -47,6 +47,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
                         <li><a href="{{route('superAdmin.manageUser.volunteer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
+                        <li><a href="{{route('superAdmin.manageUser.receptionist')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/receptionist') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Receptionist </span></a></li>
                     </ul>
                 </li>
 

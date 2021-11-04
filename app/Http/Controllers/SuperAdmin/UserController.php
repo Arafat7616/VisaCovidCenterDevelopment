@@ -28,6 +28,12 @@ class UserController extends Controller
         return view('SuperAdmin.manageUser.volunteer', compact('users'));
     }
 
+    public function receptionist()
+    {
+        $users = User::where('user_type', 'receptionist')->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.manageUser.receptionist', compact('users'));
+    }
+
     public function profile($id)
     {
         $user = User::findOrFail($id);

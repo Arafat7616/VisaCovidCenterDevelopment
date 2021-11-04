@@ -14,6 +14,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     Route::group(['prefix' => 'manage-user/', 'as' => 'manageUser.'], function () {
         Route::get('administrator', 'UserController@administrator')->name('administrator');
         Route::get('volunteer', 'UserController@volunteer')->name('volunteer');
+        Route::get('receptionist', 'UserController@receptionist')->name('receptionist');
         Route::post('active/{id}', 'UserController@activeNow')->name('activeNow');
         Route::post('deactive/{id}', 'UserController@deactiveNow')->name('deactiveNow');
         Route::post('delete/{id}', 'UserController@deleteNow')->name('deleteNow');
