@@ -14,5 +14,9 @@
 <link href=" {{ asset('assets/super-admin/css/icons.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/style.css') }}" rel="stylesheet" type="text/css">
 
+
+<!--====== AJAX ======-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 @stack('css')
 @stack('datatableCSS')

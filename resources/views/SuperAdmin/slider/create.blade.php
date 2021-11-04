@@ -32,6 +32,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.slider.store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
+                                        @include('Others.message')
                                         <div class="form-group">
                                             <label for="title">Slider Title</label>
                                             <input type="text" name="title" value="{{ old('title') }}" class="form-control @error('title') is-invalid @enderror" id="ex1" placeholder="Enter slider Title">

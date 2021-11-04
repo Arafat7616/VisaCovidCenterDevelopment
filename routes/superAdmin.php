@@ -18,5 +18,6 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::post('delete/{id}', 'UserController@deleteNow')->name('deleteNow');
         Route::get('profile/{id}', 'UserController@profile')->name('profile');
         Route::get('edit/{id}', 'UserController@edit')->name('edit');
+        Route::post('update/{id}', 'UserController@update')->name('update');
     });
 });

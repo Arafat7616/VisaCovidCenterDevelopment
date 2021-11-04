@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -60,7 +61,10 @@ class PaymentMethodController extends Controller
 
         try {
             PaymentMethod::create($data);
-            return back()->withToastSuccess('Successfully saved.');
+            // return back()->withToastSuccess('Successfully saved.');
+            Session::flash('message', 'Successfully saved.');
+            Session::flash('type', 'success');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
         }
@@ -132,7 +136,10 @@ class PaymentMethodController extends Controller
         try {
             $paymentMethod->save();
 
-            return back()->withToastSuccess('Successfully updated.');
+            // return back()->withToastSuccess('Successfully updated.');
+            Session::flash('message', 'Updated successfully!');
+            Session::flash('type', 'success');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
         }
