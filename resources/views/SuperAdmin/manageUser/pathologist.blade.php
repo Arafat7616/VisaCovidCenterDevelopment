@@ -37,9 +37,9 @@ Pathologist list
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-primary">
+                <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Pathologist list</h3>
+                        <h3 class="panel-title text-white">Pathologist list</h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">

@@ -24,4 +24,8 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('edit/{id}', 'UserController@edit')->name('edit');
         Route::post('update/{id}', 'UserController@update')->name('update');
     });
+    // route for manage center
+    Route::group(['prefix' => 'manage-center/', 'as' => 'manageCenter.'], function () {
+        Route::get('index', 'CenterController@index')->name('index');
+    });
 });
