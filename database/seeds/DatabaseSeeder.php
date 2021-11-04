@@ -17,12 +17,13 @@ class DatabaseSeeder extends Seeder
         $this->call(CenterSeeder::class);
         $this->call(CovidEffectedSeeder::class);
         $this->call(PcrTestSeeder::class);
-        $this->call(PricingSeeder::class);
+        $this->call(PriceSeeder::class);
         $this->call(VaccinationSeeder::class);
         $this->call(BoosterSeeder::class);
 
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(CitySeeder::class);
+        $this->call(CitySeeder1::class);
     }
 }

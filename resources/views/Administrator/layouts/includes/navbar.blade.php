@@ -11,26 +11,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Volunteers</a>
+                        <a class="nav-link" href="{{ route('administrator.volunteer.index') }}">Volunteers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registered</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="{{ route('administrator.registered.pcr') }}">Registered</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Regular</a>
+                        <a class="nav-link" href="{{ route('administrator.premiumRegistered.pcr') }}">Premium Registered</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Premium</a>
+                        <a class="nav-link" href="{{ route('administrator.price.index') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pathologist</a>
+                        <a class="nav-link" href="{{ route('administrator.regular.index') }}">Regular</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reception</a>
+                        <a class="nav-link" href="{{ route('administrator.premium.index') }}">Premium</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
@@ -41,7 +37,7 @@
                             <br> <span class="text-capitalize profile__designation">{{ Auth::user()->user_type }}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('administrator.profile') }}">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>

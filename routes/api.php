@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});*/
+
+
+
+
+Route::get('/hello', function (){
+    $users = User::all();
+
+    return response()->json([
+        'type' => 'success',
+        'users' => $users,
+    ]);
 });
+
+Route::post('user/create', 'Api\UserController@store');
+Route::post('user/login', 'Api\UserController@login');
+
+
+
+

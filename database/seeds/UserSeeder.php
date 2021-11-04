@@ -20,10 +20,9 @@ class UserSeeder extends Seeder
         $user->name = 'Mr. Super Admin';
         $user->email = 'superadmin@gmail.com';
         $user->phone = '01785521424';
-
         $user->password = Hash::make('12345');
         $user->user_type = 'super-admin';
-        $user->status = 1;
+        $user->status = true;
         $user->otp = rand(5, 9999);
         $user->save();
 
@@ -33,7 +32,7 @@ class UserSeeder extends Seeder
         $user->phone = '01785521423';
         $user->password = Hash::make('12345');
         $user->user_type = 'administrator';
-        $user->status = 1;
+        $user->status = true;
         $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
@@ -44,7 +43,7 @@ class UserSeeder extends Seeder
         $user->phone = '01785521422';
         $user->password = Hash::make('12345');
         $user->user_type = 'volunteer';
-        $user->status = 1;
+        $user->status = true;
         $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
@@ -55,7 +54,7 @@ class UserSeeder extends Seeder
         $user->phone = '01785521421';
         $user->password = Hash::make('12345');
         $user->user_type = 'receptionist';
-        $user->status = 1;
+        $user->status = true;
         $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
@@ -66,7 +65,7 @@ class UserSeeder extends Seeder
         $user->phone = '01785521420';
         $user->password = Hash::make('12345');
         $user->user_type = 'pathologist';
-        $user->status = 1;
+        $user->status = true;
         $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
@@ -79,7 +78,7 @@ class UserSeeder extends Seeder
             $user->phone = '0178552145'.$i;
             $user->password = Hash::make('12345');
             $user->user_type = 'user';
-            $user->status = 1;
+            $user->status = true;
             $user->center_id = 1;
             $user->otp = rand(5, 9999);
             $user->save();

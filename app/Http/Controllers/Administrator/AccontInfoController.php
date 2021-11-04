@@ -39,4 +39,7 @@ class AccontInfoController extends Controller
         return redirect()->route('administrator.dashboard');
 
     }
+
+
+
 }

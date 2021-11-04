@@ -18,7 +18,7 @@ class CreateServeNosTable extends Migration
             $table->string('pcr')->nullable();
             $table->string('vaccine')->nullable();
             $table->string('booster')->nullable();
-            $table->date('date')->nullable();
+            $table->string('date')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->timestamps();
         });

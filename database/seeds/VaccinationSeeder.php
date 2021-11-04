@@ -17,8 +17,12 @@ class VaccinationSeeder extends Seeder
         for ($i = 6; $i <=10; $i++) {
             $vaccination = new Vaccination();
             $vaccination->name_of_vaccine = 'Mordana';
+            $vaccination->registration_type = 'normal';
+
             $vaccination->date_of_first_dose = Carbon::now()->addDays(-90);
-            $vaccination->date_of_second_dose = Carbon::now()->addDays(-60);
+            // $vaccination->date_of_second_dose = Carbon::now()->addDays(-60);
+            // $vaccination->date_of_first_dose = null;
+            $vaccination->date_of_second_dose = null;
             $vaccination->antibody_last_date = Carbon::now()->addDays(120);
             $vaccination->status = 1;
             $vaccination->user_id = $i;
@@ -31,9 +35,12 @@ class VaccinationSeeder extends Seeder
         for ($i = 11; $i <=15; $i++) {
             $vaccination = new Vaccination();
             $vaccination->name_of_vaccine = 'Astrazeneca';
-            $vaccination->date_of_first_dose = Carbon::now()->addDays(-90);
-            $vaccination->date_of_second_dose = Carbon::now()->addDays(-60);
-            $vaccination->antibody_last_date = Carbon::now()->addDays(120);
+            $vaccination->registration_type = 'premium';
+            $vaccination->date_of_first_dose = Carbon::now()->addDays(10);
+            $vaccination->date_of_second_dose = Carbon::now()->addDays(58);
+            // $vaccination->date_of_first_dose = null;
+            // $vaccination->date_of_second_dose = null;
+            $vaccination->antibody_last_date = Carbon::now()->addDays(70);
             $vaccination->status = 1;
             $vaccination->user_id = $i;
             $vaccination->center_id = 1;

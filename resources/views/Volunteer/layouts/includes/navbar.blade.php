@@ -11,14 +11,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('volunteer.registered.pcr') }}">Registered</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('volunteer.premium.pcr') }}">Premium</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('volunteer.user.index') }}">User's</a>
+                        <a class="nav-link" href="{{ route('volunteer.user.pcr') }}">User's</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
@@ -29,7 +26,7 @@
                             <br> <span class="text-capitalize profile__designation">{{ Auth::user()->user_type }}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('volunteer.profile') }}">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePricingsTable extends Migration
+class CreatePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePricingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pricings', function (Blueprint $table) {
+        Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->string('pcr_normal')->nullable();
             $table->string('vaccine_normal')->nullable();
             $table->string('booster_normal')->nullable();
-            $table->string('pcr_premimum')->nullable();
-            $table->string('vaccine_premimum')->nullable();
-            $table->string('boster_premimum')->nullable();
+            $table->string('pcr_premium')->nullable();
+            $table->string('vaccine_premium')->nullable();
+            $table->string('booster_premium')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->enum('status', [0,1]);
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreatePricingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pricings');
+        Schema::dropIfExists('prices');
     }
 }
