@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-User's Profile
+Center's Profile
 @endpush
 
 @push('datatableCSS')
@@ -18,11 +18,11 @@ User's Profile
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">User' Profile</h4>
+                    <h4 class="pull-left page-title">Center's Profile</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
-                        <li><a href="javascript:void(0)">Manage User's</a></li>
-                        <li class="active">User' Profile</li>
+                        <li><a href="javascript:void(0)">Manage Center</a></li>
+                        <li class="active">Center's Profile</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -57,15 +57,15 @@ User's Profile
                                         Trade Licence No.
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-success">{{ $center->trade_licence_no }}</span>
+                                        <span class="badge badge-warning">{{ $center->country->name }}</span>
                                         Country
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-success">{{ $center->trade_licence_no }}</span>
+                                        <span class="badge badge-dark">{{ $center->state->name }}</span>
                                         State
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-success">{{ $center->trade_licence_no }}</span>
+                                        <span class="badge badge-info">{{ $center->city->name }}</span>
                                         City
                                     </li>
                                     <li class="list-group-item">
@@ -101,73 +101,41 @@ User's Profile
             <div class="col-lg-6">
                 <div class="panel panel-color panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Personal Details</h3>
+                        <h3 class="panel-title">Administrator Details</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center">
                                     <div>
-                                        <img style="border-radius: 20%" height="200px;" width="200px;" src="{{ asset($center->image ?? get_static_option('user')) }}" class="rounded-circle rounded" alt="User">
+                                        <img style="border-radius: 20%" height="200px;" width="200px;" src="{{ asset($center->administrator->image ?? get_static_option('user')) }}" class="rounded-circle rounded" alt="User">
                                     </div>
                                     <div>
-                                        <h3>{{ $center->name }}</h3>
-                                        <h4>{{ $center->user_type }}</h4>
+                                        <h3>{{ $center->administrator->name }}</h3>
+                                        <h4>{{ $center->administrator->email }}</h4>
                                     </div>
                                 </div>
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        <span class="badge badge-primary">{{ $center->email }}</span>
-                                        Email
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-primary">{{ $center->phone }}</span>
+                                        <span class="badge badge-primary">{{ $center->administrator->phone }}</span>
                                         Phone
                                     </li>
                                     <li class="list-group-item">
-                                        @if ($center->status == 0)
+                                        @if ($center->administrator->status == 0)
                                         <span class="badge badge-danger">Inactive</span>
-                                        @elseif($center->status == 1)
+                                        @elseif($center->administrator->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif
                                       Status
                                     </li>
-                                    {{-- <li class="list-group-item">
-                                        <span class="badge badge-success">{{ $center->userInfo->dob }}</span>
-                                        Date of Birth
-                                    </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-success">{{ $center->userInfo->gender }}</span>
-                                        Gender
+                                        <span class="badge badge-info">    
+                                            <a style="padding: 0 20px;" href="{{ route('superAdmin.manageUser.profile', $center->administrator_id) }}">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </span>
+                                        Profile
                                     </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-info">{{ $center->userInfo->nid_no }}</span>
-                                        NID
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-info">{{ $center->userInfo->passport_no }}</span>
-                                        Passport
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-info">{{ $center->userInfo->blood_group }}</span>
-                                        Blood Group
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-dark">{{ $center->userInfo->mother_name }}</span>
-                                        Mother Name
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-dark">{{ $center->userInfo->father_name }}</span>
-                                        Father Name
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-dark">{{ $center->userInfo->present_address }}</span>
-                                        Present Address
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge badge-dark">{{ $center->userInfo->permanent_address }}</span>
-                                        Permanent Address
-                                    </li> --}}
                                 </ul>
                             </div>
                         </div> <!-- end row -->
