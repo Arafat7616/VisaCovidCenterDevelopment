@@ -48,12 +48,11 @@ Center list
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Image</th>
+                                    <th>Trade Licence</th>
                                     <th>Administrator.</th>
-                                    {{-- <th>NID NO.</th> --}}
+                                    <th>Zip Code.</th>
+                                    <th>Address.</th>
                                     <th>Status</th>
-                                    {{-- <th>Gneder</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -63,20 +62,11 @@ Center list
                                     <td>{{ $center->id }}</td>
                                     <td>{{ $center->name }}</td>
                                     <td>{{ $center->email }}</td>
-                                    <td>{{ $center->phone }}</td>
-                                    <td>
-                                        @if ($center->image)
-                                        <a href="{{ asset($center->image) }}" target="_blank">
-                                            <img height="70px;" src="{{ asset($center->image) }}" width="70px;" class="rounded-circle" />
-                                        </a>
-                                        @else
-                                        <abbr title="Sorry There in no picture">
-                                            <img class="rounded-circle" height="70px;" src="{{ asset(get_static_option('no_image')) }}" width="70px;" />
-                                        </abbr>
-                                        @endif
-                                    </td>
+                                    <td>{{ $center->trade_licence_no }}</td>
+                                   
                                     <td>{{ $center->administrator->name }}</td>
-                                    {{-- <td>{{ $center->userInfo->nid_no }}</td> --}}
+                                    <td>{{ $center->zip_code }}</td>
+                                    <td>{{ $center->address }}</td>
                                     <td>
                                         @if ($center->status == 0)
                                         <span class="badge badge-danger">Inactive</span>
@@ -84,25 +74,24 @@ Center list
                                         <span class="badge badge-success">Active</span>
                                         @endif
                                     </td>
-                                    {{-- <td>{{ $center->userInfo->gender }}</td> --}}
                                     <td class="text-center">
                                         @if ($center->status == 0)
-                                        <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('superAdmin.manageUser.activeNow', $center->id) }}">
+                                        <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('superAdmin.manageCenter.activeNow', $center->id) }}">
                                             <i class="mdi mdi-check"></i>
                                         </button>
                                         @elseif($center->status == 1)
-                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('superAdmin.manageUser.inactiveNow', $center->id) }}">
+                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('superAdmin.manageCenter.inactiveNow', $center->id) }}">
                                             <i class="mdi mdi-close"></i>
                                         </button>
                                         @endif
 
-                                        <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('superAdmin.manageUser.deleteNow', $center->id) }}">
+                                        <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('superAdmin.manageCenter.deleteNow', $center->id) }}">
                                             <i class="fa fa-trash"></i>
                                         </button>
-                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.profile', $center->id) }}">
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageCenter.profile', $center->id) }}">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.edit', $center->id) }}">
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageCenter.edit', $center->id) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
@@ -115,12 +104,11 @@ Center list
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Image</th>
+                                    <th>Trade Licence</th>
                                     <th>Administrator.</th>
-                                    {{-- <th>NID NO.</th> --}}
+                                    <th>Zip Code.</th>
+                                    <th>Address.</th>
                                     <th>Status</th>
-                                    {{-- <th>Gneder</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -180,7 +168,7 @@ Center list
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
-                                'Activated !', 'This account has been Activated. ' + data.message, 'success'
+                                'Activated !', 'This center has been Activated. ' + data.message, 'success'
                             )
                             setTimeout(function() {
                                 location.reload();
@@ -219,7 +207,7 @@ Center list
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
-                                'Inactivated !', 'This account has been Inactivated. ' + data.message, 'success'
+                                'Inactivated !', 'This center has been Inactivated. ' + data.message, 'success'
                             )
                             setTimeout(function() {
                                 location.reload();
@@ -258,7 +246,7 @@ Center list
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
-                                'Deleted !', 'This account has been Deleted. ' + data.message, 'success'
+                                'Deleted !', 'This center has been Deleted. ' + data.message, 'success'
                             )
                             setTimeout(function() {
                                 location.reload();

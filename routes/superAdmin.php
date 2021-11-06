@@ -27,5 +27,11 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     // route for manage center
     Route::group(['prefix' => 'manage-center/', 'as' => 'manageCenter.'], function () {
         Route::get('index', 'CenterController@index')->name('index');
+        Route::post('active/{id}', 'CenterController@activeNow')->name('activeNow');
+        Route::post('inactive/{id}', 'CenterController@inactiveNow')->name('inactiveNow');
+        Route::post('delete/{id}', 'CenterController@deleteNow')->name('deleteNow');
+        Route::get('profile/{id}', 'CenterController@profile')->name('profile');
+        Route::get('edit/{id}', 'CenterController@edit')->name('edit');
+        Route::post('update/{id}', 'CenterController@update')->name('update');
     });
 });

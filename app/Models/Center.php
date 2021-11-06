@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Center extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'name',
         'email',
@@ -30,4 +32,22 @@ class Center extends Model
     {
         return $this->belongsTo(User::class, 'administrator_id');
     }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class, 'state_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+
+
 }

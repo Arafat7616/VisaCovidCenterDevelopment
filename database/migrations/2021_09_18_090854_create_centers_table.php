@@ -28,6 +28,7 @@ class CreateCentersTable extends Migration
             $table->string('varification_status')->default(0);
             $table->unsignedBigInteger('administrator_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
