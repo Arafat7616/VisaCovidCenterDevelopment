@@ -150,7 +150,7 @@ class UserController extends Controller
         }
     }
 
-    public function deactiveNow($id)
+    public function inactiveNow($id)
     {
         $user = User::findOrFail($id);
         $user->status = 0;

@@ -57,7 +57,7 @@ User's Profile
                                     </li>
                                     <li class="list-group-item">
                                         @if ($user->status == 0)
-                                        <span class="badge badge-danger">Deactive</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                         @elseif($user->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif
@@ -134,7 +134,7 @@ User's Profile
                                     </li>
                                     <li class="list-group-item">
                                         @if ($user->center->status == 0)
-                                        <span class="badge badge-danger">Deactive</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                         @elseif($user->center->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif

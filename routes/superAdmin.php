@@ -18,7 +18,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('pathologist', 'UserController@pathologist')->name('pathologist');
         Route::get('user', 'UserController@user')->name('user');
         Route::post('active/{id}', 'UserController@activeNow')->name('activeNow');
-        Route::post('deactive/{id}', 'UserController@deactiveNow')->name('deactiveNow');
+        Route::post('inactive/{id}', 'UserController@inactiveNow')->name('inactiveNow');
         Route::post('delete/{id}', 'UserController@deleteNow')->name('deleteNow');
         Route::get('profile/{id}', 'UserController@profile')->name('profile');
         Route::get('edit/{id}', 'UserController@edit')->name('edit');

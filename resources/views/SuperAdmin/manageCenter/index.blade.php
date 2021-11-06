@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-Volunteer list
+Center list
 @endpush
 
 @push('datatableCSS')
@@ -24,11 +24,11 @@ Volunteer list
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">Volunteer list</h4>
+                    <h4 class="pull-left page-title">Center list</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
-                        <li><a href="javascript:void(0)">Manage User's</a></li>
-                        <li class="active">Volunteer list</li>
+                        <li><a href="javascript:void(0)">Manage Center's</a></li>
+                        <li class="active">Center list</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -37,9 +37,9 @@ Volunteer list
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-success">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-white">Volunteer list</h3>
+                        <h3 class="panel-title">Center list</h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -50,24 +50,24 @@ Volunteer list
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Image</th>
-                                    <th>Passport NO.</th>
-                                    <th>NID NO.</th>
+                                    <th>Administrator.</th>
+                                    {{-- <th>NID NO.</th> --}}
                                     <th>Status</th>
-                                    <th>Gneder</th>
+                                    {{-- <th>Gneder</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $user)
+                                @foreach($centers as $center)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $center->id }}</td>
+                                    <td>{{ $center->name }}</td>
+                                    <td>{{ $center->email }}</td>
+                                    <td>{{ $center->phone }}</td>
                                     <td>
-                                        @if ($user->image)
-                                        <a href="{{ asset($user->image) }}" target="_blank">
-                                            <img height="70px;" src="{{ asset($user->image) }}" width="70px;" class="rounded-circle" />
+                                        @if ($center->image)
+                                        <a href="{{ asset($center->image) }}" target="_blank">
+                                            <img height="70px;" src="{{ asset($center->image) }}" width="70px;" class="rounded-circle" />
                                         </a>
                                         @else
                                         <abbr title="Sorry There in no picture">
@@ -75,34 +75,34 @@ Volunteer list
                                         </abbr>
                                         @endif
                                     </td>
-                                    <td>{{ $user->userInfo->passport_no }}</td>
-                                    <td>{{ $user->userInfo->nid_no }}</td>
+                                    <td>{{ $center->administrator->name }}</td>
+                                    {{-- <td>{{ $center->userInfo->nid_no }}</td> --}}
                                     <td>
-                                        @if ($user->status == 0)
+                                        @if ($center->status == 0)
                                         <span class="badge badge-danger">Inactive</span>
-                                        @elseif($user->status == 1)
+                                        @elseif($center->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif
                                     </td>
-                                    <td>{{ $user->userInfo->gender }}</td>
+                                    {{-- <td>{{ $center->userInfo->gender }}</td> --}}
                                     <td class="text-center">
-                                        @if ($user->status == 0)
-                                        <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('superAdmin.manageUser.activeNow', $user->id) }}">
+                                        @if ($center->status == 0)
+                                        <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('superAdmin.manageUser.activeNow', $center->id) }}">
                                             <i class="mdi mdi-check"></i>
                                         </button>
-                                        @elseif($user->status == 1)
-                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('superAdmin.manageUser.inactiveNow', $user->id) }}">
+                                        @elseif($center->status == 1)
+                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('superAdmin.manageUser.inactiveNow', $center->id) }}">
                                             <i class="mdi mdi-close"></i>
                                         </button>
                                         @endif
 
-                                        <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('superAdmin.manageUser.deleteNow', $user->id) }}">
+                                        <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('superAdmin.manageUser.deleteNow', $center->id) }}">
                                             <i class="fa fa-trash"></i>
                                         </button>
-                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.profile', $user->id) }}">
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.profile', $center->id) }}">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.edit', $user->id) }}">
+                                        <a class="btn btn-info" href="{{ route('superAdmin.manageUser.edit', $center->id) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
@@ -117,10 +117,10 @@ Volunteer list
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Image</th>
-                                    <th>Passport NO.</th>
-                                    <th>NID NO.</th>
+                                    <th>Administrator.</th>
+                                    {{-- <th>NID NO.</th> --}}
                                     <th>Status</th>
-                                    <th>Gneder</th>
+                                    {{-- <th>Gneder</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
