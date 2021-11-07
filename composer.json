@@ -17,6 +17,7 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.4",
+        "nexmo/laravel": "^2.4",
         "realrashid/sweet-alert": "^4.0",
         "simplesoftwareio/simple-qrcode": "^4.2"
     },
