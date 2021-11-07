@@ -27,7 +27,7 @@
                   justify-content-center
                   align-items-center
                 ">
-                        <img src="./asset/img/icon1.png" class="card-img-top img-fluid card-icon my-3" alt="..." />
+                        <img src="{{ asset('assets/center-part/image/landing/icon1.png') }}" class="card-img-top img-fluid card-icon my-3" alt="..." />
                     </div>
 
                     <div class="card-body text-center">
@@ -47,7 +47,7 @@
                   justify-content-center
                   align-items-center
                 ">
-                        <img src="./asset/img/icon2.png" class="card-img-top img-fluid card-icon my-3" alt="..." />
+                        <img src="{{ asset('assets/center-part/image/landing/icon2.png') }}" class="card-img-top img-fluid card-icon my-3" alt="..." />
                     </div>
 
                     <div class="card-body text-center">
@@ -67,7 +67,7 @@
                   justify-content-center
                   align-items-center
                 ">
-                        <img src="./asset/img/icon3.png" class="card-img-top img-fluid card-icon my-3" alt="..." />
+                        <img src="{{ asset('assets/center-part/image/landing/icon3.png') }}" class="card-img-top img-fluid card-icon my-3" alt="..." />
                     </div>
 
                     <div class="card-body text-center">
@@ -87,7 +87,7 @@
                   justify-content-center
                   align-items-center
                 ">
-                        <img src="./asset/img/icon4.png" class="card-img-top img-fluid card-icon my-3" alt="..." />
+                        <img src="{{ asset('assets/center-part/image/landing/icon4.png') }}" class="card-img-top img-fluid card-icon my-3" alt="..." />
                     </div>
 
                     <div class="card-body text-center">

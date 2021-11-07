@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="./asset/img/banner.png" alt="" class="img-fluid" />
+                    <img src="{{ asset('assets/center-part/image/landing/banner.png') }}" alt="" class="img-fluid" />
                 </div>
             </div>
         </div>

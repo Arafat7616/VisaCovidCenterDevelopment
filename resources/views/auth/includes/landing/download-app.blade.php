@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row bg-primary row-border">
             <div class="col-md-3 d-flex justify-content-center align-items-center">
-                <img src="./asset/img/app.png" class="img-fluid app-logo" alt="" />
+                <img src="{{ asset('assets/center-part/image/landing/app.png') }}" class="img-fluid app-logo" alt="" />
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div class="text-light">
