@@ -33,6 +33,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.payment.update', $paymentMethod->id)}}" method="post" enctype="multipart/form-data">
                                         @csrf
+                                        @include('Others.message')
                                         @method('put')
                                         <div class="form-group">
                                             <label for="name">Payment Method Name</label>

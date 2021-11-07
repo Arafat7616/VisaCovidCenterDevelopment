@@ -29,6 +29,7 @@ class CenterSeeder extends Seeder
             $center->trade_licence_no = rand(1000000, 2000000);
             $center->status = 1;
             $center->varification_status = 1;
+            $center->administrator_id = 2;
             $center->save();
         }
     }

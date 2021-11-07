@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+
 
 class HomeController extends Controller
 {
@@ -42,7 +44,10 @@ class HomeController extends Controller
                 $users = User::find(Auth::user()->id);
                 $users->password = bcrypt($request->password);
                 User::where('id', Auth::user()->id)->update(array('password' =>  $users->password));
-                return back()->withToastSuccess('Password updated successfully');
+                // return back()->withToastSuccess('Password updated successfully');
+                Session::flash('message', 'Password updated successfully!');
+                Session::flash('type', 'success');
+                return back();
             } else {
                 return redirect()->back()->withErrors('New password can not be the old password!');
             }

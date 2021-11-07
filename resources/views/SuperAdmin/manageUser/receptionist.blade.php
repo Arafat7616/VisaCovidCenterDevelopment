@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-Administrator list
+Receptionist list
 @endpush
 
 @push('datatableCSS')
@@ -24,11 +24,11 @@ Administrator list
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">Administrator list</h4>
+                    <h4 class="pull-left page-title">Receptionist list</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
                         <li><a href="javascript:void(0)">Manage User's</a></li>
-                        <li class="active">Administrator list</li>
+                        <li class="active">Receptionist list</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -37,9 +37,9 @@ Administrator list
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-primary">
+                <div class="panel panel-danger">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Administrator list</h3>
+                        <h3 class="panel-title text-white">Receptionist list</h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">

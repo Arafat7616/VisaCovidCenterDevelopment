@@ -92,6 +92,9 @@ class CenterRegistrationController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
+        $center->administrator_id =  $user->id;
+        $center->save();
+
         // user info data store
         $userInfo = new UserInfo();
         $userInfo->nid_no = $request->personNID;

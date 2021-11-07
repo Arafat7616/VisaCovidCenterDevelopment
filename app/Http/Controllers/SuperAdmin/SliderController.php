@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class SliderController extends Controller
@@ -61,7 +62,10 @@ class SliderController extends Controller
 
         try {
             Slider::create($data);
-            return back()->withToastSuccess('Successfully saved.');
+            // return back()->withToastSuccess('Successfully saved.');
+            Session::flash('message', 'Successfully saved !');
+            Session::flash('type', 'success');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
         }
