@@ -125,24 +125,24 @@ Edit
                                         <input type="text" name="permanentAddress" class="form-control" id="permanentAddress" value="{{ $user->userInfo->permanent_address }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="countryId">Country</label>
-                                        <select class="form-control" name="countryId" required="" id="country">
+                                        <label for="country">Country</label>
+                                        <select class="form-control" name="country" required="" id="country">
                                             @foreach($countries as $country)
                                                 <option {{$user->userInfo->country_id == $country->id ? 'selected' : ''}} value="{{$country->id}}">{{$country->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>   
                                     <div class="form-group">
-                                        <label for="stateId">State</label>
-                                        <select class="form-control" name="stateId" required="" id="state">
+                                        <label for="state">State</label>
+                                        <select class="form-control" name="state" required="" id="state">
                                             @foreach($states as $state)
                                                 <option {{$user->userInfo->state_id == $state->id ? 'selected' : ''}} value="{{$state->id}}">{{$state->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>   
                                     <div class="form-group">
-                                        <label for="cityId">City</label>
-                                        <select class="form-control" name="cityId" required="" id="city">
+                                        <label for="city">City</label>
+                                        <select class="form-control" name="city" required="" id="city">
                                             @foreach($cities as $city)
                                                 <option {{$user->userInfo->city_id == $city->id ? 'selected' : ''}} value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach

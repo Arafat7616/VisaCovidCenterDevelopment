@@ -11,7 +11,6 @@ Edit
 
 @endpush
 
-
 @section('content')
 <div class="content">
     <div class="container">
@@ -31,7 +30,7 @@ Edit
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('superAdmin.manageUser.update', $center->administrator->id) }}" method="post"
+                <form action="{{ route('superAdmin.manageCenter.update', $center->id) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     @include('Others.message')
@@ -57,6 +56,10 @@ Edit
                                     <div class="form-group">
                                         <label for="zipCode">Zip Code</label>
                                         <input type="text" name="zipCode" class="form-control" id="zipCode" value="{{ $center->zip_code }}">
+                                    </div>    
+                                    <div class="form-group">
+                                        <label for="mapLocationLink">Map Location Link</label>
+                                        <input type="text" name="mapLocationLink" class="form-control" id="mapLocationLink" value="{{ $center->map_location }}">
                                     </div>                 
                                     <div class="form-group">
                                         <label for="address">Address</label>
@@ -74,60 +77,26 @@ Edit
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="passportNo">Passport No.</label>
-                                        <input type="text" name="passportNo" class="form-control" id="passportNo" value="{{ $center->administrator->userInfo->passport_no }}">
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="fatherName">Father Name</label>
-                                        <input type="text" name="fatherName" class="form-control" id="fatherName" value="{{ $center->administrator->userInfo->father_name }}">
-                                    </div>        
-                                    <div class="form-group">
-                                        <label for="motherName">Mother Name</label>
-                                        <input type="text" name="motherName" class="form-control" id="motherName" value="{{ $center->administrator->userInfo->mother_name }}">
-                                    </div>        
-                                    <div class="form-group">
-                                        <label for="bloodGroup">Blood Group</label>
-                                        <select class="form-control" name="bloodGroup" required="">
-                                            <option value="">Select One</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'A+' ? 'selected' : ''}} value="A+">A+</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'A-' ? 'selected' : ''}} value="A-">A-</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'B+' ? 'selected' : ''}} value="B+">B+</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'B-' ? 'selected' : ''}} value="B-">B-</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'AB+' ? 'selected' : ''}} value="AB+">AB+</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'AB-' ? 'selected' : ''}} value="AB-">AB-</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'O+' ? 'selected' : ''}} value="O+">O+</option>
-                                            <option {{$center->administrator->userInfo->blood_group == 'O-' ? 'selected' : ''}} value="O-">O-</option>
-                                        </select>
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="presentAddress">Present Address</label>
-                                        <input type="text" name="presentAddress" class="form-control" id="presentAddress" value="{{ $center->administrator->userInfo->present_address }}">
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="permanentAddress">Permanent Address</label>
-                                        <input type="text" name="permanentAddress" class="form-control" id="permanentAddress" value="{{ $center->administrator->userInfo->permanent_address }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="countryId">Country</label>
-                                        <select class="form-control" name="countryId" required="" id="country">
+                                        <label for="country">Country</label>
+                                        <select class="form-control" name="country" required="" id="country">
                                             @foreach($countries as $country)
-                                                <option {{$center->administrator->userInfo->country_id == $country->id ? 'selected' : ''}} value="{{$country->id}}">{{$country->name}}</option>
+                                                <option {{$center->country_id == $country->id ? 'selected' : ''}} value="{{$country->id}}">{{$country->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>   
                                     <div class="form-group">
-                                        <label for="stateId">State</label>
-                                        <select class="form-control" name="stateId" required="" id="state">
+                                        <label for="state">State</label>
+                                        <select class="form-control" name="state" required="" id="state">
                                             @foreach($states as $state)
-                                                <option {{$center->administrator->userInfo->state_id == $state->id ? 'selected' : ''}} value="{{$state->id}}">{{$state->name}}</option>
+                                                <option {{$center->state_id == $state->id ? 'selected' : ''}} value="{{$state->id}}">{{$state->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>   
                                     <div class="form-group">
-                                        <label for="cityId">City</label>
-                                        <select class="form-control" name="cityId" required="" id="city">
+                                        <label for="city">City</label>
+                                        <select class="form-control" name="city" required="" id="city">
                                             @foreach($cities as $city)
-                                                <option {{$center->administrator->userInfo->city_id == $city->id ? 'selected' : ''}} value="{{$city->id}}">{{$city->name}}</option>
+                                                <option {{$center->city_id == $city->id ? 'selected' : ''}} value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>   

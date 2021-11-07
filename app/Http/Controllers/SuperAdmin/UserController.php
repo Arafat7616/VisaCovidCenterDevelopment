@@ -78,9 +78,9 @@ class UserController extends Controller
             'bloodGroup' => 'required',
             'presentAddress' => 'required',
             'permanentAddress' => 'required',
-            'countryId' => 'required',
-            'stateId' => 'required',
-            'cityId' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
         ]);
 
             // user data store
@@ -114,14 +114,14 @@ class UserController extends Controller
             $userInfo->gender = $request->gender;
             $userInfo->dob = $request->dob;
             $userInfo->user_id = $user->id;
-            if (is_numeric($request->countryId)) {
-                $userInfo->country_id = $request->countryId;
+            if (is_numeric($request->country)) {
+                $userInfo->country_id = $request->country;
             }
-            if (is_numeric($request->stateId)) {
-                $userInfo->state_id = $request->stateId;
+            if (is_numeric($request->state)) {
+                $userInfo->state_id = $request->state;
             }
-            if (is_numeric($request->cityId)) {
-                $userInfo->city_id = $request->cityId;
+            if (is_numeric($request->city)) {
+                $userInfo->city_id = $request->city;
             }
     
             $userInfo->save();

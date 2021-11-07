@@ -10,6 +10,8 @@ use App\Models\State;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class CenterController extends Controller
 {
@@ -33,76 +35,49 @@ class CenterController extends Controller
         return view('SuperAdmin.manageCenter.edit', compact('center', 'countries', 'cities', 'states'));
     }
 
-    // public function update(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'email' => 'required|unique:users,email,'.$request->id,
-    //         'phone' => 'required|unique:users,phone,'.$request->id,
-    //         'image' => 'nullable|image',
-    //         'status' => 'required',
-    //         'gender' => 'required',
-    //         'dob' => 'required',
-    //         'nidNo' => 'required',
-    //         'passportNo' => 'required',
-    //         'fatherName' => 'required',
-    //         'motherName' => 'required',
-    //         'bloodGroup' => 'required',
-    //         'presentAddress' => 'required',
-    //         'permanentAddress' => 'required',
-    //         'countryId' => 'required',
-    //         'stateId' => 'required',
-    //         'cityId' => 'required',
-    //     ]);
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:centers,email,'.$request->id,
+            'status' => 'required',
+            'address' => 'required',
+            'mapLocationLink' => 'required',
+            'zipCode' => 'required',
+            'tradeLicenceNo' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+        ]);
 
-    //         // user data store
-    //         $user = User::findOrFail($request->id);
-    //         $user->name = $request->name;
-    //         $user->email = $request->email;
-    //         $user->phone = $request->phone;
-    //         $user->status = $request->status;
-    //         if ($request->hasFile('image')) {
-    //             if ($user->image != null){
-    //                 File::delete(public_path($user->image));
-    //             }
-    //             $image             = $request->file('image');
-    //             $folder_path       = 'uploads/images/users/';
-    //             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
-    //             //resize and save to server
-    //             Image::make($image->getRealPath())->save($folder_path . $image_new_name);
-    //             $user->image   = $folder_path . $image_new_name;
-    //         }
-    //         $user->save();
-    
-    //         // user info data store
-    //         $userInfo = $user->userInfo;
-    //         $userInfo->nid_no = $request->nidNo;
-    //         $userInfo->passport_no = $request->passportNo;
-    //         $userInfo->father_name = $request->fatherName;
-    //         $userInfo->mother_name = $request->motherName;
-    //         $userInfo->blood_group = $request->bloodGroup;
-    //         $userInfo->present_address = $request->presentAddress;
-    //         $userInfo->permanent_address = $request->permanentAddress;
-    //         $userInfo->gender = $request->gender;
-    //         $userInfo->dob = $request->dob;
-    //         $userInfo->user_id = $user->id;
-    //         if (is_numeric($request->countryId)) {
-    //             $userInfo->country_id = $request->countryId;
-    //         }
-    //         if (is_numeric($request->stateId)) {
-    //             $userInfo->state_id = $request->stateId;
-    //         }
-    //         if (is_numeric($request->cityId)) {
-    //             $userInfo->city_id = $request->cityId;
-    //         }
-    
-    //         $userInfo->save();
-    //         // return back()->withToastSuccess('Updated successfully');
-    //         Session::flash('message', 'Updated successfully!');
-    //         Session::flash('type', 'success');
-    //         return back();
+            // center data store
+            $center =  Center::findOrFail($request->id);
+            $center->name = $request->name;
+            $center->email = $request->email;
 
-    // }
+            if (is_numeric($request->country)) {
+                $center->country_id = $request->country;
+            }
+            if (is_numeric($request->state)) {
+                $center->state_id = $request->state;
+            }
+            if (is_numeric($request->city)) {
+                $center->city_id = $request->city;
+            }
+            $center->trade_licence_no = $request->tradeLicenceNo;
+            $center->address = $request->address;
+            $center->zip_code = $request->zipCode;
+            $center->map_location = $request->mapLocationLink;
+            $center->status = $request->status;
+            $center->varification_status = false;
+            $center->save();
+
+            // return back()->withToastSuccess('Updated successfully');
+            Session::flash('message', 'Updated successfully!');
+            Session::flash('type', 'success');
+            return back();
+
+    }
 
    public function activeNow($id)
    {
