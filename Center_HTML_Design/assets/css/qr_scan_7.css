@@ -42,6 +42,7 @@ body{
 
 .qr_scan__button{
     text-align: center;
+    margin-top: 30px;
 }
 .qr_scan__button__link{
     background: #00569F 0% 0% no-repeat padding-box;
