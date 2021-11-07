@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        @include('auth.includes.head')
+        @include('auth.includes.landing.head')
     </head>
 
     <body>
@@ -14,8 +14,8 @@
 
         @yield('content')
 
-        @include('auth.includes.footer')
-        @include('auth.includes.foot')
+  
+        @include('auth.includes.landing.foot')
     </body>
 
 </html>
