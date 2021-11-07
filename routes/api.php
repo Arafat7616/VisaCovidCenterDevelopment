@@ -33,6 +33,7 @@ Route::get('/hello', function (){
 
 Route::post('user/create', 'Api\UserController@store');
 Route::post('user/login', 'Api\UserController@login');
+Route::post('user/otpCheck', 'Api\UserController@otpCheck');
 
 
 

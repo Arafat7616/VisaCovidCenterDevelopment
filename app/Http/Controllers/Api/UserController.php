@@ -26,12 +26,13 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        //$userArray = json_decode($request->getContent(), true);
+        $userArray = json_decode($request->getContent(), true);
         //$userArray = $request;
-        /*$email = $userArray['email'];
-        $password = $userArray['password'];*/
-        $email = $request->email;
-        $password = $request->password;
+        $email = $userArray['email'];
+        $password = $userArray['password'];
+        //$email = $request->email;
+        //$password = $request->password;
+
 
         $user = User::where('email', $email)->first();
 
@@ -39,9 +40,27 @@ class UserController extends Controller
         {
             if (Hash::check($password, $user->password))
             {
+                $otp = rand(100000, 990000);
+                $user->otp = $otp;
+                $user->save();
+
+                /*$curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $user->phone),
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);*/
+
+
                 return response()->json([
-                    "message" => "You are successfully log in",
-                    "user" => $user,
+                    "message" => "Send otp in your phone : ".$user->phone,
+                    "phone" => $user->phone,
                     "status" => "1"
                 ]);
             }else{
@@ -72,9 +91,8 @@ class UserController extends Controller
 
     public function otpCheck(Request $request)
     {
-//        $userArray = json_decode($request->getContent(), true);
-        $userArray = $request;
-
+//
+        $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $otp = $userArray['otp'];
 
@@ -91,7 +109,9 @@ class UserController extends Controller
 
             return response()->json([
                 "message"=>"Otp successfully verified",
+                "phone" => $existUser->phone,
                 "status"=>"1",
+                "loginStatus"=>"1",
             ]);
         }else{
             return response()->json([
@@ -145,6 +165,8 @@ class UserController extends Controller
         $userArray['phone'] = $request->phone;
         $userArray['email'] = $request->email;
         $userArray['otp'] = rand(100000, 990000);
+        $otp = $userArray['otp'];
+        $phone = $userArray['phone'];
         $userArray['user_type'] = "user";
         $userArray['password'] = Hash::make($request->password);
 
@@ -155,10 +177,24 @@ class UserController extends Controller
         UserInfo::create($userInfo);
 
         if ($result){
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $phone),
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
             return response()->json([
                 "message"=>"Otp send in : ".$request->phone,
+                "phone"=>$request->phone,
                 "status"=>"1",
-                "phone"=>$request->phone
             ]);
         }else{
             return response()->json([
