@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-service list
+Service list
 @endpush
 
 @push('datatableCSS')
@@ -24,11 +24,11 @@ service list
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">service list</h4>
+                    <h4 class="pull-left page-title">Service list</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
                         <li><a href="javascript:void(0)">Setting's</a></li>
-                        <li class="active">service list</li>
+                        <li class="active">Service list</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -39,7 +39,7 @@ service list
             <div class="col-md-12">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-white">service list <a href="{{ route('superAdmin.setting.landingPage.service.create') }}" class="btn btn-primary">Cerate New</a></h3>
+                        <h3 class="panel-title text-white">Service list <a href="{{ route('superAdmin.setting.landingPage.service.create') }}" class="btn btn-primary">Cerate New</a></h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
