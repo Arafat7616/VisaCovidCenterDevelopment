@@ -16,17 +16,19 @@ class CreateCentersTable extends Migration
         Schema::create('centers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->unsignedBigInteger('state_id')->nullable();
             $table->unsignedBigInteger('city_id')->nullable();
-            $table->string('zip_code');
-            $table->string('address');
-            $table->text('map_location');
+            $table->string('zip_code')->nullable();
+            $table->string('address')->nullable();
+            $table->text('map_location')->nullable();
             $table->string('trade_licence_no')->nullable();
             $table->string('status')->default(0);
             $table->string('varification_status')->default(0);
+            $table->unsignedBigInteger('administrator_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

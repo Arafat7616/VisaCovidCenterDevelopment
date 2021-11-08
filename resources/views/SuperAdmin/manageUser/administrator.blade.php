@@ -43,7 +43,7 @@ Administrator list
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                            <thead>
+                           <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
@@ -79,7 +79,7 @@ Administrator list
                                     <td>{{ $user->userInfo->nid_no }}</td>
                                     <td>
                                         @if ($user->status == 0)
-                                        <span class="badge badge-danger">Deactive</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                         @elseif($user->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif
@@ -91,7 +91,7 @@ Administrator list
                                             <i class="mdi mdi-check"></i>
                                         </button>
                                         @elseif($user->status == 1)
-                                        <button class="btn btn-danger" onclick="deactiveNow(this)" value="{{ route('superAdmin.manageUser.deactiveNow', $user->id) }}">
+                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('superAdmin.manageUser.inactiveNow', $user->id) }}">
                                             <i class="mdi mdi-close"></i>
                                         </button>
                                         @endif
@@ -196,7 +196,7 @@ Administrator list
         })
     }
 
-    function deactiveNow(objButton) {
+    function inactiveNow(objButton) {
         var url = objButton.value;
         // alert(objButton.value)
         Swal.fire({
@@ -206,7 +206,7 @@ Administrator list
             , showCancelButton: true
             , confirmButtonColor: '#3085d6'
             , cancelButtonColor: '#d33'
-            , confirmButtonText: 'Yes, Deactive !'
+            , confirmButtonText: 'Yes, Inactive !'
         }).then((result) => {
             if (result.isConfirmed) {
 
@@ -219,7 +219,7 @@ Administrator list
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
-                                'Deactivated !', 'This account has been Deactivated. ' + data.message, 'success'
+                                'Inactivated !', 'This account has been Inactivated. ' + data.message, 'success'
                             )
                             setTimeout(function() {
                                 location.reload();

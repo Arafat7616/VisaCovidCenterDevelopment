@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Registered</a>
+                            <a class="nav-link active" aria-current="page" href="#">Regsitered</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Premium</a>
@@ -119,13 +119,13 @@
                             <div class="card-body">
                                 <h2>Liveness</h2>
                                 <a href="#myModal"  data-toggle="modal"><button class="btn btn-primary liveness-take-btn bg-liveness-1st">Taken with client's device</button></a>
-
+                               
                                 <!-- Modal HTML -->
                                     <div id="myModal" class="modal">
                                         <div class="modal-dialog " style="width: 23%;">
                                             <div class="modal-content">
                                                 <div >
-                                                <button type="button" class="close" data-dismiss="modal"><p class="icon-m">&times;</p></button>
+                                                <button type="button" class="close" data-dismiss="modal"><p class="icon-m">&times;</p></button> 
                                                 </div>
                                                 <div class="images_modal">
                                                     <img src="assets/image/modal.JPG" alt="" class="modal_img_pic">
@@ -170,17 +170,17 @@
         $(document).ready(function(){
             function alignModal(){
                 var modalDialog = $(this).find(".modal-dialog");
-
+                
                 // Applying the top margin on modal to align it vertically center
                 modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
             }
             // Align modal when it is displayed
             $(".modal").on("shown.bs.modal", alignModal);
-
+            
             // Align modal when user resize the window
             $(window).on("resize", function(){
                 $(".modal:visible").each(alignModal);
-            });
+            });   
         });
         </script>
 </body>

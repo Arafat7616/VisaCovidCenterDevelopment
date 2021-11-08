@@ -18,11 +18,11 @@ User's Profile
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">User' Profile</h4>
+                    <h4 class="pull-left page-title">User's Profile</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
                         <li><a href="javascript:void(0)">Manage User's</a></li>
-                        <li class="active">User' Profile</li>
+                        <li class="active">User's Profile</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -57,7 +57,7 @@ User's Profile
                                     </li>
                                     <li class="list-group-item">
                                         @if ($user->status == 0)
-                                        <span class="badge badge-danger">Deactive</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                         @elseif($user->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif
@@ -134,7 +134,7 @@ User's Profile
                                     </li>
                                     <li class="list-group-item">
                                         @if ($user->center->status == 0)
-                                        <span class="badge badge-danger">Deactive</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                         @elseif($user->center->status == 1)
                                         <span class="badge badge-success">Active</span>
                                         @endif

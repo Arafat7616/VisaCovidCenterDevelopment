@@ -46,7 +46,33 @@
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/*') ? 'active subdrop': ''}}"><i class="fa fa-users"></i> <span> Manage User's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
-                        {{-- <li><a href="{{route('superAdmin.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Method </span></a></li> --}}
+                        <li><a href="{{route('superAdmin.manageUser.volunteer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
+                        <li><a href="{{route('superAdmin.manageUser.receptionist')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/receptionist') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Receptionist </span></a></li>
+                        <li><a href="{{route('superAdmin.manageUser.pathologist')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/pathologist') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Pathologist </span></a></li>
+                        <li><a href="{{route('superAdmin.manageUser.user')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/user') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> User </span></a></li>
+                    </ul>
+                </li>
+                {{-- routes for centers manage  --}}
+                 <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
+                    </ul>
+                </li>
+
+                {{-- routes for setting manage  --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active subdrop': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li>
+                            {{-- routes for Landing-page manage  --}}
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active subdrop': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
+                                </ul>
+                            </li>
+                        </li>
                     </ul>
                 </li>
 
