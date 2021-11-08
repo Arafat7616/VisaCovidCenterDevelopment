@@ -39,7 +39,7 @@ service list
             <div class="col-md-12">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-white">service list</h3>
+                        <h3 class="panel-title text-white">service list <a href="{{ route('superAdmin.setting.landingPage.service.create') }}" class="btn btn-primary">Cerate New</a></h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">

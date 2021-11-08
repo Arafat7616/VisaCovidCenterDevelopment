@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\WebsiteService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Str;
 
 
 class LandingPageServiceController extends Controller
@@ -28,7 +31,7 @@ class LandingPageServiceController extends Controller
      */
     public function create()
     {
-        // return view('backend.service.create');
+        return view('SuperAdmin.setting.landingPage.service.create');
     }
 
     /**
@@ -40,23 +43,34 @@ class LandingPageServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'highlight' => 'required|min:3',
-            'title' => 'required|min:3',
-            'image' => 'required|min:3',
+            'title' => 'required|min:1',
+            'image' => 'required|image',
             'description' => 'required|min:3',
         ]);
 
         $service = new WebsiteService();
-        $service->highlight = $request->highlight;
         $service->title = $request->title;
         $service->description = $request->description;
-        $service->image = $request->image;
 
+        if($request->hasFile('image')){
+            $image             = $request->file('image');
+            $folder_path       = 'uploads/images/landing/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $service->image   = $folder_path . $image_new_name;
+        }
         try {
             $service->save();
-            return back()->withSuccess('Uploaded successfully!');
+            // return back()->withSuccess('Updated successfully!');
+            Session::flash('message', 'Stored successfully!');
+            Session::flash('type', 'success');
+            return back();
         } catch (\Exception $exception) {
-            return back()->withErrors('Something went wrong !' . $exception->getMessage());
+            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+            Session::flash('message', $exception->getMessage());
+            Session::flash('type', 'warning');
+            return back();
         }
     }
 
@@ -66,7 +80,7 @@ class LandingPageServiceController extends Controller
      * @param  \App\Models\WebsiteService  $WebsiteService
      * @return \Illuminate\Http\Response
      */
-    public function show(WebsiteService $WebsiteService)
+    public function show(WebsiteService $service)
     {
         //
     }
@@ -77,9 +91,9 @@ class LandingPageServiceController extends Controller
      * @param  \App\Models\WebsiteService  $WebsiteService
      * @return \Illuminate\Http\Response
      */
-    public function edit(WebsiteService $WebsiteService)
+    public function edit(WebsiteService $service)
     {
-        // return view('backend.service.edit', compact('WebsiteService'));
+        return view('SuperAdmin.setting.landingPage.service.edit', compact('service'));
     }
 
     /**
@@ -89,26 +103,38 @@ class LandingPageServiceController extends Controller
      * @param  \App\Models\WebsiteService  $WebsiteService
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WebsiteService $WebsiteService)
+    public function update(Request $request, WebsiteService $service)
     {
         $request->validate([
-            'highlight' => 'required|min:3',
-            'title' => 'required|min:3',
-            'image' => 'required|min:3',
+            'title' => 'required|min:1',
+            'image' => 'nullable|image',
             'description' => 'required|min:3',
         ]);
 
-        $service = $WebsiteService;
-        $service->highlight = $request->highlight;
         $service->title = $request->title;
         $service->description = $request->description;
-        $service->image = $request->image;
 
+        if($request->hasFile('image')){
+            if ($service->image != null)
+                File::delete(public_path($service->image)); //Old image delete
+            $image             = $request->file('image');
+            $folder_path       = 'uploads/images/landing/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $service->image   = $folder_path . $image_new_name;
+        }
         try {
             $service->save();
-            return back()->withSuccess('Updated successfully!');
+            // return back()->withSuccess('Updated successfully!');
+            Session::flash('message', 'Updated successfully!');
+            Session::flash('type', 'success');
+            return back();
         } catch (\Exception $exception) {
-            return back()->withErrors('Something went wrong !' . $exception->getMessage());
+            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+            Session::flash('message', $exception->getMessage());
+            Session::flash('type', 'warning');
+            return back();
         }
     }
 
