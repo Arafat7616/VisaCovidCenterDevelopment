@@ -41,6 +41,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         // route for landing-page
         Route::group(['prefix' => 'landing-page/', 'as' => 'landingPage.'], function () {
             Route::get('banner', 'LandingPageController@banner')->name('banner');
+            Route::post('banner-update', 'LandingPageController@bannerUpdate')->name('bannerUpdate');
         });
     });
 });
