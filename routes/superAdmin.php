@@ -42,6 +42,12 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::group(['prefix' => 'landing-page/', 'as' => 'landingPage.'], function () {
             Route::get('banner', 'LandingPageController@banner')->name('banner');
             Route::post('banner-update', 'LandingPageController@bannerUpdate')->name('bannerUpdate');
+            Route::get('download', 'LandingPageController@download')->name('download');
+            Route::post('download-update', 'LandingPageController@downloadUpdate')->name('downloadUpdate');
+            Route::get('banner', 'LandingPageController@banner')->name('banner');
+            Route::resource('service', 'LandingPageServiceController', [
+                'except' => [ 'show' ]
+            ]);
         });
     });
 });

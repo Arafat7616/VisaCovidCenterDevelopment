@@ -50,10 +50,6 @@ Banner | Setting
                                         <input type="text" name="banner_title" class="form-control" id="banner_title" value="{{ get_static_option('banner_title') }}">
                                     </div>                         
                                     <div class="form-group">
-                                        <label for="banner_btn_link">Button Link</label>
-                                        <input type="text" name="banner_btn_link" class="form-control" id="banner_btn_link" value="{{ get_static_option('banner_btn_link') }}">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="banner_description">Description.</label>
                                         <textarea class="form-control" name="banner_description" id="banner_description" cols="30" rows="7">{{ get_static_option('banner_description') }}</textarea>
                                     </div>
