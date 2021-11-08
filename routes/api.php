@@ -36,5 +36,9 @@ Route::post('user/login', 'Api\UserController@login');
 Route::post('user/otpCheck', 'Api\UserController@otpCheck');
 
 
+//Home route
+Route::get('home/slider', 'Api\HomeController@slider');
+
+
 
 
