@@ -48,6 +48,9 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::resource('service', 'LandingPageServiceController', [
                 'except' => [ 'show' ]
             ]);
+            Route::resource('work', 'LandingPageWorkController', [
+                'except' => [ 'show' ]
+            ]);
         });
     });
 });

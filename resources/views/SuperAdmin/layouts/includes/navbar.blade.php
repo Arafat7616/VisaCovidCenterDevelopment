@@ -71,6 +71,7 @@
                                 <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
                                 <li><a href="{{route('superAdmin.setting.landingPage.download')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/download') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Download </span></a></li>
                                 <li><a href="{{route('superAdmin.setting.landingPage.service.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/service') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Service </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.work.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/work') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> We Work </span></a></li>
                             </ul>
                         </li>
                     </ul>
