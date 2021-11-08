@@ -10,9 +10,8 @@ body{
 }
 
 /*header section start*/
-.header__logo {
-    width: 90px;
-    height: 52px;
+.header__logo{
+    width: 60px;
 }
 .navbar-light .navbar-nav .nav-link {
     color: #707070;

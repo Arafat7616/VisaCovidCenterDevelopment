@@ -24,6 +24,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('edit/{id}', 'UserController@edit')->name('edit');
         Route::post('update/{id}', 'UserController@update')->name('update');
     });
+
     // route for manage center
     Route::group(['prefix' => 'manage-center/', 'as' => 'manageCenter.'], function () {
         Route::get('index', 'CenterController@index')->name('index');
@@ -33,5 +34,13 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('profile/{id}', 'CenterController@profile')->name('profile');
         Route::get('edit/{id}', 'CenterController@edit')->name('edit');
         Route::post('update/{id}', 'CenterController@update')->name('update');
+    });
+    
+    // route for setting
+    Route::group(['prefix' => 'setting/', 'as' => 'setting.'], function () {
+        // route for landing-page
+        Route::group(['prefix' => 'landing-page/', 'as' => 'landingPage.'], function () {
+            Route::get('banner', 'LandingPageController@banner')->name('banner');
+        });
     });
 });
