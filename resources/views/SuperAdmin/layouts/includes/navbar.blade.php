@@ -63,15 +63,15 @@
                 {{-- routes for setting manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active subdrop': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li>
-                            {{-- routes for Landing-page manage  --}}
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active subdrop': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
-                                </ul>
-                            </li>
+                    <ul class="list-unstyled">                      
+                        {{-- routes for Landing-page manage  --}}
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active subdrop': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.download')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/download') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Download </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.service.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/service') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Service </span></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
