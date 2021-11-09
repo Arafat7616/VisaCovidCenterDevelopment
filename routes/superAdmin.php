@@ -35,7 +35,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('edit/{id}', 'CenterController@edit')->name('edit');
         Route::post('update/{id}', 'CenterController@update')->name('update');
     });
-    
+
     // route for setting
     Route::group(['prefix' => 'setting/', 'as' => 'setting.'], function () {
         // route for landing-page
@@ -46,10 +46,10 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::post('download-update', 'LandingPageController@downloadUpdate')->name('downloadUpdate');
             Route::get('banner', 'LandingPageController@banner')->name('banner');
             Route::resource('service', 'LandingPageServiceController', [
-                'except' => [ 'show' ]
+                'except' => ['show']
             ]);
             Route::resource('work', 'LandingPageWorkController', [
-                'except' => [ 'show' ]
+                'except' => ['show']
             ]);
             Route::get('testimonial', 'LandingPageController@testimonial')->name('testimonial');
             Route::post('testimonial-update', 'LandingPageController@testimonialUpdate')->name('testimonialUpdate');
@@ -57,8 +57,28 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::post('footer-update', 'LandingPageController@footerUpdate')->name('footerUpdate');
             // Route::resource('subscriber', SubscriberController::class);
             Route::resource('subscriber', 'SubscriberController', [
-                'except' => [ 'create','show','edit','update','store' ]
+                'except' => ['create', 'show', 'edit', 'update', 'store']
             ]);
         });
+    });
+
+    // route for pcr  
+    Route::group(['prefix' => 'pcr/', 'as' => 'pcr.'], function () {
+        // route for registered
+        Route::resource('normal/', 'NormalPCRController', [
+            'except' => ['create', 'edit', 'update', 'store'],
+            'names' => [
+                'index' => 'normal.index',
+                'show' => 'normal.show'
+            ]
+        ]);
+         // route for premium
+        Route::resource('premium/', 'PremiumPCRController', [
+            'except' => ['create', 'edit', 'update', 'store'],
+            'names' => [
+                'index' => 'premium.index',
+                'show' => 'premium.show'
+            ]
+        ]);
     });
 });
