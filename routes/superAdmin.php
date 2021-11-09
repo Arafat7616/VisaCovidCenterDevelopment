@@ -53,6 +53,8 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             ]);
             Route::get('testimonial', 'LandingPageController@testimonial')->name('testimonial');
             Route::post('testimonial-update', 'LandingPageController@testimonialUpdate')->name('testimonialUpdate');
+            Route::get('footer', 'LandingPageController@footer')->name('footer');
+            Route::post('footer-update', 'LandingPageController@footerUpdate')->name('footerUpdate');
         });
     });
 });

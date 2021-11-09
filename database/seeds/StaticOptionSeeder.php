@@ -41,5 +41,13 @@ class StaticOptionSeeder extends Seeder
         set_static_option('vaccine_amount', '90000');
         set_static_option('booster_amount', '80000');
         set_static_option('immigration_crossing_amount', '70000');
+
+        // footer related info
+        set_static_option('app_moto', 'Trust and be trusted');
+        set_static_option('app_facebook_link', 'https://www.facebook.com/');
+        set_static_option('app_linkedin_link', 'https://www.linkedin.com/');
+        set_static_option('app_mail_address', 'visacovid@gmail.com');
+        set_static_option('footer_details', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt expedita molestias eligendi, aliquam nisi temporibus delectus ducimus ea eveniet corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore ullam, hic quam excepturi consectetur.');
+
     }
 }

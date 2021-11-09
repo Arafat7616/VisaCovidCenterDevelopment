@@ -136,4 +136,36 @@ class LandingPageController extends Controller
         return back();
     }
 
+
+    // footer related code starts here
+    public function footer(){
+        return view('SuperAdmin.setting.landingPage.footer');
+    }
+
+    public function footerUpdate(Request $request){
+        $request->validate([
+            'app_moto'                    => 'required|min:3',
+            'app_facebook_link'           => 'required|min:1',
+            'app_linkedin_link'           => 'required|min:1',
+            'app_mail_address'            => 'required|min:1',
+            'footer_details'              => 'required|min:1',
+        ]);
+        try {
+            update_static_option('app_moto', $request->app_moto);
+            update_static_option('app_facebook_link', $request->app_facebook_link);
+            update_static_option('app_linkedin_link', $request->app_linkedin_link);
+            update_static_option('app_mail_address', $request->app_mail_address);
+            update_static_option('footer_details', $request->footer_details);
+        }catch (\Exception $exception){
+            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+            Session::flash('message', $exception->getMessage());
+            Session::flash('type', 'warning');
+            return back();
+        }
+        // return back()->withSuccess('Updated successfully!');
+        Session::flash('message', 'Updated successfully!');
+        Session::flash('type', 'success');
+        return back();
+    }
+
 }

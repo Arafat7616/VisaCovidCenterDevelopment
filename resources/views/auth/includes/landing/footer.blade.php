@@ -51,7 +51,7 @@
 
                         </script>
                     </span>
-                    |<a style="text-decoration: none;" class="text-white" target="_blank" href="https://www.tfpbd.com/">TFP Solution Limited, Bangladesh.</a>
+                    |<a style="text-decoration: none;" class="text-white" target="_blank" href="https://www.tfpbd.com/"> TFP Solution Limited, Bangladesh.</a>
                 </div>
             </div>
         </div>
