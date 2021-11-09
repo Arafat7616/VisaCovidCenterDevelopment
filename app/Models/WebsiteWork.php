@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WebsiteService extends Model
+class WebsiteWork extends Model
 {
     protected $fillable = [
         'title',
         'description',
-        'image',
     ];
 }

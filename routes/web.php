@@ -24,7 +24,9 @@ include('pathologist.php');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', 'LandingPageController@index');
+Route::get('/', 'LandingPageController@index')->name('frontend.index');
+Route::post('/subscribe/store', 'LandingPageController@subscribeStore')->name('frontend.subscribeStore');
+
 
 // Auth::routes();
 Auth::routes(['register' => false]);
