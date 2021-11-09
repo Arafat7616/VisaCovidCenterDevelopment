@@ -51,6 +51,8 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::resource('work', 'LandingPageWorkController', [
                 'except' => [ 'show' ]
             ]);
+            Route::get('testimonial', 'LandingPageController@testimonial')->name('testimonial');
+            Route::post('testimonial-update', 'LandingPageController@testimonialUpdate')->name('testimonialUpdate');
         });
     });
 });

@@ -96,4 +96,44 @@ class LandingPageController extends Controller
         Session::flash('type', 'success');
         return back();
     }
+
+
+    // testimonial related code starts here
+    public function testimonial(){
+        return view('SuperAdmin.setting.landingPage.testimonial');
+    }
+
+    public function testimonialUpdate(Request $request){
+        $request->validate([
+            'how_we_work_title'         => 'required|min:3',
+            'how_we_work_description'   => 'required|min:3',
+            'testimonial_title'         => 'required|min:3',
+            'testimonial_description'   => 'required|min:3',
+            'pcr_test_amount'           => 'required|min:1',
+            'vaccine_amount'            => 'required|min:1',
+            'booster_amount'            => 'required|min:1',
+            'immigration_crossing_amount'=> 'required|min:1',
+        ]);
+        try {
+
+            update_static_option('how_we_work_title', $request->how_we_work_title);
+            update_static_option('how_we_work_description', $request->how_we_work_description);
+            update_static_option('testimonial_title', $request->testimonial_title);
+            update_static_option('testimonial_description', $request->testimonial_description);
+            update_static_option('pcr_test_amount', $request->pcr_test_amount);
+            update_static_option('vaccine_amount', $request->vaccine_amount);
+            update_static_option('booster_amount', $request->booster_amount);
+            update_static_option('immigration_crossing_amount', $request->immigration_crossing_amount);
+        }catch (\Exception $exception){
+            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+            Session::flash('message', $exception->getMessage());
+            Session::flash('type', 'warning');
+            return back();
+        }
+        // return back()->withSuccess('Updated successfully!');
+        Session::flash('message', 'Updated successfully!');
+        Session::flash('type', 'success');
+        return back();
+    }
+
 }

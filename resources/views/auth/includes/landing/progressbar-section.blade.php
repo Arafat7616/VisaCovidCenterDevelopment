@@ -1,16 +1,11 @@
 <section class="section skills progress-bg">
     <div class="services-content mt-5">
-        <h4 class="text-center">Thanks for your trust</h4>
+        <h4 class="text-center">{{ get_static_option('testimonial_title') }}</h4>
         <div class="d-flex justify-content-center align-items-center">
             <div class="line"></div>
         </div>
         <div class="container">
-            <p class="text-center mt-3 text-muted">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-                dolorem officia fugit, perspiciatis numquam sequi itaque iusto
-                tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet
-            </p>
+            <p class="text-center mt-3 text-muted">{{ get_static_option('testimonial_description') }}</p>
         </div>
     </div>
     <div class="container">
@@ -25,7 +20,7 @@
                                     <circle class="circle-chart__circle success-stroke" stroke-dasharray="92,100" cx="16.9" cy="16.9" r="15.9"></circle>
                                     <g class="circle-chart__info">
                                         <text class="circle-chart__percent" x="17.9" y="15.5">
-                                            120,000
+                                            {{ get_static_option('pcr_test_amount') }}
                                         </text>
                                         <text class="circle-chart__subline" x="16.91549431" y="22">
                                             PCR test
@@ -41,7 +36,7 @@
                                     <circle class="circle-chart__circle success-stroke" stroke-dasharray="90,100" cx="16.9" cy="16.9" r="15.9"></circle>
                                     <g class="circle-chart__info">
                                         <text class="circle-chart__percent" x="17.9" y="15.5">
-                                            90,000
+                                            {{ get_static_option('vaccine_amount') }}
                                         </text>
                                         <text class="circle-chart__subline" x="16.91549431" y="22">
                                             Vaccine
@@ -57,7 +52,7 @@
                                     <circle class="circle-chart__circle success-stroke" stroke-dasharray="85,100" cx="16.9" cy="16.9" r="15.9"></circle>
                                     <g class="circle-chart__info">
                                         <text class="circle-chart__percent" x="17.9" y="15.5">
-                                            80,000
+                                            {{ get_static_option('booster_amount') }}
                                         </text>
                                         <text class="circle-chart__subline" x="16.91549431" y="22">
                                             Booster
@@ -73,7 +68,7 @@
                                     <circle class="circle-chart__circle success-stroke" stroke-dasharray="82,100" cx="16.9" cy="16.9" r="15.9"></circle>
                                     <g class="circle-chart__info">
                                         <text class="circle-chart__percent" x="17.9" y="15.5">
-                                            70,000
+                                            {{ get_static_option('immigration_crossing_amount') }}
                                         </text>
                                         <text class="circle-chart__subline" x="16.91549431" y="22">
                                             Immigration Crossing

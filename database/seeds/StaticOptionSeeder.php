@@ -29,5 +29,17 @@ class StaticOptionSeeder extends Seeder
         set_static_option('download_title', 'It\'s Completely free!');
         set_static_option('download_btn_link', '#');
         set_static_option('download_image', null);
+
+        // how we work 
+        set_static_option('how_we_work_title', 'How We Work');
+        set_static_option('how_we_work_description', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorem officia fugit, perspiciatis numquam sequi itaque iusto tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet');
+
+        // testimonial  
+        set_static_option('testimonial_title', 'Thanks for your trust');
+        set_static_option('testimonial_description', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorem officia fugit, perspiciatis numquam sequi itaque iusto tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet');
+        set_static_option('pcr_test_amount', '120000');
+        set_static_option('vaccine_amount', '90000');
+        set_static_option('booster_amount', '80000');
+        set_static_option('immigration_crossing_amount', '70000');
     }
 }
