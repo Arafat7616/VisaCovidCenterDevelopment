@@ -72,7 +72,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
                 'show' => 'normal.show'
             ]
         ]);
-         // route for premium
+        // route for premium
         Route::resource('premium/', 'PremiumPCRController', [
             'except' => ['create', 'edit', 'update', 'store'],
             'names' => [
