@@ -55,6 +55,10 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::post('testimonial-update', 'LandingPageController@testimonialUpdate')->name('testimonialUpdate');
             Route::get('footer', 'LandingPageController@footer')->name('footer');
             Route::post('footer-update', 'LandingPageController@footerUpdate')->name('footerUpdate');
+            // Route::resource('subscriber', SubscriberController::class);
+            Route::resource('subscriber', 'SubscriberController', [
+                'except' => [ 'create','show','edit','update','store' ]
+            ]);
         });
     });
 });

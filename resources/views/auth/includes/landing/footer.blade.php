@@ -4,11 +4,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="text-light">{{ config('app.name') }}</h4>
-                    <h5 class="text-light mt-1">Trust and be trusted</h5>
-                    <p class="text-light mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt expedita molestias eligendi, aliquam nisi temporibus delectus ducimus ea eveniet corporis.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore ullam, hic quam excepturi consectetur.
-
-                    </p>
+                    <h5 class="text-light mt-1">{{ get_static_option('app_moto') }}</h5>
+                    <p class="text-light mt-3">{{ get_static_option('footer_details') }}</p>
                 </div>
             </div>
 
@@ -27,9 +24,9 @@
                 <div class="col-md-3 mb-3">
                     <h5 class="text-light text-center mb-3">Contact us</h5>
                     <div class="icons text-center mt-3">
-                        <a href="#"><i class="fab fa-facebook  bg-light p-2 rounded"></i></a>
-                        <a href="#" class="mx-3"><i class="fab fa-linkedin  p-2 bg-light rounded"></i></a>
-                        <a href="#"><i class="fas fa-envelope-square  bg-light p-2 rounded"></i></a>
+                        <a target="_blank" href="{{ get_static_option('app_facebook_link') }}"><i class="fab fa-facebook  bg-light p-2 rounded"></i></a>
+                        <a target="_blank" href="{{ get_static_option('app_linkedin_link') }}" class="mx-3"><i class="fab fa-linkedin  p-2 bg-light rounded"></i></a>
+                        <a target="_blank" href="mailto:{{ get_static_option('app_mail_address') }}"><i class="fas fa-envelope-square  bg-light p-2 rounded"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
