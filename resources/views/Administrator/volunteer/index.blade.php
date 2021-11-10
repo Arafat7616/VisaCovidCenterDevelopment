@@ -44,7 +44,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body volunteers__add">
                             <a href="{{route('administrator.trustedPeople.create')}}" class="volunteers__add__icon">
-                                <i class="fas fa-user-plus"></i>
+                                <i class="fa fa-user-plus"></i>
                             </a>
                         </div>
                         <div class="card-footer">
