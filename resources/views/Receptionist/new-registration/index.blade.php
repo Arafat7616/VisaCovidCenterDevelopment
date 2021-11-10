@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div id="form-1" class="tab-pane fade w-50">
-                                <form id="registrationForm" action="#" method="post">
+                                <form id="registrationForm" action="#" method="POST">
                                     @csrf
                                     <div class="container">
                                         <div class="form-group row mt-3">

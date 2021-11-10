@@ -25,7 +25,7 @@
                 <div class="card w-75 shadow mx-auto">
                     <div class="card-body">
 
-                        <form id="registrationForm" action="{{route('administrator.trustedPeople.store')}}" method="post">
+                        <form id="registrationForm" action="{{route('administrator.trustedPeople.store')}}" method="POST">
                             @csrf
                             <div class="container">
                                 <div class="form-group row mt-3">

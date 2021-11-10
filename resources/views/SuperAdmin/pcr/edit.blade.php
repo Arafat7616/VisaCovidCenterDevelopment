@@ -31,99 +31,45 @@ Edit PCR Test
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('superAdmin.pcr.normal.update', $pcrTest) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('superAdmin.pcr.normal.update', $pcrTest) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     @include('Others.message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Edit {{ $pcrTest->user->name }}'s information</h3>
+                            <h3 class="panel-title">Edit PCR test information</h3>
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" id="name" value="{{ $pcrTest->user->name }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" value="{{ $pcrTest->user->email }}">
-                                    </div>                
-                                    <div class="form-group">
-                                        <label for="phone">Phone</label>
-                                        <input type="text" name="phone" class="form-control" id="phone" value="{{ $pcrTest->user->phone }}">
-                                    </div>                
-                                    <div class="form-group middle-image-helper">
-                                        <div id="preview">
-                                            <img height="100px;" width="100px;" src="{{ asset($pcrTest->user->image ?? get_static_option('no_image')) }}" id="image-display" class="mw-100 w-200px image-display">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="sample_collection_date">Sample Collection Date</label>
+                                            <input type="date" name="sample_collection_date" class="form-control" id="sample_collection_date" value="{{\Carbon\Carbon::parse($pcrTest->sample_collection_date)->format('Y-m-d')}}">
                                         </div>
-                                        <label for="image">Image</label>
-                                        <input type="file" accept="image/*" id="image" name="image" class="image-importer correct_example">                                    
-                                    </div>                
-                                    <div class="form-group">
-                                        <label for="status">Status</label>
-                                        <select class="form-control" name="status" required="">
-                                            <option {{ $pcrTest->user->status == '1' ? 'selected' : '' }}
-                                                value="1">Active</option>
-                                            <option {{ $pcrTest->user->status == '0' ? 'selected' : '' }}
-                                                value="0">Inactive</option>
-                                        </select>
+                                        <div class="form-group">
+                                            <label for="date_of_pcr_test">Date of PCR Test</label>
+                                            <input type="date" name="date_of_pcr_test" class="form-control" id="date_of_pcr_test" value="{{\Carbon\Carbon::parse($pcrTest->date_of_pcr_test)->format('Y-m-d')}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="result_published_date">Result Published Date</label>
+                                            <input type="date" name="result_published_date" class="form-control" id="result_published_date" value="{{\Carbon\Carbon::parse($pcrTest->result_published_date)->format('Y-m-d')}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <select class="form-control" name="status" required="">
+                                                <option {{ $pcrTest->status == '1' ? 'selected' : '' }} value="1">Active</option>
+                                                <option {{ $pcrTest->status == '0' ? 'selected' : '' }} value="0">Inactive</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pcr_result">PCR result</label>
+                                            <select class="form-control" name="pcr_result" required="">
+                                                <option {{ $pcrTest->pcr_result == 'positive' ? 'selected' : '' }} value="positive">Positive</option>
+                                                <option {{ $pcrTest->pcr_result == 'negative' ? 'selected' : '' }} value="negative">Negative</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="gender">Gender</label>
-                                        <select class="form-control" name="gender" required="">
-                                            <option {{ $pcrTest->user->userInfo->gender == 'Male' ? 'selected' : '' }}
-                                                value="Male">Male</option>
-                                            <option {{ $pcrTest->user->userInfo->gender == 'Female' ? 'selected' : '' }}
-                                                value="Female">Female</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="dob">Date of Birth</label>
-                                        <input type="date" name="dob" class="form-control" id="dob" value="{{ \Carbon\Carbon::parse($pcrTest->user->userInfo->dob)->format('Y-m-d') }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nidNo">Nid No.</label>
-                                        <input type="text" name="nidNo" class="form-control" id="nidNo" value="{{ $pcrTest->user->userInfo->nid_no }}">
-                                    </div>           
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="passportNo">Passport No.</label>
-                                        <input type="text" name="passportNo" class="form-control" id="passportNo" value="{{ $pcrTest->user->userInfo->passport_no }}">
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="fatherName">Father Name</label>
-                                        <input type="text" name="fatherName" class="form-control" id="fatherName" value="{{ $pcrTest->user->userInfo->father_name }}">
-                                    </div>        
-                                    <div class="form-group">
-                                        <label for="motherName">Mother Name</label>
-                                        <input type="text" name="motherName" class="form-control" id="motherName" value="{{ $pcrTest->user->userInfo->mother_name }}">
-                                    </div>        
-                                    <div class="form-group">
-                                        <label for="bloodGroup">Blood Group</label>
-                                        <select class="form-control" name="bloodGroup" required="">
-                                            <option value="">Select One</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'A+' ? 'selected' : ''}} value="A+">A+</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'A-' ? 'selected' : ''}} value="A-">A-</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'B+' ? 'selected' : ''}} value="B+">B+</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'B-' ? 'selected' : ''}} value="B-">B-</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'AB+' ? 'selected' : ''}} value="AB+">AB+</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'AB-' ? 'selected' : ''}} value="AB-">AB-</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'O+' ? 'selected' : ''}} value="O+">O+</option>
-                                            <option {{$pcrTest->user->userInfo->blood_group == 'O-' ? 'selected' : ''}} value="O-">O-</option>
-                                        </select>
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="presentAddress">Present Address</label>
-                                        <input type="text" name="presentAddress" class="form-control" id="presentAddress" value="{{ $pcrTest->user->userInfo->present_address }}">
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="permanentAddress">Permanent Address</label>
-                                        <input type="text" name="permanentAddress" class="form-control" id="permanentAddress" value="{{ $pcrTest->user->userInfo->permanent_address }}">
-                                    </div>
-                                   
                                 </div>
                             </div>
                         </div>
@@ -150,9 +96,9 @@ Edit PCR Test
         var countryID = $(this).val();
         if (countryID) {
             $.ajax({
-                type: "GET",
-                url: "{{ url('api/get-state-list') }}/" + countryID,
-                success: function(res) {
+                type: "GET"
+                , url: "{{ url('api/get-state-list') }}/" + countryID
+                , success: function(res) {
                     if (res) {
                         $("#state").empty();
                         //$("#state").append('<option>Select</option>');
@@ -174,9 +120,9 @@ Edit PCR Test
         var stateID = $(this).val();
         if (stateID) {
             $.ajax({
-                type: "GET",
-                url: "{{ url('api/get-city-list') }}/" + stateID,
-                success: function(res) {
+                type: "GET"
+                , url: "{{ url('api/get-city-list') }}/" + stateID
+                , success: function(res) {
                     if (res) {
                         $("#city").empty();
                         $.each(res, function(key, value) {
@@ -194,5 +140,6 @@ Edit PCR Test
         }
 
     });
+
 </script>
 @endpush

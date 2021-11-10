@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\PcrTest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class NormalPCRController extends Controller
 {
@@ -72,7 +73,27 @@ class NormalPCRController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $id;
+        $request->validate([
+            'sample_collection_date' => 'required|date',
+            'date_of_pcr_test' => 'required|date',
+            'result_published_date' => 'required|date',
+            'status' => 'required',
+            'pcr_result' => 'required',
+        ]);
+
+        $pcrTest = findOrFail($id);
+        $pcrTest->sample_collection_date = $request->sample_collection_date;
+        $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
+        $pcrTest->result_published_date = $request->result_published_date;
+        $pcrTest->status = $request->status;
+        $pcrTest->pcr_result = $request->pcr_result;
+        $pcrTest->save();
+
+        // return back()->withToastSuccess('Updated successfully');
+        Session::flash('message', 'Updated successfully!');
+        Session::flash('type', 'success');
+        return back();
     }
 
     /**
