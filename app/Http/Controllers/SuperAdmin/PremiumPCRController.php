@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PcrTest;
 use Illuminate\Http\Request;
 
 class PremiumPCRController extends Controller
@@ -80,6 +81,17 @@ class PremiumPCRController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pcrTest = PcrTest::findOrfail($id);
+        try {
+            $pcrTest->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'error' . $exception->getMessage(),
+            ]);
+        }
     }
 }

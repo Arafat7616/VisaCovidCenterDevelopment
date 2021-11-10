@@ -27,6 +27,7 @@ class CreateVaccinationsTable extends Migration
             $table->unsignedBigInteger('first_served_by_id')->nullable();
             $table->unsignedBigInteger('second_served_by_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

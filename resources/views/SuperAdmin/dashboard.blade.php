@@ -164,7 +164,7 @@
                         <h3 class="panel-title">Customers Tables</h3>
                     </div>
                     <div class="panel-body">
-                        <table id="datatable-responsive"
+                        <table id="datatable-buttons"
                             class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                             width="100%">
                             <thead>

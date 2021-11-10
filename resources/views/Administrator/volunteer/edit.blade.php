@@ -22,7 +22,7 @@
 @section('content')
     <div class="administrator__profile py-5">
         <div class="container">
-            <form action="{{route('administrator.trustedPeople.update', $user->id)}}" method="post">
+            <form action="{{route('administrator.trustedPeople.update', $user->id)}}" method="POST">
                 @csrf
                 @method('put')
                 <div class="administrator__profile__card shadow-sm">

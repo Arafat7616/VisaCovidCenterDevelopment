@@ -21,7 +21,7 @@
                 @endif
             </div>
 
-            <form action="{{route('administrator.price.update', $centerPrice->id)}}" method="post">
+            <form action="{{route('administrator.price.update', $centerPrice->id)}}" method="POST">
                 @csrf
                 @method('put')
                 <div class="setting_up_price__body shadow-sm">

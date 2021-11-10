@@ -30,7 +30,7 @@ Edit
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('superAdmin.manageCenter.update', $center->id) }}" method="post"
+                <form action="{{ route('superAdmin.manageCenter.update', $center->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @include('Others.message')

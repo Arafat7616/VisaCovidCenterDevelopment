@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\PcrTest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class NormalPCRController extends Controller
 {
@@ -58,8 +59,9 @@ class NormalPCRController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    { 
+        $pcrTest = PcrTest::findOrfail($id);
+        return view('SuperAdmin.pcr.edit', compact('pcrTest'));
     }
 
     /**
@@ -71,7 +73,26 @@ class NormalPCRController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'sample_collection_date' => 'required|date',
+            'date_of_pcr_test' => 'required|date',
+            'result_published_date' => 'required|date',
+            'status' => 'required',
+            'pcr_result' => 'required',
+        ]);
+
+        $pcrTest = PcrTest::findOrFail($id);
+        $pcrTest->sample_collection_date = $request->sample_collection_date;
+        $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
+        $pcrTest->result_published_date = $request->result_published_date;
+        $pcrTest->status = $request->status;
+        $pcrTest->pcr_result = $request->pcr_result;
+        $pcrTest->save();
+
+        // return back()->withToastSuccess('Updated successfully');
+        Session::flash('message', 'Updated successfully!');
+        Session::flash('type', 'success');
+        return back();
     }
 
     /**
@@ -81,7 +102,18 @@ class NormalPCRController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    { 
+        $pcrTest = PcrTest::findOrfail($id);
+        try {
+            $pcrTest->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'error' . $exception->getMessage(),
+            ]);
+        }
     }
 }
