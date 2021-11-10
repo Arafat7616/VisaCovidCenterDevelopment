@@ -25,6 +25,7 @@ class CreatePcrTestsTable extends Migration
             $table->unsignedBigInteger('tested_by')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

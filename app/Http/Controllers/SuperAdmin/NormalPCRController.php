@@ -58,8 +58,9 @@ class NormalPCRController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    { 
+        $pcrTest = PcrTest::findOrfail($id);
+        return view('SuperAdmin.pcr.edit', compact('pcrTest'));
     }
 
     /**
@@ -81,7 +82,18 @@ class NormalPCRController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    { 
+        $pcrTest = PcrTest::findOrfail($id);
+        try {
+            $pcrTest->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'error' . $exception->getMessage(),
+            ]);
+        }
     }
 }

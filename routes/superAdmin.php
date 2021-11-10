@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Super Admin route
+// Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => 'superAdmin.'], function () {
 Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => 'superAdmin.', 'middleware' => ['auth', 'superAdmin']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
@@ -61,24 +62,27 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             ]);
         });
     });
+    // route for registered pcr
+    Route::resource('pcr-normal', 'NormalPCRController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'pcr.normal.index',
+            'show' => 'pcr.normal.show',
+            'edit' => 'pcr.normal.edit',
+            'update' => 'pcr.normal.update',
+            'destroy' => 'pcr.normal.destroy',
+        ]
+    ]);
 
-    // route for pcr  
-    Route::group(['prefix' => 'pcr/', 'as' => 'pcr.'], function () {
-        // route for registered
-        Route::resource('normal/', 'NormalPCRController', [
-            'except' => ['create', 'edit', 'update', 'store'],
-            'names' => [
-                'index' => 'normal.index',
-                'show' => 'normal.show'
-            ]
-        ]);
-        // route for premium
-        Route::resource('premium/', 'PremiumPCRController', [
-            'except' => ['create', 'edit', 'update', 'store'],
-            'names' => [
-                'index' => 'premium.index',
-                'show' => 'premium.show'
-            ]
-        ]);
-    });
+    // route for premium pcr
+    Route::resource('pcr-premium', 'PremiumPCRController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'pcr.premium.index',
+            'show' => 'pcr.premium.show',
+            'edit' => 'pcr.premium.edit',
+            'update' => 'pcr.premium.update',
+            'destroy' => 'pcr.premium.destroy',
+        ]
+    ]);
 });
