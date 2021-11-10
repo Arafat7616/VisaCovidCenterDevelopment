@@ -38,12 +38,12 @@ class ServiceRegistrationController extends Controller
 
     public function prcRegistration(Request $request)
     {
-        $user = User::whrere('phone', $request->phone)->select('id')->first();
+        $user = User::where('phone', $request->phone)->select('id')->first();
 
         $pcr = new PcrTest();
         $pcr->user_id = $user->id;
         $pcr->center_id = $request->center_id;
-        $pcr->sample_collection_date = Carbon::parse($request->date);
+        $pcr->date_of_registration = Carbon::parse($request->date);
         $pcr->registration_type = "normal";
 
         if ($pcr->save())
@@ -63,12 +63,12 @@ class ServiceRegistrationController extends Controller
 
     public function boosterRegistration(Request $request)
     {
-        $user = User::whrere('phone', $request->phone)->select('id')->first();
+        $user = User::where('phone', $request->phone)->select('id')->first();
 
         $booster = new Booster();
         $booster->user_id = $user->id;
         $booster->center_id = $request->center_id;
-        $booster->date = Carbon::parse($request->date);
+        $booster->date_of_registration = Carbon::parse($request->date);
         $booster->registration_type = "normal";
 
         if ($booster->save())
