@@ -21,8 +21,8 @@ class CenterSeeder extends Seeder
             $center->name = 'Demo Center Name';
             $center->email = 'center'.$i.'@gmail.com';
             $center->country_id = 18;
-            $center->state_id = 338;
-            $center->city_id = 7264;
+            $center->state_id = 348;
+            $center->city_id = 7291;
             $center->zip_code = Str::random(15);
             $center->address = 'Dhaka Bangladesh';
             $center->map_location = '#';

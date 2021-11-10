@@ -11,6 +11,7 @@ class Vaccination extends Model
         'registration_type',
         'date_of_first_dose',
         'date_of_second_dose',
+        'date_of_registration',
         'antibody_last_date',
         'status',
         'user_id',
