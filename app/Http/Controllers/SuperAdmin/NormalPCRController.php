@@ -73,7 +73,6 @@ class NormalPCRController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $id;
         $request->validate([
             'sample_collection_date' => 'required|date',
             'date_of_pcr_test' => 'required|date',
@@ -82,7 +81,7 @@ class NormalPCRController extends Controller
             'pcr_result' => 'required',
         ]);
 
-        $pcrTest = findOrFail($id);
+        $pcrTest = PcrTest::findOrFail($id);
         $pcrTest->sample_collection_date = $request->sample_collection_date;
         $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
         $pcrTest->result_published_date = $request->result_published_date;
