@@ -39,6 +39,16 @@ Route::post('user/otpCheck', 'Api\UserController@otpCheck');
 //Home route
 Route::get('home/slider', 'Api\HomeController@slider');
 
+//Service registration route
+Route::get('home/country', 'Api\HomeController@country');
+Route::get('home/state/{id}', 'Api\HomeController@state');
+Route::get('home/city/{id}', 'Api\HomeController@city');
+Route::get('home/center/{id}', 'Api\HomeController@center');
+
+Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vaccineRegistration');
+Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
+Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boosterRegistration');
+
 
 
 

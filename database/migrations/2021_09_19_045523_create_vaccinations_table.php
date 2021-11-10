@@ -19,6 +19,7 @@ class CreateVaccinationsTable extends Migration
             $table->string('name_of_vaccine')->nullable();
             $table->string('date_of_first_dose')->nullable();
             $table->string('date_of_second_dose')->nullable();
+            $table->string('date_of_registration')->nullable();
             $table->string('antibody_last_date')->nullable();
             $table->enum('status', [0,1]);
             $table->unsignedBigInteger('user_id')->nullable();
