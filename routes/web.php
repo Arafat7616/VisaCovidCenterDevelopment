@@ -21,9 +21,12 @@ include('receptionist.php');
 include('volunteer.php');
 include('pathologist.php');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'LandingPageController@index')->name('frontend.index');
+Route::post('/subscribe/store', 'LandingPageController@subscribeStore')->name('frontend.subscribeStore');
+
 
 // Auth::routes();
 Auth::routes(['register' => false]);
@@ -37,11 +40,10 @@ Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister
 Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
 
 
-Route::get('/share/user/{id}','ShareController@shareUser')->name('share.user');
+Route::get('/share/user/{id}', 'ShareController@shareUser')->name('share.user');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 
 
 // country -state - city list related api
-Route::get('/api/get-state-list/{country_id}','Auth\CenterRegistrationController@getStateList');
-Route::get('/api/get-city-list/{state_id}','Auth\CenterRegistrationController@getCityList');
-
+Route::get('/api/get-state-list/{country_id}', 'Auth\CenterRegistrationController@getStateList');
+Route::get('/api/get-city-list/{state_id}', 'Auth\CenterRegistrationController@getCityList');

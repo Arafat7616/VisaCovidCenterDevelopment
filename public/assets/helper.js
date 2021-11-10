@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $(".logout-btn").click(function() {
+$(document).ready(function () {
+    $(".logout-btn").click(function () {
         Swal.fire({
             title: 'Are you sure?',
             text: "You can login again in this system!",
@@ -15,7 +15,7 @@ $(document).ready(function() {
                     'Successfully logout from this system.',
                     'success'
                 )
-                setTimeout(function() {
+                setTimeout(function () {
                     document.getElementById('logout-form').submit();
                 }, 1000); //2 second
             }
@@ -23,14 +23,14 @@ $(document).ready(function() {
     });
 
     // Listen for click on toggle checkbox
-    $('.select-all').click(function(event) {
+    $('.select-all').click(function (event) {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
         for (var checkbox of checkboxes) {
             checkbox.checked = true;
         }
     });
 
-    $('.un-select-all').click(function(event) {
+    $('.un-select-all').click(function (event) {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
         for (var checkbox of checkboxes) {
             checkbox.checked = false;
@@ -38,22 +38,72 @@ $(document).ready(function() {
     });
 
     // Image chose related code
-    $(".image-chose-btn").click(function() {
+    $(".image-chose-btn").click(function () {
         // console.log($(this).parentsUntil(".middle-image-helper").find('.image-importer'));
         $(this).parentsUntil(".middle-image-helper").find('.image-importer').click();
     })
 
     //Display image
-    $(".image-importer").change(function(event) {
-            if (event.target.files.length > 0) {
-                $(this).parentsUntil(".middle-image-helper").find('.image-display').attr("src", URL.createObjectURL(event.target.files[0]));
-            }
-        })
-        //Reset image
-    $(".image-reset-btn").click(function() {
+    $(".image-importer").change(function (event) {
+        if (event.target.files.length > 0) {
+            $(this).parentsUntil(".middle-image-helper").find('.image-display').attr("src", URL.createObjectURL(event.target.files[0]));
+        }
+    })
+    //Reset image
+    $(".image-reset-btn").click(function () {
         $(this).parentsUntil(".middle-image-helper").find('.image-display').attr("src", $(this).val());
         $(this).parentsUntil(".middle-image-helper").find('.image-importer').val('');
     })
+
+    // subscribe now
+    $('.subscribe-now-btn').click(function () {
+        $.ajax({
+            method: 'POST',
+            url: "/subscribe/store",
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            data: { email: $('#subscribe-email').val() },
+            dataType: 'JSON',
+            beforeSend: function () {
+                $(".subscribe-now-btn").prop("disabled", true);
+            },
+            complete: function () {
+                $(".subscribe-now-btn").prop("disabled", false);
+            },
+            success: function (response) {
+                if (response.type == 'success') {
+                    $('#subscribe-email').val("");
+                    Swal.fire(
+                        'Thank you !',
+                        response.message,
+                        'success'
+                    )
+
+                } else {
+                    Swal.fire(
+                        'Sorry !',
+                        response.message,
+                        response.type
+                    )
+                }
+            },
+            error: function (xhr) {
+                var errorMessage = '<div class="card bg-danger">\n' +
+                    '                        <div class="card-body text-center p-5">\n' +
+                    '                            <span class="text-white">';
+                $.each(xhr.responseJSON.errors, function (key, value) {
+                    errorMessage += ('' + value + '<br>');
+                });
+                errorMessage += '</span>\n' +
+                    '                        </div>\n' +
+                    '                    </div>';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    footer: errorMessage
+                })
+            },
+        })
+    });
 });
 
 
@@ -69,7 +119,7 @@ function previewImages() {
             return alert(file.name + " is not an image");
         } // else...
         var reader = new FileReader();
-        reader.addEventListener("load", function() {
+        reader.addEventListener("load", function () {
             var image = new Image();
             image.height = 100;
             image.title = file.name;
@@ -101,7 +151,7 @@ function delete_function(objButton) {
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(data) {
+                success: function (data) {
                     if (data.type == 'success') {
 
                         Swal.fire(
@@ -110,11 +160,11 @@ function delete_function(objButton) {
                             'success'
                         )
                         if (data.url) {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 location.replace(data.url);
                             }, 800); //
                         } else {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 location.reload();
                             }, 800); //
                         }
@@ -129,4 +179,6 @@ function delete_function(objButton) {
             })
         }
     })
+
+
 }

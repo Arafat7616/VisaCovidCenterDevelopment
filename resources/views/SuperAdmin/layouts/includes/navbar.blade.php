@@ -59,19 +59,31 @@
                         <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
                     </ul>
                 </li>
+                {{-- routes for pcr test  --}}
+                 <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> PCR Test </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.pcr.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
+                        <li><a href="{{route('superAdmin.pcr.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
+                    </ul>
+                </li>
 
                 {{-- routes for setting manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active subdrop': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li>
-                            {{-- routes for Landing-page manage  --}}
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active subdrop': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
-                                </ul>
-                            </li>
+                    <ul class="list-unstyled">                      
+                        {{-- routes for Landing-page manage  --}}
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active subdrop': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('superAdmin.setting.landingPage.banner')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/banner') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Banner </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.download')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/download') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Download </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.service.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/service') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Service </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.work.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/work') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> We Work </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.testimonial')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/testimonial') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Testimonial </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.footer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/footer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Footer </span></a></li>
+                                <li><a href="{{route('superAdmin.setting.landingPage.subscriber.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/subscriber') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Subscriber </span></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>

@@ -4,22 +4,19 @@
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
                     <div class="left-items">
-                        <h4 class="typeText">Be with us to the room around</h4>
-                        <h2>the world seamlessy</h2>
+                        <h4 class="typeText">{{ get_static_option('banner_highlight') }}</h4>
+                        <h2>{{ get_static_option('banner_title') }}</h2>
                         <p class="mt-3 text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                            omnis quos molestias consequuntur labore reiciendis asperiores
-                            laudantium exercitationem deserunt! Excepturi reiciendis totam
-                            ipsum incidunt necessitatibus fugiat asperiores sequi nulla
-                            consectetur.
+                            {{ get_static_option('banner_description') }}
                         </p>
                         <div class="my-4">
-                            <button class="download-btn pulse">Download Our App</button>
+                            {{-- <button class="download-btn pulse">Download Our App</button> --}}
+                            <a target="_blank" href="{{ get_static_option('download_btn_link') ?? '#' }}" class="download-btn pulse">Download Our App</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/center-part/image/landing/banner.png') }}" alt="" class="img-fluid" />
+                    <img src="{{ asset(get_static_option('banner_image') ?? 'assets/center-part/image/landing/banner.png') }}" alt="" class="img-fluid" />
                 </div>
             </div>
         </div>

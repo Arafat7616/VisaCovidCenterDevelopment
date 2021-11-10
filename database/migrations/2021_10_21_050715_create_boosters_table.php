@@ -25,6 +25,7 @@ class CreateBoostersTable extends Migration
             $table->unsignedBigInteger('served_by_id')->nullable();
             $table->enum('status', [0,1]);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

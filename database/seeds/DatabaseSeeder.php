@@ -12,6 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(StaticOptionSeeder::class);
+        $this->call(WebsiteServiceSeeder::class);
+        $this->call(WebsiteWorkSeeder::class);
+        $this->call(SubscriberSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UserIntoSeeder::class);
         $this->call(CenterSeeder::class);

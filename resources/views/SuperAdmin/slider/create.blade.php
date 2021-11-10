@@ -30,7 +30,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <form role="form" action="{{route('superAdmin.slider.store')}}" method="post" enctype="multipart/form-data">
+                                    <form role="form" action="{{route('superAdmin.slider.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @include('Others.message')
                                         <div class="form-group">
