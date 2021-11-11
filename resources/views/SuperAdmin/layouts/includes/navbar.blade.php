@@ -8,9 +8,7 @@
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name ?? '' }}</a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)"> Profile</a></li>
-                        <li><a href="javascript:void(0)"> Settings</a></li>
-                        <li><a href="javascript:void(0)"> Lock screen</a></li>
+                        <li><a href="{{ route('superAdmin.profile') }}"> Profile</a></li>
                         <li class="divider"></li>
                         <li><a class="logout-btn" href="javascript:void(0)"> Logout</a></li>
                     </ul>
