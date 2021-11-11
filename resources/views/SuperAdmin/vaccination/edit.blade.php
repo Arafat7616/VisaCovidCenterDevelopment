@@ -11,7 +11,6 @@ Edit Vaccination
 
 @endpush
 
-
 @section('content')
 <div class="content">
     <div class="container">
@@ -37,7 +36,7 @@ Edit Vaccination
                     @include('Others.message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Edit PCR test information</h3>
+                            <h3 class="panel-title">Edit Vaccination information</h3>
                         </div>
                         <div class="panel-body">
                             <div class="container">
