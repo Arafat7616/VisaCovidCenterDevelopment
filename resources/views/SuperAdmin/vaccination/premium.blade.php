@@ -53,7 +53,7 @@ Premium | Vaccination
                                     <th>Vaccine Name</th>
                                     <th>First Dese</th>
                                     <th>Second Dese</th>
-                                    <th>AntyBody Last date</th>
+                                    <th>Antibody Last date</th>
                                     <th>Share</th>
                                     <th>Action</th>
                                 </tr>
@@ -115,7 +115,7 @@ Premium | Vaccination
                                     <th>Vaccine Name</th>
                                     <th>First Dese</th>
                                     <th>Second Dese</th>
-                                    <th>AntyBody Last date</th>
+                                    <th>Antibody Last date</th>
                                     <th>Share</th>
                                     <th>Action</th>
                                 </tr>
