@@ -54,7 +54,7 @@
             </div>
             <div class="administrator__profile__password">
                 <div class="row">
-                    <form action="{{route('receptionist.infoUpdate')}}" method="post">
+                    <form action="{{route('receptionist.infoUpdate')}}" method="POST">
                         @csrf
                         @method('put')
                         <div class="col-4 float-start">

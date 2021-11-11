@@ -21,7 +21,7 @@
                 <!-- =================card form start======================== -->
                 <div class="card w-75 shadow mx-auto">
                     <div class="card-body">
-                        <form action="{{route('login')}}" method="post" id="loginForm">
+                        <form action="{{route('login')}}" method="POST" id="loginForm">
                             @csrf
                             <div class="mb-3">
                                 <label for="phone" class="form-label text-muted">Phone Number</label>

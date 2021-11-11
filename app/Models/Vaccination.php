@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vaccination extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'name_of_vaccine',
         'registration_type',
         'date_of_first_dose',
         'date_of_second_dose',
+        'date_of_registration',
         'antibody_last_date',
         'status',
         'user_id',

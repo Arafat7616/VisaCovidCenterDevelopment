@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Booster extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'name_of_vaccine',
         'registration_type',

@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <a class="btn btn-sm btn-success" href="{{route('administrator.trustedPeople.edit', $people->id)}}"><i class="far fa-edit"></i> Edit</a>
+                                <a class="btn btn-sm btn-success" href="{{route('administrator.trustedPeople.edit', $people->id)}}"><i class="fa fa-edit"></i> Edit</a>
                                 <button class="btn btn-sm btn-danger" onclick="delete_function(this)" value="{{ route('administrator.trustedPeople.destroy', $people->id) }}"><i class="fa fa-trash"></i> Delete </button>
                             </div>
                         </div>

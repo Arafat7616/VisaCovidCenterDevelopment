@@ -30,7 +30,7 @@ Download | Setting
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('superAdmin.setting.landingPage.downloadUpdate') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('superAdmin.setting.landingPage.downloadUpdate') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @include('Others.message')
                     <div class="panel panel-success">

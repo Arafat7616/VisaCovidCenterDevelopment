@@ -31,7 +31,7 @@ Edit
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('superAdmin.manageUser.update', $user->id) }}" method="post"
+                <form action="{{ route('superAdmin.manageUser.update', $user->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @include('Others.message')
