@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booster;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PremiumBoosterController extends Controller
 {
@@ -14,7 +16,8 @@ class PremiumBoosterController extends Controller
      */
     public function index()
     {
-        //
+        $boosters = Booster::where('registration_type', 'premium')->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.booster.premium', compact('boosters'));
     }
 
     /**
@@ -56,8 +59,9 @@ class PremiumBoosterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    { 
+        $booster = Booster::findOrfail($id);
+        return view('SuperAdmin.booster.edit', compact('booster'));
     }
 
     /**
@@ -69,7 +73,24 @@ class PremiumBoosterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name_of_vaccine'       => 'required|string',
+            'date'    => 'required|date',
+            'antibody_last_date'    => 'required|date',
+            'status'                => 'required',
+        ]);
+
+        $booster = Booster::findOrFail($id);
+        $booster->name_of_vaccine       = $request->name_of_vaccine;
+        $booster->date    = $request->date;
+        $booster->antibody_last_date    = $request->antibody_last_date;
+        $booster->status                = $request->status;
+        $booster->save();
+
+        // return back()->withToastSuccess('Updated successfully');
+        Session::flash('message', 'Updated successfully!');
+        Session::flash('type', 'success');
+        return back();
     }
 
     /**
@@ -79,7 +100,18 @@ class PremiumBoosterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    { 
+        $booster = Booster::findOrfail($id);
+        try {
+            $booster->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'error' . $exception->getMessage(),
+            ]);
+        }
     }
 }
