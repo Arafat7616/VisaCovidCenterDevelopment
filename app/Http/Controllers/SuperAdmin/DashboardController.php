@@ -9,6 +9,7 @@ use App\Models\PcrTest;
 use App\Models\User;
 use App\Models\Vaccination;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -19,5 +20,10 @@ class DashboardController extends Controller
         $vaccinations = Vaccination::all();
         $boosters = Booster::all();
         return view('SuperAdmin.dashboard', compact('users','centers','pcrTests','vaccinations','boosters'));
+    }
+
+    public function profile(){
+        $user = Auth::user();
+        return view('SuperAdmin.profile.index', compact('user'));
     }
 }

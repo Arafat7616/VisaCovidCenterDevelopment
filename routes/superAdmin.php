@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => 'superAdmin.', 'middleware' => ['auth', 'superAdmin']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::get('profile', 'DashboardController@profile')->name('profile');
+
 
     Route::resource('payment', 'PaymentMethodController');
     Route::resource('slider', 'SliderController');

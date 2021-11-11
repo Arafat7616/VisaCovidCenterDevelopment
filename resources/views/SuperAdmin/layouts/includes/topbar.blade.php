@@ -75,9 +75,7 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset(Auth::user()->image ?? get_static_option('user')) }}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)"> Profile</a></li>
-                            <li><a href="javascript:void(0)"><span class="badge badge-success pull-right">5</span> Settings </a></li>
-                            <li><a href="javascript:void(0)"> Lock screen</a></li>
+                            <li><a href="{{ route('superAdmin.profile') }}"> Profile</a></li>
                             <li class="divider"></li>
                             <li><a class="logout-btn" href="javascript:void(0)"> Logout</a></li>
                         </ul>
