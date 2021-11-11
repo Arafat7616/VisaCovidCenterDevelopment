@@ -71,8 +71,8 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> Vaccination </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('superAdmin.vaccination.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
-                        <li><a href="{{route('superAdmin.vaccination.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
+                        <li><a href="{{route('superAdmin.vaccination.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
+                        <li><a href="{{route('superAdmin.vaccination.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
                 </li>
 

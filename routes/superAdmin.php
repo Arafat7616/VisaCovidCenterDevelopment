@@ -87,7 +87,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     ]);
 
      // route for registered vaccination
-     Route::resource('vaccination-normal', 'NormalPCRController', [
+     Route::resource('vaccination-normal', 'NormalVaccinationController', [
         'except' => ['create', 'store'],
         'names' => [
             'index' => 'vaccination.normal.index',
@@ -99,7 +99,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     ]);
 
     // route for premium vaccination
-    Route::resource('vaccination-premium', 'PremiumPCRController', [
+    Route::resource('vaccination-premium', 'PremiumVaccinationController', [
         'except' => ['create', 'store'],
         'names' => [
             'index' => 'vaccination.premium.index',
