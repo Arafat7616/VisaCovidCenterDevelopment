@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-Registered | PCR
+Premium | PCR
 @endpush
 
 @push('datatableCSS')
@@ -24,11 +24,11 @@ Registered | PCR
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">Registered PCR list</h4>
+                    <h4 class="pull-left page-title">Premium PCR list</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
                         <li><a href="javascript:void(0)">Manage PCR</a></li>
-                        <li class="active">Registered PCR list</li>
+                        <li class="active">Premium PCR list</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -37,9 +37,9 @@ Registered | PCR
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-dark">
+                <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-white">Registered PCR list</h3>
+                        <h3 class="panel-title text-white">Premium PCR list</h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -101,11 +101,11 @@ Registered | PCR
                                         </button>
                                     </td>
                                     <td class="td_new">
-                                        <a href="{{ route('superAdmin.pcr.normal.edit', $pcrTest->id) }}"
+                                        <a href="{{ route('superAdmin.pcr.premium.edit', $pcrTest->id) }}"
                                         class="btn btn-info"><i class="fa fa-edit"></i> </a>
 
                                     <button class="btn btn-danger" onclick="delete_function(this)"
-                                        value="{{ route('superAdmin.pcr.normal.destroy', $pcrTest) }}"><i
+                                        value="{{ route('superAdmin.pcr.premium.destroy', $pcrTest) }}"><i
                                             class="fa fa-trash"></i> </button>
                                     </td>
                                 </tr>
