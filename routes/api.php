@@ -53,8 +53,8 @@ Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boos
 //Service Status Check
 
 Route::post('home/vaccine/statusCheck', 'Api\HomeController@VaccineStatusCheck');
-Route::get('home/prc/statusCheck/{id}', 'Api\HomeController@PrcStatusCheck');
-Route::get('home/booster/statusCheck/{id}', 'Api\HomeController@BoosterStatusCheck');
+Route::post('home/pcr/statusCheck', 'Api\HomeController@PrcStatusCheck');
+Route::post('home/booster/statusCheck', 'Api\HomeController@BoosterStatusCheck');
 
 
 

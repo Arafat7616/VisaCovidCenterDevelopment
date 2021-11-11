@@ -111,6 +111,8 @@ class HomeController extends Controller
             return response()->json([
                 "status" => "1",
                 "navigationPath" => "Vaccine Date Status",
+                "date" => $vaccinationStatus->date_of_registration,
+                "centerId" => $vaccinationStatus->center_id,
             ]);
         }else{
             return response()->json([
@@ -120,13 +122,20 @@ class HomeController extends Controller
         }
     }
 
-    public function PrcStatusCheck($id)
+    public function PrcStatusCheck(Request $request)
     {
-        $pcrStatus = PcrTest::where('user_id', $id)->first();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
         if ($pcrStatus){
             return response()->json([
                 "status" => "1",
                 "navigationPath" => "PCR Date Status",
+                "date" => $pcrStatus->date_of_registration,
+                "centerId" => $pcrStatus->center_id,
             ]);
         }else{
             return response()->json([
@@ -136,13 +145,20 @@ class HomeController extends Controller
         }
     }
 
-    public function BoosterStatusCheck($id)
+    public function BoosterStatusCheck(Request $request)
     {
-        $boosterStatus = Booster::where('user_id', $id)->first();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+
+        $boosterStatus = Booster::where('user_id', $existUser->id)->first();
         if ($boosterStatus){
             return response()->json([
                 "status" => "1",
                 "navigationPath" => "Booster Date Status",
+                "date" => $boosterStatus->date_of_registration,
+                "centerId" => $boosterStatus->center_id,
             ]);
         }else{
             return response()->json([
