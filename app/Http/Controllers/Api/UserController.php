@@ -110,6 +110,7 @@ class UserController extends Controller
             return response()->json([
                 "message"=>"Otp successfully verified",
                 "phone" => $existUser->phone,
+                "userId" => (string)$existUser->id,
                 "status"=>"1",
                 "loginStatus"=>"1",
             ]);
