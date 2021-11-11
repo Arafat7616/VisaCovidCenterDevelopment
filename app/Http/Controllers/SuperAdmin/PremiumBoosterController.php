@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PcrTest;
+use App\Models\Booster;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class PremiumPCRController extends Controller
+class PremiumBoosterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class PremiumPCRController extends Controller
      */
     public function index()
     {
-        $pcrTests = PcrTest::where('registration_type', 'premium')->orderBy('id', 'DESC')->get();
-        return view('SuperAdmin.pcr.premium', compact('pcrTests'));
+        $boosters = Booster::where('registration_type', 'premium')->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.booster.premium', compact('boosters'));
     }
 
     /**
@@ -60,8 +60,8 @@ class PremiumPCRController extends Controller
      */
     public function edit($id)
     { 
-        $pcrTest = PcrTest::findOrfail($id);
-        return view('SuperAdmin.pcr.edit', compact('pcrTest'));
+        $booster = Booster::findOrfail($id);
+        return view('SuperAdmin.booster.edit', compact('booster'));
     }
 
     /**
@@ -74,20 +74,18 @@ class PremiumPCRController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'sample_collection_date' => 'required|date',
-            'date_of_pcr_test' => 'required|date',
-            'result_published_date' => 'required|date',
-            'status' => 'required',
-            'pcr_result' => 'required',
+            'name_of_vaccine'       => 'required|string',
+            'date'    => 'required|date',
+            'antibody_last_date'    => 'required|date',
+            'status'                => 'required',
         ]);
 
-        $pcrTest = PcrTest::findOrFail($id);
-        $pcrTest->sample_collection_date = $request->sample_collection_date;
-        $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
-        $pcrTest->result_published_date = $request->result_published_date;
-        $pcrTest->status = $request->status;
-        $pcrTest->pcr_result = $request->pcr_result;
-        $pcrTest->save();
+        $booster = Booster::findOrFail($id);
+        $booster->name_of_vaccine       = $request->name_of_vaccine;
+        $booster->date    = $request->date;
+        $booster->antibody_last_date    = $request->antibody_last_date;
+        $booster->status                = $request->status;
+        $booster->save();
 
         // return back()->withToastSuccess('Updated successfully');
         Session::flash('message', 'Updated successfully!');
@@ -103,9 +101,9 @@ class PremiumPCRController extends Controller
      */
     public function destroy($id)
     { 
-        $pcrTest = PcrTest::findOrfail($id);
+        $booster = Booster::findOrfail($id);
         try {
-            $pcrTest->delete();
+            $booster->delete();
             return response()->json([
                 'type' => 'success',
             ]);

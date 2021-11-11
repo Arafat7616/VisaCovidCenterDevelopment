@@ -85,4 +85,52 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             'destroy' => 'pcr.premium.destroy',
         ]
     ]);
+
+    // route for registered vaccination
+    Route::resource('vaccination-normal', 'NormalVaccinationController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'vaccination.normal.index',
+            'show' => 'vaccination.normal.show',
+            'edit' => 'vaccination.normal.edit',
+            'update' => 'vaccination.normal.update',
+            'destroy' => 'vaccination.normal.destroy',
+        ]
+    ]);
+
+    // route for premium vaccination
+    Route::resource('vaccination-premium', 'PremiumVaccinationController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'vaccination.premium.index',
+            'show' => 'vaccination.premium.show',
+            'edit' => 'vaccination.premium.edit',
+            'update' => 'vaccination.premium.update',
+            'destroy' => 'vaccination.premium.destroy',
+        ]
+    ]);
+
+    // route for registered booster
+    Route::resource('booster-normal', 'NormalBoosterController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'booster.normal.index',
+            'show' => 'booster.normal.show',
+            'edit' => 'booster.normal.edit',
+            'update' => 'booster.normal.update',
+            'destroy' => 'booster.normal.destroy',
+        ]
+    ]);
+
+    // route for premium booster
+    Route::resource('booster-premium', 'PremiumBoosterController', [
+        'except' => ['create', 'store'],
+        'names' => [
+            'index' => 'booster.premium.index',
+            'show' => 'booster.premium.show',
+            'edit' => 'booster.premium.edit',
+            'update' => 'booster.premium.update',
+            'destroy' => 'booster.premium.destroy',
+        ]
+    ]);
 });
