@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booster;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\PcrTest;
 use App\Models\Slider;
 use App\Models\State;
+use App\Models\User;
+use App\Models\Vaccination;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -91,6 +95,75 @@ class HomeController extends Controller
             return response()->json([
                 "status" => "0",
                 "message" => "Not found",
+            ]);
+        }
+    }
+
+    public function VaccineStatusCheck(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+
+        $vaccinationStatus = Vaccination::where('user_id', $existUser->id)->first();
+        if ($vaccinationStatus){
+            return response()->json([
+                "status" => "1",
+                "navigationPath" => "Vaccine Date Status",
+                "date" => $vaccinationStatus->date_of_registration,
+                "centerId" => $vaccinationStatus->center_id,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "navigationPath" => "Vaccine Registration",
+            ]);
+        }
+    }
+
+    public function PrcStatusCheck(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        if ($pcrStatus){
+            return response()->json([
+                "status" => "1",
+                "navigationPath" => "PCR Date Status",
+                "date" => $pcrStatus->date_of_registration,
+                "centerId" => $pcrStatus->center_id,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "navigationPath" => "PCR",
+            ]);
+        }
+    }
+
+    public function BoosterStatusCheck(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+
+        $boosterStatus = Booster::where('user_id', $existUser->id)->first();
+        if ($boosterStatus){
+            return response()->json([
+                "status" => "1",
+                "navigationPath" => "Booster Date Status",
+                "date" => $boosterStatus->date_of_registration,
+                "centerId" => $boosterStatus->center_id,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "navigationPath" => "Booster",
             ]);
         }
     }

@@ -1,6 +1,6 @@
 @extends('SuperAdmin.layouts.master')
 @push('title')
-Registered | PCR
+Registered | Vaccination
 @endpush
 
 @push('datatableCSS')
@@ -24,11 +24,11 @@ Registered | PCR
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">Registered PCR list</h4>
+                    <h4 class="pull-left page-title">Registered Vaccination list</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('superAdmin.dashboard')}}">Dashboard</a></li>
-                        <li><a href="javascript:void(0)">Manage PCR</a></li>
-                        <li class="active">Registered PCR list</li>
+                        <li><a href="javascript:void(0)">Manage Vaccination</a></li>
+                        <li class="active">Registered Vaccination list</li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -39,7 +39,7 @@ Registered | PCR
             <div class="col-md-12">
                 <div class="panel panel-dark">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-white">Registered PCR list</h3>
+                        <h3 class="panel-title text-white">Registered Vaccination list</h3>
                     </div>
                     <div class="panel-body">
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -50,25 +50,25 @@ Registered | PCR
                                     <th>Phone</th>
                                     <th>Gneder</th>
                                     <th>Image</th>
-                                    <th>Sample Collection</th>
-                                    <th>PCR Test</th>
-                                    <th>Result Published</th>
-                                    <th>PCR Result</th>
+                                    <th>Vaccine Name</th>
+                                    <th>First Dese</th>
+                                    <th>Second Dese</th>
+                                    <th>Antibody Last date</th>
                                     <th>Share</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pcrTests as $pcrTest)
+                                @foreach ($vaccinations as $vaccination)
                                 <tr>                                  
-                                    <td class="td_new pcr-test-id">{{ $pcrTest->id }}</td>
-                                    <td class="td_new">{{ $pcrTest->user->name }}</td>
-                                    <td class="td_new">{{ $pcrTest->user->phone }}</td>
-                                    <td class="td_new">{{ $pcrTest->user->userInfo->gender }}</td>
+                                    <td class="td_new vaccination-test-id">{{ $vaccination->id }}</td>
+                                    <td class="td_new">{{ $vaccination->user->name }}</td>
+                                    <td class="td_new">{{ $vaccination->user->phone }}</td>
+                                    <td class="td_new">{{ $vaccination->user->userInfo->gender }}</td>
                                     <td>
-                                        @if ($pcrTest->user->image)
-                                        <a href="{{ asset($pcrTest->user->image) }}" target="_blank">
-                                            <img height="70px;" src="{{ asset($pcrTest->user->image) }}" width="70px;" class="rounded-circle" />
+                                        @if ($vaccination->user->image)
+                                        <a href="{{ asset($vaccination->user->image) }}" target="_blank">
+                                            <img height="70px;" src="{{ asset($vaccination->user->image) }}" width="70px;" class="rounded-circle" />
                                         </a>
                                         @else
                                         <abbr title="Sorry There in no picture">
@@ -76,36 +76,30 @@ Registered | PCR
                                         </abbr>
                                         @endif
                                     </td>
-                                    <td class="td_new">{{ $pcrTest->sample_collection_date }}</td>
-                                    <td class="td_new">{{ $pcrTest->date_of_pcr_test }}</td>
-                                    <td class="td_new">{{ $pcrTest->result_published_date }}</td>
+                                    <td class="td_new">{{ $vaccination->name_of_vaccine }}</td>
+                                    <td class="td_new">{{ $vaccination->date_of_first_dose }}</td>
+                                    <td class="td_new">{{ $vaccination->date_of_second_dose }}</td>
+                                    <td class="td_new">{{ $vaccination->antibody_last_date }}</td>
                                     <td class="td_new">
-                                        @if ($pcrTest->pcr_result == 'positive')
-                                        <span class="badge badge-danger">Positive</span>
-                                        @elseif($pcrTest->pcr_result == 'negative')
-                                        <span class="badge badge-success">Negative</span>
-                                        @endif                                    
-                                    </td>
-                                    <td class="td_new">
-                                        <a href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                        <a href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                             <img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
                                                 alt="" class="new-r-icon">
                                         </a>
-                                        <a href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                        <a href="mailto:{{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                             <img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/gmail.png' ?? get_static_option('no_image')) }}"
                                                 alt="" class="new-r-icon">
                                         </a>
                                         <button class="btn btn-success copy-btn"
-                                            value="{{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
+                                            value="{{ route('share.user', ['id' => Crypt::encrypt($vaccination->user->id)]) }}">
                                             <i class="fa fa-copy"></i> Copy
                                         </button>
                                     </td>
                                     <td class="td_new">
-                                        <a href="{{ route('superAdmin.pcr.normal.edit', $pcrTest->id) }}"
+                                        <a href="{{ route('superAdmin.vaccination.normal.edit', $vaccination->id) }}"
                                         class="btn btn-info"><i class="fa fa-edit"></i> </a>
 
                                     <button class="btn btn-danger" onclick="delete_function(this)"
-                                        value="{{ route('superAdmin.pcr.normal.destroy', $pcrTest) }}"><i
+                                        value="{{ route('superAdmin.vaccination.normal.destroy', $vaccination) }}"><i
                                             class="fa fa-trash"></i> </button>
                                     </td>
                                 </tr>
@@ -118,10 +112,10 @@ Registered | PCR
                                     <th>Phone</th>
                                     <th>Gneder</th>
                                     <th>Image</th>
-                                    <th>Sample Collection</th>
-                                    <th>PCR Test</th>
-                                    <th>Result Published</th>
-                                    <th>PCR Result</th>
+                                    <th>Vaccine Name</th>
+                                    <th>First Dese</th>
+                                    <th>Second Dese</th>
+                                    <th>Antibody Last date</th>
                                     <th>Share</th>
                                     <th>Action</th>
                                 </tr>
