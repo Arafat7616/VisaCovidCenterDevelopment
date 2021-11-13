@@ -83,5 +83,17 @@ class UserSeeder extends Seeder
             $user->otp = rand(5, 9999);
             $user->save();
         }
+
+        // immigration officer seeded
+        $user = new User();
+        $user->name = 'Mr. Immigration Officer';
+        $user->email = 'immigrationofficer@gmail.com';
+        $user->phone = '01785520000';
+        $user->password = Hash::make('12345');
+        $user->user_type = 'immigration-officer';
+        $user->status = true;
+        $user->immigration_center_id = 1;
+        $user->otp = rand(5, 9999);
+        $user->save();
     }
 }
