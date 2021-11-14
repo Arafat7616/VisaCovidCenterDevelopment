@@ -7,6 +7,7 @@ use App\Http\Middleware\Pathologist;
 use App\Http\Middleware\Receptionist;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\Volunteer;
+use App\Http\Middleware\ImmigrationOfficer;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -76,5 +77,6 @@ class Kernel extends HttpKernel
         'pathologist' => Pathologist::class,
         'receptionist' => Receptionist::class,
         'administrator' => Administrator::class,
+        'immigrationOfficer' => ImmigrationOfficer::class,
     ];
 }
