@@ -1,7 +1,7 @@
 {{-- Navbar Starts  --}}
 <div class="nav flex-column  tab-height nav-pills me-3">
     <div class="nav-link">
-        <img height="70px;" width="70px;" src="{{ asset(get_static_option('logo') ?? get_static_opton('no_image')) }}" class="img-fluid" alt="">
+        <img height="80px;" width="80px;" src="{{ asset(get_static_option('logo') ?? get_static_opton('no_image')) }}" class="img-fluid" alt="">
     </div>
     <div class="nav-link active d-flex justify-content-center align-items-center">
         <a href="{{ route('immigrationOfficer.latestUser.show') }}">

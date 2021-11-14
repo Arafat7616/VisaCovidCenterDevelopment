@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class LatestUserController extends Controller
 {
    public function show(){
-       $latestImmigration = ImmigrationPass::where('immigration_center_id', Auth::user()->immigration_center_id)->first();
+       $latestImmigration = ImmigrationPass::where('immigration_center_id', Auth::user()->immigration_center_id)->orderBy('id', 'desc')->first();;
        return view('ImmigrationOfficer.latestUser.show', compact('latestImmigration'));
    }
 }
