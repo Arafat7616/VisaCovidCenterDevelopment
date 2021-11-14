@@ -44,6 +44,8 @@ class RegisterController extends Controller
             return 'volunteer/dashboard';
         } elseif (Auth::user()->user_type == 'administrator') {
             return 'administrator/dashboard';
+        } elseif (Auth::user()->user_type == 'immigration-officer') {
+            return 'immigration-officer/dashboard';
         } else {
             return route('login');
         }
