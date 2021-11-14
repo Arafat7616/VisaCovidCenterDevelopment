@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Expr\Include_;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +19,7 @@ include('administrator.php');
 include('receptionist.php');
 include('volunteer.php');
 include('pathologist.php');
+include('immigrationOfficer.php');
 
 // Route::get('/', function () {
 //     return view('welcome');

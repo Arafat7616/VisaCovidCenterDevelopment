@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PriceSeeder::class);
         $this->call(VaccinationSeeder::class);
         $this->call(BoosterSeeder::class);
+        $this->call(ImmigrationCenterSeeder::class);
+        $this->call(ImmigrationPassSeeder::class);
 
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);

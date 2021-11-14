@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
+use Illuminate\Support\Facades\Auth;
 
 class ConfirmPasswordController extends Controller
 {
@@ -26,7 +27,30 @@ class ConfirmPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
+    public function redirectTo()
+    {
+        if(Auth::user()){
+            if (Auth::user()->user_type == 'super-admin') {
+                return 'super-admin/dashboard';
+            } elseif (Auth::user()->user_type == 'receptionist') {
+                return 'receptionist/dashboard';
+            } elseif (Auth::user()->user_type == 'pathologist') {
+                return 'pathologist/dashboard';
+            } elseif (Auth::user()->user_type == 'volunteer') {
+                return 'volunteer/dashboard';
+            } elseif (Auth::user()->user_type == 'administrator') {
+                return 'administrator/dashboard';
+            } elseif (Auth::user()->user_type == 'immigration-officer') {
+                return 'immigration-officer/dashboard';
+            } else {
+                return route('login');
+            }
+        }else{
+            return route('login');
+        }
+    }
 
     /**
      * Create a new controller instance.
