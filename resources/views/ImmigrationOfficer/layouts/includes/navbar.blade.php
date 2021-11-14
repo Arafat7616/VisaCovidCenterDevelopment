@@ -1,50 +1,23 @@
 {{-- Navbar Starts  --}}
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset(get_static_option('logo') ?? 'assets/center-part/image/logo.png') }}" alt="" class="header__logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Volunteers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Registered</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Premium Registered</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Regular</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Premium</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="profile__name">{{ Auth::user()->name }}</span>
-                            <img class="profile__image" src="{{ asset(Auth::user()->image ?? get_static_option('no_image')) }}" alt="">
-                            <br> <span class="text-capitalize profile__designation">{{ Auth::user()->user_type }}</span>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<div class="nav flex-column  tab-height nav-pills me-3">
+    <div class="nav-link">
+        <img height="70px;" width="70px;" src="{{ asset(get_static_option('logo') ?? get_static_opton('no_image')) }}" class="img-fluid" alt="">
+    </div>
+    <div class="nav-link active d-flex justify-content-center align-items-center">
+        <a href="{{ route('immigrationOfficer.latestUser.show') }}">
+            <i class="fa fa-tv fa-2x text-light"></i>
+        </a>
+    </div>
+    <div class="nav-link d-flex justify-content-center align-items-center my-4">
+
+        <a href="{{ route('immigrationOfficer.immigrationPassedList.index') }}">
+            <i class="fa fa-history fa-2x text-light"></i>
+        </a>
+    </div>
+    <div class="nav-link d-flex justify-content-center align-items-center">
+        <a href="{{ route('immigrationOfficer.profile') }}">
+            <i class="fa fa-user-circle fa-2x text-light"></i>
+        </a>
+    </div>
+</div>
 {{-- Navbar Ends  --}}

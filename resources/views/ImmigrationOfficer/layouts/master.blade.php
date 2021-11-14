@@ -12,14 +12,10 @@
         @csrf
     </form>
     @endif
-
-    @include('ImmigrationOfficer.layouts.includes.navbar')
-    <div>
+    <div class="d-flex align-items-start">
+        @include('ImmigrationOfficer.layouts.includes.navbar')
         @yield('content')
     </div>
-
-    @include('ImmigrationOfficer\layouts\includes\footer')
-
     @include('ImmigrationOfficer.layouts.includes.foot')
 </body>
 

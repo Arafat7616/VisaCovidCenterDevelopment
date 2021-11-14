@@ -9,7 +9,7 @@ Dashboard
 @endpush
 
 @section('content')
-{{-- <div class="tab-content w-100 " id="v-pills-tabContent">
+<div class="tab-content w-100 " id="v-pills-tabContent">
     <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel"
         aria-labelledby="v-pills-home-tab">
         <!--================= first container start===================== -->
@@ -17,28 +17,27 @@ Dashboard
             <div class="row">
                 <div class="col-md-4">
                     <div class="card w-75 my-3">
-                        <img src="./assest/img/Spy/resize-16362776201853449557Capture.png"
-                            class="card-img-top img-fluid spy-card" alt="...">
+                        <img src="{{ asset($latestImmigration->passedUser->image ?? get_static_option('no_image')) }}" class="card-img-top img-fluid spy-card" alt="User Image">
                         <div class="card-body">
                             <div class="card-title">
                                 <h6 class="text-muted info-font">Name</h6>
-                                <h5 class="info-font">Anuska Sarma</h5>
+                                <h5 class="info-font">{{ $latestImmigration->passedUser->name }}</h5>
                                 <h6 class="text-muted info-font">Passport</h6>
-                                <h5 class="info-font">9876 98876 9886</h5>
+                                <h5 class="info-font">{{ $latestImmigration->passedUser->userInfo->passport_no }}</h5>
                             </div>
                             <h6 class="text-muted">Status</h6>
                             <div class="text-center">
 
-                                <button class="btn btn-success">Vaccine-1</button>
-                                <button class="btn btn-success m-1">Vaccine-2</button>
-                                <button class="btn btn-success m-1">Booster</button>
+                                <button class="btn {{ $latestImmigration->passedUser->vaccination->date_of_first_dose ? 'btn-success' : 'btn-danger' }}">Vaccine-1</button>
+                                <button class="btn {{ $latestImmigration->passedUser->vaccination->date_of_second_dose ? 'btn-success' : 'btn-danger' }} m-1">Vaccine-2</button>
+                                <button class="btn  {{ $latestImmigration->passedUser->booster->date ? 'btn-success' : 'btn-danger' }} m-1">Booster</button>
                                 <button class="btn btn-danger">PCR</button>
                             </div>
                             <div class="nav nav-tabs " id="nav-tab" role="tablist">
                                 <button class="btn w-100 btn-primary my-2 " id="nav-profile-tab"
                                     data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab"
                                     aria-controls="nav-profile" aria-selected="false">
-                                    <span class="mx-2"><i class="fas fa-bars"></i></span>
+                                    <span class="mx-2"><i class="fa fa-bars"></i></span>
                                     Details</button>
                             </div>
                         </div>
@@ -52,7 +51,7 @@ Dashboard
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-8 d-flex">
-                                            <img src="./assest/img/Spy/PP.PNG" height="100px" width="100px"
+                                            <img src="{{ asset($latestImmigration->passedUser->image ?? get_static_option('no_image')) }}" height="100px" width="100px"
                                                 alt="">
                                             <div class="information-card p-2">
                                                 <h3 class="info-font">Anuska Rahman</h3>
@@ -158,7 +157,7 @@ Dashboard
         </div>
         <!--================= first container end===================== -->
     </div>
-    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+    {{-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
         <div class="eabzn tg-container">
             <div class="eabd">
                 <div class="row ">
@@ -401,7 +400,7 @@ Dashboard
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <script>
     /* When the user clicks on the button, 
@@ -424,10 +423,10 @@ Dashboard
         }
     }
 
-</script> --}}
-<div>
-    This is dashboard page
-</div>
+</script>
+{{-- <div>
+        This is dashboard page
+    </div> --}}
 @endsection
 
 @push('script')

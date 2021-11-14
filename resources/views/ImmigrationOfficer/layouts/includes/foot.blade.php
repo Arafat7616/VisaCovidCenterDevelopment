@@ -1,5 +1,6 @@
 <!-- Start JS -->
 <script src="{{ asset('assets/center-part/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/immigration/js/main.js') }}"></script>
 <!-- End JS -->
 
 <script src="{{ asset('assets/helper.js') }}"></script>

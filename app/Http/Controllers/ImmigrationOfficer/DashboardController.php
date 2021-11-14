@@ -10,8 +10,8 @@ class DashboardController extends Controller
 {
     public function dashboard(){
    
-        // return redirect()->route('immigrationOfficer.user.pcr');
-        return view('ImmigrationOfficer.dashboard');
+        return redirect()->route('immigrationOfficer.latestUser.show');
+        // return view('ImmigrationOfficer.dashboard');
     }
 
     public function profile(){
