@@ -9,13 +9,9 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        $user = Auth::user();
-
-        echo "<pre>";
-        print_r($user);
-        echo "</pre>";
-        // return redirect()->route('volunteer.user.pcr');
-        // return view('ImmigrationOfficer.dashboard');
+   
+        // return redirect()->route('immigrationOfficer.user.pcr');
+        return view('ImmigrationOfficer.dashboard');
     }
 
     public function profile(){

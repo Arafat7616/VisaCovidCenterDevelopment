@@ -8,4 +8,6 @@ Route::group(['prefix' => 'immigration-officer/', 'namespace' => 'ImmigrationOff
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
     // Route::get('profile', 'DashboardController@profile')->name('profile');
+
+    
 });
