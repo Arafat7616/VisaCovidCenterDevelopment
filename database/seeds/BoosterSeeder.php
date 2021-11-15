@@ -21,6 +21,7 @@ class BoosterSeeder extends Seeder
             $booster->date = null;
             $booster->date_of_registration = null;
             $booster->date = Carbon::now()->addDays(7);
+            // $booster->date = null;
             $booster->antibody_last_date = Carbon::now()->addDays(180);
             $booster->user_id = $i;
             $booster->center_id = 1;
@@ -36,6 +37,7 @@ class BoosterSeeder extends Seeder
             $booster->date = null;
             $booster->date_of_registration = null;
             $booster->date = Carbon::now()->addDays(10);
+            // $booster->date = null;
             $booster->antibody_last_date = Carbon::now()->addDays(180);
             $booster->user_id = $i;
             $booster->center_id = 1;

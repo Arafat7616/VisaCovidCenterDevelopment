@@ -34,10 +34,13 @@ class RedirectIfAuthenticated
                 } elseif (Auth::user()->user_type == 'immigration-officer') {
                     return redirect(RouteServiceProvider::ImmigrationOfficerDashboard);
                 } else {
-                    return route('login');
+                    // return route('login');
+                    return route('frontend.index');
+                    
                 }
             }else{
-                return route('login');
+                // return route('login');
+                return route('frontend.index');
             }
         }
 

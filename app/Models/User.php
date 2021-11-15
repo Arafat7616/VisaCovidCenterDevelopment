@@ -51,6 +51,11 @@ class User extends Authenticatable
         return $this->belongsTo(Center::class, 'center_id');
     }
 
+    public function immigrationCenter()
+    {
+        return $this->belongsTo(ImmigrationCenter::class, 'immigration_center_id');
+    }
+
     public function userInfo()
     {
         return $this->hasOne(UserInfo::class, 'user_id');

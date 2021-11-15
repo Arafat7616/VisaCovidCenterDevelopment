@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assest/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assest/css/style.css" />
+    <link rel="stylesheet" href="./assest/css/login.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+    <title>OTP | Immigration portal</title>
+</head>
+        
+<body>
+        <div class="col-12 d-flex">
+                <div class="left-log col-md-6">
+                    <img src="./assest/img/Portal/Login.png" alt="">
+                </div>
+    
+                <div class="right-log col-md-6">
+                    <center>
+                        <div class="border-top">
+                            <div class="log-form">
+                                <img src="./assest/img/Portal/applog.png" alt="">
+                                <form class="justify-content-center">
+                                    <div class="form-group">
+                                        <button type="submit" class="form-control form-control-in-btn btn-primary" id="formGroupExampleInput2" disabled >OTP Verification</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="from-gorup otp-font">
+                                            <input type="text" class="inputs otp-text" maxlength="1">
+                                            <input type="text" class="inputs otp-text" maxlength="1">
+                                            <input type="text" class="inputs otp-text" maxlength="1">
+                                            <input type="text" class="inputs otp-text" maxlength="1">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="log-from-text ">An OTP is sent to your phone.<br>
+                                            <span><a href="signup.html">Resend</a></span>
+                                        </p>
+                                    </div>
+                                    <div class="form-group otp-btn-pa">
+                                        <button type="submit" class="form-control form-control-in-btn btn-success" id="formGroupExampleInput2" >Verify</button>
+                                    </div>
+                                  </form>
+                            </div>
+                        </div>
+                    </center>
+
+            </div>
+
+        </div>
+
+</body>
+<script>
+    $(".inputs").keyup(function () {
+        if (this.value.length == this.maxLength) {
+          $(this).next('.inputs').focus();
+        }
+    });
+</script>
+<script type="text/javascript" src="./assest/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./assest/js/main.js"></script>
+
+</html>

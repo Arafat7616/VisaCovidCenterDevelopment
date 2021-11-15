@@ -13,4 +13,9 @@ class ImmigrationPass extends Model
         'date',
         'status',
     ];
+
+    public function passedUser()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

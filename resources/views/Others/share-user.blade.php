@@ -127,7 +127,8 @@
         </div>
         <div class="row my-5">
             <div class="new_registration__qr text-center">
-                {!! QrCode::size(200)->generate(route('share.user', ['id' => Crypt::encrypt($user->id)])) !!} </div>
+                {!! QrCode::size(200)->generate(route('share.user', ['id' => Crypt::encrypt($user->id)])) !!}
+             </div>
         </div>
 
         <div class="row my-5">
