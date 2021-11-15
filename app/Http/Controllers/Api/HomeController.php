@@ -12,6 +12,7 @@ use App\Models\Slider;
 use App\Models\State;
 use App\Models\User;
 use App\Models\Vaccination;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -164,6 +165,128 @@ class HomeController extends Controller
             return response()->json([
                 "status" => "0",
                 "navigationPath" => "Booster",
+            ]);
+        }
+    }
+
+
+    public function vaccinationLeftTime(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+        $vaccinationStatus = Vaccination::where('user_id', $existUser->id)->first();
+        $centerAddress = Center::where('id', $vaccinationStatus->center_id)->select(['address'])->first();
+
+
+        $start = Carbon::parse(Carbon::now());
+        $end = Carbon::parse($vaccinationStatus->date_of_registration);
+
+        if ($start > $end)
+        {
+            $leftDay = "00";
+            $leftHour ="00";
+            //$leftHour =;
+        }else{
+            $interval = $start->diff($end, false);
+            $leftDay = $interval->format('%a');//now do whatever you like with $days
+            $leftHour = $interval->format('%h');//now do whatever you like with $days
+        }
+
+
+        if ($vaccinationStatus){
+            return response()->json([
+                "status" => "1",
+                "leftHour" => $leftHour,
+                "leftDay" => $leftDay,
+                "centerAddress" => $centerAddress->address,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "Not found",
+            ]);
+        }
+    }
+
+    public function pcrLeftTime(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $centerAddress = Center::where('id', $pcrStatus->center_id)->select(['address'])->first();
+
+
+        $start = Carbon::parse(Carbon::now());
+        $end = Carbon::parse($pcrStatus->date_of_registration);
+
+
+        if ($start > $end)
+        {
+            $leftDay = "00";
+            $leftHour ="00";
+            //$leftHour =;
+        }else{
+            $interval = $start->diff($end, false);
+            $leftDay = $interval->format('%a');//now do whatever you like with $days
+            $leftHour = $interval->format('%h');//now do whatever you like with $days
+        }
+
+
+        if ($pcrStatus){
+            return response()->json([
+                "status" => "1",
+                "leftHour" => $leftHour,
+                "leftDay" => $leftDay,
+                "centerAddress" => $centerAddress->address,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "Not found",
+            ]);
+        }
+    }
+
+    public function boosterLeftTime(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+        $boosterStatus = Booster::where('user_id', $existUser->id)->first();
+        $centerAddress = Center::where('id', $boosterStatus->center_id)->select(['address'])->first();
+
+
+        $start = Carbon::parse(Carbon::now());
+        $end = Carbon::parse($boosterStatus->date_of_registration);
+
+
+        if ($start > $end)
+        {
+            $leftDay = "00";
+            $leftHour ="00";
+            //$leftHour =;
+        }else{
+            $interval = $start->diff($end, false);
+            $leftDay = $interval->format('%a');//now do whatever you like with $days
+            $leftHour = $interval->format('%h');//now do whatever you like with $days
+        }
+
+        if ($boosterStatus){
+            return response()->json([
+                "status" => "1",
+                "leftHour" => $leftHour,
+                "leftDay" => $leftDay,
+                "centerAddress" => $centerAddress->address,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "Not found",
             ]);
         }
     }
