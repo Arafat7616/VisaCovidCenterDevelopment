@@ -13,7 +13,7 @@ Route::group(['prefix' => 'immigration-officer/', 'namespace' => 'ImmigrationOff
         Route::get('show', 'LatestUserController@show')->name('show');
     });
 
-    Route::group(['prefix' => 'immigration-passed-list/', 'as' => 'immigrationPassedList.'], function () {
+    Route::group(['prefix' => 'immigration-passed/', 'as' => 'immigrationPassed.'], function () {
         Route::get('index', 'ImmigrationPassedListController@index')->name('index');
     });
 });

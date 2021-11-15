@@ -12,6 +12,6 @@ class ImmigrationPassedListController extends Controller
 {
     public function index(){
         $immigrationPasses = ImmigrationPass::where('immigration_center_id', Auth::user()->immigration_center_id)->orderBy('id', 'desc')->get();;
-        return view('ImmigrationOfficer.immigrationPassedList.index', compact('immigrationPasses'));
+        return view('ImmigrationOfficer.immigrationPassed.index', compact('immigrationPasses'));
     }
 }
