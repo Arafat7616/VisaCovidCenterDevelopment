@@ -25,7 +25,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('login') }}">Medical center portal</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Govt. Portal</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Immigration portal</a></li>
+                            <li><a class="dropdown-item" href="{{ route('auth.immigrationOfficerLogin') }}">Immigration Officer</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Travel Agency</a></li>
                         </ul>
                     </li>

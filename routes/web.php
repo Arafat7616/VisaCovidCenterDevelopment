@@ -32,6 +32,7 @@ Route::post('/subscribe/store', 'LandingPageController@subscribeStore')->name('f
 Auth::routes(['register' => false]);
 
 //log in route
+Route::get('immigration-officer-login', 'Auth\CustomLoginController@immigrationOfficerLogin')->name('auth.immigrationOfficerLogin');
 Route::post('login/getOtp', 'Auth\CustomLoginController@getMyOTP');
 Route::post('login/checkOtp', 'Auth\CustomLoginController@checkOtp');
 
