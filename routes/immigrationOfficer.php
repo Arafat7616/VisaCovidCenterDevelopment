@@ -7,5 +7,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'immigration-officer/', 'namespace' => 'ImmigrationOfficer', 'as' => 'immigrationOfficer.', 'middleware' => ['auth', 'immigrationOfficer']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
-    // Route::get('profile', 'DashboardController@profile')->name('profile');
+    Route::get('profile', 'DashboardController@profile')->name('profile');
+
+    Route::group(['prefix' => 'latest-user/', 'as' => 'latestUser.'], function () {
+        Route::get('show', 'LatestUserController@show')->name('show');
+    });
+
+    Route::group(['prefix' => 'immigration-passed/', 'as' => 'immigrationPassed.'], function () {
+        Route::get('index', 'ImmigrationPassedListController@index')->name('index');
+        Route::get('show/{id}', 'ImmigrationPassedListController@show')->name('show');
+    });
 });
