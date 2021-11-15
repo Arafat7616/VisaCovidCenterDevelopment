@@ -8,18 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function dashboard(){
-   
+    public function dashboard()
+    {
         return redirect()->route('immigrationOfficer.latestUser.show');
         // return view('ImmigrationOfficer.dashboard');
     }
 
-    public function profile(){
+    public function profile()
+    {
         $user = Auth::user();
-
-        echo "<pre>";
-        print_r($user);
-        echo "</pre>";
-        // return view('ImmigrationOfficer.profile.index', compact('user'));
+        return view('ImmigrationOfficer.profile.index', compact('user'));
     }
 }

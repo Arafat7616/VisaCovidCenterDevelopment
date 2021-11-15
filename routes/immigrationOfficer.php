@@ -15,5 +15,6 @@ Route::group(['prefix' => 'immigration-officer/', 'namespace' => 'ImmigrationOff
 
     Route::group(['prefix' => 'immigration-passed/', 'as' => 'immigrationPassed.'], function () {
         Route::get('index', 'ImmigrationPassedListController@index')->name('index');
+        Route::get('show/{id}', 'ImmigrationPassedListController@show')->name('show');
     });
 });

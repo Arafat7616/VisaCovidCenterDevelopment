@@ -8,13 +8,13 @@
             <i class="fa fa-tv fa-2x text-light"></i>
         </a>
     </div>
-    <div class="nav-link {{\Illuminate\Support\Facades\Request::is('immigration-officer/immigration-passed-list/*') ? 'active': ''}} d-flex justify-content-center align-items-center my-4">
+    <div class="nav-link {{\Illuminate\Support\Facades\Request::is('immigration-officer/immigration-passed/*') ? 'active': ''}} d-flex justify-content-center align-items-center my-4">
 
-        <a href="{{ route('immigrationOfficer.immigrationPassedList.index') }}">
+        <a href="{{ route('immigrationOfficer.immigrationPassed.index') }}">
             <i class="fa fa-history fa-2x text-light"></i>
         </a>
     </div>
-    <div class="nav-link {{\Illuminate\Support\Facades\Request::is('immigration-officer/profile/*') ? 'active': ''}} d-flex justify-content-center align-items-center">
+    <div class="nav-link {{\Illuminate\Support\Facades\Request::is('immigration-officer/profile') ? 'active': ''}} d-flex justify-content-center align-items-center">
         <a href="{{ route('immigrationOfficer.profile') }}">
             <i class="fa fa-user-circle fa-2x text-light"></i>
         </a>

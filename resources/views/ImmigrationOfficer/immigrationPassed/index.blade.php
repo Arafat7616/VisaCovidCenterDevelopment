@@ -51,15 +51,15 @@ Dashboard
 
         <div>
             <tbody>
-                @foreach ($immigrationPasses as $immigrationPasse)
+                @foreach ($immigrationPasses as $immigrationPass)
                 <tr>
-                    <td class="td_new pcr-test-id">{{ $immigrationPasse->id }}</td>
-                    <td class="td_new">{{ Carbon\Carbon::parse($immigrationPasse->date)->format('h:i:A d M Y') }}</td>
-                    <td class="td_new">{{ $immigrationPasse->passedUser->name }}</td>
-                    <td class="td_new">{{ $immigrationPasse->passedUser->userInfo->passport_no }}</td>
+                    <td class="td_new pcr-test-id">{{ $immigrationPass->id }}</td>
+                    <td class="td_new">{{ Carbon\Carbon::parse($immigrationPass->date)->format('h:i:A d M Y') }}</td>
+                    <td class="td_new">{{ $immigrationPass->passedUser->name }}</td>
+                    <td class="td_new">{{ $immigrationPass->passedUser->userInfo->passport_no }}</td>
                     <td class="td_new">
-                        @if($immigrationPasse->passedUser->vaccination)
-                        @if($immigrationPasse->passedUser->vaccination->date_of_first_dose)
+                        @if($immigrationPass->passedUser->vaccination)
+                        @if($immigrationPass->passedUser->vaccination->date_of_first_dose)
                         <button class="btn btn-success">Pass</button>
                         @else
                         <button class="btn btn-danger">Fail</button>
@@ -69,8 +69,8 @@ Dashboard
                         @endif
                     </td>
                     <td class="td_new">
-                        @if($immigrationPasse->passedUser->vaccination)
-                        @if($immigrationPasse->passedUser->vaccination->date_of_second_dose)
+                        @if($immigrationPass->passedUser->vaccination)
+                        @if($immigrationPass->passedUser->vaccination->date_of_second_dose)
                         <button class="btn btn-success">Pass</button>
                         @else
                         <button class="btn btn-danger">Fail</button>
@@ -82,8 +82,8 @@ Dashboard
 
                     </td>
                     <td class="td_new">
-                        @if($immigrationPasse->passedUser->booster)
-                        @if($immigrationPasse->passedUser->booster->date)
+                        @if($immigrationPass->passedUser->booster)
+                        @if($immigrationPass->passedUser->booster->date)
                         <button class="btn btn-success">Pass</button>
                         @else
                         <button class="btn btn-danger">Fail</button>
@@ -93,8 +93,8 @@ Dashboard
                         @endif
                     </td>
                     <td class="td_new">
-                        @if($immigrationPasse->passedUser->pcrTest)
-                        @if($immigrationPasse->passedUser->pcrTest->pcr_result == 'negative')
+                        @if($immigrationPass->passedUser->pcrTest)
+                        @if($immigrationPass->passedUser->pcrTest->pcr_result == 'negative')
                         <button class="btn btn-success">Pass</button>
                         @else
                         <button class="btn btn-danger">Fail</button>
@@ -104,7 +104,7 @@ Dashboard
                         @endif
                     </td>
                     <td class="td_new">                      
-                        <a href="" class="btn btn-info"> <i class="fa fa-eye"></i> View</a>
+                        <a href="{{ route('immigrationOfficer.immigrationPassed.show', $immigrationPass->id) }}" class="btn btn-info"> <i class="fa fa-eye"></i> View</a>
                     </td>
                 </tr>
                 @endforeach
