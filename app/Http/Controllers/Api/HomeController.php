@@ -11,9 +11,11 @@ use App\Models\PcrTest;
 use App\Models\Slider;
 use App\Models\State;
 use App\Models\User;
+use App\Models\UserInfo;
 use App\Models\Vaccination;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -289,5 +291,88 @@ class HomeController extends Controller
                 "message" => "Not found",
             ]);
         }
+    }
+
+    public function userProfile(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+        $boosterStatus = Booster::where('user_id', $existUser->id)->first();
+        $centerAddress = Center::where('id', $boosterStatus->center_id)->select(['address'])->first();
+
+        if ($boosterStatus){
+            return response()->json([
+                "status" => "1",
+                "leftHour" => "fsdf",
+                "leftDay" => "10-10",
+                "centerAddress" => "tetet",
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "Not found",
+            ]);
+        }
+    }
+
+    public function editProfile(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->first();
+        $userInfo = UserInfo::where('user_id', $existUser->id)->select(['passport_no','present_address'])->first();
+
+        if ($existUser){
+            return response()->json([
+                "status" => "1",
+                "user" => $existUser,
+                "address" => $userInfo->present_address,
+                "passport" => $userInfo->passport_no,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "Not found",
+            ]);
+        }
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+        $exitUser->name = $userArray['name'];
+        $exitUser->phone = $userArray['phone'];
+        if ($userArray['password']){
+            $exitUser->password = Hash::make($userArray['password']);
+        }else{
+            $exitUser->password = $exitUser->password;
+        }
+        $exitUser->save();
+
+        $existUserInfo = $exitUser->userInfo;
+        $existUserInfo->present_address = $userArray['address'];
+        $existUserInfo->passport_no = $userArray['passport'];
+
+        try {
+            $existUserInfo->save();
+            return response()->json([
+                "message"=>"Successfully Updated",
+                "status"=>"1",
+            ]);
+        }catch (\Exception $exception){
+            return response()->json([
+                "message"=>$exception->getMessage(),
+                "status"=>"0",
+            ]);
+        }
+
+
+
     }
 }
