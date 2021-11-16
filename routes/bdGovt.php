@@ -23,15 +23,10 @@ Route::group(['prefix' => 'bd-govt/', 'namespace' => 'BdGovt', 'as' => 'bdGovt.'
         Route::get('profile/{id}', 'CenterController@profile')->name('profile');         
     });
 
-    // route for setting
-    Route::group(['prefix' => 'setting/', 'as' => 'setting.'], function () {
-        // route for landing-page
-        Route::group(['prefix' => 'landing-page/', 'as' => 'landingPage.'], function () {
-            Route::resource('subscriber', 'SubscriberController', [
-                'except' => ['create', 'show', 'edit', 'update', 'store','destroy']
-            ]);
-        });
-    });
+    // route for subscriber
+    Route::resource('subscriber', 'SubscriberController', [
+        'except' => ['create', 'show', 'edit', 'update', 'store','destroy']
+    ]);
     // route for registered pcr
     Route::resource('pcr-normal', 'NormalPCRController', [
         'except' => ['create', 'store','destroy','update','edit'],

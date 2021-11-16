@@ -16,7 +16,7 @@ class SubscriberController extends Controller
     public function index(Request $request)
     {
         $subscribers = Subscriber::all();
-        return view('BdGovt.setting.landingPage.subscriber.index', compact('subscribers'));
+        return view('BdGovt.subscriber.index', compact('subscribers'));
     }
 
     /**
