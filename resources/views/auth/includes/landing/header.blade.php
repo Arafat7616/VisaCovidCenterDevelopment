@@ -20,13 +20,13 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Administratior portal
+                            Administrator portals
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Medical center portal</a></li>
-                            <li><a class="dropdown-item" href="#">Govt. Portal</a></li>
-                            <li><a class="dropdown-item" href="#">Immigration portal</a></li>
-                            <li><a class="dropdown-item" href="#">Travel Agency</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Medical center portal</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Govt. Portal</a></li>
+                            <li><a class="dropdown-item" href="{{ route('auth.immigrationOfficerLogin') }}">Immigration Officer</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Travel Agency</a></li>
                         </ul>
                     </li>
 

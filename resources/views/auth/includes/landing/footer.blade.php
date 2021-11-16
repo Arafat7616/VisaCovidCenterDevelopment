@@ -12,7 +12,7 @@
                 <div class="col-md-3 text-center mb-3">
                     <ul class="footer-links">
                         <h5 class="text-light mb-3">Links</h5>
-                        <li><a href="{{ route('login') }}" class="footer-link text-light">Immigration portal</a></li>
+                        <li><a href="{{ route('auth.immigrationOfficerLogin') }}" class="footer-link text-light">Immigration Officer</a></li>
                         <li class="my-3"><a href="{{ route('login') }}" class="footer-link text-light">Government portal</a></li>
                         <li class="my-3"><a href="{{ route('login') }}" class="footer-link text-light">Medical Center Administrator</a></li>
                         <li><a target="_blank" href="{{ get_static_option('download_btn_link') }}" class="footer-link text-light">Download App</a></li>

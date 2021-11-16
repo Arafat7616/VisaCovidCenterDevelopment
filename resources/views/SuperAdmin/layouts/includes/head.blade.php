@@ -14,10 +14,15 @@
 <link href=" {{ asset('assets/super-admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/icons.css') }}" rel="stylesheet" type="text/css">
 <link href=" {{ asset('assets/super-admin/css/style.css') }}" rel="stylesheet" type="text/css">
+<link href=" {{ asset('assets/css/_dropdown.css') }}" rel="stylesheet" type="text/css">
+
 
 
 <!--====== AJAX ======-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @stack('css')
 

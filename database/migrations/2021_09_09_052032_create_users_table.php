@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('otp_verified_at')->nullable();
             $table->boolean('status')->default(0);
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('immigration_center_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

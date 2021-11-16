@@ -50,5 +50,27 @@ Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegis
 Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boosterRegistration');
 
 
+//Service Status Check
+
+Route::post('home/vaccine/statusCheck', 'Api\HomeController@VaccineStatusCheck');
+Route::post('home/pcr/statusCheck', 'Api\HomeController@PrcStatusCheck');
+Route::post('home/booster/statusCheck', 'Api\HomeController@BoosterStatusCheck');
+
+
+//Service time status check
+Route::post('home/vaccination/leftTime', 'Api\HomeController@vaccinationLeftTime');
+Route::post('home/pcr/leftTime', 'Api\HomeController@pcrLeftTime');
+Route::post('home/booster/leftTime', 'Api\HomeController@boosterLeftTime');
+
+// Profile
+Route::post('home/profile', 'Api\HomeController@userProfile');
+Route::post('home/editProfile', 'Api\HomeController@editProfile');
+Route::post('home/updateProfile', 'Api\HomeController@updateProfile');
+
+
+
+
+
+
 
 

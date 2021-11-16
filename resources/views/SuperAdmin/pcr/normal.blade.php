@@ -37,7 +37,7 @@ Registered | PCR
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-warning">
+                <div class="panel panel-dark">
                     <div class="panel-heading">
                         <h3 class="panel-title text-white">Registered PCR list</h3>
                     </div>
@@ -53,7 +53,8 @@ Registered | PCR
                                     <th>Sample Collection</th>
                                     <th>PCR Test</th>
                                     <th>Result Published</th>
-                                    <th>Share.</th>
+                                    <th>PCR Result</th>
+                                    <th>Share</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -78,6 +79,13 @@ Registered | PCR
                                     <td class="td_new">{{ $pcrTest->sample_collection_date }}</td>
                                     <td class="td_new">{{ $pcrTest->date_of_pcr_test }}</td>
                                     <td class="td_new">{{ $pcrTest->result_published_date }}</td>
+                                    <td class="td_new">
+                                        @if ($pcrTest->pcr_result == 'positive')
+                                        <span class="badge badge-danger">Positive</span>
+                                        @elseif($pcrTest->pcr_result == 'negative')
+                                        <span class="badge badge-success">Negative</span>
+                                        @endif                                    
+                                    </td>
                                     <td class="td_new">
                                         <a href="whatsapp://send?text={{ route('share.user', ['id' => Crypt::encrypt($pcrTest->user->id)]) }}">
                                             <img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/whatsapp.png' ?? get_static_option('no_image')) }}"
@@ -113,7 +121,8 @@ Registered | PCR
                                     <th>Sample Collection</th>
                                     <th>PCR Test</th>
                                     <th>Result Published</th>
-                                    <th>Share.</th>
+                                    <th>PCR Result</th>
+                                    <th>Share</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>

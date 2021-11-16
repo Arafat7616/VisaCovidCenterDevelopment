@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class CustomLoginController extends Controller
 {
+    // immigration officer login page
+    public function immigrationOfficerLogin(){
+        return view('auth.immigrationOfficer.immigration-officer-login');
+    }
+
     public function getMyOTP(Request $request)
     {
         $request->validate([
