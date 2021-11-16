@@ -75,24 +75,8 @@ Center list
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        @if ($center->status == 0)
-                                        <button class="btn btn-success" onclick="activeNow(this)" value="{{ route('bdGovt.manageCenter.activeNow', $center->id) }}">
-                                            <i class="mdi mdi-check"></i>
-                                        </button>
-                                        @elseif($center->status == 1)
-                                        <button class="btn btn-danger" onclick="inactiveNow(this)" value="{{ route('bdGovt.manageCenter.inactiveNow', $center->id) }}">
-                                            <i class="mdi mdi-close"></i>
-                                        </button>
-                                        @endif
-
-                                        <button class="btn btn-danger" onclick="deleteNow(this)" value="{{ route('bdGovt.manageCenter.deleteNow', $center->id) }}">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
                                         <a class="btn btn-info" href="{{ route('bdGovt.manageCenter.profile', $center->id) }}">
                                             <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a class="btn btn-info" href="{{ route('bdGovt.manageCenter.edit', $center->id) }}">
-                                            <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
                                 </tr>

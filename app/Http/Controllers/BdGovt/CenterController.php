@@ -26,110 +26,110 @@ class CenterController extends Controller
        return view('BdGovt.manageCenter.profile', compact('center'));
    }
 
-   public function edit($id)
-    {
-        $center = Center::findOrFail($id);
-        $countries = Country::all();
-        $cities = City::all();
-        $states = State::all();
-        return view('BdGovt.manageCenter.edit', compact('center', 'countries', 'cities', 'states'));
-    }
+//    public function edit($id)
+//     {
+//         $center = Center::findOrFail($id);
+//         $countries = Country::all();
+//         $cities = City::all();
+//         $states = State::all();
+//         return view('BdGovt.manageCenter.edit', compact('center', 'countries', 'cities', 'states'));
+//     }
 
-    public function update(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|unique:centers,email,'.$request->id,
-            'status' => 'required',
-            'address' => 'required',
-            'mapLocationLink' => 'required',
-            'zipCode' => 'required',
-            'tradeLicenceNo' => 'required',
-            'country' => 'required',
-            'state' => 'required',
-            'city' => 'required',
-        ]);
+    // public function update(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|unique:centers,email,'.$request->id,
+    //         'status' => 'required',
+    //         'address' => 'required',
+    //         'mapLocationLink' => 'required',
+    //         'zipCode' => 'required',
+    //         'tradeLicenceNo' => 'required',
+    //         'country' => 'required',
+    //         'state' => 'required',
+    //         'city' => 'required',
+    //     ]);
 
-            // center data store
-            $center =  Center::findOrFail($request->id);
-            $center->name = $request->name;
-            $center->email = $request->email;
+    //         // center data store
+    //         $center =  Center::findOrFail($request->id);
+    //         $center->name = $request->name;
+    //         $center->email = $request->email;
 
-            if (is_numeric($request->country)) {
-                $center->country_id = $request->country;
-            }
-            if (is_numeric($request->state)) {
-                $center->state_id = $request->state;
-            }
-            if (is_numeric($request->city)) {
-                $center->city_id = $request->city;
-            }
-            $center->trade_licence_no = $request->tradeLicenceNo;
-            $center->address = $request->address;
-            $center->zip_code = $request->zipCode;
-            $center->map_location = $request->mapLocationLink;
-            $center->status = $request->status;
-            $center->varification_status = false;
-            $center->save();
+    //         if (is_numeric($request->country)) {
+    //             $center->country_id = $request->country;
+    //         }
+    //         if (is_numeric($request->state)) {
+    //             $center->state_id = $request->state;
+    //         }
+    //         if (is_numeric($request->city)) {
+    //             $center->city_id = $request->city;
+    //         }
+    //         $center->trade_licence_no = $request->tradeLicenceNo;
+    //         $center->address = $request->address;
+    //         $center->zip_code = $request->zipCode;
+    //         $center->map_location = $request->mapLocationLink;
+    //         $center->status = $request->status;
+    //         $center->varification_status = false;
+    //         $center->save();
 
-            // return back()->withToastSuccess('Updated successfully');
-            Session::flash('message', 'Updated successfully!');
-            Session::flash('type', 'success');
-            return back();
+    //         // return back()->withToastSuccess('Updated successfully');
+    //         Session::flash('message', 'Updated successfully!');
+    //         Session::flash('type', 'success');
+    //         return back();
 
-    }
+    // }
 
-   public function activeNow($id)
-   {
-       $center = Center::findOrFail($id);
-       $center->status = 1;
-       try {
-           $center->save();
-           return response()->json([
-               'type' => 'success',
-               'message' => 'Successfully Updated'
-           ]);
-       } catch (\Exception $exception) {
-           return response()->json([
-               'type' => 'error',
-               'message' => $exception->getMessage()
-           ]);
-       }
-   }
+//    public function activeNow($id)
+//    {
+//        $center = Center::findOrFail($id);
+//        $center->status = 1;
+//        try {
+//            $center->save();
+//            return response()->json([
+//                'type' => 'success',
+//                'message' => 'Successfully Updated'
+//            ]);
+//        } catch (\Exception $exception) {
+//            return response()->json([
+//                'type' => 'error',
+//                'message' => $exception->getMessage()
+//            ]);
+//        }
+//    }
 
-   public function inactiveNow($id)
-   {
-       $center = Center::findOrFail($id);
-       $center->status = 0;
-       try {
-           $center->save();
-           return response()->json([
-               'type' => 'success',
-               'message' => 'Successfully Updated'
-           ]);
-       } catch (\Exception $exception) {
-           return response()->json([
-               'type' => 'error',
-               'message' => $exception->getMessage()
-           ]);
-       }
-   }
+//    public function inactiveNow($id)
+//    {
+//        $center = Center::findOrFail($id);
+//        $center->status = 0;
+//        try {
+//            $center->save();
+//            return response()->json([
+//                'type' => 'success',
+//                'message' => 'Successfully Updated'
+//            ]);
+//        } catch (\Exception $exception) {
+//            return response()->json([
+//                'type' => 'error',
+//                'message' => $exception->getMessage()
+//            ]);
+//        }
+//    }
 
-   public function deleteNow($id)
-   {
-       $center = Center::findOrFail($id);
-       $center->deleted_at = Carbon::now();
-       try {
-           $center->save();
-           return response()->json([
-               'type' => 'success',
-               'message' => 'Successfully Deleted'
-           ]);
-       } catch (\Exception $exception) {
-           return response()->json([
-               'type' => 'error',
-               'message' => $exception->getMessage()
-           ]);
-       }
-   }
+//    public function deleteNow($id)
+//    {
+//        $center = Center::findOrFail($id);
+//        $center->deleted_at = Carbon::now();
+//        try {
+//            $center->save();
+//            return response()->json([
+//                'type' => 'success',
+//                'message' => 'Successfully Deleted'
+//            ]);
+//        } catch (\Exception $exception) {
+//            return response()->json([
+//                'type' => 'error',
+//                'message' => $exception->getMessage()
+//            ]);
+//        }
+//    }
 }
