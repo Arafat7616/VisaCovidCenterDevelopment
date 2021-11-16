@@ -109,17 +109,17 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                        }else if(data.type == 'warning')
+                        }else if(data.type == 'error')
                         {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'warning',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 1500
+                            Swal.fire({                           
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
+                                showConfirmButton: true,
+                                // timer: 1500
                             })
                         }
-
                     },
                     error: function(xhr) {
                         var errorMessage = '<div class="card bg-danger">\n' +
@@ -168,21 +168,15 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            /*$('.otp-reg').show();
-                            $('.otp-sent-number').innerText($('#personPhone').val());
-                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");*/
-
-                            // setTimeout(function() {
-                            //     location.reload();
-                            // }, 800); //
-                        }else if(data.type == 'warning')
+                        }else if(data.type == 'error')
                         {
                             Swal.fire({
-                                position: 'top-end',
-                                icon: 'warning',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 1500
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
+                                showConfirmButton: true,
+                                // timer: 1500
                             })
                         }
 
@@ -248,14 +242,15 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                        }else if(data.type == 'warning')
+                        }else if(data.type == 'error')
                         {
                             Swal.fire({
-                                position: 'top-end',
-                                icon: 'warning',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 1500
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
+                                showConfirmButton: true,
+                                // timer: 1500
                             })
                         }
                     },

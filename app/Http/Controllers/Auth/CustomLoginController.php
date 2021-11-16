@@ -31,8 +31,8 @@ class CustomLoginController extends Controller
             {
                 if($user->status == 0){
                     return response()->json([
-                        'type' => 'warning',
-                        'message' => 'Sorry ! You are not Approved .'
+                        'type' => 'error',
+                        'message' => 'Sorry ! This account is not Activated. Please contact with admin . Thank you !'
                     ]);
                 }else{
                     if (Hash::check($request->password, $hashPassword))
@@ -45,20 +45,20 @@ class CustomLoginController extends Controller
                         ]);
                     }else{
                         return response()->json([
-                            'type' => 'warning',
+                            'type' => 'error',
                             'message' => 'Please Insert valid password'
                         ]);
                     }
                 }
             }else{
                 return response()->json([
-                    'type' => 'warning',
+                    'type' => 'error',
                     'message' => 'This account has been suspended! .Please contact with admin .'
                 ]);
             }
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'Please Insert valid phone no.'
             ]);
         }
@@ -85,7 +85,7 @@ class CustomLoginController extends Controller
             ]);
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',
             ]);
         }
