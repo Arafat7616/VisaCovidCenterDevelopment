@@ -71,11 +71,11 @@ class UserSeeder extends Seeder
         $user->save();
 
         // customer/user fake
-        for ($i=1; $i<=10 ; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $user = new User();
-            $user->name = 'Mr. User '.$i;
-            $user->email = 'user'.$i.'@gmail.com';
-            $user->phone = '0178552145'.$i;
+            $user->name = 'Mr. User ' . $i;
+            $user->email = 'user' . $i . '@gmail.com';
+            $user->phone = '0178552145' . $i;
             $user->password = Hash::make('12345');
             $user->user_type = 'user';
             $user->status = true;
@@ -93,6 +93,17 @@ class UserSeeder extends Seeder
         $user->user_type = 'immigration-officer';
         $user->status = true;
         $user->immigration_center_id = 1;
+        $user->otp = rand(5, 9999);
+        $user->save();
+
+        // bd govt seeded
+        $user = new User();
+        $user->name = 'Bangladesh Govt';
+        $user->email = 'bdgovt@gmail.com';
+        $user->phone = '01711120000';
+        $user->password = Hash::make('12345');
+        $user->user_type = 'bd-govt';
+        $user->status = true;
         $user->otp = rand(5, 9999);
         $user->save();
     }
