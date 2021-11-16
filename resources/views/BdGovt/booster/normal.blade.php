@@ -54,7 +54,6 @@ Registered | Booster
                                     <th>Date</th>
                                     <th>Antibody Last date</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,14 +91,6 @@ Registered | Booster
                                             <i class="fa fa-copy"></i> Copy
                                         </button>
                                     </td>
-                                    <td class="td_new">
-                                        <a href="{{ route('bdGovt.booster.normal.edit', $booster->id) }}"
-                                        class="btn btn-info"><i class="fa fa-edit"></i> </a>
-
-                                    <button class="btn btn-danger" onclick="delete_function(this)"
-                                        value="{{ route('bdGovt.booster.normal.destroy', $booster) }}"><i
-                                            class="fa fa-trash"></i> </button>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -114,7 +105,6 @@ Registered | Booster
                                     <th>Date</th>
                                     <th>Antibody Last date</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>

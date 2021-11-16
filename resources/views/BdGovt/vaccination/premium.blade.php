@@ -55,7 +55,6 @@ Premium | Vaccination
                                     <th>Second Dese</th>
                                     <th>Antibody Last date</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,14 +93,6 @@ Premium | Vaccination
                                             <i class="fa fa-copy"></i> Copy
                                         </button>
                                     </td>
-                                    <td class="td_new">
-                                        <a href="{{ route('bdGovt.vaccination.premium.edit', $vaccination->id) }}"
-                                        class="btn btn-info"><i class="fa fa-edit"></i> </a>
-
-                                    <button class="btn btn-danger" onclick="delete_function(this)"
-                                        value="{{ route('bdGovt.vaccination.premium.destroy', $vaccination) }}"><i
-                                            class="fa fa-trash"></i> </button>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -117,7 +108,6 @@ Premium | Vaccination
                                     <th>Second Dese</th>
                                     <th>Antibody Last date</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>

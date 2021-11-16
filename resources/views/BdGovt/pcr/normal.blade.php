@@ -55,7 +55,6 @@ Registered | PCR
                                     <th>Result Published</th>
                                     <th>PCR Result</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -100,14 +99,6 @@ Registered | PCR
                                             <i class="fa fa-copy"></i> Copy
                                         </button>
                                     </td>
-                                    <td class="td_new">
-                                        <a href="{{ route('bdGovt.pcr.normal.edit', $pcrTest->id) }}"
-                                        class="btn btn-info"><i class="fa fa-edit"></i> </a>
-
-                                    <button class="btn btn-danger" onclick="delete_function(this)"
-                                        value="{{ route('bdGovt.pcr.normal.destroy', $pcrTest) }}"><i
-                                            class="fa fa-trash"></i> </button>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -123,7 +114,6 @@ Registered | PCR
                                     <th>Result Published</th>
                                     <th>PCR Result</th>
                                     <th>Share</th>
-                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>

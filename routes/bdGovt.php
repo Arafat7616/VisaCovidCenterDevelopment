@@ -34,73 +34,73 @@ Route::group(['prefix' => 'bd-govt/', 'namespace' => 'BdGovt', 'as' => 'bdGovt.'
     });
     // route for registered pcr
     Route::resource('pcr-normal', 'NormalPCRController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'pcr.normal.index',
             'show' => 'pcr.normal.show',
-            'edit' => 'pcr.normal.edit',
-            'update' => 'pcr.normal.update',
-            'destroy' => 'pcr.normal.destroy',
+            // 'edit' => 'pcr.normal.edit',
+            // 'update' => 'pcr.normal.update',
+            // 'destroy' => 'pcr.normal.destroy',
         ]
     ]);
 
     // route for premium pcr
     Route::resource('pcr-premium', 'PremiumPCRController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'pcr.premium.index',
             'show' => 'pcr.premium.show',
-            'edit' => 'pcr.premium.edit',
-            'update' => 'pcr.premium.update',
-            'destroy' => 'pcr.premium.destroy',
+            // 'edit' => 'pcr.premium.edit',
+            // 'update' => 'pcr.premium.update',
+            // 'destroy' => 'pcr.premium.destroy',
         ]
     ]);
 
     // route for registered vaccination
     Route::resource('vaccination-normal', 'NormalVaccinationController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'vaccination.normal.index',
             'show' => 'vaccination.normal.show',
-            'edit' => 'vaccination.normal.edit',
-            'update' => 'vaccination.normal.update',
-            'destroy' => 'vaccination.normal.destroy',
+            // 'edit' => 'vaccination.normal.edit',
+            // 'update' => 'vaccination.normal.update',
+            // 'destroy' => 'vaccination.normal.destroy',
         ]
     ]);
 
     // route for premium vaccination
     Route::resource('vaccination-premium', 'PremiumVaccinationController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'vaccination.premium.index',
             'show' => 'vaccination.premium.show',
-            'edit' => 'vaccination.premium.edit',
-            'update' => 'vaccination.premium.update',
-            'destroy' => 'vaccination.premium.destroy',
+            // 'edit' => 'vaccination.premium.edit',
+            // 'update' => 'vaccination.premium.update',
+            // 'destroy' => 'vaccination.premium.destroy',
         ]
     ]);
 
     // route for registered booster
     Route::resource('booster-normal', 'NormalBoosterController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'booster.normal.index',
             'show' => 'booster.normal.show',
-            'edit' => 'booster.normal.edit',
-            'update' => 'booster.normal.update',
-            'destroy' => 'booster.normal.destroy',
+            // 'edit' => 'booster.normal.edit',
+            // 'update' => 'booster.normal.update',
+            // 'destroy' => 'booster.normal.destroy',
         ]
     ]);
 
     // route for premium booster
     Route::resource('booster-premium', 'PremiumBoosterController', [
-        'except' => ['create', 'store'],
+        'except' => ['create', 'store','destroy','update','edit'],
         'names' => [
             'index' => 'booster.premium.index',
             'show' => 'booster.premium.show',
-            'edit' => 'booster.premium.edit',
-            'update' => 'booster.premium.update',
-            'destroy' => 'booster.premium.destroy',
+            // 'edit' => 'booster.premium.edit',
+            // 'update' => 'booster.premium.update',
+            // 'destroy' => 'booster.premium.destroy',
         ]
     ]);
 });

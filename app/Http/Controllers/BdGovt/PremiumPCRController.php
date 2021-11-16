@@ -58,11 +58,11 @@ class PremiumPCRController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    { 
-        $pcrTest = PcrTest::findOrfail($id);
-        return view('BdGovt.pcr.edit', compact('pcrTest'));
-    }
+    // public function edit($id)
+    // { 
+    //     $pcrTest = PcrTest::findOrfail($id);
+    //     return view('BdGovt.pcr.edit', compact('pcrTest'));
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -71,29 +71,29 @@ class PremiumPCRController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'sample_collection_date' => 'required|date',
-            'date_of_pcr_test' => 'required|date',
-            'result_published_date' => 'required|date',
-            'status' => 'required',
-            'pcr_result' => 'required',
-        ]);
+    // public function update(Request $request, $id)
+    // {
+    //     $request->validate([
+    //         'sample_collection_date' => 'required|date',
+    //         'date_of_pcr_test' => 'required|date',
+    //         'result_published_date' => 'required|date',
+    //         'status' => 'required',
+    //         'pcr_result' => 'required',
+    //     ]);
 
-        $pcrTest = PcrTest::findOrFail($id);
-        $pcrTest->sample_collection_date = $request->sample_collection_date;
-        $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
-        $pcrTest->result_published_date = $request->result_published_date;
-        $pcrTest->status = $request->status;
-        $pcrTest->pcr_result = $request->pcr_result;
-        $pcrTest->save();
+    //     $pcrTest = PcrTest::findOrFail($id);
+    //     $pcrTest->sample_collection_date = $request->sample_collection_date;
+    //     $pcrTest->date_of_pcr_test = $request->date_of_pcr_test;
+    //     $pcrTest->result_published_date = $request->result_published_date;
+    //     $pcrTest->status = $request->status;
+    //     $pcrTest->pcr_result = $request->pcr_result;
+    //     $pcrTest->save();
 
-        // return back()->withToastSuccess('Updated successfully');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
-        return back();
-    }
+    //     // return back()->withToastSuccess('Updated successfully');
+    //     Session::flash('message', 'Updated successfully!');
+    //     Session::flash('type', 'success');
+    //     return back();
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -101,19 +101,19 @@ class PremiumPCRController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    { 
-        $pcrTest = PcrTest::findOrfail($id);
-        try {
-            $pcrTest->delete();
-            return response()->json([
-                'type' => 'success',
-            ]);
-        } catch (\Exception $exception) {
-            return response()->json([
-                'type' => 'error',
-                'message' => 'error' . $exception->getMessage(),
-            ]);
-        }
-    }
+    // public function destroy($id)
+    // { 
+    //     $pcrTest = PcrTest::findOrfail($id);
+    //     try {
+    //         $pcrTest->delete();
+    //         return response()->json([
+    //             'type' => 'success',
+    //         ]);
+    //     } catch (\Exception $exception) {
+    //         return response()->json([
+    //             'type' => 'error',
+    //             'message' => 'error' . $exception->getMessage(),
+    //         ]);
+    //     }
+    // }
 }
