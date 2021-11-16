@@ -44,18 +44,18 @@ class UserController extends Controller
                 $user->otp = $otp;
                 $user->save();
 
-                /*$curl = curl_init();
+                $curl = curl_init();
 
                 curl_setopt_array($curl, array(
                     CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $user->phone),
+                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $user->phone),
                 ));
 
                 $response = curl_exec($curl);
 
-                curl_close($curl);*/
+                curl_close($curl);
 
 
                 return response()->json([
@@ -106,6 +106,7 @@ class UserController extends Controller
             $existUser->status = "1";
             $existUser->otp_verified_at = Carbon::now();
             $existUser->update();
+
 
             return response()->json([
                 "message"=>"Otp successfully verified",
@@ -185,7 +186,7 @@ class UserController extends Controller
                 CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $phone),
+                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $phone),
             ));
 
             $response = curl_exec($curl);

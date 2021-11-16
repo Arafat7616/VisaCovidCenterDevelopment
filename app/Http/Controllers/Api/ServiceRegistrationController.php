@@ -24,6 +24,19 @@ class ServiceRegistrationController extends Controller
 
         if ($vaccine->save())
         {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Vaccination. ','to' => $request->phone),
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
             return response()->json([
                 "message"=>"You have successfully registration for Vaccination",
                 "status"=>"1",
@@ -48,6 +61,20 @@ class ServiceRegistrationController extends Controller
 
         if ($pcr->save())
         {
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for PCR Test. ','to' => $request->phone),
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
             return response()->json([
                 "message"=>"You have successfully registration for PCR",
                 "status"=>"1",
@@ -73,6 +100,19 @@ class ServiceRegistrationController extends Controller
 
         if ($booster->save())
         {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Booster. ','to' => $request->phone),
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
             return response()->json([
                 "message"=>"You have successfully registration for Booster",
                 "status"=>"1",
