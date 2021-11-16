@@ -13,13 +13,8 @@ Route::group(['prefix' => 'bd-govt/', 'namespace' => 'BdGovt', 'as' => 'bdGovt.'
         Route::get('volunteer', 'UserController@volunteer')->name('volunteer');
         Route::get('receptionist', 'UserController@receptionist')->name('receptionist');
         Route::get('pathologist', 'UserController@pathologist')->name('pathologist');
-        Route::get('user', 'UserController@user')->name('user');
-        Route::post('active/{id}', 'UserController@activeNow')->name('activeNow');
-        Route::post('inactive/{id}', 'UserController@inactiveNow')->name('inactiveNow');
-        Route::post('delete/{id}', 'UserController@deleteNow')->name('deleteNow');
+        Route::get('user', 'UserController@user')->name('user');    
         Route::get('profile/{id}', 'UserController@profile')->name('profile');
-        // Route::get('edit/{id}', 'UserController@edit')->name('edit');
-        // Route::post('update/{id}', 'UserController@update')->name('update');
     });
 
     // route for manage center
