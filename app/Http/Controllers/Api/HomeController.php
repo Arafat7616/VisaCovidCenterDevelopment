@@ -375,4 +375,87 @@ class HomeController extends Controller
 
 
     }
+
+
+    public function profileInformation(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+        if ($exitUser->image == null)
+        {
+            $userImage = "uploads/images/setting/user.png";
+        }else{
+            $userImage = $exitUser->image;
+        }
+
+        $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine'])->first();
+        $vaccinationCenterInfoName = '';
+        $vaccinationCenterInfoAddress = '';
+        $vaccinationStatusDate_of_first_dose = '';
+        $vaccinationStatusDate_of_second_dose = '';
+        $vaccinationStatusName_of_vaccine = '';
+        if($vaccinationStatus)
+        {
+            $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
+            $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
+            $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+            $vaccinationStatusDate_of_first_dose = $vaccinationStatus->date_of_first_dose;
+            $vaccinationStatusDate_of_second_dose = $vaccinationStatus->date_of_second_dose;
+            $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
+        }
+
+        $pcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['center_id', 'pcr_result', 'date_of_pcr_test'])->first();
+        $pcrCenterInfoMame = '';
+        $pcrCenterInfoAddress = '';
+        $pcrStatusDate_of_pcr_test = '';
+        $pcrStatusDate_of_pcr_test = '';
+        if($pcrStatus)
+        {
+            $pcrCenterInfo = Center::where('id', $pcrStatus->center_id)->select(['name', 'address'])->first();
+            $pcrCenterInfoMame = $pcrCenterInfo->name;
+            $pcrCenterInfoAddress = $pcrCenterInfo->address;
+            $pcrStatusDate_of_pcr_test = $pcrStatus->date_of_pcr_test;
+            $pcrStatusDate_of_pcr_test = $pcrStatus->date_of_pcr_test;
+        }
+
+
+        $boosterStatus = Booster::where('user_id', $exitUser->id)->select(['center_id','date', 'antibody_last_date'])->first();
+        $boosterCenterInfoName = '';
+        $boosterCenterInfoAddress = '';
+        $boosterStatusDate = '';
+        $boosterStatusAntibody_last_date = '';
+        if($boosterStatus)
+        {
+            $boosterCenterInfo = Center::where('id', $boosterStatus->center_id)->select(['name', 'address'])->first();
+            $boosterCenterInfoName = $boosterCenterInfo->name;
+            $boosterCenterInfoAddress = $boosterCenterInfo->address;
+            $boosterStatusDate = $boosterStatus->date;
+            $boosterStatusAntibody_last_date = $boosterStatus->antibody_last_date;
+        }
+
+
+        return response()->json([
+            "status"=>"1",
+            "userId"=>$exitUser->id,
+            "userImage"=>$userImage,
+
+            "myPcrLastTest"=>$pcrStatusDate_of_pcr_test,
+            "myLastPcrResult"=>$pcrStatusDate_of_pcr_test,
+            "myPcrTestCenter"=>$pcrCenterInfoMame,
+            "myPcrCenterLocation"=>$pcrCenterInfoAddress,
+
+            "myVaccinationDoseOne"=>$vaccinationStatusDate_of_first_dose,
+            "myVaccinationDoseTwo"=>$vaccinationStatusDate_of_second_dose,
+            "myVaccinationName"=>$vaccinationStatusName_of_vaccine,
+            "myVaccinationCenter"=>$vaccinationCenterInfoName,
+            "myVaccinationCenterLocation"=>$vaccinationCenterInfoAddress,
+
+            "myBoosterCenter"=>$boosterCenterInfoName,
+            "myBoosterCenterLocation"=>$boosterCenterInfoAddress,
+            "myBoosterDate"=>$boosterStatusDate,
+            "myAntibodyRemaining"=>$boosterStatusAntibody_last_date,
+        ]);
+    }
 }

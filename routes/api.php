@@ -67,6 +67,8 @@ Route::post('home/profile', 'Api\HomeController@userProfile');
 Route::post('home/editProfile', 'Api\HomeController@editProfile');
 Route::post('home/updateProfile', 'Api\HomeController@updateProfile');
 
+Route::post('home/profileInformation', 'Api\HomeController@profileInformation');
+
 
 
 
