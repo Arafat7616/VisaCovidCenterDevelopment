@@ -27,9 +27,9 @@
                             <li><a class="dropdown-item" href="{{ route('login') }}">Govt. Portal</a></li>
                             <li><a class="dropdown-item" href="{{ route('auth.immigrationOfficerLogin') }}">Immigration Officer</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Travel Agency</a></li>
+                            <li><a class="dropdown-item" href="{{ route('centerRegister') }}">Medical Ceneter Register</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Language
@@ -37,10 +37,8 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Bangla</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
-
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>

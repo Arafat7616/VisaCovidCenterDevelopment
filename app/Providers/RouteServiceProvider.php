@@ -23,6 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     // public const HOME = '/home';
     public const ImmigrationOfficerDashboard = 'immigration-officer/dashboard';
+    public const BdGovtDashboard = 'bd-govt/dashboard';
     public const AdministratorDashboard = 'administrator/dashboard';
     public const PathologistDashboard = 'pathologist/dashboard';
     public const ReceptionistDashboard = 'receptionist/dashboard';

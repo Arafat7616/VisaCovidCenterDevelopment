@@ -180,11 +180,12 @@ Immigration Officer Log In
                             showConfirmButton: false, 
                             timer: 1500
                         });
-                    } else if(data.type == 'warning'){
+                    } else if(data.type == 'error'){
                         Swal.fire({
-                            position: 'top-end' , 
-                            icon: 'warning', 
-                            title: data.message, 
+                            position: 'center' , 
+                            icon: data.type,
+                            title: 'Oops...',
+                            footer: data.message,
                             showConfirmButton: false, 
                             timer: 1500
                         });
@@ -235,12 +236,13 @@ Immigration Officer Log In
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                        }else if(data.type == 'warning')
+                        }else if(data.type == 'error')
                         {
                             Swal.fire({
-                                position: 'top-end',
-                                icon: 'warning',
-                                title: data.message,
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -301,20 +303,21 @@ Immigration Officer Log In
                 , success: function(data) {
                     if (data.type == 'success') {
                         Swal.fire({
-                            position: 'top-end'
-                            , icon: 'success'
-                            , title: data.message
-                            , showConfirmButton: false
-                            , timer: 1500
+                            position: 'top-end', 
+                            icon: 'success', 
+                            title: data.message, 
+                            showConfirmButton: false, 
+                            timer: 1500
                         })
                         $('#login-form-submit').submit();
-                    } else if(data.type == 'warning') {
+                    } else if(data.type == 'error') {
                         Swal.fire({
-                            position: 'top-end'
-                            , icon: 'warning'
-                            , title: data.message
-                            , showConfirmButton: false
-                            , timer: 1500
+                            position: 'center',
+                            icon: data.type,
+                            title: 'Oops...',
+                            footer: data.message,
+                            showConfirmButton: false, 
+                            timer: 1500
                         })
                     }
 

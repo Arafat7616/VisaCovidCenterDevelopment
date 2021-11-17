@@ -99,7 +99,7 @@ class TrustedPeopleController extends Controller
             ]);
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',
             ]);
         }

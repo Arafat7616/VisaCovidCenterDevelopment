@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\Administrator;
+use App\Http\Middleware\BdGovt;
 use App\Http\Middleware\Pathologist;
 use App\Http\Middleware\Receptionist;
 use App\Http\Middleware\SuperAdmin;
@@ -77,6 +78,6 @@ class Kernel extends HttpKernel
         'pathologist' => Pathologist::class,
         'receptionist' => Receptionist::class,
         'administrator' => Administrator::class,
-        'immigrationOfficer' => ImmigrationOfficer::class,
+        'bdGovt' => BdGovt::class,
     ];
 }

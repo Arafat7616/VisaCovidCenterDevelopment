@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 include('superAdmin.php');
+include('bdGovt.php');
 include('administrator.php');
 include('receptionist.php');
 include('volunteer.php');
