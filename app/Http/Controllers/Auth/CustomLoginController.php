@@ -39,10 +39,22 @@ class CustomLoginController extends Controller
                     {
                         $user->otp = rand(100000,1000000);
                         $user ->save();
+
+                        //send otp in sms by curl
+                        $curl = curl_init();
+                        curl_setopt_array($curl, array(
+                            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_CUSTOMREQUEST => 'POST',
+                            CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Visa Covid, your otp is : '. $user->otp,'to' => $user->phone),
+                        ));
+                        $response = curl_exec($curl);          
+                        curl_close($curl);
+                        
                         return response()->json([
+                            "message"=>"Otp send in : ".$request->phone,
                             'type' => 'success',
-                            'message' => 'OTP send in '.$request->phone
-                        ]);
+                        ]);                       
                     }else{
                         return response()->json([
                             'type' => 'error',
