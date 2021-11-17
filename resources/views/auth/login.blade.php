@@ -42,6 +42,9 @@
                             <div class="text-center">
                                 <button type="submit" class="addministator-form-sub-btn">Submit</button>
                             </div>
+                            <div>
+                                <p>Don't created center account ? <a href="{{ route('centerRegister') }}">Center Register</a></p>
+                            </div>
                         </form>
                     </div>
                 </div>
