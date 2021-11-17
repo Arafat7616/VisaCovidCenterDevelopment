@@ -110,16 +110,21 @@ class HomeController extends Controller
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
         $vaccinationStatus = Vaccination::where('user_id', $existUser->id)->first();
+
         if ($vaccinationStatus){
-            return response()->json([
-                "status" => "1",
-                "navigationPath" => "Vaccine Date Status",
-                "date" => $vaccinationStatus->date_of_registration,
-                "centerId" => $vaccinationStatus->center_id,
-            ]);
+
+            if ($vaccinationStatus->date_of_first_dose)
+            {
+                return response()->json([
+                    "navigationPath" => "Vaccination Status",
+                ]);
+            }else{
+                return response()->json([
+                    "navigationPath" => "Vaccine Date Status",
+                ]);
+            }
         }else{
             return response()->json([
-                "status" => "0",
                 "navigationPath" => "Vaccine Registration",
             ]);
         }
@@ -132,17 +137,23 @@ class HomeController extends Controller
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
-        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
-        if ($pcrStatus){
-            return response()->json([
-                "status" => "1",
-                "navigationPath" => "PCR Date Status",
-                "date" => $pcrStatus->date_of_registration,
-                "centerId" => $pcrStatus->center_id,
-            ]);
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->orderBy('id', 'desc')->first();
+
+
+        if ($pcrStatus)
+        {
+            if($pcrStatus->pcr_result) {
+                return response()->json([
+                    "navigationPath" => "PCR Test Status",
+                ]);
+            }else{
+                return response()->json([
+                    "navigationPath" => "PCR Date Status",
+                ]);
+            }
+
         }else{
             return response()->json([
-                "status" => "0",
                 "navigationPath" => "PCR",
             ]);
         }
@@ -156,21 +167,24 @@ class HomeController extends Controller
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
         $boosterStatus = Booster::where('user_id', $existUser->id)->first();
+
         if ($boosterStatus){
-            return response()->json([
-                "status" => "1",
-                "navigationPath" => "Booster Date Status",
-                "date" => $boosterStatus->date_of_registration,
-                "centerId" => $boosterStatus->center_id,
-            ]);
+            if ($boosterStatus->date)
+            {
+                return response()->json([
+                    "navigationPath" => "Booster Date Status",
+                ]);
+            }else{
+                return response()->json([
+                    "navigationPath" => "Booster Status",
+                ]);
+            }
         }else{
             return response()->json([
-                "status" => "0",
                 "navigationPath" => "Booster",
             ]);
         }
     }
-
 
     public function vaccinationLeftTime(Request $request)
     {
@@ -375,7 +389,6 @@ class HomeController extends Controller
 
 
     }
-
 
     public function profileInformation(Request $request)
     {

@@ -16,6 +16,15 @@ class ServiceRegistrationController extends Controller
     {
         $user = User::where('phone', $request->phone)->select(['id'])->first();
 
+        $existVaccination = Vaccination::where('user_id', $user->id)->first();
+        if ($existVaccination)
+        {
+            return response()->json([
+                "message"=>"You have already registration for Vaccination",
+                "status"=>"2",
+            ]);
+        }
+
         $vaccine = new Vaccination();
         $vaccine->user_id = $user->id;
         $vaccine->center_id = $request->center_id;
@@ -52,6 +61,15 @@ class ServiceRegistrationController extends Controller
     public function prcRegistration(Request $request)
     {
         $user = User::where('phone', $request->phone)->select('id')->first();
+
+        $existPcr= PcrTest::where('user_id', $user->id)->first();
+        if ($existPcr)
+        {
+            return response()->json([
+                "message"=>"You have already registration for Pcr Test",
+                "status"=>"2",
+            ]);
+        }
 
         $pcr = new PcrTest();
         $pcr->user_id = $user->id;
@@ -91,6 +109,15 @@ class ServiceRegistrationController extends Controller
     public function boosterRegistration(Request $request)
     {
         $user = User::where('phone', $request->phone)->select('id')->first();
+
+        $existBooster= Booster::where('user_id', $user->id)->first();
+        if ($existBooster)
+        {
+            return response()->json([
+                "message"=>"You have already registration for Pcr Booster",
+                "status"=>"2",
+            ]);
+        }
 
         $booster = new Booster();
         $booster->user_id = $user->id;
