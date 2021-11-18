@@ -428,7 +428,7 @@ class HomeController extends Controller
             $pcrCenterInfo = Center::where('id', $pcrStatus->center_id)->select(['name', 'address'])->first();
             $pcrCenterInfoMame = $pcrCenterInfo->name;
             $pcrCenterInfoAddress = $pcrCenterInfo->address;
-            $pcrStatusDate_of_pcr_test = $pcrStatus->date_of_pcr_test;
+            $pcrStatusDate_of_pcr_test = Carbon::parse($pcrStatus->date_of_pcr_test)->format("j S F Y");
         }
 
 
@@ -442,7 +442,7 @@ class HomeController extends Controller
             $boosterCenterInfo = Center::where('id', $boosterStatus->center_id)->select(['name', 'address'])->first();
             $boosterCenterInfoName = $boosterCenterInfo->name;
             $boosterCenterInfoAddress = $boosterCenterInfo->address;
-            $boosterStatusDate = $boosterStatus->date;
+            $boosterStatusDate = Carbon::parse($boosterStatus->date)->format("j S F Y");
             $boosterStatusAntibody_last_date = Carbon::parse($boosterStatus->antibody_last_date)->format("j S F Y");
         }
 
