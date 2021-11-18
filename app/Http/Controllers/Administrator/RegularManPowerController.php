@@ -66,7 +66,7 @@ class RegularManPowerController extends Controller
             ]);
         } catch (\Exception $exception) {
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'Something going wrong. ' . $exception->getMessage(),
             ]);
         }
