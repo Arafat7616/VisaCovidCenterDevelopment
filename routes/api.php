@@ -70,6 +70,10 @@ Route::post('home/updateProfile', 'Api\HomeController@updateProfile');
 Route::post('home/profileInformation', 'Api\HomeController@profileInformation');
 
 
+// Information
+Route::post('home/vaccinationInformation', 'Api\HomeController@vaccinationInformation');
+Route::post('home/pcrInformation', 'Api\HomeController@pcrInformation');
+Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 
 
 

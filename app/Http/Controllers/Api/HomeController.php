@@ -172,11 +172,11 @@ class HomeController extends Controller
             if ($boosterStatus->date)
             {
                 return response()->json([
-                    "navigationPath" => "Booster Date Status",
+                    "navigationPath" => "Booster Status",
                 ]);
             }else{
                 return response()->json([
-                    "navigationPath" => "Booster Status",
+                    "navigationPath" => "Booster Date Status",
                 ]);
             }
         }else{
@@ -319,9 +319,9 @@ class HomeController extends Controller
         if ($boosterStatus){
             return response()->json([
                 "status" => "1",
-                "leftHour" => "fsdf",
-                "leftDay" => "10-10",
-                "centerAddress" => "tetet",
+                "leftHour" => "5",
+                "leftDay" => "10",
+                "centerAddress" => $centerAddress->address,
             ]);
         }else{
             return response()->json([
@@ -414,8 +414,8 @@ class HomeController extends Controller
             $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
             $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
             $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
-            $vaccinationStatusDate_of_first_dose = $vaccinationStatus->date_of_first_dose;
-            $vaccinationStatusDate_of_second_dose = $vaccinationStatus->date_of_second_dose;
+            $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
+            $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
             $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
         }
 
@@ -423,13 +423,11 @@ class HomeController extends Controller
         $pcrCenterInfoMame = '';
         $pcrCenterInfoAddress = '';
         $pcrStatusDate_of_pcr_test = '';
-        $pcrStatusDate_of_pcr_test = '';
         if($pcrStatus)
         {
             $pcrCenterInfo = Center::where('id', $pcrStatus->center_id)->select(['name', 'address'])->first();
             $pcrCenterInfoMame = $pcrCenterInfo->name;
             $pcrCenterInfoAddress = $pcrCenterInfo->address;
-            $pcrStatusDate_of_pcr_test = $pcrStatus->date_of_pcr_test;
             $pcrStatusDate_of_pcr_test = $pcrStatus->date_of_pcr_test;
         }
 
@@ -445,7 +443,7 @@ class HomeController extends Controller
             $boosterCenterInfoName = $boosterCenterInfo->name;
             $boosterCenterInfoAddress = $boosterCenterInfo->address;
             $boosterStatusDate = $boosterStatus->date;
-            $boosterStatusAntibody_last_date = $boosterStatus->antibody_last_date;
+            $boosterStatusAntibody_last_date = Carbon::parse($boosterStatus->antibody_last_date)->format("j S F Y");
         }
 
 
@@ -465,6 +463,130 @@ class HomeController extends Controller
             "myVaccinationCenter"=>$vaccinationCenterInfoName,
             "myVaccinationCenterLocation"=>$vaccinationCenterInfoAddress,
 
+            "myBoosterCenter"=>$boosterCenterInfoName,
+            "myBoosterCenterLocation"=>$boosterCenterInfoAddress,
+            "myBoosterDate"=>$boosterStatusDate,
+            "myAntibodyRemaining"=>$boosterStatusAntibody_last_date,
+        ]);
+    }
+
+
+    public function vaccinationInformation(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+
+        $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine', 'first_served_by_id', 'second_served_by_id'])->first();
+
+        $vaccinationCenterInfoName = '';
+        $vaccinationCenterInfoAddress = '';
+        $vaccinationStatusDate_of_first_dose = '';
+        $vaccinationStatusDate_of_second_dose = '';
+        $vaccinationStatusName_of_vaccine = '';
+        $serveByFirstId = '';
+        $serveByFirstName = '';
+        $serveBySecondId = '';
+        $serveBySecondName = '';
+
+        if($vaccinationStatus)
+        {
+            $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
+            $serveByFirst = User::where('id', $vaccinationStatus->first_served_by_id)->select(['name', 'id'])->first();
+            $serveBySecond = User::where('id', $vaccinationStatus->second_served_by_id)->select(['name', 'id'])->first();
+            $serveByFirstId = $serveByFirst->id;
+            $serveByFirstName = $serveByFirst->name;
+            $serveBySecondId = $serveBySecond->id;
+            $serveBySecondName = $serveBySecond->name;
+
+            $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
+            $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+            $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
+            $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
+            $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
+        }
+
+        return response()->json([
+            "myServeByFirstId"=>$serveByFirstId,
+            "myServeByFirstName"=>$serveByFirstName,
+            "myServeBySecondId"=>$serveBySecondId,
+            "myServeBySecondName"=>$serveBySecondName,
+            "myVaccinationDoseOne"=>$vaccinationStatusDate_of_first_dose,
+            "myVaccinationDoseTwo"=>$vaccinationStatusDate_of_second_dose,
+            "myVaccinationName"=>$vaccinationStatusName_of_vaccine,
+            "myVaccinationCenter"=>$vaccinationCenterInfoName,
+            "myVaccinationCenterLocation"=>$vaccinationCenterInfoAddress,
+        ]);
+    }
+
+    public function pcrInformation(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+        $pcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['center_id', 'pcr_result', 'date_of_pcr_test', 'tested_by', 'pcr_result'])->first();
+        $pcrCenterInfoMame = '';
+        $pcrCenterInfoAddress = '';
+        $pcrStatusDate_of_pcr_test = '';
+        $serveById = '';
+        $serveByName = '';
+        $pcrResult = '';
+        if($pcrStatus)
+        {
+            $pcrCenterInfo = Center::where('id', $pcrStatus->center_id)->select(['name', 'address'])->first();
+            $serveBy = User::where('id', $pcrStatus->tested_by)->select(['name', 'id'])->first();
+            $pcrCenterInfoMame = $pcrCenterInfo->name;
+            $pcrCenterInfoAddress = $pcrCenterInfo->address;
+            $pcrStatusDate_of_pcr_test = Carbon::parse($pcrStatus->date_of_pcr_test)->format("j S F Y");
+            $serveById = $serveBy->id;
+            $serveByName = $serveBy->name;
+            $pcrResult = $pcrStatus->pcr_result;
+        }
+
+        return response()->json([
+            "myServeById"=>$serveById,
+            "myServeByName"=>$serveByName,
+            "myPcrLastTest"=>$pcrStatusDate_of_pcr_test,
+            "myLastPcrResult"=>$pcrResult,
+            "myPcrTestCenter"=>$pcrCenterInfoMame,
+            "myPcrCenterLocation"=>$pcrCenterInfoAddress,
+        ]);
+    }
+
+    public function boosterInformation(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+        $boosterStatus = Booster::where('user_id', $exitUser->id)->select(['center_id','date', 'antibody_last_date', 'served_by_id', 'name_of_vaccine'])->first();
+        $boosterCenterInfoName = '';
+        $boosterCenterInfoAddress = '';
+        $boosterStatusDate = '';
+        $boosterStatusAntibody_last_date = '';
+        $serveById = '';
+        $serveByName = '';
+        $nameOfVaccine = '';
+        if($boosterStatus)
+        {
+            $boosterCenterInfo = Center::where('id', $boosterStatus->center_id)->select(['name', 'address'])->first();
+            $serveBy = User::where('id', $boosterStatus->served_by_id)->select(['name', 'id'])->first();
+            $boosterCenterInfoName = $boosterCenterInfo->name;
+            $boosterCenterInfoAddress = $boosterCenterInfo->address;
+            $boosterStatusDate = Carbon::parse($boosterStatus->date)->format("j S F Y");
+            $boosterStatusAntibody_last_date = Carbon::parse($boosterStatus->antibody_last_date)->format("j S F Y");
+            $serveById = $serveBy->id;
+            $serveByName = $serveBy->name;
+            $nameOfVaccine = $boosterStatus->name_of_vaccine;
+        }
+
+
+        return response()->json([
+            "myServeById"=>$serveById,
+            "myServeByName"=>$serveByName,
+            "myNameOfVaccine"=>$nameOfVaccine,
             "myBoosterCenter"=>$boosterCenterInfoName,
             "myBoosterCenterLocation"=>$boosterCenterInfoAddress,
             "myBoosterDate"=>$boosterStatusDate,
