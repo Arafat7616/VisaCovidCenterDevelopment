@@ -33,6 +33,8 @@ class RedirectIfAuthenticated
                   return redirect(RouteServiceProvider::AdministratorDashboard);
                 } elseif (Auth::user()->user_type == 'immigration-officer') {
                     return redirect(RouteServiceProvider::ImmigrationOfficerDashboard);
+                } elseif (Auth::user()->user_type == 'bd-govt') {
+                    return redirect(RouteServiceProvider::BdGovtDashboard);
                 } else {
                     // return route('login');
                     return route('frontend.index');
