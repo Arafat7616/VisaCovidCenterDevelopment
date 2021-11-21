@@ -51,21 +51,21 @@
                     </ul>
                 </li>
                 {{-- routes for centers manage  --}}
-                 <li class="has_sub">
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
                     </ul>
                 </li>
-                   {{-- routes for price manage  --}}
-                   <li class="has_sub">
+                {{-- routes for price manage  --}}
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-price/*') ? 'active subdrop': ''}}"><i class="fa fa-money"></i> <span> Manage Prices </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.managePrice.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-price/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Price List </span></a></li>
                     </ul>
                 </li>
                 {{-- routes for pcr test  --}}
-                 <li class="has_sub">
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> PCR Test </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.pcr.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
@@ -80,8 +80,8 @@
                         <li><a href="{{route('superAdmin.vaccination.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
                 </li>
-                 {{-- routes for booster  --}}
-                 <li class="has_sub">
+                {{-- routes for booster  --}}
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> Booster </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.booster.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
@@ -92,7 +92,7 @@
                 {{-- routes for setting manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">                      
+                    <ul class="list-unstyled">
                         {{-- routes for Landing-page manage  --}}
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
