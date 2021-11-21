@@ -27,10 +27,10 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
-        $email = $userArray['email'];
+        $phone = $userArray['phone'];
         $password = $userArray['password'];
 
-        $user = User::where('email', $email)->first();
+        $user = User::where('phone', $phone)->first();
 
         if ($user)
         {
@@ -130,29 +130,7 @@ class UserController extends Controller
                 "status"=>"0",
             ]);
         }
-        //$userArray = json_decode($request->getContent(), true);
-//        $userArray = $request;
-
-        /*return response()->json([
-            "message"=>"User Successfully created",
-            "status"=>"1",
-            "result"=>$request->all(),
-        ]);
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required|unique:users',
-            'password' => 'required|min:5',
-        ]);*/
-
-//        $error = $validator->errors();
-
-//        if (count($error) != 0) {
-//            return response()->json([
-//                'error' => $error,
-//                'status' => "0"
-//            ]);
-//        }
+        
         $userArray['name'] = $request->name;
         $userArray['phone'] = $request->phone;
         $userArray['email'] = $request->email;
