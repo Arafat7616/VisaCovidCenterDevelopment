@@ -49,19 +49,38 @@ class TrustedPeopleController extends Controller
         $request->validate([
             'passport'  => 'required',
             'user_type'  => 'required',
-            'phone'  => 'required',
+            'phone'  => 'required|unique:users,phone',
             'nid'  => 'required',
             'center_id'  => 'required',
         ]);
 
         $user = new User();
         $user->phone = $request->phone;
-        $user->otp = rand(100000,1000000);
+        $user->otp = rand(100000, 1000000);
         $user->user_type = $request->user_type;
         $user->center_id = $request->center_id;
-        if ($user->save())
-        {
-            Session::put('user',$user);
+        if ($user->save()) {
+            try {
+                //send otp in sms by curl
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO', 'msg' => 'Welcome to Visa Covid, your otp is : ' . $user->otp, 'to' => $user->phone),
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'error',
+                    'message' => 'Opps somthing went wrong. ' . $exception->getMessage(),
+                ]);
+            }
+
+            Session::put('user', $user);
             /*$session_user = Session::get('user');*/
             $userInfo = new UserInfo();
             $userInfo->user_id  = $user->id;
@@ -72,11 +91,8 @@ class TrustedPeopleController extends Controller
 
         return response()->json([
             'type' => 'success',
-            'message' => 'Send otp in your phone ('.$user->phone.')',
+            'message' => 'Send otp in your phone (' . $user->phone . ')',
         ]);
-
-
-
     }
 
     public function verification(Request $request)
@@ -88,7 +104,7 @@ class TrustedPeopleController extends Controller
 
         $verification = User::where('phone', $request->phone)->where('otp', $request->otp)->first();
 
-        if ($verification){
+        if ($verification) {
             $verification->otp_verified_at = Carbon::now();
             $verification->save();
 
@@ -97,7 +113,7 @@ class TrustedPeopleController extends Controller
                 'message' => 'OTP Successfully verified',
                 'phone' => $request->phone
             ]);
-        }else{
+        } else {
             return response()->json([
                 'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',
@@ -187,9 +203,8 @@ class TrustedPeopleController extends Controller
 
         Session::flash('message', 'Successfully Updated!');
 
-//        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
+        //        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
         return redirect()->route('administrator.dashboard');
-
     }
 
     /**
@@ -202,7 +217,7 @@ class TrustedPeopleController extends Controller
     {
         $user = User::findOrFail($id);
         try {
-            if ($user->image != null){
+            if ($user->image != null) {
                 File::delete(public_path($user->image)); //Old image delete
             }
             $user->delete();
@@ -210,7 +225,7 @@ class TrustedPeopleController extends Controller
             return response()->json([
                 'type' => 'success',
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
             ]);

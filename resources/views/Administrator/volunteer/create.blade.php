@@ -229,7 +229,7 @@
                                 title: 'Oops...',
                                 footer: data.message,
                                 showConfirmButton: false,
-                                timer: 1500
+                                // timer: 1500
                             })
                         }
 
