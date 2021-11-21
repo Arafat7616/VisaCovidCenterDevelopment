@@ -414,8 +414,14 @@ class HomeController extends Controller
             $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
             $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
             $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
-            $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
-            $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
+
+            // if condition removed then showing default date as today
+            if($vaccinationStatus->date_of_first_dose != null){
+                $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
+            }
+            if($vaccinationStatus->date_of_second_dose != null){
+                $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
+            }
             $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
         }
 
