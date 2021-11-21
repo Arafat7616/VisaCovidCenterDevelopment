@@ -57,6 +57,13 @@
                         <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
                     </ul>
                 </li>
+                   {{-- routes for price manage  --}}
+                   <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-price/*') ? 'active subdrop': ''}}"><i class="fa fa-money"></i> <span> Manage Prices </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.managePrice.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-price/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Price List </span></a></li>
+                    </ul>
+                </li>
                 {{-- routes for pcr test  --}}
                  <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> PCR Test </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>

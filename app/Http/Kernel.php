@@ -78,6 +78,7 @@ class Kernel extends HttpKernel
         'pathologist' => Pathologist::class,
         'receptionist' => Receptionist::class,
         'administrator' => Administrator::class,
+        'immigrationOfficer' => ImmigrationOfficer::class,
         'bdGovt' => BdGovt::class,
     ];
 }
