@@ -39,6 +39,15 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::post('update/{id}', 'CenterController@update')->name('update');
     });
 
+    // route for manage price
+    Route::group(['prefix' => 'manage-price/', 'as' => 'managePrice.'], function () {
+        Route::get('index', 'PriceController@index')->name('index');
+        Route::post('active/{id}', 'PriceController@activeNow')->name('activeNow');
+        Route::post('inactive/{id}', 'PriceController@inactiveNow')->name('inactiveNow');
+        Route::get('edit/{id}', 'PriceController@edit')->name('edit');
+        Route::post('update/{id}', 'PriceController@update')->name('update');
+    });
+
     // route for setting
     Route::group(['prefix' => 'setting/', 'as' => 'setting.'], function () {
         // route for landing-page

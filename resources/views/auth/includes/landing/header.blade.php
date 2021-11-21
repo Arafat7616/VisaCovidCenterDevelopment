@@ -27,7 +27,7 @@
                             <li><a class="dropdown-item" href="{{ route('login') }}">Govt. Portal</a></li>
                             <li><a class="dropdown-item" href="{{ route('auth.immigrationOfficerLogin') }}">Immigration Officer</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Travel Agency</a></li>
-                            <li><a class="dropdown-item" href="{{ route('centerRegister') }}">Medical Ceneter Register</a></li>
+                            <li><a class="dropdown-item" href="{{ route('centerRegister') }}">Medical Center Register</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
