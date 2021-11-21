@@ -19,7 +19,6 @@ class PriceController extends Controller
     {
         $centerId = Auth::user()->center_id;
         $centerPrice = Price::where('center_id', $centerId)->first();
-        //return $centerPrice;
         return view('Administrator.pricing.index', compact('centerPrice'));
     }
 
@@ -91,12 +90,10 @@ class PriceController extends Controller
         $price->pcr_premium = $request->pcr_premium;
         $price->vaccine_premium = $request->vaccine_premium;
         $price->booster_premium = $request->booster_premium;
+        $price->status = 0;
         $price->save();
 
         Session::flash('message', 'Successfully Updated!');
-
-//        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
-
         return redirect()->route('administrator.price.index');
 
     }

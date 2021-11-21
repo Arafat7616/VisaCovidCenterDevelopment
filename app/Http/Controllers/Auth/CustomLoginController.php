@@ -31,34 +31,46 @@ class CustomLoginController extends Controller
             {
                 if($user->status == 0){
                     return response()->json([
-                        'type' => 'warning',
-                        'message' => 'Sorry ! You are not Approved .'
+                        'type' => 'error',
+                        'message' => 'Sorry ! This account is not Activated. Please contact with admin . Thank you !'
                     ]);
                 }else{
                     if (Hash::check($request->password, $hashPassword))
                     {
                         $user->otp = rand(100000,1000000);
                         $user ->save();
+
+                        //send otp in sms by curl
+                        $curl = curl_init();
+                        curl_setopt_array($curl, array(
+                            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_CUSTOMREQUEST => 'POST',
+                            CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Visa Covid, your otp is : '. $user->otp,'to' => $user->phone),
+                        ));
+                        $response = curl_exec($curl);          
+                        curl_close($curl);
+                        
                         return response()->json([
+                            "message"=>"Otp send in : ".$request->phone,
                             'type' => 'success',
-                            'message' => 'OTP send in '.$request->phone
-                        ]);
+                        ]);                       
                     }else{
                         return response()->json([
-                            'type' => 'warning',
+                            'type' => 'error',
                             'message' => 'Please Insert valid password'
                         ]);
                     }
                 }
             }else{
                 return response()->json([
-                    'type' => 'warning',
+                    'type' => 'error',
                     'message' => 'This account has been suspended! .Please contact with admin .'
                 ]);
             }
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'Please Insert valid phone no.'
             ]);
         }
@@ -85,7 +97,7 @@ class CustomLoginController extends Controller
             ]);
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',
             ]);
         }

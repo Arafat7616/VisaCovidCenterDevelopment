@@ -44,6 +44,8 @@ class ResetPasswordController extends Controller
                 return 'administrator/dashboard';
             } elseif (Auth::user()->user_type == 'immigration-officer') {
                 return 'immigration-officer/dashboard';
+            } elseif (Auth::user()->user_type == 'bd-govt') {
+                return 'bd-govt/dashboard';
             } else {
                 return route('login');
             }

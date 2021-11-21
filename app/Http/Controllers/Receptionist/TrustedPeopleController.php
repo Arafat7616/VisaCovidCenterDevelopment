@@ -61,6 +61,25 @@ class TrustedPeopleController extends Controller
         $user->center_id = $request->center_id;
         if ($user->save())
         {
+            try {
+                //send otp in sms by curl
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO', 'msg' => 'Welcome to Visa Covid, your otp is : ' . $user->otp, 'to' => $user->phone),
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'error',
+                    'message' => 'Opps somthing went wrong. ' . $exception->getMessage(),
+                ]);
+            }
             Session::put('user',$user);
             /*$session_user = Session::get('user');*/
             $userInfo = new UserInfo();
@@ -99,7 +118,7 @@ class TrustedPeopleController extends Controller
             ]);
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',
             ]);
         }

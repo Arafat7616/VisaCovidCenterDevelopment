@@ -18,7 +18,7 @@ class CenterSeeder extends Seeder
         // demo center adding
         for ($i = 1; $i <= 10; $i++) {
             $center = new Center();
-            $center->name = 'Demo Center Name';
+            $center->name = 'Demo Center Name '.$i;
             $center->email = 'center'.$i.'@gmail.com';
             $center->country_id = 18;
             $center->state_id = 348;

@@ -221,14 +221,15 @@
                             // setTimeout(function() {
                             //     location.reload();
                             // }, 800); //
-                        }else (data.type == 'warning')
+                        }else (data.type == 'error')
                         {
                             Swal.fire({
-                                position: 'top-end',
-                                icon: 'warning',
-                                title: data.message,
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
                                 showConfirmButton: false,
-                                timer: 1500
+                                // timer: 1500
                             })
                         }
 

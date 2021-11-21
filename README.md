@@ -16,3 +16,4 @@
 * __Receptionist:__ ```01785521421```
 * __Pathologist:__ ```01785521420```
 * __Immigration Officer :__ ```01785520000```
+* __Govt Portal :__ ```01711120000```
