@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
 use App\Models\PcrTest;
+use App\Models\ServiceAvailableNumber;
 use App\Models\User;
 use App\Models\Vaccination;
 use Carbon\Carbon;
@@ -14,16 +15,32 @@ class ServiceRegistrationController extends Controller
 {
     public function vaccineRegistration(Request $request)
     {
-        $user = User::where('phone', $request->phone)->select(['id'])->first();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $centerId = $userArray['center_id'];
+        $date = $userArray['date'];
 
+        $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
+
         if ($existVaccination)
         {
             return response()->json([
-                "message"=>"You have already registration for Vaccination",
+                "message"=>"You have already registered for Vaccination. Thank you",
                 "status"=>"2",
             ]);
         }
+
+        $registrationCheck = ServiceAvailableNumber::where('center_id', $centerId)->where('service_type', "vaccine")->where('date', $date)->select(['available_set', 'id'])->get();
+
+        if (! $registrationCheck->available_set > 0)
+        {
+            return response()->json([
+                "message"=>"Sorry ! Not available. Please Select another date",
+                "status"=>"0",
+            ]);
+        }
+
 
         $vaccine = new Vaccination();
         $vaccine->user_id = $user->id;
@@ -33,6 +50,8 @@ class ServiceRegistrationController extends Controller
 
         if ($vaccine->save())
         {
+            $registrationCheck->available_set()->decrement();
+            ServiceAvailableNumber::find($registrationCheck->id)->decrement('visitors');
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
@@ -43,8 +62,8 @@ class ServiceRegistrationController extends Controller
             ));
 
             $response = curl_exec($curl);
-
             curl_close($curl);
+
 
             return response()->json([
                 "message"=>"You have successfully registration for Vaccination",
