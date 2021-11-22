@@ -40,18 +40,8 @@ class UserController extends Controller
                 $user->otp = $otp;
                 $user->save();
 
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $user->phone),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);
+                $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+                send_sms($message, $phone);
 
                 return response()->json([
                     "message" => "Send otp in your phone : ".$user->phone,
@@ -130,7 +120,7 @@ class UserController extends Controller
                 "status"=>"0",
             ]);
         }
-        
+
         $userArray['name'] = $request->name;
         $userArray['phone'] = $request->phone;
         $userArray['email'] = $request->email;
@@ -148,21 +138,9 @@ class UserController extends Controller
 
         if ($result){
 
-            //send otp in sms by curl
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-
-                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $phone),
-
-                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Visa Covid, your otp is : '. $otp,'to' => $phone),
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
+            // Send otp via helper function
+            $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+            send_sms($message, $phone);
 
             return response()->json([
                 "message"=>"Otp send in : ".$request->phone,
