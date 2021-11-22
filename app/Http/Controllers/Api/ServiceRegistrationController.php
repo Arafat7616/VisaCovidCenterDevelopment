@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
+use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
 use App\Models\ServiceAvailableNumber;
 use App\Models\User;
@@ -31,49 +32,55 @@ class ServiceRegistrationController extends Controller
             ]);
         }
 
-        $registrationCheck = ServiceAvailableNumber::where('center_id', $centerId)->where('service_type', "vaccine")->where('date', $date)->select(['available_set', 'id'])->get();
+        $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['vaccine_available_set', 'id'])->first();
 
-        if (! $registrationCheck->available_set > 0)
+        if ($registrationCheck==null){
+            return response()->json([
+                "message"=>"Sorry ! Not available.Please Select another date",
+                "status"=>"0",
+            ]);
+        }elseif(!$registrationCheck->vaccine_available_set > 0)
         {
             return response()->json([
                 "message"=>"Sorry ! Not available. Please Select another date",
                 "status"=>"0",
             ]);
-        }
 
-
-        $vaccine = new Vaccination();
-        $vaccine->user_id = $user->id;
-        $vaccine->center_id = $request->center_id;
-        $vaccine->date_of_registration = Carbon::parse($request->date);
-        $vaccine->registration_type = "normal";
-
-        if ($vaccine->save())
-        {
-            $registrationCheck->available_set()->decrement();
-            ServiceAvailableNumber::find($registrationCheck->id)->decrement('visitors');
-            $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Vaccination. ','to' => $request->phone),
-            ));
-
-            $response = curl_exec($curl);
-            curl_close($curl);
-
-
-            return response()->json([
-                "message"=>"You have successfully registration for Vaccination",
-                "status"=>"1",
-            ]);
         }else{
-            return response()->json([
-                "message"=>"Something wrong",
-                "status"=>"0",
-            ]);
+
+
+            $vaccine = new Vaccination();
+            $vaccine->user_id = $user->id;
+            $vaccine->center_id = $centerId;
+            $vaccine->date_of_registration = Carbon::parse($date);
+            $vaccine->registration_type = "normal";
+
+            if ($vaccine->save())
+            {
+                ManPowerSchedule::find($registrationCheck->id)->decrement('vaccine_available_set');
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Vaccination. ','to' => $phone),
+                ));
+
+                $response = curl_exec($curl);
+                curl_close($curl);
+
+
+                return response()->json([
+                    "message"=>"You have successfully registration for Vaccination",
+                    "status"=>"1",
+                ]);
+            }else{
+                return response()->json([
+                    "message"=>"Something wrong",
+                    "status"=>"0",
+                ]);
+            }
         }
     }
 
