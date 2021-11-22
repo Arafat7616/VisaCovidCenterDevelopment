@@ -86,50 +86,72 @@ class ServiceRegistrationController extends Controller
 
     public function prcRegistration(Request $request)
     {
-        $user = User::where('phone', $request->phone)->select('id')->first();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $centerId = $userArray['center_id'];
+        $date = $userArray['date'];
+
+        $user = User::where('phone', $phone)->select(['id'])->first();
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();
         if ($existPcr)
         {
             return response()->json([
-                "message"=>"You have already registration for Pcr Test",
+                "message"=>"You have already registered for PCR Test. Thank you",
                 "status"=>"2",
             ]);
         }
 
-        $pcr = new PcrTest();
-        $pcr->user_id = $user->id;
-        $pcr->center_id = $request->center_id;
-        $pcr->date_of_registration = Carbon::parse($request->date);
-        $pcr->registration_type = "normal";
+        $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['pcr_available_set', 'id'])->first();
 
-        if ($pcr->save())
-        {
-
-            $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for PCR Test. ','to' => $request->phone),
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-
+        if ($registrationCheck==null){
             return response()->json([
-                "message"=>"You have successfully registration for PCR",
-                "status"=>"1",
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Something wrong",
+                "message"=>"Sorry ! Not available.Please Select another date",
                 "status"=>"0",
             ]);
-        }
+        }elseif(!$registrationCheck->vaccine_available_set > 0)
+        {
+            return response()->json([
+                "message"=>"Sorry ! Not available. Please Select another date",
+                "status"=>"0",
+            ]);
 
+        }else {
+
+            $pcr = new PcrTest();
+            $pcr->user_id = $user->id;
+            $pcr->center_id = $centerId;
+            $pcr->date_of_registration = Carbon::parse($date);
+            $pcr->registration_type = "normal";
+
+            if ($pcr->save()) {
+
+                ManPowerSchedule::find($registrationCheck->id)->decrement('pcr_available_set');
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO', 'msg' => 'Congratulation !! You are successfully registration for PCR Test. ', 'to' => $request->phone),
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+
+                return response()->json([
+                    "message" => "You have successfully registration for PCR",
+                    "status" => "1",
+                ]);
+            } else {
+                return response()->json([
+                    "message" => "Something wrong",
+                    "status" => "0",
+                ]);
+            }
+        }
     }
 
     public function boosterRegistration(Request $request)
