@@ -2,7 +2,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="{{ route('superAdmin.dashboard') }}" class="logo"><img src="{{ asset( get_static_option('logo') ?? 'assets/super-admin/images/logo_white_2.png') }}" style="width: 100%; height: 70px;" height="28"></a>
+            <a href="{{ route('superAdmin.dashboard') }}" class="logo"><img src="{{ asset( get_static_option('logo') ?? 'assets/super-admin/images/logo_white_2.png') }}" style="width: 100%; height: 72px;" height="28"></a>
             <a href="{{ route('superAdmin.dashboard') }}" class="logo-sm"><img src="{{ asset('assets/super-admin/images/logo_sm.png') }}" height="36"></a>
         </div>
     </div>
