@@ -58,18 +58,9 @@ class ServiceRegistrationController extends Controller
             if ($vaccine->save())
             {
                 ManPowerSchedule::find($registrationCheck->id)->decrement('vaccine_available_set');
-                $curl = curl_init();
 
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Vaccination. ','to' => $phone),
-                ));
-
-                $response = curl_exec($curl);
-                curl_close($curl);
-
+                // send sms via helper function
+                send_sms('Congratulation !! You are successfully registration for Vaccination. ', $phone);
 
                 return response()->json([
                     "message"=>"You have successfully registration for Vaccination",
@@ -128,18 +119,8 @@ class ServiceRegistrationController extends Controller
 
                 ManPowerSchedule::find($registrationCheck->id)->decrement('pcr_available_set');
 
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO', 'msg' => 'Congratulation !! You are successfully registration for PCR Test. ', 'to' => $request->phone),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);
+                // send sms via helper function
+                send_sms('Congratulation !! You are successfully registration for PCR Test. ', $phone);
 
                 return response()->json([
                     "message" => "You have successfully registration for PCR",
@@ -156,47 +137,59 @@ class ServiceRegistrationController extends Controller
 
     public function boosterRegistration(Request $request)
     {
-        $user = User::where('phone', $request->phone)->select('id')->first();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $centerId = $userArray['center_id'];
+        $date = $userArray['date'];
 
+        $user = User::where('phone', $phone)->select(['id'])->first();
         $existBooster= Booster::where('user_id', $user->id)->first();
         if ($existBooster)
         {
             return response()->json([
-                "message"=>"You have already registration for Pcr Booster",
+                "message"=>"You have already registration for Pcr Booster. Thank You",
                 "status"=>"2",
             ]);
         }
 
-        $booster = new Booster();
-        $booster->user_id = $user->id;
-        $booster->center_id = $request->center_id;
-        $booster->date_of_registration = Carbon::parse($request->date);
-        $booster->registration_type = "normal";
+        $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['booster_available_set', 'id'])->first();
 
-        if ($booster->save())
-        {
-            $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Congratulation !! You are successfully registration for Booster. ','to' => $request->phone),
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-
+        if ($registrationCheck==null){
             return response()->json([
-                "message"=>"You have successfully registration for Booster",
-                "status"=>"1",
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Something wrong",
+                "message"=>"Sorry ! Not available.Please Select another date",
                 "status"=>"0",
             ]);
+        }elseif(!$registrationCheck->booster_available_set > 0)
+        {
+            return response()->json([
+                "message"=>"Sorry ! Not available. Please Select another date",
+                "status"=>"0",
+            ]);
+
+        }else {
+            $booster = new Booster();
+            $booster->user_id = $user->id;
+            $booster->center_id = $centerId;
+            $booster->date_of_registration = Carbon::parse($date);
+            $booster->registration_type = "normal";
+
+            if ($booster->save()) {
+
+                ManPowerSchedule::find($registrationCheck->id)->decrement('booster_available_set');
+
+                // send sms via helper function
+                send_sms('Congratulation !! You are successfully registration for Booster. ', $phone);
+
+                return response()->json([
+                    "message" => "You have successfully registration for Booster",
+                    "status" => "1",
+                ]);
+            } else {
+                return response()->json([
+                    "message" => "Something wrong",
+                    "status" => "0",
+                ]);
+            }
         }
 
     }
