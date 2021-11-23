@@ -78,8 +78,9 @@ class SynchronizeController extends Controller
      */
     public function edit($id)
     {
+        $countries = Country::all();
         $synchronize= Synchronize::findOrFail($id);
-        return view('SuperAdmin.synchronize.edit', compact('synchronize'));
+        return view('SuperAdmin.synchronize.edit', compact('synchronize', 'countries'));
     }
 
     /**
@@ -98,9 +99,10 @@ class SynchronizeController extends Controller
         ]);
 
         $data = $request->except('_method', '_token');
-
+//return $data;
         try {
-            Synchronize::where('id', $id)->updated($data);
+            $synchronize = Synchronize::find($id);
+            $synchronize->update($data);
             Session::flash('message', 'Successfully update !');
             Session::flash('type', 'success');
             return back();
