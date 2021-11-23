@@ -292,7 +292,7 @@
                     contentType: false,
                     success: function(data) {
                         // $('#main-form').trigger("reset");
-                        console.log(data.message);
+                        // console.log(data.message);
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',

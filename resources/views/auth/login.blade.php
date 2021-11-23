@@ -158,7 +158,7 @@
                     contentType: false,
                     success: function(data) {
 
-                        console.log(data.message);
+                        // console.log(data.message);
                         if(data.type == 'success')
                         {
                             $('.right-side-form').show();
@@ -206,7 +206,7 @@
                 var t = 60;  
                 setInterval(() => {
                     if(t > 1){
-                        // alert(t)
+                        
                         $('.left-time').html(t);   
                         t = t-1;
 

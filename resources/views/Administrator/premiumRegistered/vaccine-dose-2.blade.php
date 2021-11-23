@@ -190,7 +190,7 @@
                                 ids.push(checkboxes[i].value)
                             }
                         }
-                        console.log()
+                        
                         $.ajax({
                             method: 'POST',
                             url: "{{ route('administrator.premiumRegistered.vaccine.swapDose2') }}",
