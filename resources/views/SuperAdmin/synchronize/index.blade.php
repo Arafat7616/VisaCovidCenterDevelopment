@@ -58,7 +58,7 @@
                                                 <td><span class="label {{$synchronize->status ? 'label-success':'label-warning'}}">{{$synchronize->status ? 'Active':'Inactive'}}</span></td>
                                                 <td>
                                                     <a href="{{route('superAdmin.synchronize.edit', $synchronize->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.synchronize.destroy', $synchronize) }}"><i class="fa fa-trash"></i></button>
+                                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.synchronize.destroy', $synchronize->id) }}"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -115,15 +115,18 @@ class SynchronizeController extends Controller
      * @param  \App\Synchronize  $synchronize
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Synchronize $synchronize)
     {
-        Synchronize::delete($id);
         try {
-            Session::flash('message', 'Successfully deleted !');
-            Session::flash('type', 'success');
-            return back();
-        }catch (\Exception $exception){
-            return back()->withErrors('Something went wrong. ' . $exception->getMessage());
+            $synchronize->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'error' . $exception->getMessage(),
+            ]);
         }
     }
 }
