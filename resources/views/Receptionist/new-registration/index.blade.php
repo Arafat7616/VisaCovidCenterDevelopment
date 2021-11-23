@@ -255,7 +255,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/administrator/trustedPeople/resend-otp',
+                    url: '/receptionist/trustedPeople/resend-otp',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

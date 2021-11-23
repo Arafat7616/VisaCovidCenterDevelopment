@@ -84,6 +84,35 @@ class TrustedPeopleController extends Controller
         ]);
     }
 
+    public function resendOtp(Request $request){
+        $user = User::where('phone', $request->phone)->first();
+        $user->otp = rand(100000, 1000000);
+
+        if ($user->save()) {
+            try {
+                // send sms via helper function
+                send_sms('Welcome to Visa Covid, your otp is : ' . $user->otp, $user->phone);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'error',
+                    'message' => 'Opps somthing went wrong. ' . $exception->getMessage(),
+                ]);
+            }
+
+            Session::put('user', $user);
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Send otp in your phone (' . $user->phone . ')',
+            ]);
+        }else{            
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Sorry Credintial is invalid !',
+            ]);
+        }        
+    }
+
+    
     public function verification(Request $request)
     {
         $request->validate([
