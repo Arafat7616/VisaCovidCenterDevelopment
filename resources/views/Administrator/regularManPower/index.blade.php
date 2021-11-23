@@ -382,7 +382,7 @@
                 formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
                 formData.append('volunteerForBooster', $('#volunteerForBooster').val());
 
-                console.log(formData);
+                
 
                 $.ajax({
                     method: 'POST',
@@ -489,7 +489,7 @@
             var totalMorningSlotTime = parseInt(document.getElementById('totalMorningSlotTime').innerHTML);
             var totalDaySlotTime = parseInt(document.getElementById('totalDaySlotTime').innerHTML);
             document.getElementById('totalMinute').innerHTML = totalMorningSlotTime + totalDaySlotTime;
-            console.log(totalMinute)
+            
 
         }
 

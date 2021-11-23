@@ -126,8 +126,9 @@
                                     <input type="text" id="otp" class='form-control otp-card-place' placeholder='' />
                                 </div>
 
-                                <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
-                                <a href="#" class="card-link"><button class='otp-btn-verify text-light'>Verify</button></a>
+                                <a href="javascript:void(0)"><button style="color: red !important;" class='btn text-muted re-send-otp-time'><span class="left-time">00</span> Second</button></a>
+                                <a href="javascript:void(0)" class="card-link"><button class='btn text-muted  re-send-otp-btn'>Resend</button></a>
+                                <a href="javascript:void(0)" class="card-link"><button class='otp-btn-verify text-light'>Verify</button></a>
                             </div>
                         </div>
                     </div>
@@ -147,6 +148,7 @@
         jQuery(document).ready(function($){
             $('#otp_form').hide();
             $('#complete_button').hide();
+            $('.re-send-otp-time').hide(); 
 
             $("#registrationForm").submit(function (e) {
                 e.preventDefault();
@@ -177,6 +179,7 @@
                             timer: 2000
                         })
                         $('.otp-reg').show();
+                        $('.re-send-otp-time').hide(); 
                         $('.otp-sent-number').innerText($('#personPhone').val());
                         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                     },
@@ -244,6 +247,77 @@
                         })
                     },
                 });
+            });
+
+            $('.re-send-otp-btn').click(function (e){
+                var formData = new FormData();
+                formData.append('phone', $('#phone').val());
+
+                $.ajax({
+                    method: 'POST',
+                    url: '/administrator/trustedPeople/resend-otp',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        // console.log(data.message);
+                        if(data.type == 'success')
+                        {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }else if(data.type == 'error')
+                        {
+                            Swal.fire({
+                                position: 'center',
+                                icon: data.type,
+                                title: 'Oops...',
+                                footer: data.message,
+                                showConfirmButton: true,
+                                // timer: 1500
+                            })
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
+                });
+                $('.re-send-otp-btn').hide();               
+                $('.re-send-otp-time').show(); 
+                var t = 60;  
+                setInterval(() => {
+                    if(t > 1){
+                        
+                        $('.left-time').html(t);   
+                        t = t-1;
+
+                    }else{
+                        clearInterval();
+                        $('.re-send-otp-btn').show();               
+                        $('.re-send-otp-time').hide(); 
+                        t = 60;
+                    }
+                }, 1000);            
             });
         });
     </script>

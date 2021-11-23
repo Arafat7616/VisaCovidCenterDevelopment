@@ -270,7 +270,7 @@ Immigration Officer Log In
                 var t = 60;  
                 setInterval(() => {
                     if(t > 1){
-                        // alert(t)
+                        
                         $('.left-time').html(t);   
                         t = t-1;
 
