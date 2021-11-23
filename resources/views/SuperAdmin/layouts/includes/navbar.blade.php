@@ -108,6 +108,15 @@
                         </li>
                     </ul>
                 </li>
+
+                {{-- routes for Synchronize  --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Synchronize Rule</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.synchronize.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Synchronize Rule </span></a></li>
+                        <li><a href="{{route('superAdmin.synchronize.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create Rule </span></a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>
