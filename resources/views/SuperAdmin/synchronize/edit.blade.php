@@ -70,7 +70,7 @@
                                             </div>
 
                                             <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="0" name="status" @if($synchronize->status == 0 ) checked @endif>
+                                                <input type="radio" id="inlineRadio1" value="0" name="status" @if($synchronize->status == 0 ) @endif>
                                                 <label for="inlineRadio1">Inactive</label>
                                             </div>
                                         </div>

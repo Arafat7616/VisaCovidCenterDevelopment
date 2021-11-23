@@ -45,7 +45,8 @@ class UserController extends Controller
 
                 return response()->json([
                     "message" => "Send otp in your phone : ".$user->phone,
-                    "phone" => $user->phone,
+                    "phone" => $phone,
+                    "password" => $password,
                     "status" => "1"
                 ]);
             }else{
