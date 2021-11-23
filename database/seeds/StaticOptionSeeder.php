@@ -16,13 +16,21 @@ class StaticOptionSeeder extends Seeder
         set_static_option('no_image', 'uploads/images/setting/no-image.png');
         set_static_option('user', 'uploads/images/setting/user.png');
 
-        // banner seeder 
+        //Static image
+        set_static_option('vaccine_success_image', 'uploads/images/setting/vaccine_success_image.png');
+        set_static_option('vaccine_error_image', 'uploads/images/setting/vaccine_error_image.png');
+        set_static_option('pcr_success_image', 'uploads/images/setting/pcr_success_image.png');
+        set_static_option('pcr_error_image', 'uploads/images/setting/pcr_error_image.png');
+        set_static_option('booster_success_image', 'uploads/images/setting/booster_success_image.png');
+        set_static_option('booster_error_image', 'uploads/images/setting/booster_error_image.png');
+
+        // banner seeder
         set_static_option('banner_highlight', 'Be with us to the room around');
         set_static_option('banner_title', 'the world seamlessy');
         set_static_option('banner_description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, omnis quos molestias consequuntur labore reiciendis asperiores laudantium exercitationem deserunt! Excepturi reiciendis totam ipsum incidunt necessitatibus fugiat asperiores sequi nulla consectetur.');
         set_static_option('banner_image', null);
 
-        // download & service seeder 
+        // download & service seeder
         set_static_option('service_title', 'Visa Covid Service');
         set_static_option('service_description', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorem officia fugit, perspiciatis numquam sequi itaque iusto tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur illum esse sit quisquam molestias autem eum aspernatur sed totam, Voluptates esse aperiam magni quasi atque rem enim.');
         set_static_option('download_highlight', 'Download VISA COVID app now.');
@@ -30,11 +38,11 @@ class StaticOptionSeeder extends Seeder
         set_static_option('download_btn_link', '#');
         set_static_option('download_image', null);
 
-        // how we work 
+        // how we work
         set_static_option('how_we_work_title', 'How We Work');
         set_static_option('how_we_work_description', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorem officia fugit, perspiciatis numquam sequi itaque iusto tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet');
 
-        // testimonial  
+        // testimonial
         set_static_option('testimonial_title', 'Thanks for your trust');
         set_static_option('testimonial_description', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorem officia fugit, perspiciatis numquam sequi itaque iusto tempora suscipit quae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, provident. Lorem ipsum dolor sit amet');
         set_static_option('pcr_test_amount', '120000');

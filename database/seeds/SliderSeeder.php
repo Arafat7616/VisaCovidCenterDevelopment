@@ -18,7 +18,6 @@ class SliderSeeder extends Seeder
         $slider->status = "1";
         $slider->save();
 
-
         $slider = new Slider();
         $slider->title = "Slider Tow";
         $slider->image = "uploads/images/slider/_slider_1636520730.png";
@@ -30,7 +29,5 @@ class SliderSeeder extends Seeder
         $slider->image = "uploads/images/slider/_slider_1636520721.png";
         $slider->status = "1";
         $slider->save();
-
-
     }
 }

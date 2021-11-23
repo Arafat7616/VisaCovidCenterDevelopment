@@ -117,15 +117,18 @@ class HomeController extends Controller
             {
                 return response()->json([
                     "navigationPath" => "Vaccination Status",
+                    "vaccinationIcon" => "uploads/images/setting/vaccine_success_image.png",
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "Vaccine Date Status",
+                    "vaccinationIcon" => "uploads/images/setting/vaccine_success_image.png",
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "Vaccine Registration",
+                "vaccinationIcon" => "uploads/images/setting/vaccine_error_image.png",
             ]);
         }
     }
@@ -145,16 +148,19 @@ class HomeController extends Controller
             if($pcrStatus->pcr_result) {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "PCR Date Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
                 ]);
             }
 
         }else{
             return response()->json([
                 "navigationPath" => "PCR",
+                "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
             ]);
         }
     }
@@ -173,15 +179,18 @@ class HomeController extends Controller
             {
                 return response()->json([
                     "navigationPath" => "Booster Status",
+                    "boosterIcon" => "uploads/images/setting/booster_success_image.png",
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "Booster Date Status",
+                    "boosterIcon" => "uploads/images/setting/booster_success_image.png",
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "Booster",
+                "boosterIcon" => "uploads/images/setting/booster_error_image.png",
             ]);
         }
     }
