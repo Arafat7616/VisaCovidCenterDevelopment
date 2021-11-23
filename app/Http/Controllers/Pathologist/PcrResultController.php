@@ -53,13 +53,13 @@ class PcrResultController extends Controller
                 ]);
             } catch (\Exception $exception) {
                 return response()->json([
-                    'type' => 'warning',
+                    'type' => 'error',
                     'message' => 'Something going wrong. ' . $exception->getMessage(),
                 ]);
             }
         }else{
             return response()->json([
-                'type' => 'warning',
+                'type' => 'error',
                 'message' => 'Have to select Positive or Negative !',
             ]);
         }

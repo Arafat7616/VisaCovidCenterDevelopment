@@ -27,14 +27,10 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
-        //$userArray = $request;
-        $email = $userArray['email'];
+        $phone = $userArray['phone'];
         $password = $userArray['password'];
-        //$email = $request->email;
-        //$password = $request->password;
 
-
-        $user = User::where('email', $email)->first();
+        $user = User::where('phone', $phone)->first();
 
         if ($user)
         {
@@ -44,19 +40,8 @@ class UserController extends Controller
                 $user->otp = $otp;
                 $user->save();
 
-                /*$curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $user->phone),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);*/
-
+                $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+                send_sms($message, $phone);
 
                 return response()->json([
                     "message" => "Send otp in your phone : ".$user->phone,
@@ -69,7 +54,6 @@ class UserController extends Controller
                     "message" => "Please insert correct password"
                 ]);
             }
-
         }else{
             return response()->json([
                 "message" => "Please insert correct email",
@@ -91,21 +75,18 @@ class UserController extends Controller
 
     public function otpCheck(Request $request)
     {
-//
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $otp = $userArray['otp'];
 
         $existUser = User::where('phone', $phone)->first();
 
-        //return $existUser;
-
-
         if ($otp == $existUser->otp)
         {
             $existUser->status = "1";
             $existUser->otp_verified_at = Carbon::now();
             $existUser->update();
+
 
             return response()->json([
                 "message"=>"Otp successfully verified",
@@ -139,29 +120,7 @@ class UserController extends Controller
                 "status"=>"0",
             ]);
         }
-        //$userArray = json_decode($request->getContent(), true);
-//        $userArray = $request;
 
-        /*return response()->json([
-            "message"=>"User Successfully created",
-            "status"=>"1",
-            "result"=>$request->all(),
-        ]);
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required|unique:users',
-            'password' => 'required|min:5',
-        ]);*/
-
-//        $error = $validator->errors();
-
-//        if (count($error) != 0) {
-//            return response()->json([
-//                'error' => $error,
-//                'status' => "0"
-//            ]);
-//        }
         $userArray['name'] = $request->name;
         $userArray['phone'] = $request->phone;
         $userArray['email'] = $request->email;
@@ -179,18 +138,9 @@ class UserController extends Controller
 
         if ($result){
 
-            $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('api_key' => '9G9AOCd0XEO8O0jJc2Lr5U9E990GK2uTL3TZwVFH','msg' => 'Welcome to Covid Visa, your otp is : '. $otp,'to' => $phone),
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
+            // Send otp via helper function
+            $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+            send_sms($message, $phone);
 
             return response()->json([
                 "message"=>"Otp send in : ".$request->phone,

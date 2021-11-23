@@ -48,6 +48,8 @@ class Center extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-
-
+    public function price()
+    {
+        return $this->hasOne(Price::class, 'center_id');
+    }
 }

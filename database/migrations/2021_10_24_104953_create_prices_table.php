@@ -22,7 +22,7 @@ class CreatePricesTable extends Migration
             $table->string('vaccine_premium')->nullable();
             $table->string('booster_premium')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
-            $table->enum('status', [0,1]);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

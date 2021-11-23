@@ -16,4 +16,9 @@ class Price extends Model
         'center_id',
         'status'
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class, 'center_id');
+    }
 }
