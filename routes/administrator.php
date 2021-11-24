@@ -40,7 +40,10 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     Route::group(['prefix' => 'regular/', 'as' => 'regular.'], function () {
         Route::get('index', 'RegularManPowerController@index')->name('index');
         Route::get('create', 'RegularManPowerController@create')->name('create');
+        Route::get('edit/{id}', 'RegularManPowerController@edit')->name('edit');
+        Route::post('update/{id}', 'RegularManPowerController@update')->name('update');
         Route::post('store', 'RegularManPowerController@store')->name('store');
+        Route::delete('destroy/{id}', 'RegularManPowerController@destroy')->name('destroy');
     });
 
     // regular man power

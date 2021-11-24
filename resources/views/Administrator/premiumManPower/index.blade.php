@@ -188,14 +188,14 @@
                             <div class="cal-morning-slot">
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
-                                    <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->morning_starting_time }}" @endif
+                                    <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_starting_time }}" @endif
                                         name="morningSlotStart"> -
-                                    <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->morning_ending_time }}" @endif name="morningSlotEnd">
+                                    <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
                                 @php
-                                    if ($manPowerShedule) {
-                                        $morning_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->morning_starting_time);
-                                        $morning_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->morning_ending_time);
+                                    if ($manPowerSchedule) {
+                                        $morning_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerSchedule->morning_starting_time);
+                                        $morning_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerSchedule->morning_ending_time);
                                         $morning_slot_minutes = $morning_starting_time->diffInMinutes($morning_ending_time);
                                     }
                                 @endphp
@@ -206,15 +206,15 @@
                             <div class="cal-day-slot">
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
-                                    <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->day_starting_time }}" @endif
+                                    <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_starting_time }}" @endif
                                         name="daySlotStart"> -
-                                    <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerShedule) value="{{ $manPowerShedule->day_ending_time }}" @endif
+                                    <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_ending_time }}" @endif
                                         name="daySlotEnd">
                                 </div>
                                 @php
-                                    if ($manPowerShedule) {
-                                        $day_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->day_starting_time);
-                                        $day_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerShedule->day_ending_time);
+                                    if ($manPowerSchedule) {
+                                        $day_starting_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerSchedule->day_starting_time);
+                                        $day_ending_time = \Carbon\Carbon::createFromFormat('H:i', $manPowerSchedule->day_ending_time);
                                         $day_slot_minutes = $day_starting_time->diffInMinutes($day_ending_time);
                                     }
                                 @endphp
@@ -227,7 +227,7 @@
                             <ul class="total">
                                 <li class="cal-min-l">Total minutes</li>
                                 @php
-                                    if ($manPowerShedule) {
+                                    if ($manPowerSchedule) {
                                         $totalDayMinutes = $morning_slot_minutes + $day_slot_minutes;
                                         $totalManMinutePerDay = $totalDayMinutes * get_total_volenteers();
                                     }
@@ -262,18 +262,18 @@
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->pcr_time }}" @endif
+                                                onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->pcr_time }}" @endif
                                                 name="timeForPcr"> <small class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_pcr }}" @endif
+                                                onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
                                                 name="volunteerForPcr"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-pcr-serve">
-                                            @if ($manPowerShedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->pcr_time, $manPowerShedule->volunteer_for_pcr) }}
+                                            @if ($manPowerSchedule)
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->volunteer_for_pcr) }}
                                             @endif
                                         </p>
                                     </td>
@@ -285,18 +285,18 @@
                                     <td class="cal-x-y">
                                         <p class="p-mxx"> <input type="number" class="cal-min-t"
                                                 onchange="setMaxVaccineService()" id="timeForVaccine"
-                                                @if ($manPowerShedule) value="{{ $manPowerShedule->vaccine_time }}" @endif name="timeForVaccine"> <small
+                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
                                                 class="s-cx">min</small></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mxx"> <input type="number" class="cal-min-t"
                                                 onchange="setMaxVaccineService()" id="volunteerForVaccine"
-                                                @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-vaccine-serve">
-                                            @if ($manPowerShedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->vaccine_time, $manPowerShedule->volunteer_for_vaccine) }}
+                                            @if ($manPowerSchedule)
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->volunteer_for_vaccine) }}
                                             @endif
                                         </p>
                                     </td>
@@ -308,18 +308,18 @@
                                     <td class="cal-x-y">
                                         <p class="p-mxx"> <input type="number" class="cal-min-t"
                                                 onchange="setMaxBoosterService()" id="timeForBooster"
-                                                @if ($manPowerShedule) value="{{ $manPowerShedule->booster_time }}" @endif name="timeForBooster"> <small
+                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->booster_time }}" @endif name="timeForBooster"> <small
                                                 class="s-cx">min</small> </p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mxx"><input type="number" class="cal-min-t"
                                                 onchange="setMaxBoosterService()" id="volunteerForBooster"
-                                                @if ($manPowerShedule) value="{{ $manPowerShedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
+                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
                                     </td>
                                     <td class="cal-x-y">
                                         <p class="p-mx" id="max-booster-serve">
-                                            @if ($manPowerShedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerShedule->booster_time, $manPowerShedule->volunteer_for_booster) }}
+                                            @if ($manPowerSchedule)
+                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->volunteer_for_booster) }}
                                             @endif
                                         </p>
                                     </td>

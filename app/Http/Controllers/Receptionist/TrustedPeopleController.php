@@ -242,6 +242,7 @@ class TrustedPeopleController extends Controller
 
             return response()->json([
                 'type' => 'success',
+                'message' => 'Successfully Deleted !!',
             ]);
         } catch (\Exception $exception) {
             return response()->json([

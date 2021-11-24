@@ -12,8 +12,8 @@ class PremiumManPowerController extends Controller
 {
     public function index()
     {
-        $manPowerShedule = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->center_id)->orderBy('date', 'DESC')->first();
-        return view('Administrator.premiumManPower.index', compact('manPowerShedule'));
+        $manPowerSchedule = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->center_id)->orderBy('date', 'DESC')->first();
+        return view('Administrator.premiumManPower.index', compact('manPowerSchedule'));
     }
 
     public function store(Request $request)

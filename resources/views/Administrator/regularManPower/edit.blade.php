@@ -14,166 +14,9 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Regular Manpwoer Schedule</h1>
+                    <h1 class="cal-header">Edit Regular Manpwoer Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
                     <div class="cal-body ">
-                        {{-- <div class="month">
-                            August 2021
-                            <button class="cal-left-l"><i class="fas fa-chevron-left"></i></button>
-                            <button class="cal-right-r"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-
-                        <table class="calender_14 ">
-                            <tr class="cal-tr">
-                                <td class="cal-td"> <button class="cal-btn"> Sat </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Sun </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Mon </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Tue </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Wed </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Thu </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Fri </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Sat </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Sun </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Mon </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Tue </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Wed </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Thu </button> </td>
-                                <td class="cal-td"> <button class="cal-btn"> Fri </button> </td>
-                            </tr>
-                            <tr class="cal-tr">
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">1 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">2 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">3 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">4 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">5 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">6 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">7 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">8 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">9 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">10 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">11 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">12 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">13 </p>
-                                    </button> </td>
-                            </tr>
-                            <tr class="cal-tr">
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">14 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">15 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">16 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">17 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">18 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">19 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">20 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">21 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">22 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">23 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">24 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">25 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">26 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">27 </p>
-                                    </button> </td>
-                            </tr>
-                            <tr class="cal-tr">
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">28 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">29 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">30 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text">31 </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                                <td class="cal-td"> <button class="cal-btn">
-                                        <p class="cla-text"> </p>
-                                    </button> </td>
-                            </tr>
-
-                        </table> --}}
-                        <div class="calendar calendar-first p-5" id="calendar_first">
+                        {{-- <div class="calendar calendar-first p-5" id="calendar_first">
                             <div class="calendar_header">
                                 <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
                                 <h2></h2>
@@ -181,13 +24,14 @@
                             </div>
                             <div class="calendar_weekdays"></div>
                             <div class="calendar_content"></div>
-                        </div>
+                        </div> --}}
                     </div>
                     <form action="">
                         <div class="cal-slot row ">
                             <div class="cal-morning-slot">
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
+                                    <input type="hidden" name="id" value="{{ $manPowerSchedule->id }}" id="id">
                                     <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_starting_time }}" @endif
                                         name="morningSlotStart"> -
                                     <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_ending_time }}" @endif name="morningSlotEnd">
@@ -324,16 +168,6 @@
                                         </p>
                                     </td>
                                 </tr>
-                                {{-- <tr class="cal-mx-x-i">
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx">Average service per day </p>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx">249 </p>
-                                    </td>
-                                </tr> --}}
                                 <tr class="cal-mx-x-p">
                                     <td></td>
                                     <td>
@@ -345,24 +179,6 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                        {{-- <div class="check-cal">
-                            <input id="isDefault" name="isDefault" type="checkbox" class="check-x"> Set this as default for everyday<br>
-                        </div> --}}
-
-                        <div class="row mb-5 mt-5 offset-2">
-                            <div class="col-5">
-                                <div class="form-group">
-                                    <label for="fromDate">From Date</label>
-                                    <input type="date" name="fromDate" class="form-control" id="fromDate" />
-                                </div>                                                
-                            </div>
-                            <div class="col-5">
-                                <div class="form-group">
-                                    <label for="toDate">To Date</label>
-                                    <input type="date" name="toDate" class="form-control" id="toDate" />
-                                </div>                                                
-                            </div>
                         </div>
                         <div class="cal-save">
                             <button class="cal-x-btn schedule-save-btn">Save</button>
@@ -392,16 +208,17 @@
                 formData.append('timeForBooster', $('#timeForBooster').val());
                 formData.append('volunteerForPcr', $('#volunteerForPcr').val());
                 formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
-                formData.append('volunteerForBooster', $('#volunteerForBooster').val());
-                formData.append('fromDate', $('#fromDate').val());
-                formData.append('toDate', $('#toDate').val());               
+                formData.append('volunteerForBooster', $('#volunteerForBooster').val());        
                 formData.append('booster_available_set', $('#max-booster-serve').text());               
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
+                formData.append('id', $('#id').val());               
+                // var dksjfos = "{{ url('administrator/regular/update') }}"+"/"+$('#id').val();
 
+                // alert(dksjfos);
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/regular/store') }}",
+                    url: "{{ url('administrator/regular/update') }}"+"/"+$('#id').val(),
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
