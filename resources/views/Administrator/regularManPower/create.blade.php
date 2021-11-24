@@ -14,7 +14,7 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Regular Manpwoer Schedule</h1>
+                    <h1 class="cal-header">Regular Manpower Schedule</h1>
                     <div class="cal-body ">
                         {{-- <div class="month">
                             August 2021

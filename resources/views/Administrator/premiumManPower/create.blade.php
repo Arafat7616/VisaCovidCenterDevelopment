@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Regular Man Power Add
+    Premium Man Power Add
 @endpush
 
 @push('css')
@@ -14,7 +14,7 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Regular Manpwoer Schedule</h1>
+                    <h1 class="cal-header">Premium Manpower Schedule</h1>
                     <div class="cal-body ">
                         {{-- <div class="month">
                             August 2021
@@ -401,7 +401,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/regular/store') }}",
+                    url: "{{ url('administrator/premium/store') }}",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
