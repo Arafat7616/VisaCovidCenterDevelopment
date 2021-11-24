@@ -16,6 +16,10 @@ class CustomLoginController extends Controller
         return view('auth.immigrationOfficer.immigration-officer-login');
     }
 
+    // bd govt login page
+    public function bdGovtLogin(){
+        return view('auth.bdGovt.bd-govt-login');
+    }
     public function getMyOTP(Request $request)
     {
         $request->validate([
