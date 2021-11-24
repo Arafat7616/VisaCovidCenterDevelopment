@@ -49,8 +49,11 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
     // regular man power
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
         Route::get('index', 'PremiumManPowerController@index')->name('index');
+        Route::get('create', 'PremiumManPowerController@create')->name('create');
+        Route::get('edit/{id}', 'PremiumManPowerController@edit')->name('edit');
+        Route::post('update/{id}', 'PremiumManPowerController@update')->name('update');
         Route::post('store', 'PremiumManPowerController@store')->name('store');
-
+        Route::delete('destroy/{id}', 'PremiumManPowerController@destroy')->name('destroy');
     });
 
     Route::get('profile', 'DashboardController@profile')->name('profile');
