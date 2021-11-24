@@ -108,6 +108,7 @@ class NormalVaccinationController extends Controller
             $vaccination->delete();
             return response()->json([
                 'type' => 'success',
+                'message' => 'Successfully Deleted !!',
             ]);
         } catch (\Exception $exception) {
             return response()->json([

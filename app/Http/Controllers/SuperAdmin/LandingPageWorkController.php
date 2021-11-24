@@ -129,6 +129,7 @@ class LandingPageWorkController extends Controller
             $work->delete();
             return response()->json([
                 'type' => 'success',
+                'message' => 'Successfully Deleted !!',
             ]);
         } catch (\Exception $exception) {
             return response()->json([
