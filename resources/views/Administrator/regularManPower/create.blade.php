@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Premium Man Power
+    Regular Man Power Add
 @endpush
 
 @push('css')
@@ -14,7 +14,7 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Manpwoer Schedule</h1>
+                    <h1 class="cal-header">Regular Manpwoer Schedule</h1>
                     <div class="cal-body ">
                         {{-- <div class="month">
                             August 2021
@@ -346,9 +346,23 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="check-cal">
-                            <input id="isDefault" name="isDefault" type="checkbox" class="check-x"> Set this as
-                            default for everyday<br>
+                        {{-- <div class="check-cal">
+                            <input id="isDefault" name="isDefault" type="checkbox" class="check-x"> Set this as default for everyday<br>
+                        </div> --}}
+
+                        <div class="row mb-5 mt-5 offset-2">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <label for="fromDate">From Date</label>
+                                    <input type="date" name="fromDate" class="form-control" id="fromDate" />
+                                </div>                                                
+                            </div>
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <label for="toDate">To Date</label>
+                                    <input type="date" name="toDate" class="form-control" id="toDate" />
+                                </div>                                                
+                            </div>
                         </div>
                         <div class="cal-save">
                             <button class="cal-x-btn schedule-save-btn">Save</button>
@@ -381,12 +395,15 @@
                 formData.append('volunteerForPcr', $('#volunteerForPcr').val());
                 formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
                 formData.append('volunteerForBooster', $('#volunteerForBooster').val());
-
-                
+                formData.append('fromDate', $('#fromDate').val());
+                formData.append('toDate', $('#toDate').val());               
+                formData.append('booster_available_set', $('#max-booster-serve').text());               
+                formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
+                formData.append('pcr_available_set', $('#max-pcr-serve').text());               
 
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/premium/store') }}",
+                    url: "{{ url('administrator/regular/store') }}",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
