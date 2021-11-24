@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        @include('auth.immigrationOfficer.includes.head')
+        @include('auth.bdGovt.includes.head')
     </head>
 
     <body>
@@ -13,7 +13,7 @@
         @endif
         @yield('content')
 
-        @include('auth.immigrationOfficer.includes.foot')
+        @include('auth.bdGovt.includes.foot')
     </body>
 
 </html>

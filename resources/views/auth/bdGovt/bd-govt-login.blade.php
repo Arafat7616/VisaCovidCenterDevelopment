@@ -1,4 +1,4 @@
-@extends('auth.immigrationOfficer.master')
+@extends('auth.bdGovt.master')
 
 @push('title')
 Immigration Officer Log In
@@ -78,7 +78,7 @@ Immigration Officer Log In
 
 <div class="col-12 d-flex">
     <div class="left-log col-md-6">
-        <img src="{{ asset('assets/immigration/img/Portal/Login.png') }}" alt="">
+        <img height="100%" class="login-image" src="{{ asset('assets/bd-govt/img/Portal/govt-login.png') }}" alt="">
     </div>
 
     <div class="right-log col-md-6">

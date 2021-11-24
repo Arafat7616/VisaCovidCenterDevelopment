@@ -6,8 +6,8 @@
 
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/bootstrap.min.css') }}">
 {{-- <link rel="stylesheet" href="{{ asset('assets/center-part/css/register.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('assets/immigration/css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/immigration/css/login.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bd-govt/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bd-govt/css/login.css') }}">
 {{-- <link rel="stylesheet" href="{{ asset('assets/center-part/css/footer.css') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('assets/center-part/css/header.css') }}"> --}}
 
