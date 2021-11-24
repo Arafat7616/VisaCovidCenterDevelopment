@@ -111,6 +111,18 @@ class HomeController extends Controller
 
         $vaccinationStatus = Vaccination::where('user_id', $existUser->id)->first();
 
+        if ($vaccinationStatus)
+        {
+            if ($vaccinationStatus->date_of_first_dose != null && $vaccinationStatus->date_of_second_dose != null)
+            {
+                $boosterStatus = '1';
+            }else{
+                $boosterStatus = '0';
+            }
+        }else{
+            $boosterStatus = '0';
+        }
+
         if ($vaccinationStatus){
 
             if ($vaccinationStatus->date_of_first_dose)
@@ -118,17 +130,20 @@ class HomeController extends Controller
                 return response()->json([
                     "navigationPath" => "Vaccination Status",
                     "vaccinationIcon" => "uploads/images/setting/vaccine_success_image.png",
+                    "boosterStatus"=>$boosterStatus,
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "Vaccine Date Status",
                     "vaccinationIcon" => "uploads/images/setting/vaccine_success_image.png",
+                    "boosterStatus"=>$boosterStatus,
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "Vaccine Registration",
                 "vaccinationIcon" => "uploads/images/setting/vaccine_error_image.png",
+                "boosterStatus"=>$boosterStatus,
             ]);
         }
     }
