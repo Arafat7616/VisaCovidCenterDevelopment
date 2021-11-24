@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Regular Man Power Add
+    Premium Man Power Add
 @endpush
 
 @push('css')
@@ -14,7 +14,7 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Edit Regular Manpwoer Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
+                    <h1 class="cal-header">Edit Premium Manpower Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
                     <div class="cal-body ">
                         {{-- <div class="calendar calendar-first p-5" id="calendar_first">
                             <div class="calendar_header">
@@ -213,12 +213,12 @@
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
                 formData.append('id', $('#id').val());               
-                // var dksjfos = "{{ url('administrator/regular/update') }}"+"/"+$('#id').val();
+                // var dksjfos = "{{ url('administrator/premium/update') }}"+"/"+$('#id').val();
 
                 // alert(dksjfos);
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/regular/update') }}"+"/"+$('#id').val(),
+                    url: "{{ url('administrator/premium/update') }}"+"/"+$('#id').val(),
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

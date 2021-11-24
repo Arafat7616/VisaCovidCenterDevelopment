@@ -14,7 +14,7 @@
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="container">
                 <div class="row">
-                    <h1 class="cal-header">Edit Regular Manpwoer Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
+                    <h1 class="cal-header">Edit Regular Manpower Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
                     <div class="cal-body ">
                         {{-- <div class="calendar calendar-first p-5" id="calendar_first">
                             <div class="calendar_header">

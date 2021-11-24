@@ -28,7 +28,7 @@ Regular Man Power
 <div class="my-3 p-3">
     <div class="card-body shadow " style="margin-bottom: 120px;">
         <div class="row">
-            <h1 class="cal-header text-center">Regular Manpwoer Schedule <a class="btn btn-success"
+            <h1 class="cal-header text-center">Regular Manpower Schedule <a class="btn btn-success"
                     href="{{ route('administrator.regular.create') }}">Add new</a></h1>
             <div>
 
