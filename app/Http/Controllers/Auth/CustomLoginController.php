@@ -11,8 +11,19 @@ use Illuminate\Support\Facades\Hash;
 class CustomLoginController extends Controller
 {
     // immigration officer login page
-    public function immigrationOfficerLogin(){
+    public function immigrationOfficerLogin()
+    {
         return view('auth.immigrationOfficer.immigration-officer-login');
+    }
+
+    // bd govt login page
+    public function bdGovtLogin(){
+        return view('auth.bdGovt.bd-govt-login');
+    }
+
+    // super-admin-login page
+    public function superAdminLogin(){
+        return view('auth.superAdmin.super-admin-login');
     }
 
     public function getMyOTP(Request $request)
@@ -24,57 +35,45 @@ class CustomLoginController extends Controller
 
         $user = User::where('phone', $request->phone)->first();
 
-        if ($user)
-        {
+        if ($user) {
             $hashPassword = $user->password;
-            if ($user->deleted_at == null)
-            {
-                if($user->status == 0){
+            if ($user->deleted_at == null) {
+                if ($user->status == 0) {
                     return response()->json([
                         'type' => 'error',
                         'message' => 'Sorry ! This account is not Activated. Please contact with admin . Thank you !'
                     ]);
-                }else{
-                    if (Hash::check($request->password, $hashPassword))
-                    {
-                        $user->otp = rand(100000,1000000);
-                        $user ->save();
+                } else {
+                    if (Hash::check($request->password, $hashPassword)) {
+                        $user->otp = rand(100000, 1000000);
+                        $user->save();
 
-                        //send otp in sms by curl
-                        $curl = curl_init();
-                        curl_setopt_array($curl, array(
-                            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_CUSTOMREQUEST => 'POST',
-                            CURLOPT_POSTFIELDS => array('api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO','msg' => 'Welcome to Visa Covid, your otp is : '. $user->otp,'to' => $user->phone),
-                        ));
-                        $response = curl_exec($curl);          
-                        curl_close($curl);
-                        
+                        // send sms via helper function
+                        send_sms('Welcome to Visa Covid, your otp is : ' . $user->otp, $user->phone);
+
                         return response()->json([
-                            "message"=>"Otp send in : ".$request->phone,
+                            "message" => "Otp send in : " . $request->phone,
                             'type' => 'success',
-                        ]);                       
-                    }else{
+                        ]);
+                    } else {
                         return response()->json([
                             'type' => 'error',
                             'message' => 'Please Insert valid password'
                         ]);
                     }
                 }
-            }else{
+            } else {
                 return response()->json([
                     'type' => 'error',
                     'message' => 'This account has been suspended! .Please contact with admin .'
                 ]);
             }
-        }else{
+        } else {
             return response()->json([
                 'type' => 'error',
                 'message' => 'Please Insert valid phone no.'
             ]);
         }
-
     }
 
     public function checkOtp(Request $request)
@@ -86,7 +85,7 @@ class CustomLoginController extends Controller
 
         $verification = User::where('phone', $request->phone)->where('otp', $request->otp)->first();
 
-        if ($verification){
+        if ($verification) {
             $verification->otp_verified_at = Carbon::now();
             $verification->save();
 
@@ -95,7 +94,7 @@ class CustomLoginController extends Controller
                 'message' => 'OTP Successfully verified',
                 'phone' => $request->phone
             ]);
-        }else{
+        } else {
             return response()->json([
                 'type' => 'error',
                 'message' => 'OTP Failed verified. Please Insert correct OTP',

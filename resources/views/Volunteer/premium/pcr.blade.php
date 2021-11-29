@@ -37,14 +37,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                {{-- <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="ID/Name/Phone/Date">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary" type="button">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div> --}}
+                                
                             </div>
                         </div>
                     </div>
@@ -57,7 +50,7 @@
                             <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
                                 aria-controls="collapse{{ $loop->iteration }}">
-                                {{-- <span class="table-accordion-date">{{ $pcrTestOrderByDate->first()->result_published_date->format('d/m/Y') }}</span> --}}
+                                
                                 <span
                                     class="table-accordion-date">{{ Carbon\Carbon::parse($pcrTestOrderByDate->first()->result_published_date)->format('d/m/Y') }}</span>
                                 <span class="table-accordion-people">{{ $pcrTestOrderByDate->count() }} People</span>
