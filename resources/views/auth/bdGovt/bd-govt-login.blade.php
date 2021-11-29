@@ -8,79 +8,11 @@ Immigration Officer Log In
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/Administrator-3.css') }}">
 @endpush
 @section('content')
-{{-- <div class="container my-5 ">
-    <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-5">
-            <!-- ==============card header title start=============== -->
-            <div class="card administrator-card-head w-75 mx-auto">
-                <div class="card-body  text-center">
-                    <h6 class="">Log in</h6>
-                </div>
-            </div>
-            <!-- =================card header title start=============== -->
-            <!-- =================card form start======================== -->
-            <div class="card w-75 shadow mx-auto">
-                <div class="card-body">
-                    <form action="{{route('login')}}" method="POST" id="loginForm">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="phone" class="form-label text-muted">Phone Number</label>
-                            <input name="phone" id="phone" type="text"
-                                class="form-control @error('phone') is-invalid @enderror"
-                                placeholder='Enter Phone Number'>
-                        </div>
-                        @error('phone')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label text-muted">Password</label>
-                            <input type="password" name="password"
-                                class="form-control @error('email') is-invalid @enderror" id="password">
-                        </div>
-                        @error('password')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-
-                        <div class="text-center">
-                            <button type="submit" class="addministator-form-sub-btn">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!--=================== card form end =========================-->
-        </div>
-        <!--================== Otp right side div start==================== -->
-        <div class="col-lg-6 col-md-12  col-sm-12 text-center mt-3 otp-reg">
-            <div class="right-side-form">
-                <p class="text-muted">An OTP is just sent to your mobile <br> <span class="otp-sent-number"></span></p>
-                <p class="text-muted">Enter the OTP here :</p>
-                <!--======================== otp card start here==================== -->
-                <div class="d-flex justify-content-center">
-                    <div class="card shadow w-50">
-                        <div class="card-body">
-                            <h5 class="card-title text-muted">OTP verification</h5>
-                            <div class='text-center otp-card-place my-2'>
-                                <input type="text" class='form-control otp-card-place' id="otp" placeholder='12345' />
-                            </div>
-                            <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
-                            <a href="#" class="card-link"><button class='otp-btn-verify text-light'>Verify</button></a>
-                        </div>
-                    </div>
-                </div>
-                <!--======================== otp card end here==================== -->
-            </div>
-            <button class="mt-5  apply-reg-btn">Login</button>
-        </div>
-        <!--================== Otp right side div end==================== -->
-    </div>
-</div> --}}
 
 <div class="col-12 d-flex">
     <div class="left-log col-md-6">
         <img height="100%" class="login-image" src="{{ asset('assets/bd-govt/img/Portal/govt-login.png') }}" alt="">
     </div>
-
     <div class="right-log col-md-6">
         <center>
             <div class="border-top">
@@ -122,16 +54,11 @@ Immigration Officer Log In
                                     <input type="text" class="inputs otp-text" maxlength="1" id="fourth" onkeyup="movetoNext(this, 'fivth')">
                                     <input type="text" class="inputs otp-text" maxlength="1" id="fivth" onkeyup="movetoNext(this, 'sixth')">
                                     <input type="text" class="inputs otp-text" maxlength="1" id="sixth">
-                                    {{-- <div class='text-center otp-card-place my-2'>
-                                        <input type="text" class='form-control otp-card-place' id="otp" placeholder='12345' />
-                                    </div> --}}
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="log-from-text ">An OTP is sent to your phone.<br>
-
                                     <a href="javascript:void(0)"><button style="color: red !important;" class='btn text-muted re-send-otp-time'><span class="left-time">00</span> Second</button></a>
-
                                     <span><a href="javascript:void(0)" class="re-send-otp-btn">Resend</a></span>
                                 </p>
                             </div>
@@ -143,9 +70,7 @@ Immigration Officer Log In
                 </div>
             </div>
         </center>
-
     </div>
-
 </div>
 @endsection
 
@@ -347,6 +272,5 @@ Immigration Officer Log In
             document.getElementById(nextFieldID).focus();  
         }  
     } 
-
 </script>
 @endpush
