@@ -168,16 +168,7 @@
                                         </p>
                                     </td>
                                 </tr>
-                                {{-- <tr class="cal-mx-x-i">
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx">Average service per day </p>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx">249 </p>
-                                    </td>
-                                </tr> --}}
+                                
                                 <tr class="cal-mx-x-p">
                                     <td></td>
                                     <td>
