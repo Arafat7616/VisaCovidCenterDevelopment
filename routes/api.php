@@ -77,6 +77,9 @@ Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 // Synchronize info
 Route::post('home/synchronizeInformation', 'Api\UserController@synchronizeInformation');
 
+Route::post('otpResend', 'Api\UserController@otpResend');
+
+
 
 
 

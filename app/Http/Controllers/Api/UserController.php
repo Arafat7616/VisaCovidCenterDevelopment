@@ -75,6 +75,37 @@ class UserController extends Controller
 
     }
 
+    public function otpResend(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->first();
+
+        if ($existUser)
+        {
+            $otp = rand(100000, 990000);
+            $existUser->otp = $otp;
+            $existUser->save();
+
+            $message = 'Welcome to Visa Covid, your otp is : '. $otp;
+            send_sms($message, $phone);
+
+
+            return response()->json([
+                "message"=>"Otp send in : ".$phone,
+                "phone"=>$request->phone,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please insert validate otp",
+                "status"=>"0",
+            ]);
+        }
+
+    }
+
     public function otpCheck(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
