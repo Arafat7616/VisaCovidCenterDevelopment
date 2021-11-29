@@ -28,16 +28,13 @@
                                     <h5>Trusted ID</h5>
                                     <h5>Phone</h5>
                                     <h5>Post</h5>
-                                    {{-- <h5>Age</h5> --}}
                                     <h5>Immigration Center</h5>
                                     <h5>Immigration Center ID</h5>
                                 </div>
                                 <div class="col-6 details-value">
                                     <h5>{{ $user->id }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>Immigration Officer</h5>
-                                    {{-- <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }} --}}
-                                    {{-- </h5> --}}
+                                    <h5>Immigration Officer</h5>                                  
                                     <h5>{{ $user->immigrationCenter->name }}</h5>
                                     <h5>{{ $user->immigration_center_id }}</h5>
                                 </div>

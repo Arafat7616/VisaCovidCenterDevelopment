@@ -10,7 +10,6 @@
                             {{ get_static_option('banner_description') }}
                         </p>
                         <div class="my-4">
-                            {{-- <button class="download-btn pulse">Download Our App</button> --}}
                             <a target="_blank" href="{{ get_static_option('download_btn_link') ?? '#' }}" class="download-btn pulse">Download Our App</a>
                         </div>
                     </div>

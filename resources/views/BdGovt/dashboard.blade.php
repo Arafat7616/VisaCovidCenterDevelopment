@@ -1,7 +1,7 @@
 @extends('BdGovt.layouts.master')
 
 @push('title')
-Super Admin
+BD Govt.
 @endpush
 
 @push('css')
@@ -188,46 +188,8 @@ Super Admin
                 </div>
             </div>
         </div>
-        <div class="row">
-            {{-- <div class="col-sm-6 col-lg-3">
-                <div class="panel panel-primary text-center">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Order Status</h4>
-                    </div>
-                    <div class="panel-body">
-                        <h3 class=""><b>3685</b></h3>
-                        <p class="text-muted"><b>15%</b> Orders in Last 10 months</p>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-        <div class="row">
-            {{-- <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        <h4 class="m-t-0">Revenue</h4>
-                        <ul class="list-inline m-t-30 widget-chart text-center">
-                            <li>
-                                <i class="mdi mdi-arrow-up-bold-circle text-success"></i>
-                                <h4 class=""><b>5248</b></h4>
-                                <h5 class="text-muted m-b-0">Marketplace</h5>
-                            </li>
-                            <li>
-                                <i class="mdi mdi-arrow-down-bold-circle text-danger"></i>
-                                <h4 class=""><b>321</b></h4>
-                                <h5 class="text-muted m-b-0">Last week</h5>
-                            </li>
-                            <li>
-                                <i class="mdi mdi-arrow-up-bold-circle text-success"></i>
-                                <h4 class=""><b>964</b></h4>
-                                <h5 class="text-muted m-b-0">Last Month</h5>
-                            </li>
-                        </ul>
-                        <div id="sparkline1" style="margin: 0 -21px -22px -22px;"></div>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
+        
+        
     </div> <!-- container -->
 </div> <!-- content -->
 @endsection

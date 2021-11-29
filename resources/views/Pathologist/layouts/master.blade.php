@@ -18,7 +18,7 @@
         @yield('content')
     </div>
 
-    @include('Pathologist\layouts\includes\footer')
+    @include('Pathologist.layouts.includes.footer')
 
     @include('Pathologist.layouts.includes.foot')
 </body>

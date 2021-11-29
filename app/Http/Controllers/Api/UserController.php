@@ -41,6 +41,7 @@ class UserController extends Controller
                 $user->save();
 
                 $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+
                 send_sms($message, $phone);
 
                 return response()->json([
@@ -141,6 +142,7 @@ class UserController extends Controller
 
             // Send otp via helper function
             $message = 'Welcome to Covid Visa, your otp is : '. $otp.'. Please don\'t share your otp';
+
             send_sms($message, $phone);
 
             return response()->json([

@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.login-image{
+    height: 100%;
+    width: 100%;
+}
+
 .right-log{
     background-image: url(./../img/Portal/logback.png);
     background-position: center;
@@ -110,6 +115,11 @@
         display: none;
     }
 
+    .login-image{
+        width: 100%;
+        height: 100%;
+    }
+
 
     .right-log{
         width: 100%;
@@ -190,6 +200,11 @@
     .left-log img{
         width: 100%;
         height: 850px;
+    }
+
+    .login-image{
+        height: 100%;
+        width: 100%;
     }
     .otp-btn-pa{
         margin-bottom: 40px;
