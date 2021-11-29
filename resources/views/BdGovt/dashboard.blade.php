@@ -1,7 +1,7 @@
 @extends('BdGovt.layouts.master')
 
 @push('title')
-Super Admin
+BD Govt.
 @endpush
 
 @push('css')
