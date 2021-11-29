@@ -12,6 +12,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
 
     Route::resource('payment', 'PaymentMethodController');
     Route::resource('slider', 'SliderController');
+    Route::resource('synchronize', 'SynchronizeController');
 
     // route for manage user
     Route::group(['prefix' => 'manage-user/', 'as' => 'manageUser.'], function () {

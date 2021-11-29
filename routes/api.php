@@ -51,7 +51,6 @@ Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boos
 
 
 //Service Status Check
-
 Route::post('home/vaccine/statusCheck', 'Api\HomeController@VaccineStatusCheck');
 Route::post('home/pcr/statusCheck', 'Api\HomeController@PrcStatusCheck');
 Route::post('home/booster/statusCheck', 'Api\HomeController@BoosterStatusCheck');
@@ -75,6 +74,8 @@ Route::post('home/vaccinationInformation', 'Api\HomeController@vaccinationInform
 Route::post('home/pcrInformation', 'Api\HomeController@pcrInformation');
 Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 
+// Synchronize info
+Route::post('home/synchronizeInformation', 'Api\UserController@synchronizeInformation');
 
 
 
