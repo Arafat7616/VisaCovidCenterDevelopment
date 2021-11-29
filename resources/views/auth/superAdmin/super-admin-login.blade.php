@@ -108,7 +108,7 @@ Immigration Officer Log In
                             --}}
                         </form>
                     </div>
-                    <div class="otp-verify-form">
+                    {{-- <div class="otp-verify-form">
                         <form class="justify-content-center" id="otp-verify-form-reset-trigger">
                             <div class="form-group">
                                 <button type="submit" class="form-control form-control-in-btn btn-primary">OTP
@@ -134,13 +134,11 @@ Immigration Officer Log In
                                 <button type="submit" class="form-control form-control-in-btn btn-success otp-btn-verify">Verify</button>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </center>
-
     </div>
-
 </div>
 @endsection
 
