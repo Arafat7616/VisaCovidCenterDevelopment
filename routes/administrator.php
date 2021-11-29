@@ -22,7 +22,6 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
         Route::post('vaccine-swap-dose-2', 'RegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
         Route::get('booster', 'RegisteredController@booster')->name('booster');
         Route::post('booster-swap', 'RegisteredController@boosterSwap')->name('booster.swap');
-
     });
 
      // route for premium registered
@@ -35,29 +34,35 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
         Route::post('vaccine-swap-dose-2', 'PremiumRegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
         Route::get('booster', 'PremiumRegisteredController@booster')->name('booster');
         Route::post('booster-swap', 'PremiumRegisteredController@boosterSwap')->name('booster.swap');
-
     });
 
     // regular man power
     Route::group(['prefix' => 'regular/', 'as' => 'regular.'], function () {
         Route::get('index', 'RegularManPowerController@index')->name('index');
+        Route::get('create', 'RegularManPowerController@create')->name('create');
+        Route::get('edit/{id}', 'RegularManPowerController@edit')->name('edit');
+        Route::post('update/{id}', 'RegularManPowerController@update')->name('update');
         Route::post('store', 'RegularManPowerController@store')->name('store');
+        Route::delete('destroy/{id}', 'RegularManPowerController@destroy')->name('destroy');
     });
 
     // regular man power
     Route::group(['prefix' => 'premium/', 'as' => 'premium.'], function () {
         Route::get('index', 'PremiumManPowerController@index')->name('index');
+        Route::get('create', 'PremiumManPowerController@create')->name('create');
+        Route::get('edit/{id}', 'PremiumManPowerController@edit')->name('edit');
+        Route::post('update/{id}', 'PremiumManPowerController@update')->name('update');
         Route::post('store', 'PremiumManPowerController@store')->name('store');
-
+        Route::delete('destroy/{id}', 'PremiumManPowerController@destroy')->name('destroy');
     });
 
     Route::get('profile', 'DashboardController@profile')->name('profile');
     Route::resource('trustedPeople', 'TrustedPeopleController');
     Route::post('trustedPeople/verification', 'TrustedPeopleController@verification');
+    Route::post('trustedPeople/resend-otp', 'TrustedPeopleController@resendOtp');
     Route::get('verification/qr-scan', 'QrController@qrScan')->name('qrScan');
     Route::get('account/info', 'AccontInfoController@info')->name('info');
     Route::put('account/update', 'AccontInfoController@infoUpdate')->name('infoUpdate');
-
 
     Route::resource('price', 'PriceController');
 });

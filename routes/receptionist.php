@@ -14,6 +14,8 @@ Route::group(['prefix' => 'receptionist/', 'namespace' => 'Receptionist', 'as' =
     Route::resource('trustedPeople', 'TrustedPeopleController');
     Route::post('trustedPeople/verification', 'TrustedPeopleController@verification');
     Route::get('verification/qr-scan', 'QrController@qrScan')->name('qrScan');
+    Route::post('trustedPeople/resend-otp', 'TrustedPeopleController@resendOtp');
+
 
     Route::get('user', 'UserController@index')->name('user.index');
     Route::get('user-filter/{searchKey}', 'UserController@filter')->name('newRegistration.filter');

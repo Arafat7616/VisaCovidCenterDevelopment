@@ -53,7 +53,6 @@ Edit Service | Setting
                                     <div class="form-group">
                                         <img class="rounded-circle" height="70px;" width="70px;" src="{{ asset($service->image ?? get_static_option('no_image')) }}" alt="">
                                         <label for="image">Image <span class="text-danger">If want to change image then select new</span></label>
-                                        {{-- <label for="image">Image</label> --}}
                                         <input name="image" type="file" accept="image/*" class="form-control" id="image">
                                     </div>                                    
                                 </div>
