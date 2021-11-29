@@ -190,9 +190,7 @@
                                 </tr>
                             </table>
                         </div>
-                        {{-- <div class="check-cal">
-                            <input id="isDefault" name="isDefault" type="checkbox" class="check-x"> Set this as default for everyday<br>
-                        </div> --}}
+                        
 
                         <div class="row mb-5 mt-5 offset-2">
                             <div class="col-5">

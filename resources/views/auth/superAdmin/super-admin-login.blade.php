@@ -1,7 +1,7 @@
 @extends('auth.superAdmin.master')
 
 @push('title')
-Immigration Officer Log In
+Super Admin
 @endpush
 
 @push('css')

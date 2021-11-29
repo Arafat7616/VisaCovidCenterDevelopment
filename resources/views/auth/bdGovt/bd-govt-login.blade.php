@@ -1,7 +1,7 @@
 @extends('auth.bdGovt.master')
 
 @push('title')
-Immigration Officer Log In
+Bangladesh Govt Log In
 @endpush
 
 @push('css')
