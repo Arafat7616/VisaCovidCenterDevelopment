@@ -76,6 +76,9 @@ Route::post('home/pcrInformation', 'Api\HomeController@pcrInformation');
 Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 
 
+Route::post('otpResend', 'Api\UserController@otpResend');
+
+
 
 
 
