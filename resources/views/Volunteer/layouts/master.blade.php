@@ -18,7 +18,7 @@
         @yield('content')
     </div>
 
-    @include('Volunteer\layouts\includes\footer')
+    @include('Volunteer.layouts.includes.footer')
 
     @include('Volunteer.layouts.includes.foot')
 </body>
