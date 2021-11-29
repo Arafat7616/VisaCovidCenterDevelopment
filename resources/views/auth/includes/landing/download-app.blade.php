@@ -10,7 +10,6 @@
                     <h1 class="info">{{ get_static_option('download_title') }}</h1>
                 </div>
             </div>
-            {{-- <div class="col-md-3 d-flex justify-content-center align-items-center"> --}}
             <div class="col-md-3 d-flex justify-content-center align-items-center">
                 <a target="_blank" href="{{ get_static_option('download_btn_link') ?? '#' }}" class="download-btn-2 my-2 text-center">Download</a>
             </div>
