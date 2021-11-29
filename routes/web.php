@@ -35,6 +35,7 @@ Auth::routes(['register' => false]);
 //log in route
 Route::get('immigration-officer-login', 'Auth\CustomLoginController@immigrationOfficerLogin')->name('auth.immigrationOfficerLogin');
 Route::get('bd-govt-login', 'Auth\CustomLoginController@bdGovtLogin')->name('auth.bdGovtLogin');
+Route::get('super-admin', 'Auth\CustomLoginController@superAdminLogin')->name('auth.superAdminLogin');
 Route::post('login/getOtp', 'Auth\CustomLoginController@getMyOTP');
 Route::post('login/checkOtp', 'Auth\CustomLoginController@checkOtp');
 
