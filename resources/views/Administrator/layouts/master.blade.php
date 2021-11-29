@@ -18,7 +18,7 @@
         @yield('content')
     </div>
 
-    @include('Administrator\layouts\includes\footer')
+    @include('Administrator.layouts.includes.footer')
 
     @include('Administrator.layouts.includes.foot')
 </body>

@@ -29,7 +29,7 @@
         <div class="content-page">
             <!-- Start content -->
             @yield('content')
-            @include('BdGovt\layouts\includes\footer')
+            @include('BdGovt.layouts.includes.footer')
         </div>
         <!-- End Right content here -->
     </div>
