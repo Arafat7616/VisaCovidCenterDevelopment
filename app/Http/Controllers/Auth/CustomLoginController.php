@@ -20,6 +20,12 @@ class CustomLoginController extends Controller
     public function bdGovtLogin(){
         return view('auth.bdGovt.bd-govt-login');
     }
+
+    // super-admin-login page
+    public function superAdminLogin(){
+        return view('auth.superAdmin.super-admin-login');
+    }
+
     public function getMyOTP(Request $request)
     {
         $request->validate([

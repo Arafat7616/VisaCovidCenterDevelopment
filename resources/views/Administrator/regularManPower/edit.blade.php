@@ -15,17 +15,7 @@
             <div class="container">
                 <div class="row">
                     <h1 class="cal-header">Edit Regular Manpower Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
-                    <div class="cal-body ">
-                        {{-- <div class="calendar calendar-first p-5" id="calendar_first">
-                            <div class="calendar_header">
-                                <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
-                                <h2></h2>
-                                <button class="switch-month switch-right"> <i class="fa fa-chevron-right"></i></button>
-                            </div>
-                            <div class="calendar_weekdays"></div>
-                            <div class="calendar_content"></div>
-                        </div> --}}
-                    </div>
+                    
                     <form action="">
                         <div class="cal-slot row ">
                             <div class="cal-morning-slot">

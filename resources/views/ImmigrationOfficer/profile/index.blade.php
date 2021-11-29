@@ -28,7 +28,6 @@
                                     <h5>Trusted ID</h5>
                                     <h5>Phone</h5>
                                     <h5>Post</h5>
-                                    {{-- <h5>Age</h5> --}}
                                     <h5>Immigration Center</h5>
                                     <h5>Immigration Center ID</h5>
                                 </div>
