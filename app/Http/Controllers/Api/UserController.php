@@ -40,11 +40,11 @@ class UserController extends Controller
                 $user->otp = $otp;
                 $user->save();
 
-                $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
                 send_sms($message, $phone);
 
                 return response()->json([
-                    "message" => "Send otp in your phone : ".$user->phone,
+                    "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
                     "phone" => $phone,
                     "password" => $password,
                     "status" => "1"
@@ -57,7 +57,7 @@ class UserController extends Controller
             }
         }else{
             return response()->json([
-                "message" => "Please insert correct email",
+                "message" => "Please insert correct phone",
                 "status" => "0",
             ]);
         }
@@ -140,7 +140,7 @@ class UserController extends Controller
         if ($result){
 
             // Send otp via helper function
-            $message = 'Welcome to Covid Visa, your otp is : '. $otp;
+            $message = 'Welcome to Covid Visa, your otp is : '. $otp.'. Please don\'t share your otp';
             send_sms($message, $phone);
 
             return response()->json([
@@ -271,6 +271,11 @@ class UserController extends Controller
                 "status"=>"Error"
             ]);
         }
+    }
+
+    public function synchronizeInformation($id)
+    {
+        //
     }
 }
 
