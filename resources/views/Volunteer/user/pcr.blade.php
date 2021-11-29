@@ -47,7 +47,7 @@
                             <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
                                 aria-controls="collapse{{ $loop->iteration }}">
-                                {{-- <span class="table-accordion-date">{{ $pcrTestOrderByDate->first()->result_published_date->format('d/m/Y') }}</span> --}}
+                                
                                 <span
                                     class="table-accordion-date">{{ Carbon\Carbon::parse($pcrTestOrderByDate->first()->result_published_date)->format('d/m/Y') }}</span>
                                 <span class="table-accordion-people">{{ $pcrTestOrderByDate->count() }} People</span>

@@ -11,7 +11,7 @@ Immigration Officer Log In
 
 <div class="col-12 d-flex">
     <div class="left-log col-md-6">
-        <img height="100%" class="login-image" src="{{ asset('assets/super-admin-login/img/Portal/govt-login.png') }}" alt="">
+        <img height="100%" class="login-image" src="{{ asset('assets/super-admin-login/img/Portal/super-admin-login.png') }}" alt="">
     </div>
     <div class="right-log col-md-6">
         <center>
