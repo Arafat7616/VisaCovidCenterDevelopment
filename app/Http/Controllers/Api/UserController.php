@@ -158,14 +158,40 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $exitUser = User::where('phone', $request->phone)->orWhere('email', $request->email)->first();
+        $phone = $request->phone;
+        $exitUser = User::where('phone', $phone)->orWhere('email', $request->email)->first();
 
         if ($exitUser)
         {
-            return response()->json([
-                "message"=>"You have already account! please login",
-                "status"=>"0",
-            ]);
+            if($exitUser->otp_verified_at == null)
+            {
+                $otp = rand(100000, 990000);
+                $exitUser->otp = $otp;
+                $exitUser->save();
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+                send_sms($message, $phone);
+
+                return response()->json([
+                    "message" => "Please verify your phone",
+                    "phone" => $phone,
+                    "password" => $request->password,
+                    "status" => "3"
+                ]);
+            }else{
+
+                $otp = rand(100000, 990000);
+                $exitUser->otp = $otp;
+                $exitUser->save();
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+                send_sms($message, $phone);
+
+                return response()->json([
+                    "message"=>"You have already account! please login",
+                    "phone" => $phone,
+                    "password" => $request->password,
+                    "status"=>"2",
+                ]);
+            }
         }
 
         $userArray['name'] = $request->name;
@@ -191,13 +217,14 @@ class UserController extends Controller
             send_sms($message, $phone);
 
             return response()->json([
-                "message"=>"Otp send in : ".$request->phone,
+                "message"=>"Otp send in : ".$request->phone." Number",
                 "phone"=>$request->phone,
+                "password" => $request->password,
                 "status"=>"1",
             ]);
         }else{
             return response()->json([
-                "message"=>"Failed to registration",
+                "message"=>"Failed to registration. Something wrong",
                 "status"=>"0",
             ]);
         }
@@ -219,7 +246,6 @@ class UserController extends Controller
         return response()->json([
             "userInfo" => $userInfo,
             "user" => $user,
-
         ]);
 
     }
