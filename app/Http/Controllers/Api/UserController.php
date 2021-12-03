@@ -32,7 +32,21 @@ class UserController extends Controller
 
         $user = User::where('phone', $phone)->first();
 
-        if ($user)
+        if($user->otp_verified_at == null)
+        {
+            $otp = rand(100000, 990000);
+            $user->otp = $otp;
+            $user->save();
+            $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+            send_sms($message, $phone);
+
+            return response()->json([
+                "message" => "Please verify your phone : ".$user->phone.'. Please don\'t share your otp',
+                "phone" => $phone,
+                "password" => $password,
+                "status" => "2"
+            ]);
+        } else if ($user)
         {
             if (Hash::check($password, $user->password))
             {
