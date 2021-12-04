@@ -57,6 +57,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="mb-3 row">
+                                        <label for="city" class="col-sm-3 col-form-label text-muted">Space(sqft)</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" name="space" id="space" min="0" placeholder="Enter Center Space(sqft)">
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- {/* Right side form start */} -->
                             </div>
@@ -265,6 +271,7 @@
                 formData.append('country', $('#country').val());
                 formData.append('state', $('#state').val());
                 formData.append('city', $('#city').val());
+                formData.append('space', $('#space').val());
                 formData.append('zipCode', $('#zipCode').val());
                 formData.append('address', $('#address').val());
                 formData.append('mapLocation', $('#mapLocation').val());

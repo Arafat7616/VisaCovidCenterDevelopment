@@ -57,15 +57,15 @@ Center's Profile
                                         Trade Licence No.
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-warning">{{ $center->country->name }}</span>
+                                        <span class="badge badge-warning">{{ $center->country ? $center->country->name : '' }}</span>
                                         Country
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-dark">{{ $center->state->name }}</span>
+                                        <span class="badge badge-dark">{{ $center->state ? $center->state->name : '' }}</span>
                                         State
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge badge-info">{{ $center->city->name }}</span>
+                                        <span class="badge badge-info">{{ $center->city? $center->city->name : '' }}</span>
                                         City
                                     </li>
                                     <li class="list-group-item">
