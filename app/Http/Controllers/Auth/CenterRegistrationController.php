@@ -44,6 +44,7 @@ class CenterRegistrationController extends Controller
             'country'  => 'nullable',
             'state'  => 'nullable',
             'city'  => 'nullable',
+            'space'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
             'centerEmail'  => 'required|email',
@@ -72,6 +73,9 @@ class CenterRegistrationController extends Controller
         }
         if (is_numeric($request->city)) {
             $center->city_id = $request->city;
+        }
+        if (is_numeric($request->space)) {
+            $center->space = $request->space;
         }
 
         $center->trade_licence_no = $request->tradeLicenseNumber;
