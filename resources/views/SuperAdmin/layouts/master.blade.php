@@ -29,7 +29,7 @@
         <div class="content-page">
             <!-- Start content -->
             @yield('content')
-            @include('SuperAdmin\layouts\includes\footer')
+            @include('SuperAdmin.layouts.includes.footer')
         </div>
         <!-- End Right content here -->
     </div>

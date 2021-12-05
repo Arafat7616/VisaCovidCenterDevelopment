@@ -23,6 +23,7 @@ class StaticOptionSeeder extends Seeder
         set_static_option('pcr_error_image', 'uploads/images/setting/pcr_error_image.png');
         set_static_option('booster_success_image', 'uploads/images/setting/booster_success_image.png');
         set_static_option('booster_error_image', 'uploads/images/setting/booster_error_image.png');
+        set_static_option('half_vaccination_image', 'uploads/images/setting/half_vaccination_image.png');
 
         // banner seeder
         set_static_option('banner_highlight', 'Be with us to the room around');

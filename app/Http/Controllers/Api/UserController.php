@@ -40,12 +40,14 @@ class UserController extends Controller
                 $user->otp = $otp;
                 $user->save();
 
-                $message = 'Welcome to Visa Covid, your otp is : '. $otp;
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+
                 send_sms($message, $phone);
 
                 return response()->json([
-                    "message" => "Send otp in your phone : ".$user->phone,
-                    "phone" => $user->phone,
+                    "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
+                    "phone" => $phone,
+                    "password" => $password,
                     "status" => "1"
                 ]);
             }else{
@@ -56,7 +58,7 @@ class UserController extends Controller
             }
         }else{
             return response()->json([
-                "message" => "Please insert correct email",
+                "message" => "Please insert correct phone",
                 "status" => "0",
             ]);
         }
@@ -70,6 +72,37 @@ class UserController extends Controller
     public function create()
     {
         //
+
+    }
+
+    public function otpResend(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->first();
+
+        if ($existUser)
+        {
+            $otp = rand(100000, 990000);
+            $existUser->otp = $otp;
+            $existUser->save();
+
+            $message = 'Welcome to Visa Covid, your otp is : '. $otp;
+            send_sms($message, $phone);
+
+
+            return response()->json([
+                "message"=>"Otp send in : ".$phone,
+                "phone"=>$request->phone,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please insert validate otp",
+                "status"=>"0",
+            ]);
+        }
 
     }
 
@@ -139,7 +172,8 @@ class UserController extends Controller
         if ($result){
 
             // Send otp via helper function
-            $message = 'Welcome to Visa Covid, your otp is : '. $otp;
+            $message = 'Welcome to Covid Visa, your otp is : '. $otp.'. Please don\'t share your otp';
+
             send_sms($message, $phone);
 
             return response()->json([
@@ -270,6 +304,11 @@ class UserController extends Controller
                 "status"=>"Error"
             ]);
         }
+    }
+
+    public function synchronizeInformation($id)
+    {
+        //
     }
 }
 

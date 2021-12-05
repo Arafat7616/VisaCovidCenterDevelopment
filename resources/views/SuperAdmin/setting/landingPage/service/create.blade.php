@@ -50,7 +50,7 @@ Create Service | Setting
                                         <input type="text" name="description" class="form-control" id="description"  value="{{ old('description') }}">
                                     </div>                         
                                     <div class="form-group">
-                                        {{-- <label for="image">Image <span class="text-danger">If want to change image then select new</span></label> --}}
+                                        
                                         <label for="image">Image</label>
                                         <input name="image" type="file" accept="image/*" class="form-control" id="image">
                                     </div>                                    
