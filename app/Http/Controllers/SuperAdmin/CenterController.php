@@ -48,6 +48,7 @@ class CenterController extends Controller
             'country' => 'required',
             'state' => 'required',
             'city' => 'required',
+            'space' => 'required',
         ]);
 
             // center data store
@@ -63,6 +64,9 @@ class CenterController extends Controller
             }
             if (is_numeric($request->city)) {
                 $center->city_id = $request->city;
+            }
+            if (is_numeric($request->space)) {
+                $center->space = $request->space;
             }
             $center->trade_licence_no = $request->tradeLicenceNo;
             $center->address = $request->address;
