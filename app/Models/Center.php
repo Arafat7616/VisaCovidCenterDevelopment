@@ -21,6 +21,7 @@ class Center extends Model
         'status',
         'varification_status',
         'administrator_id',
+        'space',
     ];
 
     public function documents()
