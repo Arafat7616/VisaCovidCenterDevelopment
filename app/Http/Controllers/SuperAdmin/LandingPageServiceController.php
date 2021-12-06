@@ -54,7 +54,7 @@ class LandingPageServiceController extends Controller
 
         if($request->hasFile('image')){
             $image             = $request->file('image');
-            $folder_path       = 'uploads/images/landing/';
+            $folder_path       = 'public/uploads/images/landing/';
             $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->save($folder_path.$image_new_name);
@@ -118,7 +118,7 @@ class LandingPageServiceController extends Controller
             if ($service->image != null)
                 File::delete(public_path($service->image)); //Old image delete
             $image             = $request->file('image');
-            $folder_path       = 'uploads/images/landing/';
+            $folder_path       = 'public/uploads/images/landing/';
             $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->save($folder_path.$image_new_name);

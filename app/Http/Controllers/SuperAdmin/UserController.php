@@ -94,7 +94,7 @@ class UserController extends Controller
                     File::delete(public_path($user->image));
                 }
                 $image             = $request->file('image');
-                $folder_path       = 'uploads/images/users/';
+                $folder_path       = 'public/uploads/images/users/';
                 $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
                 //resize and save to server
                 Image::make($image->getRealPath())->save($folder_path . $image_new_name);

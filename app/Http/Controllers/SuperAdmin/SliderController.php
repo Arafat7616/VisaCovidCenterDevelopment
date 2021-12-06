@@ -49,7 +49,7 @@ class SliderController extends Controller
 
         if($request->hasFile('image')){
             $image             = $request->file('image');
-            $folder_path       = 'uploads/images/slider/';
+            $folder_path       = 'public/uploads/images/slider/';
             $image_new_name    = $request->name.'_slider_'.now()->timestamp.'.'.$image->getClientOriginalExtension();
 
             //resize and save to server
@@ -118,7 +118,7 @@ class SliderController extends Controller
             }
 
             $image             = $request->file('image');
-            $folder_path       = 'uploads/images/slider/';
+            $folder_path       = 'public/uploads/images/slider/';
             $image_new_name    = $slider->name.'_slider_'.now()->timestamp.'.'.$image->getClientOriginalExtension();
 
             //resize and save to server
