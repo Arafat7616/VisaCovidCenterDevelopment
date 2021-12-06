@@ -30,7 +30,7 @@ class CenterSeeder extends Seeder
             $center->status = 1;
             $center->varification_status = 1;
             $center->administrator_id = 2;
-            $center->space = 0;
+            $center->space = 2000;
             $center->save();
         }
     }
