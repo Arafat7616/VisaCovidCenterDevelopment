@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
         $this->call(BoosterSeeder::class);
         $this->call(ImmigrationCenterSeeder::class);
         $this->call(ImmigrationPassSeeder::class);
-        $this->call(SliderSeeder::class);
+        // $this->call(SliderSeeder::class);
+        // $this->call(ImmigrationCenterSeeder::class);
+        // $this->call(ImmigrationPassSeeder::class);
+        // $this->call(SliderSeeder::class);
 
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
