@@ -72,7 +72,10 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::resource('subscriber', 'SubscriberController', [
                 'except' => ['create', 'show', 'edit', 'update', 'store']
             ]);
+           
         });
+        Route::get('space', 'SpaceController@index')->name('space.index');
+        Route::post('space', 'SpaceController@spaceUpdate')->name('spaceUpdate');
     });
     // route for registered pcr
     Route::resource('pcr-normal', 'NormalPCRController', [
