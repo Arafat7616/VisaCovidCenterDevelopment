@@ -6,7 +6,8 @@
             </div>
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name ?? '' }}</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                        aria-expanded="false">{{ Auth::user()->name ?? '' }}</a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('bdGovt.profile') }}"> Profile</a></li>
                         <li class="divider"></li>
@@ -21,57 +22,97 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="{{ route('bdGovt.dashboard') }}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                    <a href="{{ route('bdGovt.dashboard') }}" class="waves-effect"><i
+                            class="ti-home"></i><span> Dashboard </span></a>
                 </li>
-                {{-- routes for users manage  --}}
+                {{-- routes for users manage --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/*') ? 'active subdrop': ''}}"><i class="fa fa-users"></i> <span> Manage User's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);"
+                        class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/*') ? 'active subdrop' : '' }}"><i
+                            class="fa fa-users"></i> <span> Manage User's </span> <span class="pull-right"><i
+                                class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('bdGovt.manageUser.administrator')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
-                        <li><a href="{{route('bdGovt.manageUser.volunteer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
-                        <li><a href="{{route('bdGovt.manageUser.receptionist')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/receptionist') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Receptionist </span></a></li>
-                        <li><a href="{{route('bdGovt.manageUser.pathologist')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/pathologist') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Pathologist </span></a></li>
-                        <li><a href="{{route('bdGovt.manageUser.user')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-user/user') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> User </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageUser.administrator') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/administrator') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageUser.volunteer') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageUser.receptionist') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/receptionist') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Receptionist </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageUser.pathologist') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/pathologist') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Pathologist </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageUser.user') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/user') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> User </span></a></li>
                     </ul>
                 </li>
-                {{-- routes for centers manage  --}}
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                {{-- routes for centers manage --}}
+                {{-- <li class="has_sub">
+                    <a href="javascript:void(0);"
+                        class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop' : '' }}"><i
+                            class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i
+                                class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('bdGovt.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
+                        <li><a href="{{ route('bdGovt.manageCenter.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
+                    </ul>
+                </li> --}}
+                {{-- routes for pcr test --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);"
+                        class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/pcr/*') ? 'active subdrop' : '' }}"><i
+                            class="fa fa-thermometer"></i> <span> PCR Test </span> <span class="pull-right"><i
+                                class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('bdGovt.pcr.normal.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/pcr/normal') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
+                        <li><a href="{{ route('bdGovt.pcr.premium.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/pcr/premium') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
                 </li>
-                {{-- routes for pcr test  --}}
+                {{-- routes for vaccination --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> PCR Test </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);"
+                        class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/vaccination/*') ? 'active subdrop' : '' }}"><i
+                            class="fa fa-thermometer"></i> <span> Vaccination </span> <span class="pull-right"><i
+                                class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('bdGovt.pcr.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
-                        <li><a href="{{route('bdGovt.pcr.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/pcr/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
+                        <li><a href="{{ route('bdGovt.vaccination.normal.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/vaccination/normal') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
+                        <li><a href="{{ route('bdGovt.vaccination.premium.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/vaccination/premium') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
                 </li>
-                {{-- routes for vaccination  --}}
+                {{-- routes for booster --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> Vaccination </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);"
+                        class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/booster/*') ? 'active subdrop' : '' }}"><i
+                            class="fa fa-thermometer"></i> <span> Booster </span> <span class="pull-right"><i
+                                class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('bdGovt.vaccination.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
-                        <li><a href="{{route('bdGovt.vaccination.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccination/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
+                        <li><a href="{{ route('bdGovt.booster.normal.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/booster/normal') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
+                        <li><a href="{{ route('bdGovt.booster.premium.index') }}"
+                                class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/booster/premium') ? 'active' : '' }}"><i
+                                    class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
                 </li>
-                {{-- routes for booster  --}}
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/*') ? 'active subdrop': ''}}"><i class="fa fa-thermometer"></i> <span> Booster </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="{{route('bdGovt.booster.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
-                        <li><a href="{{route('bdGovt.booster.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
-                    </ul>
-                </li>
-                {{-- routes for subscribers  --}}
-                <li class="has_sub">
+                {{-- routes for subscribers --}}
+                {{-- <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/subscriber*') ? 'active': ''}}"><i class="fa fa-user-plus"></i> <span> Subscriber </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('bdGovt.subscriber.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/subscriber') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Subscriber List </span></a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <div class="clearfix"></div>
