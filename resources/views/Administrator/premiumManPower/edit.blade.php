@@ -89,6 +89,9 @@
                                     <td class="cal-x-y">
                                         <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
                                     </td>
+                                    <td class="cal-x-y">
+                                        <p class="p-mx"> <small>Avaiable service</small><br><b>Per day</b> </p>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="cal-x-y">
@@ -109,6 +112,11 @@
                                             @if ($manPowerSchedule)
                                                 {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->volunteer_for_pcr) }}
                                             @endif
+                                        </p>
+                                    </td>
+                                    <td class="cal-x-y">
+                                        <p class="p-mx" id="available-pcr-serve">
+                                                {{ get_available_service_per_day($center->space) }}
                                         </p>
                                     </td>
                                 </tr>
@@ -134,6 +142,11 @@
                                             @endif
                                         </p>
                                     </td>
+                                    <td class="cal-x-y">
+                                        <p class="p-mx" id="available-vaccine-serve">
+                                                {{ get_available_service_per_day($center->space) }}
+                                        </p>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="cal-x-y">
@@ -157,8 +170,14 @@
                                             @endif
                                         </p>
                                     </td>
+                                    <td class="cal-x-y">
+                                        <p class="p-mx" id="available-booster-serve">
+                                                {{ get_available_service_per_day($center->space) }}
+                                        </p>
+                                    </td>
                                 </tr>
                                 <tr class="cal-mx-x-p">
+                                    <td></td>
                                     <td></td>
                                     <td>
                                         <p class="p-mx">Want to service per day </p>
