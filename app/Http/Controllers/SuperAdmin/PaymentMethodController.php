@@ -49,7 +49,7 @@ class PaymentMethodController extends Controller
 
         if($request->hasFile('image')){
             $image             = $request->file('image');
-            $folder_path       = 'public/uploads/images/paymentMethod/';
+            $folder_path       = 'uploads/images/paymentMethod/';
             $image_new_name    = $request->name.'_payment_method_'.now()->timestamp.'.'.$image->getClientOriginalExtension();
 
             //resize and save to server
@@ -118,7 +118,7 @@ class PaymentMethodController extends Controller
             }
 
             $image             = $request->file('image');
-            $folder_path       = 'public/uploads/images/paymentMethod/';
+            $folder_path       = 'uploads/images/paymentMethod/';
             $image_new_name    = $paymentMethod->name.'_payment_method_'.now()->timestamp.'.'.$image->getClientOriginalExtension();
 
             //resize and save to server

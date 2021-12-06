@@ -125,7 +125,7 @@ class CenterRegistrationController extends Controller
         if ($request->hasFile('document1')) {
             $document = new CenterDocument();
             $pdf             = $request->document1;
-            $folder_path       = 'public/uploads/images/documents/';
+            $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->document1->move(public_path($folder_path), $pdf_new_name);
@@ -138,7 +138,7 @@ class CenterRegistrationController extends Controller
         if ($request->hasFile('document2')) {
             $document = new CenterDocument();
             $pdf             = $request->document2;
-            $folder_path       = 'public/uploads/images/documents/';
+            $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->document2->move(public_path($folder_path), $pdf_new_name);
@@ -151,7 +151,7 @@ class CenterRegistrationController extends Controller
         if ($request->hasFile('document3')) {
             $document = new CenterDocument();
             $pdf             = $request->document3;
-            $folder_path       = 'public/uploads/images/documents/';
+            $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->document3->move(public_path($folder_path), $pdf_new_name);

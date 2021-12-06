@@ -35,7 +35,7 @@ class LandingPageController extends Controller
                 if (get_static_option('banner_image') != null)
                     File::delete(public_path(get_static_option('banner_image'))); //Old image delete
                 $image             = $request->file('banner_image');
-                $folder_path       = 'public/uploads/images/landing/';
+                $folder_path       = 'uploads/images/landing/';
                 $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
                 //resize and save to server
                 Image::make($image->getRealPath())->save($folder_path.$image_new_name);
@@ -79,7 +79,7 @@ class LandingPageController extends Controller
                 if (get_static_option('download_image') != null)
                     File::delete(public_path(get_static_option('download_image'))); //Old image delete
                 $image             = $request->file('download_image');
-                $folder_path       = 'public/uploads/images/landing/';
+                $folder_path       = 'uploads/images/landing/';
                 $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
                 //resize and save to server
                 Image::make($image->getRealPath())->save($folder_path.$image_new_name);
