@@ -175,7 +175,7 @@ class HomeController extends Controller
             }else{
                 return response()->json([
                     "navigationPath" => "PCR Date Status",
-                    "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
                 ]);
             }
 
