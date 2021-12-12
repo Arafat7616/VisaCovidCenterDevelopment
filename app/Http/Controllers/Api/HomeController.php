@@ -178,7 +178,6 @@ class HomeController extends Controller
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
                 ]);
             }
-
         }else{
             return response()->json([
                 "navigationPath" => "PCR",
