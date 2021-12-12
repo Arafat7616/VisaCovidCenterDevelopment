@@ -4,16 +4,64 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
+use App\Models\Center;
+use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
 use App\Models\ServiceAvailableNumber;
 use App\Models\User;
 use App\Models\Vaccination;
+use App\Models\VaccineName;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ServiceRegistrationController extends Controller
 {
+    public function vaccinationCenterSelect(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $cityId = $userArray['city_id'];
+        $vaccineName = $userArray['vaccineName'];
+
+        $centers = CenterVaccineName::where('city_id', $cityId)->where('vaccineName', $vaccineName)->select('center_id')->get();
+        $centerInfo = [];
+
+        foreach ($centers as $key=>$center)
+        {
+            $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->get();
+        }
+
+        if (!empty($centerInfo))
+        {
+            return response()->json([
+                "centerInfo"=>$centerInfo,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please select another City",
+                "status"=>"2",
+            ]);
+        }
+
+    }
+
+    public function vaccineName(){
+        $vaccineName = VaccineName::where('status', '2')->get();
+        if (count($vaccineName) > 0)
+        {
+            return response()->json([
+                "vaccineName"=>$vaccineName,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Something wrong",
+                "status"=>"2",
+            ]);
+        }
+    }
+
     public function vaccineRegistration(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
@@ -27,7 +75,7 @@ class ServiceRegistrationController extends Controller
         if ($existVaccination)
         {
             return response()->json([
-                "message"=>"You have already registered for Vaccination. Thank you",
+                "message"=>"You are already registered for Vaccination. Thank you",
                 "status"=>"2",
             ]);
         }
@@ -36,13 +84,13 @@ class ServiceRegistrationController extends Controller
 
         if ($registrationCheck==null){
             return response()->json([
-                "message"=>"Sorry ! Not available.Please Select another date",
+                "message"=>"Sorry ! It is not available.Please Select another date",
                 "status"=>"0",
             ]);
         }elseif(!$registrationCheck->vaccine_available_set > 0)
         {
             return response()->json([
-                "message"=>"Sorry ! Not available. Please Select another date",
+                "message"=>"Sorry ! It is not available. Please Select another date",
                 "status"=>"0",
             ]);
 
@@ -60,10 +108,10 @@ class ServiceRegistrationController extends Controller
                 ManPowerSchedule::find($registrationCheck->id)->decrement('vaccine_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulation !! You are successfully registration for Vaccination. ', $phone);
+                send_sms('Congratulations !! You are successfully registered for Vaccination. ', $phone);
 
                 return response()->json([
-                    "message"=>"You have successfully registration for Vaccination",
+                    "message"=>"You are successfully registered for Vaccination",
                     "status"=>"1",
                 ]);
             }else{
@@ -88,7 +136,7 @@ class ServiceRegistrationController extends Controller
         if ($existPcr)
         {
             return response()->json([
-                "message"=>"You have already registered for PCR Test. Thank you",
+                "message"=>"You are already registered for PCR Test. Thank you",
                 "status"=>"2",
             ]);
         }
@@ -97,13 +145,13 @@ class ServiceRegistrationController extends Controller
 
         if ($registrationCheck==null){
             return response()->json([
-                "message"=>"Sorry ! Not available.Please Select another date",
+                "message"=>"Sorry ! It is not available.Please Select another date",
                 "status"=>"0",
             ]);
         }elseif(!$registrationCheck->vaccine_available_set > 0)
         {
             return response()->json([
-                "message"=>"Sorry ! Not available. Please Select another date",
+                "message"=>"Sorry ! It is not available. Please Select another date",
                 "status"=>"0",
             ]);
 
@@ -120,10 +168,10 @@ class ServiceRegistrationController extends Controller
                 ManPowerSchedule::find($registrationCheck->id)->decrement('pcr_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulation !! You are successfully registration for PCR Test. ', $phone);
+                send_sms('Congratulations !! You are successfully registered for PCR Test. ', $phone);
 
                 return response()->json([
-                    "message" => "You have successfully registration for PCR",
+                    "message" => "You are successfully registered for PCR",
                     "status" => "1",
                 ]);
             } else {
@@ -147,7 +195,7 @@ class ServiceRegistrationController extends Controller
         if ($existBooster)
         {
             return response()->json([
-                "message"=>"You have already registration for Pcr Booster. Thank You",
+                "message"=>"You are already registered for Pcr Booster. Thank You",
                 "status"=>"2",
             ]);
         }
@@ -156,13 +204,13 @@ class ServiceRegistrationController extends Controller
 
         if ($registrationCheck==null){
             return response()->json([
-                "message"=>"Sorry ! Not available.Please Select another date",
+                "message"=>"Sorry ! It is not available.Please Select another date",
                 "status"=>"0",
             ]);
         }elseif(!$registrationCheck->booster_available_set > 0)
         {
             return response()->json([
-                "message"=>"Sorry ! Not available. Please Select another date",
+                "message"=>"Sorry ! It is not available. Please Select another date",
                 "status"=>"0",
             ]);
 
@@ -178,10 +226,10 @@ class ServiceRegistrationController extends Controller
                 ManPowerSchedule::find($registrationCheck->id)->decrement('booster_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulation !! You are successfully registration for Booster. ', $phone);
+                send_sms('Congratulation !! You are successfully registered for Booster. ', $phone);
 
                 return response()->json([
-                    "message" => "You have successfully registration for Booster",
+                    "message" => "You are successfully registered for Booster",
                     "status" => "1",
                 ]);
             } else {

@@ -49,6 +49,9 @@ Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vacc
 Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
 Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boosterRegistration');
 
+Route::post('home/vaccine/vaccinationCenterSelect', 'Api\ServiceRegistrationController@vaccinationCenterSelect');
+Route::get('home/vaccine/vaccineName', 'Api\ServiceRegistrationController@vaccineName');
+
 
 //Service Status Check
 Route::post('home/vaccine/statusCheck', 'Api\HomeController@VaccineStatusCheck');
