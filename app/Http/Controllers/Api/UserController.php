@@ -29,50 +29,57 @@ class UserController extends Controller
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $password = $userArray['password'];
-
         $user = User::where('phone', $phone)->first();
 
-        if($user->otp_verified_at == null)
-        {
-            $otp = rand(100000, 990000);
-            $user->otp = $otp;
-            $user->save();
-            $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-            send_sms($message, $phone);
+       /* return response()->json([
+            "message" => "fine",
+            "status" => $userArray
+        ]);*/
 
-            return response()->json([
-                "message" => "Please verify your phone : ".$user->phone.'. Please don\'t share your otp',
-                "phone" => $phone,
-                "password" => $password,
-                "status" => "2"
-            ]);
-        } else if ($user)
+        if ($user)
         {
-            if (Hash::check($password, $user->password))
+            if ($user->otp_verified_at == null)
             {
                 $otp = rand(100000, 990000);
                 $user->otp = $otp;
                 $user->save();
-
                 $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-
                 send_sms($message, $phone);
 
                 return response()->json([
-                    "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
+                    "message" => "Please verify your phone : ".$user->phone.'. Please don\'t share your otp',
                     "phone" => $phone,
                     "password" => $password,
-                    "status" => "1"
+                    "status" => "2"
                 ]);
             }else{
-                return response()->json([
-                    "status" => "0",
-                    "message" => "Please insert correct password"
-                ]);
+                if (Hash::check($password, $user->password))
+                {
+                    $otp = rand(100000, 990000);
+                    $user->otp = $otp;
+                    $user->save();
+
+                    $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+
+                    send_sms($message, $phone);
+
+                    return response()->json([
+                        "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
+                        "phone" => $phone,
+                        "password" => $password,
+                        "status" => "1"
+                    ]);
+                }else{
+                    return response()->json([
+                        "status" => "0",
+                        "message" => "Please insert correct password"
+                    ]);
+                }
             }
+
         }else{
             return response()->json([
-                "message" => "Please insert correct phone",
+                "message" => "Please insert correct phone or password",
                 "status" => "0",
             ]);
         }
@@ -158,14 +165,40 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $exitUser = User::where('phone', $request->phone)->orWhere('email', $request->email)->first();
+        $phone = $request->phone;
+        $exitUser = User::where('phone', $phone)->orWhere('email', $request->email)->first();
 
         if ($exitUser)
         {
-            return response()->json([
-                "message"=>"You have already account! please login",
-                "status"=>"0",
-            ]);
+            if($exitUser->otp_verified_at == null)
+            {
+                $otp = rand(100000, 990000);
+                $exitUser->otp = $otp;
+                $exitUser->save();
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+                send_sms($message, $phone);
+
+                return response()->json([
+                    "message" => "Please verify your phone",
+                    "phone" => $phone,
+                    "password" => $request->password,
+                    "status" => "3"
+                ]);
+            }else{
+
+                $otp = rand(100000, 990000);
+                $exitUser->otp = $otp;
+                $exitUser->save();
+                $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
+                send_sms($message, $phone);
+
+                return response()->json([
+                    "message"=>"You have already account! please login",
+                    "phone" => $phone,
+                    "password" => $request->password,
+                    "status"=>"2",
+                ]);
+            }
         }
 
         $userArray['name'] = $request->name;
@@ -191,13 +224,14 @@ class UserController extends Controller
             send_sms($message, $phone);
 
             return response()->json([
-                "message"=>"Otp send in : ".$request->phone,
+                "message"=>"Otp send in : ".$request->phone." Number",
                 "phone"=>$request->phone,
+                "password" => $request->password,
                 "status"=>"1",
             ]);
         }else{
             return response()->json([
-                "message"=>"Failed to registration",
+                "message"=>"Failed to registration. Something wrong",
                 "status"=>"0",
             ]);
         }
@@ -219,7 +253,6 @@ class UserController extends Controller
         return response()->json([
             "userInfo" => $userInfo,
             "user" => $user,
-
         ]);
 
     }
