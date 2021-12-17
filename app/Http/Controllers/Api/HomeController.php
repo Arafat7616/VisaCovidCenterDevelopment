@@ -148,7 +148,7 @@ class HomeController extends Controller
             }
         }else{
             return response()->json([
-                "navigationPath" => "Vaccine Registration",
+                "navigationPath" => "Vaccine Registration Button",
                 "vaccinationIcon" => "uploads/images/setting/vaccine_error_image.png",
                 "boosterStatus"=>$boosterStatus,
             ]);

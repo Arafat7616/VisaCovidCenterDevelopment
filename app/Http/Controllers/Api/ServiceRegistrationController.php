@@ -14,9 +14,11 @@ use App\Models\Vaccination;
 use App\Models\VaccineName;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class ServiceRegistrationController extends Controller
 {
+
     public function vaccinationCenterSelect(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
@@ -26,28 +28,29 @@ class ServiceRegistrationController extends Controller
         $centers = CenterVaccineName::where('city_id', $cityId)->where('vaccineName', $vaccineName)->select('center_id')->get();
         $centerInfo = [];
 
+        $i = 0;
         foreach ($centers as $key=>$center)
         {
-            $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->get();
+            $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->first();
         }
 
         if (!empty($centerInfo))
         {
             return response()->json([
-                "centerInfo"=>$centerInfo,
+                "centers"=>$centerInfo,
                 "status"=>"1",
             ]);
         }else{
             return response()->json([
-                "message"=>"Please select another City",
-                "status"=>"2",
+                "message"=>"Please select another City Or Vaccine",
+                "status"=>"0",
             ]);
         }
 
     }
 
     public function vaccineName(){
-        $vaccineName = VaccineName::where('status', '2')->get();
+        $vaccineName = VaccineName::where('status', '1')->select(['id', 'name'])->get();
         if (count($vaccineName) > 0)
         {
             return response()->json([
@@ -57,7 +60,7 @@ class ServiceRegistrationController extends Controller
         }else{
             return response()->json([
                 "message"=>"Something wrong",
-                "status"=>"2",
+                "status"=>"0",
             ]);
         }
     }
@@ -68,6 +71,7 @@ class ServiceRegistrationController extends Controller
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
+        $nameOfVaccine = $userArray['vaccineName'];
 
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
@@ -102,6 +106,7 @@ class ServiceRegistrationController extends Controller
             $vaccine->center_id = $centerId;
             $vaccine->date_of_registration = Carbon::parse($date);
             $vaccine->registration_type = "normal";
+            $vaccine->name_of_vaccine = $nameOfVaccine;
 
             if ($vaccine->save())
             {
@@ -121,6 +126,71 @@ class ServiceRegistrationController extends Controller
                 ]);
             }
         }
+    }
+
+    public function externalVaccination(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $vaccineName = $userArray['vaccineName'];
+        $center = $userArray['center'];
+        $firstDose = $userArray['firstDose'];
+        $secondDose = $userArray['secondDose'];
+        $description = $userArray['description'];
+        $document = $userArray['document'];
+        $centerLocation = $userArray['centerLocation'];
+
+
+        $user = User::where('phone', $phone)->select(['id'])->first();
+        $existVaccination = Vaccination::where('user_id', $user->id)->first();
+
+        if ($existVaccination)
+        {
+            return response()->json([
+                "message"=>"You are already registered for Vaccination. Thank you",
+                "status"=>"2",
+            ]);
+        }
+
+        $vaccine = new Vaccination();
+
+        $vaccine->user_id = $user->id;
+        $vaccine->name_of_vaccine = $vaccineName;
+        $vaccine->date_of_first_dose = Carbon::parse($firstDose);
+        $vaccine->date_of_second_dose = Carbon::parse($secondDose);
+        $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+        $vaccine->registration_type = "normal";
+        $vaccine->status = "1";
+
+        $vaccine->center_name = $center;
+        $vaccine->center_location = $centerLocation;
+        $vaccine->document = $document;
+        $vaccine->description = $description;
+        $vaccine->center_type = "external";
+
+        try {
+            if ($vaccine->save())
+            {
+                return response()->json([
+                    "message"=>"You are successfully submit your information",
+                    "status"=>"1",
+                ]);
+            }else{
+                return response()->json([
+                    "message"=>"Something wrong",
+                    "status"=>"0",
+                ]);
+            }
+
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>'Something went wrong. ' . $exception->getMessage(),
+                "status"=>"0",
+            ]);
+        }
+
+
+
     }
 
     public function prcRegistration(Request $request)

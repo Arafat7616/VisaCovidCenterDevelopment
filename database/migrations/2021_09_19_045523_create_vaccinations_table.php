@@ -26,6 +26,13 @@ class CreateVaccinationsTable extends Migration
             $table->unsignedBigInteger('center_id')->nullable();
             $table->unsignedBigInteger('first_served_by_id')->nullable();
             $table->unsignedBigInteger('second_served_by_id')->nullable();
+
+            $table->string('center_name')->nullable();
+            $table->string('document')->nullable();
+            $table->string('description')->nullable();
+            $table->string('center_type')->nullable();
+            $table->string('center_location')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });
