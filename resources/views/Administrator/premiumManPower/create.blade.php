@@ -16,7 +16,7 @@
                 <div class="row">
                     <h1 class="cal-header">Premium Manpower Schedule</h1>
                     <div class="cal-body ">
-                        
+
                         <div class="calendar calendar-first p-5" id="calendar_first">
                             <div class="calendar_header">
                                 <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
@@ -33,7 +33,7 @@
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
                                     <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_starting_time }}" @endif
-                                        name="morningSlotStart"> -
+                                    name="morningSlotStart"> -
                                     <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
                                 @php
@@ -51,9 +51,9 @@
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
                                     <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_starting_time }}" @endif
-                                        name="daySlotStart"> -
+                                    name="daySlotStart"> -
                                     <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_ending_time }}" @endif
-                                        name="daySlotEnd">
+                                    name="daySlotEnd">
                                 </div>
                                 @php
                                     if ($manPowerSchedule) {
@@ -84,117 +84,155 @@
                                     {{ $totalManMinutePerDay ?? '' }}</li>
                             </ul>
                         </div>
-                        <div class="cal-service-slot row">
-                            <table class="t-cal">
-                                <tr class="cal-mx-x">
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> <b>Service</b> </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> <small>Estimated time</small><br><b>Per Process</b> </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"><b>Number of Volunteer</b> </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> PCR </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->pcr_time }}" @endif
-                                                name="timeForPcr"> <small class="s-cx">min</small></p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
-                                                name="volunteerForPcr"></p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx" id="max-pcr-serve">
-                                            @if ($manPowerSchedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->volunteer_for_pcr) }}
-                                            @endif
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> Vaccine </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                onchange="setMaxVaccineService()" id="timeForVaccine"
-                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
-                                                class="s-cx">min</small></p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                onchange="setMaxVaccineService()" id="volunteerForVaccine"
-                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx" id="max-vaccine-serve">
-                                            @if ($manPowerSchedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->volunteer_for_vaccine) }}
-                                            @endif
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx"> Booster </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                onchange="setMaxBoosterService()" id="timeForBooster"
-                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->booster_time }}" @endif name="timeForBooster"> <small
-                                                class="s-cx">min</small> </p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                onchange="setMaxBoosterService()" id="volunteerForBooster"
-                                                @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
-                                    </td>
-                                    <td class="cal-x-y">
-                                        <p class="p-mx" id="max-booster-serve">
-                                            @if ($manPowerSchedule)
-                                                {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->volunteer_for_booster) }}
-                                            @endif
-                                        </p>
-                                    </td>
-                                </tr>
-                                
-                                <tr class="cal-mx-x-p">
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx">Want to service per day </p>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <p class="p-mx y-s" id="wantToServePerDay"></p>
-                                    </td>
-                                </tr>
-                            </table>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="cal-service-slot row">
+                                    <table class="t-cal">
+                                        <tr class="cal-mx-x">
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> <b>Service</b> </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> <small>Estimated time</small><br><b>Per Process</b> </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"><b>Number of Volunteer</b> </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> <small>Available service</small><br><b>Per day</b> </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> PCR </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                                        onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->pcr_time }}" @endif
+                                                                        name="timeForPcr"> <small class="s-cx">min</small></p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                                        onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
+                                                                        name="volunteerForPcr"></p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-pcr-serve">
+                                                    @if ($manPowerSchedule)
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->volunteer_for_pcr) }}
+                                                    @endif
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-pcr-serve">
+                                                    {{ get_available_service_per_day($center->space) }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> Vaccine </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                                         onchange="setMaxVaccineService()" id="timeForVaccine"
+                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
+                                                        class="s-cx">min</small></p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                                         onchange="setMaxVaccineService()" id="volunteerForVaccine"
+                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-vaccine-serve">
+                                                    @if ($manPowerSchedule)
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->volunteer_for_vaccine) }}
+                                                    @endif
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-vaccine-serve">
+                                                    {{ get_available_service_per_day($center->space) }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx"> Booster </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"> <input type="number" class="cal-min-t"
+                                                                         onchange="setMaxBoosterService()" id="timeForBooster"
+                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->booster_time }}" @endif name="timeForBooster"> <small
+                                                        class="s-cx">min</small> </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mxx"><input type="number" class="cal-min-t"
+                                                                        onchange="setMaxBoosterService()" id="volunteerForBooster"
+                                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-booster-serve">
+                                                    @if ($manPowerSchedule)
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->volunteer_for_booster) }}
+                                                    @endif
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-booster-serve">
+                                                    {{ get_available_service_per_day($center->space) }}
+                                                </p>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="cal-mx-x-p">
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <p class="p-mx">Want to service per day </p>
+                                            </td>
+                                            <td>
+                                                <p class="p-mx y-s" id="wantToServePerDay"></p>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-3">
+                                <div class="cal-service-slot row">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total square feet : {{ Auth::user()->center->space }}</h5>
+                                            <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
+                                            <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
+                                            <p class="card-text" style="white-space:pre">Total Available seat      : {{ intval((Auth::user()->center->space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
+
 
                         <div class="row mb-5 mt-5 offset-2">
                             <div class="col-5">
                                 <div class="form-group">
                                     <label for="fromDate">From Date</label>
                                     <input type="date" name="fromDate" class="form-control" id="fromDate" />
-                                </div>                                                
+                                </div>
                             </div>
                             <div class="col-5">
                                 <div class="form-group">
                                     <label for="toDate">To Date</label>
                                     <input type="date" name="toDate" class="form-control" id="toDate" />
-                                </div>                                                
+                                </div>
                             </div>
                         </div>
                         <div class="cal-save">
@@ -214,7 +252,6 @@
             // schedule-save-btn clicked
             $('.schedule-save-btn').on('click', function(event) {
                 event.preventDefault();
-
                 var formData = new FormData();
                 formData.append('morningSlotStart', $('#morningSlotStart').val());
                 formData.append('morningSlotEnd', $('#morningSlotEnd').val());
@@ -227,11 +264,10 @@
                 formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
                 formData.append('volunteerForBooster', $('#volunteerForBooster').val());
                 formData.append('fromDate', $('#fromDate').val());
-                formData.append('toDate', $('#toDate').val());               
-                formData.append('booster_available_set', $('#max-booster-serve').text());               
-                formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
-                formData.append('pcr_available_set', $('#max-pcr-serve').text());               
-
+                formData.append('toDate', $('#toDate').val());
+                formData.append('booster_available_set', $('#max-booster-serve').text());
+                formData.append('vaccine_available_set', $('#max-vaccine-serve').text());
+                formData.append('pcr_available_set', $('#max-pcr-serve').text());
                 $.ajax({
                     method: 'POST',
                     url: "{{ url('administrator/premium/store') }}",
@@ -280,8 +316,6 @@
                 });
             });
         });
-
-
         // Auto wantToServePerDay Calculation
         function wantToServePerDay() {
             var maxPcrServe = parseInt(document.getElementById('max-pcr-serve').innerHTML);
@@ -290,9 +324,7 @@
             var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
-
         wantToServePerDay();
-
         function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
             var volunteerForPcr = parseInt(document.getElementById('volunteerForPcr').value);
@@ -302,7 +334,6 @@
             wantToServePerDay();
             setTotalManMinutePerDay()
         }
-
         function setMaxVaccineService() {
             var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
             var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
@@ -312,7 +343,6 @@
             wantToServePerDay();
             setTotalManMinutePerDay();
         }
-
         function setMaxBoosterService() {
             var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
             var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
@@ -322,7 +352,6 @@
             wantToServePerDay();
             setTotalManMinutePerDay();
         }
-
         function setTotalManMinutePerDay() {
             var volunteerForPcr     = parseInt(document.getElementById('volunteerForPcr').value);
             var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
@@ -330,22 +359,17 @@
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
             var totalVolunteer = volunteerForPcr+volunteerForVaccine+volunteerForBooster;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalVolunteer;
-
         }
-
         function setTotalMinute() {
             var totalMorningSlotTime = parseInt(document.getElementById('totalMorningSlotTime').innerHTML);
             var totalDaySlotTime = parseInt(document.getElementById('totalDaySlotTime').innerHTML);
             document.getElementById('totalMinute').innerHTML = totalMorningSlotTime + totalDaySlotTime;
-            
 
         }
-
         function setMorningSlotTime() {
             var morningSlotStart = document.getElementById('morningSlotStart').value;
             var morningSlotEnd = document.getElementById('morningSlotEnd').value;
-
-            //create minute format          
+            //create minute format
             var timeStart = new Date("01/01/2007 " + morningSlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + morningSlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
@@ -359,14 +383,11 @@
             setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
-
         }
-
         function setDaySlotTime() {
             var daySlotStart = document.getElementById('daySlotStart').value;
             var daySlotEnd = document.getElementById('daySlotEnd').value;
-
-            //create minute format          
+            //create minute format
             var timeStart = new Date("01/01/2007 " + daySlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + daySlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
