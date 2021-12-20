@@ -84,6 +84,7 @@
                                     {{ $totalManMinutePerDay ?? '' }}</li>
                             </ul>
                         </div>
+                        
                         <div class="row">
                             <div class="col-8">
                                 <div class="cal-service-slot row">

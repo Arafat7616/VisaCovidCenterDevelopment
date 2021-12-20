@@ -46,6 +46,9 @@ Route::get('home/city/{id}', 'Api\HomeController@city');
 Route::get('home/center/{id}', 'Api\HomeController@center');
 
 Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vaccineRegistration');
+Route::post('home/vaccine/externalVaccination', 'Api\ServiceRegistrationController@externalVaccination');
+
+
 Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
 Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boosterRegistration');
 
