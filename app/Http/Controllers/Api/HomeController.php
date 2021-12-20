@@ -10,6 +10,7 @@ use App\Models\Country;
 use App\Models\PcrTest;
 use App\Models\Slider;
 use App\Models\State;
+use App\Models\Synchronize;
 use App\Models\User;
 use App\Models\UserInfo;
 use App\Models\Vaccination;
@@ -522,7 +523,6 @@ class HomeController extends Controller
         ]);
     }
 
-
     public function vaccinationInformation(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
@@ -656,5 +656,25 @@ class HomeController extends Controller
             "myBoosterDate"=>$boosterStatusDate,
             "myAntibodyRemaining"=>$boosterStatusAntibody_last_date,
         ]);
+    }
+
+    public function synchronizeInformation($id)
+    {
+
+        $rules = Synchronize::where('country_id', $id)->where('status', '1')->select(['synchronize_rule'])->get();
+        $countryName = Country::where('id', $id)->select(['name'])->first();
+
+        if (!empty($rules)){
+            return response()->json([
+                "status"=>'1',
+                "country_name"=>$countryName->name,
+                "rules"=>$rules,
+            ]);
+        }else{
+            return response()->json([
+                "status"=>'0',
+            ]);
+        }
+
     }
 }
