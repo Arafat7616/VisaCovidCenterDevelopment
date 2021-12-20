@@ -73,7 +73,7 @@ class ServiceRegistrationController extends Controller
         $date = $userArray['date'];
         $nameOfVaccine = $userArray['vaccineName'];
 
-        $user = User::where('phone', $phone)->select(['id'])->first();
+        $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
 
         if ($existVaccination)
@@ -108,12 +108,17 @@ class ServiceRegistrationController extends Controller
             $vaccine->registration_type = "normal";
             $vaccine->name_of_vaccine = $nameOfVaccine;
 
+            $center = Center::where('id', $centerId)->select(['name','address'])->first();
+            $userName = $user->name;
+            $centerName = $center->name;
+            $centerAddress = $center->address;
+
             if ($vaccine->save())
             {
                 ManPowerSchedule::find($registrationCheck->id)->decrement('vaccine_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulations !! You are successfully registered for Vaccination. ', $phone);
+                send_sms('Congratulations '.$userName.'!! You are successfully registered for Vaccination. Your center name is: '.$centerName.','.$centerAddress.' & vaccination date : '.Carbon::parse($date), $phone);
 
                 return response()->json([
                     "message"=>"You are successfully registered for Vaccination",
