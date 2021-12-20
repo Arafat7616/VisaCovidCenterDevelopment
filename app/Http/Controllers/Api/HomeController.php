@@ -433,26 +433,41 @@ class HomeController extends Controller
             $userImage = $exitUser->image;
         }
 
-        $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine'])->first();
+
         $vaccinationCenterInfoName = '';
         $vaccinationCenterInfoAddress = '';
         $vaccinationStatusDate_of_first_dose = '';
         $vaccinationStatusDate_of_second_dose = '';
         $vaccinationStatusName_of_vaccine = '';
-        if($vaccinationStatus)
-        {
-            $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
-            $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
-            $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+        $antibody_last_date = '';
 
-            // if condition removed then showing default date as today
-            if($vaccinationStatus->date_of_first_dose != null){
-                $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
+        $vaccinationCenterType = Vaccination::where('user_id', $exitUser->id)->first();
+
+        if ($vaccinationCenterType->center_type === 'external'){
+            $vaccinationStatusDate_of_first_dose=Carbon::parse($vaccinationCenterType->date_of_first_dose)->format("j S F Y");;
+            $vaccinationStatusDate_of_second_dose=Carbon::parse($vaccinationCenterType->date_of_second_dose)->format("j S F Y");
+            $vaccinationStatusName_of_vaccine=$vaccinationCenterType->name_of_vaccine;
+            $vaccinationCenterInfoName=$vaccinationCenterType->center_name;
+            $vaccinationCenterInfoAddress=$vaccinationCenterType->center_location;
+            $antibody_last_date=Carbon::parse($vaccinationCenterType->antibody_last_date)->format("j S F Y");
+        }else{
+            $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine'])->first();
+            if($vaccinationStatus)
+            {
+                $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
+                $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
+                $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+
+                // if condition removed then showing default date as today
+                if($vaccinationStatus->date_of_first_dose != null){
+                    $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
+                }
+                if($vaccinationStatus->date_of_second_dose != null){
+                    $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
+                    $antibody_last_date = $vaccinationStatus->antibody_last_date;
+                }
+                $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
             }
-            if($vaccinationStatus->date_of_second_dose != null){
-                $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
-            }
-            $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
         }
 
         $pcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['center_id', 'pcr_result', 'date_of_pcr_test'])->first();
@@ -498,11 +513,12 @@ class HomeController extends Controller
             "myVaccinationName"=>$vaccinationStatusName_of_vaccine,
             "myVaccinationCenter"=>$vaccinationCenterInfoName,
             "myVaccinationCenterLocation"=>$vaccinationCenterInfoAddress,
+            "myAntibodyRemaining"=>$antibody_last_date,
 
             "myBoosterCenter"=>$boosterCenterInfoName,
             "myBoosterCenterLocation"=>$boosterCenterInfoAddress,
             "myBoosterDate"=>$boosterStatusDate,
-            "myAntibodyRemaining"=>$boosterStatusAntibody_last_date,
+            "mybBoosterAntibodyRemaining"=>$boosterStatusAntibody_last_date,
         ]);
     }
 
