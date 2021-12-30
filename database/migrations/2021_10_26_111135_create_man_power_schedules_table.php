@@ -20,11 +20,11 @@ class CreateManPowerSchedulesTable extends Migration
             $table->string('morning_ending_time')->nullable();
             $table->string('day_starting_time')->nullable();
             $table->string('day_ending_time')->nullable();
-            $table->string('volunteer_for_pcr')->nullable();
+            $table->string('trusted_medical_assistant_for_pcr')->nullable();
             $table->integer('pcr_available_set')->nullable()->default(0);
-            $table->string('volunteer_for_vaccine')->nullable();
+            $table->string('trusted_medical_assistant_for_vaccine')->nullable();
             $table->integer('vaccine_available_set')->nullable()->default(0);
-            $table->string('volunteer_for_booster')->nullable();
+            $table->string('trusted_medical_assistant_for_booster')->nullable();
             $table->integer('booster_available_set')->nullable()->default(0);
             $table->timestamp('date')->nullable();
             $table->string('pcr_time')->nullable();

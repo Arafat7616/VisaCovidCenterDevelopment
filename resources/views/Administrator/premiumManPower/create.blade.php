@@ -117,13 +117,13 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                        onchange="setMaxPcrService()" id="trustedMedicalAssistantForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
+                                                        onchange="setMaxPcrService()" id="trustedMedicalAssistantForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}" @endif
                                                         name="trustedMedicalAssistantForPcr"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-pcr-serve">
                                                     @if ($manPowerSchedule)
-                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->volunteer_for_pcr) }}
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->trusted_medical_assistant_for_pcr) }}
                                                     @endif
                                                 </p>
                                             </td>
@@ -146,12 +146,12 @@
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
                                                         onchange="setMaxVaccineService()" id="volunteerForVaccine"
-                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}" @endif name="volunteerForVaccine"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-vaccine-serve">
                                                     @if ($manPowerSchedule)
-                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->volunteer_for_vaccine) }}
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->trusted_medical_assistant_for_vaccine) }}
                                                     @endif
                                                 </p>
                                             </td>
@@ -174,12 +174,12 @@
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
                                                         onchange="setMaxBoosterService()" id="volunteerForBooster"
-                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}" @endif name="volunteerForBooster"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-booster-serve">
                                                     @if ($manPowerSchedule)
-                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->volunteer_for_booster) }}
+                                                        {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->trusted_medical_assistant_for_booster) }}
                                                     @endif
                                                 </p>
                                             </td>
