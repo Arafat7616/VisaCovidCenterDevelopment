@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Volunteer's
+    Trusted Medical Assistants
 @endpush
 
 @push('css')

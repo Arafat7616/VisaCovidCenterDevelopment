@@ -14,7 +14,7 @@
 -   **Password:** Password is `12345` for all portal
 -   **Super admin:** `01732955937` (apurbo vai)
 -   **Administrator:** `01749969029` (raihan vai)
--   **Volunteer:** `01303613363` (shohan)
+-   **Trusted Medical Assistant:** `01303613363` (shohan)
 -   **Receptionist:** `01777382007` (shohan)
 -   **Pathologist:** `01732379393` (shonat vai)
 -   **Immigration Officer :** `01871006624` (raihan vai)

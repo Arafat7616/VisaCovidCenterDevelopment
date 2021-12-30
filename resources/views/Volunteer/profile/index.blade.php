@@ -36,7 +36,7 @@
                                 <div class="col-6 details-value">
                                     <h5>{{ $user->id }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>Volunteer</h5>
+                                    <h5>Trusted Medical Assistant</h5>
                                     <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
                                     </h5>
                                     <h5>{{ $user->center->name }}</h5>
