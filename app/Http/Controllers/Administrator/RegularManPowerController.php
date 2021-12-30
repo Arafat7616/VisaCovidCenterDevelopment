@@ -35,7 +35,7 @@ class RegularManPowerController extends Controller
             'timeForPcr' => 'required',
             'timeForVaccine' => 'required',
             'timeForBooster' => 'required',
-            'volunteerForPcr' => 'required',
+            'trustedMedicalAssistantForPcr' => 'required',
             'volunteerForVaccine' => 'required',
             'volunteerForBooster' => 'required',
             'fromDate' => 'required',
@@ -68,7 +68,7 @@ class RegularManPowerController extends Controller
                 $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
                 $manPowerSchedule->day_starting_time        = $request->daySlotStart;
                 $manPowerSchedule->day_ending_time          = $request->daySlotEnd;
-                $manPowerSchedule->volunteer_for_pcr        = $request->volunteerForPcr;
+                $manPowerSchedule->volunteer_for_pcr        = $request->trustedMedicalAssistantForPcr;
                 $manPowerSchedule->volunteer_for_vaccine    = $request->volunteerForVaccine;
                 $manPowerSchedule->volunteer_for_booster    = $request->volunteerForBooster;
                 $manPowerSchedule->date                     = date("Y-m-d", $d);
@@ -109,7 +109,7 @@ class RegularManPowerController extends Controller
             'timeForPcr' => 'required',
             'timeForVaccine' => 'required',
             'timeForBooster' => 'required',
-            'volunteerForPcr' => 'required',
+            'trustedMedicalAssistantForPcr' => 'required',
             'volunteerForVaccine' => 'required',
             'volunteerForBooster' => 'required',
         ]);
@@ -122,7 +122,7 @@ class RegularManPowerController extends Controller
             $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
             $manPowerSchedule->day_starting_time        = $request->daySlotStart;
             $manPowerSchedule->day_ending_time          = $request->daySlotEnd;
-            $manPowerSchedule->volunteer_for_pcr        = $request->volunteerForPcr;
+            $manPowerSchedule->volunteer_for_pcr        = $request->trustedMedicalAssistantForPcr;
             $manPowerSchedule->volunteer_for_vaccine    = $request->volunteerForVaccine;
             $manPowerSchedule->volunteer_for_booster    = $request->volunteerForBooster;
             $manPowerSchedule->pcr_time                 = $request->timeForPcr;

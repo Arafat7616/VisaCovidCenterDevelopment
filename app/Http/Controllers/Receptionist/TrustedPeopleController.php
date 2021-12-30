@@ -163,7 +163,7 @@ class TrustedPeopleController extends Controller
         $countries = Country::all();
         $cities = City::all();
         $states = State::all();
-        return view('Administrator.volunteer.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
+        return view('Administrator.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
     }
 
     /**

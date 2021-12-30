@@ -98,9 +98,9 @@ if (!function_exists('random_code')){
         return User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
     }
 
-    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_volunteers)
+    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_trusted_medical_assistants)
     {
-        $man_power_minute_for_precess = $number_of_volunteers*$totalDayMinutes;
+        $man_power_minute_for_precess = $number_of_trusted_medical_assistants*$totalDayMinutes;
         return intval($man_power_minute_for_precess/$per_precess_minute);
     }
 

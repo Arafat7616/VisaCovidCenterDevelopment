@@ -117,8 +117,8 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                        onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
-                                                        name="volunteerForPcr"></p>
+                                                        onchange="setMaxPcrService()" id="trustedMedicalAssistantForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
+                                                        name="trustedMedicalAssistantForPcr"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-pcr-serve">
@@ -262,7 +262,7 @@
                 formData.append('timeForPcr', $('#timeForPcr').val());
                 formData.append('timeForVaccine', $('#timeForVaccine').val());
                 formData.append('timeForBooster', $('#timeForBooster').val());
-                formData.append('volunteerForPcr', $('#volunteerForPcr').val());
+                formData.append('trustedMedicalAssistantForPcr', $('#trustedMedicalAssistantForPcr').val());
                 formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
                 formData.append('volunteerForBooster', $('#volunteerForBooster').val());
                 formData.append('fromDate', $('#fromDate').val());
@@ -334,9 +334,9 @@
 
         function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
-            var volunteerForPcr = parseInt(document.getElementById('volunteerForPcr').value);
+            var trustedMedicalAssistantForPcr = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForPcr = totalMinute * volunteerForPcr;
+            var manPowerMinuteForPcr = totalMinute * trustedMedicalAssistantForPcr;
             document.getElementById('max-pcr-serve').innerHTML = parseInt(manPowerMinuteForPcr / timeForPcr) ;
             wantToServePerDay();
             setTotalManMinutePerDay()
@@ -363,11 +363,11 @@
         }
 
         function setTotalManMinutePerDay() {
-            var volunteerForPcr     = parseInt(document.getElementById('volunteerForPcr').value);
+            var trustedMedicalAssistantForPcr     = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
             var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
             var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-            var totalTrustedMedicalAssistant = volunteerForPcr+volunteerForVaccine+volunteerForBooster;
+            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+volunteerForVaccine+volunteerForBooster;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }
