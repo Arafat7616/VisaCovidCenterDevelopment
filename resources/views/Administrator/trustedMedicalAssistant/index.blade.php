@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-    <div class="volunteers mb-5">
+    <div class="trusted_medical_assistants mb-5">
         <div class="container">
             <div class="row">
                 @if(Session::has('message'))
@@ -24,9 +24,9 @@
                     <div class="col">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                <img class="volunteers__image" src="{{ asset( $people->image ?? get_static_option('user') ) }}" alt="">
-                                <div class="volunteers__details">
-                                    <h5 class="card-title volunteers__name">{{$people->name}}</h5>
+                                <img class="trusted_medical_assistants__image" src="{{ asset( $people->image ?? get_static_option('user') ) }}" alt="">
+                                <div class="trusted_medical_assistants__details">
+                                    <h5 class="card-title trusted_medical_assistants__name">{{$people->name}}</h5>
                                     <h6>{{$people->user_type}}</h6>
                                     <h6>ID: {{$people->id}}</h6>
                                     <h6>Contact: {{$people->phone}}</h6>
@@ -42,13 +42,13 @@
                 @endif
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body volunteers__add">
-                            <a href="{{route('administrator.trustedPeople.create')}}" class="volunteers__add__icon">
+                        <div class="card-body trusted_medical_assistants__add">
+                            <a href="{{route('administrator.trustedPeople.create')}}" class="trusted_medical_assistants__add__icon">
                                 <i class="fa fa-user-plus"></i>
                             </a>
                         </div>
                         <div class="card-footer">
-                            <small class="text-center volunteers__add__text">
+                            <small class="text-center trusted_medical_assistants__add__text">
                                 <h5>Add Trusted People</h5>
                             </small>
                         </div>
