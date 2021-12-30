@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5">
                 <!-- ==============card header title start=============== -->
-                <div class="card volunteer_account w-75 mx-auto">
+                <div class="card trusted_medical_assistant_account w-75 mx-auto">
                     <div class="card-body  text-center">
                         <h6 >Create Trusted Medical Assistant account</h6>
                     </div>
@@ -80,7 +80,7 @@
                             <input type="hidden" id="center_id" name="center_id" value="{{ Auth::user()->center_id }}">
 
                             <div class="text-center ">
-                                <button type="submit" class="volunteer-form-sub-btn mt-3 w-75">Submit</button>
+                                <button type="submit" class="trusted-medical-assistant-form-sub-btn mt-3 w-75">Submit</button>
                             </div>
                         </form>
 
