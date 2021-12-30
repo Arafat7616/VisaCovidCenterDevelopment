@@ -19,7 +19,7 @@ class UserController extends Controller
         $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });
-        return view('Volunteer.user.pcr', compact('pcrTestsOrderByDate'));
+        return view('TrustedMedicalAssistant.user.pcr', compact('pcrTestsOrderByDate'));
     }
 
     public function vaccine(){
@@ -27,7 +27,7 @@ class UserController extends Controller
         $vaccinationsOrderByDate = $vaccinations->groupBy(function ($val) {
             return Carbon::parse($val->updated_at)->format('d/m/Y');
         });
-        return view('Volunteer.user.vaccine', compact('vaccinationsOrderByDate'));
+        return view('TrustedMedicalAssistant.user.vaccine', compact('vaccinationsOrderByDate'));
     }
 
     public function booster(){
@@ -35,6 +35,6 @@ class UserController extends Controller
         $boostersOrderByDate = $boosters->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });
-        return view('Volunteer.user.booster', compact('boostersOrderByDate'));
+        return view('TrustedMedicalAssistant.user.booster', compact('boostersOrderByDate'));
     }
 }

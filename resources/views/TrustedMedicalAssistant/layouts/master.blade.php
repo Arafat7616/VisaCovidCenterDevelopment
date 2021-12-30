@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('Volunteer.layouts.includes.head')
+    @include('TrustedMedicalAssistant.layouts.includes.head')
 </head>
 
 
@@ -13,14 +13,14 @@
     </form>
     @endif
 
-    @include('Volunteer.layouts.includes.navbar')
+    @include('TrustedMedicalAssistant.layouts.includes.navbar')
     <div>
         @yield('content')
     </div>
 
-    @include('Volunteer.layouts.includes.footer')
+    @include('TrustedMedicalAssistant.layouts.includes.footer')
 
-    @include('Volunteer.layouts.includes.foot')
+    @include('TrustedMedicalAssistant.layouts.includes.foot')
 </body>
 
 </html>

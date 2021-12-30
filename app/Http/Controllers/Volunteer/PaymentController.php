@@ -12,6 +12,6 @@ class PaymentController extends Controller
     public function takePaymentFromUser($id, $purpose){
         $user = User::findOrFail($id);
         $price = Price::where('center_id', $user->center_id)->first();
-        return view('Volunteer.payment.take-payment', compact('user','purpose','price'));
+        return view('TrustedMedicalAssistant.payment.take-payment', compact('user','purpose','price'));
     }
 }

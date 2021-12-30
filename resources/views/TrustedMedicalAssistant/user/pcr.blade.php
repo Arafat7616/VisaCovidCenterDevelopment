@@ -1,7 +1,7 @@
-@extends('Volunteer.layouts.master')
+@extends('TrustedMedicalAssistant.layouts.master')
 
 @push('title')
-    PCR | Premium
+    PCR | Registered
 @endpush
 
 @push('css')
@@ -29,15 +29,12 @@
                 <div class="accordion-table-header ">
                     <div class="container">
                         <div class="row justify-content-between">
-                            <div class="col-4">
+                            <div class="col-12">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('volunteer.premium.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
-                                    <a href="{{ route('volunteer.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('volunteer.premium.booster') }}" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn  breadcrumb-active">PCR</a>
+                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
-                            </div>
-                            <div class="col-4">
-                                
                             </div>
                         </div>
                     </div>
@@ -83,7 +80,7 @@
                                                 <td>{{ $pcrTest->user->phone }}</td>
                                                 <td>{{ $pcrTest->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$pcrTest->user_id, 'premium-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$pcrTest->user_id, 'normal-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -106,7 +103,6 @@
                 @endforeach
             </div>
         </div>
-
     </div>
 @endsection
 

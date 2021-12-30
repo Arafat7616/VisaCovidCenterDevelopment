@@ -19,7 +19,7 @@ class PremiumController extends Controller
         $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });
-        return view('Volunteer.premium.pcr', compact('pcrTestsOrderByDate'));
+        return view('TrustedMedicalAssistant.premium.pcr', compact('pcrTestsOrderByDate'));
     }
 
     public function vaccine(){
@@ -27,7 +27,7 @@ class PremiumController extends Controller
         $vaccinationsOrderByDate = $vaccinations->groupBy(function ($val) {
             return Carbon::parse($val->updated_at)->format('d/m/Y');
         });
-        return view('Volunteer.premium.vaccine', compact('vaccinationsOrderByDate'));
+        return view('TrustedMedicalAssistant.premium.vaccine', compact('vaccinationsOrderByDate'));
     }
 
     public function booster(){
@@ -35,6 +35,6 @@ class PremiumController extends Controller
         $boostersOrderByDate = $boosters->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });
-        return view('Volunteer.premium.booster', compact('boostersOrderByDate'));
+        return view('TrustedMedicalAssistant.premium.booster', compact('boostersOrderByDate'));
     }
 }

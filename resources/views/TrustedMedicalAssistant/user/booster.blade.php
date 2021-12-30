@@ -1,4 +1,4 @@
-@extends('Volunteer.layouts.master')
+@extends('TrustedMedicalAssistant.layouts.master')
 
 @push('title')
     Booster | Registered

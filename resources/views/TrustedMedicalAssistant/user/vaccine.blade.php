@@ -1,7 +1,7 @@
-@extends('Volunteer.layouts.master')
+@extends('TrustedMedicalAssistant.layouts.master')
 
 @push('title')
-    Booster | Premium
+    Vaccine | Registered
 @endpush
 
 @push('css')
@@ -31,34 +31,27 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('volunteer.premium.pcr') }}" class="accorion-btn">PCR</a>
-                                    <a href="{{ route('volunteer.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('volunteer.premium.booster') }}" class="accorion-btn  breadcrumb-active">Booster</a>
+                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn">PCR</a>
+                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn breadcrumb-active">Vaccine</a>
+                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="ID/Name/Phone/Date">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary" type="button">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion" id="accordionExample">
-                @foreach ($boostersOrderByDate as $boosterOrderByDate)
+                @foreach ($vaccinationsOrderByDate as $vaccinationOrderByDate)
                     <div class="accordion-item table-accordion-item">
                         <h2 class="accordion-header" id="heading{{ $loop->iteration }}">
                             <button class="accordion-button table-accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="true"
                                 aria-controls="collapse{{ $loop->iteration }}">
-                                <span class="table-accordion-date">{{ Carbon\Carbon::parse($boosterOrderByDate->first()->updated_at)->format('d/m/Y') }}</span>
-                                <span class="table-accordion-people">{{ $boosterOrderByDate->count() }} People</span>
+                                <span class="table-accordion-date">{{ Carbon\Carbon::parse($vaccinationOrderByDate->first()->updated_at)->format('d/m/Y') }}</span>
+                                <span class="table-accordion-people">{{ $vaccinationOrderByDate->count() }} People</span>
                             </button>
                         </h2>
                         <div id="collapse{{ $loop->iteration }}"
@@ -79,16 +72,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($boosterOrderByDate as $booster)
+                                        @foreach ($vaccinationOrderByDate as $vaccination)
                                             <tr class="table-row">
                                                 <td><input type="checkbox" class="custom-control-input" id="customCheck1">
                                                 </td>
-                                                <td>{{ $booster->user_id }}</td>
-                                                <td>{{ $booster->user->name }}</td>
-                                                <td>{{ $booster->user->phone }}</td>
-                                                <td>{{ $booster->user->userInfo->gender ?? '-' }}</td>
+                                                <td>{{ $vaccination->user_id }}</td>
+                                                <td>{{ $vaccination->user->name }}</td>
+                                                <td>{{ $vaccination->user->phone }}</td>
+                                                <td>{{ $vaccination->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$booster->user_id, 'premium-booster']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$vaccination->user_id, 'normal-vaccine']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

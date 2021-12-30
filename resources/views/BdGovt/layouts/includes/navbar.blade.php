@@ -37,7 +37,7 @@
                                     class="fa fa-arrow-circle-right"></i><span> Administrator </span></a></li>
                         <li><a href="{{ route('bdGovt.manageUser.volunteer') }}"
                                 class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/volunteer') ? 'active' : '' }}"><i
-                                    class="fa fa-arrow-circle-right"></i><span> Volunteer </span></a></li>
+                                    class="fa fa-arrow-circle-right"></i><span> Trusted Medical Assistant</span></a></li>
                         <li><a href="{{ route('bdGovt.manageUser.receptionist') }}"
                                 class="waves-effect {{ \Illuminate\Support\Facades\Request::is('super-admin/manage-user/receptionist') ? 'active' : '' }}"><i
                                     class="fa fa-arrow-circle-right"></i><span> Receptionist </span></a></li>
