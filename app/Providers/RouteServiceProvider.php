@@ -28,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
     public const PathologistDashboard = 'pathologist/dashboard';
     public const ReceptionistDashboard = 'receptionist/dashboard';
     public const SuperAdminDashboard = 'super-admin/dashboard';
-    public const VolunteerDashboard = 'volunteer/dashboard';
+    public const TrustedMedicalAssistantDashboard = 'volunteer/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, etc.

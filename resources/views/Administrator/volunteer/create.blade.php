@@ -5,7 +5,7 @@
 @endpush
 
 @push('css')
-    <link rel="stylesheet" href="{{asset('assets/center-part/css/VolunteerAccount.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/center-part/css/TrustedMedicalAssistantAccount.css')}}">
 @endpush
 
 @section('content')
@@ -46,7 +46,7 @@
                                     <div class="col-sm-7">
                                         <select class="form-select text-muted" id="user_type" name="user_type" aria-label="Default select example">
                                             <option selected>Select One</option>
-                                            <option {{ old('user_type') === 'trusted-medical-assistant' ?? 'selected'}} value="volunteer">Volunteer</option>
+                                            <option {{ old('user_type') === 'trusted-medical-assistant' ?? 'selected'}} value="trusted-medical-assistant">Trusted Medical Assistant</option>
                                             <option {{ old('user_type') === 'receptionist' ?? 'selected'}} value="receptionist">Receptionist</option>
                                             <option {{ old('user_type') === 'pathologist' ?? 'selected'}} value="pathologist">Pathologist</option>
                                         </select>

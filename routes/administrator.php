@@ -7,9 +7,9 @@ Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as'
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
 
-    // route for Volunteer
+    // route for TrustedMedicalAssistant
     Route::group(['prefix' => 'volunteer/', 'as' => 'volunteer.'], function () {
-        Route::get('index', 'VolunteerController@index')->name('index');
+        Route::get('index', 'TrustedMedicalAssistantController@index')->name('index');
     });
 
     // route for registered

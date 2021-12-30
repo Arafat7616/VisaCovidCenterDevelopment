@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Volunteer;
+namespace App\Http\Controllers\TrustedMedicalAssistant;
 
 use App\Http\Controllers\Controller;
 use App\Models\PcrTest;

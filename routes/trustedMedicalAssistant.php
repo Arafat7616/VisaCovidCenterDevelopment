@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Volunteer route
-Route::group(['prefix' => 'volunteer/', 'namespace' => 'Volunteer', 'as' => 'volunteer.', 'middleware' => ['auth', 'volunteer']], function () {
+// TrustedMedicalAssistant route
+Route::group(['prefix' => 'volunteer/', 'namespace' => 'TrustedMedicalAssistant', 'as' => 'volunteer.', 'middleware' => ['auth', 'trustedMedicalAssistant']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
     Route::get('profile', 'DashboardController@profile')->name('profile');

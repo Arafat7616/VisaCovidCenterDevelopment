@@ -96,7 +96,7 @@
                                                 <p class="p-mx"> <small>Estimated time</small><br><b>Per Process</b> </p>
                                             </td>
                                             <td class="cal-x-y">
-                                                <p class="p-mx"><b>Number of Volunteer</b> </p>
+                                                <p class="p-mx"><b>Number of Trusted Medical Assistant</b> </p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
