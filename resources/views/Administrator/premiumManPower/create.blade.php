@@ -367,8 +367,8 @@
             var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
             var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-            var totalVolunteer = volunteerForPcr+volunteerForVaccine+volunteerForBooster;
-            document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalVolunteer;
+            var totalTrustedMedicalAssistant = volunteerForPcr+volunteerForVaccine+volunteerForBooster;
+            document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }
 
