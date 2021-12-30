@@ -52,18 +52,20 @@ if (!function_exists('random_code')){
 
     function send_sms($message, $phone)
     {
+        // app name given in here 
+        $app_name = "Visa Covid";
         $curl = curl_init();
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array(
-                    'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
-                    'msg' => $message,
-                    'to' => $phone
-                ),
-            ));
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => array(
+                'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
+                'msg' => nl2br($message."\n\n".$app_name),
+                'to' => $phone
+            ),
+        ));
         $response = curl_exec($curl);
 
         curl_close($curl);
