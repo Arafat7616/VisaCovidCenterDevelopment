@@ -22,10 +22,10 @@ class UserController extends Controller
         return view('SuperAdmin.manageUser.administrator', compact('users'));
     }
 
-    public function volunteer()
+    public function trustedMedicalAssistant()
     {
         $users = User::where('user_type', 'trusted-medical-assistant')->orderBy('id', 'DESC')->get();
-        return view('SuperAdmin.manageUser.volunteer', compact('users'));
+        return view('SuperAdmin.manageUser.trustedMedicalAssistant', compact('users'));
     }
 
     public function receptionist()

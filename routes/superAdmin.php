@@ -18,7 +18,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     // route for manage user
     Route::group(['prefix' => 'manage-user/', 'as' => 'manageUser.'], function () {
         Route::get('administrator', 'UserController@administrator')->name('administrator');
-        Route::get('trusted-medical-assistant', 'UserController@volunteer')->name('volunteer');
+        Route::get('trusted-medical-assistant', 'UserController@trustedMedicalAssistant')->name('trustedMedicalAssistant');
         Route::get('receptionist', 'UserController@receptionist')->name('receptionist');
         Route::get('pathologist', 'UserController@pathologist')->name('pathologist');
         Route::get('user', 'UserController@user')->name('user');
