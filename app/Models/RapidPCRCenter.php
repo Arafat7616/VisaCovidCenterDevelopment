@@ -27,7 +27,7 @@ class RapidPCRCenter extends Model
 
     public function documents()
     {
-        return $this->hasMany(CenterDocument::class, 'center_id');
+        return $this->hasMany(RapidPCRCenter::class, 'rapid_p_c_r_center_id');
     }
 
     public function administrator()
@@ -50,8 +50,8 @@ class RapidPCRCenter extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function price()
-    {
-        return $this->hasOne(Price::class, 'center_id');
-    }
+    // public function price()
+    // {
+    //     return $this->hasOne(Price::class, 'center_id');
+    // }
 }
