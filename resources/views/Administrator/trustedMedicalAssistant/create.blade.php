@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Create New volunteer
+    Create New Trusted Medical Assistant
 @endpush
 
 @push('css')
@@ -15,7 +15,7 @@
                 <!-- ==============card header title start=============== -->
                 <div class="card volunteer_account w-75 mx-auto">
                     <div class="card-body  text-center">
-                        <h6 >Create volunteer account</h6>
+                        <h6 >Create Trusted Medical Assistant account</h6>
                     </div>
                 </div>
                 <!-- =================card header title start=============== -->

@@ -134,8 +134,8 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                        onchange="setMaxVaccineService()" id="volunteerForVaccine"
-                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                                        onchange="setMaxVaccineService()" id="trustedMedicalAssistantForVaccine"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}" @endif name="trustedMedicalAssistantForVaccine"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-vaccine-serve">
@@ -162,8 +162,8 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                        onchange="setMaxBoosterService()" id="volunteerForBooster"
-                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}" @endif name="volunteerForBooster"></p>
+                                                        onchange="setMaxBoosterService()" id="trustedMedicalAssistantForBooster"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}" @endif name="trustedMedicalAssistantForBooster"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-booster-serve">
@@ -236,8 +236,8 @@
                 formData.append('timeForVaccine', $('#timeForVaccine').val());
                 formData.append('timeForBooster', $('#timeForBooster').val());
                 formData.append('trustedMedicalAssistantForPcr', $('#trustedMedicalAssistantForPcr').val());
-                formData.append('volunteerForVaccine', $('#volunteerForVaccine').val());
-                formData.append('volunteerForBooster', $('#volunteerForBooster').val());        
+                formData.append('trustedMedicalAssistantForVaccine', $('#trustedMedicalAssistantForVaccine').val());
+                formData.append('trustedMedicalAssistantForBooster', $('#trustedMedicalAssistantForBooster').val());        
                 formData.append('booster_available_set', $('#max-booster-serve').text());               
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
@@ -318,9 +318,9 @@
 
         function setMaxVaccineService() {
             var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
-            var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
+            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForVaccine = totalMinute * volunteerForVaccine;
+            var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
             document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
             wantToServePerDay();
             setTotalManMinutePerDay();
@@ -328,9 +328,9 @@
 
         function setMaxBoosterService() {
             var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
-            var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
+            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForBooster = totalMinute * volunteerForBooster;
+            var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
             document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
             wantToServePerDay();
             setTotalManMinutePerDay();
@@ -338,10 +338,10 @@
 
         function setTotalManMinutePerDay() {
             var trustedMedicalAssistantForPcr     = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
-            var volunteerForVaccine = parseInt(document.getElementById('volunteerForVaccine').value);
-            var volunteerForBooster = parseInt(document.getElementById('volunteerForBooster').value);
+            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+volunteerForVaccine+volunteerForBooster;
+            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+trustedMedicalAssistantForVaccine+trustedMedicalAssistantForBooster;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }

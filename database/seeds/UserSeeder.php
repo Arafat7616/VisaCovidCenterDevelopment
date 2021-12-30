@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Mr. Trusted Medical Assistant';
-        $user->email = 'volunteer@gmail.com';
+        $user->email = 'trusted-medical-assistant@gmail.com';
         $user->phone = '01303613363'; //shohan
         $user->password = Hash::make('12345');
         $user->user_type = 'trusted-medical-assistant';

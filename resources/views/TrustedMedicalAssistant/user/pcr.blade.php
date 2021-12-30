@@ -31,9 +31,9 @@
                         <div class="row justify-content-between">
                             <div class="col-12">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('volunteer.user.pcr') }}" class="accorion-btn  breadcrumb-active">PCR</a>
-                                    <a href="{{ route('volunteer.user.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('volunteer.user.booster') }}" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('trustedMedicalAssistant.user.pcr') }}" class="accorion-btn  breadcrumb-active">PCR</a>
+                                    <a href="{{ route('trustedMedicalAssistant.user.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('trustedMedicalAssistant.user.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                                 <td>{{ $pcrTest->user->phone }}</td>
                                                 <td>{{ $pcrTest->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('volunteer.payment.takePaymentFromUser', [$pcrTest->user_id, 'normal-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('trustedMedicalAssistant.payment.takePaymentFromUser', [$pcrTest->user_id, 'normal-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

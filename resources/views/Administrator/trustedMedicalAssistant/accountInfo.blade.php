@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Create New volunteer
+    Create New Trusted Medical Assistant
 @endpush
 
 @push('css')

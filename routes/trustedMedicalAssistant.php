@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // TrustedMedicalAssistant route
-Route::group(['prefix' => 'trusted-medical-assistant/', 'namespace' => 'TrustedMedicalAssistant', 'as' => 'volunteer.', 'middleware' => ['auth', 'trustedMedicalAssistant']], function () {
+Route::group(['prefix' => 'trusted-medical-assistant/', 'namespace' => 'TrustedMedicalAssistant', 'as' => 'trustedMedicalAssistant.', 'middleware' => ['auth', 'trustedMedicalAssistant']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
     Route::get('profile', 'DashboardController@profile')->name('profile');

@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function dashboard(){
 
-        return redirect()->route('volunteer.user.pcr');
+        return redirect()->route('trustedMedicalAssistant.user.pcr');
         // return view('TrustedMedicalAssistant.dashboard');
     }
 
