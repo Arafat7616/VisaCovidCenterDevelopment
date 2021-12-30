@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function volunteer()
     {
-        $users = User::where('user_type', 'volunteer')->orderBy('id', 'DESC')->get();
+        $users = User::where('user_type', 'trusted-medical-assistant')->orderBy('id', 'DESC')->get();
         return view('BdGovt.manageUser.volunteer', compact('users'));
     }
 

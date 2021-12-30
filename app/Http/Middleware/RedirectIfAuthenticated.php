@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
                     return redirect(RouteServiceProvider::ReceptionistDashboard);
                 } elseif (Auth::user()->user_type == 'pathologist') {
                     return redirect(RouteServiceProvider::PathologistDashboard);
-                } elseif (Auth::user()->user_type == 'volunteer') {
+                } elseif (Auth::user()->user_type == 'trusted-medical-assistant') {
                     return redirect(RouteServiceProvider::VolunteerDashboard);
                 } elseif (Auth::user()->user_type == 'administrator') {
                   return redirect(RouteServiceProvider::AdministratorDashboard);

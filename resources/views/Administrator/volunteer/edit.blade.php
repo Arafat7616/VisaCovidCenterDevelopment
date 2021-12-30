@@ -78,7 +78,7 @@
                                     <h6>
                                         <select class="@error('user_type') is-invalid @enderror" name="user_type">
                                             <option value="">Select One</option>
-                                            <option {{$user->user_type == 'volunteer' ? 'selected' : ''}} value="volunteer">Volunteer</option>
+                                            <option {{$user->user_type == 'trusted-medical-assistant' ? 'selected' : ''}} value="volunteer">Volunteer</option>
                                             <option {{$user->user_type == 'receptionist' ? 'selected' : ''}} value="receptionist">Receptionist</option>
                                             <option {{$user->user_type == 'pathologist' ? 'selected' : ''}} value="pathologist">Pathologist</option>
                                         </select>

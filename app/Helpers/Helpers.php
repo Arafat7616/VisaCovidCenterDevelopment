@@ -95,7 +95,7 @@ if (!function_exists('random_code')){
 
     function get_total_volenteers()
     {
-        return User::where('user_type', 'volunteer')->where('center_id', Auth::user()->center_id)->count();
+        return User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
     }
 
     function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_volunteers)

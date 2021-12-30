@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
         $user->email = 'volunteer@gmail.com';
         $user->phone = '01303613363'; //shohan
         $user->password = Hash::make('12345');
-        $user->user_type = 'volunteer';
+        $user->user_type = 'trusted-medical-assistant';
         $user->status = true;
         $user->center_id = 1;
         $user->otp = rand(5, 9999);

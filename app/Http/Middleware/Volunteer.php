@@ -16,7 +16,7 @@ class Volunteer
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && (Auth::user()->user_type == 'volunteer')) {
+        if (Auth::check() && (Auth::user()->user_type == 'trusted-medical-assistant')) {
             return $next($request);
         }
         else{

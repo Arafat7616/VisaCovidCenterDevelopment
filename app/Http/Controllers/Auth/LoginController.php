@@ -52,7 +52,7 @@ class LoginController extends Controller
                 return 'receptionist/dashboard';
             } elseif (Auth::user()->user_type == 'pathologist') {
                 return 'pathologist/dashboard';
-            } elseif (Auth::user()->user_type == 'volunteer') {
+            } elseif (Auth::user()->user_type == 'trusted-medical-assistant') {
                 return 'volunteer/dashboard';
             } elseif (Auth::user()->user_type == 'administrator') {
                 return 'administrator/dashboard';
