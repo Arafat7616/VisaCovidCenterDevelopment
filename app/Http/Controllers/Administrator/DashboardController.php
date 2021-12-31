@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        return redirect()->route('administrator.volunteer.index');
+        return redirect()->route('administrator.trustedMedicalAssistant.index');
         // return view('Administrator.dashboard');
     }
 

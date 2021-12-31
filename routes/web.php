@@ -18,7 +18,7 @@ include('superAdmin.php');
 include('bdGovt.php');
 include('administrator.php');
 include('receptionist.php');
-include('volunteer.php');
+include('trustedMedicalAssistant.php');
 include('pathologist.php');
 include('immigrationOfficer.php');
 
@@ -27,7 +27,6 @@ include('immigrationOfficer.php');
 // });
 Route::get('/', 'LandingPageController@index')->name('frontend.index');
 Route::post('/subscribe/store', 'LandingPageController@subscribeStore')->name('frontend.subscribeStore');
-
 
 // Auth::routes();
 Auth::routes(['register' => false]);
@@ -43,10 +42,8 @@ Route::post('login/checkOtp', 'Auth\CustomLoginController@checkOtp');
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
 Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
 
-
 Route::get('/share/user/{id}', 'ShareController@shareUser')->name('share.user');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
-
 
 // country -state - city list related api
 Route::get('/api/get-state-list/{country_id}', 'Auth\CenterRegistrationController@getStateList');

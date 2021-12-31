@@ -18,7 +18,7 @@ class AccontInfoController extends Controller
         $user = User::where('phone',$sessionUser->phone)->first();
         $userInfo = UserInfo::where('user_id', $user->id)->first();
 
-        return view('Administrator.volunteer.accountInfo', compact('user', 'userInfo'));
+        return view('Administrator.trustedMedicalAssistant.accountInfo', compact('user', 'userInfo'));
     }
 
     public function infoUpdate(Request $request)

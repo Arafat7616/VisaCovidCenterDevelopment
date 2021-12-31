@@ -22,10 +22,10 @@ class UserController extends Controller
         return view('BdGovt.manageUser.administrator', compact('users'));
     }
 
-    public function volunteer()
+    public function trustedMedicalAssistant()
     {
-        $users = User::where('user_type', 'volunteer')->orderBy('id', 'DESC')->get();
-        return view('BdGovt.manageUser.volunteer', compact('users'));
+        $users = User::where('user_type', 'trusted-medical-assistant')->orderBy('id', 'DESC')->get();
+        return view('BdGovt.manageUser.trustedMedicalAssistant', compact('users'));
     }
 
     public function receptionist()

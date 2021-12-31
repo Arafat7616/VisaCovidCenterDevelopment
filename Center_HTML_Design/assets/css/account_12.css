@@ -8,12 +8,12 @@ body{
     background: #FAFAFC 0% 0% no-repeat;
     box-sizing: border-box;
 }
-/*volunteers section start*/
-.volunteers{
+/*trusted_medical_assistants section start*/
+.trusted_medical_assistants{
     padding: 40px 0px;
 }
 
-.volunteers__image{
+.trusted_medical_assistants__image{
     width: 150Px;
     height: 150px;
     border-radius: 50%;
@@ -21,47 +21,47 @@ body{
     margin-top: 10px;
 }
 
-.volunteers__details{
+.trusted_medical_assistants__details{
     padding: 10px 5px;
     text-align: left;
 }
-.volunteers__details h6{
+.trusted_medical_assistants__details h6{
     color: #707070;
     font-weight: 600;
     padding: 3px 0px;
 }
 
-.volunteers__name{
+.trusted_medical_assistants__name{
     color: #00569f;
     font-weight: 600;
     font-size: 22px;
     text-transform: capitalize;
 }
 
-.volunteers__add{
+.trusted_medical_assistants__add{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.volunteers__add__text{
+.trusted_medical_assistants__add__text{
     color: #00569f;
     font-weight: 600;
 }
 
-.volunteers__add__icon{
+.trusted_medical_assistants__add__icon{
     text-decoration: none;
 }
 
-.volunteers__add__icon i{
+.trusted_medical_assistants__add__icon i{
     font-size: 100px;
     color: #00569f;
 }
 
-.volunteers__add__icon:hover{
+.trusted_medical_assistants__add__icon:hover{
     color: #00569f;
     text-decoration: none;
 }
-/*volunteers section end*/
+/*trusted_medical_assistants section end*/
 
 
 
