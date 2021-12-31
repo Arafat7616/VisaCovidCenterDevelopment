@@ -57,6 +57,7 @@ Edit
                                         <label for="zipCode">Zip Code</label>
                                         <input type="text" name="zipCode" class="form-control" id="zipCode" value="{{ $center->zip_code }}">
                                     </div>    
+                                      
                                     <div class="form-group">
                                         <label for="mapLocationLink">Map Location Link</label>
                                         <input type="text" name="mapLocationLink" class="form-control" id="mapLocationLink" value="{{ $center->map_location }}">
@@ -100,6 +101,10 @@ Edit
                                             @endforeach
                                         </select>
                                     </div>   
+                                    <div class="form-group">
+                                        <label for="space">Space</label>
+                                        <input type="number" name="space" class="form-control" id="space" min="0" value="{{ $center->space }}">
+                                    </div> 
                                 </div>
                             </div>
                         </div>

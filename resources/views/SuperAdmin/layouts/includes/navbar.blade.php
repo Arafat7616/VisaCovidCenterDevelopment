@@ -22,7 +22,7 @@
             <ul>
                 <li>
                     <a href="{{ route('superAdmin.dashboard') }}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
-                </li>
+                </li>             
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Slider </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -100,9 +100,11 @@
 
                 {{-- routes for setting manage  --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active subdrop': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+            
                     <ul class="list-unstyled">
                         {{-- routes for Landing-page manage  --}}
+                        <li><a href="{{route('superAdmin.setting.space.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/space') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Space </span></a></li>
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/*') ? 'active': ''}}"><i class="fa fa-globe"></i> <span> Landing Page </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                             <ul class="list-unstyled">
@@ -112,7 +114,10 @@
                                 <li><a href="{{route('superAdmin.setting.landingPage.work.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/work') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> We Work </span></a></li>
                                 <li><a href="{{route('superAdmin.setting.landingPage.testimonial')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/testimonial') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Testimonial </span></a></li>
                                 <li><a href="{{route('superAdmin.setting.landingPage.footer')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/footer') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Footer </span></a></li>
-                                <li><a href="{{route('superAdmin.setting.landingPage.subscriber.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/subscriber') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Subscriber </span></a></li>
+
+                                <li>
+                                    <a href="{{route('superAdmin.setting.landingPage.subscriber.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/landing-page/subscriber') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Subscriber </span></a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

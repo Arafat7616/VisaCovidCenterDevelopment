@@ -101,13 +101,13 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                                        onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->pcr_time }}" @endif
-                                                                        name="timeForPcr"> <small class="s-cx">min</small></p>
+                                                        onchange="setMaxPcrService()" id="timeForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->pcr_time }}" @endif
+                                                        name="timeForPcr"> <small class="s-cx">min</small></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                                        onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
-                                                                        name="volunteerForPcr"></p>
+                                                        onchange="setMaxPcrService()" id="volunteerForPcr" @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_pcr }}" @endif
+                                                        name="volunteerForPcr"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-pcr-serve">
@@ -128,14 +128,14 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                                         onchange="setMaxVaccineService()" id="timeForVaccine"
-                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
+                                                        onchange="setMaxVaccineService()" id="timeForVaccine"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
                                                         class="s-cx">min</small></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                                         onchange="setMaxVaccineService()" id="volunteerForVaccine"
-                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
+                                                        onchange="setMaxVaccineService()" id="volunteerForVaccine"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_vaccine }}" @endif name="volunteerForVaccine"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-vaccine-serve">
@@ -156,14 +156,14 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
-                                                                         onchange="setMaxBoosterService()" id="timeForBooster"
-                                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->booster_time }}" @endif name="timeForBooster"> <small
+                                                        onchange="setMaxBoosterService()" id="timeForBooster"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->booster_time }}" @endif name="timeForBooster"> <small
                                                         class="s-cx">min</small> </p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"
-                                                                        onchange="setMaxBoosterService()" id="volunteerForBooster"
-                                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
+                                                        onchange="setMaxBoosterService()" id="volunteerForBooster"
+                                                        @if ($manPowerSchedule) value="{{ $manPowerSchedule->volunteer_for_booster }}" @endif name="volunteerForBooster"></p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-booster-serve">
@@ -178,7 +178,6 @@
                                                 </p>
                                             </td>
                                         </tr>
-
                                         <tr class="cal-mx-x-p">
                                             <td></td>
                                             <td></td>
@@ -194,7 +193,6 @@
                                 </div>
                             </div>
                             <div class="col-1">
-
                             </div>
                             <div class="col-3">
                                 <div class="cal-service-slot row">
