@@ -37,11 +37,11 @@ Premium Man Power
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Volunteer for PCR</th>
+                            <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Volunteer for Vaccine</th>
+                            <th>Trusted Medical Assistant for Vaccine</th>
                             <th>Vaccine Available set</th>
-                            <th>Volunteer for Booster</th>
+                            <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
                             <th>PCT</th>
@@ -54,12 +54,12 @@ Premium Man Power
                         @foreach($manPowerSchedules as $manPowerSchedule)
                         <tr>
                             <td>{{ $manPowerSchedule->id }}</td>
-                            <td>{{ $manPowerSchedule->volunteer_for_pcr }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
                             <td>{{ $manPowerSchedule->pcr_available_set }}</td>
-                            <td>{{ $manPowerSchedule->volunteer_for_vaccine }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}</td>
 
                             <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
-                            <td>{{ $manPowerSchedule->volunteer_for_booster }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}</td>
                             <td>{{ $manPowerSchedule->booster_available_set }}</td>
                             <td>{{ $manPowerSchedule->date }}</td>
                             <td>{{ $manPowerSchedule->pcr_time }}</td>
@@ -81,11 +81,11 @@ Premium Man Power
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Volunteer for PCR</th>
+                            <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Volunteer for Vaccine</th>
+                            <th>Trusted Medical Assistant for Vaccine</th>
                             <th>Vaccine Available set</th>
-                            <th>Volunteer for Booster</th>
+                            <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
                             <th>PCT</th>

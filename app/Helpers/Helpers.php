@@ -52,18 +52,20 @@ if (!function_exists('random_code')){
 
     function send_sms($message, $phone)
     {
+        // app name given in here 
+        $app_name = "Visa Covid";
         $curl = curl_init();
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array(
-                    'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
-                    'msg' => $message,
-                    'to' => $phone
-                ),
-            ));
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => array(
+                'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
+                'msg' => nl2br($message."\n\n".$app_name),
+                'to' => $phone
+            ),
+        ));
         $response = curl_exec($curl);
 
         curl_close($curl);
@@ -95,12 +97,12 @@ if (!function_exists('random_code')){
 
     function get_total_volenteers()
     {
-        return User::where('user_type', 'volunteer')->where('center_id', Auth::user()->center_id)->count();
+        return User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
     }
 
-    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_volunteers)
+    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_trusted_medical_assistants)
     {
-        $man_power_minute_for_precess = $number_of_volunteers*$totalDayMinutes;
+        $man_power_minute_for_precess = $number_of_trusted_medical_assistants*$totalDayMinutes;
         return intval($man_power_minute_for_precess/$per_precess_minute);
     }
 

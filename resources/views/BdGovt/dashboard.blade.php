@@ -48,10 +48,10 @@ BD Govt.
             <div class="col-sm-6 col-lg-3">
                 <div class="panel panel-primary text-center">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Total Volunteer</h4>
+                        <h4 class="panel-title">Total Trusted Medical Assistant</h4>
                     </div>
                     <div class="panel-body">
-                        <h3 class=""><b>{{ $users->where('user_type','volunteer')->count() }}</b></h3>
+                        <h3 class=""><b>{{ $users->where('user_type','trusted-medical-assistant')->count() }}</b></h3>
                     </div>
                 </div>
             </div>

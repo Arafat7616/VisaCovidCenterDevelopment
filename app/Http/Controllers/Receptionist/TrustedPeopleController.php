@@ -111,7 +111,6 @@ class TrustedPeopleController extends Controller
             ]);
         }        
     }
-
     
     public function verification(Request $request)
     {
@@ -145,7 +144,7 @@ class TrustedPeopleController extends Controller
      * @param  \App\TrustedPeople  $trustedPeople
      * @return \Illuminate\Http\Response
      */
-    public function show(TrustedPeople $trustedPeople)
+    public function show()
     {
         //
     }
@@ -163,7 +162,7 @@ class TrustedPeopleController extends Controller
         $countries = Country::all();
         $cities = City::all();
         $states = State::all();
-        return view('Administrator.volunteer.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
+        return view('Administrator.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
     }
 
     /**
