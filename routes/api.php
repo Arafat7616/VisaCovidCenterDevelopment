@@ -86,6 +86,27 @@ Route::get('home/synchronizeInformation/{id}', 'Api\HomeController@synchronizeIn
 Route::post('otpResend', 'Api\UserController@otpResend');
 
 
+Route::post('uploadImage', 'Api\UserController@uploadImage');
+
+
+Route::post('volunteer/login', 'Api\CenterController@login');
+Route::post('volunteer/otp', 'Api\CenterController@volunteerOtp');
+Route::post('volunteer/otpResend', 'Api\CenterController@otpResend');
+
+//pcr center
+Route::post('pcr/registeredList', 'Api\PcrCenterController@registeredList');
+Route::post('pcr/pcrUserOtp', 'Api\PcrCenterController@pcrUserOtp');
+Route::post('pcr/pcrVolunteerOtp', 'Api\PcrCenterController@pcrVolunteerOtp');
+Route::post('pcr/pcrFrom', 'Api\PcrCenterController@pcrFrom');
+
+
+
+Route::post('centerOptSend', 'Api\PcrCenterController@centerOptSend');
+Route::post('centerOptCheck', 'Api\PcrCenterController@centerOptCheck');
+
+
+
+
 
 
 
