@@ -27,7 +27,7 @@ class RapidPCRCenter extends Model
 
     public function documents()
     {
-        return $this->hasMany(RapidPCRCenter::class, 'rapid_p_c_r_center_id');
+        return $this->hasMany(RapidPCRCenter::class, 'rapid_pcr_center_id');
     }
 
     public function administrator()

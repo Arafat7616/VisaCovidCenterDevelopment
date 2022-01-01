@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRapidPCRCenterDocumentsTable extends Migration
+class CreateRapidPCRPricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRapidPCRCenterDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rapid_p_c_r_center_documents', function (Blueprint $table) {
+        Schema::create('rapid_p_c_r_prices', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('pcr_normal')->nullable();
+            $table->string('pcr_premium')->nullable();
             $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
-            $table->string('document')->nullable();
-            $table->string('status')->nullable()->default(0);
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateRapidPCRCenterDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rapid_p_c_r_center_documents');
+        Schema::dropIfExists('rapid_p_c_r_prices');
     }
 }
