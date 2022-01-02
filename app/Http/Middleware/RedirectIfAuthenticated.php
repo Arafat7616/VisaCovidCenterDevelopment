@@ -40,14 +40,12 @@ class RedirectIfAuthenticated
                 } else {
                     // return route('login');
                     return route('frontend.index');
-                    
                 }
             }else{
                 // return route('login');
                 return route('frontend.index');
             }
         }
-
         return $next($request);
     }
 }
