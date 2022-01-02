@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class VaccineName extends Model
 {
-    protected $fillable = ['name', 'status'];
+    protected $fillable = [
+        'name',
+        'status'
+    ];
 }
