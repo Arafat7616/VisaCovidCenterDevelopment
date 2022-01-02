@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,6 +9,6 @@ class QrController extends Controller
 {
     public function qrScan()
     {
-        return view('Administrator.trustedMedicalAssistant.qrScan');
+        return view('RapidPCRCenterAdministrator.trustedMedicalAssistant.qrScan');
     }
 }

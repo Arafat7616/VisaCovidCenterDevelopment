@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Vaccine Name create
@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="card page-wrapper w-100" style="margin-bottom: 100px" >
-                    <form action="{{route('administrator.centerVaccine.update', $centerVaccineName->id)}}" method="post">
+                    <form action="{{route('rapidPcrCenterAdministrator.centerVaccine.update', $centerVaccineName->id)}}" method="post">
                         @csrf
                         @method('put')
 
@@ -59,7 +59,7 @@
 
                         <div class="mt-4">
                             <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
-                            <a href="{{route('administrator.centerVaccine.index')}}" class="btn btn-info waves-effect waves-light">Back</a>
+                            <a href="{{route('rapidPcrCenterAdministrator.centerVaccine.index')}}" class="btn btn-info waves-effect waves-light">Back</a>
                         </div>
                     </form>
                 </div>

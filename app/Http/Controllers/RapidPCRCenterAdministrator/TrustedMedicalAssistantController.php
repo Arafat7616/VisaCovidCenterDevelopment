@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class TrustedMedicalAssistantController extends Controller
 {
     public function index(){
-        $trustedPeoples = User::where('center_id', Auth::user()->center_id)->whereIn('user_type', ['trusted-medical-assistant', 'receptionist', 'pathologist'])->orderBy('user_type', 'DESC')->get();
-        return view('Administrator.trustedMedicalAssistant.index', compact('trustedPeoples'));
+        $trustedPeoples = User::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->whereIn('user_type', ['trusted-medical-assistant', 'receptionist', 'pathologist'])->orderBy('user_type', 'DESC')->get();
+        return view('RapidPCRCenterAdministrator.trustedMedicalAssistant.index', compact('trustedPeoples'));
     }
 }

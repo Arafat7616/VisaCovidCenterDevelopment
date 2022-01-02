@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Vaccine Name
@@ -21,7 +21,7 @@
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="card page-wrapper w-100" style="margin-bottom: 100px" >
                     <div>
-                        <a class="btn btn-success my-3" href="{{route('administrator.centerVaccine.create')}}"><i class="fa fa-plus"></i>Create New</a>
+                        <a class="btn btn-success my-3" href="{{route('rapidPcrCenterAdministrator.centerVaccine.create')}}"><i class="fa fa-plus"></i>Create New</a>
                     </div>
                     <table class="table table-bordered">
                         <thead>
@@ -39,8 +39,8 @@
                                     <td class="text-capitalize">{{$vaccineName->vaccineName}}</td>
                                     <td>{{$vaccineName->status ? 'Active' : 'InActive'}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-warning" href="{{route('administrator.centerVaccine.edit', $vaccineName->id)}}"><i class="fa fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" href="{{route('administrator.centerVaccine.destroy', $vaccineName->id)}}"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('rapidPcrCenterAdministrator.centerVaccine.edit', $vaccineName->id)}}"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-danger" href="{{route('rapidPcrCenterAdministrator.centerVaccine.destroy', $vaccineName->id)}}"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

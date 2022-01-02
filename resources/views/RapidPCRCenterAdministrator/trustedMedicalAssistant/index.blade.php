@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Trusted Medical Assistants
@@ -33,8 +33,8 @@
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <a class="btn btn-sm btn-success" href="{{route('administrator.trustedPeople.edit', $people->id)}}"><i class="fa fa-edit"></i> Edit</a>
-                                <button class="btn btn-sm btn-danger" onclick="delete_function(this)" value="{{ route('administrator.trustedPeople.destroy', $people->id) }}"><i class="fa fa-trash"></i> Delete </button>
+                                <a class="btn btn-sm btn-success" href="{{route('rapidPcrCenterAdministrator.trustedPeople.edit', $people->id)}}"><i class="fa fa-edit"></i> Edit</a>
+                                <button class="btn btn-sm btn-danger" onclick="delete_function(this)" value="{{ route('rapidPcrCenterAdministrator.trustedPeople.destroy', $people->id) }}"><i class="fa fa-trash"></i> Delete </button>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body trusted_medical_assistants__add">
-                            <a href="{{route('administrator.trustedPeople.create')}}" class="trusted_medical_assistants__add__icon">
+                            <a href="{{route('rapidPcrCenterAdministrator.trustedPeople.create')}}" class="trusted_medical_assistants__add__icon">
                                 <i class="fa fa-user-plus"></i>
                             </a>
                         </div>

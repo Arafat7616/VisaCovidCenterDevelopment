@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 
 use App\Http\Controllers\Controller;
@@ -24,7 +24,7 @@ class CenterVaccineNameController extends Controller
     {
         $centerId = User::where('id', Auth::user()->id)->select('center_id')->first();
         $vaccineNames = CenterVaccineName::where('center_id', $centerId->center_id)->get();
-        return view('Administrator.centerVaccineName.index', compact('vaccineNames'));
+        return view('RapidPCRCenterAdministrator.centerVaccineName.index', compact('vaccineNames'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CenterVaccineNameController extends Controller
     public function create()
     {
         $vaccineNames = VaccineName::where('status', '1')->get();
-        return view('Administrator.centerVaccineName.create', compact('vaccineNames'));
+        return view('RapidPCRCenterAdministrator.centerVaccineName.create', compact('vaccineNames'));
     }
 
     /**
@@ -96,7 +96,7 @@ class CenterVaccineNameController extends Controller
     {
         $centerVaccineName = CenterVaccineName::findOrFail($id);
         $vaccineNames = VaccineName::where('status', '1')->get();
-        return view('Administrator.centerVaccineName.edit', compact('centerVaccineName', 'vaccineNames'));
+        return view('RapidPCRCenterAdministrator.centerVaccineName.edit', compact('centerVaccineName', 'vaccineNames'));
     }
 
     /**
@@ -121,7 +121,7 @@ class CenterVaccineNameController extends Controller
             $centerVaccineName->save();
             Session::flash('message', 'Successfully Update !');
             Session::flash('type', 'success');
-            return redirect()->route('administrator.centerVaccine.index');
+            return redirect()->route('rapidPcrCenterAdministrator.centerVaccine.index');
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
         }

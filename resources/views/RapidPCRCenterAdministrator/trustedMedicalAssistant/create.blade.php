@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Create New Trusted Medical Assistant
@@ -25,7 +25,7 @@
                 <div class="card w-75 shadow mx-auto">
                     <div class="card-body">
 
-                        <form id="registrationForm" action="{{route('administrator.trustedPeople.store')}}" method="POST">
+                        <form id="registrationForm" action="{{route('rapidPcrCenterAdministrator.trustedPeople.store')}}" method="POST">
                             @csrf
                             <div class="container">
                                 <div class="form-group row mt-3">
@@ -109,7 +109,7 @@
                     </div>
                     <!--======================== otp card end here==================== -->
                     <div class="apply-next-btn-a d-none">
-                        <a href="{{route('administrator.qrScan')}}" class="mt-5 btn apply-next-btn">Next</a>
+                        <a href="{{route('rapidPcrCenterAdministrator.qrScan')}}" class="mt-5 btn apply-next-btn">Next</a>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/administrator/trustedPeople',
+                    url: '/rapid-pcr-center-administrator/trustedPeople',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -194,7 +194,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/administrator/trustedPeople/verification',
+                    url: '/rapid-pcr-center-administrator/trustedPeople/verification',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -259,7 +259,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/administrator/trustedPeople/resend-otp',
+                    url: '/rapid-pcr-center-administrator/trustedPeople/resend-otp',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

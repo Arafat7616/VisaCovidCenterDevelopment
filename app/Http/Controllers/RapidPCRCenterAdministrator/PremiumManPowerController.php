@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\ManPowerSchedule;
@@ -12,14 +12,14 @@ class PremiumManPowerController extends Controller
 {
     public function index()
     {
-        $manPowerSchedules = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->center_id)->orderBy('date', 'DESC')->get();
-        return view('Administrator.premiumManPower.index', compact('manPowerSchedules'));
+        $manPowerSchedules = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->get();
+        return view('RapidPCRCenterAdministrator.premiumManPower.index', compact('manPowerSchedules'));
     }
 
     public function create(){
-        $manPowerSchedule = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->center_id)->orderBy('date', 'DESC')->first();
+        $manPowerSchedule = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->first();
         $center = auth()->user()->center;
-        return view('Administrator.premiumManPower.create', compact('manPowerSchedule','center'));
+        return view('RapidPCRCenterAdministrator.premiumManPower.create', compact('manPowerSchedule','center'));
     }
 
     public function store(Request $request)
@@ -51,7 +51,7 @@ class PremiumManPowerController extends Controller
                 $d = $d1 + $i * (3600*24);
                 $newArray[$i] = date("Y-m-d", $d);
                 
-                $oldManPower = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->center_id)->where('date', date("Y-m-d", $d))->first();
+                $oldManPower = ManPowerSchedule::where('type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->where('date', date("Y-m-d", $d))->first();
                 if ($oldManPower) {
                     $manPowerSchedule = $oldManPower;
                 } else {
@@ -94,7 +94,7 @@ class PremiumManPowerController extends Controller
     public function edit($id){
         $manPowerSchedule = ManPowerSchedule::findOrFail($id);
         $center = auth()->user()->center;
-        return view('Administrator.premiumManPower.edit', compact('manPowerSchedule','center'));
+        return view('RapidPCRCenterAdministrator.premiumManPower.edit', compact('manPowerSchedule','center'));
     }
 
     public function update(Request $request, $id){

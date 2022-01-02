@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Booster | Premium
@@ -34,10 +34,10 @@
                                 <div class="row justify-content-between">
                                     <div class="col-5">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('administrator.premiumRegistered.pcr') }}" class="accorion-btn">PCR</a>
-                                            <a href="{{ route('administrator.premiumRegistered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
-                                            <a href="{{ route('administrator.premiumRegistered.vaccine.dose2') }}" class="accorion-btn">Vaccine Dose 2</a>
-                                            <a href="{{ route('administrator.premiumRegistered.booster') }}" class="accorion-btn breadcrumb-active">Booster</a>
+                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.pcr') }}" class="accorion-btn">PCR</a>
+                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
+                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.vaccine.dose2') }}" class="accorion-btn">Vaccine Dose 2</a>
+                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.booster') }}" class="accorion-btn breadcrumb-active">Booster</a>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -186,7 +186,7 @@
                         
                         $.ajax({
                             method: 'POST',
-                            url: "{{ route('administrator.premiumRegistered.booster.swap') }}",
+                            url: "{{ route('rapidPcrCenterAdministrator.premiumRegistered.booster.swap') }}",
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             data: { 
                                 boosters: ids,

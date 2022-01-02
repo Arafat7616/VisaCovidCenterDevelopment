@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Regular Man Power Add
@@ -242,12 +242,12 @@
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
                 formData.append('id', $('#id').val());               
-                // var dksjfos = "{{ url('administrator/regular/update') }}"+"/"+$('#id').val();
+                // var dksjfos = "{{ url('rapid-pcr-center-administratorregular/update') }}"+"/"+$('#id').val();
 
                 // alert(dksjfos);
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/regular/update') }}"+"/"+$('#id').val(),
+                    url: "{{ url('rapid-pcr-center-administrator/regular/update') }}"+"/"+$('#id').val(),
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

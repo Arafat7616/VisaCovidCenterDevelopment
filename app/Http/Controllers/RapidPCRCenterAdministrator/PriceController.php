@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Price;
@@ -19,7 +19,7 @@ class PriceController extends Controller
     {
         $centerId = Auth::user()->center_id;
         $centerPrice = Price::where('center_id', $centerId)->first();
-        return view('Administrator.pricing.index', compact('centerPrice'));
+        return view('RapidPCRCenterAdministrator.pricing.index', compact('centerPrice'));
     }
 
     /**
@@ -94,7 +94,7 @@ class PriceController extends Controller
         $price->save();
 
         Session::flash('message', 'Successfully Updated!');
-        return redirect()->route('administrator.price.index');
+        return redirect()->route('rapidPcrCenterAdministrator.price.index');
 
     }
 

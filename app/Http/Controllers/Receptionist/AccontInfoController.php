@@ -39,7 +39,4 @@ class AccontInfoController extends Controller
         return redirect()->route('receptionist.dashboard');
 
     }
-
-
-
 }

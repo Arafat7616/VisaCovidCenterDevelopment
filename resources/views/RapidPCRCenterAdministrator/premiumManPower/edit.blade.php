@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Premium Man Power Add
@@ -239,11 +239,11 @@
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
                 formData.append('id', $('#id').val());               
-                // var dksjfos = "{{ url('administrator/premium/update') }}"+"/"+$('#id').val();
+                // var dksjfos = "{{ url('rapid-pcr-center-administratorpremium/update') }}"+"/"+$('#id').val();
                 // alert(dksjfos);
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/premium/update') }}"+"/"+$('#id').val(),
+                    url: "{{ url('rapid-pcr-center-administrator/premium/update') }}"+"/"+$('#id').val(),
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

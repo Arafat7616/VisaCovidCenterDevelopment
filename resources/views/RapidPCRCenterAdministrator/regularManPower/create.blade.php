@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Regular Man Power Add
@@ -272,7 +272,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/regular/store') }}",
+                    url: "{{ url('rapid-pcr-center-administrator/regular/store') }}",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

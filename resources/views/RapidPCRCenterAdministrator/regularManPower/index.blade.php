@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
 Regular Man Power
@@ -29,7 +29,7 @@ Regular Man Power
     <div class="card-body shadow " style="margin-bottom: 120px;">
         <div class="row">
             <h1 class="cal-header text-center">Regular Manpower Schedule <a class="btn btn-success"
-                    href="{{ route('administrator.regular.create') }}">Add new</a></h1>
+                    href="{{ route('rapidPcrCenterAdministrator.regular.create') }}">Add new</a></h1>
             <div>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
@@ -67,10 +67,10 @@ Regular Man Power
                             <td>{{ $manPowerSchedule->booster_time }}</td>
                             <td class="text-manPowerSchedule">
                                 <a class="btn btn-info"
-                                    href="{{ route('administrator.regular.edit', $manPowerSchedule->id) }}">
+                                    href="{{ route('rapidPcrCenterAdministrator.regular.edit', $manPowerSchedule->id) }}">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('administrator.regular.destroy', $manPowerSchedule->id) }}">
+                                <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('rapidPcrCenterAdministrator.regular.destroy', $manPowerSchedule->id) }}">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </td>

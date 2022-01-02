@@ -16,6 +16,7 @@ class CreateServiceAvailableNumbersTable extends Migration
         Schema::create('service_available_numbers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('schedule_id')->nullable();
             $table->string('service_type')->nullable();
             $table->timestamp('date')->nullable();

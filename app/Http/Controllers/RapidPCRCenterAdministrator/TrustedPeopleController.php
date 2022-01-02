@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
@@ -34,7 +34,7 @@ class TrustedPeopleController extends Controller
      */
     public function create()
     {
-        return view('Administrator.trustedMedicalAssistant.create');
+        return view('RapidPCRCenterAdministrator.trustedMedicalAssistant.create');
     }
 
 
@@ -163,7 +163,7 @@ class TrustedPeopleController extends Controller
         $countries = Country::all();
         $cities = City::all();
         $states = State::all();
-        return view('Administrator.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
+        return view('RapidPCRCenterAdministrator.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
     }
 
     /**
@@ -221,8 +221,8 @@ class TrustedPeopleController extends Controller
 
         Session::flash('message', 'Successfully Updated!');
 
-        //        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
-        return redirect()->route('administrator.dashboard');
+        //        return redirect()->route('rapidPcrCenterAdministrator.dashboard')->withSuccess('Successfully created');
+        return redirect()->route('rapidPcrCenterAdministrator.dashboard');
     }
 
     /**

@@ -30,9 +30,9 @@ class RedirectIfAuthenticated
                 } elseif (Auth::user()->user_type == 'trusted-medical-assistant') {
                     return redirect(RouteServiceProvider::TrustedMedicalAssistantDashboard);
                 } elseif (Auth::user()->user_type == 'rapid-pcr-center-administrator') {
-                  return redirect(RouteServiceProvider::AdministratorDashboard);
-                } elseif (Auth::user()->user_type == 'administrator') {
                   return redirect(RouteServiceProvider::RapidPcrCenterAdministratorDashboard);
+                } elseif (Auth::user()->user_type == 'administrator') {
+                  return redirect(RouteServiceProvider::AdministratorDashboard);
                 } elseif (Auth::user()->user_type == 'immigration-officer') {
                     return redirect(RouteServiceProvider::ImmigrationOfficerDashboard);
                 } elseif (Auth::user()->user_type == 'bd-govt') {

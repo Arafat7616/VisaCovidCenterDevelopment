@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
@@ -13,23 +13,23 @@ use Illuminate\Support\Facades\Auth;
 class PremiumRegisteredController extends Controller
 {
     public function pcr(){
-        $pcrTests = PcrTest::where('registration_type', 'premium')->where('center_id', Auth::user()->center_id)->whereDate('sample_collection_date', '>=', Carbon::today())->orderBy('sample_collection_date', 'ASC')->get();
-        return view('Administrator.premiumRegistered.pcr', compact('pcrTests'));
+        $pcrTests = PcrTest::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('sample_collection_date', '>=', Carbon::today())->orderBy('sample_collection_date', 'ASC')->get();
+        return view('RapidPCRCenterAdministrator.premiumRegistered.pcr', compact('pcrTests'));
     }
 
     public function vaccineDose1(){
-        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->center_id)->whereDate('date_of_first_dose', '>=', Carbon::today())->orderBy('date_of_first_dose', 'ASC')->get();
-        return view('Administrator.premiumRegistered.vaccine-dose-1', compact('vaccinations'));
+        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date_of_first_dose', '>=', Carbon::today())->orderBy('date_of_first_dose', 'ASC')->get();
+        return view('RapidPCRCenterAdministrator.premiumRegistered.vaccine-dose-1', compact('vaccinations'));
     }
 
     public function vaccineDose2(){
-        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->center_id)->whereDate('date_of_second_dose', '>=', Carbon::today())->orderBy('date_of_second_dose', 'ASC')->get();
-        return view('Administrator.premiumRegistered.vaccine-dose-2', compact('vaccinations'));
+        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date_of_second_dose', '>=', Carbon::today())->orderBy('date_of_second_dose', 'ASC')->get();
+        return view('RapidPCRCenterAdministrator.premiumRegistered.vaccine-dose-2', compact('vaccinations'));
     }
 
     public function booster(){
-        $boosters = Booster::where('registration_type', 'premium')->where('center_id', Auth::user()->center_id)->whereDate('date', '>=', Carbon::today())->orderBy('date', 'ASC')->get();
-        return view('Administrator.premiumRegistered.booster', compact('boosters'));
+        $boosters = Booster::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date', '>=', Carbon::today())->orderBy('date', 'ASC')->get();
+        return view('RapidPCRCenterAdministrator.premiumRegistered.booster', compact('boosters'));
     }
 
     public function pcrSwap(Request $request){

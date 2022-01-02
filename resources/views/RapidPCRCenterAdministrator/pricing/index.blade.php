@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Create New Trusted Medical Assistant
@@ -21,7 +21,7 @@
                 @endif
             </div>
 
-            <form action="{{route('administrator.price.update', $centerPrice->id)}}" method="POST">
+            <form action="{{route('rapidPcrCenterAdministrator.price.update', $centerPrice->id)}}" method="POST">
                 @csrf
                 @method('put')
                 <div class="setting_up_price__body shadow-sm">

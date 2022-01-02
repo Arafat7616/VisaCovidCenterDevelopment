@@ -20,6 +20,7 @@ class CreateLivenessVideosTable extends Migration
             $table->string('date');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('medical_staff_id')->nullable();
             $table->enum('status', [0,1]);
             $table->timestamps();

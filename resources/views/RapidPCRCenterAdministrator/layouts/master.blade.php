@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('Administrator.layouts.includes.head')
+    @include('RapidPCRCenterAdministrator.layouts.includes.head')
 </head>
 
 
@@ -13,14 +13,14 @@
     </form>
     @endif
 
-    @include('Administrator.layouts.includes.navbar')
+    @include('RapidPCRCenterAdministrator.layouts.includes.navbar')
     <div>
         @yield('content')
     </div>
 
-    @include('Administrator.layouts.includes.footer')
+    @include('RapidPCRCenterAdministrator.layouts.includes.footer')
 
-    @include('Administrator.layouts.includes.foot')
+    @include('RapidPCRCenterAdministrator.layouts.includes.foot')
 </body>
 
 </html>

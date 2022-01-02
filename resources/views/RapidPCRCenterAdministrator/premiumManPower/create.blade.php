@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Premium Man Power Add
@@ -269,7 +269,7 @@
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('administrator/premium/store') }}",
+                    url: "{{ url('rapid-pcr-center-administrator/premium/store') }}",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
