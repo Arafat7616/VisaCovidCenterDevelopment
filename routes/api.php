@@ -81,7 +81,7 @@ Route::post('home/pcrInformation', 'Api\HomeController@pcrInformation');
 Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 
 // Synchronize info
-Route::post('home/synchronizeInformation', 'Api\UserController@synchronizeInformation');
+Route::get('home/synchronizeInformation/{id}', 'Api\HomeController@synchronizeInformation');
 
 Route::post('otpResend', 'Api\UserController@otpResend');
 
