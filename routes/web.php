@@ -42,9 +42,14 @@ Route::post('login/checkOtp', 'Auth\CustomLoginController@checkOtp');
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
 Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
 
+// Route for rapid center registration
+Route::get('/rapid-pcr-center-register', 'Auth\RapidPCRCenterRegistrationController@centerRegister')->name('rapidPcr.centerRegister');
+Route::post('/rapid-pcr-center-register-data-store', 'Auth\RapidPCRCenterRegistrationController@centerRegisterDataStore')->name('rapidPcr.centerRegisterDataStore');
+
 Route::get('/share/user/{id}', 'ShareController@shareUser')->name('share.user');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 
-// country -state - city list related api
+// country -state - city - airport list related api
 Route::get('/api/get-state-list/{country_id}', 'Auth\CenterRegistrationController@getStateList');
+Route::get('/api/get-airport-list/{country_id}', 'Auth\CenterRegistrationController@getAirportList');
 Route::get('/api/get-city-list/{state_id}', 'Auth\CenterRegistrationController@getCityList');

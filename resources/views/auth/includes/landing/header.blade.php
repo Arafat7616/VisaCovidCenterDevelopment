@@ -28,6 +28,7 @@
                             <li><a class="dropdown-item" href="{{ route('auth.immigrationOfficerLogin') }}">Immigration Officer</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Travel Agency</a></li>
                             <li><a class="dropdown-item" href="{{ route('centerRegister') }}">Medical Center Register</a></li>
+                            <li><a class="dropdown-item" href="{{ route('rapidPcr.centerRegister') }}">Rapid PCR Center Register</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

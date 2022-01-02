@@ -73,7 +73,7 @@ class ServiceRegistrationController extends Controller
         $date = $userArray['date'];
         $nameOfVaccine = $userArray['vaccineName'];
 
-        $user = User::where('phone', $phone)->select(['id'])->first();
+        $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
 
         if ($existVaccination)
@@ -108,12 +108,17 @@ class ServiceRegistrationController extends Controller
             $vaccine->registration_type = "normal";
             $vaccine->name_of_vaccine = $nameOfVaccine;
 
+            $center = Center::where('id', $centerId)->select(['name','address'])->first();
+            $userName = $user->name;
+            $centerName = $center->name;
+            $centerAddress = $center->address;
+
             if ($vaccine->save())
             {
                 ManPowerSchedule::find($registrationCheck->id)->decrement('vaccine_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulations !! You are successfully registered for Vaccination. ', $phone);
+                send_sms('Congratulations '.$userName.'!! You are successfully registered for Vaccination. Your center name is: '.$centerName.','.$centerAddress.', date of vaccination : '.Carbon::parse($date), $phone);
 
                 return response()->json([
                     "message"=>"You are successfully registered for Vaccination",
@@ -200,7 +205,7 @@ class ServiceRegistrationController extends Controller
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
 
-        $user = User::where('phone', $phone)->select(['id'])->first();
+        $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();
         if ($existPcr)
@@ -233,12 +238,17 @@ class ServiceRegistrationController extends Controller
             $pcr->date_of_registration = Carbon::parse($date);
             $pcr->registration_type = "normal";
 
+            $center = Center::where('id', $centerId)->select(['name','address'])->first();
+            $userName = $user->name;
+            $centerName = $center->name;
+            $centerAddress = $center->address;
+
             if ($pcr->save()) {
 
                 ManPowerSchedule::find($registrationCheck->id)->decrement('pcr_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulations !! You are successfully registered for PCR Test. ', $phone);
+                send_sms('Congratulations '.$userName.' !! You are successfully registered for PCR Test. Your center name is: '.$centerName.','.$centerAddress.', date of PCR test : '.Carbon::parse($date), $phone);
 
                 return response()->json([
                     "message" => "You are successfully registered for PCR",
@@ -260,7 +270,7 @@ class ServiceRegistrationController extends Controller
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
 
-        $user = User::where('phone', $phone)->select(['id'])->first();
+        $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existBooster= Booster::where('user_id', $user->id)->first();
         if ($existBooster)
         {
@@ -291,12 +301,17 @@ class ServiceRegistrationController extends Controller
             $booster->date_of_registration = Carbon::parse($date);
             $booster->registration_type = "normal";
 
+            $center = Center::where('id', $centerId)->select(['name','address'])->first();
+            $userName = $user->name;
+            $centerName = $center->name;
+            $centerAddress = $center->address;
+
             if ($booster->save()) {
 
                 ManPowerSchedule::find($registrationCheck->id)->decrement('booster_available_set');
 
                 // send sms via helper function
-                send_sms('Congratulation !! You are successfully registered for Booster. ', $phone);
+                send_sms('Congratulation '.$userName.' !! You are successfully registered for Booster dose. Your center name is: '.$centerName.','.$centerAddress.' , date of Booster : '.Carbon::parse($date), $phone);
 
                 return response()->json([
                     "message" => "You are successfully registered for Booster",

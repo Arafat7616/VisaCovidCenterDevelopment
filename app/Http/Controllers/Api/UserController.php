@@ -353,9 +353,5 @@ class UserController extends Controller
         }
     }
 
-    public function synchronizeInformation($id)
-    {
-        //
-    }
 }
 

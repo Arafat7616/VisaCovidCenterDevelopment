@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RapidPCRCenterDocument extends Model
+class RapidPCRPrice extends Model
 {
     protected $fillable = [
-        'user_id',
+        'pcr_normal',
+        'pcr_premium',
         'rapid_pcr_center_id',
-        'document',
         'status'
     ];
 
-    public function rapidPCRCenter()
+    public function rapidPcrCenter()
     {
         return $this->belongsTo(RapidPCRCenter::class, 'rapid_pcr_center_id');
     }
