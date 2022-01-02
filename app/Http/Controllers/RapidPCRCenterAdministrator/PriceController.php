@@ -4,7 +4,6 @@ namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Price;
-use App\Models\RapidPCRCenter;
 use App\Models\RapidPCRPrice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
