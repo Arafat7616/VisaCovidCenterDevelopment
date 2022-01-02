@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Airport;
-use App\Models\CenterDocument;
+use App\Models\RapidPCRCenterDocument;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Price;
+use App\Models\RapidPCRCenter;
+use App\Models\RapidPCRPrice;
 use App\Models\State;
 use App\Models\User;
 use App\Models\UserInfo;
@@ -16,32 +17,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class CenterRegistrationController extends Controller
+class RapidPCRCenterRegistrationController extends Controller
 {
-
-    public function getStateList($country_id)
-    {
-        $states = State::where('country_id', $country_id)->get();
-        return $states;
-    }
-
-    public function getCityList($state_id)
-    {
-        $cities = City::where('state_id', $state_id)->get();
-        return $cities;
-    }
-
-    public function getAirportList($country_id)
-    {
-        $airports = Airport::where('country_id', $country_id)->get();
-        return $airports;
-    }
-
-
     public function centerRegister()
     {
         $countries = Country::all();
-        return view('auth.center-register', compact('countries'));
+        return view('auth.rapid-pcr-center-register', compact('countries'));
     }
 
     public function centerRegisterDataStore(Request $request)
@@ -51,11 +32,12 @@ class CenterRegistrationController extends Controller
             'centerName'  => 'required',
             'country'  => 'nullable',
             'state'  => 'nullable',
+            'airport'  => 'nullable',
             'city'  => 'nullable',
             'space'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
-            'centerEmail'  => 'required|email|unique:centers,email',
+            'centerEmail'  => 'required|email|unique:rapid_p_c_r_centers,email',
             'personName'  => 'required',
             'personEmail'  => 'required|email|unique:users,email',
             'personNID'  => 'required',
@@ -69,43 +51,46 @@ class CenterRegistrationController extends Controller
         ]);
 
         // center data store
-        $center = new Center();
-        $center->name = $request->centerName;
-        $center->email = $request->centerEmail;
+        $rapidPcrCenter = new RapidPCRCenter();
+        $rapidPcrCenter->name = $request->centerName;
+        $rapidPcrCenter->email = $request->centerEmail;
 
         if (is_numeric($request->country)) {
-            $center->country_id = $request->country;
+            $rapidPcrCenter->country_id = $request->country;
         }
         if (is_numeric($request->state)) {
-            $center->state_id = $request->state;
+            $rapidPcrCenter->state_id = $request->state;
+        }
+        if (is_numeric($request->airport)) {
+            $rapidPcrCenter->airport_id = $request->airport;
         }
         if (is_numeric($request->city)) {
-            $center->city_id = $request->city;
+            $rapidPcrCenter->city_id = $request->city;
         }
         if (is_numeric($request->space)) {
-            $center->space = $request->space;
+            $rapidPcrCenter->space = $request->space;
         }
 
-        $center->trade_licence_no = $request->tradeLicenseNumber;
-        $center->address = $request->address;
-        $center->zip_code = $request->zipCode;
-        $center->map_location = $request->mapLocation;
-        $center->status = false;
-        $center->varification_status = false;
-        $center->save();
+        $rapidPcrCenter->trade_licence_no = $request->tradeLicenseNumber;
+        $rapidPcrCenter->address = $request->address;
+        $rapidPcrCenter->zip_code = $request->zipCode;
+        $rapidPcrCenter->map_location = $request->mapLocation;
+        $rapidPcrCenter->status = false;
+        $rapidPcrCenter->varification_status = false;
+        $rapidPcrCenter->save();
 
         // user data store
         $user = new User();
         $user->name = $request->personName;
         $user->email = $request->personEmail;
         $user->phone = $request->personPhone;
-        $user->center_id = $center->id;
+        $user->rapid_pcr_center_id = $rapidPcrCenter->id;
         $user->user_type = 'administrator';
         $user->password = Hash::make($request->password);
         $user->save();
 
-        $center->administrator_id =  $user->id;
-        $center->save();
+        $rapidPcrCenter->administrator_id =  $user->id;
+        $rapidPcrCenter->save();
 
         // user info data store
         $userInfo = new UserInfo();
@@ -123,15 +108,15 @@ class CenterRegistrationController extends Controller
 
         $userInfo->save();
 
-        $price = New Price();
-        $price->center_id = $center->id;
-        $price->status = "1";
-        $price->save();
+        $rapidPcrPrice = New RapidPCRPrice();
+        $rapidPcrPrice->rapid_pcr_center_id = $rapidPcrCenter->id;
+        $rapidPcrPrice->status = "1";
+        $rapidPcrPrice->save();
 
 
         // document data store
         if ($request->hasFile('document1')) {
-            $document = new CenterDocument();
+            $document = new RapidPCRCenterDocument();
             $pdf             = $request->document1;
             $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
@@ -139,12 +124,12 @@ class CenterRegistrationController extends Controller
             $request->document1->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
-            $document->center_id   = $center->id;
+            $document->rapid_pcr_center_id   = $rapidPcrCenter->id;
             $document->status   = 1;
             $document->save();
         }
         if ($request->hasFile('document2')) {
-            $document = new CenterDocument();
+            $document = new RapidPCRCenterDocument();
             $pdf             = $request->document2;
             $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
@@ -152,12 +137,12 @@ class CenterRegistrationController extends Controller
             $request->document2->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
-            $document->center_id   = $center->id;
+            $document->rapid_pcr_center_id   = $rapidPcrCenter->id;
             $document->status   = 1;
             $document->save();
         }
         if ($request->hasFile('document3')) {
-            $document = new CenterDocument();
+            $document = new RapidPCRCenterDocument();
             $pdf             = $request->document3;
             $folder_path       = 'uploads/images/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
@@ -165,7 +150,7 @@ class CenterRegistrationController extends Controller
             $request->document3->move(public_path($folder_path), $pdf_new_name);
             $document->document   = $folder_path . $pdf_new_name;
             $document->user_id   = $user->id;
-            $document->center_id   = $center->id;
+            $document->rapid_pcr_center_id   = $rapidPcrCenter->id;
             $document->status   = 1;
             $document->save();
         }
