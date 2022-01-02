@@ -21,16 +21,16 @@
                 @endif
             </div>
 
-            <form action="{{route('rapidPcrCenterAdministrator.price.update', $centerPrice->id)}}" method="POST">
+            <form action="{{route('rapidPcrCenterAdministrator.price.update', $rapidPcrCenterPrice->id)}}" method="POST">
                 @csrf
                 @method('put')
                 <div class="setting_up_price__body shadow-sm">
                     <div class="row setting_up_price__body__text">
                         <p>
                             Setting up price
-                            @if($centerPrice->status == 0)
+                            @if($rapidPcrCenterPrice->status == 0)
                                 <span class="badge badge-warning text-danger">Pending</span>
-                            @elseif($centerPrice->status == 1)
+                            @elseif($rapidPcrCenterPrice->status == 1)
                                 <span class="badge badge-success text-success">Approved</span>
                             @endif
                         </p>
@@ -44,29 +44,7 @@
                                     <p>PCR Test</p>
                                 </div>
                                 <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->pcr_normal}}" name="pcr_normal">
-                                    <small>Regular</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="setting_up_price__card__head">
-                                    <p>Vaccine</p>
-                                </div>
-                                <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->vaccine_normal}}" name="vaccine_normal">
-                                    <small>Regular</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="setting_up_price__card__head">
-                                    <p>Booster</p>
-                                </div>
-                                <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$centerPrice->booster_normal}}" name="booster_normal">
+                                    <input type="text" value="{{$rapidPcrCenterPrice->pcr_normal}}" name="pcr_normal">
                                     <small>Regular</small>
                                 </div>
                             </div>
@@ -78,31 +56,7 @@
                                 </div>
                                 <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
                                     <i class="fa fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->pcr_premium}}" name="pcr_premium">
-                                    <small>Premium</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="setting_up_price__card__head">
-                                    <p>Vaccine</p>
-                                </div>
-                                <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
-                                    <i class="fa fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->vaccine_premium}}" name="vaccine_premium">
-                                    <small>Premium</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <div class="setting_up_price__card__head">
-                                    <p>Booster</p>
-                                </div>
-                                <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
-                                    <i class="fa fa-star"></i>
-                                    <input type="text" value="{{$centerPrice->booster_premium}}" name="booster_premium">
+                                    <input type="text" value="{{$rapidPcrCenterPrice->pcr_premium}}" name="pcr_premium">
                                     <small>Premium</small>
                                 </div>
                             </div>

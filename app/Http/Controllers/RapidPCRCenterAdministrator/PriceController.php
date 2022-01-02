@@ -4,6 +4,8 @@ namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Price;
+use App\Models\RapidPCRCenter;
+use App\Models\RapidPCRPrice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -17,9 +19,9 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $centerId = Auth::user()->center_id;
-        $centerPrice = Price::where('center_id', $centerId)->first();
-        return view('RapidPCRCenterAdministrator.pricing.index', compact('centerPrice'));
+        $rapidPcrCenterId = Auth::user()->rapid_pcr_center_id;
+        $rapidPcrCenterPrice = RapidPCRPrice::where('rapid_pcr_center_id', $rapidPcrCenterId)->first();
+        return view('RapidPCRCenterAdministrator.pricing.index', compact('rapidPcrCenterPrice'));
     }
 
     /**
@@ -76,20 +78,12 @@ class PriceController extends Controller
     {
         $request->validate([
             'pcr_normal'  => 'required',
-            'vaccine_normal'  => 'required',
-            'booster_normal'  => 'required',
             'pcr_premium'  => 'required',
-            'vaccine_premium'  => 'required',
-            'booster_premium'  => 'required',
         ]);
 
-        $price = Price::where('id', $id)->first();
+        $price = RapidPCRPrice::where('id', $id)->first();
         $price->pcr_normal = $request->pcr_normal;
-        $price->vaccine_normal = $request->vaccine_normal;
-        $price->booster_normal = $request->booster_normal;
         $price->pcr_premium = $request->pcr_premium;
-        $price->vaccine_premium = $request->vaccine_premium;
-        $price->booster_premium = $request->booster_premium;
         $price->status = 0;
         $price->save();
 
