@@ -48,10 +48,10 @@ class PriceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Price  $rapidPcrPrice
      * @return \Illuminate\Http\Response
      */
-    public function show(Price $price)
+    public function show(Price $rapidPcrPrice)
     {
         //
     }
@@ -59,10 +59,10 @@ class PriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Price  $rapidPcrPrice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Price $price)
+    public function edit(Price $rapidPcrPrice)
     {
         //
     }
@@ -71,7 +71,7 @@ class PriceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Price  $price
+     * @param  \App\Price  $rapidPcrPrice
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,24 +81,23 @@ class PriceController extends Controller
             'pcr_premium'  => 'required',
         ]);
 
-        $price = RapidPCRPrice::where('id', $id)->first();
-        $price->pcr_normal = $request->pcr_normal;
-        $price->pcr_premium = $request->pcr_premium;
-        $price->status = 0;
-        $price->save();
+        $rapidPcrPrice = RapidPCRPrice::where('id', $id)->first();
+        $rapidPcrPrice->pcr_normal = $request->pcr_normal;
+        $rapidPcrPrice->pcr_premium = $request->pcr_premium;
+        $rapidPcrPrice->status = 0;
+        $rapidPcrPrice->save();
 
         Session::flash('message', 'Successfully Updated!');
         return redirect()->route('rapidPcrCenterAdministrator.price.index');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Price  $rapidPcrPrice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Price $price)
+    public function destroy(Price $rapidPcrPrice)
     {
         //
     }
