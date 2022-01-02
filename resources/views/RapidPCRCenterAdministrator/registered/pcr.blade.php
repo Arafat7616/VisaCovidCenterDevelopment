@@ -35,9 +35,6 @@
                                     <div class="col-5">
                                         <div class="accorion-link mt-2" id='active-div'>
                                             <a href="{{ route('rapidPcrCenterAdministrator.registered.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
-                                            <a href="{{ route('rapidPcrCenterAdministrator.registered.vaccine.dose1') }}" class="accorion-btn">Vaccine Dose 1</a>
-                                            <a href="{{ route('rapidPcrCenterAdministrator.registered.vaccine.dose2') }}" class="accorion-btn">Vaccine Dose 2</a>
-                                            <a href="{{ route('rapidPcrCenterAdministrator.registered.booster') }}" class="accorion-btn">Booster</a>
                                         </div>
                                     </div>
                                     <div class="col-4">

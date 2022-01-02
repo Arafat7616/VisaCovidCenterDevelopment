@@ -16,24 +16,12 @@ Route::group(['prefix' => 'rapid-pcr-center-administrator/', 'namespace' => 'Rap
     Route::group(['prefix' => 'registered/', 'as' => 'registered.'], function () {
         Route::get('pcr', 'RegisteredController@pcr')->name('pcr');
         Route::post('pcr-swap', 'RegisteredController@pcrSwap')->name('pcr.swap');
-        Route::get('vaccine-dose-1', 'RegisteredController@vaccineDose1')->name('vaccine.dose1');
-        Route::post('vaccine-swap-dose-1', 'RegisteredController@vaccineSwapDose1')->name('vaccine.swapDose1');
-        Route::get('vaccine-dose-2', 'RegisteredController@vaccineDose2')->name('vaccine.dose2');
-        Route::post('vaccine-swap-dose-2', 'RegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
-        Route::get('booster', 'RegisteredController@booster')->name('booster');
-        Route::post('booster-swap', 'RegisteredController@boosterSwap')->name('booster.swap');
     });
 
     // route for premium registered
     Route::group(['prefix' => 'premium-registered/', 'as' => 'premiumRegistered.'], function () {
         Route::get('pcr', 'PremiumRegisteredController@pcr')->name('pcr');
         Route::post('pcr-swap', 'PremiumRegisteredController@pcrSwap')->name('pcr.swap');
-        Route::get('vaccine-dose-1', 'PremiumRegisteredController@vaccineDose1')->name('vaccine.dose1');
-        Route::post('vaccine-swap-dose-1', 'PremiumRegisteredController@vaccineSwapDose1')->name('vaccine.swapDose1');
-        Route::get('vaccine-dose-2', 'PremiumRegisteredController@vaccineDose2')->name('vaccine.dose2');
-        Route::post('vaccine-swap-dose-2', 'PremiumRegisteredController@vaccineSwapDose2')->name('vaccine.swapDose2');
-        Route::get('booster', 'PremiumRegisteredController@booster')->name('booster');
-        Route::post('booster-swap', 'PremiumRegisteredController@boosterSwap')->name('booster.swap');
     });
 
     // regular man power

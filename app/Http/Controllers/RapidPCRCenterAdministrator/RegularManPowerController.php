@@ -14,13 +14,13 @@ class RegularManPowerController extends Controller
 {
     public function index()
     {
-        $manPowerSchedules = ManPowerSchedule::where('type', 'normal')->where('center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->get();
+        $manPowerSchedules = ManPowerSchedule::where('type', 'normal')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->get();
         return view('RapidPCRCenterAdministrator.regularManPower.index', compact('manPowerSchedules'));
     }
 
     public function create(){
       
-         $manPowerSchedule = ManPowerSchedule::where('type', 'normal')->where('center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->first();
+         $manPowerSchedule = ManPowerSchedule::where('type', 'normal')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->first();
          $center = auth()->user()->center;
         return view('RapidPCRCenterAdministrator.regularManPower.create', compact('manPowerSchedule','center'));
     }
@@ -54,7 +54,7 @@ class RegularManPowerController extends Controller
                 $d = $d1 + $i * (3600*24);
                 $newArray[$i] = date("Y-m-d", $d);
                 
-                $oldManPower = ManPowerSchedule::where('type', 'normal')->where('center_id', Auth::user()->rapid_pcr_center_id)->where('date', date("Y-m-d", $d))->first();
+                $oldManPower = ManPowerSchedule::where('type', 'normal')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('date', date("Y-m-d", $d))->first();
                 if ($oldManPower) {
                     $manPowerSchedule = $oldManPower;
                 } else {

@@ -12,6 +12,7 @@ use App\TrustedPeople;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\File;
 
@@ -51,14 +52,13 @@ class TrustedPeopleController extends Controller
             'user_type'  => 'required',
             'phone'  => 'required|unique:users,phone',
             'nid'  => 'required',
-            'center_id'  => 'required',
         ]);
 
         $user = new User();
         $user->phone = $request->phone;
         $user->otp = rand(100000, 1000000);
         $user->user_type = $request->user_type;
-        $user->center_id = $request->center_id;
+        $user->rapid_pcr_center_id = Auth::user()->rapid_pcr_center_id;
         if ($user->save()) {
             try {
                 // send sms via helper function

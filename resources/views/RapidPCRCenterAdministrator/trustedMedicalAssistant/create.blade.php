@@ -77,8 +77,6 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <input type="hidden" id="center_id" name="center_id" value="{{ Auth::user()->center_id }}">
-
                             <div class="text-center ">
                                 <button type="submit" class="trusted-medical-assistant-form-sub-btn mt-3 w-75">Submit</button>
                             </div>
@@ -137,8 +135,6 @@
                 formData.append('user_type', $('#user_type').val());
                 formData.append('phone', $('#phone').val());
                 formData.append('nid', $('#nid').val());
-                formData.append('center_id', $('#center_id').val());
-
 
                 $.ajax({
                     method: 'POST',

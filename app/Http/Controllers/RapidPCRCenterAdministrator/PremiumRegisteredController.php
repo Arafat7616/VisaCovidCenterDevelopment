@@ -13,23 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class PremiumRegisteredController extends Controller
 {
     public function pcr(){
-        $pcrTests = PcrTest::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('sample_collection_date', '>=', Carbon::today())->orderBy('sample_collection_date', 'ASC')->get();
+        $pcrTests = PcrTest::where('registration_type', 'premium')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->whereDate('sample_collection_date', '>=', Carbon::today())->orderBy('sample_collection_date', 'ASC')->get();
         return view('RapidPCRCenterAdministrator.premiumRegistered.pcr', compact('pcrTests'));
-    }
-
-    public function vaccineDose1(){
-        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date_of_first_dose', '>=', Carbon::today())->orderBy('date_of_first_dose', 'ASC')->get();
-        return view('RapidPCRCenterAdministrator.premiumRegistered.vaccine-dose-1', compact('vaccinations'));
-    }
-
-    public function vaccineDose2(){
-        $vaccinations = Vaccination::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date_of_second_dose', '>=', Carbon::today())->orderBy('date_of_second_dose', 'ASC')->get();
-        return view('RapidPCRCenterAdministrator.premiumRegistered.vaccine-dose-2', compact('vaccinations'));
-    }
-
-    public function booster(){
-        $boosters = Booster::where('registration_type', 'premium')->where('center_id', Auth::user()->rapid_pcr_center_id)->whereDate('date', '>=', Carbon::today())->orderBy('date', 'ASC')->get();
-        return view('RapidPCRCenterAdministrator.premiumRegistered.booster', compact('boosters'));
     }
 
     public function pcrSwap(Request $request){
@@ -55,80 +40,5 @@ class PremiumRegisteredController extends Controller
             return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
         else
             return response()->json(['message'=>'Please select PCR Test.', 'type'=>'warning']);
-    }
-
-    public function vaccineSwapDose1(Request $request){
-        if (!$request->input(['vaccinations'])){
-            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
-        }
-        if (!$request->input(['date'])){
-            return response()->json(['message'=>'Please select date to Swap.', 'type'=>'warning']);
-        }
-        $is_update_any_one =null;
-        foreach($request->input(['vaccinations']) as $vaccination){
-            //Database
-            $vaccination = Vaccination::find($vaccination);
-            if ($vaccination){
-                $vaccination->date_of_first_dose = $request->date;
-                $vaccination->save();
-                $is_update_any_one = 'Yes';
-            }else{
-                continue;
-            }
-        }
-        if ($is_update_any_one != null)
-            return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
-        else
-            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
-    }
-
-    public function vaccineSwapDose2(Request $request){
-        if (!$request->input(['vaccinations'])){
-            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
-        }
-        if (!$request->input(['date'])){
-            return response()->json(['message'=>'Please select date to Swap.', 'type'=>'warning']);
-        }
-        $is_update_any_one =null;
-        foreach($request->input(['vaccinations']) as $vaccination){
-            //Database
-            $vaccination = Vaccination::find($vaccination);
-            if ($vaccination){
-                $vaccination->date_of_second_dose = $request->date;
-                $vaccination->save();
-                $is_update_any_one = 'Yes';
-            }else{
-                continue;
-            }
-        }
-        if ($is_update_any_one != null)
-            return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
-        else
-            return response()->json(['message'=>'Please select Vaccination.', 'type'=>'warning']);
-    }
-
-    public function boosterSwap(Request $request){
-        if (!$request->input(['boosters'])){
-            return response()->json(['message'=>'Please select Booster.', 'type'=>'warning']);
-        }
-        if (!$request->input(['date'])){
-            return response()->json(['message'=>'Please select date to Swap.', 'type'=>'warning']);
-        }
-        $is_update_any_one =null;
-        foreach($request->input(['boosters']) as $booster){
-            //Database
-            $booster = Booster::find($booster);
-            if ($booster){
-                $booster->date = $request->date;
-                $booster->save();
-                $is_update_any_one = 'Yes';
-            }else{
-                continue;
-            }
-        }
-        if ($is_update_any_one != null)
-            return response()->json(['message'=>'Successfully updated !', 'type'=>'success']);
-        else
-            return response()->json(['message'=>'Please select Booster.', 'type'=>'warning']);
     }
 }
