@@ -9,6 +9,7 @@ use App\Http\Middleware\Receptionist;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\TrustedMedicalAssistant;
 use App\Http\Middleware\ImmigrationOfficer;
+use App\Http\Middleware\RapidPcrCenterAdministrator;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -80,5 +81,7 @@ class Kernel extends HttpKernel
         'administrator' => Administrator::class,
         'immigrationOfficer' => ImmigrationOfficer::class,
         'bdGovt' => BdGovt::class,
+
+        'rapidPcrCenterAdministrator' => RapidPcrCenterAdministrator::class,
     ];
 }

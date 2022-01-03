@@ -29,6 +29,8 @@ class RedirectIfAuthenticated
                     return redirect(RouteServiceProvider::PathologistDashboard);
                 } elseif (Auth::user()->user_type == 'trusted-medical-assistant') {
                     return redirect(RouteServiceProvider::TrustedMedicalAssistantDashboard);
+                } elseif (Auth::user()->user_type == 'rapid-pcr-center-administrator') {
+                  return redirect(RouteServiceProvider::RapidPcrCenterAdministratorDashboard);
                 } elseif (Auth::user()->user_type == 'administrator') {
                   return redirect(RouteServiceProvider::AdministratorDashboard);
                 } elseif (Auth::user()->user_type == 'immigration-officer') {
@@ -38,14 +40,12 @@ class RedirectIfAuthenticated
                 } else {
                     // return route('login');
                     return route('frontend.index');
-                    
                 }
             }else{
                 // return route('login');
                 return route('frontend.index');
             }
         }
-
         return $next($request);
     }
 }
