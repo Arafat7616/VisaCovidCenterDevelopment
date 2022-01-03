@@ -31,6 +31,7 @@ class CreateManPowerSchedulesTable extends Migration
             $table->string('vaccine_time')->nullable();
             $table->string('booster_time')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->timestamps();
         });
     }

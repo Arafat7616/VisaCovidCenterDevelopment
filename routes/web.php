@@ -21,6 +21,7 @@ include('receptionist.php');
 include('trustedMedicalAssistant.php');
 include('pathologist.php');
 include('immigrationOfficer.php');
+include('rapidPcrCenterAdministrator.php');
 
 // Route::get('/', function () {
 //     return view('welcome');

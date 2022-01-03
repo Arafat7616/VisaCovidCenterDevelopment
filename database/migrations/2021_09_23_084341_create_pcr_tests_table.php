@@ -23,6 +23,7 @@ class CreatePcrTestsTable extends Migration
             $table->string('pcr_result')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('tested_by')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();

@@ -23,7 +23,8 @@ class PcrTestSeeder extends Seeder
             $pcrTest->result_published_date = Carbon::now()->addDays(-2);
             $pcrTest->pcr_result = 'positive';
             $pcrTest->user_id = $i;
-            $pcrTest->center_id = 1;
+            // $pcrTest->center_id = 1;
+            $pcrTest->rapid_pcr_center_id = 1;
             $pcrTest->tested_by = 3;
             $pcrTest->status = true;
             $pcrTest->created_at = Carbon::now()->addDays(-4);
@@ -39,7 +40,8 @@ class PcrTestSeeder extends Seeder
             // $pcrTest->result_published_date = Carbon::now()->addDays(-3);
             $pcrTest->pcr_result = null;
             $pcrTest->user_id = $i;
-            $pcrTest->center_id = 1;
+            // $pcrTest->center_id = 1;
+            $pcrTest->rapid_pcr_center_id = 1;
             $pcrTest->tested_by = null;
             $pcrTest->status = false;
             $pcrTest->created_at = Carbon::now()->addDays(-5);

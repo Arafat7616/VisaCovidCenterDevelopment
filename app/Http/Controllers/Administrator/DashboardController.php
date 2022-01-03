@@ -18,5 +18,4 @@ class DashboardController extends Controller
         $user = Auth::user();
         return view('Administrator.profile.index', compact('user'));
     }
-
 }

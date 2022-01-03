@@ -15,7 +15,8 @@ class CreateCenterVaccineNamesTable extends Migration
     {
         Schema::create('center_vaccine_names', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('center_id');
+            $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->string('city_id');
             $table->string('vaccineName');
             $table->enum('status', [0,1]);
