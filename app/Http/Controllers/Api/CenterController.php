@@ -17,6 +17,7 @@ class CenterController extends Controller
         $phone = $userArray['phone'];
         $password = $userArray['password'];
 
+
         $user = User::where('phone', $phone)->first();
 
         if ($user)
@@ -33,7 +34,7 @@ class CenterController extends Controller
                     $user->otp = $otp;
                     $user->save();
                     $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-                    send_sms($message, $phone);
+                    //send_sms($message, $phone);
 
                     return response()->json([
                         "message" => "Send otp in your phone : ".$user->phone,
