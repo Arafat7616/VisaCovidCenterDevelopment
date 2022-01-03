@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-    <div class="volunteers mb-5">
+    <div class="trusted_medical_assistants mb-5">
         <div class="container">
             <div class="row">
                 @if(Session::has('message'))

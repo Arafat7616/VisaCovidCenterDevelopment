@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/TrustedMedicalAssistantAccount.css">
+    <title>Trusted Medical Assistant Account</title>
+</head>
+<body>
+  
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/image/logo.png" alt="" class="header__logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trusted Medical Assistants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registered</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Regular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pathologist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reception</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="profile__name">Farzana Akter</span>
+                            <img class="profile__image" src="assets/image/logo.png" alt="">
+                            <br> <span class="text-capitalize profile__designation">Administrator</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <div class="container my-5 ">
+        <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-5">
+        <!-- ==============card header title start=============== -->
+            <div class="card trusted_medical_assistant_account w-75 mx-auto">
+                <div class="card-body  text-center">
+                  <h6 >Create Trusted Medical Assistant account</h6>
+                </div>
+              </div>
+        <!-- =================card header title start=============== -->
+        
+        <!-- =================card form start======================== -->
+        
+        <div class="card w-75 shadow mx-auto">
+            <div class="card-body">
+            
+                <form>
+                    <div class="container">
+                        <div class="form-group row mt-3">
+                            <label for="inputPassword" class="col-sm-5 col-form-label text-muted">Passport</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" id="inputPassword" placeholder="987 6789 6547" >
+                            </div>
+                          </div>
+    
+                          <div class="form-group row mt-3">
+                            <label for="inputPassword" class="col-sm-5 col-form-label text-muted">Designation</label>
+                            <div class="col-sm-7">
+                                <select class="form-select text-muted" aria-label="Default select example">
+                                    <option selected>Vaccinator</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                          </div>
+                          <div class="form-group row mt-3">
+                            <label for="inputPassword" class="col-sm-5 col-form-label text-muted">Mobile</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" id="inputPassword" placeholder="018 2700 7441">
+                            </div>
+                          </div>
+                          <div class="form-group row my-3">
+                            <label for="inputPassword" class="col-sm-5 col-form-label text-muted">NID</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" id="inputPassword" placeholder="987 6789 6547">
+                            </div>
+                          </div>
+                    </div>
+                   
+                   <div class="text-center ">
+                    <button type="submit" class="trusted-medical-assistant-form-sub-btn mt-3 w-75">Submit</button>
+                   </div>
+                  </form>
+        
+        
+        
+        
+        
+        
+            </div>
+          </div>
+        
+        
+        <!--=================== card form end =========================-->
+        
+        
+        
+        
+        
+        </div>
+        <!--================== Otp right side div start==================== -->
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+        <div class="right-side-form">
+           
+        <!--======================== otp card start here==================== -->
+            <div class="d-flex justify-content-center">
+                <div class="card shadow w-50">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">OTP verification</h5>
+                        <div class='text-center otp-card-place my-2'>
+                            <input type="text" class='form-control otp-card-place' placeholder='12345' />
+                        </div>
+            
+                        <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
+                        <a href="#" class="card-link"><button class=' otp-btn-verify text-light'>Verify</button></a>
+                    </div>
+                </div>
+            </div>
+        <!--======================== otp card end here==================== -->
+        </div>
+        <button class="mt-5 apply-next-btn">Next</button>
+        </div>
+        
+        <!--================== Otp right side div end==================== -->
+        </div>
+        
+        
+        
+         </div>
+         <footer>
+            <div class="row fixed-bottom shadow bg-light">
+                <div class="col-12">
+                    <div class="footer text-center">
+                        <p class="py-3" style="color: #00569F;">&copy; Visa Covid 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script> -->
+</body>
+</html>

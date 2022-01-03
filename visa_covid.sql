@@ -13181,11 +13181,11 @@ CREATE TABLE `man_power_schedules` (
   `morning_ending_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `day_starting_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `day_ending_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volunteer_for_pcr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trusted_medical_assistant_for_pcr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pcr_available_set` int(11) DEFAULT '0',
-  `volunteer_for_vaccine` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trusted_medical_assistant_for_vaccine` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `vaccine_available_set` int(11) DEFAULT '0',
-  `volunteer_for_booster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trusted_medical_assistant_for_booster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `booster_available_set` int(11) DEFAULT '0',
   `date` timestamp NULL DEFAULT NULL,
   `pcr_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -13200,7 +13200,7 @@ CREATE TABLE `man_power_schedules` (
 -- Dumping data for table `man_power_schedules`
 --
 
-INSERT INTO `man_power_schedules` (`id`, `type`, `morning_starting_time`, `morning_ending_time`, `day_starting_time`, `day_ending_time`, `volunteer_for_pcr`, `pcr_available_set`, `volunteer_for_vaccine`, `vaccine_available_set`, `volunteer_for_booster`, `booster_available_set`, `date`, `pcr_time`, `vaccine_time`, `booster_time`, `center_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `man_power_schedules` (`id`, `type`, `morning_starting_time`, `morning_ending_time`, `day_starting_time`, `day_ending_time`, `trusted_medical_assistant_for_pcr`, `pcr_available_set`, `trusted_medical_assistant_for_vaccine`, `vaccine_available_set`, `trusted_medical_assistant_for_booster`, `booster_available_set`, `date`, `pcr_time`, `vaccine_time`, `booster_time`, `center_id`, `created_at`, `updated_at`) VALUES
 (1, 'normal', '06:53', '12:30', '14:25', '23:34', '1', 88, '1', 88, '1', 88, '2021-12-06 18:00:00', '10', '10', '10', 1, '2021-12-06 12:26:46', '2021-12-06 12:26:46'),
 (2, 'normal', '06:53', '12:30', '14:25', '23:34', '1', 88, '1', 88, '1', 88, '2021-12-07 18:00:00', '10', '10', '10', 1, '2021-12-06 12:26:46', '2021-12-06 12:26:46'),
 (3, 'normal', '06:53', '12:30', '14:25', '23:34', '1', 88, '1', 88, '1', 88, '2021-12-08 18:00:00', '10', '10', '10', 1, '2021-12-06 12:26:46', '2021-12-06 12:26:46'),
@@ -17704,7 +17704,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `image`, `user_type`, `otp`, `otp_verified_at`, `status`, `center_id`, `immigration_center_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Mr. Super Admin', 'superadmin@gmail.com', '01732955937', '$2y$10$032Uw4W6OAii4FTVpiNuk.LELQc.oy8AW2RHTPUTfJDf/y0ZHBgny', NULL, 'super-admin', 4453, NULL, 1, NULL, NULL, '2021-12-06 12:03:45', '2021-12-06 12:03:45', NULL),
 (2, 'Mr. Administrator', 'administrator@gmail.com', '01749969029', '$2y$10$fAkGgy8zS89oFbBMi3p.8uyF6JGClqHIefE4LU2ynb/kmhH1AHFE6', NULL, 'administrator', 3489, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),
-(3, 'Mr. Volunteer', 'volunteer@gmail.com', '01303613363', '$2y$10$Drgn3VuRxnHNu6Sg0FW01OeDPyiagFZrDg8E9kskUliFdxIyahWBS', NULL, 'volunteer', 9256, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),
+(3, 'Mr. Trusted Medical Assistant', 'trusted-medical-assistant@gmail.com', '01303613363', '$2y$10$Drgn3VuRxnHNu6Sg0FW01OeDPyiagFZrDg8E9kskUliFdxIyahWBS', NULL, 'trusted-medical-assistant', 9256, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),
 (4, 'Mr. Receptionist', 'receptionist@gmail.com', '01777382007', '$2y$10$qGz3d/U.p2tJE4G5ujbHIOVbbXJ0WOIwMB4Ityb8pMYIE/WlTu7NW', NULL, 'receptionist', 4005, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),
 (5, 'Mr. Pathologist', 'pathologist@gmail.com', '01732379393', '$2y$10$AxVFqbJXFSwsOg5/F1G3B.OGU9MMiE5O89Vpvb7iKqsG.yiuusGhG', NULL, 'pathologist', 4899, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),
 (6, 'Mr. User 1', 'user1@gmail.com', '01222222221', '$2y$10$Rm/CzYyXWrmey7TYcYuG.OTuaBOW9n4mwYzwmp5N3uSfkbBfDiK1u', NULL, 'user', 3104, NULL, 1, 1, NULL, '2021-12-06 12:03:46', '2021-12-06 12:03:46', NULL),

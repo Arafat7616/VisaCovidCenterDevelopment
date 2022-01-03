@@ -37,11 +37,11 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Volunteer for PCR</th>
+                            <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Volunteer for Vaccine</th>
+                            <th>Trusted Medical Assistant for Vaccine</th>
                             <th>Vaccine Available set</th>
-                            <th>Volunteer for Booster</th>
+                            <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
                             <th>PCT</th>
@@ -52,40 +52,40 @@
                         </thead>
                         <tbody>
                         @foreach($manPowerSchedules as $manPowerSchedule)
-                            <tr>
-                                <td>{{ $manPowerSchedule->id }}</td>
-                                <td>{{ $manPowerSchedule->volunteer_for_pcr }}</td>
-                                <td>{{ $manPowerSchedule->pcr_available_set }}</td>
-                                <td>{{ $manPowerSchedule->volunteer_for_vaccine }}</td>
+                        <tr>
+                            <td>{{ $manPowerSchedule->id }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
+                            <td>{{ $manPowerSchedule->pcr_available_set }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}</td>
 
-                                <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
-                                <td>{{ $manPowerSchedule->volunteer_for_booster }}</td>
-                                <td>{{ $manPowerSchedule->booster_available_set }}</td>
-                                <td>{{ $manPowerSchedule->date }}</td>
-                                <td>{{ $manPowerSchedule->pcr_time }}</td>
-                                <td>{{ $manPowerSchedule->vaccine_time }}</td>
-                                <td>{{ $manPowerSchedule->booster_time }}</td>
-                                <td class="text-manPowerSchedule">
-                                    <a class="btn btn-info"
-                                       href="{{ route('administrator.premium.edit', $manPowerSchedule->id) }}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('administrator.premium.destroy', $manPowerSchedule->id) }}">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                            <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
+                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}</td>
+                            <td>{{ $manPowerSchedule->booster_available_set }}</td>
+                            <td>{{ $manPowerSchedule->date }}</td>
+                            <td>{{ $manPowerSchedule->pcr_time }}</td>
+                            <td>{{ $manPowerSchedule->vaccine_time }}</td>
+                            <td>{{ $manPowerSchedule->booster_time }}</td>
+                            <td class="text-manPowerSchedule">
+                                <a class="btn btn-info"
+                                    href="{{ route('administrator.premium.edit', $manPowerSchedule->id) }}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('administrator.premium.destroy', $manPowerSchedule->id) }}">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
                         @endforeach
 
                         </tbody>
                         <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Volunteer for PCR</th>
+                            <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Volunteer for Vaccine</th>
+                            <th>Trusted Medical Assistant for Vaccine</th>
                             <th>Vaccine Available set</th>
-                            <th>Volunteer for Booster</th>
+                            <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
                             <th>PCT</th>

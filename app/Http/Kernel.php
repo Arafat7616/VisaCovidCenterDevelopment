@@ -7,7 +7,7 @@ use App\Http\Middleware\BdGovt;
 use App\Http\Middleware\Pathologist;
 use App\Http\Middleware\Receptionist;
 use App\Http\Middleware\SuperAdmin;
-use App\Http\Middleware\Volunteer;
+use App\Http\Middleware\TrustedMedicalAssistant;
 use App\Http\Middleware\ImmigrationOfficer;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -73,7 +73,7 @@ class Kernel extends HttpKernel
 
 
         // custom midlewares
-        'volunteer' => Volunteer::class,
+        'trustedMedicalAssistant' => TrustedMedicalAssistant::class,
         'superAdmin' => SuperAdmin::class,
         'pathologist' => Pathologist::class,
         'receptionist' => Receptionist::class,
