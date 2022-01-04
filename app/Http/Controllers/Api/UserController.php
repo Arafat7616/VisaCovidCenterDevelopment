@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UserController extends Controller
 {
@@ -257,18 +258,36 @@ class UserController extends Controller
 
     }
 
-    public function imageUpload(Request $request)
+    public function uploadImage(Request $request)
     {
-        $userArray = json_decode($request->getContent(), true);
-        $email = $userArray['email'];
-        $user = User::where('email', $email)->first();
+        return response()->json([
+            "userArray"=>"ji",
+        ]);
 
-        $user->image = $userArray['image'];
-        $user->update();
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $user = User::where('phone', $phone)->first();
 
         return response()->json([
-            "msg"=>"Image successfully updated"
+            "userArray"=>$userArray,
+            "message"=>$user,
         ]);
+
+        if($request->hasFile('file_attachment')){
+            $image             = $request->file('file_attachment');
+            $folder_path       = 'uploads/images/users/';
+            $image_new_name    = $request->name.'_profile_'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $image = $folder_path.$image_new_name;
+        }
+
+
+        $user->image = $image;
+        $user->update();
+
+
     }
 
     /**

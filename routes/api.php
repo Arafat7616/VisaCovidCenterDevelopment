@@ -86,6 +86,45 @@ Route::get('home/synchronizeInformation/{id}', 'Api\HomeController@synchronizeIn
 Route::post('otpResend', 'Api\UserController@otpResend');
 
 
+Route::post('uploadImage', 'Api\UserController@uploadImage');
+
+
+Route::post('volunteer/login', 'Api\CenterController@login');
+Route::post('volunteer/otp', 'Api\CenterController@volunteerOtp');
+Route::post('volunteer/otpResend', 'Api\CenterController@otpResend');
+
+
+//center otp process
+Route::post('centerOptSend', 'Api\PcrCenterController@centerOptSend');
+Route::post('centerOptCheck', 'Api\PcrCenterController@centerOptCheck');
+
+//pcr center
+Route::post('pcr/registeredList', 'Api\PcrCenterController@registeredList');
+Route::post('pcr/pcrUserOtp', 'Api\PcrCenterController@pcrUserOtp');
+Route::post('pcr/pcrVolunteerOtp', 'Api\PcrCenterController@pcrVolunteerOtp');
+Route::post('pcr/pcrFrom', 'Api\PcrCenterController@pcrFrom');
+
+//booster center
+Route::post('booster/registeredList', 'Api\BoosterCenterController@registeredList');
+Route::post('booster/boosterUserOtp', 'Api\BoosterCenterController@boosterUserOtp');
+Route::post('booster/boosterVolunteerOtp', 'Api\BoosterCenterController@boosterVolunteerOtp');
+Route::post('booster/boosterFrom', 'Api\BoosterCenterController@boosterFrom');
+
+
+//vaccine center
+Route::post('vaccination/registeredFirstList', 'Api\VaccineCenterController@registeredFirstList');
+Route::post('vaccination/registeredSecondList', 'Api\VaccineCenterController@registeredSecondList');
+Route::post('vaccination/vaccinationUserOtp', 'Api\VaccineCenterController@vaccinationUserOtp');
+Route::post('vaccination/vaccinationVolunteerOtp', 'Api\VaccineCenterController@vaccinationVolunteerOtp');
+Route::post('vaccination/vaccinationFrom', 'Api\VaccineCenterController@vaccinationFrom');
+
+
+
+
+
+
+
+
 
 
 
