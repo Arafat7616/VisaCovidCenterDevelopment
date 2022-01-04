@@ -132,7 +132,7 @@
                                                 </p>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        {{-- <tr>
                                             <td class="cal-x-y">
                                                 <p class="p-mx"> Vaccine </p>
                                             </td>
@@ -187,7 +187,7 @@
                                                     {{ get_available_service_per_day($center->space) }}
                                                 </p>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                         
                                         <tr class="cal-mx-x-p">
                                             <td></td>
@@ -210,10 +210,10 @@
                                 <div class="cal-service-slot row">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Total square feet : {{ Auth::user()->center->space }}</h5>
+                                            <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->space }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Total Available seat      : {{ intval((Auth::user()->center->space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
+                                            <p class="card-text" style="white-space:pre">Total Available seat      : {{ intval((Auth::user()->rapidPcrCenter->space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -327,9 +327,9 @@
         // Auto wantToServePerDay Calculation
         function wantToServePerDay() {
             var maxPcrServe = parseInt(document.getElementById('max-pcr-serve').innerHTML);
-            var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
-            var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
-            var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
+            // var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
+            // var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
+            var wantToServePerDay = maxPcrServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
 
@@ -346,32 +346,32 @@
             setTotalManMinutePerDay()
         }
 
-        function setMaxVaccineService() {
-            var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
-            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
-            var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
-            document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
-            wantToServePerDay();
-            setTotalManMinutePerDay();
-        }
+        // function setMaxVaccineService() {
+        //     var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
+        //     var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+        //     var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
+        //     var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
+        //     document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
+        //     wantToServePerDay();
+        //     setTotalManMinutePerDay();
+        // }
 
-        function setMaxBoosterService() {
-            var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
-            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
-            var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
-            document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
-            wantToServePerDay();
-            setTotalManMinutePerDay();
-        }
+        // function setMaxBoosterService() {
+        //     var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
+        //     var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+        //     var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
+        //     var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
+        //     document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
+        //     wantToServePerDay();
+        //     setTotalManMinutePerDay();
+        // }
 
         function setTotalManMinutePerDay() {
             var trustedMedicalAssistantForPcr     = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
-            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
-            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+            // var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+            // var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+trustedMedicalAssistantForVaccine+trustedMedicalAssistantForBooster;
+            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }
@@ -398,8 +398,8 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalMorningSlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
 
@@ -419,8 +419,8 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalDaySlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
         }

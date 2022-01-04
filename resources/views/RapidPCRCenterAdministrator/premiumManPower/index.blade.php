@@ -35,18 +35,14 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                            cellspacing="0" width="100%">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Trusted Medical Assistant for PCR</th>
-                            <th>PCR Available set</th>
-                            <th>Vaccine Available set</th>
-                            <th>Booster Available set</th>
-                            <th>Date</th>
-                            <th>PCR</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
-                            <th>Action</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Trusted Medical Assistant for PCR</th>
+                                <th>PCR Available set</th>
+                                <th>Date</th>
+                                <th>PCR</th>
+                                <th>Action</th>
+                            </tr>
                         </thead>
                         <tbody>
                         @foreach($manPowerSchedules as $manPowerSchedule)
@@ -75,18 +71,14 @@
 
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Trusted Medical Assistant for PCR</th>
-                            <th>PCR Available set</th>
-                            <th>Vaccine Available set</th>
-                            <th>Booster Available set</th>
-                            <th>Date</th>
-                            <th>PCR</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
-                            <th>Action</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Trusted Medical Assistant for PCR</th>
+                                <th>PCR Available set</th>
+                                <th>Date</th>
+                                <th>PCR</th>
+                                <th>Action</th>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
