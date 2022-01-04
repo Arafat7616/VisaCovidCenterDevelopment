@@ -24,5 +24,14 @@ class PriceSeeder extends Seeder
             $pcrTest->status = true;
             $pcrTest->save();
         }
+
+        for ($i = 6; $i <= 10; $i++) {
+            $pcrTest = new Price();
+            $pcrTest->rapid_pcr_normal = 500;      
+            $pcrTest->rapid_pcr_premium = 1000;
+            $pcrTest->rapid_pcr_center_id = $i-5;
+            $pcrTest->status = true;
+            $pcrTest->save();
+        }
     }
 }

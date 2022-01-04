@@ -9,13 +9,17 @@ class PcrTest extends Model
 {
     use SoftDeletes;
     protected $fillable = [
+        'id',
         'registration_type',
+        'date_of_registration',
         'sample_collection_date',
         'date_of_pcr_test',
         'result_published_date',
         'pcr_result',
         'user_id',
         'center_id',
+        'rapid_pcr_result',
+        'rapid_pcr_center_id',
         'tested_by',
         'status',
     ];
@@ -25,9 +29,14 @@ class PcrTest extends Model
         return $this->belongsTo(Center::class, 'center_id');
     }
 
+    public function rapidPcrCenter()
+    {
+        return $this->belongsTo(RapidPCRCenter::class, 'rapid_pcr_center_id');
+    }
+
     public function testedBy()
     {
-        return $this->belongsTo(Center::class, 'tested_by');
+        return $this->belongsTo(User::class, 'tested_by');
     }
 
     public function user()

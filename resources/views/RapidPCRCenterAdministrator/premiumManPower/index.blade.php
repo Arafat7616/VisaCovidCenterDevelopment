@@ -35,20 +35,14 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                            cellspacing="0" width="100%">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Trusted Medical Assistant for PCR</th>
-                            <th>PCR Available set</th>
-                            <th>Trusted Medical Assistant for Vaccine</th>
-                            <th>Vaccine Available set</th>
-                            <th>Trusted Medical Assistant for Booster</th>
-                            <th>Booster Available set</th>
-                            <th>Date</th>
-                            <th>PCT</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
-                            <th>Action</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Trusted Medical Assistant for PCR</th>
+                                <th>PCR Available set</th>
+                                <th>Date</th>
+                                <th>PCR</th>
+                                <th>Action</th>
+                            </tr>
                         </thead>
                         <tbody>
                         @foreach($manPowerSchedules as $manPowerSchedule)
@@ -56,10 +50,8 @@
                             <td>{{ $manPowerSchedule->id }}</td>
                             <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
                             <td>{{ $manPowerSchedule->pcr_available_set }}</td>
-                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}</td>
 
                             <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
-                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}</td>
                             <td>{{ $manPowerSchedule->booster_available_set }}</td>
                             <td>{{ $manPowerSchedule->date }}</td>
                             <td>{{ $manPowerSchedule->pcr_time }}</td>
@@ -79,20 +71,14 @@
 
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Trusted Medical Assistant for PCR</th>
-                            <th>PCR Available set</th>
-                            <th>Trusted Medical Assistant for Vaccine</th>
-                            <th>Vaccine Available set</th>
-                            <th>Trusted Medical Assistant for Booster</th>
-                            <th>Booster Available set</th>
-                            <th>Date</th>
-                            <th>PCT</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
-                            <th>Action</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Trusted Medical Assistant for PCR</th>
+                                <th>PCR Available set</th>
+                                <th>Date</th>
+                                <th>PCR</th>
+                                <th>Action</th>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>

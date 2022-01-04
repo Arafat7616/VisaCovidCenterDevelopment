@@ -39,14 +39,8 @@ Regular Man Power
                             <th>ID</th>
                             <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Trusted Medical Assistant for Vaccine</th>
-                            <th>Vaccine Available set</th>
-                            <th>Trusted Medical Assistant for Booster</th>
-                            <th>Booster Available set</th>
                             <th>Date</th>
-                            <th>PCT</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
+                            <th>PCR</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -56,15 +50,8 @@ Regular Man Power
                             <td>{{ $manPowerSchedule->id }}</td>
                             <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
                             <td>{{ $manPowerSchedule->pcr_available_set }}</td>
-                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}</td>
-
-                            <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
-                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}</td>
-                            <td>{{ $manPowerSchedule->booster_available_set }}</td>
                             <td>{{ $manPowerSchedule->date }}</td>
                             <td>{{ $manPowerSchedule->pcr_time }}</td>
-                            <td>{{ $manPowerSchedule->vaccine_time }}</td>
-                            <td>{{ $manPowerSchedule->booster_time }}</td>
                             <td class="text-manPowerSchedule">
                                 <a class="btn btn-info"
                                     href="{{ route('rapidPcrCenterAdministrator.regular.edit', $manPowerSchedule->id) }}">
@@ -83,14 +70,8 @@ Regular Man Power
                             <th>ID</th>
                             <th>Trusted Medical Assistant for PCR</th>
                             <th>PCR Available set</th>
-                            <th>Trusted Medical Assistant for Vaccine</th>
-                            <th>Vaccine Available set</th>
-                            <th>Trusted Medical Assistant for Booster</th>
-                            <th>Booster Available set</th>
                             <th>Date</th>
-                            <th>PCT</th>
-                            <th>Vaccine</th>
-                            <th>Booster</th>
+                            <th>PCR</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>

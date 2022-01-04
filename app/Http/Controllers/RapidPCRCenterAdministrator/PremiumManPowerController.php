@@ -18,7 +18,7 @@ class PremiumManPowerController extends Controller
 
     public function create(){
         $manPowerSchedule = ManPowerSchedule::where('type', 'premium')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->orderBy('date', 'DESC')->first();
-        $center = auth()->user()->center;
+        $center = auth()->user()->rapidPcrCenter;
         return view('RapidPCRCenterAdministrator.premiumManPower.create', compact('manPowerSchedule','center'));
     }
 
@@ -30,16 +30,16 @@ class PremiumManPowerController extends Controller
             'daySlotStart' => 'required',
             'daySlotEnd' => 'required',
             'timeForPcr' => 'required',
-            'timeForVaccine' => 'required',
-            'timeForBooster' => 'required',
+            // 'timeForVaccine' => 'required',
+            // 'timeForBooster' => 'required',
             'trustedMedicalAssistantForPcr' => 'required',
-            'trustedMedicalAssistantForVaccine' => 'required',
-            'trustedMedicalAssistantForBooster' => 'required',
+            // 'trustedMedicalAssistantForVaccine' => 'required',
+            // 'trustedMedicalAssistantForBooster' => 'required',
             'fromDate' => 'required',
             'toDate' => 'required',
         ]);
 
-        $avaiable =  get_available_service_per_day(auth()->user()->center->space);
+        $avaiable =  get_available_service_per_day(auth()->user()->rapidPcrCenter->space);
         if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable) {
 
             $d1 = strtotime($request->fromDate);
@@ -64,16 +64,16 @@ class PremiumManPowerController extends Controller
                 $manPowerSchedule->day_starting_time        = $request->daySlotStart;
                 $manPowerSchedule->day_ending_time          = $request->daySlotEnd;
                 $manPowerSchedule->trusted_medical_assistant_for_pcr        = $request->trustedMedicalAssistantForPcr;
-                $manPowerSchedule->trusted_medical_assistant_for_vaccine    = $request->trustedMedicalAssistantForVaccine;
-                $manPowerSchedule->trusted_medical_assistant_for_booster    = $request->trustedMedicalAssistantForBooster;
+                // $manPowerSchedule->trusted_medical_assistant_for_vaccine    = $request->trustedMedicalAssistantForVaccine;
+                // $manPowerSchedule->trusted_medical_assistant_for_booster    = $request->trustedMedicalAssistantForBooster;
                 $manPowerSchedule->date                     = date("Y-m-d", $d);
                 $manPowerSchedule->pcr_time                 = $request->timeForPcr;
-                $manPowerSchedule->vaccine_time             = $request->timeForVaccine;
-                $manPowerSchedule->booster_time             = $request->timeForBooster;
-                $manPowerSchedule->booster_available_set    = $request->booster_available_set;
-                $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
+                // $manPowerSchedule->vaccine_time             = $request->timeForVaccine;
+                // $manPowerSchedule->booster_time             = $request->timeForBooster;
+                // $manPowerSchedule->booster_available_set    = $request->booster_available_set;
+                // $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
                 $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
-                $manPowerSchedule->center_id                = Auth::user()->center_id;
+                $manPowerSchedule->rapid_pcr_center_id                = Auth::user()->rapid_pcr_center_id;
                 $manPowerSchedule->save();      
             }
 
@@ -87,13 +87,11 @@ class PremiumManPowerController extends Controller
                 'message' => 'The Space are not available for this schedule!',
             ]);
         }
-
-        
     }
 
     public function edit($id){
         $manPowerSchedule = ManPowerSchedule::findOrFail($id);
-        $center = auth()->user()->center;
+        $center = auth()->user()->rapidPcrCenter;
         return view('RapidPCRCenterAdministrator.premiumManPower.edit', compact('manPowerSchedule','center'));
     }
 
@@ -106,14 +104,14 @@ class PremiumManPowerController extends Controller
             'daySlotStart' => 'required',
             'daySlotEnd' => 'required',
             'timeForPcr' => 'required',
-            'timeForVaccine' => 'required',
-            'timeForBooster' => 'required',
+            // 'timeForVaccine' => 'required',
+            // 'timeForBooster' => 'required',
             'trustedMedicalAssistantForPcr' => 'required',
-            'trustedMedicalAssistantForVaccine' => 'required',
-            'trustedMedicalAssistantForBooster' => 'required',
+            // 'trustedMedicalAssistantForVaccine' => 'required',
+            // 'trustedMedicalAssistantForBooster' => 'required',
         ]);
 
-        $avaiable =  get_available_service_per_day(auth()->user()->center->space);
+        $avaiable =  get_available_service_per_day(auth()->user()->rapidPcrCenter->space);
         
         if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable) {
                 
@@ -124,13 +122,13 @@ class PremiumManPowerController extends Controller
             $manPowerSchedule->day_starting_time        = $request->daySlotStart;
             $manPowerSchedule->day_ending_time          = $request->daySlotEnd;
             $manPowerSchedule->trusted_medical_assistant_for_pcr        = $request->trustedMedicalAssistantForPcr;
-            $manPowerSchedule->trusted_medical_assistant_for_vaccine    = $request->trustedMedicalAssistantForVaccine;
-            $manPowerSchedule->trusted_medical_assistant_for_booster    = $request->trustedMedicalAssistantForBooster;
+            // $manPowerSchedule->trusted_medical_assistant_for_vaccine    = $request->trustedMedicalAssistantForVaccine;
+            // $manPowerSchedule->trusted_medical_assistant_for_booster    = $request->trustedMedicalAssistantForBooster;
             $manPowerSchedule->pcr_time                 = $request->timeForPcr;
-            $manPowerSchedule->vaccine_time             = $request->timeForVaccine;
-            $manPowerSchedule->booster_time             = $request->timeForBooster;
-            $manPowerSchedule->booster_available_set    = $request->booster_available_set;
-            $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
+            // $manPowerSchedule->vaccine_time             = $request->timeForVaccine;
+            // $manPowerSchedule->booster_time             = $request->timeForBooster;
+            // $manPowerSchedule->booster_available_set    = $request->booster_available_set;
+            // $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
             $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
 
             try {

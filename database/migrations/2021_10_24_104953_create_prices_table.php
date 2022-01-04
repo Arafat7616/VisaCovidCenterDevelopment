@@ -22,6 +22,9 @@ class CreatePricesTable extends Migration
             $table->string('vaccine_premium')->nullable();
             $table->string('booster_premium')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->string('rapid_pcr_normal')->nullable();
+            $table->string('rapid_pcr_premium')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->boolean('status');
             $table->timestamps();
         });
