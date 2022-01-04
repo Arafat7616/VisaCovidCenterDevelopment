@@ -44,7 +44,7 @@
                                     <p>PCR Test</p>
                                 </div>
                                 <div class="card-body setting_up_price__card__body">
-                                    <input type="text" value="{{$price->pcr_normal}}" name="pcr_normal">
+                                    <input type="text" value="{{$price->rapid_pcr_normal}}" name="rapid_pcr_normal">
                                     <small>Regular</small>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="card-body setting_up_price__card__body setting_up_price__card__premium">
                                     <i class="fa fa-star"></i>
-                                    <input type="text" value="{{$price->pcr_premium}}" name="pcr_premium">
+                                    <input type="text" value="{{$price->rapid_pcr_premium}}" name="rapid_pcr_premium">
                                     <small>Premium</small>
                                 </div>
                             </div>

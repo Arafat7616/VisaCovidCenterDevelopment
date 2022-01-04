@@ -17,8 +17,7 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $rapidPcrCenterId = Auth::user()->rapid_pcr_center_id;
-        $price = Price::where('rapid_pcr_center_id', $rapidPcrCenterId)->first();
+        $price = Auth::user()->rapidPcrCenter->price;
         return view('RapidPCRCenterAdministrator.pricing.index', compact('price'));
     }
 
@@ -75,13 +74,13 @@ class PriceController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'pcr_normal'  => 'required',
-            'pcr_premium'  => 'required',
+            'rapid_pcr_normal'  => 'required',
+            'rapid_pcr_premium'  => 'required',
         ]);
 
-        $price = Price::where('id', $id)->first();
-        $price->pcr_normal = $request->pcr_normal;
-        $price->pcr_premium = $request->pcr_premium;
+        $price = Price::findOrFail($id);
+        $price->rapid_pcr_normal = $request->rapid_pcr_normal;
+        $price->rapid_pcr_premium = $request->rapid_pcr_premium;
         $price->status = 0;
         $price->save();
 
