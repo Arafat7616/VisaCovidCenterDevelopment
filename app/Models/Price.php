@@ -14,11 +14,19 @@ class Price extends Model
         'vaccine_premium',
         'booster_premium',
         'center_id',
+        'rapid_pcr_normal',
+        'rapid_pcr_premium',
+        'rapid_pcr_center_id',
         'status'
     ];
 
     public function center()
     {
         return $this->belongsTo(Center::class, 'center_id');
+    }
+
+    public function rapidPcrCenter()
+    {
+        return $this->belongsTo(RapidPCRCenter::class, 'rapid_pcr_center_id');
     }
 }
