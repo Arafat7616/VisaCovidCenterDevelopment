@@ -21,6 +21,12 @@ class PriceSeeder extends Seeder
             $pcrTest->vaccine_premium = 2000;
             $pcrTest->booster_premium = 1400;
             $pcrTest->center_id = $i;
+            $pcrTest->status = true;
+            $pcrTest->save();
+        }
+        
+        for ($i = 6; $i <= 10; $i++) {
+            $pcrTest = new Price();
             $pcrTest->rapid_pcr_normal = 500;      
             $pcrTest->rapid_pcr_premium = 1000;
             $pcrTest->rapid_pcr_center_id = $i;

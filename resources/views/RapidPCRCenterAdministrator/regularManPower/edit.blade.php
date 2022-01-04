@@ -260,7 +260,7 @@
                                 icon: res.type,
                                 title: 'Updated !',
                                 text: res.message,
-                                // footer: 'PCR result uploaded successfully!'
+                                // footer: 'Rapid PCR result uploaded successfully!'
                             });
                             setTimeout(function() {
                                 location.reload();
