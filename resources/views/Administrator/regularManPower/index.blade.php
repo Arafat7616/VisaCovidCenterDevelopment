@@ -44,7 +44,7 @@ Regular Man Power
                             <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
-                            <th>PCT</th>
+                            <th>PCR</th>
                             <th>Vaccine</th>
                             <th>Booster</th>
                             <th>Action</th>
@@ -88,7 +88,7 @@ Regular Man Power
                             <th>Trusted Medical Assistant for Booster</th>
                             <th>Booster Available set</th>
                             <th>Date</th>
-                            <th>PCT</th>
+                            <th>PCR</th>
                             <th>Vaccine</th>
                             <th>Booster</th>
                             <th>Action</th>

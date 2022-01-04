@@ -107,7 +107,7 @@
                                         </tr>
                                         <tr>
                                             <td class="cal-x-y">
-                                                <p class="p-mx"> PCR </p>
+                                                <p class="p-mx">Rapid PCR </p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"><input type="number" class="cal-min-t"

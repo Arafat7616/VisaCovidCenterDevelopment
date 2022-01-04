@@ -1,7 +1,7 @@
 @extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
-    PCR | Premium
+    Rapid PCR | Premium
 @endpush
 
 @push('css')
@@ -34,7 +34,7 @@
                                 <div class="row justify-content-between">
                                     <div class="col-5">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                            <a href="{{ route('rapidPcrCenterAdministrator.premiumRegistered.pcr') }}" class="accorion-btn breadcrumb-active">Rapid PCR</a>
                                         </div>
                                     </div>
                                     <div class="col-4">
