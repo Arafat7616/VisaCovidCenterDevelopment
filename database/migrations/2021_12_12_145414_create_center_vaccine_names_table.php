@@ -19,7 +19,7 @@ class CreateCenterVaccineNamesTable extends Migration
             $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->string('city_id');
             $table->string('vaccineName');
-            $table->enum('status', [0,1]);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

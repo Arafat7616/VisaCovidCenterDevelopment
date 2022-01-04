@@ -4,8 +4,8 @@ namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Center;
 use App\Models\CenterVaccineName;
+use App\Models\RapidPCRCenter;
 use App\Models\User;
 use App\Models\VaccineName;
 use Illuminate\Http\Request;
@@ -22,8 +22,8 @@ class CenterVaccineNameController extends Controller
      */
     public function index()
     {
-        $centerId = User::where('id', Auth::user()->id)->select('center_id')->first();
-        $vaccineNames = CenterVaccineName::where('center_id', $centerId->center_id)->get();
+        $centerId = User::where('id', Auth::user()->id)->select('rapid_pcr_center_id')->first();
+        $vaccineNames = CenterVaccineName::where('rapid_pcr_center_id', $centerId->rapid_pcr_center_id)->get();
         return view('RapidPCRCenterAdministrator.centerVaccineName.index', compact('vaccineNames'));
     }
 
@@ -58,10 +58,10 @@ class CenterVaccineNameController extends Controller
             return back()->withErrors('Already Taken !! Please select another one');
         }
 
-        $centerId = User::where('id', Auth::user()->id)->select('center_id')->first();
-        $cityId = Center::where('administrator_id', Auth::user()->id)->select('city_id')->first();
+        $centerId = User::where('id', Auth::user()->id)->select('rapid_pcr_center_id')->first();
+        $cityId = RapidPCRCenter::where('administrator_id', Auth::user()->id)->select('city_id')->first();
         $data['vaccineName'] = Str::lower($request->vaccineName);
-        $data['center_id'] = $centerId->center_id;
+        $data['rapid_pcr_center_id'] = $centerId->rapid_pcr_center_id;
         $data['city_id'] = $cityId->city_id;
         $data['status'] = $request->status;
 

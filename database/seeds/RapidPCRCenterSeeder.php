@@ -28,7 +28,7 @@ class RapidPCRCenterSeeder extends Seeder
         $rapidPCRCenter->trade_licence_no = rand(1000000, 2000000);
         $rapidPCRCenter->status = 1;
         $rapidPCRCenter->varification_status = 1;
-        $rapidPCRCenter->administrator_id = 2;
+        $rapidPCRCenter->administrator_id = 18;
         $rapidPCRCenter->space = 5000;
         $rapidPCRCenter->save();
     }

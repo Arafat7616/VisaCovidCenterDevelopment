@@ -40,7 +40,10 @@
                                     <td>{{$vaccineName->status ? 'Active' : 'InActive'}}</td>
                                     <td>
                                         <a class="btn btn-sm btn-warning" href="{{route('rapidPcrCenterAdministrator.centerVaccine.edit', $vaccineName->id)}}"><i class="fa fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" href="{{route('rapidPcrCenterAdministrator.centerVaccine.destroy', $vaccineName->id)}}"><i class="fa fa-trash"></i></a>
+
+                                        <button class="btn btn-danger" onclick="delete_function(this)" value="{{route('rapidPcrCenterAdministrator.centerVaccine.destroy', $vaccineName->id)}}">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
