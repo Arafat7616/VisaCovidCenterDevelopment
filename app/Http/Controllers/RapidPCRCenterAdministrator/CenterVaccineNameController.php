@@ -143,6 +143,5 @@ class CenterVaccineNameController extends Controller
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
         }
-
     }
 }

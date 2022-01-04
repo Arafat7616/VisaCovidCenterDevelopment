@@ -17,7 +17,9 @@ class CreateCenterDocumentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->string('document')->nullable();
+            $table->string('rapid_pcr_document')->nullable();
             $table->string('status')->nullable()->default(0);
             $table->timestamps();
         });
