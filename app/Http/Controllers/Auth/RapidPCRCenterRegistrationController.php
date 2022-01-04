@@ -7,9 +7,8 @@ use App\Models\CenterDocument;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
-use App\Models\Price;
 use App\Models\RapidPCRCenter;
-use App\Models\RapidPCRPrice;
+use App\Models\Price;
 use App\Models\State;
 use App\Models\User;
 use App\Models\UserInfo;
@@ -108,10 +107,10 @@ class RapidPCRCenterRegistrationController extends Controller
 
         $userInfo->save();
 
-        $rapidPcrPrice = New RapidPCRPrice();
-        $rapidPcrPrice->rapid_pcr_center_id = $rapidPcrCenter->id;
-        $rapidPcrPrice->status = "1";
-        $rapidPcrPrice->save();
+        $price = New Price();
+        $price->rapid_pcr_center_id = $rapidPcrCenter->id;
+        $price->status = "1";
+        $price->save();
 
         // document data store
         if ($request->hasFile('document1')) {

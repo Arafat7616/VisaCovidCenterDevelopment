@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ImmigrationPassSeeder::class);
         $this->call(AirportSeeder::class);
         $this->call(RapidPCRCenterSeeder::class);
-        $this->call(RapidPCRPriceSeeder::class);
         // $this->call(SliderSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);

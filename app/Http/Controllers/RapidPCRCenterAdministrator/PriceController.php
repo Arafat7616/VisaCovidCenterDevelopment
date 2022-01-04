@@ -4,7 +4,6 @@ namespace App\Http\Controllers\RapidPCRCenterAdministrator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Price;
-use App\Models\RapidPCRPrice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -19,8 +18,8 @@ class PriceController extends Controller
     public function index()
     {
         $rapidPcrCenterId = Auth::user()->rapid_pcr_center_id;
-        $rapidPcrCenterPrice = RapidPCRPrice::where('rapid_pcr_center_id', $rapidPcrCenterId)->first();
-        return view('RapidPCRCenterAdministrator.pricing.index', compact('rapidPcrCenterPrice'));
+        $price = Price::where('rapid_pcr_center_id', $rapidPcrCenterId)->first();
+        return view('RapidPCRCenterAdministrator.pricing.index', compact('price'));
     }
 
     /**
@@ -47,10 +46,10 @@ class PriceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Price  $rapidPcrPrice
+     * @param  \App\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function show(Price $rapidPcrPrice)
+    public function show(Price $price)
     {
         //
     }
@@ -58,10 +57,10 @@ class PriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Price  $rapidPcrPrice
+     * @param  \App\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function edit(Price $rapidPcrPrice)
+    public function edit(Price $price)
     {
         //
     }
@@ -70,7 +69,7 @@ class PriceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Price  $rapidPcrPrice
+     * @param  \App\Price  $price
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -80,11 +79,11 @@ class PriceController extends Controller
             'pcr_premium'  => 'required',
         ]);
 
-        $rapidPcrPrice = RapidPCRPrice::where('id', $id)->first();
-        $rapidPcrPrice->pcr_normal = $request->pcr_normal;
-        $rapidPcrPrice->pcr_premium = $request->pcr_premium;
-        $rapidPcrPrice->status = 0;
-        $rapidPcrPrice->save();
+        $price = Price::where('id', $id)->first();
+        $price->pcr_normal = $request->pcr_normal;
+        $price->pcr_premium = $request->pcr_premium;
+        $price->status = 0;
+        $price->save();
 
         Session::flash('message', 'Successfully Updated!');
         return redirect()->route('rapidPcrCenterAdministrator.price.index');
@@ -93,10 +92,10 @@ class PriceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Price  $rapidPcrPrice
+     * @param  \App\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Price $rapidPcrPrice)
+    public function destroy(Price $price)
     {
         //
     }
