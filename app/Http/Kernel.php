@@ -84,6 +84,6 @@ class Kernel extends HttpKernel
         'bdGovt' => BdGovt::class,
 
         'rapidPcrCenterAdministrator' => RapidPcrCenterAdministrator::class,
-        'rapidPCRCenterPathologist' => RapidPCRCenterPathologist::class,
+        'rapidPcrCenterPathologist' => RapidPCRCenterPathologist::class,
     ];
 }

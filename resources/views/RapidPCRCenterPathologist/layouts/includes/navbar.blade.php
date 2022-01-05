@@ -22,7 +22,7 @@
                             <br> <span class="text-capitalize profile__designation">{{ Auth::user()->user_type }}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('rapidPCRCenterPathologist.profile') }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('rapidPcrCenterPathologist.profile') }}">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>

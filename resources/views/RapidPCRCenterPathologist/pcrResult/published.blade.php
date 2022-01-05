@@ -34,9 +34,9 @@
                                 <div class="row justify-content-between">
                                     <div class="col-4">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('rapidPCRCenterPathologist.pcrResult.waiting') }}"
+                                            <a href="{{ route('rapidPcrCenterPathologist.pcrResult.waiting') }}"
                                                 class="accorion-btn">Waiting</a>
-                                            <a href="{{ route('rapidPCRCenterPathologist.pcrResult.published') }}"
+                                            <a href="{{ route('rapidPcrCenterPathologist.pcrResult.published') }}"
                                                 class="accorion-btn breadcrumb-active">Published</a>
                                         </div>
                                     </div>
