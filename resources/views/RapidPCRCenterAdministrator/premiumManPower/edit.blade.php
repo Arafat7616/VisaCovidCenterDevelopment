@@ -1,5 +1,6 @@
 @extends('RapidPCRCenterAdministrator.layouts.master')
 
+
 @push('title')
     Premium Man Power Add
 @endpush
@@ -15,7 +16,7 @@
             <div class="container">
                 <div class="row">
                     <h1 class="cal-header">Edit Premium Manpower Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
-
+                    
                     <form action="">
                         <div class="cal-slot row ">
                             <div class="cal-morning-slot">
@@ -23,7 +24,7 @@
                                 <div class="cal-morn-in">
                                     <input type="hidden" name="id" value="{{ $manPowerSchedule->id }}" id="id">
                                     <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_starting_time }}" @endif
-                                    name="morningSlotStart"> -
+                                        name="morningSlotStart"> -
                                     <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
                                 @php
@@ -41,9 +42,9 @@
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
                                     <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_starting_time }}" @endif
-                                    name="daySlotStart"> -
+                                        name="daySlotStart"> -
                                     <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_ending_time }}" @endif
-                                    name="daySlotEnd">
+                                        name="daySlotEnd">
                                 </div>
                                 @php
                                     if ($manPowerSchedule) {
@@ -74,7 +75,7 @@
                                     {{ $totalManMinutePerDay ?? '' }}</li>
                             </ul>
                         </div>
-                        <div class="row">
+                      <div class="row">
                             <div class="col-8">
                                 <div class="cal-service-slot row">
                                     <table class="t-cal">
@@ -122,7 +123,7 @@
                                                 </p>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        {{-- <tr>
                                             <td class="cal-x-y">
                                                 <p class="p-mx"> Vaccine </p>
                                             </td>
@@ -177,7 +178,8 @@
                                                     {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
                                                 </p>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
+                                        
                                         <tr class="cal-mx-x-p">
                                             <td></td>
                                             <td></td>
@@ -193,6 +195,7 @@
                                 </div>
                             </div>
                             <div class="col-1">
+                            
                             </div>
                             <div class="col-3">
                                 <div class="cal-service-slot row">
@@ -224,6 +227,7 @@
             // schedule-save-btn clicked
             $('.schedule-save-btn').on('click', function(event) {
                 event.preventDefault();
+
                 var formData = new FormData();
                 formData.append('morningSlotStart', $('#morningSlotStart').val());
                 formData.append('morningSlotEnd', $('#morningSlotEnd').val());
@@ -240,6 +244,7 @@
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
                 formData.append('id', $('#id').val());               
                 // var dksjfos = "{{ url('rapid-pcr-center-administratorpremium/update') }}"+"/"+$('#id').val();
+
                 // alert(dksjfos);
                 $.ajax({
                     method: 'POST',
@@ -289,15 +294,19 @@
                 });
             });
         });
+
+
         // Auto wantToServePerDay Calculation
         function wantToServePerDay() {
             var maxPcrServe = parseInt(document.getElementById('max-pcr-serve').innerHTML);
-            var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
-            var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
-            var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
+            // var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
+            // var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
+            var wantToServePerDay = maxPcrServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
+
         wantToServePerDay();
+
         function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
             var trustedMedicalAssistantForPcr = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
@@ -307,43 +316,50 @@
             wantToServePerDay();
             setTotalManMinutePerDay()
         }
-        function setMaxVaccineService() {
-            var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
-            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
-            var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
-            document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
-            wantToServePerDay();
-            setTotalManMinutePerDay();
-        }
-        function setMaxBoosterService() {
-            var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
-            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
-            var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
-            var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
-            document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
-            wantToServePerDay();
-            setTotalManMinutePerDay();
-        }
+
+        // function setMaxVaccineService() {
+        //     var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
+        //     var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+        //     var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
+        //     var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
+        //     document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
+        //     wantToServePerDay();
+        //     setTotalManMinutePerDay();
+        // }
+
+        // function setMaxBoosterService() {
+        //     var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
+        //     var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+        //     var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
+        //     var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
+        //     document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
+        //     wantToServePerDay();
+        //     setTotalManMinutePerDay();
+        // }
+
         function setTotalManMinutePerDay() {
             var trustedMedicalAssistantForPcr     = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
-            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
-            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+            // var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+            // var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+trustedMedicalAssistantForVaccine+trustedMedicalAssistantForBooster;
+            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }
+
         function setTotalMinute() {
             var totalMorningSlotTime = parseInt(document.getElementById('totalMorningSlotTime').innerHTML);
             var totalDaySlotTime = parseInt(document.getElementById('totalDaySlotTime').innerHTML);
             document.getElementById('totalMinute').innerHTML = totalMorningSlotTime + totalDaySlotTime;
+            
 
         }
+
         function setMorningSlotTime() {
             var morningSlotStart = document.getElementById('morningSlotStart').value;
             var morningSlotEnd = document.getElementById('morningSlotEnd').value;
-            //create minute format
+
+            //create minute format          
             var timeStart = new Date("01/01/2007 " + morningSlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + morningSlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
@@ -353,15 +369,18 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalMorningSlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
+
         }
+
         function setDaySlotTime() {
             var daySlotStart = document.getElementById('daySlotStart').value;
             var daySlotEnd = document.getElementById('daySlotEnd').value;
-            //create minute format
+
+            //create minute format          
             var timeStart = new Date("01/01/2007 " + daySlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + daySlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
@@ -371,8 +390,8 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalDaySlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
         }

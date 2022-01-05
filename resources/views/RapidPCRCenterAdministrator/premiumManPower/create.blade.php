@@ -16,7 +16,7 @@
                 <div class="row">
                     <h1 class="cal-header">Premium Manpower Schedule</h1>
                     <div class="cal-body ">
-
+                        
                         <div class="calendar calendar-first p-5" id="calendar_first">
                             <div class="calendar_header">
                                 <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
@@ -33,7 +33,7 @@
                                 <p class="morning">Morning Slot</p>
                                 <div class="cal-morn-in">
                                     <input type="time" class="cal-morn-in-left" min="01:00" max="12:00" id="morningSlotStart" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_starting_time }}" @endif
-                                    name="morningSlotStart"> -
+                                        name="morningSlotStart"> -
                                     <input type="time" class="cal-morn-in-left" min="10:00" max="15:00" id="morningSlotEnd" onchange="setMorningSlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->morning_ending_time }}" @endif name="morningSlotEnd">
                                 </div>
                                 @php
@@ -51,9 +51,9 @@
                                 <p class="day">Day Slot</p>
                                 <div class="cal-day-in">
                                     <input type="time" class="cal-morn-day-right" min="13:00" max="18:00" id="daySlotStart" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_starting_time }}" @endif
-                                    name="daySlotStart"> -
+                                        name="daySlotStart"> -
                                     <input type="time" class="cal-morn-day-right" min="16:00" max="24:00"  id="daySlotEnd" onchange="setDaySlotTime()" @if ($manPowerSchedule) value="{{ $manPowerSchedule->day_ending_time }}" @endif
-                                    name="daySlotEnd">
+                                        name="daySlotEnd">
                                 </div>
                                 @php
                                     if ($manPowerSchedule) {
@@ -132,13 +132,12 @@
                                                 </p>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        {{-- <tr>
                                             <td class="cal-x-y">
                                                 <p class="p-mx"> Vaccine </p>
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mxx"> <input type="number" class="cal-min-t"
-
                                                         onchange="setMaxVaccineService()" id="timeForVaccine"
                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->vaccine_time }}" @endif name="timeForVaccine"> <small
                                                         class="s-cx">min</small></p>
@@ -188,7 +187,8 @@
                                                     {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
                                                 </p>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
+                                        
                                         <tr class="cal-mx-x-p">
                                             <td></td>
                                             <td></td>
@@ -204,6 +204,7 @@
                                 </div>
                             </div>
                             <div class="col-1">
+                            
                             </div>
                             <div class="col-3">
                                 <div class="cal-service-slot row">
@@ -218,20 +219,20 @@
                                 </div>
                             </div>
                         </div>
-
+                        
 
                         <div class="row mb-5 mt-5 offset-2">
                             <div class="col-5">
                                 <div class="form-group">
                                     <label for="fromDate">From Date</label>
                                     <input type="date" name="fromDate" class="form-control" id="fromDate" />
-                                </div>
+                                </div>                                                
                             </div>
                             <div class="col-5">
                                 <div class="form-group">
                                     <label for="toDate">To Date</label>
                                     <input type="date" name="toDate" class="form-control" id="toDate" />
-                                </div>
+                                </div>                                                
                             </div>
                         </div>
                         <div class="cal-save">
@@ -251,6 +252,7 @@
             // schedule-save-btn clicked
             $('.schedule-save-btn').on('click', function(event) {
                 event.preventDefault();
+
                 var formData = new FormData();
                 formData.append('morningSlotStart', $('#morningSlotStart').val());
                 formData.append('morningSlotEnd', $('#morningSlotEnd').val());
@@ -263,10 +265,11 @@
                 // formData.append('trustedMedicalAssistantForVaccine', $('#trustedMedicalAssistantForVaccine').val());
                 // formData.append('trustedMedicalAssistantForBooster', $('#trustedMedicalAssistantForBooster').val());
                 formData.append('fromDate', $('#fromDate').val());
-                formData.append('toDate', $('#toDate').val());
-                // formData.append('booster_available_set', $('#max-booster-serve').text());
-                // formData.append('vaccine_available_set', $('#max-vaccine-serve').text());
-                formData.append('pcr_available_set', $('#max-pcr-serve').text());
+                formData.append('toDate', $('#toDate').val());               
+                // formData.append('booster_available_set', $('#max-booster-serve').text());               
+                // formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
+                formData.append('pcr_available_set', $('#max-pcr-serve').text());               
+
                 $.ajax({
                     method: 'POST',
                     url: "{{ url('rapid-pcr-center-administrator/premium/store') }}",
@@ -315,24 +318,29 @@
                 });
             });
         });
+
         // Auto wantToServePerDay Calculation
         function wantToServePerDay() {
             var maxPcrServe = parseInt(document.getElementById('max-pcr-serve').innerHTML);
-            var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
-            var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
-            var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
+            // var maxVaccineServe = parseInt(document.getElementById('max-vaccine-serve').innerHTML);
+            // var maxBoosterServe = parseInt(document.getElementById('max-booster-serve').innerHTML);
+            var wantToServePerDay = maxPcrServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
+
         wantToServePerDay();
+
         function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
             var trustedMedicalAssistantForPcr = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
             var totalMinute = parseInt(document.getElementById('totalMinute').innerHTML);
+
             var manPowerMinuteForPcr = totalMinute * trustedMedicalAssistantForPcr;
             document.getElementById('max-pcr-serve').innerHTML = parseInt(manPowerMinuteForPcr / timeForPcr) ;
             wantToServePerDay();
             setTotalManMinutePerDay()
         }
+
         // function setMaxVaccineService() {
         //     var timeForVaccine = parseInt(document.getElementById('timeForVaccine').value);
         //     var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
@@ -342,6 +350,7 @@
         //     wantToServePerDay();
         //     setTotalManMinutePerDay();
         // }
+
         // function setMaxBoosterService() {
         //     var timeForBooster = parseInt(document.getElementById('timeForBooster').value);
         //     var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
@@ -351,26 +360,30 @@
         //     wantToServePerDay();
         //     setTotalManMinutePerDay();
         // }
+
         function setTotalManMinutePerDay() {
             var trustedMedicalAssistantForPcr     = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
-            var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
-            var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+            // var trustedMedicalAssistantForVaccine = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+            // var trustedMedicalAssistantForBooster = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
             var totalMinute         = document.getElementById('totalMinute').innerHTML;
-
-            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr+trustedMedicalAssistantForVaccine+trustedMedicalAssistantForBooster;
+            var totalTrustedMedicalAssistant = trustedMedicalAssistantForPcr;
             document.getElementById('totalManMinutePerDay').innerHTML = totalMinute * totalTrustedMedicalAssistant;
 
         }
+
         function setTotalMinute() {
             var totalMorningSlotTime = parseInt(document.getElementById('totalMorningSlotTime').innerHTML);
             var totalDaySlotTime = parseInt(document.getElementById('totalDaySlotTime').innerHTML);
             document.getElementById('totalMinute').innerHTML = totalMorningSlotTime + totalDaySlotTime;
+            
 
         }
+
         function setMorningSlotTime() {
             var morningSlotStart = document.getElementById('morningSlotStart').value;
             var morningSlotEnd = document.getElementById('morningSlotEnd').value;
-            //create minute format
+
+            //create minute format          
             var timeStart = new Date("01/01/2007 " + morningSlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + morningSlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
@@ -380,15 +393,18 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalMorningSlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
+
         }
+
         function setDaySlotTime() {
             var daySlotStart = document.getElementById('daySlotStart').value;
             var daySlotEnd = document.getElementById('daySlotEnd').value;
-            //create minute format
+
+            //create minute format          
             var timeStart = new Date("01/01/2007 " + daySlotStart).getMinutes();
             var timeEnd = new Date("01/01/2007 " + daySlotEnd).getMinutes();
             var minuteDifferent = timeEnd - timeStart;
@@ -398,8 +414,8 @@
             var actualMinute = (hourDifferent * 60) + minuteDifferent;
             document.getElementById('totalDaySlotTime').innerHTML = actualMinute;
             setMaxPcrService();
-            setMaxVaccineService();
-            setMaxBoosterService();
+            // setMaxVaccineService();
+            // setMaxBoosterService();
             setTotalMinute();
             setTotalManMinutePerDay()
         }
