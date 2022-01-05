@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Receptionist;
+namespace App\Http\Controllers\RapidPCRCenterReceptionist;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
@@ -51,14 +51,14 @@ class TrustedPeopleController extends Controller
             'user_type'  => 'required',
             'phone'  => 'required',
             'nid'  => 'required',
-            'center_id'  => 'required',
+            'rapid_pcr_center_id'  => 'required',
         ]);
 
         $user = new User();
         $user->phone = $request->phone;
         $user->otp = rand(100000, 1000000);
         $user->user_type = $request->user_type;
-        $user->center_id = $request->center_id;
+        $user->rapid_pcr_center_id = $request->rapid_pcr_center_id;
         if ($user->save()) {
             try {
                 // send sms via helper function

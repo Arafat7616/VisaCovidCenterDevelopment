@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Receptionist;
+namespace App\Http\Controllers\RapidPCRCenterReceptionist;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -11,6 +11,6 @@ class NewRegistrationController extends Controller
 {
     public  function index()
     {
-        return view('Receptionist.new-registration.index');
+        return view('RapidPCRCenterReceptionist.new-registration.index');
     }
 }
