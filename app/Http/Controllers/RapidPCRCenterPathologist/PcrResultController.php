@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class PcrResultController extends Controller
 {
     public function waiting(){
-        $pcrTests = PcrTest::where('center_id', Auth::user()->center_id)->where('pcr_result', null)->orderBy('created_at', 'DESC')->get();
+        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', null)->orderBy('created_at', 'DESC')->get();
         return view('RapidPCRCenterPathologist.pcrResult.waiting', compact('pcrTests'));
     }
 
     public function published(){
-        $pcrTests = PcrTest::where('center_id', Auth::user()->center_id)->where('pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
+        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
         return view('RapidPCRCenterPathologist.pcrResult.published', compact('pcrTests'));
     }
 

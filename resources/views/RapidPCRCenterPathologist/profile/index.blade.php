@@ -30,17 +30,17 @@
                                     <h5>Phone</h5>
                                     <h5>Post</h5>
                                     <h5>Age</h5>
-                                    <h5>Center</h5>
-                                    <h5>Center ID</h5>
+                                    <h5>Rapid PCR Center</h5>
+                                    <h5>Rapid PCR Center ID</h5>
                                 </div>
                                 <div class="col-6 details-value">
                                     <h5>{{ $user->id }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>Pathologist</h5>
+                                    <h5>Rapid PCR Pathologist</h5>
                                     <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
                                     </h5>
-                                    <h5>{{ $user->center->name }}</h5>
-                                    <h5>{{ $user->center_id }}</h5>
+                                    <h5>{{ $user->rapidPcrCenter->name }}</h5>
+                                    <h5>{{ $user->rapid_pcr_center_id }}</h5>
                                 </div>
                             </div>
                         </div>
