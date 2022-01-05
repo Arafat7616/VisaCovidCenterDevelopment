@@ -62,7 +62,7 @@
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <input type="hidden" id="center_id" name="center_id" value="{{ Auth::user()->center_id }}">
+                                    <input type="hidden" id="rapid_pcr_center_id" name="rapid_pcr_center_id" value="{{ Auth::user()->rapid_pcr_center_id }}">
                                     <input type="hidden" id="user_type" name="user_type" value="user">
 
                                     <div class="submit-button text-center">
@@ -157,7 +157,7 @@
                 formData.append('user_type', $('#user_type').val());
                 formData.append('phone', $('#phone').val());
                 formData.append('nid', $('#nid').val());
-                formData.append('center_id', $('#center_id').val());
+                formData.append('rapid_pcr_center_id', $('#rapid_pcr_center_id').val());
 
 
                 $.ajax({

@@ -26,6 +26,11 @@ class Vaccination extends Model
         return $this->belongsTo(Center::class, 'center_id');
     }
 
+    public function rapidPcrCenter()
+    {
+        return $this->belongsTo(RapidPCRCenter::class, 'rapid_pcr_center_id');
+    }
+    
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

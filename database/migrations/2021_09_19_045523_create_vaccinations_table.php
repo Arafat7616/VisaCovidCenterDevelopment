@@ -25,6 +25,7 @@ class CreateVaccinationsTable extends Migration
             $table->enum('status', [0,1]);
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('center_id')->nullable();
+            $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('first_served_by_id')->nullable();
             $table->unsignedBigInteger('second_served_by_id')->nullable();
 
@@ -38,6 +39,7 @@ class CreateVaccinationsTable extends Migration
             $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.
