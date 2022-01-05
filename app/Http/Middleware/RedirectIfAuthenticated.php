@@ -31,6 +31,8 @@ class RedirectIfAuthenticated
                     return redirect(RouteServiceProvider::TrustedMedicalAssistantDashboard);
                 } elseif (Auth::user()->user_type == 'rapid-pcr-center-administrator') {
                   return redirect(RouteServiceProvider::RapidPcrCenterAdministratorDashboard);
+                } elseif (Auth::user()->user_type == 'rapid-pcr-center-pathologist') {
+                  return redirect(RouteServiceProvider::RapidPCRCenterPathologistDashboard);
                 } elseif (Auth::user()->user_type == 'administrator') {
                   return redirect(RouteServiceProvider::AdministratorDashboard);
                 } elseif (Auth::user()->user_type == 'immigration-officer') {

@@ -42,6 +42,10 @@ class ConfirmPasswordController extends Controller
                 return 'trusted-medical-assistant/dashboard';
             } elseif (Auth::user()->user_type == 'administrator') {
                 return 'administrator/dashboard';
+            } elseif (Auth::user()->user_type == 'rapid-pcr-center-administrator') {
+                return 'rapid-pcr-center-administrator/dashboard';
+            } elseif (Auth::user()->user_type == 'rapid-pcr-center-pathologist') {
+                return 'rapid-pcr-center-pathologist/dashboard';
             } elseif (Auth::user()->user_type == 'immigration-officer') {
                 return 'immigration-officer/dashboard';
             } elseif (Auth::user()->user_type == 'bd-govt') {

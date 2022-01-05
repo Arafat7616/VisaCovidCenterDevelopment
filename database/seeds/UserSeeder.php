@@ -118,5 +118,17 @@ class UserSeeder extends Seeder
         $user->rapid_pcr_center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
+
+        // RT-PCR Pathologist
+        $user = new User();
+        $user->name = 'RT-PCR Pathologist';
+        $user->email = 'rtpcr-pathologist@gmail.com';
+        $user->phone = '0174223344'; //random 
+        $user->password = Hash::make('12345');
+        $user->user_type = 'rapid-pcr-center-pathologist';
+        $user->status = true;
+        $user->rapid_pcr_center_id = 1;
+        $user->otp = rand(5, 9999);
+        $user->save();
     }
 }
