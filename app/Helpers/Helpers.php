@@ -95,9 +95,14 @@ if (!function_exists('random_code')){
         return true;
     }
 
-    function get_total_volenteers()
+    function get_total_trusted_medical_assistants()
     {
         return User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
+    }
+
+    function get_total_rapid_pcr_trusted_medical_assistants()
+    {
+        return User::where('user_type', 'rapid-prc-center-trusted-medical-assistant')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->count();
     }
 
     function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_trusted_medical_assistants)

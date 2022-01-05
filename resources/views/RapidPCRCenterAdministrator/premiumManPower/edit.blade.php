@@ -63,7 +63,7 @@
                                 @php
                                     if ($manPowerSchedule) {
                                         $totalDayMinutes = $morning_slot_minutes + $day_slot_minutes;
-                                        $totalManMinutePerDay = $totalDayMinutes * get_total_volenteers();
+                                        $totalManMinutePerDay = $totalDayMinutes * get_total_rapid_pcr_trusted_medical_assistants();
                                     }
                                 @endphp
                                 <li class="cal-min-r totalMinute" id="totalMinute">{{ $totalDayMinutes ?? '' }}</li>
