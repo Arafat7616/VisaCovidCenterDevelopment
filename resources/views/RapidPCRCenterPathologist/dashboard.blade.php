@@ -1,4 +1,4 @@
-@extends('Pathologist.layouts.master')
+@extends('RapidPCRCenterPathologist.layouts.master')
 
 @push('title')
     Dashboard

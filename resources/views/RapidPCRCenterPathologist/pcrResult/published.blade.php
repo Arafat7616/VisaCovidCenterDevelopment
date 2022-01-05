@@ -1,4 +1,4 @@
-@extends('Pathologist.layouts.master')
+@extends('RapidPCRCenterPathologist.layouts.master')
 
 @push('title')
     Published List
@@ -34,9 +34,9 @@
                                 <div class="row justify-content-between">
                                     <div class="col-4">
                                         <div class="accorion-link mt-2" id='active-div'>
-                                            <a href="{{ route('pathologist.pcrResult.waiting') }}"
+                                            <a href="{{ route('rapidPCRCenterPathologist.pcrResult.waiting') }}"
                                                 class="accorion-btn">Waiting</a>
-                                            <a href="{{ route('pathologist.pcrResult.published') }}"
+                                            <a href="{{ route('rapidPCRCenterPathologist.pcrResult.published') }}"
                                                 class="accorion-btn breadcrumb-active">Published</a>
                                         </div>
                                     </div>
@@ -243,7 +243,7 @@
                 var pcrId = $(this).parent().parent().find('.pcr-test-id').text();
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('pathologist/pcr-result/get-pcr-details') }}/" + pcrId,
+                    url: "{{ url('rapid-pcr-center-pathologist/pcr-result/get-pcr-details') }}/" + pcrId,
                     success: function(res) {
                         if (res.type == 'success') {
                             // res.data.user
@@ -315,7 +315,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: "{{ url('pathologist/pcr-result/update') }}/" + pcrId,
+                    url: "{{ url('rapid-pcr-center-pathologist/pcr-result/update') }}/" + pcrId,
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
