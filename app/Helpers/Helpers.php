@@ -120,5 +120,14 @@ if (!function_exists('random_code')){
         $available_person = $after_minus_space/$person_sft_cal;
         return intval($available_person/3);
     }
+    function get_available_service_per_day_in_rtpcr_center($center_space)
+    {
+        $person_sft_cal = get_static_option('sft_per_person');
+        $other_sft = get_static_option('others_sft');
+
+        $after_minus_space = $center_space - $other_sft;
+        $available_person = $after_minus_space/$person_sft_cal;
+        return intval($available_person);
+    }
    
 }
