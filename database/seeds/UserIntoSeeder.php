@@ -67,5 +67,37 @@ class UserIntoSeeder extends Seeder
         $userInfo->city_id = 7264;
         $userInfo->user_id = 17;
         $userInfo->save();
+
+        $userInfo = new UserInfo();
+        $userInfo->dob = null;
+        $userInfo->gender = null;
+        $userInfo->nid_no =  null;
+        $userInfo->passport_no = null;
+        $userInfo->father_name = null;
+        $userInfo->mother_name = null;
+        $userInfo->blood_group = null;
+        $userInfo->present_address = null;
+        $userInfo->permanent_address = null;
+        $userInfo->country_id = 18;
+        $userInfo->state_id = 338;
+        $userInfo->city_id = 7264;
+        $userInfo->user_id = 18;
+        $userInfo->save();
+
+        $userInfo = new UserInfo();
+        $userInfo->dob = null;
+        $userInfo->gender = null;
+        $userInfo->nid_no =  null;
+        $userInfo->passport_no = null;
+        $userInfo->father_name = null;
+        $userInfo->mother_name = null;
+        $userInfo->blood_group = null;
+        $userInfo->present_address = null;
+        $userInfo->permanent_address = null;
+        $userInfo->country_id = 18;
+        $userInfo->state_id = 338;
+        $userInfo->city_id = 7264;
+        $userInfo->user_id = 19;
+        $userInfo->save();
     }
 }

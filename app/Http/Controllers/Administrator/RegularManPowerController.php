@@ -44,7 +44,7 @@ class RegularManPowerController extends Controller
 
         
         $avaiable =  get_available_service_per_day(auth()->user()->center->space);
-        if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
+        if ($request->booster_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
             $d1 = strtotime($request->fromDate);
             $d2 = strtotime($request->toDate);
             $totalDiffDays = abs($d1-$d2)/60/60/24;
@@ -115,7 +115,7 @@ class RegularManPowerController extends Controller
         ]);
 
         $avaiable =  get_available_service_per_day(auth()->user()->center->space);
-        if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
+        if ($request->booster_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
             $manPowerSchedule = ManPowerSchedule::findOrFail($id);
         
             $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
