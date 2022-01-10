@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RapidPcrCenterAdministrator
+class RapidPCRCenterAdministrator
 {
     /**
      * Handle an incoming request.

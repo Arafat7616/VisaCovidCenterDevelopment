@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     New Registraton
@@ -135,7 +135,7 @@
                 </div>
                 <div class="row w-100">
                     <div id="complete_button" class="text-center mt-4">
-                        <a href="{{route('receptionist.qrScan')}}" class="btn btn-success w-25">Done</a>
+                        <a href="{{route('rapidPcrCenterReceptionist.qrScan')}}" class="btn btn-success w-25">Done</a>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/receptionist/trustedPeople',
+                    url: '/rapid-pcr-center-receptionist/trustedPeople',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -213,7 +213,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/receptionist/trustedPeople/verification',
+                    url: '/rapid-pcr-center-receptionist/trustedPeople/verification',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -255,7 +255,7 @@
 
                 $.ajax({
                     method: 'POST',
-                    url: '/receptionist/trustedPeople/resend-otp',
+                    url: '/rapid-pcr-center-receptionist/trustedPeople/resend-otp',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

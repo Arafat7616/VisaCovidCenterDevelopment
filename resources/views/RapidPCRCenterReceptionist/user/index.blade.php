@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     User's
@@ -245,7 +245,7 @@
                 var userId = $(this).parent().find('.user-id').text();
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('receptionist/user-get/') }}/" + userId,
+                    url: "{{ url('rapid-pcr-center-receptionist/user-get/') }}/" + userId,
                     success: function(res) {
                         if (res.type == 'success') {
                             // console.log(res.data.pcrTest);

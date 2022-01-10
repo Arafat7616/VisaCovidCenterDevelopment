@@ -15,7 +15,7 @@
                 @php
                     $user = Session::get('user');
                     $phone = $user->phone;
-                    $centerId = $user->center_id;
+                    $centerId = $user->rapid_pcr_center_id;
                     $info = $phone."_".$centerId;
 
                 @endphp

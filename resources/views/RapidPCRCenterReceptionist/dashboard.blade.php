@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     Dashboard

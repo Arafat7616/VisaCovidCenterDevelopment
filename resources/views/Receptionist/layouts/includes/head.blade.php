@@ -4,7 +4,7 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link rel="shortcut icon" href=" {{ asset('assets/super-admin/images/favicon.ico') }}">
+<link rel="shortcut icon" href="{{ asset(get_static_option('favicon') ?? get_static_option('no_image')) }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/header.css') }}">

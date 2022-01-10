@@ -46,6 +46,8 @@ class VerificationController extends Controller
                 return 'rapid-pcr-center-administrator/dashboard';
             } elseif (Auth::user()->user_type == 'rapid-pcr-center-pathologist') {
                 return 'rapid-pcr-center-pathologist/dashboard';
+            } elseif (Auth::user()->user_type == 'rapid-pcr-center-receptionist') {
+                return 'rapid-pcr-center-receptionist/dashboard';
             } elseif (Auth::user()->user_type == 'immigration-officer') {
                 return 'immigration-officer/dashboard';
             } elseif (Auth::user()->user_type == 'bd-govt') {

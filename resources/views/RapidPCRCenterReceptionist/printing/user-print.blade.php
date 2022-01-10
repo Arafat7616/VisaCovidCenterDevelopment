@@ -56,7 +56,7 @@
                     <div class="new_registration__body px-3">
                         @if ($user->vaccination)
                             <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
-                            <span>Vaccine Center: {{ $user->vaccination->rapidPcrCenter->name }}</span> <br>
+                            <span>Vaccine Center: {{ $user->vaccination->rapidPcrCenter->name ?? '' }}</span> <br>
                             <span>Served By: {{ $user->vaccination->first_served_by_id }}</span> <br>
                             <span>Date: {{ $user->vaccination->date_of_first_dose }}</span>
                         @endif
@@ -67,7 +67,7 @@
                     <div class="new_registration__body px-3">
                         @if ($user->vaccination)
                             <span>{{ $user->vaccination->name_of_vaccine }}</span> <br>
-                            <span>Vaccine Center: {{ $user->vaccination->rapidPcrCenter->name }}</span> <br>
+                            <span>Vaccine Center: {{ $user->vaccination->rapidPcrCenter->name ?? '' }}</span> <br>
                             <span>Served By: {{ $user->vaccination->second_served_by_id }}</span> <br>
                             <span>Date: {{ $user->vaccination->date_of_second_dose }}</span>
                         @endif
@@ -78,7 +78,7 @@
                     <div class="new_registration__body px-3">
                         @if ($user->booster)
                             <span>{{ $user->booster->name_of_vaccine }}</span> <br>
-                            <span>Vaccine Center: {{ $user->booster->rapidPcrCenter->name }}</span> <br>
+                            <span>Vaccine Center: {{ $user->booster->rapidPcrCenter->name ?? '' }}</span> <br>
                             <span>Served By: {{ $user->booster->served_by_id }}</span> <br>
                             <span>Date: {{ $user->booster->date }}</span>
                         @endif
@@ -104,7 +104,7 @@
                     <h5 class="new_registration__head new_registration__border">Authorised</h5>
                     <div class="new_registration__body px-3">
                         @if ($user->pcrTest)
-                            <span>Medical Center: {{ $user->pcrTest->rapidPcrCenter->name }}</span> <br>
+                            <span>Medical Center: {{ $user->pcrTest->rapidPcrCenter->name ?? '' }}</span> <br>
                             <span>Served By: {{ $user->pcrTest->tested_by }}</span> <br>
                             <span>System: {{ config('app.name') }}</span>
                         @endif
