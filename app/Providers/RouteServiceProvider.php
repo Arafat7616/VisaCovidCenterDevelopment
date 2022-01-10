@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
     public const AdministratorDashboard = 'administrator/dashboard';
     public const RapidPcrCenterAdministratorDashboard = 'rapid-pcr-center-administrator/dashboard';
     public const RapidPCRCenterPathologistDashboard = 'rapid-pcr-center-pathologist/dashboard';
+    public const RapidPCRCenterReceptionistDashboard = 'rapid-pcr-center-receptionist/dashboard';
     public const PathologistDashboard = 'pathologist/dashboard';
     public const ReceptionistDashboard = 'receptionist/dashboard';
     public const SuperAdminDashboard = 'super-admin/dashboard';

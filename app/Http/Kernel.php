@@ -11,6 +11,7 @@ use App\Http\Middleware\TrustedMedicalAssistant;
 use App\Http\Middleware\ImmigrationOfficer;
 use App\Http\Middleware\RapidPcrCenterAdministrator;
 use App\Http\Middleware\RapidPCRCenterPathologist;
+use App\Http\Middleware\RapidPCRCenterReceptionist;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -85,5 +86,6 @@ class Kernel extends HttpKernel
 
         'rapidPcrCenterAdministrator' => RapidPcrCenterAdministrator::class,
         'rapidPcrCenterPathologist' => RapidPCRCenterPathologist::class,
+        'rapidPcrCenterReceptionist' => RapidPCRCenterReceptionist::class,
     ];
 }
