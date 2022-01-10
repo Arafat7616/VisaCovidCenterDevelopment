@@ -1,7 +1,7 @@
 <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" target="_blank" href="{{ route('frontend.index') }}">
                 <img height="40px;" width="60px;" src="{{ asset(get_static_option('logo') ?? get_static_option('no_image')) }}" alt="logo" class="img-fluid header-logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
