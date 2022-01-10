@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     Trusted Profile
@@ -36,7 +36,7 @@
                                 <div class="col-6 details-value">
                                     <h5>{{ $user->id }}</h5>
                                     <h5>{{ $user->phone }}</h5>
-                                    <h5>Receptionist</h5>
+                                    <h5>Rapid PCR Center Receptionist</h5>
                                     <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
                                     </h5>
                                     <h5>{{ $user->rapidPcrCenter->name }}</h5>
