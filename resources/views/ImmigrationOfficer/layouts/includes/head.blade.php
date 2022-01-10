@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link rel="shortcut icon" href="{{ asset('assets/super-admin/images/favicon.ico') }}">
+<link rel="shortcut icon" href="{{ asset(get_static_option('favicon') ?? get_static_option('no_image')) }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/bootstrap.min.css') }}">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
