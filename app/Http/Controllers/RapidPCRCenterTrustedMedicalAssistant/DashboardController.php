@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\TrustedMedicalAssistant;
+namespace App\Http\Controllers\RapidPCRCenterTrustedMedicalAssistant;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,12 +10,12 @@ class DashboardController extends Controller
 {
     public function dashboard(){
 
-        return redirect()->route('trustedMedicalAssistant.user.pcr');
-        // return view('TrustedMedicalAssistant.dashboard');
+        return redirect()->route('rapidPcrCenterTrustedMedicalAssistant.user.pcr');
+        // return view('RapidPCRCenterTrustedMedicalAssistant.dashboard');
     }
 
     public function profile(){
         $user = Auth::user();
-        return view('TrustedMedicalAssistant.profile.index', compact('user'));
+        return view('RapidPCRCenterTrustedMedicalAssistant.profile.index', compact('user'));
     }
 }
