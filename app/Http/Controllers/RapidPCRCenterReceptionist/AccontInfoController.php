@@ -34,9 +34,6 @@ class AccontInfoController extends Controller
         $user->save();
 
         Session::flash('message', 'Successfully created!');
-
-//        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
         return redirect()->route('rapidPcrCenterReceptionist.dashboard');
-
     }
 }
