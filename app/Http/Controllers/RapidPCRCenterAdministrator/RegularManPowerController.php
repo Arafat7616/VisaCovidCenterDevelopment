@@ -33,18 +33,18 @@ class RegularManPowerController extends Controller
             'daySlotStart' => 'required',
             'daySlotEnd' => 'required',
             'timeForPcr' => 'required',
-            'timeForVaccine' => 'required',
-            'timeForBooster' => 'required',
+            // 'timeForVaccine' => 'required',
+            // 'timeForBooster' => 'required',
             'trustedMedicalAssistantForPcr' => 'required',
-            'trustedMedicalAssistantForVaccine' => 'required',
-            'trustedMedicalAssistantForBooster' => 'required',
+            // 'trustedMedicalAssistantForVaccine' => 'required',
+            // 'trustedMedicalAssistantForBooster' => 'required',
             'fromDate' => 'required',
             'toDate' => 'required',
         ]);
 
         
-        $avaiable =  get_available_service_per_day(auth()->user()->rapidPcrCenter->space);
-        if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
+        $avaiable =  get_available_service_per_day_in_rtpcr_center(auth()->user()->rapidPcrCenter->space);
+        if ($request->pcr_available_set <= $avaiable) {
             $d1 = strtotime($request->fromDate);
             $d2 = strtotime($request->toDate);
             $totalDiffDays = abs($d1-$d2)/60/60/24;
@@ -60,8 +60,7 @@ class RegularManPowerController extends Controller
                 } else {
                     $manPowerSchedule = new ManPowerSchedule();
                 }
-    
-                
+                   
             
                 $manPowerSchedule->type                     = 'normal';
                 $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
@@ -114,8 +113,8 @@ class RegularManPowerController extends Controller
             // 'trustedMedicalAssistantForBooster' => 'required',
         ]);
 
-        $avaiable =  get_available_service_per_day(auth()->user()->rapidPcrCenter->space);
-        if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->pcr_available_set <= $avaiable) {
+        $avaiable =  get_available_service_per_day_in_rtpcr_center(auth()->user()->rapidPcrCenter->space);
+        if ($request->pcr_available_set <= $avaiable) {
             $manPowerSchedule = ManPowerSchedule::findOrFail($id);
         
             $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
@@ -149,9 +148,7 @@ class RegularManPowerController extends Controller
                 'type' => 'error',
                 'message' => 'The Space are not available for this schedule!',
             ]);
-        }
-
-        
+        }        
     }
 
     public function destroy($id)
@@ -169,5 +166,4 @@ class RegularManPowerController extends Controller
             ]);
         }
     }
-
 }

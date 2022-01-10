@@ -28,12 +28,10 @@
     <div class="my-3 p-3">
         <div class="card-body shadow " style="margin-bottom: 120px;">
             <div class="row">
-                <h1 class="cal-header text-center">Premium Manpower Schedule <a class="btn btn-success"
-                                                                                href="{{ route('rapidPcrCenterAdministrator.premium.create') }}">Add new</a></h1>
+                <h1 class="cal-header text-center">Premium Manpower Schedule <a class="btn btn-success" href="{{ route('rapidPcrCenterAdministrator.premium.create') }}">Add new</a></h1>
                 <div>
-
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
-                           cellspacing="0" width="100%">
+                    cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -45,29 +43,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($manPowerSchedules as $manPowerSchedule)
-                        <tr>
-                            <td>{{ $manPowerSchedule->id }}</td>
-                            <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
-                            <td>{{ $manPowerSchedule->pcr_available_set }}</td>
-
-                            <td>{{ $manPowerSchedule->vaccine_available_set }}</td>
-                            <td>{{ $manPowerSchedule->booster_available_set }}</td>
-                            <td>{{ $manPowerSchedule->date }}</td>
-                            <td>{{ $manPowerSchedule->pcr_time }}</td>
-                            <td>{{ $manPowerSchedule->vaccine_time }}</td>
-                            <td>{{ $manPowerSchedule->booster_time }}</td>
-                            <td class="text-manPowerSchedule">
-                                <a class="btn btn-info"
-                                    href="{{ route('rapidPcrCenterAdministrator.premium.edit', $manPowerSchedule->id) }}">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('rapidPcrCenterAdministrator.premium.destroy', $manPowerSchedule->id) }}">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
+                            @foreach($manPowerSchedules as $manPowerSchedule)
+                            <tr>
+                                <td>{{ $manPowerSchedule->id }}</td>
+                                <td>{{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}</td>
+                                <td>{{ $manPowerSchedule->pcr_available_set }}</td>
+                                <td>{{ $manPowerSchedule->date }}</td>
+                                <td>{{ $manPowerSchedule->pcr_time }}</td>
+                                <td class="text-manPowerSchedule">
+                                    <a class="btn btn-info"
+                                        href="{{ route('rapidPcrCenterAdministrator.regular.edit', $manPowerSchedule->id) }}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('rapidPcrCenterAdministrator.regular.destroy', $manPowerSchedule->id) }}">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
 
                         </tbody>
                         <tfoot>
@@ -82,7 +75,6 @@
                         </tfoot>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>

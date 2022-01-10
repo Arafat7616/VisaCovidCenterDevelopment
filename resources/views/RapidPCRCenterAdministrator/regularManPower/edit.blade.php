@@ -63,7 +63,7 @@
                                 @php
                                     if ($manPowerSchedule) {
                                         $totalDayMinutes = $morning_slot_minutes + $day_slot_minutes;
-                                        $totalManMinutePerDay = $totalDayMinutes * get_total_volenteers();
+                                        $totalManMinutePerDay = $totalDayMinutes * get_total_rapid_pcr_trusted_medical_assistants();
                                     }
                                 @endphp
                                 <li class="cal-min-r totalMinute" id="totalMinute">{{ $totalDayMinutes ?? '' }}</li>
@@ -118,7 +118,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-pcr-serve">
-                                                    {{ get_available_service_per_day($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -146,7 +146,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-vaccine-serve">
-                                                    {{ get_available_service_per_day($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -174,7 +174,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-booster-serve">
-                                                    {{ get_available_service_per_day($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
                                                 </p>
                                             </td>
                                         </tr> --}}
@@ -233,13 +233,13 @@
                 formData.append('daySlotStart', $('#daySlotStart').val());
                 formData.append('daySlotEnd', $('#daySlotEnd').val());
                 formData.append('timeForPcr', $('#timeForPcr').val());
-                formData.append('timeForVaccine', $('#timeForVaccine').val());
-                formData.append('timeForBooster', $('#timeForBooster').val());
+                // formData.append('timeForVaccine', $('#timeForVaccine').val());
+                // formData.append('timeForBooster', $('#timeForBooster').val());
                 formData.append('trustedMedicalAssistantForPcr', $('#trustedMedicalAssistantForPcr').val());
-                formData.append('trustedMedicalAssistantForVaccine', $('#trustedMedicalAssistantForVaccine').val());
-                formData.append('trustedMedicalAssistantForBooster', $('#trustedMedicalAssistantForBooster').val());        
-                formData.append('booster_available_set', $('#max-booster-serve').text());               
-                formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
+                // formData.append('trustedMedicalAssistantForVaccine', $('#trustedMedicalAssistantForVaccine').val());
+                // formData.append('trustedMedicalAssistantForBooster', $('#trustedMedicalAssistantForBooster').val());        
+                // formData.append('booster_available_set', $('#max-booster-serve').text());               
+                // formData.append('vaccine_available_set', $('#max-vaccine-serve').text());               
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());               
                 formData.append('id', $('#id').val());               
                 // var dksjfos = "{{ url('rapid-pcr-center-administratorregular/update') }}"+"/"+$('#id').val();
