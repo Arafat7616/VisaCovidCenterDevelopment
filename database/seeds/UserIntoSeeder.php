@@ -52,7 +52,7 @@ class UserIntoSeeder extends Seeder
             $userInfo->save();
         }
 
-        for ($i = 17; $i <= 20; $i++) {
+        for ($i = 17; $i <= 21; $i++) {
             $userInfo = new UserInfo();
             $userInfo->dob = null;
             $userInfo->gender = null;

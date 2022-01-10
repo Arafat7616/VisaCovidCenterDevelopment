@@ -48,6 +48,8 @@ class ResetPasswordController extends Controller
                 return 'rapid-pcr-center-pathologist/dashboard';
             } elseif (Auth::user()->user_type == 'rapid-pcr-center-receptionist') {
                 return 'rapid-pcr-center-receptionist/dashboard';
+            } elseif (Auth::user()->user_type == 'rapid-pcr-center-trusted-medical-assistant') {
+                return 'rapid-pcr-center-trusted-medical-assistant/dashboard';
             } elseif (Auth::user()->user_type == 'immigration-officer') {
                 return 'immigration-officer/dashboard';
             } elseif (Auth::user()->user_type == 'bd-govt') {

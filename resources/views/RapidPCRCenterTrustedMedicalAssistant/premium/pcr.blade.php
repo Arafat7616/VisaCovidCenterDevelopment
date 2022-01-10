@@ -32,8 +32,8 @@
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
                                     <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
-                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a>
+                                    {{-- <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a> --}}
                                 </div>
                             </div>
                             <div class="col-4">
