@@ -1,4 +1,4 @@
-@extends('TrustedMedicalAssistant.layouts.master')
+@extends('RapidPCRCenterTrustedMedicalAssistant.layouts.master')
 
 @push('title')
     Trusted Profile

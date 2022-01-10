@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('TrustedMedicalAssistant.layouts.includes.head')
+    @include('RapidPCRCenterTrustedMedicalAssistant.layouts.includes.head')
 </head>
 
 
@@ -13,14 +13,14 @@
     </form>
     @endif
 
-    @include('TrustedMedicalAssistant.layouts.includes.navbar')
+    @include('RapidPCRCenterTrustedMedicalAssistant.layouts.includes.navbar')
     <div>
         @yield('content')
     </div>
 
-    @include('TrustedMedicalAssistant.layouts.includes.footer')
+    @include('RapidPCRCenterTrustedMedicalAssistant.layouts.includes.footer')
 
-    @include('TrustedMedicalAssistant.layouts.includes.foot')
+    @include('RapidPCRCenterTrustedMedicalAssistant.layouts.includes.foot')
 </body>
 
 </html>

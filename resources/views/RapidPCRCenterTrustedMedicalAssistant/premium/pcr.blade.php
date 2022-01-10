@@ -1,4 +1,4 @@
-@extends('TrustedMedicalAssistant.layouts.master')
+@extends('RapidPCRCenterTrustedMedicalAssistant.layouts.master')
 
 @push('title')
     PCR | Premium
@@ -31,9 +31,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.pcr') }}" class="accorion-btn breadcrumb-active">PCR</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn">Vaccine</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -83,7 +83,7 @@
                                                 <td>{{ $pcrTest->user->phone }}</td>
                                                 <td>{{ $pcrTest->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('trustedMedicalAssistant.payment.takePaymentFromUser', [$pcrTest->user_id, 'premium-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.payment.takePaymentFromUser', [$pcrTest->user_id, 'premium-pcr']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

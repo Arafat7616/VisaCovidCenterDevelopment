@@ -1,4 +1,4 @@
-@extends('TrustedMedicalAssistant.layouts.master')
+@extends('RapidPCRCenterTrustedMedicalAssistant.layouts.master')
 
 @push('title')
     Vaccine | Premium
@@ -31,9 +31,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.pcr') }}" class="accorion-btn">PCR</a>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn breadcrumb-active">Vaccine</a>
-                                    <a href="{{ route('trustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.pcr') }}" class="accorion-btn">PCR</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.vaccine') }}" class="accorion-btn breadcrumb-active">Vaccine</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.premium.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -88,7 +88,7 @@
                                                 <td>{{ $vaccination->user->phone }}</td>
                                                 <td>{{ $vaccination->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('trustedMedicalAssistant.payment.takePaymentFromUser', [$vaccination->user_id, 'premium-vaccine']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.payment.takePaymentFromUser', [$vaccination->user_id, 'premium-vaccine']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

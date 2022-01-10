@@ -1,4 +1,4 @@
-@extends('TrustedMedicalAssistant.layouts.master')
+@extends('RapidPCRCenterTrustedMedicalAssistant.layouts.master')
 
 @push('title')
     Vaccine | Registered
@@ -31,9 +31,9 @@
                         <div class="row justify-content-between">
                             <div class="col-4">
                                 <div class="accorion-link mt-2" id='active-div'>
-                                    <a href="{{ route('trustedMedicalAssistant.user.pcr') }}" class="accorion-btn">PCR</a>
-                                    <a href="{{ route('trustedMedicalAssistant.user.vaccine') }}" class="accorion-btn breadcrumb-active">Vaccine</a>
-                                    <a href="{{ route('trustedMedicalAssistant.user.booster') }}" class="accorion-btn">Booster</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.user.pcr') }}" class="accorion-btn">PCR</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.user.vaccine') }}" class="accorion-btn breadcrumb-active">Vaccine</a>
+                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.user.booster') }}" class="accorion-btn">Booster</a>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -81,7 +81,7 @@
                                                 <td>{{ $vaccination->user->phone }}</td>
                                                 <td>{{ $vaccination->user->userInfo->gender ?? '-' }}</td>
                                                 <td>
-                                                    <a href="{{ route('trustedMedicalAssistant.payment.takePaymentFromUser', [$vaccination->user_id, 'normal-vaccine']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
+                                                    <a href="{{ route('rapidPcrCenterTrustedMedicalAssistant.payment.takePaymentFromUser', [$vaccination->user_id, 'normal-vaccine']) }}"><i class="fa fa-sign-in-alt" style="font-size: 36px;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
