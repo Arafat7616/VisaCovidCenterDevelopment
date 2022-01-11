@@ -38,21 +38,24 @@
                                 <div class="col-xs-12">
                                     <table id="datatable-buttons" class="table table-striped table-bordered">
                                         <thead>
-                                        <tr>
-                                            <th>#SL</th>
-                                            <th>Title</th>
-                                            <th>Image</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-
+                                            <tr>
+                                                <th>#SL</th>
+                                                <th>Title</th>
+                                                <th>Minimum space</th>
+                                                <th>Maximum space</th>
+                                                <th>Category</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($centerAreas as $centerArea)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{$centerArea->title}}</td>
-                                                <td><img src="{{asset($centerArea->image)}}" alt="category Image" style="width: 110px;"></td>
+                                                <td>{{$centerArea->minimum_space}}</td>
+                                                <td>{{$centerArea->maximum_space}}</td>
+                                                <td>{{$centerArea->category}}</td>
                                                 <td><span class="label {{$centerArea->status ? 'label-success':'label-warning'}}">{{$centerArea->status ? 'Active':'Inactive'}}</span></td>
                                                 <td>
                                                     <a href="{{route('superAdmin.centerArea.edit', $centerArea->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
@@ -61,6 +64,17 @@
                                             </tr>
                                         @endforeach
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>#SL</th>
+                                                <th>Title</th>
+                                                <th>Minimum space</th>
+                                                <th>Maximum space</th>
+                                                <th>Category</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>

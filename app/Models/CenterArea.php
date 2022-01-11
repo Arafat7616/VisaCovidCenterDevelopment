@@ -9,7 +9,8 @@ class CenterArea extends Model
     protected $fillable = [
         'id',
         'title',
-        'space',
+        'minimum_space',
+        'maximum_space',
         'category',
         'status',
     ];

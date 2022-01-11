@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\CenterArea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CenterAreaController extends Controller
 {
@@ -26,7 +27,7 @@ class CenterAreaController extends Controller
      */
     public function create()
     {
-        //
+        return view('SuperAdmin.centerArea.create');
     }
 
     /**
@@ -37,7 +38,30 @@ class CenterAreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'minimum_space' => 'required',
+            'maximum_space' => 'required',
+            'category' => 'required',
+            'status' => 'required',
+        ]);
+
+        $centerArea = new CenterArea();
+        $centerArea->title = $request->title;
+        $centerArea->minimum_space = $request->minimum_space;
+        $centerArea->maximum_space = $request->maximum_space;
+        $centerArea->category = $request->category;
+        $centerArea->status = $request->status;
+
+        try {
+            $centerArea->save();
+            // return back()->withToastSuccess('Successfully saved.');
+            Session::flash('message', 'Successfully saved !');
+            Session::flash('type', 'success');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something went wrong. ' . $exception->getMessage());
+        }
     }
 
     /**
@@ -59,7 +83,8 @@ class CenterAreaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $centerArea = CenterArea::findOrfail($id);
+        return view('SuperAdmin.centerArea.edit', compact('centerArea'));
     }
 
     /**
@@ -71,7 +96,29 @@ class CenterAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'minimum_space' => 'required',
+            'maximum_space' => 'required',
+            'category' => 'required',
+            'status' => 'required',
+        ]);
+
+        $centerArea = CenterArea::findOrFail($id);
+        $centerArea->title = $request->title;
+        $centerArea->minimum_space = $request->minimum_space;
+        $centerArea->maximum_space = $request->maximum_space;
+        $centerArea->category = $request->category;
+        $centerArea->status = $request->status;
+
+        try {
+            $centerArea->save();
+            Session::flash('message', 'Successfully Updated !');
+            Session::flash('type', 'success');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something went wrong. ' . $exception->getMessage());
+        }
     }
 
     /**
@@ -82,6 +129,17 @@ class CenterAreaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $centerArea = CenterArea::findOrFail($id);
+        try {
+            $centerArea->delete();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Successfully Deleted !!',
+            ]);
+        }catch (\Exception $exception){
+            return response()->json([
+                'type' => 'error',
+            ]);
+        }
     }
 }

@@ -40,7 +40,6 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'title' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPG',
@@ -58,7 +57,6 @@ class SliderController extends Controller
         }
         $data['title'] = $request->title;
         $data['status'] = $request->status;
-
 
         try {
             Slider::create($data);
