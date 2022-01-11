@@ -21,12 +21,16 @@ class Center extends Model
         'status',
         'varification_status',
         'administrator_id',
-        'space',
+        'center_area_id',
     ];
 
     public function documents()
     {
         return $this->hasMany(CenterDocument::class, 'center_id');
+    }
+    public function area()
+    {
+        return $this->hasOne(CenterArea::class, 'center_area_id');
     }
 
     public function administrator()

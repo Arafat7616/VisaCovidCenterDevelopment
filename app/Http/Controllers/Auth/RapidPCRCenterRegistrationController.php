@@ -67,7 +67,7 @@ class RapidPCRCenterRegistrationController extends Controller
             $rapidPcrCenter->city_id = $request->city;
         }
         if (is_numeric($request->space)) {
-            $rapidPcrCenter->space = $request->space;
+            $rapidPcrCenter->area = $request->space;
         }
 
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenseNumber;

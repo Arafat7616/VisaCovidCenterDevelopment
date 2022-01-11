@@ -22,7 +22,7 @@ class RapidPCRCenter extends Model
         'status',
         'varification_status',
         'administrator_id',
-        'space',
+        'center_area_id',
     ];
 
     public function documents()
@@ -33,6 +33,10 @@ class RapidPCRCenter extends Model
     public function administrator()
     {
         return $this->belongsTo(User::class, 'administrator_id');
+    }
+    public function area()
+    {
+        return $this->hasOne(CenterArea::class, 'center_area_id');
     }
 
     public function country()

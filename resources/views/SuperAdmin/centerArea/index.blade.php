@@ -20,13 +20,11 @@
                     </div>
                 </div>
             </div>
-
             <div class="row m-b-15">
                 <div class="col-sm-12">
                     <a class="btn btn-primary" href="{{route('superAdmin.centerArea.create')}}"><i class="fa fa-plus"></i> Create New Center Area</a>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-sm-12">
                     <div class="panel panel-primary">
@@ -59,7 +57,7 @@
                                                 <td><span class="label {{$centerArea->status ? 'label-success':'label-warning'}}">{{$centerArea->status ? 'Active':'Inactive'}}</span></td>
                                                 <td>
                                                     <a href="{{route('superAdmin.centerArea.edit', $centerArea->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.centerArea.destroy', $centerArea) }}"><i class="fa fa-trash"></i></button>
+                                                    {{-- <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.centerArea.destroy', $centerArea) }}"><i class="fa fa-trash"></i></button> --}}
                                                 </td>
                                             </tr>
                                         @endforeach
