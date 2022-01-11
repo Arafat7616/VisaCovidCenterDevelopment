@@ -162,7 +162,7 @@ class TrustedPeopleController extends Controller
         $countries = Country::all();
         $cities = City::all();
         $states = State::all();
-        return view('Administrator.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
+        return view('Receptionist.trustedMedicalAssistant.edit', compact('user', 'userInfo', 'countries', 'cities', 'states'));
     }
 
     /**
@@ -219,9 +219,7 @@ class TrustedPeopleController extends Controller
         $userInfo->save();
 
         Session::flash('message', 'Successfully Updated!');
-
-        //        return redirect()->route('administrator.dashboard')->withSuccess('Successfully created');
-        return redirect()->route('administrator.dashboard');
+        return redirect()->route('receptionist.dashboard');
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     Scan QR code
@@ -27,7 +27,7 @@
             </div>
 
             <div class="qr_scan__button">
-                <a class="qr_scan__button__link" href="{{route('receptionist.info')}}">Refresh</a>
+                <a class="qr_scan__button__link" href="{{route('rapidPcrCenterReceptionist.info')}}">Refresh</a>
                 <p class="qr_scan__button__title">Refresh after submitting scan result</p>
             </div>
         </div>

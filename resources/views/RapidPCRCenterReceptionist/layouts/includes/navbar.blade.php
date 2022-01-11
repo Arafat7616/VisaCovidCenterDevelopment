@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" target="_blank" href="{{ route('frontend.index') }}">
                 <img src="{{ asset(get_static_option('logo') ?? 'assets/center-part/image/logo.png') }}" alt="" class="header__logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,13 +11,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('receptionist.user.index') }}">Users</a>
+                        <a class="nav-link" href="{{ route('rapidPcrCenterReceptionist.user.index') }}">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('receptionist.printing.index') }}">Printing</a>
+                        <a class="nav-link" href="{{ route('rapidPcrCenterReceptionist.printing.index') }}">Printing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ route('receptionist.dashboard') }}">New Regsitration</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('rapidPcrCenterReceptionist.dashboard') }}">New Regsitration</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
@@ -28,7 +28,7 @@
                             <br> <span class="text-capitalize profile__designation">{{ Auth::user()->user_type }}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('receptionist.profile') }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('rapidPcrCenterReceptionist.profile') }}">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>

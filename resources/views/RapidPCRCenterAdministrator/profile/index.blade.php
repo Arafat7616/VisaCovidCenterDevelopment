@@ -39,8 +39,8 @@
                                     <h5>Administrator</h5>
                                     <h5>{{ \Carbon\Carbon::now()->format('y') - \Carbon\Carbon::parse($user->userInfo->dob)->format('y') }}
                                     </h5>
-                                    <h5>{{ $user->center->name }}</h5>
-                                    <h5>{{ $user->center_id }}</h5>
+                                    <h5>{{ $user->rapidPcrCenter->name }}</h5>
+                                    <h5>{{ $user->rapid_pcr_center_id }}</h5>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-@extends('Receptionist.layouts.master')
+@extends('RapidPCRCenterReceptionist.layouts.master')
 
 @push('title')
     Printing
@@ -79,7 +79,7 @@
                                                     </button>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('receptionist.printing.generatePDF', $pcrTest->user_id) }}">
+                                                    <a href="{{ route('rapidPcrCenterReceptionist.printing.generatePDF', $pcrTest->user_id) }}">
                                                         <i class="fa fa-print"></i>
                                                     </a>
                                                 </td>
