@@ -69,10 +69,10 @@
                                             <label for="status">Center Area Status</label>
                                             <br>
                                             @php
-                                                if ($centerArea->status){
+                                                if ($centerArea->status == 1){
                                                     $status = $centerArea->status;
                                                 }else {
-                                                    $status = 1;
+                                                    $status = 0;
                                                 }
                                             @endphp
                                             <div class="radio radio-info radio-inline">
