@@ -36,7 +36,7 @@ class RapidPCRCenter extends Model
     }
     public function area()
     {
-        return $this->hasOne(CenterArea::class, 'center_area_id');
+        return $this->belongsTo(CenterArea::class, 'center_area_id');
     }
 
     public function country()

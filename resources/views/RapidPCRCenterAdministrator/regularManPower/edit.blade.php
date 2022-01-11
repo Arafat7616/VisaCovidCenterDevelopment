@@ -203,7 +203,7 @@
                                             <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->area }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Total Available seat      : {{ intval((Auth::user()->rapidPcrCenter->area - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
+                                            <p class="card-text" style="white-space:pre">Available seat at a time: {{ intval((Auth::user()->rapidPcrCenter->area - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
                                     </div>
                                 </div>
