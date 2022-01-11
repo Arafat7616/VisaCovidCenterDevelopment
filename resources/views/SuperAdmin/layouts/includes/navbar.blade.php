@@ -86,6 +86,14 @@
                         <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
                     </ul>
                 </li>
+                {{-- routes for center area  --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/centerArea/*') ? 'active subdrop': ''}}"><i class="fa fa-square"></i> <span> Center Area </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('superAdmin.centerArea.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/centerArea/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Center Area </span></a></li>
+                        <li><a href="{{route('superAdmin.centerArea.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/centerArea/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Slider </span></a></li>
+                    </ul>
+                </li>
                 {{-- routes for price manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-price/*') ? 'active subdrop': ''}}"><i class="fa fa-money"></i> <span> Manage Prices </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
