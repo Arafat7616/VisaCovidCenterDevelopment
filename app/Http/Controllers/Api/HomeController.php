@@ -452,7 +452,7 @@ class HomeController extends Controller
             $vaccinationCenterInfoAddress=$vaccinationCenterType->center_location;
             $antibody_last_date=Carbon::parse($vaccinationCenterType->antibody_last_date)->format("j S F Y");
         }else{
-            $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine'])->first();
+            $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine', 'antibody_last_date'])->first();
             if($vaccinationStatus)
             {
                 $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
@@ -465,7 +465,7 @@ class HomeController extends Controller
                 }
                 if($vaccinationStatus->date_of_second_dose != null){
                     $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
-                    $antibody_last_date = $vaccinationStatus->antibody_last_date;
+                    $antibody_last_date = Carbon::parse($vaccinationStatus->antibody_last_date)->format("j S F Y");
                 }
                 $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
             }
@@ -497,6 +497,9 @@ class HomeController extends Controller
             $boosterStatusDate = Carbon::parse($boosterStatus->date)->format("j S F Y");
             $boosterStatusAntibody_last_date = Carbon::parse($boosterStatus->antibody_last_date)->format("j S F Y");
         }
+
+
+
 
 
         return response()->json([
