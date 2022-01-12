@@ -122,7 +122,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-pcr-serve">
-                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_pcr ?? '' }}
                                                 </p>
                                             </td>
                                             <td class="cal-x-y">
@@ -152,7 +152,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-vaccine-serve">
-                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_vaccine ?? '' }}
                                                 </p>
                                             </td>
                                             <td class="cal-x-y">
@@ -181,7 +181,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-booster-serve">
-                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_booster }}
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_booster ?? '' }}
                                                 </p>
                                             </td>
                                             <td class="cal-x-y">
