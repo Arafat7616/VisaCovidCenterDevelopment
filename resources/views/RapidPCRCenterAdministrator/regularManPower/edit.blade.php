@@ -118,7 +118,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-pcr-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
+                                                    {{ get_available_service_at_a_time_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -146,7 +146,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-vaccine-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
+                                                    {{ get_available_service_at_a_time_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -174,7 +174,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-booster-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
+                                                    {{ get_available_service_at_a_time_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr> --}}
