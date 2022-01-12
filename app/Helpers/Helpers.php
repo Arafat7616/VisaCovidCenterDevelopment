@@ -112,15 +112,6 @@ if (!function_exists('random_code')){
         return intval($man_power_minute_for_precess/$per_precess_minute);
     }
 
-    function get_available_service_per_day($centerArea)
-    {
-        $person_sft_cal = get_static_option('sft_per_person');
-        $other_sft = get_static_option('others_sft');
-
-        $after_minus_space = $centerArea->maximum_space - $other_sft;
-        $available_person = $after_minus_space/$person_sft_cal;
-        return intval($available_person);
-    }
     function get_available_service_at_a_time($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
