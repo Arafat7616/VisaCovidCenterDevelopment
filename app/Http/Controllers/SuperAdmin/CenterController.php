@@ -66,7 +66,7 @@ class CenterController extends Controller
                 $center->city_id = $request->city;
             }
             if (is_numeric($request->space)) {
-                $center->space = $request->space;
+                $center->area = $request->space;
             }
             $center->trade_licence_no = $request->tradeLicenceNo;
             $center->address = $request->address;

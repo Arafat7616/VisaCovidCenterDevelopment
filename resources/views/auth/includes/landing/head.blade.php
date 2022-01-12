@@ -3,6 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="shortcut icon" href="{{ asset(get_static_option('favicon') ?? get_static_option('no_image')) }}">
 
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/landing-page.css') }}" />

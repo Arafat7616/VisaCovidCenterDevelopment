@@ -103,7 +103,7 @@ Edit
                                     </div>   
                                     <div class="form-group">
                                         <label for="space">Space</label>
-                                        <input type="number" name="space" class="form-control" id="space" min="0" value="{{ $center->space }}">
+                                        <input type="number" name="space" class="form-control" id="space" min="0" value="{{ $center->area }}">
                                     </div> 
                                 </div>
                             </div>

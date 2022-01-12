@@ -66,9 +66,14 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="city" class="col-sm-3 col-form-label text-muted">Space(sqft)</label>
+                                        <label for="space" class="col-sm-3 col-form-label text-muted">Space(sqft)</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" name="space" id="space" min="0" placeholder="Enter Center Space(sqft)">
+                                            <select class="form-control form-select text-muted" name="space" id="space">
+                                                <option disabled value="">Select Space(sqft)</option>
+                                                @foreach ($centerAreas as $space)
+                                                    <option value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -253,17 +258,17 @@
                     <div class="card-body">
                         <h5 class="card-title text-muted">OTP verification</h5>
                         <div class='text-center otp-card-place my-2'>
-                            <input type="text" class='form-control otp-card-place' value="" />
+                            <input type="text" class='form-control otp-card-place' id="otp" name="otp" placeholder='Enter your otp' />
                         </div>
-
-                        <a href="#" class="card-link"><button class='btn text-muted'>Resend</button></a>
-                        <a href="#" class="card-link"><button class=' otp-btn-verify text-light'>Verify</button></a>
+                        <a href="javascript:void(0)"><button style="color: red !important;" class='btn text-muted re-send-otp-time'><span class="left-time">00</span> Second</button></a>
+                        <a href="javascript:void(0)" class="card-link"><button class='btn text-muted  re-send-otp-btn'>Resend</button></a>
+                        <a href="#" class="card-link"><button class='otp-btn-verify text-light' id="verification">Verify</button></a>
                     </div>
                 </div>
                 <!--================== Otp card end================ -->
             </div>
             <div class="text-center mt-5">
-                <button class='apply-reg-btn'>Apply for center registration</button>
+                <button class='apply-reg-btn'></button>
             </div>
         </div>
     </div>
@@ -341,6 +346,69 @@
                         })
                     },
                 })
+            });
+        });
+
+        $('#verification').click(function (e){
+            e.preventDefault();
+
+            var formData = new FormData();
+            formData.append('otp', $('#otp').val());
+
+            $.ajax({
+                method: 'POST',
+                url: '/center-register-otp-verify',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if(data.type == 'success')
+                    {
+                        /*$('#registrationForm').trigger("reset");*/
+                        $('.apply-next-btn-a').removeClass("d-none");
+                        $('.apply-next-btn-a').addClass("d-block");
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                        setTimeout(function() {
+                            location.replace(data.url);
+                        }, 800); //
+                    }else (data.type == 'error')
+                    {
+                        Swal.fire({
+                            position: 'center',
+                            icon: data.type,
+                            title: 'Oops...',
+                            footer: data.message,
+                            showConfirmButton: false,
+                            // timer: 1500
+                        })
+                    }
+                },
+                error: function(xhr) {
+                    var errorMessage = '<div class="card bg-danger">\n' +
+                        '                        <div class="card-body text-center p-5">\n' +
+                        '                            <span class="text-white">';
+                    $.each(xhr.responseJSON.errors, function(key, value) {
+                        errorMessage += ('' + value + '<br>');
+                    });
+                    errorMessage += '</span>\n' +
+                        '                        </div>\n' +
+                        '                    </div>';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        footer: errorMessage
+                    })
+                },
             });
         });
 
