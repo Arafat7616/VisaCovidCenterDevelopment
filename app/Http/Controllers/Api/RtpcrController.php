@@ -38,19 +38,19 @@ class RtpcrController extends Controller
             {
                 return response()->json([
                     "navigationPath" => "Rtpcr Status",
-                    "rtpcrIcon" => "uploads/images/setting/rtpcr.png",
+                    "rtpcrIcon" => "uploads/images/setting/rtpcr_danger.png",
                 ]);
             }
             else{
                 return response()->json([
-                    "navigationPath" => "Rtpcr Date",
-                    "rtpcrIcon" => "uploads/images/setting/rtpcr.png",
+                    "navigationPath" => "Rtpcr data",
+                    "rtpcrIcon" => "uploads/images/setting/rtpcr_success.png",
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "Rtpcr Registration Button",
-                "rtpcrIcon" => "uploads/images/setting/rtpcr.png",
+                "rtpcrIcon" => "uploads/images/setting/rtpcr_danger.png",
             ]);
         }
     }
@@ -120,12 +120,78 @@ class RtpcrController extends Controller
     public function rtpcrResult(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
-        $a = $userArray[''];
+        $phone = $userArray['phone'];
+        $exitUser = User::where('phone',$phone)->first();
+
+        $rtpcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['rapid_pcr_center_id', 'rapid_pcr_result', 'updated_at', 'tested_by'])->first();
+        $rtpcrCenterInfoMame = '';
+        $rtpcrCenterInfoAddress = '';
+        $rtpcrStatusDate_of_rtpcr_test = '';
+        $serveById = '';
+        $serveByName = '';
+        $rtpcrResult = '';
+        if($rtpcrStatus)
+        {
+            $rtpcrCenterInfo = RapidPCRCenter::where('id', $rtpcrStatus->rapid_pcr_center_id)->select(['name', 'address'])->first();
+            $serveBy = User::where('id', $rtpcrStatus->tested_by)->select(['name', 'id'])->first();
+            $rtpcrCenterInfoMame = $rtpcrCenterInfo->name;
+            $rtpcrCenterInfoAddress = $rtpcrCenterInfo->address;
+            $rtpcrStatusDate_of_rtpcr_test = Carbon::parse($rtpcrStatus->updated_at)->format("j S F Y");
+            $serveById = $serveBy->id;
+            $serveByName = $serveBy->name;
+            $rtpcrResult = $rtpcrStatus->rapid_pcr_result;
+        }
+
+        return response()->json([
+            "myServeById"=>$serveById,
+            "myServeByName"=>$serveByName,
+            "myRtPcrLastTest"=>$rtpcrStatusDate_of_rtpcr_test,
+            "myLastRtPcrResult"=>$rtpcrResult,
+            "myRtPcrTestCenter"=>$rtpcrCenterInfoMame,
+            "myRtPcrCenterLocation"=>$rtpcrCenterInfoAddress,
+        ]);
     }
 
-    public function rtpcrTimeLeftForPcr(Request $request)
+    public function rtpcrTimeLeft(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
-        $a = $userArray[''];
+        $phone = $userArray['phone'];
+
+        $existUser = User::where('phone', $phone)->select(['id'])->first();
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $centerAddress = RapidPCRCenter::where('id', $pcrStatus->rapid_pcr_center_id)->select(['address'])->first();
+
+
+        $start = Carbon::parse(Carbon::now());
+        $end = Carbon::parse($pcrStatus->date_of_registration);
+
+
+        if ($start > $end)
+        {
+            $leftDay = "00";
+            $leftHour ="00";
+            //$leftHour =;
+        }else{
+            $interval = $start->diff($end, false);
+            $leftDay = $interval->format('%a');//now do whatever you like with $days
+            $leftHour = $interval->format('%h');//now do whatever you like with $days
+        }
+
+
+        if ($pcrStatus){
+            return response()->json([
+                "status" => "1",
+                "leftHour" => $leftHour,
+                "leftDay" => $leftDay,
+                "centerAddress" => $centerAddress->address,
+            ]);
+        }else{
+            return response()->json([
+                "status" => "0",
+                "message" => "No fixed you",
+            ]);
+        }
+
+
     }
 }
