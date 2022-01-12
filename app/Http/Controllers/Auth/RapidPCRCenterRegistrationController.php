@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\CenterDocument;
 use App\Models\Center;
+use App\Models\CenterArea;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\RapidPCRCenter;
@@ -14,6 +15,7 @@ use App\Models\User;
 use App\Models\UserInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class RapidPCRCenterRegistrationController extends Controller
@@ -21,7 +23,8 @@ class RapidPCRCenterRegistrationController extends Controller
     public function centerRegister()
     {
         $countries = Country::all();
-        return view('auth.rapid-pcr-center-register', compact('countries'));
+        $centerAreas = CenterArea::where('status', 1)->get();
+        return view('auth.rapid-pcr-center-register', compact('countries','centerAreas'));
     }
 
     public function centerRegisterDataStore(Request $request)
@@ -67,7 +70,7 @@ class RapidPCRCenterRegistrationController extends Controller
             $rapidPcrCenter->city_id = $request->city;
         }
         if (is_numeric($request->space)) {
-            $rapidPcrCenter->space = $request->space;
+            $rapidPcrCenter->center_area_id = $request->space;
         }
 
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenseNumber;
@@ -85,8 +88,21 @@ class RapidPCRCenterRegistrationController extends Controller
         $user->phone = $request->personPhone;
         $user->rapid_pcr_center_id = $rapidPcrCenter->id;
         $user->user_type = 'administrator';
+        $user->otp = rand(100000, 1000000);
         $user->password = Hash::make($request->password);
         $user->save();
+
+        try {
+            // send sms via helper function
+            send_sms('Welcome to Visa Covid, your otp is : ' . $user->otp, $user->phone);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Opps somthing went wrong. ' . $exception->getMessage(),
+            ]);
+        }
+
+        Session::put('user', $user);
 
         $rapidPcrCenter->administrator_id =  $user->id;
         $rapidPcrCenter->save();

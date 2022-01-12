@@ -97,7 +97,8 @@ if (!function_exists('random_code')){
 
     function get_total_trusted_medical_assistants()
     {
-        return User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
+        $trustedMedicalAssistants =  User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
+        return $trustedMedicalAssistants;
     }
 
     function get_total_rapid_pcr_trusted_medical_assistants()
@@ -111,12 +112,12 @@ if (!function_exists('random_code')){
         return intval($man_power_minute_for_precess/$per_precess_minute);
     }
 
-    function get_available_service_per_day($center_space)
+    function get_available_service_per_day($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
         $other_sft = get_static_option('others_sft');
 
-        $after_minus_space = $center_space - $other_sft;
+        $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space/$person_sft_cal;
         return intval($available_person/3);
     }

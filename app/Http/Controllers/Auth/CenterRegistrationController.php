@@ -6,14 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Airport;
 use App\Models\CenterDocument;
 use App\Models\Center;
+use App\Models\CenterArea;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Price;
 use App\Models\State;
 use App\Models\User;
 use App\Models\UserInfo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class CenterRegistrationController extends Controller
@@ -41,7 +44,8 @@ class CenterRegistrationController extends Controller
     public function centerRegister()
     {
         $countries = Country::all();
-        return view('auth.center-register', compact('countries'));
+        $centerAreas = CenterArea::where('status', 1)->get();
+        return view('auth.center-register', compact('countries','centerAreas'));
     }
 
     public function centerRegisterDataStore(Request $request)
@@ -83,7 +87,7 @@ class CenterRegistrationController extends Controller
             $center->city_id = $request->city;
         }
         if (is_numeric($request->space)) {
-            $center->space = $request->space;
+            $center->center_area_id = $request->space;
         }
 
         $center->trade_licence_no = $request->tradeLicenseNumber;
@@ -101,8 +105,20 @@ class CenterRegistrationController extends Controller
         $user->phone = $request->personPhone;
         $user->center_id = $center->id;
         $user->user_type = 'administrator';
+        $user->otp = rand(100000, 1000000);
         $user->password = Hash::make($request->password);
         $user->save();
+        try {
+            // send sms via helper function
+            send_sms('Welcome to Visa Covid, your otp is : ' . $user->otp, $user->phone);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Opps somthing went wrong. ' . $exception->getMessage(),
+            ]);
+        }
+
+        Session::put('user', $user);
 
         $center->administrator_id =  $user->id;
         $center->save();
@@ -174,5 +190,27 @@ class CenterRegistrationController extends Controller
             'type' => 'success',
             'message' => 'Successfully Data stored',
         ]);
+    }
+
+    public function centerRegisterOptVerify(Request $request){
+        $sessionUser = Session::get('user');
+        // return response()->json([
+        //     'type' => 'error',
+        //     'message' => $sessionUser->id,
+        // ]);
+        if($request->otp == $sessionUser->otp){
+            $sessionUser->otp_verified_at = Carbon::now();
+            $sessionUser->save();
+            return response()->json([
+                'type' => 'success',
+                'url' => route('login'),
+                'message' => 'Otp verified successfully ',
+            ]);
+        }else{
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Opps somthing went wrong.Otp not verified ',
+            ]);
+        }
     }
 }
