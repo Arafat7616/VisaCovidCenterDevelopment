@@ -99,11 +99,12 @@
                                                 <p class="p-mx"><b>Number of Trusted Medical Assistant</b> </p>
                                             </td>
                                             <td class="cal-x-y">
-                                                <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
+                                                <p class="p-mx"> <small>Available service</small><br><b>At a time</b> </p>
                                             </td>
                                             <td class="cal-x-y">
-                                                <p class="p-mx"> <small>Available service</small><br><b>Per day</b> </p>
+                                                <p class="p-mx"> <small>Max service</small><br><b>Per day</b> </p>
                                             </td>
+                                          
                                         </tr>
                                         <tr>
                                             <td class="cal-x-y">
@@ -120,17 +121,18 @@
                                                         name="trustedMedicalAssistantForPcr"></p>
                                             </td>
                                             <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-pcr-serve">
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_pcr }}
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
                                                 <p class="p-mx" id="max-pcr-serve">
                                                     @if ($manPowerSchedule)
                                                         {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->pcr_time, $manPowerSchedule->trusted_medical_assistant_for_pcr) }}
                                                     @endif
                                                 </p>
                                             </td>
-                                            <td class="cal-x-y">
-                                                <p class="p-mx" id="max-available-pcr-serve">
-                                                    {{ get_available_service_per_day($center->area) }}
-                                                </p>
-                                            </td>
+                                           
                                         </tr>
                                         <tr>
                                             <td class="cal-x-y">
@@ -149,17 +151,18 @@
                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}" @endif name="trustedMedicalAssistantForVaccine"></p>
                                             </td>
                                             <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-vaccine-serve">
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_vaccine }}
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
                                                 <p class="p-mx" id="max-vaccine-serve">
                                                     @if ($manPowerSchedule)
                                                         {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->vaccine_time, $manPowerSchedule->trusted_medical_assistant_for_vaccine) }}
                                                     @endif
                                                 </p>
                                             </td>
-                                            <td class="cal-x-y">
-                                                <p class="p-mx" id="max-available-vaccine-serve">
-                                                    {{ get_available_service_per_day($center->area) }}
-                                                </p>
-                                            </td>
+                                           
                                         </tr>
                                         <tr>
                                             <td class="cal-x-y">
@@ -177,28 +180,31 @@
                                                         @if ($manPowerSchedule) value="{{ $manPowerSchedule->trusted_medical_assistant_for_booster }}" @endif name="trustedMedicalAssistantForBooster"></p>
                                             </td>
                                             <td class="cal-x-y">
+                                                <p class="p-mx" id="max-available-booster-serve">
+                                                    {{ $manPowerSchedule->trusted_medical_assistant_for_booster }}
+                                                </p>
+                                            </td>
+                                            <td class="cal-x-y">
                                                 <p class="p-mx" id="max-booster-serve">
                                                     @if ($manPowerSchedule)
                                                         {{ get_max_service_per_day($totalDayMinutes, $manPowerSchedule->booster_time, $manPowerSchedule->trusted_medical_assistant_for_booster) }}
                                                     @endif
                                                 </p>
                                             </td>
-                                            <td class="cal-x-y">
-                                                <p class="p-mx" id="max-available-booster-serve">
-                                                    {{ get_available_service_per_day($center->area) }}
-                                                </p>
-                                            </td>
+                                          
                                         </tr>
                                         <tr class="cal-mx-x-p">
                                             <td></td>
                                             <td></td>
                                             <td>
-                                                <p class="p-mx">Want to service per day </p>
+                                                <p class="p-mx">Want to service</p>
+                                            </td>
+                                            <td>
+                                                <p class="p-mx y-s" id="wantToServeAtATime"></p>
                                             </td>
                                             <td>
                                                 <p class="p-mx y-s" id="wantToServePerDay"></p>
                                             </td>
-                                            <td></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -218,7 +224,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="row mb-5 mt-5 offset-2">
                             <div class="col-5">
@@ -267,6 +272,7 @@
                 formData.append('booster_available_set', $('#max-booster-serve').text());
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());
+                formData.append('wantToServeAtATime', $('#wantToServeAtATime').text());
                 $.ajax({
                     method: 'POST',
                     url: "{{ url('administrator/premium/store') }}",
@@ -323,7 +329,19 @@
             var wantToServePerDay = maxPcrServe + maxVaccineServe + maxBoosterServe;
             document.getElementById('wantToServePerDay').innerHTML = wantToServePerDay;
         }
+        // Auto wantToServeAtATime Calculation
+        function wantToServeAtATime() {
+            var maxPcrServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
+            var maxVaccineServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
+            var maxBoosterServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
+            var wantToServeAtATime = maxPcrServeAtATime + maxVaccineServeAtATime + maxBoosterServeAtATime;
+            document.getElementById('max-available-pcr-serve').innerHTML = maxPcrServeAtATime;
+            document.getElementById('max-available-vaccine-serve').innerHTML = maxVaccineServeAtATime;
+            document.getElementById('max-available-booster-serve').innerHTML = maxBoosterServeAtATime;
+            document.getElementById('wantToServeAtATime').innerHTML = wantToServeAtATime;
+        }
         wantToServePerDay();
+        wantToServeAtATime();
         function setMaxPcrService() {
             var timeForPcr = parseInt(document.getElementById('timeForPcr').value);
             var trustedMedicalAssistantForPcr = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
@@ -331,6 +349,7 @@
             var manPowerMinuteForPcr = totalMinute * trustedMedicalAssistantForPcr;
             document.getElementById('max-pcr-serve').innerHTML = parseInt(manPowerMinuteForPcr / timeForPcr) ;
             wantToServePerDay();
+            wantToServeAtATime();
             setTotalManMinutePerDay()
         }
         function setMaxVaccineService() {
@@ -340,6 +359,7 @@
             var manPowerMinuteForVaccine = totalMinute * trustedMedicalAssistantForVaccine;
             document.getElementById('max-vaccine-serve').innerHTML = parseInt(manPowerMinuteForVaccine / timeForVaccine) ;
             wantToServePerDay();
+            wantToServeAtATime();
             setTotalManMinutePerDay();
         }
         function setMaxBoosterService() {
@@ -349,6 +369,7 @@
             var manPowerMinuteForBooster = totalMinute * trustedMedicalAssistantForBooster;
             document.getElementById('max-booster-serve').innerHTML = parseInt(manPowerMinuteForBooster / timeForBooster) ;
             wantToServePerDay();
+            wantToServeAtATime();
             setTotalManMinutePerDay();
         }
         function setTotalManMinutePerDay() {
