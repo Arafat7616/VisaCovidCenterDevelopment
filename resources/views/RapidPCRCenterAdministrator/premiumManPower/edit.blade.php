@@ -119,7 +119,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-pcr-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -147,7 +147,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-vaccine-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr>
@@ -175,7 +175,7 @@
                                             </td>
                                             <td class="cal-x-y">
                                                 <p class="p-mx" id="max-available-booster-serve">
-                                                    {{ get_available_service_per_day_in_rtpcr_center($center->space) }}
+                                                    {{ get_available_service_per_day_in_rtpcr_center($center->area) }}
                                                 </p>
                                             </td>
                                         </tr> --}}
@@ -201,10 +201,10 @@
                                 <div class="cal-service-slot row">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->space }}</h5>
+                                            <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->area }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Total Available seat      : {{ intval((Auth::user()->rapidPcrCenter->space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
+                                            <p class="card-text" style="white-space:pre">Available seat at a time: {{ intval((Auth::user()->rapidPcrCenter->area - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
                                     </div>
                                 </div>

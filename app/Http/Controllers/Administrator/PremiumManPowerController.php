@@ -39,7 +39,7 @@ class PremiumManPowerController extends Controller
             'toDate' => 'required',
         ]);
 
-        $avaiable =  get_available_service_per_day(auth()->user()->center->space);
+        $avaiable =  get_available_service_per_day(auth()->user()->center->area);
         if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable) {
 
             $d1 = strtotime($request->fromDate);
@@ -113,7 +113,7 @@ class PremiumManPowerController extends Controller
             'trustedMedicalAssistantForBooster' => 'required',
         ]);
 
-        $avaiable =  get_available_service_per_day(auth()->user()->center->space);
+        $avaiable =  get_available_service_per_day(auth()->user()->center->area);
         
         if ($request->booster_available_set <= $avaiable && $request->pcr_available_set <= $avaiable && $request->vaccine_available_set <= $avaiable) {
                 

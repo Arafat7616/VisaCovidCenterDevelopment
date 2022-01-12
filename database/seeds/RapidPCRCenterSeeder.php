@@ -29,7 +29,7 @@ class RapidPCRCenterSeeder extends Seeder
         $rapidPCRCenter->status = 1;
         $rapidPCRCenter->varification_status = 1;
         $rapidPCRCenter->administrator_id = 18;
-        $rapidPCRCenter->space = 5000;
+        $rapidPCRCenter->center_area_id = 2;
         $rapidPCRCenter->save();
     }
     }

@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RapidPCRCenterSeeder::class);
         $this->call(VaccineNameSeeder::class);
         $this->call(SliderSeeder::class);
+        $this->call(CenterAreaSeeder::class);
+        // $this->call(SliderSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(CitySeeder::class);
