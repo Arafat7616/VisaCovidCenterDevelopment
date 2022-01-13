@@ -124,7 +124,7 @@ Route::post('rtpcrStatus', 'Api\RtpcrController@rtpcrStatus');
 Route::get('rtpcrCenter/{id}', 'Api\RtpcrController@rtpcrCenter');
 Route::post('rtpcrRegistration', 'Api\RtpcrController@rtpcrRegistration');
 Route::post('rtpcrResult', 'Api\RtpcrController@rtpcrResult');
-Route::post('rtpcrTimeLeftForPcr', 'Api\RtpcrController@rtpcrTimeLeftForPcr');
+Route::post('rtpcrTimeLeft', 'Api\RtpcrController@rtpcrTimeLeft');
 
 
 
