@@ -42,13 +42,12 @@ class LandingPageController extends Controller
             }
         }catch (\Exception $exception){
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
         // return back()->withSuccess('Updated successfully!');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
+        Session::flash('success', 'Updated successfully!');
+
         return back();
     }
 
@@ -86,13 +85,12 @@ class LandingPageController extends Controller
             }
         }catch (\Exception $exception){
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
         // return back()->withSuccess('Updated successfully!');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
+        Session::flash('success', 'Updated successfully!');
+
         return back();
     }
 
@@ -125,13 +123,12 @@ class LandingPageController extends Controller
             update_static_option('immigration_crossing_amount', $request->immigration_crossing_amount);
         }catch (\Exception $exception){
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
         // return back()->withSuccess('Updated successfully!');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
+        Session::flash('success', 'Updated successfully!');
+
         return back();
     }
 
@@ -157,13 +154,12 @@ class LandingPageController extends Controller
             update_static_option('footer_details', $request->footer_details);
         }catch (\Exception $exception){
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
         // return back()->withSuccess('Updated successfully!');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
+        Session::flash('success', 'Updated successfully!');
+
         return back();
     }
 

@@ -219,7 +219,7 @@ class TrustedPeopleController extends Controller
         $userInfo->city_id  = $request->city_id;
         $userInfo->save();
 
-        Session::flash('message', 'Successfully Updated!');
+        Session::flash('success', 'Successfully Updated!');
 
         //        return redirect()->route('rapidPcrCenterAdministrator.dashboard')->withSuccess('Successfully created');
         return redirect()->route('rapidPcrCenterAdministrator.dashboard');

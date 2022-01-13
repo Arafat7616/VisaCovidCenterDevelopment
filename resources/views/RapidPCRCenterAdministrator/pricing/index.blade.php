@@ -14,11 +14,7 @@
     <div class="setting_up_price py-5">
         <div class="container">
             <div class="row">
-                @if(Session::has('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
+                @include('Others.toaster_message')
             </div>
 
             <form action="{{route('rapidPcrCenterAdministrator.price.update', $price->id)}}" method="POST">

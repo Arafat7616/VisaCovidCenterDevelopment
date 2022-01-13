@@ -51,8 +51,7 @@ class SynchronizeController extends Controller
 
         try {
             Synchronize::create($data);
-            Session::flash('message', 'Successfully saved !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
@@ -103,8 +102,7 @@ class SynchronizeController extends Controller
         try {
             $synchronize = Synchronize::find($id);
             $synchronize->update($data);
-            Session::flash('message', 'Successfully update !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully update !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());

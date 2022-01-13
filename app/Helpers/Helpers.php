@@ -52,8 +52,6 @@ if (!function_exists('random_code')){
 
     function send_sms($message, $phone)
     {
-        // app name given in here 
-        $app_name = env('APP_NAME');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -62,7 +60,7 @@ if (!function_exists('random_code')){
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
                 'api_key' => env('SMS_API_KEY'),
-                'msg' => nl2br($message."\n\n".$app_name),
+                'msg' => $message,
                 'to' => $phone
             ),
         ));

@@ -34,7 +34,7 @@ Footer | Setting
             <div class="col-12">
                 <form action="{{ route('superAdmin.setting.landingPage.footerUpdate') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Footer's information</h3>

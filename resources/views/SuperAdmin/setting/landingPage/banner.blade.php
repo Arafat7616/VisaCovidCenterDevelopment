@@ -32,7 +32,7 @@ Banner | Setting
             <div class="col-12">
                 <form action="{{ route('superAdmin.setting.landingPage.bannerUpdate') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title  text-white">Banner's information</h3>

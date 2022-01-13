@@ -12,12 +12,7 @@
 @endif
 
 @if(Session::has('message'))
-    <div class="alert alert-{{ Session::get('type') }}" role="alert">
-        {{ Session::get('message') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
+@include('Others.toaster_message')
 @endif
 
 {{-- @if(Session::has('message'))

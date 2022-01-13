@@ -33,7 +33,7 @@ Edit Service | Setting
                 <form action="{{ route('superAdmin.setting.landingPage.service.update', $service) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title  text-white">Edit Service</h3>

@@ -12,11 +12,7 @@
     <div class="trusted_medical_assistants mb-5">
         <div class="container">
             <div class="row">
-                @if(Session::has('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
+                @include('Others.toaster_message')
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="card page-wrapper w-100" style="margin-bottom: 100px" >
