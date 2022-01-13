@@ -41,6 +41,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('rapidPcrCenterAdministrator.profile') }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('rapidPcrCenterAdministrator.centerSpace') }}">Space mange</a></li>
                            
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>

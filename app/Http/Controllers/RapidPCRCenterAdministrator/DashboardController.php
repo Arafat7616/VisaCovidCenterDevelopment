@@ -22,9 +22,9 @@ class DashboardController extends Controller
     }
 
     public function centerSpace(){
-        $center = Auth::user()->center;
-        $centerAreas = CenterArea::where('status', 1)->get();
-        return view('RapidPCRCenterAdministrator.profile.center-space', compact('center','centerAreas'));
+        $rapidPcrCenter = Auth::user()->rapidPcrCenter;
+        $rapidPcrCenterAreas = CenterArea::where('status', 1)->get();
+        return view('RapidPCRCenterAdministrator.profile.center-space', compact('rapidPcrCenter','centerAreas'));
     }
 
     public function updateCenterSpace(Request $request){
@@ -32,11 +32,11 @@ class DashboardController extends Controller
            'space' =>'required'
         ]);
 
-        $center = Auth::user()->center;
-        // dd($center);
-        $center->center_area_id = $request->space;
-        $center->status = 0;
-        $center->save();
+        $rapidPcrCenter = Auth::user()->rapidPcrCenter;
+        // dd($rapidPcrCenter);
+        $rapidPcrCenter->center_area_id = $request->space;
+        $rapidPcrCenter->status = 0;
+        $rapidPcrCenter->save();
 
         Session::flash('success', 'Updated successfully!');
 
