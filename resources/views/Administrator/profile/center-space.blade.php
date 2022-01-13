@@ -33,7 +33,7 @@
                                         <select class="form-control form-select text-muted" name="space" id="space">
                                             <option disabled value="">Select Space(sqft)</option>
                                             @foreach ($centerAreas as $space)
-                                                <option value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
+                                                <option @if($space->id == $center->center_area_id) selected @endif value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
                                             @endforeach
                                         </select>
                                     </div>
