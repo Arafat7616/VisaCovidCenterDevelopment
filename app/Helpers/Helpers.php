@@ -53,15 +53,15 @@ if (!function_exists('random_code')){
     function send_sms($message, $phone)
     {
         // app name given in here 
-        $app_name = "Visa Covid";
+        $app_name = env('APP_NAME');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
+            CURLOPT_URL => env('SMS_API_URL'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
-                'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
+                'api_key' => env('SMS_API_KEY'),
                 'msg' => nl2br($message."\n\n".$app_name),
                 'to' => $phone
             ),
@@ -112,23 +112,23 @@ if (!function_exists('random_code')){
         return intval($man_power_minute_for_precess/$per_precess_minute);
     }
 
-    function get_available_service_per_day($centerArea)
+    function get_available_service_at_a_time($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
         $other_sft = get_static_option('others_sft');
 
         $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space/$person_sft_cal;
-        return intval($available_person/3);
+        return intval($available_person);
     }
-    function get_available_service_per_day_in_rtpcr_center($center_space)
+    
+    function get_available_service_at_a_time_in_rtpcr_center($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
         $other_sft = get_static_option('others_sft');
 
-        $after_minus_space = $center_space - $other_sft;
+        $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space/$person_sft_cal;
         return intval($available_person);
     }
-   
 }

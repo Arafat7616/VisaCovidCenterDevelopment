@@ -5,8 +5,8 @@
 @endpush
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('assets/manPowerSchedule-part/css/calender_14.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/manPowerSchedule-part/css/third-party-calendar/calendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/center-part/css/calender_14.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/center-part/css/third-party-calendar/calendar.css') }}">
 
     <!-- DataTables -->
     <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"
