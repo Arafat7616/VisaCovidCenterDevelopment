@@ -41,7 +41,7 @@ class PcrResultController extends Controller
         // ]);
         if($request->testResult == 'positive' || $request->testResult == 'negative'){
             $pcrTest = PcrTest::find($id);
-            $pcrTest->pcr_result = $request->testResult;
+            $pcrTest->rapid_pcr_result = $request->testResult;
             $pcrTest->result_published_date = Carbon::now();
             $pcrTest->status = 1;
 

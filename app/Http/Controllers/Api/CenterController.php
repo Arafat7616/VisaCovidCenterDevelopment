@@ -24,7 +24,7 @@ class CenterController extends Controller
         {
             if ($user->user_type !== 'trusted-medical-assistant'){
                 return response()->json([
-                    "message" => "Sorry ! Login only volunteer",
+                    "message" => "Sorry ! Login only trusted medical assistant",
                     "status" => "0",
                 ]);
             }else{
