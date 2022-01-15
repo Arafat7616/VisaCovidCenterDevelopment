@@ -133,4 +133,4 @@ if (!function_exists('random_code')){
         $available_person = $after_minus_space/$person_sft_cal;
         return intval($available_person);
     }
-
+}
