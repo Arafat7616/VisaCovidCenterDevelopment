@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'rapid-pcr-center-administrator/', 'namespace' => 'RapidPCRCenterAdministrator', 'as' => 'rapidPcrCenterAdministrator.', 'middleware' => ['auth', 'rapidPcrCenterAdministrator']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::get('center-space', 'DashboardController@centerSpace')->name('centerSpace');
+    Route::post('update-center-space', 'DashboardController@updateCenterSpace')->name('updateCenterSpace');
 
     // route for TrustedMedicalAssistant
     Route::group(['prefix' => 'trusted-medical-assistant/', 'as' => 'trustedMedicalAssistant.'], function () {

@@ -32,7 +32,7 @@
                                     <form role="form" action="{{route('superAdmin.centerArea.update', $centerArea->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                        @include('Others.message')
+                                        @include('Others.toaster_message')
                                         <div class="form-group">
                                             <label for="title">Center area title</label>
                                             <input type="text" name="title" value="{{ $centerArea->title }}" class="form-control @error('title') is-invalid @enderror" id="ex1" placeholder="Enter area title">

@@ -32,7 +32,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.synchronize.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        @include('Others.message')
+                                        @include('Others.toaster_message')
 
                                         <div class="form-group">
                                             <label for="country_id" class="control-label">Country</label>

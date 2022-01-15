@@ -49,8 +49,7 @@ class VaccineNameController extends Controller
 
         try {
             VaccineName::create($data);
-            Session::flash('message', 'Successfully saved !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());

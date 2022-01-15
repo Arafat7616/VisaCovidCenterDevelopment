@@ -33,7 +33,7 @@ class AccontInfoController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        Session::flash('message', 'Successfully created!');
+        Session::flash('success', 'Successfully created!');
         return redirect()->route('rapidPcrCenterReceptionist.dashboard');
     }
 }

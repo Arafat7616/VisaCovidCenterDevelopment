@@ -88,8 +88,8 @@ class NormalBoosterController extends Controller
         $booster->save();
 
         // return back()->withToastSuccess('Updated successfully');
-        Session::flash('message', 'Updated successfully!');
-        Session::flash('type', 'success');
+        Session::flash('success', 'Updated successfully!');
+
         return back();
     }
 
