@@ -52,7 +52,7 @@ if (!function_exists('random_code')){
 
     function send_sms($message, $phone)
     {
-        // app name given in here 
+        // app name given in here
         $app_name = "Visa Covid";
         $curl = curl_init();
 
@@ -62,7 +62,7 @@ if (!function_exists('random_code')){
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
                 'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
-                'msg' => nl2br($message."\n\n".$app_name),
+                'msg' => nl2br($message.". Regards from ".$app_name),
                 'to' => $phone
             ),
         ));
@@ -130,5 +130,5 @@ if (!function_exists('random_code')){
         $available_person = $after_minus_space/$person_sft_cal;
         return intval($available_person);
     }
-   
+
 }
