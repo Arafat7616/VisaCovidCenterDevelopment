@@ -33,7 +33,7 @@ Edit Work | Setting
                 <form action="{{ route('superAdmin.setting.landingPage.work.update', $work) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title  text-white">Edit Work</h3>

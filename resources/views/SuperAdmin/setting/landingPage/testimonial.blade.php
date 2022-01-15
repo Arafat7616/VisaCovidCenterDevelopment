@@ -34,7 +34,7 @@ Testimonial | Setting
             <div class="col-12">
                 <form action="{{ route('superAdmin.setting.landingPage.testimonialUpdate') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Testimonial's information</h3>

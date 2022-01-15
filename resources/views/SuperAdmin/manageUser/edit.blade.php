@@ -34,7 +34,7 @@ Edit
                 <form action="{{ route('superAdmin.manageUser.update', $user->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Edit {{ $user->name }}'s information</h3>

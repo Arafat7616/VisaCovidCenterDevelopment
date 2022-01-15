@@ -33,7 +33,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.synchronize.update', $synchronize->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        @include('Others.message')
+                                        @include('Others.toaster_message')
                                         @method('put')
                                         <div class="form-group">
                                             <label for="country_id" class="control-label">Country</label>

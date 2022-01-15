@@ -33,7 +33,7 @@ Edit Booster
                 <form action="{{ route('superAdmin.booster.normal.update', $booster) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Edit Booster information</h3>

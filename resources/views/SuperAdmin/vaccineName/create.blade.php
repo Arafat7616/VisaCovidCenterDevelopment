@@ -32,7 +32,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.vaccineName.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        @include('Others.message')
+                                        @include('Others.toaster_message')
                                         <div class="form-group">
                                             <label for="name">Vaccine Name</label>
                                             <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" id="ex1" placeholder="Enter slider Title">

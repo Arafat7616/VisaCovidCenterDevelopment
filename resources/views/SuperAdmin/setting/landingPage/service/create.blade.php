@@ -32,7 +32,7 @@ Create Service | Setting
             <div class="col-12">
                 <form action="{{ route('superAdmin.setting.landingPage.service.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title  text-white">Create Service</h3>
