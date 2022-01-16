@@ -56,8 +56,7 @@ class CenterAreaController extends Controller
         try {
             $centerArea->save();
             // return back()->withToastSuccess('Successfully saved.');
-            Session::flash('message', 'Successfully saved !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
@@ -113,8 +112,7 @@ class CenterAreaController extends Controller
 
         try {
             $centerArea->save();
-            Session::flash('message', 'Successfully Updated !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully Updated !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());

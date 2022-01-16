@@ -61,8 +61,7 @@ class SliderController extends Controller
         try {
             Slider::create($data);
             // return back()->withToastSuccess('Successfully saved.');
-            Session::flash('message', 'Successfully saved !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());

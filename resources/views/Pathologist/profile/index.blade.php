@@ -55,7 +55,7 @@
                             <form class="form" action="{{ route('changePassword') }}" method="POST">
                                 @csrf
                                 <!--begin::Alert-->
-                                @include('Others.message')
+                                @include('Others.toaster_message')
                                 <!--end::Alert-->
                                 <div class="form-group row mb-2">
                                     <label for="oldPassword" class="col-4 text-alert h5 text-muted">Current password</label>

@@ -54,13 +54,11 @@ class LandingPageWorkController extends Controller
         try {
             $work->save();
             // return back()->withSuccess('Updated successfully!');
-            Session::flash('message', 'Stored successfully!');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Stored successfully!');
             return back();
         } catch (\Exception $exception) {
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
     }
@@ -106,13 +104,11 @@ class LandingPageWorkController extends Controller
         try {
             $work->save();
             // return back()->withSuccess('Updated successfully!');
-            Session::flash('message', 'Updated successfully!');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Updated successfully!');
             return back();
         } catch (\Exception $exception) {
             // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
-            Session::flash('message', $exception->getMessage());
-            Session::flash('type', 'warning');
+            Session::flash('error', $exception->getMessage());
             return back();
         }
     }

@@ -34,7 +34,7 @@ Edit PCR Test
                 <form action="{{ route('superAdmin.pcr.normal.update', $pcrTest) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    @include('Others.message')
+                    @include('Others.toaster_message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Edit PCR test information</h3>

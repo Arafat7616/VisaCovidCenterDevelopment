@@ -76,6 +76,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="mb-3 row">
+                                        <label for="waitingSeatCapacity" class="col-sm-3 col-form-label text-muted">Waiting Seat Capacity</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" id="waitingSeatCapacity" name="waitingSeatCapacity" class="form-control" placeholder='Waiting Seat Capacity'/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- {/* Right side form start */} -->
                             </div>
@@ -286,6 +292,7 @@
                 formData.append('airport', $('#airport').val());
                 formData.append('city', $('#city').val());
                 formData.append('space', $('#space').val());
+                formData.append('waitingSeatCapacity', $('#waitingSeatCapacity').val());
                 formData.append('zipCode', $('#zipCode').val());
                 formData.append('address', $('#address').val());
                 formData.append('mapLocation', $('#mapLocation').val());

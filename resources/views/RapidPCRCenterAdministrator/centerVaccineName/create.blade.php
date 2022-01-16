@@ -15,7 +15,7 @@
                 <div class="card page-wrapper w-100" style="margin-bottom: 100px" >
                     <form action="{{route('rapidPcrCenterAdministrator.centerVaccine.store')}}" method="post">
                         @csrf
-                        @include('Others.message')
+                        @include('Others.toaster_message')
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Vaccine Name</label>

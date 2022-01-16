@@ -33,7 +33,7 @@
                                 <div class="col-xs-12">
                                     <form role="form" action="{{route('superAdmin.slider.update', $slider->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        @include('Others.message')
+                                        @include('Others.toaster_message')
                                         @method('put')
                                         <div class="form-group">
                                             <label for="name">Slider Title</label>

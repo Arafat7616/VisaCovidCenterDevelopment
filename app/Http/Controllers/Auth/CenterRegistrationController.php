@@ -57,6 +57,7 @@ class CenterRegistrationController extends Controller
             'state'  => 'nullable',
             'city'  => 'nullable',
             'space'  => 'required',
+            'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
             'centerEmail'  => 'required|email|unique:centers,email',
@@ -88,6 +89,9 @@ class CenterRegistrationController extends Controller
         }
         if (is_numeric($request->space)) {
             $center->center_area_id = $request->space;
+        }
+        if (is_numeric($request->waitingSeatCapacity)) {
+            $center->waiting_seat_capacity = $request->waitingSeatCapacity;
         }
 
         $center->trade_licence_no = $request->tradeLicenseNumber;

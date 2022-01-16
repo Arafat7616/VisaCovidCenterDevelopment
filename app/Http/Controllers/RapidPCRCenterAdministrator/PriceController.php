@@ -84,7 +84,7 @@ class PriceController extends Controller
         $price->status = 0;
         $price->save();
 
-        Session::flash('message', 'Successfully Updated!');
+        Session::flash('success', 'Successfully Updated!');
         return redirect()->route('rapidPcrCenterAdministrator.price.index');
     }
 

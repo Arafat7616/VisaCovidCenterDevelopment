@@ -62,8 +62,7 @@ class PaymentMethodController extends Controller
         try {
             PaymentMethod::create($data);
             // return back()->withToastSuccess('Successfully saved.');
-            Session::flash('message', 'Successfully saved.');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved.');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
@@ -137,8 +136,7 @@ class PaymentMethodController extends Controller
             $paymentMethod->save();
 
             // return back()->withToastSuccess('Successfully updated.');
-            Session::flash('message', 'Updated successfully!');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Updated successfully!');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());

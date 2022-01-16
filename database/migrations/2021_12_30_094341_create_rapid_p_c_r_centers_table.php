@@ -28,6 +28,7 @@ class CreateRapidPCRCentersTable extends Migration
             $table->string('status')->default(0);
             $table->string('varification_status')->default(0);
             $table->unsignedBigInteger('center_area_id')->nullable();
+            $table->string('waiting_seat_capacity')->nullable();
             $table->unsignedBigInteger('administrator_id')->nullable();
             $table->timestamps();
             $table->softDeletes();

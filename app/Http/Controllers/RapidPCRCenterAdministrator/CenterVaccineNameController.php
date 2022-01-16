@@ -67,8 +67,7 @@ class CenterVaccineNameController extends Controller
 
         try {
             CenterVaccineName::create($data);
-            Session::flash('message', 'Successfully saved !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
@@ -119,8 +118,7 @@ class CenterVaccineNameController extends Controller
 
         try {
             $centerVaccineName->save();
-            Session::flash('message', 'Successfully Update !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully Update !');
             return redirect()->route('rapidPcrCenterAdministrator.centerVaccine.index');
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
@@ -137,8 +135,7 @@ class CenterVaccineNameController extends Controller
     {
         try {
             CenterVaccineName::findOrFail($id)->delete();
-            Session::flash('message', 'Successfully Deleted !');
-            Session::flash('type', 'success');
+            Session::flash('success', 'Successfully Deleted !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
