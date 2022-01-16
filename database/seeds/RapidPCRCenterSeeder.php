@@ -30,7 +30,8 @@ class RapidPCRCenterSeeder extends Seeder
         $rapidPCRCenter->varification_status = 1;
         $rapidPCRCenter->administrator_id = 18;
         $rapidPCRCenter->center_area_id = 2;
+        $rapidPCRCenter->waiting_seat_capacity = rand(50, 200);
         $rapidPCRCenter->save();
-    }
+      }
     }
 }

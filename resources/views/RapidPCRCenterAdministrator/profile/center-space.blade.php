@@ -19,10 +19,10 @@
                 <div class="col-6">
                     <div class="card profile-card">
                         <div class="card-header">
-                            <h1 class="text-muted">Update space <span class="@if($center->status == 1) text-success @elseif ($center->status == 0) text-danger @endif">@if($center->status == 1)Approved @elseif ($center->status == 0) Pending @endif</span></h1>
+                            <h1 class="text-muted">Update space <span class="@if($rapidPcrCenter->status == 1) text-success @elseif ($rapidPcrCenter->status == 0) text-danger @endif">@if($rapidPcrCenter->status == 1)Approved @elseif ($rapidPcrCenter->status == 0) Pending @endif</span></h1>
                         </div>
                         <div class="card-body">
-                            <form class="form" action="{{ route('administrator.updateCenterSpace') }}" method="POST">
+                            <form class="form" action="{{ route('rapidPcrCenterAdministrator.updateCenterSpace') }}" method="POST">
                                 @csrf
                                 @include('Others.toaster_message')
                                 <!--begin::Alert-->
@@ -32,8 +32,8 @@
                                     <div class="col-8">
                                         <select class="form-control form-select text-muted" name="space" id="space">
                                             <option disabled value="">Select Space(sqft)</option>
-                                            @foreach ($centerAreas as $space)
-                                                <option @if($space->id == $center->center_area_id) selected @endif value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
+                                            @foreach ($rapidPcrCenterAreas as $space)
+                                                <option @if($space->id == $rapidPcrCenter->center_area_id) selected @endif value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -54,7 +54,6 @@
         </div>
     </div>
     <!-- Main Page Ends -->
-   
 @endsection
 
 @push('script')

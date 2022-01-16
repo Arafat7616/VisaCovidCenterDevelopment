@@ -37,6 +37,7 @@ class RapidPCRCenterRegistrationController extends Controller
             'airport'  => 'nullable',
             'city'  => 'nullable',
             'space'  => 'required',
+            'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
             'centerEmail'  => 'required|email|unique:rapid_p_c_r_centers,email',
@@ -72,6 +73,9 @@ class RapidPCRCenterRegistrationController extends Controller
         if (is_numeric($request->space)) {
             $rapidPcrCenter->center_area_id = $request->space;
         }
+        if (is_numeric($request->waitingSeatCapacity)) {
+            $rapidPcrCenter->waiting_seat_capacity = $request->waitingSeatCapacity;
+        }
 
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenseNumber;
         $rapidPcrCenter->address = $request->address;
@@ -87,7 +91,7 @@ class RapidPCRCenterRegistrationController extends Controller
         $user->email = $request->personEmail;
         $user->phone = $request->personPhone;
         $user->rapid_pcr_center_id = $rapidPcrCenter->id;
-        $user->user_type = 'administrator';
+        $user->user_type = 'rapid-pcr-center-administrator';
         $user->otp = rand(100000, 1000000);
         $user->password = Hash::make($request->password);
         $user->save();
