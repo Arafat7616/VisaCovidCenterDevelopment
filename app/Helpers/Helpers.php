@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Center;
+use App\Models\RapidPCRCenter;
 use App\Models\StaticOption;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -139,5 +140,11 @@ if (!function_exists('random_code')) {
     {
        $centers = Center::where('status','!=','1')->count();
        return $centers;
+    }
+
+    function get_pending_rapid_pcr_center_list()
+    {
+       $rapidPcrCenter = RapidPCRCenter::where('status','!=','1')->count();
+       return $rapidPcrCenter;
     }
 }

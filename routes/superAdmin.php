@@ -41,6 +41,16 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
         Route::get('edit/{id}', 'CenterController@edit')->name('edit');
         Route::post('update/{id}', 'CenterController@update')->name('update');
     });
+    // route for manage-rapid-pcr-center
+    Route::group(['prefix' => 'manage-rapid-pcr-center/', 'as' => 'manageRapidPcrCenter.'], function () {
+        Route::get('index', 'RapidPcrCenterController@index')->name('index');
+        Route::post('active/{id}', 'RapidPcrCenterController@activeNow')->name('activeNow');
+        Route::post('inactive/{id}', 'RapidPcrCenterController@inactiveNow')->name('inactiveNow');
+        Route::post('delete/{id}', 'RapidPcrCenterController@deleteNow')->name('deleteNow');
+        Route::get('profile/{id}', 'RapidPcrCenterController@profile')->name('profile');
+        Route::get('edit/{id}', 'RapidPcrCenterController@edit')->name('edit');
+        Route::post('update/{id}', 'RapidPcrCenterController@update')->name('update');
+    });
 
     // route for manage price
     Route::group(['prefix' => 'manage-price/', 'as' => 'managePrice.'], function () {
