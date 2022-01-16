@@ -63,7 +63,6 @@ Regular Man Power
                             </td>
                         </tr>
                         @endforeach
-
                     </tbody>
                     <tfoot>
                         <tr>
