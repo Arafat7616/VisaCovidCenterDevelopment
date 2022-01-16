@@ -121,7 +121,6 @@
                                                     @endif
                                                 </p>
                                             </td>
-                                 
                                         </tr>
                                         {{-- <tr>
                                             <td class="cal-x-y">
