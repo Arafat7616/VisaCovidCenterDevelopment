@@ -4,6 +4,7 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Center;
+use App\Models\CenterArea;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\State;
@@ -28,11 +29,12 @@ class CenterController extends Controller
 
    public function edit($id)
     {
+        $centerAreas = CenterArea::where('status', 1)->get();
         $center = Center::findOrFail($id);
         $countries = Country::all();
         $cities = City::all();
         $states = State::all();
-        return view('SuperAdmin.manageCenter.edit', compact('center', 'countries', 'cities', 'states'));
+        return view('SuperAdmin.manageCenter.edit', compact('center', 'countries', 'cities', 'states','centerAreas'));
     }
 
     public function update(Request $request)
@@ -44,6 +46,7 @@ class CenterController extends Controller
             'address' => 'required',
             'mapLocationLink' => 'required',
             'zipCode' => 'required',
+            'waitingSeatCapacity' => 'required',
             'tradeLicenceNo' => 'required',
             'country' => 'required',
             'state' => 'required',
@@ -51,34 +54,35 @@ class CenterController extends Controller
             'space' => 'required',
         ]);
 
-            // center data store
-            $center =  Center::findOrFail($request->id);
-            $center->name = $request->name;
-            $center->email = $request->email;
+        // center data store
+        $center =  Center::findOrFail($request->id);
+        $center->name = $request->name;
+        $center->email = $request->email;
 
-            if (is_numeric($request->country)) {
-                $center->country_id = $request->country;
-            }
-            if (is_numeric($request->state)) {
-                $center->state_id = $request->state;
-            }
-            if (is_numeric($request->city)) {
-                $center->city_id = $request->city;
-            }
-            if (is_numeric($request->space)) {
-                $center->area = $request->space;
-            }
-            $center->trade_licence_no = $request->tradeLicenceNo;
-            $center->address = $request->address;
-            $center->zip_code = $request->zipCode;
-            $center->map_location = $request->mapLocationLink;
-            $center->status = $request->status;
-            $center->varification_status = false;
-            $center->save();
+        if (is_numeric($request->country)) {
+            $center->country_id = $request->country;
+        }
+        if (is_numeric($request->state)) {
+            $center->state_id = $request->state;
+        }
+        if (is_numeric($request->city)) {
+            $center->city_id = $request->city;
+        }
+        if (is_numeric($request->space)) {
+            $center->center_area_id = $request->space;
+        }
+        $center->trade_licence_no = $request->tradeLicenceNo;
+        $center->address = $request->address;
+        $center->zip_code = $request->zipCode;
+        $center->waiting_seat_capacity = $request->waitingSeatCapacity;
+        $center->map_location = $request->mapLocationLink;
+        $center->status = $request->status;
+        $center->varification_status = false;
+        $center->save();
 
-            // return back()->withToastSuccess('Updated successfully');
-            Session::flash('success', 'Updated successfully!');
-            return back();
+        // return back()->withToastSuccess('Updated successfully');
+        Session::flash('success', 'Updated successfully!');
+        return back();
 
     }
 

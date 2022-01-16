@@ -81,9 +81,10 @@
                 </li>
                 {{-- routes for centers manage  --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/*') ? 'active subdrop': ''}}{{\Illuminate\Support\Facades\Request::is('super-admin/manage-rapid-pcr-center/*') ? 'active subdrop': ''}}"><i class="fa fa-briefcase"></i> <span> Manage Center's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List </span></a></li>
+                        <li><a href="{{route('superAdmin.manageCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Center List <span class="badge badge-warning">{{ get_pending_center_list() }}</span> </span></a></li>
+                        <li><a href="{{route('superAdmin.manageRapidPcrCenter.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/manage-rapid-pcr-center/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Rapid PCR Center List <span class="badge badge-warning">{{ get_pending_rapid_pcr_center_list() }}</span> </span></a></li>
                     </ul>
                 </li>
                 {{-- routes for center area  --}}
