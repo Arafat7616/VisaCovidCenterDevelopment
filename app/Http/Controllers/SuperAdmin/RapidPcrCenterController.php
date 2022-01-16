@@ -40,7 +40,7 @@ class RapidPcrCenterController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:rapidPcrCenters,email,' . $request->id,
+            'email' => 'required|unique:rapid_p_c_r_centers,email,' . $request->id,
             'status' => 'required',
             'address' => 'required',
             'mapLocationLink' => 'required',
@@ -68,7 +68,7 @@ class RapidPcrCenterController extends Controller
             $rapidPcrCenter->city_id = $request->city;
         }
         if (is_numeric($request->space)) {
-            $rapidPcrCenter->rapidPcrCenter_area_id = $request->space;
+            $rapidPcrCenter->center_area_id = $request->space;
         }
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenceNo;
         $rapidPcrCenter->address = $request->address;
