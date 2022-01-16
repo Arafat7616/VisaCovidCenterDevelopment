@@ -33,8 +33,7 @@
                                         $morning_slot_minutes = $morning_starting_time->diffInMinutes($morning_ending_time);
                                     }
                                 @endphp
-                                <p class="cal-footer">Working period: <span
-                                        id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
+                                <p class="cal-footer">Working period: <span id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
                             </div>
 
                             <div class="cal-day-slot">
