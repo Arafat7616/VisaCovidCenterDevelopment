@@ -22,9 +22,9 @@ class CenterController extends Controller
 
         if ($user)
         {
-            if ($user->user_type !== 'volunteer'){
+            if ($user->user_type !== 'trusted-medical-assistant'){
                 return response()->json([
-                    "message" => "Sorry ! Login only volunteer",
+                    "message" => "Sorry ! Login only trusted medical assistant",
                     "status" => "0",
                 ]);
             }else{

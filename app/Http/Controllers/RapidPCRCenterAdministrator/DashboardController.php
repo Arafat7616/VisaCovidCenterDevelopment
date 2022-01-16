@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function centerSpace(){
         $rapidPcrCenter = Auth::user()->rapidPcrCenter;
         $rapidPcrCenterAreas = CenterArea::where('status', 1)->get();
-        return view('RapidPCRCenterAdministrator.profile.center-space', compact('rapidPcrCenter','centerAreas'));
+        return view('RapidPCRCenterAdministrator.profile.center-space', compact('rapidPcrCenter','rapidPcrCenterAreas'));
     }
 
     public function updateCenterSpace(Request $request){

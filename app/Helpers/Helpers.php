@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-if (!function_exists('random_code')){
+if (!function_exists('random_code')) {
 
     function set_static_option($key, $value)
     {
@@ -53,7 +53,7 @@ if (!function_exists('random_code')){
     function send_sms($message, $phone)
     {
 
-        // app name given in here 
+        // app name given in here
         $app_name = env('APP_NAME');
         $curl = curl_init();
 
@@ -64,7 +64,7 @@ if (!function_exists('random_code')){
             CURLOPT_POSTFIELDS => array(
 
                 'api_key' => env('SMS_API_KEY'),
-                'msg' => nl2br($message.". Regards from ".$app_name),
+                'msg' => nl2br($message . ". Regards from " . $app_name),
                 'to' => $phone
             ),
         ));
@@ -99,7 +99,7 @@ if (!function_exists('random_code')){
 
     function get_total_trusted_medical_assistants()
     {
-        $trustedMedicalAssistants =  User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
+        $trustedMedicalAssistants = User::where('user_type', 'trusted-medical-assistant')->where('center_id', Auth::user()->center_id)->count();
         return $trustedMedicalAssistants;
     }
 
@@ -108,10 +108,10 @@ if (!function_exists('random_code')){
         return User::where('user_type', 'rapid-prc-center-trusted-medical-assistant')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->count();
     }
 
-    function get_max_service_per_day($totalDayMinutes,$per_precess_minute, $number_of_trusted_medical_assistants)
+    function get_max_service_per_day($totalDayMinutes, $per_precess_minute, $number_of_trusted_medical_assistants)
     {
-        $man_power_minute_for_precess = $number_of_trusted_medical_assistants*$totalDayMinutes;
-        return intval($man_power_minute_for_precess/$per_precess_minute);
+        $man_power_minute_for_precess = $number_of_trusted_medical_assistants * $totalDayMinutes;
+        return intval($man_power_minute_for_precess / $per_precess_minute);
     }
 
     function get_available_service_at_a_time($centerArea)
@@ -120,17 +120,17 @@ if (!function_exists('random_code')){
         $other_sft = get_static_option('others_sft');
 
         $after_minus_space = $centerArea->maximum_space - $other_sft;
-        $available_person = $after_minus_space/$person_sft_cal;
+        $available_person = $after_minus_space / $person_sft_cal;
         return intval($available_person);
     }
-    
+
     function get_available_service_at_a_time_in_rtpcr_center($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
         $other_sft = get_static_option('others_sft');
 
         $after_minus_space = $centerArea->maximum_space - $other_sft;
-        $available_person = $after_minus_space/$person_sft_cal;
+        $available_person = $after_minus_space / $person_sft_cal;
         return intval($available_person);
     }
-
+}
