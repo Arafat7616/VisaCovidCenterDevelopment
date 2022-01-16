@@ -96,6 +96,7 @@ class PcrCenterController extends Controller
         $user = User::where('phone', $phone)->select('id')->first();
         $pcr = PcrTest::where('id', $applicationId)->first();
 
+        $pcr->sample_collection_date = Carbon::now();
         $pcr->date_of_pcr_test = Carbon::now();
         $pcr->tested_by = $user->id;
         $pcr->save();
