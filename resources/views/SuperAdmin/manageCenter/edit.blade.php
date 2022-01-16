@@ -102,9 +102,18 @@ Edit
                                         </select>
                                     </div>   
                                     <div class="form-group">
-                                        <label for="space">Space</label>
-                                        <input type="number" name="space" class="form-control" id="space" min="0" value="{{ $center->area }}">
-                                    </div> 
+                                        <label for="space">Space(sqft)</label>
+                                        <select class="form-control" name="space" required="" id="space">
+                                            <option disabled value="">Select Space(sqft)</option>
+                                            @foreach($centerAreas as $space)
+                                                <option {{$space->center_area_id == $space->id ? 'selected' : ''}} value="{{$space->id}}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="waitingSeatCapacity">Waiting Seat Capacity</label>
+                                        <input type="number" name="waitingSeatCapacity" class="form-control" id="waitingSeatCapacity" value="{{ $center->waiting_seat_capacity }}">
+                                    </div>    
                                 </div>
                             </div>
                         </div>
