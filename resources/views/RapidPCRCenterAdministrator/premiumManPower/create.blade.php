@@ -218,7 +218,8 @@
                                             <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->area->maximum_space }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : {{ Auth::user()->rapidPcrCenter->waiting_seat_capacity }}</p>
+                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : <span id="waitingSeatCapacity">{{ Auth::user()->center->waiting_seat_capacity }}</span></p>
+                                            <p class="card-text" style="white-space:pre">At a time capacity : <span id="atATimeCapacity"></span></p>
                                             <p class="card-text" style="white-space:pre">Maximum capacity : {{ intval((Auth::user()->rapidPcrCenter->area->maximum_space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
                                     </div>
@@ -273,7 +274,7 @@
                 // formData.append('booster_available_set', $('#max-booster-serve').text());
                 // formData.append('vaccine_available_set', $('#max-vaccine-serve').text());
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());
-                formData.append('wantToServeAtATime', $('#wantToServeAtATime').text());
+                formData.append('atATimeCapacity', $('#atATimeCapacity').text());
                 $.ajax({
                     method: 'POST',
                     url: "{{ url('rapid-pcr-center-administrator/premium/store') }}",
@@ -332,6 +333,7 @@
         }
         // Auto wantToServeAtATime Calculation
         function wantToServeAtATime() {
+            var waitingSeatCapacity = parseInt(document.getElementById('waitingSeatCapacity').innerHTML);
             var maxPcrServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
             // var maxVaccineServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
             // var maxBoosterServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
@@ -340,6 +342,7 @@
             // document.getElementById('max-available-vaccine-serve').innerHTML = maxVaccineServeAtATime;
             // document.getElementById('max-available-booster-serve').innerHTML = maxBoosterServeAtATime;
             document.getElementById('wantToServeAtATime').innerHTML = wantToServeAtATime;
+            document.getElementById('atATimeCapacity').innerHTML = wantToServeAtATime+waitingSeatCapacity;
         }
         wantToServePerDay();
         wantToServeAtATime();

@@ -7,7 +7,6 @@ Regular Man Power
 @push('css')
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/calender_14.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/center-part/css/third-party-calendar/calendar.css') }}">
-
 <!-- DataTables -->
 <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"
     type="text/css" />
@@ -31,7 +30,6 @@ Regular Man Power
             <h1 class="cal-header text-center">Regular Manpower Schedule <a class="btn btn-success"
                     href="{{ route('rapidPcrCenterAdministrator.regular.create') }}">Add new</a></h1>
             <div>
-
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                     cellspacing="0" width="100%">
                     <thead>
@@ -76,7 +74,6 @@ Regular Man Power
                     </tfoot>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
