@@ -217,7 +217,7 @@
                                             <h5 class="card-title">Total square feet : {{ Auth::user()->rapidPcrCenter->area->maximum_space }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : <span id="waitingSeatCapacity">{{ Auth::user()->center->waiting_seat_capacity }}</span></p>
+                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : <span id="waitingSeatCapacity">{{ Auth::user()->rapidPcrCenter->waiting_seat_capacity }}</span></p>
                                             <p class="card-text" style="white-space:pre">At a time capacity : <span id="atATimeCapacity"></span></p>
                                             <p class="card-text" style="white-space:pre">Maximum capacity : {{ intval((Auth::user()->rapidPcrCenter->area->maximum_space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
