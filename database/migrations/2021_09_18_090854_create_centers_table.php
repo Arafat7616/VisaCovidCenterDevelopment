@@ -26,6 +26,7 @@ class CreateCentersTable extends Migration
             $table->string('trade_licence_no')->nullable();
             $table->string('status')->default(0);
             $table->string('varification_status')->default(0);
+            $table->integer('space')->nullable();
             $table->unsignedBigInteger('center_area_id')->nullable();
             $table->string('waiting_seat_capacity')->nullable();
             $table->unsignedBigInteger('administrator_id')->nullable();

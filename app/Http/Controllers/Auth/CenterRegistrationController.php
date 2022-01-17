@@ -56,7 +56,7 @@ class CenterRegistrationController extends Controller
             'country'  => 'nullable',
             'state'  => 'nullable',
             'city'  => 'nullable',
-            'space'  => 'required',
+            'space'  => 'required|numeric',
             'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
@@ -73,6 +73,25 @@ class CenterRegistrationController extends Controller
             'document3' => 'nullable:mimes:pdf',
         ]);
 
+        if (is_numeric($request->space)) {
+
+            $centerArea = CenterArea::where('minimum_space','<=',$request->space)->where('maximum_space','>=',$request->space)->first();
+
+            if($centerArea){
+                $center_area_id = $centerArea->id;
+            }else{
+                return response()->json([
+                    'type' => 'error',
+                    'message' => 'Opps somthing went wrong. ' . 'Your center space is too short',
+                ]);
+            }
+        }else{
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Opps somthing went wrong. ' . 'Your center space should be number',
+            ]);
+        }
+
         // center data store
         $center = new Center();
         $center->name = $request->centerName;
@@ -87,17 +106,17 @@ class CenterRegistrationController extends Controller
         if (is_numeric($request->city)) {
             $center->city_id = $request->city;
         }
-        if (is_numeric($request->space)) {
-            $center->center_area_id = $request->space;
-        }
+
         if (is_numeric($request->waitingSeatCapacity)) {
             $center->waiting_seat_capacity = $request->waitingSeatCapacity;
         }
 
         $center->trade_licence_no = $request->tradeLicenseNumber;
         $center->address = $request->address;
+        $center->space = $request->space;
         $center->zip_code = $request->zipCode;
         $center->map_location = $request->mapLocation;
+        $center->center_area_id = $center_area_id;
         $center->status = false;
         $center->varification_status = false;
         $center->save();

@@ -36,7 +36,7 @@ class RapidPCRCenterRegistrationController extends Controller
             'state'  => 'nullable',
             'airport'  => 'nullable',
             'city'  => 'nullable',
-            'space'  => 'required',
+            'space'  => 'required|numeric',
             'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
             'hotLine'  => 'required',
@@ -52,6 +52,25 @@ class RapidPCRCenterRegistrationController extends Controller
             'document2' => 'nullable:mimes:pdf',
             'document3' => 'nullable:mimes:pdf',
         ]);
+
+        if (is_numeric($request->space)) {
+
+            $centerArea = CenterArea::where('minimum_space','<=',$request->space)->where('maximum_space','>=',$request->space)->first();
+
+            if($centerArea){
+                $center_area_id = $centerArea->id;
+            }else{
+                return response()->json([
+                    'type' => 'error',
+                    'message' => 'Opps somthing went wrong. ' . 'Your center space is too short',
+                ]);
+            }
+        }else{
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Opps somthing went wrong. ' . 'Your center space should be number',
+            ]);
+        }
 
         // center data store
         $rapidPcrCenter = new RapidPCRCenter();
@@ -70,16 +89,16 @@ class RapidPCRCenterRegistrationController extends Controller
         if (is_numeric($request->city)) {
             $rapidPcrCenter->city_id = $request->city;
         }
-        if (is_numeric($request->space)) {
-            $rapidPcrCenter->center_area_id = $request->space;
-        }
+
         if (is_numeric($request->waitingSeatCapacity)) {
             $rapidPcrCenter->waiting_seat_capacity = $request->waitingSeatCapacity;
         }
 
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenseNumber;
         $rapidPcrCenter->address = $request->address;
+        $rapidPcrCenter->space = $request->space;
         $rapidPcrCenter->zip_code = $request->zipCode;
+        $rapidPcrCenter->center_area_id = $center_area_id;
         $rapidPcrCenter->map_location = $request->mapLocation;
         $rapidPcrCenter->status = false;
         $rapidPcrCenter->varification_status = false;

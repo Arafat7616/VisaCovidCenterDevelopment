@@ -29,6 +29,7 @@ class CenterSeeder extends Seeder
             $center->trade_licence_no = rand(1000000, 2000000);
             $center->status = 1;
             $center->varification_status = 1;
+            $center->space = 11000;
             $center->administrator_id = 2;
             $center->center_area_id = 1;
             $center->waiting_seat_capacity = rand(50, 100);

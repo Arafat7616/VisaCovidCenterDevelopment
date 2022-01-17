@@ -16,9 +16,9 @@ class CreateCenterAreasTable extends Migration
         Schema::create('center_areas', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('minimum_space')->nullable();
-            $table->string('maximum_space')->nullable();
-            $table->string('furniture_and_others')->nullable();
+            $table->integer('minimum_space')->nullable();
+            $table->integer('maximum_space')->nullable();
+            $table->integer('furniture_and_others')->nullable();
             $table->string('category')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();

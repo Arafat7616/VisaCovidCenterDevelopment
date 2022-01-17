@@ -68,12 +68,7 @@
                                     <div class="mb-3 row">
                                         <label for="space" class="col-sm-3 col-form-label text-muted">Space(sqft)</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control form-select text-muted" name="space" id="space">
-                                                <option disabled value="">Select Space(sqft)</option>
-                                                @foreach ($centerAreas as $space)
-                                                    <option value="{{ $space->id }}">{{ $space->title }} ({{ $space->minimum_space }}-{{ $space->maximum_space }})</option>
-                                                @endforeach
-                                            </select>
+                                            <input type="number" id="space" name="space" class="form-control" placeholder='1000'/>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -319,22 +314,30 @@
                     processData: false,
                     contentType: false,
                     success: function(data) {
-                        // $('#main-form').trigger("reset");
-                        // console.log(data.message);
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: data.message,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
+                        if (data.type == "success") {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
 
-                        $('.otp-reg').show();
-                        $('.otp-sent-number').text($('#personPhone').val());
-                        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-                        // setTimeout(function() {
-                        //     location.reload();
-                        // }, 800); //
+                            $('.otp-reg').show();
+                            $('.otp-sent-number').text($('#personPhone').val());
+                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+                            // setTimeout(function() {
+                            //     location.reload();
+                            // }, 800); //
+                        }else{
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: data.message,
+                                showConfirmButton: true,
+                                // timer: 1500
+                            })
+                        }
                     },
                     error: function(xhr) {
                         var errorMessage = '<div class="card bg-danger">\n' +
