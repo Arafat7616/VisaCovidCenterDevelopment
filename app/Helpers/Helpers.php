@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Center;
+use App\Models\RapidPCRCenter;
 use App\Models\StaticOption;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -132,5 +134,17 @@ if (!function_exists('random_code')) {
         $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space / $person_sft_cal;
         return intval($available_person);
+    }
+
+    function get_pending_center_list()
+    {
+       $centers = Center::where('status','!=','1')->count();
+       return $centers;
+    }
+
+    function get_pending_rapid_pcr_center_list()
+    {
+       $rapidPcrCenter = RapidPCRCenter::where('status','!=','1')->count();
+       return $rapidPcrCenter;
     }
 }

@@ -31,7 +31,7 @@ class CenterSeeder extends Seeder
             $center->varification_status = 1;
             $center->administrator_id = 2;
             $center->center_area_id = 1;
-            $center->waiting_seat_capacity = rand(50, 200);
+            $center->waiting_seat_capacity = rand(50, 100);
             $center->save();
         }
     }

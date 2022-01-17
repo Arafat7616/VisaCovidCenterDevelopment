@@ -31,7 +31,6 @@ Regular Man Power
             <h1 class="cal-header text-center">Regular Manpower Schedule <a class="btn btn-success"
                     href="{{ route('administrator.regular.create') }}">Add new</a></h1>
             <div>
-
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                     cellspacing="0" width="100%">
                     <thead>
@@ -76,7 +75,6 @@ Regular Man Power
                             </td>
                         </tr>
                         @endforeach
-
                     </tbody>
                     <tfoot>
                         <tr>

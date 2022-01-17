@@ -1,7 +1,7 @@
 @extends('Administrator.layouts.master')
 
 @push('title')
-    Premium Man Power Add
+    Premium Man Power Edit
 @endpush
 
 @push('css')
@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row">
                     <h1 class="cal-header">Edit Premium Manpower Schedule for {{ Carbon\Carbon::parse($manPowerSchedule->date)->format('Y-m-d') }}</h1>
-
+                    
                     <form action="">
                         <div class="cal-slot row ">
                             <div class="cal-morning-slot">
@@ -33,8 +33,7 @@
                                         $morning_slot_minutes = $morning_starting_time->diffInMinutes($morning_ending_time);
                                     }
                                 @endphp
-                                <p class="cal-footer">Working period: <span
-                                        id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
+                                <p class="cal-footer">Working period: <span id="totalMorningSlotTime">{{ $morning_slot_minutes ?? '' }}</span> Minutes</p>
                             </div>
 
                             <div class="cal-day-slot">
@@ -121,7 +120,6 @@
                                                     @endif
                                                 </p>
                                             </td>
-                                 
                                         </tr>
                                         <tr>
                                             <td class="cal-x-y">
@@ -205,7 +203,8 @@
                                             <h5 class="card-title">Total square feet : {{ Auth::user()->center->area->maximum_space }}</h5>
                                             <p class="card-text" style="white-space:pre">Other's square feet      :  {{ get_static_option('others_sft') }}</p>
                                             <p class="card-text" style="white-space:pre">Per person square feet : {{ get_static_option('sft_per_person') }}</p>
-                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : {{ Auth::user()->center->waiting_seat_capacity }}</p>
+                                            <p class="card-text" style="white-space:pre">Waiting seat Capacity : <span id="waitingSeatCapacity">{{ Auth::user()->center->waiting_seat_capacity }}</span></p>
+                                            <p class="card-text" style="white-space:pre">At a time capacity : <span id="atATimeCapacity"></span></p>
                                             <p class="card-text" style="white-space:pre">Maximum capacity : {{ intval((Auth::user()->center->area->maximum_space - get_static_option('others_sft')) / get_static_option('sft_per_person'))}} </p>
                                         </div>
                                     </div>
@@ -221,6 +220,7 @@
         </div>
     </div>
 @endsection
+
 
 @push('script')
     <script src="{{ asset('assets/center-part/js/third-party-calendar/calendar.js') }}"></script>
@@ -244,7 +244,7 @@
                 formData.append('vaccine_available_set', $('#max-vaccine-serve').text());
                 formData.append('pcr_available_set', $('#max-pcr-serve').text());
                 formData.append('id', $('#id').val());        
-                formData.append('wantToServeAtATime', $('#wantToServeAtATime').text());
+                formData.append('atATimeCapacity', $('#atATimeCapacity').text());
                 $.ajax({
                     method: 'POST',
                     url: "{{ url('administrator/premium/update') }}"+"/"+$('#id').val(),
@@ -303,6 +303,7 @@
         }
         // Auto wantToServeAtATime Calculation
         function wantToServeAtATime() {
+            var waitingSeatCapacity = parseInt(document.getElementById('waitingSeatCapacity').innerHTML);
             var maxPcrServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForPcr').value);
             var maxVaccineServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForVaccine').value);
             var maxBoosterServeAtATime = parseInt(document.getElementById('trustedMedicalAssistantForBooster').value);
@@ -311,6 +312,7 @@
             document.getElementById('max-available-vaccine-serve').innerHTML = maxVaccineServeAtATime;
             document.getElementById('max-available-booster-serve').innerHTML = maxBoosterServeAtATime;
             document.getElementById('wantToServeAtATime').innerHTML = wantToServeAtATime;
+            document.getElementById('atATimeCapacity').innerHTML = wantToServeAtATime+waitingSeatCapacity;
         }
         wantToServePerDay();
         wantToServeAtATime();

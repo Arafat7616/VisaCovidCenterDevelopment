@@ -44,7 +44,7 @@ class RegularManPowerController extends Controller
 
         
         $avaiable =  get_available_service_at_a_time_in_rtpcr_center(auth()->user()->rapidPcrCenter->area);
-        if ($request->wantToServeAtATime <= $avaiable) {
+        if ($request->atATimeCapacity <= $avaiable) {
             $d1 = strtotime($request->fromDate);
             $d2 = strtotime($request->toDate);
             $totalDiffDays = abs($d1-$d2)/60/60/24;
@@ -114,7 +114,7 @@ class RegularManPowerController extends Controller
         ]);
 
         $avaiable =  get_available_service_at_a_time_in_rtpcr_center(auth()->user()->rapidPcrCenter->area);
-        if ($request->wantToServeAtATime <= $avaiable) {
+        if ($request->atATimeCapacity <= $avaiable) {
             $manPowerSchedule = ManPowerSchedule::findOrFail($id);
         
             $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
