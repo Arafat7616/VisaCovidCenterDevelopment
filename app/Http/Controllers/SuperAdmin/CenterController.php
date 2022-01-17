@@ -46,6 +46,7 @@ class CenterController extends Controller
             'address' => 'required',
             'mapLocationLink' => 'required',
             'zipCode' => 'required',
+            'hotline' => 'required',
             'waitingSeatCapacity' => 'required',
             'tradeLicenceNo' => 'required',
             'country' => 'required',
@@ -68,12 +69,14 @@ class CenterController extends Controller
         if (is_numeric($request->city)) {
             $center->city_id = $request->city;
         }
-        if (is_numeric($request->space)) {
-            $center->center_area_id = $request->space;
+        if (is_numeric($request->center_area)) {
+            $center->center_area_id = $request->center_area;
         }
         $center->trade_licence_no = $request->tradeLicenceNo;
         $center->address = $request->address;
         $center->zip_code = $request->zipCode;
+        $center->space = $request->space;
+        $center->hotline = $request->hotline;
         $center->waiting_seat_capacity = $request->waitingSeatCapacity;
         $center->map_location = $request->mapLocationLink;
         $center->status = $request->status;

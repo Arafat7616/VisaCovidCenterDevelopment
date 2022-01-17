@@ -45,6 +45,7 @@ class RapidPcrCenterController extends Controller
             'address' => 'required',
             'mapLocationLink' => 'required',
             'zipCode' => 'required',
+            'hotline' => 'required',
             'waitingSeatCapacity' => 'required',
             'tradeLicenceNo' => 'required',
             'country' => 'required',
@@ -67,12 +68,14 @@ class RapidPcrCenterController extends Controller
         if (is_numeric($request->city)) {
             $rapidPcrCenter->city_id = $request->city;
         }
-        if (is_numeric($request->space)) {
-            $rapidPcrCenter->center_area_id = $request->space;
+        if (is_numeric($request->center_area)) {
+            $rapidPcrCenter->center_area_id = $request->center_area;
         }
         $rapidPcrCenter->trade_licence_no = $request->tradeLicenceNo;
         $rapidPcrCenter->address = $request->address;
         $rapidPcrCenter->zip_code = $request->zipCode;
+        $rapidPcrCenter->space = $request->space;
+        $rapidPcrCenter->hotline = $request->hotline;
         $rapidPcrCenter->waiting_seat_capacity = $request->waitingSeatCapacity;
         $rapidPcrCenter->map_location = $request->mapLocationLink;
         $rapidPcrCenter->status = $request->status;
