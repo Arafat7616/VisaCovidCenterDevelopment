@@ -21,6 +21,7 @@ class CreateCentersTable extends Migration
             $table->unsignedBigInteger('state_id')->nullable();
             $table->unsignedBigInteger('city_id')->nullable();
             $table->string('zip_code')->nullable();
+            $table->string('hotline')->nullable();
             $table->string('address')->nullable();
             $table->text('map_location')->nullable();
             $table->string('trade_licence_no')->nullable();

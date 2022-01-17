@@ -91,9 +91,9 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="hotLine" class="col-sm-3 col-form-label text-muted">HotLine</label>
+                                    <label for="hotline" class="col-sm-3 col-form-label text-muted">HotLine</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="hotLine" name="hotLine" class="form-control"
+                                        <input type="text" id="hotline" name="hotline" class="form-control"
                                             placeholder='Enter HotLine' />
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@
                 formData.append('zipCode', $('#zipCode').val());
                 formData.append('address', $('#address').val());
                 formData.append('mapLocation', $('#mapLocation').val());
-                formData.append('hotLine', $('#hotLine').val());
+                formData.append('hotline', $('#hotline').val());
                 formData.append('centerEmail', $('#centerEmail').val());
                 formData.append('personName', $('#personName').val());
                 formData.append('personEmail', $('#personEmail').val());

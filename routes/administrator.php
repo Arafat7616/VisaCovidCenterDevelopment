@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'administrator/', 'namespace' => 'Administrator', 'as' => 'administrator.', 'middleware' => ['auth', 'administrator']], function () {
 
     Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
-    Route::get('center-space', 'DashboardController@centerSpace')->name('centerSpace');
-    Route::post('update-center-space', 'DashboardController@updateCenterSpace')->name('updateCenterSpace');
+    Route::get('center-modify', 'DashboardController@centerModify')->name('centerModify');
+    Route::post('center-modify-post', 'DashboardController@centerModifyPost')->name('centerModifyPost');
 
     // route for TrustedMedicalAssistant
     Route::group(['prefix' => 'trusted-medical-assistant/', 'as' => 'trustedMedicalAssistant.'], function () {

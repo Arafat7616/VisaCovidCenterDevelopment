@@ -22,6 +22,7 @@ class CreateRapidPCRCentersTable extends Migration
             $table->unsignedBigInteger('city_id')->nullable();
             $table->unsignedBigInteger('airport_id')->nullable();
             $table->string('zip_code')->nullable();
+            $table->string('hotline')->nullable();
             $table->string('address')->nullable();
             $table->text('map_location')->nullable();
             $table->string('trade_licence_no')->nullable();

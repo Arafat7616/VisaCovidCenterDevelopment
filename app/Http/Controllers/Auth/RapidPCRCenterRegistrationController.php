@@ -39,7 +39,7 @@ class RapidPCRCenterRegistrationController extends Controller
             'space'  => 'required|numeric',
             'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
-            'hotLine'  => 'required',
+            'hotline'  => 'required',
             'centerEmail'  => 'required|email|unique:rapid_p_c_r_centers,email',
             'personName'  => 'required',
             'personEmail'  => 'required|email|unique:users,email',
@@ -98,6 +98,7 @@ class RapidPCRCenterRegistrationController extends Controller
         $rapidPcrCenter->address = $request->address;
         $rapidPcrCenter->space = $request->space;
         $rapidPcrCenter->zip_code = $request->zipCode;
+        $rapidPcrCenter->hotline = $request->hotline;
         $rapidPcrCenter->center_area_id = $center_area_id;
         $rapidPcrCenter->map_location = $request->mapLocation;
         $rapidPcrCenter->status = false;

@@ -59,7 +59,7 @@ class CenterRegistrationController extends Controller
             'space'  => 'required|numeric',
             'waitingSeatCapacity'  => 'required',
             'zipCode'  => 'required',
-            'hotLine'  => 'required',
+            'hotline'  => 'required',
             'centerEmail'  => 'required|email|unique:centers,email',
             'personName'  => 'required',
             'personEmail'  => 'required|email|unique:users,email',
@@ -115,6 +115,7 @@ class CenterRegistrationController extends Controller
         $center->address = $request->address;
         $center->space = $request->space;
         $center->zip_code = $request->zipCode;
+        $center->hotline = $request->hotline;
         $center->map_location = $request->mapLocation;
         $center->center_area_id = $center_area_id;
         $center->status = false;
