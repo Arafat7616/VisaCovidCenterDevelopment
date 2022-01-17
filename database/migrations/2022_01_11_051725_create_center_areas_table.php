@@ -18,6 +18,7 @@ class CreateCenterAreasTable extends Migration
             $table->string('title')->nullable();
             $table->string('minimum_space')->nullable();
             $table->string('maximum_space')->nullable();
+            $table->string('furniture_and_others')->nullable();
             $table->string('category')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();

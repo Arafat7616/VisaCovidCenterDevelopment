@@ -40,16 +40,12 @@ Banner | Setting
                         <div class="panel-body">
                             <div class="row">
                                <div class="container">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="sft_per_person">Per Person Sft</label>
-                                        <input type="text" name="sft_per_person" class="form-control" id="sft_per_person" value="{{ get_static_option('sft_per_person') }}">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="sft_per_person">Per Person Sft</label>
+                                            <input type="text" name="sft_per_person" class="form-control" id="sft_per_person" value="{{ get_static_option('sft_per_person') }}">
+                                        </div>                                              
                                     </div>
-                                    <div class="form-group">
-                                        <label for="others_sft">Others Sft</label>
-                                        <input type="text" name="others_sft" class="form-control" id="others_sft" value="{{ get_static_option('others_sft') }}">
-                                    </div>                                                         
-                                </div>
                                </div>
                             </div>
                         </div>

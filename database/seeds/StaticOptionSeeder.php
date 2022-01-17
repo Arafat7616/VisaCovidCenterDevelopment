@@ -60,6 +60,5 @@ class StaticOptionSeeder extends Seeder
         set_static_option('footer_details', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt expedita molestias eligendi, aliquam nisi temporibus delectus ducimus ea eveniet corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore ullam, hic quam excepturi consectetur.');
 
         set_static_option('sft_per_person', '12');
-        set_static_option('others_sft', '300');
     }
 }
