@@ -24,11 +24,13 @@ class CenterSeeder extends Seeder
             $center->state_id = 348;
             $center->city_id = 7291;
             $center->zip_code = Str::random(15);
+            $center->hotline = Str::random(15);
             $center->address = 'Dhaka Bangladesh';
             $center->map_location = '#';
             $center->trade_licence_no = rand(1000000, 2000000);
             $center->status = 1;
             $center->varification_status = 1;
+            $center->space = 11000;
             $center->administrator_id = 2;
             $center->center_area_id = 1;
             $center->waiting_seat_capacity = rand(50, 100);
