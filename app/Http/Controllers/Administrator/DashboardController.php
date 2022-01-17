@@ -83,7 +83,6 @@ class DashboardController extends Controller
         $center->save();
 
         Session::flash('success', 'Updated successfully!');
-
         return back();
     }
 }
