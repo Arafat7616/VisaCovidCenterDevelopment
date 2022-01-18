@@ -8,11 +8,6 @@
 
 @endpush
 
-
-
-
-
-
 @section('content')
     <div class="trusted_medical_assistants mb-5">
         <div class="container">
