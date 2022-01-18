@@ -18,12 +18,10 @@ class SpaceController extends Controller
     public function spaceUpdate(Request $request){
         $request->validate([
             'sft_per_person' => 'required',
-            'others_sft' => 'required',
         ]);
         try {
 
             update_static_option('sft_per_person', $request->sft_per_person);
-            update_static_option('others_sft', $request->others_sft);    
         }catch (\Exception $exception){
             Session::flash('error', $exception->getMessage());
             return redirect()->back();

@@ -47,7 +47,6 @@ class LandingPageController extends Controller
         }
         // return back()->withSuccess('Updated successfully!');
         Session::flash('success', 'Updated successfully!');
-
         return back();
     }
 
@@ -90,7 +89,6 @@ class LandingPageController extends Controller
         }
         // return back()->withSuccess('Updated successfully!');
         Session::flash('success', 'Updated successfully!');
-
         return back();
     }
 
@@ -128,7 +126,6 @@ class LandingPageController extends Controller
         }
         // return back()->withSuccess('Updated successfully!');
         Session::flash('success', 'Updated successfully!');
-
         return back();
     }
 
@@ -159,7 +156,6 @@ class LandingPageController extends Controller
         }
         // return back()->withSuccess('Updated successfully!');
         Session::flash('success', 'Updated successfully!');
-
         return back();
     }
 

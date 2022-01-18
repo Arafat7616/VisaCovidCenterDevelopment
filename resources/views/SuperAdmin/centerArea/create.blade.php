@@ -55,6 +55,14 @@
                                         @error('maximum_space')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
+                                        <div class="form-group">
+                                            <label for="furniture_and_others">Furniture and other's
+                                            </label>
+                                            <input type="number" name="furniture_and_others" value="{{ old('furniture_and_others') }}" class="form-control @error('furniture_and_others') is-invalid @enderror" id="ex1" placeholder="Furniture and other's">
+                                        </div>
+                                        @error('furniture_and_others')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
 
                                         <div class="form-group">
                                             <label for="category">Category</label>

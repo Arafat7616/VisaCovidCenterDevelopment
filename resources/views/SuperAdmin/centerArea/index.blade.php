@@ -41,6 +41,7 @@
                                                 <th>Title</th>
                                                 <th>Minimum space</th>
                                                 <th>Maximum space</th>
+                                                <th>Furniture and others</th>
                                                 <th>Category</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -53,6 +54,7 @@
                                                 <td>{{$centerArea->title}}</td>
                                                 <td>{{$centerArea->minimum_space}}</td>
                                                 <td>{{$centerArea->maximum_space}}</td>
+                                                <td>{{$centerArea->furniture_and_others}}</td>
                                                 <td>{{$centerArea->category}}</td>
                                                 <td><span class="label {{$centerArea->status ? 'label-success':'label-warning'}}">{{$centerArea->status ? 'Active':'Inactive'}}</span></td>
                                                 <td>
@@ -68,6 +70,7 @@
                                                 <th>Title</th>
                                                 <th>Minimum space</th>
                                                 <th>Maximum space</th>
+                                                <th>Furniture and others</th>
                                                 <th>Category</th>
                                                 <th>Status</th>
                                                 <th>Action</th>

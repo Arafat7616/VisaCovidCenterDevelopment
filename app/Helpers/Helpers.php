@@ -119,7 +119,7 @@ if (!function_exists('random_code')) {
     function get_available_service_at_a_time($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
-        $other_sft = get_static_option('others_sft');
+        $other_sft = get_center_other_square_feet();
 
         $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space / $person_sft_cal;
@@ -129,7 +129,7 @@ if (!function_exists('random_code')) {
     function get_available_service_at_a_time_in_rtpcr_center($centerArea)
     {
         $person_sft_cal = get_static_option('sft_per_person');
-        $other_sft = get_static_option('others_sft');
+        $other_sft = get_rapid_pcr_center_other_square_feet();
 
         $after_minus_space = $centerArea->maximum_space - $other_sft;
         $available_person = $after_minus_space / $person_sft_cal;
@@ -140,6 +140,18 @@ if (!function_exists('random_code')) {
     {
        $centers = Center::where('status','!=','1')->count();
        return $centers;
+    }
+
+    function get_center_other_square_feet()
+    {
+       $furniture_and_others = Auth::user()->center->area->furniture_and_others;
+       return $furniture_and_others;
+    }
+
+    function get_rapid_pcr_center_other_square_feet()
+    {
+       $furniture_and_others = Auth::user()->rapidPcrCenter->area->furniture_and_others;
+       return $furniture_and_others;
     }
 
     function get_pending_rapid_pcr_center_list()

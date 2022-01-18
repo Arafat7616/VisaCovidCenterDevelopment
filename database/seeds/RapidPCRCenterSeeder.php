@@ -23,11 +23,13 @@ class RapidPCRCenterSeeder extends Seeder
         $rapidPCRCenter->airport_id = 1;
         $rapidPCRCenter->city_id = 7291;
         $rapidPCRCenter->zip_code = Str::random(15);
+        $rapidPCRCenter->hotline = Str::random(15);
         $rapidPCRCenter->address = 'Dhaka Bangladesh';
         $rapidPCRCenter->map_location = '#';
         $rapidPCRCenter->trade_licence_no = rand(1000000, 2000000);
         $rapidPCRCenter->status = 1;
         $rapidPCRCenter->varification_status = 1;
+        $rapidPCRCenter->space = 11000;
         $rapidPCRCenter->administrator_id = 18;
         $rapidPCRCenter->center_area_id = 2;
         $rapidPCRCenter->waiting_seat_capacity = rand(50, 100);

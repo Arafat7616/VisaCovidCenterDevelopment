@@ -42,6 +42,7 @@ class CenterAreaController extends Controller
             'title' => 'required',
             'minimum_space' => 'required',
             'maximum_space' => 'required',
+            'furniture_and_others' => 'required',
             'category' => 'required',
             'status' => 'required',
         ]);
@@ -50,6 +51,7 @@ class CenterAreaController extends Controller
         $centerArea->title = $request->title;
         $centerArea->minimum_space = $request->minimum_space;
         $centerArea->maximum_space = $request->maximum_space;
+        $centerArea->furniture_and_others = $request->furniture_and_others;
         $centerArea->category = $request->category;
         $centerArea->status = $request->status;
 
@@ -99,6 +101,7 @@ class CenterAreaController extends Controller
             'title' => 'required',
             'minimum_space' => 'required',
             'maximum_space' => 'required',
+            'furniture_and_others' => 'required',
             'category' => 'required',
             'status' => 'required',
         ]);
@@ -107,6 +110,7 @@ class CenterAreaController extends Controller
         $centerArea->title = $request->title;
         $centerArea->minimum_space = $request->minimum_space;
         $centerArea->maximum_space = $request->maximum_space;
+        $centerArea->furniture_and_others = $request->furniture_and_others;
         $centerArea->category = $request->category;
         $centerArea->status = $request->status;
 
