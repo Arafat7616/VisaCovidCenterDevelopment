@@ -58,7 +58,7 @@ class RtpcrController extends Controller
     public function rtpcrCenter($id)
     {
 
-        $centers = RapidPCRCenter::where('city_id', $id)->select(['id', 'name'])->get();
+        $centers = RapidPCRCenter::where('country_id', $id)->where('status', '1')->select(['id', 'name'])->get();
         if ($centers){
             return response()->json([
                 "status" => "1",
@@ -90,20 +90,27 @@ class RtpcrController extends Controller
             ]);
         }
 
+        $rtpcrCenter = RapidPCRCenter::where('id', $centerId)->select(['id', 'name', 'waiting_seat_capacity', 'address'])->first();
+
+        if ($rtpcrCenter->waiting_seat_capacity < 1)
+        {
+            return response()->json([
+                "message"=>"Sorry ! not available set for RT-Pcr Test. Please select another center.",
+                "status"=>"2",
+            ]);
+        }
+
         $pcr = new PcrTest();
         $pcr->user_id = $user->id;
         $pcr->rapid_pcr_center_id = $centerId;
         $pcr->date_of_registration = Carbon::parse($date);
         $pcr->registration_type = "normal";
 
-        $center = Center::where('id', $centerId)->select(['name','address'])->first();
-        $userName = $user->name;
-        $centerName = $center->name;
-        $centerAddress = $center->address;
-
         if ($pcr->save()) {
             // send sms via helper function
-            send_sms('Congratulations '.$userName.' !! You are successfully registered for RT-PCR Test. Your center name is: '.$centerName.','.$centerAddress.', date of RT-PCR test : '.Carbon::parse($date), $phone);
+            send_sms('Congratulations '.$user->name.' !! You are successfully registered for RT-PCR Test. Your center name is: '.$rtpcrCenter->name.','.$rtpcrCenter->address.', date of RT-PCR test : '.Carbon::parse($date), $phone);
+
+            RapidPCRCenter::find($rtpcrCenter->id)->decrement('waiting_seat_capacity', 1);
 
             return response()->json([
                 "message" => "You are successfully registered for RT-PCR",
