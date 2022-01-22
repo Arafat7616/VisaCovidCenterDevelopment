@@ -205,10 +205,13 @@ class ServiceRegistrationController extends Controller
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
 
+
+
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();
-        if ($existPcr)
+
+        if ($existPcr->date_of_registration != null)
         {
             return response()->json([
                 "message"=>"You are already registered for PCR Test. Thank you",
@@ -218,12 +221,13 @@ class ServiceRegistrationController extends Controller
 
         $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['pcr_available_set', 'id'])->first();
 
+
         if ($registrationCheck==null){
             return response()->json([
                 "message"=>"Sorry ! It is not available.Please Select another date",
                 "status"=>"0",
             ]);
-        }elseif(!$registrationCheck->vaccine_available_set > 0)
+        }elseif($registrationCheck->pcr_available_set < 1)
         {
             return response()->json([
                 "message"=>"Sorry ! It is not available. Please Select another date",
@@ -232,18 +236,22 @@ class ServiceRegistrationController extends Controller
 
         }else {
 
-            $pcr = new PcrTest();
-            $pcr->user_id = $user->id;
-            $pcr->center_id = $centerId;
-            $pcr->date_of_registration = Carbon::parse($date);
-            $pcr->registration_type = "normal";
+            if(!$existPcr)
+            {
+                $existPcr = new PcrTest();
+            }
+
+            $existPcr->user_id = $user->id;
+            $existPcr->center_id = $centerId;
+            $existPcr->date_of_registration = Carbon::parse($date);
+            $existPcr->registration_type = "normal";
 
             $center = Center::where('id', $centerId)->select(['name','address'])->first();
             $userName = $user->name;
             $centerName = $center->name;
             $centerAddress = $center->address;
 
-            if ($pcr->save()) {
+            if ($existPcr->save()) {
 
                 ManPowerSchedule::find($registrationCheck->id)->decrement('pcr_available_set');
 
