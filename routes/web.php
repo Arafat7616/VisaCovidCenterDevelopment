@@ -43,6 +43,8 @@ Route::post('login/getOtp', 'Auth\CustomLoginController@getMyOTP');
 Route::post('login/checkOtp', 'Auth\CustomLoginController@checkOtp');
 
 // Route for center registration
+
+
 Route::get('/center-register', 'Auth\CenterRegistrationController@centerRegister')->name('centerRegister');
 Route::post('/center-register-data-store', 'Auth\CenterRegistrationController@centerRegisterDataStore')->name('centerRegisterDataStore');
 Route::post('/center-register-otp-verify', 'Auth\CenterRegistrationController@centerRegisterOptVerify')->name('centerRegisterOptVerify');
