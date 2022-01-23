@@ -34,14 +34,26 @@ class RtpcrController extends Controller
         }*/
 
         if ($rtpcrStatus){
-            if ($rtpcrStatus->rapid_pcr_result == null)
+            if($rtpcrStatus->rapid_pcr_center_id == null)
+            {
+                return response()->json([
+                    "navigationPath" => "Rtpcr Registration Button",
+                    "rtpcrIcon" => "uploads/images/setting/rtpcr_danger.png",
+                ]);
+
+            }elseif ($rtpcrStatus->rapid_pcr_result == null)
             {
                 return response()->json([
                     "navigationPath" => "Rtpcr Status",
                     "rtpcrIcon" => "uploads/images/setting/rtpcr_danger.png",
                 ]);
-            }
-            else{
+            }elseif ($rtpcrStatus->rapid_pcr_result == 'positive')
+            {
+                return response()->json([
+                    "navigationPath" => "Rtpcr data",
+                    "rtpcrIcon" => "uploads/images/setting/rtpcr_danger.png",
+                ]);
+            }else{
                 return response()->json([
                     "navigationPath" => "Rtpcr data",
                     "rtpcrIcon" => "uploads/images/setting/rtpcr_success.png",
@@ -100,13 +112,17 @@ class RtpcrController extends Controller
             ]);
         }
 
-        $pcr = new PcrTest();
-        $pcr->user_id = $user->id;
-        $pcr->rapid_pcr_center_id = $centerId;
-        $pcr->date_of_registration = Carbon::parse($date);
-        $pcr->registration_type = "normal";
+        if(!$existRtPcr)
+        {
+            $existRtPcr = new PcrTest();
+        }
 
-        if ($pcr->save()) {
+        $existRtPcr->user_id = $user->id;
+        $existRtPcr->rapid_pcr_center_id = $centerId;
+        $existRtPcr->date_of_registration = Carbon::parse($date);
+        $existRtPcr->registration_type = "normal";
+
+        if ($existRtPcr->save()) {
             // send sms via helper function
             send_sms('Congratulations '.$user->name.' !! You are successfully registered for RT-PCR Test. Your center name is: '.$rtpcrCenter->name.','.$rtpcrCenter->address.', date of RT-PCR test : '.Carbon::parse($date), $phone);
 

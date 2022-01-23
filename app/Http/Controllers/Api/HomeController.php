@@ -168,14 +168,24 @@ class HomeController extends Controller
 
         if ($pcrStatus)
         {
-            if($pcrStatus->pcr_result) {
+            if($pcrStatus->pcr_result == 'positive') {
+                return response()->json([
+                    "navigationPath" => "PCR Test Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                ]);
+            }elseif($pcrStatus->pcr_result == 'negative') {
+                return response()->json([
+                    "navigationPath" => "PCR Test Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                ]);
+            }elseif($pcrStatus->result_published_date == null) {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
                 ]);
             }else{
                 return response()->json([
-                    "navigationPath" => "PCR Date Status",
+                    "navigationPath" => "PCR",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
                 ]);
             }
