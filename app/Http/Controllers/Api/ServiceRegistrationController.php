@@ -211,13 +211,15 @@ class ServiceRegistrationController extends Controller
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();
 
-        if ($existPcr->date_of_registration != null)
-        {
-            return response()->json([
-                "message"=>"You are already registered for PCR Test. Thank you",
-                "status"=>"2",
-            ]);
-        }
+        if($existPcr){
+            if ($existPcr->date_of_registration != null)
+            {
+                return response()->json([
+                    "message"=>"You are already registered for PCR Test. Thank you",
+                    "status"=>"2",
+                ]);
+            }
+       }
 
         $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['pcr_available_set', 'id'])->first();
 
