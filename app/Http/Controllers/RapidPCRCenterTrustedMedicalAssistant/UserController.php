@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function pcr(){
-        $pcrTests = PcrTest::where('registration_type', 'normal')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', null)->orderBy('created_at', 'DESC')->get();
+        $pcrTests = PcrTest::where('registration_type', 'normal')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('rapid_pcr_result', null)->orderBy('created_at', 'DESC')->get();
         $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });

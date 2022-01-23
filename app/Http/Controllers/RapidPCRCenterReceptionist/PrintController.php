@@ -12,7 +12,7 @@ class PrintController extends Controller
 {
     public function index()
     {
-        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', '!=', null)->orderBy('result_published_date', 'DESC')->get();
+        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('rapid_pcr_result', '!=', null)->orderBy('result_published_date', 'DESC')->get();
         $pcrTestsOrderByDate = $pcrTests->groupBy(function ($val) {
             return Carbon::parse($val->result_published_date)->format('d/m/Y');
         });

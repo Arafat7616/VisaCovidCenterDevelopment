@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class PcrResultController extends Controller
 {
     public function waiting(){
-        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', null)->orderBy('created_at', 'DESC')->get();
+        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('rapid_pcr_result', null)->orderBy('created_at', 'DESC')->get();
         return view('RapidPCRCenterPathologist.pcrResult.waiting', compact('pcrTests'));
     }
 
     public function published(){
-        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
+        $pcrTests = PcrTest::where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('rapid_pcr_result', '!=', null)->orderBy('updated_at', 'DESC')->get();
         return view('RapidPCRCenterPathologist.pcrResult.published', compact('pcrTests'));
     }
 
@@ -36,12 +36,10 @@ class PcrResultController extends Controller
     }
 
     public function update(Request $request, $id){
-        // $request->validate([
-        //     'testResult' => 'required|string',
-        // ]);
         if($request->testResult == 'positive' || $request->testResult == 'negative'){
             $pcrTest = PcrTest::find($id);
             $pcrTest->rapid_pcr_result = $request->testResult;
+            $pcrTest->tested_by = Auth::user()->id;
             $pcrTest->result_published_date = Carbon::now();
             $pcrTest->status = 1;
 

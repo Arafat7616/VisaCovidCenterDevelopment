@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="col-4">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -266,9 +266,9 @@
                                     $('#premium').attr('selected', true);
                                 }
 
-                                if (res.data.pcrTest.pcr_result == 'negative') {
+                                if (res.data.pcrTest.rapid_pcr_result == 'negative') {
                                     $('#negative').attr('selected', true);
-                                } else if (res.data.pcrTest.pcr_result == 'positive') {
+                                } else if (res.data.pcrTest.rapid_pcr_result == 'positive') {
                                     $('#positive').attr('selected', true);
                                 }
                             }
