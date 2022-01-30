@@ -163,6 +163,36 @@ class ServiceRegistrationController extends Controller
             ]);
         }
     }
+    public function updateProfilePicture(Request $request){
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $user = User::where('phone', $phone)->select(['id', 'name','image'])->first();
+
+        if($userArray['document']['data']){
+            if($user->image != null){
+                File::delete(public_path($user->image));
+            }
+            $originalExtension = str_ireplace("image/","",$userArray['document']['type']);
+            $folder_path       = 'uploads/images/documents/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$originalExtension;
+            $decodedBase64 = $userArray['document']['data'];
+        }
+
+        try {
+            Image::make($decodedBase64)->save($folder_path.$image_new_name);
+            $user->image = $folder_path.$image_new_name;
+            $user->save();
+            return response()->json([
+                "message"=>"Profile image updated ",
+                "status"=>"1",
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>$exception->getMessage(),
+                "status"=>"0",
+            ]);
+        }
+    }
     public function externalVaccination(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);

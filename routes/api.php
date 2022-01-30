@@ -49,6 +49,7 @@ Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vacc
 Route::post('home/vaccine/externalVaccination', 'Api\ServiceRegistrationController@externalVaccination');
 Route::post('home/vaccine/externalVaccinationDoseTwo', 'Api\ServiceRegistrationController@externalVaccinationDoseTwo');
 Route::post('test-image-store', 'Api\ServiceRegistrationController@testImageStore');
+Route::post('updateProfilePicture', 'Api\ServiceRegistrationController@updateProfilePicture');
 
 
 Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
