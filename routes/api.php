@@ -47,6 +47,7 @@ Route::get('home/center/{id}', 'Api\HomeController@center');
 
 Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vaccineRegistration');
 Route::post('home/vaccine/externalVaccination', 'Api\ServiceRegistrationController@externalVaccination');
+Route::post('home/vaccine/externalVaccinationDoseTwo', 'Api\ServiceRegistrationController@externalVaccinationDoseTwo');
 Route::post('test-image-store', 'Api\ServiceRegistrationController@testImageStore');
 
 

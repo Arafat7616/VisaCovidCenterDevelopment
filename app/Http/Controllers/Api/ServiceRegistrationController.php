@@ -165,80 +165,149 @@ class ServiceRegistrationController extends Controller
     }
     public function externalVaccination(Request $request)
     {
-            $userArray = json_decode($request->getContent(), true);
-            $phone = $userArray['phone'];
-            $vaccineName = $userArray['vaccineName'];
-            $center = $userArray['center'];
-            $firstDose = $userArray['firstDose'];
-            $secondDose = $userArray['secondDose'];
-            $selectedDose = $userArray['selectedDose'];
-            $description = $userArray['description'];
-            $centerLocation = $userArray['centerLocation'];
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $vaccineName = $userArray['vaccineName'];
+        $center = $userArray['center'];
+        $firstDose = $userArray['firstDose'];
+        $secondDose = $userArray['secondDose'];
+        $selectedDose = $userArray['selectedDose'];
+        $description = $userArray['description'];
+        $centerLocation = $userArray['centerLocation'];
 
-            $user = User::where('phone', $phone)->select(['id'])->first();
-            $existVaccination = Vaccination::where('user_id', $user->id)->first();
+        $user = User::where('phone', $phone)->select(['id'])->first();
+        $existVaccination = Vaccination::where('user_id', $user->id)->first();
 
-            if ($existVaccination)
-            {
+        if ($existVaccination)
+        {
+            return response()->json([
+                "message"=>"You are already registered for Vaccination. Thank you",
+                "status"=>"2",
+            ]);
+        }
+
+        $vaccine = new Vaccination();
+
+        $vaccine->user_id = $user->id;
+        $vaccine->name_of_vaccine = $vaccineName;
+        $vaccine->registration_type = "normal";
+        $vaccine->center_name = $center;
+        $vaccine->center_location = $centerLocation;
+        $vaccine->description = $description;
+        $vaccine->center_type = "external";
+
+        if($selectedDose === '1st Dose' || $selectedDose === 'Both Dose'){
+            $vaccine->date_of_first_dose = Carbon::parse($firstDose);
+            $vaccine->first_dose_status = 1;
+            $vaccine->date_of_registration =  Carbon::parse($firstDose);
+        }
+        if($selectedDose === '2nd Dose'){
+            if($vaccine->date_of_first_dose === null){
                 return response()->json([
-                    "message"=>"You are already registered for Vaccination. Thank you",
-                    "status"=>"2",
-                ]);
-            }
-
-            $vaccine = new Vaccination();
-
-            $vaccine->user_id = $user->id;
-            $vaccine->name_of_vaccine = $vaccineName;
-            $vaccine->registration_type = "normal";
-            $vaccine->center_name = $center;
-            $vaccine->center_location = $centerLocation;
-            $vaccine->description = $description;
-            $vaccine->center_type = "external";
-
-            if($selectedDose === '1st Dose' || $selectedDose === 'Both Dose'){
-                $vaccine->date_of_first_dose = Carbon::parse($firstDose);
-                $vaccine->first_dose_status = 1;
-                $vaccine->date_of_registration =  Carbon::parse($firstDose);
-            }
-
-            if($selectedDose === '2nd Dose' || $selectedDose === 'Both Dose'){
-                $vaccine->date_of_second_dose = Carbon::parse($secondDose);
-                $vaccine->status = 1;
-                $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
-            }
-
-
-            if($userArray['document']['type'] && $userArray['document']['data']){
-                // code for image save by base64 data
-                $originalExtension = str_ireplace("image/","",$userArray['document']['type']);
-                $folder_path       = 'uploads/images/documents/';
-                $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$originalExtension;
-                $decodedBase64 = $userArray['document']['data'];
-                Image::make($decodedBase64)->save($folder_path.$image_new_name);
-                $vaccine->document = $folder_path.$image_new_name;
-            }
-
-            try {
-                if ($vaccine->save())
-                {
-                    return response()->json([
-                        "message"=>"You are successfully submit your information",
-                        "status"=>"1",
-                    ]);
-                }else{
-                    return response()->json([
-                        "message"=>"Something wrong",
-                        "status"=>"0",
-                    ]);
-                }
-
-            } catch (\Exception $exception) {
-                return response()->json([
-                    "message"=>'Something went wrong. ' . $exception->getMessage(),
+                    "message"=>"Please attach first dose.",
                     "status"=>"0",
                 ]);
             }
+        }
+
+        if($selectedDose === '2nd Dose' || $selectedDose === 'Both Dose'){
+            $vaccine->date_of_second_dose = Carbon::parse($secondDose);
+            $vaccine->status = 1;
+            $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+        }
+
+        if($userArray['document']['type'] && $userArray['document']['data']){
+            // code for image save by base64 data
+            $originalExtension = str_ireplace("image/","",$userArray['document']['type']);
+            $folder_path       = 'uploads/images/documents/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$originalExtension;
+            $decodedBase64 = $userArray['document']['data'];
+            Image::make($decodedBase64)->save($folder_path.$image_new_name);
+            $vaccine->document = $folder_path.$image_new_name;
+        }
+
+        try {
+            if ($vaccine->save())
+            {
+                return response()->json([
+                    "message"=>"You are successfully submit your information",
+                    "status"=>"1",
+                ]);
+            }else{
+                return response()->json([
+                    "message"=>"Something wrong",
+                    "status"=>"0",
+                ]);
+            }
+
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>'Something went wrong. ' . $exception->getMessage(),
+                "status"=>"0",
+            ]);
+        }
+    }
+
+    public function externalVaccinationDoseTwo(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $vaccineName = $userArray['vaccineName'];
+        $center = $userArray['center'];
+        $secondDose = $userArray['secondDose'];
+        $selectedDose = $userArray['selectedDose'];
+        $description = $userArray['description'];
+        $centerLocation = $userArray['centerLocation'];
+
+        $user = User::where('phone', $phone)->select(['id'])->first();
+        $existVaccination = Vaccination::where('user_id', $user->id)->first();
+
+
+
+        $vaccine = $existVaccination;
+
+        $vaccine->user_id = $user->id;
+        $vaccine->name_of_vaccine = $vaccineName;
+        $vaccine->center_name = $center;
+        $vaccine->center_location = $centerLocation;
+        $vaccine->description = $description;
+
+        if($selectedDose === '2nd Dose'){
+            $vaccine->date_of_second_dose = Carbon::parse($secondDose);
+            $vaccine->status = 1;
+            $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+        }
+
+        if($userArray['document']['type'] && $userArray['document']['data']){
+            // code for image save by base64 data
+            $originalExtension = str_ireplace("image/","",$userArray['document']['type']);
+            $folder_path       = 'uploads/images/documents/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$originalExtension;
+            $decodedBase64 = $userArray['document']['data'];
+            Image::make($decodedBase64)->save($folder_path.$image_new_name);
+            $vaccine->document_two = $folder_path.$image_new_name;
+        }
+
+        try {
+            if ($vaccine->save())
+            {
+                return response()->json([
+                    "message"=>"You are successfully submit your information",
+                    "status"=>"1",
+                ]);
+            }else{
+                return response()->json([
+                    "message"=>"Something wrong",
+                    "status"=>"0",
+                ]);
+            }
+
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>'Something went wrong. ' . $exception->getMessage(),
+                "status"=>"0",
+            ]);
+        }
     }
 
     public function prcRegistration(Request $request)
