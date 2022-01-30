@@ -107,11 +107,8 @@ class HomeController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
-
         $existUser = User::where('phone', $phone)->select(['id'])->first();
-
         $vaccinationStatus = Vaccination::where('user_id', $existUser->id)->first();
-
         if ($vaccinationStatus)
         {
             if ($vaccinationStatus->date_of_first_dose != null && $vaccinationStatus->date_of_second_dose != null)
@@ -456,7 +453,7 @@ class HomeController extends Controller
         if (!empty($vaccinationCenterType))
         {
             if ($vaccinationCenterType->center_type === 'external'){
-                $vaccinationStatusDate_of_first_dose=Carbon::parse($vaccinationCenterType->date_of_first_dose)->format("j S F Y");;
+                $vaccinationStatusDate_of_first_dose=Carbon::parse($vaccinationCenterType->date_of_first_dose)->format("j S F Y");
                 $vaccinationStatusDate_of_second_dose=Carbon::parse($vaccinationCenterType->date_of_second_dose)->format("j S F Y");
                 $vaccinationStatusName_of_vaccine=$vaccinationCenterType->name_of_vaccine;
                 $vaccinationCenterInfoName=$vaccinationCenterType->center_name;
@@ -545,8 +542,7 @@ class HomeController extends Controller
         $phone = $userArray['phone'];
 
         $exitUser = User::where('phone',$phone)->first();
-        $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine', 'first_served_by_id', 'second_served_by_id'])->first();
-
+        $vaccinationStatus = Vaccination::where('user_id', $exitUser->id)->select(['center_name','center_location','center_id', 'date_of_first_dose', 'date_of_second_dose', 'name_of_vaccine', 'first_served_by_id', 'second_served_by_id'])->first();
         $vaccinationCenterInfoName = '';
         $vaccinationCenterInfoAddress = '';
         $vaccinationStatusDate_of_first_dose = '';
@@ -560,29 +556,41 @@ class HomeController extends Controller
         if($vaccinationStatus)
         {
             $vaccinationCenterInfo = Center::where('id', $vaccinationStatus->center_id)->select(['name', 'address'])->first();
+            if($vaccinationCenterInfo){
+                $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
+                $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+            }else{
+                $vaccinationCenterInfoName = $vaccinationStatus->center_name;
+                $vaccinationCenterInfoAddress = $vaccinationStatus->center_location;
+            }
+
             $serveByFirst = User::where('id', $vaccinationStatus->first_served_by_id)->select(['name', 'id'])->first();
             $serveBySecond = User::where('id', $vaccinationStatus->second_served_by_id)->select(['name', 'id'])->first();
 
-            $serveByFirstId = $serveByFirst->id;
-            $serveByFirstName = $serveByFirst->name;
-            $vaccinationCenterInfoName = $vaccinationCenterInfo->name;
-            $vaccinationCenterInfoAddress = $vaccinationCenterInfo->address;
+            if($serveByFirst) {
+                $serveByFirstId = $serveByFirst->id;
+                $serveByFirstName = $serveByFirst->name;
+            }else{
+                $serveByFirstId = "";
+                $serveByFirstName = "";
+            }
+
             $vaccinationStatusDate_of_first_dose = Carbon::parse($vaccinationStatus->date_of_first_dose)->format("j S F Y");
             $vaccinationStatusName_of_vaccine = $vaccinationStatus->name_of_vaccine;
             $myVaccinationImage = 'uploads/images/setting/half_vaccination_image.png';
 
-            if ($serveBySecond)
-            {
+            if($serveBySecond) {
                 $serveBySecondId = $serveBySecond->id;
                 $serveBySecondName = $serveBySecond->name;
+            }else{
+                $serveBySecondId = "";
+                $serveBySecondName = "";
+            }
+
+            if($vaccinationStatus->date_of_second_dose){
                 $vaccinationStatusDate_of_second_dose = Carbon::parse($vaccinationStatus->date_of_second_dose)->format("j S F Y");
                 $myVaccinationImage = 'uploads/images/setting/vaccine_success_image.png';
             }
-
-            /*return response()->json([
-                "myServeById"=>$serveBySecond,
-            ]);*/
-
         }
 
         return response()->json([
@@ -596,7 +604,6 @@ class HomeController extends Controller
             "myVaccinationCenter"=>$vaccinationCenterInfoName,
             "myVaccinationCenterLocation"=>$vaccinationCenterInfoAddress,
             "myVaccinationImage"=>$myVaccinationImage,
-
         ]);
     }
 

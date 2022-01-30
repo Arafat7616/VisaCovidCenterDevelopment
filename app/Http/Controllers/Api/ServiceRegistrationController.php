@@ -190,6 +190,11 @@ class ServiceRegistrationController extends Controller
 
             $vaccine->user_id = $user->id;
             $vaccine->name_of_vaccine = $vaccineName;
+            $vaccine->registration_type = "normal";
+            $vaccine->center_name = $center;
+            $vaccine->center_location = $centerLocation;
+            $vaccine->description = $description;
+            $vaccine->center_type = "external";
 
             if($selectedDose === '1st Dose' || $selectedDose === 'Both Dose'){
                 $vaccine->date_of_first_dose = Carbon::parse($firstDose);
@@ -203,11 +208,6 @@ class ServiceRegistrationController extends Controller
                 $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
             }
 
-            $vaccine->registration_type = "normal";
-            $vaccine->center_name = $center;
-            $vaccine->center_location = $centerLocation;
-            $vaccine->description = $description;
-            $vaccine->center_type = "external";
 
             if($userArray['document']['type'] && $userArray['document']['data']){
                 // code for image save by base64 data
