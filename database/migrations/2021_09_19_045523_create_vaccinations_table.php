@@ -31,6 +31,7 @@ class CreateVaccinationsTable extends Migration
 
             $table->string('center_name')->nullable();
             $table->string('document')->nullable();
+            $table->string('document_two')->nullable();
             $table->string('description')->nullable();
             $table->string('center_type')->nullable();
             $table->string('center_location')->nullable();
