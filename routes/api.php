@@ -20,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 
-Route::get('/hello', function (){
-    $users = User::all();
+// Route::get('/hello', function (){
+//     $users = User::all();
 
-    return response()->json([
-        'type' => 'success',
-        'users' => $users,
-    ]);
-});
+//     return response()->json([
+//         'type' => 'success',
+//         'users' => $users,
+//     ]);
+// });
 
 Route::post('user/create', 'Api\UserController@store');
 Route::post('user/login', 'Api\UserController@login');
