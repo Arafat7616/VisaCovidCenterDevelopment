@@ -347,8 +347,6 @@ class ServiceRegistrationController extends Controller
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
 
-
-
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();

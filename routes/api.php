@@ -20,16 +20,14 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 
+// Route::get('/hello', function (){
+//     $users = User::all();
 
-
-Route::get('/hello', function (){
-    $users = User::all();
-
-    return response()->json([
-        'type' => 'success',
-        'users' => $users,
-    ]);
-});
+//     return response()->json([
+//         'type' => 'success',
+//         'users' => $users,
+//     ]);
+// });
 
 Route::post('user/create', 'Api\UserController@store');
 Route::post('user/login', 'Api\UserController@login');
@@ -128,16 +126,4 @@ Route::get('rtpcrCenter/{id}', 'Api\RtpcrController@rtpcrCenter');
 Route::post('rtpcrRegistration', 'Api\RtpcrController@rtpcrRegistration');
 Route::post('rtpcrResult', 'Api\RtpcrController@rtpcrResult');
 Route::post('rtpcrTimeLeft', 'Api\RtpcrController@rtpcrTimeLeft');
-
-
-
-
-
-
-
-
-
-
-
-
 
