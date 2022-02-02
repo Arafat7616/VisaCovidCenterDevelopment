@@ -61,8 +61,5 @@ class PcrResultController extends Controller
                 'message' => 'Have to select Positive or Negative !',
             ]);
         }
-
-
     }
-
 }

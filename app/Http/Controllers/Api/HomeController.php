@@ -169,27 +169,33 @@ class HomeController extends Controller
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                    "pcrEfficacyTimeInMinute" => null,
                 ]);
             }elseif($pcrStatus->pcr_result == 'negative') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    // "pcrEfficacyTimeInMinute" => Carbon::parse($pcrStatus->result_published_date)->diffInHours(Carbon::now()),
+                    "pcrEfficacyTimeInMinute" => Carbon::now(),
                 ]);
             }elseif($pcrStatus->result_published_date == null) {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    "pcrEfficacyTimeInMinute" => null,
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "PCR",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                    "pcrEfficacyTimeInMinute" => null,
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "PCR",
                 "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                "pcrEfficacyTimeInMinute" => null,
             ]);
         }
     }
