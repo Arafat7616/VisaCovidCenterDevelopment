@@ -686,7 +686,6 @@ class HomeController extends Controller
 
     public function synchronizeInformation($id)
     {
-
         $rules = Synchronize::where('country_id', $id)->where('status', '1')->select(['synchronize_rule'])->get();
         $countryName = Country::where('id', $id)->select(['name'])->first();
 
@@ -701,6 +700,5 @@ class HomeController extends Controller
                 "status"=>'0',
             ]);
         }
-
     }
 }
