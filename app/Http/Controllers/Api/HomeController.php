@@ -161,41 +161,39 @@ class HomeController extends Controller
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
         $pcrStatus = PcrTest::where('user_id', $existUser->id)->orderBy('id', 'desc')->first();
-
-
         if ($pcrStatus)
         {
             if($pcrStatus->pcr_result == 'positive') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
-                    "pcrEfficacyTimeInMinute" => null,
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }elseif($pcrStatus->pcr_result == 'negative') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
-                    // "pcrEfficacyTimeInMinute" => Carbon::parse($pcrStatus->result_published_date)->diffInHours(Carbon::now()),
-                    "pcrEfficacyTimeInMinute" => Carbon::now(),
+                    // "pcrEfficacyTimeInSecond" => Carbon::parse($pcrStatus->result_published_date)->diffInMinutes(Carbon::now()),
+                    "pcrEfficacyTimeInSecond" => (172800-(Carbon::parse($pcrStatus->result_published_date)->diffInSeconds(Carbon::now()))),
                 ]);
             }elseif($pcrStatus->result_published_date == null) {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
-                    "pcrEfficacyTimeInMinute" => null,
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "PCR",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
-                    "pcrEfficacyTimeInMinute" => null,
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "PCR",
                 "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
-                "pcrEfficacyTimeInMinute" => null,
+                "pcrEfficacyTimeInSecond" => null,
             ]);
         }
     }
