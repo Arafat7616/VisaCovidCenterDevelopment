@@ -17,7 +17,7 @@ class CreateSynchronizesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->string('synchronize_rule')->nullable();
-            $table->enum('status', [0,1]);
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

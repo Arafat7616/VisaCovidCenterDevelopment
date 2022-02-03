@@ -173,7 +173,6 @@ class HomeController extends Controller
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
-                    // "pcrEfficacyTimeInSecond" => Carbon::parse($pcrStatus->result_published_date)->diffInMinutes(Carbon::now()),
                     "pcrEfficacyTimeInSecond" => (172800-(Carbon::parse($pcrStatus->result_published_date)->diffInSeconds(Carbon::now()))),
                 ]);
             }elseif($pcrStatus->result_published_date == null) {

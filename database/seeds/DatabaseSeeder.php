@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VaccineNameSeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(CenterAreaSeeder::class);
+        $this->call(SynchronizeSeeder::class);
         // $this->call(SliderSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);

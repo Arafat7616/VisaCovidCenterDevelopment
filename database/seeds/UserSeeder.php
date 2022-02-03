@@ -111,7 +111,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'RT-PCR Administrator';
         $user->email = 'rtpcr-administrator@gmail.com';
-        $user->phone = '0174112233'; //random 
+        $user->phone = '0174112233'; //random
         $user->password = Hash::make('12345');
         $user->user_type = 'rapid-pcr-center-administrator';
         $user->status = true;
@@ -123,7 +123,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = 'RT-PCR Pathologist';
         $user->email = 'rtpcr-pathologist@gmail.com';
-        $user->phone = '0174223344'; //random 
+        $user->phone = '0174223344'; //random
         $user->password = Hash::make('12345');
         $user->user_type = 'rapid-pcr-center-pathologist';
         $user->status = true;
@@ -152,6 +152,18 @@ class UserSeeder extends Seeder
         $user->user_type = 'rapid-pcr-center-trusted-medical-assistant';
         $user->status = true;
         $user->rapid_pcr_center_id = 1;
+        $user->otp = rand(5, 9999);
+        $user->save();
+
+        // monir user
+        $user = new User();
+        $user->name = 'Mr. Monir';
+        $user->email = 'monir@gmail.com';
+        $user->phone = '01865512325';
+        $user->password = Hash::make('12345');
+        $user->user_type = 'user';
+        $user->status = true;
+        $user->center_id = 1;
         $user->otp = rand(5, 9999);
         $user->save();
     }
