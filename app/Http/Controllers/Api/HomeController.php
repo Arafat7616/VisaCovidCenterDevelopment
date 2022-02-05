@@ -161,35 +161,38 @@ class HomeController extends Controller
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
         $pcrStatus = PcrTest::where('user_id', $existUser->id)->orderBy('id', 'desc')->first();
-
-
         if ($pcrStatus)
         {
             if($pcrStatus->pcr_result == 'positive') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }elseif($pcrStatus->pcr_result == 'negative') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    "pcrEfficacyTimeInSecond" => (172800-(Carbon::parse($pcrStatus->result_published_date)->diffInSeconds(Carbon::now()))),
                 ]);
             }elseif($pcrStatus->result_published_date == null) {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
                     "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }else{
                 return response()->json([
                     "navigationPath" => "PCR",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                    "pcrEfficacyTimeInSecond" => null,
                 ]);
             }
         }else{
             return response()->json([
                 "navigationPath" => "PCR",
                 "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                "pcrEfficacyTimeInSecond" => null,
             ]);
         }
     }
@@ -683,7 +686,6 @@ class HomeController extends Controller
 
     public function synchronizeInformation($id)
     {
-
         $rules = Synchronize::where('country_id', $id)->where('status', '1')->select(['synchronize_rule'])->get();
         $countryName = Country::where('id', $id)->select(['name'])->first();
 
@@ -698,6 +700,5 @@ class HomeController extends Controller
                 "status"=>'0',
             ]);
         }
-
     }
 }

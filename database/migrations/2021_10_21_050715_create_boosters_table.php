@@ -17,7 +17,7 @@ class CreateBoostersTable extends Migration
             $table->id();
             $table->string('name_of_vaccine')->nullable();
             $table->string('registration_type')->default('normal')->comment('normal','premium');
-            $table->string('date_of_registration')->nullable();
+            $table->timestamp('date_of_registration')->nullable();
             $table->timestamp('date')->nullable();
             $table->string('antibody_last_date')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();

@@ -16,7 +16,7 @@ class CreatePcrTestsTable extends Migration
         Schema::create('pcr_tests', function (Blueprint $table) {
             $table->id();
             $table->string('registration_type')->default('normal')->comment('normal','premium');
-            $table->string('date_of_registration')->nullable();
+            $table->timestamp('date_of_registration')->nullable();
             $table->timestamp('sample_collection_date')->nullable();
             $table->timestamp('date_of_pcr_test')->nullable();
             $table->timestamp('result_published_date')->nullable();

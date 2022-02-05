@@ -47,5 +47,21 @@ class PcrTestSeeder extends Seeder
             $pcrTest->created_at = Carbon::now()->addDays(-5);
             $pcrTest->save();
         }
+
+        // monir pcr
+        $pcrTest = new PcrTest();
+        $pcrTest->registration_type = 'normal';
+        $pcrTest->date_of_registration =  Carbon::now()->addDays(-2);
+        $pcrTest->sample_collection_date = Carbon::now()->addDays(-1.5);
+        $pcrTest->date_of_pcr_test =  Carbon::now()->addDays(-1);
+        $pcrTest->result_published_date =  Carbon::now()->addDays(-1);
+        $pcrTest->pcr_result = 'negative';
+        $pcrTest->user_id = 22;
+        $pcrTest->center_id = 1;
+        $pcrTest->tested_by = 5;
+        $pcrTest->status = null;
+        $pcrTest->created_at = Carbon::now()->addDays(-5);
+        $pcrTest->updated_at = Carbon::now();
+        $pcrTest->save();
     }
 }
