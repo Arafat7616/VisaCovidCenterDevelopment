@@ -70,8 +70,8 @@
                                                     </td>
                                                     <td>
                                                         <select class="form-select form-control" name="status[]">
-                                                            <option @if($synchronize->status == 1) selected @endif value="{{ $synchronize->status }}" class="text-capitalize">Active</option>
-                                                            <option @if($synchronize->status == 0) selected @endif value="{{ $synchronize->status }}" class="text-capitalize">Inactive</option>
+                                                            <option @if($synchronize->status == 1) selected @endif value="1" class="text-capitalize">Active</option>
+                                                            <option @if($synchronize->status == 0) selected @endif value="0" class="text-capitalize">Inactive</option>
                                                         </select>
                                                     </td>
                                                     <td>

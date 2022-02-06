@@ -29,8 +29,8 @@ class SynchronizeController extends Controller
      */
     public function create()
     {
-        $countries = Country::all();
-        return view('SuperAdmin.synchronize.create', compact('countries'));
+        // $countries = Country::all();
+        // return view('SuperAdmin.synchronize.create', compact('countries'));
     }
 
     /**
@@ -42,19 +42,30 @@ class SynchronizeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'country_id' => 'required',
             'synchronize_rule' => 'required',
             'status' => 'required',
         ]);
-
-        $data = $request->except('_method', '_token');
-
-        try {
-            Synchronize::create($data);
-            Session::flash('success', 'Successfully saved !');
-            return back();
-        } catch (\Exception $exception) {
-            return back()->withErrors('Something went wrong. ' . $exception->getMessage());
+        if (isset($request->synchronize_rule[0])) {
+            foreach ($request->synchronize_rule as $key => $value) {
+               if($request->synchronize_rule[$key] != null && !empty($request->synchronize_rule[$key])){
+                    if (isset($request->id[$key]) && $request->id[$key]  != null) {
+                        $synchronize = Synchronize::where('id', $request->id[$key])->update([
+                            'synchronize_rule' => $request->synchronize_rule[$key],
+                            'status' => $request->status[$key],
+                        ]);
+                    } else {
+                        $synchronize = Synchronize::create([
+                            'synchronize_rule' => $request->synchronize_rule[$key],
+                            'status' => $request->status[$key],
+                        ]);
+                    }
+               }
+            }
+            $msg = "Synchronize rule added successfull";
+            return redirect()->back()->with('success', $msg);
+        } else {
+            $msg = "Plsease add some data";
+            return redirect()->back()->with('error', $msg);
         }
     }
 
@@ -77,9 +88,9 @@ class SynchronizeController extends Controller
      */
     public function edit($id)
     {
-        $countries = Country::all();
-        $synchronize= Synchronize::findOrFail($id);
-        return view('SuperAdmin.synchronize.edit', compact('synchronize', 'countries'));
+        // $countries = Country::all();
+        // $synchronize= Synchronize::findOrFail($id);
+        // return view('SuperAdmin.synchronize.edit', compact('synchronize', 'countries'));
     }
 
     /**
@@ -91,22 +102,22 @@ class SynchronizeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'country_id' => 'required',
-            'synchronize_rule' => 'required',
-            'status' => 'required',
-        ]);
+//         $request->validate([
+//             'country_id' => 'required',
+//             'synchronize_rule' => 'required',
+//             'status' => 'required',
+//         ]);
 
-        $data = $request->except('_method', '_token');
-//return $data;
-        try {
-            $synchronize = Synchronize::find($id);
-            $synchronize->update($data);
-            Session::flash('success', 'Successfully update !');
-            return back();
-        } catch (\Exception $exception) {
-            return back()->withErrors('Something went wrong. ' . $exception->getMessage());
-        }
+//         $data = $request->except('_method', '_token');
+// //return $data;
+//         try {
+//             $synchronize = Synchronize::find($id);
+//             $synchronize->update($data);
+//             Session::flash('success', 'Successfully update !');
+//             return back();
+//         } catch (\Exception $exception) {
+//             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
+//         }
     }
 
     /**
@@ -117,16 +128,16 @@ class SynchronizeController extends Controller
      */
     public function destroy(Synchronize $synchronize)
     {
-        try {
-            $synchronize->delete();
-            return response()->json([
-                'type' => 'success',
-            ]);
-        } catch (\Exception $exception) {
-            return response()->json([
-                'type' => 'error',
-                'message' => 'error' . $exception->getMessage(),
-            ]);
-        }
+        // try {
+        //     $synchronize->delete();
+        //     return response()->json([
+        //         'type' => 'success',
+        //     ]);
+        // } catch (\Exception $exception) {
+        //     return response()->json([
+        //         'type' => 'error',
+        //         'message' => 'error' . $exception->getMessage(),
+        //     ]);
+        // }
     }
 }
