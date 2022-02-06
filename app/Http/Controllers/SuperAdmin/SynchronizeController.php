@@ -18,7 +18,7 @@ class SynchronizeController extends Controller
      */
     public function index()
     {
-        $synchronizes = Synchronize::all();
+        $synchronizes = Synchronize::orderBy('id', 'DESC')->get();
         return view('SuperAdmin.synchronize.index', compact('synchronizes'));
     }
 
