@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Synchronize extends Model
 {
     protected $fillable = [
-        'country_id', 'synchronize_rule', 'status'
+        'country_id',
+        'synchronize_rule',
+        'status'
     ];
 
     public function country()

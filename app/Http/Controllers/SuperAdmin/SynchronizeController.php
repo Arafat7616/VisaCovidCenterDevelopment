@@ -140,4 +140,9 @@ class SynchronizeController extends Controller
         //     ]);
         // }
     }
+
+    public function ruleBasedOnConuntry(){
+        $countries = Country::orderBy('name','ASC')->get();
+        return view('SuperAdmin.synchronize.country-list', compact('countries'));
+    }
 }

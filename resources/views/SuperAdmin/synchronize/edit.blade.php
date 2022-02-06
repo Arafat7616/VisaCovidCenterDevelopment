@@ -1,4 +1,4 @@
-@extends('SuperAdmin.layouts.master')
+{{-- @extends('SuperAdmin.layouts.master')
 
 @push('title')
     Edit Synchronize Rule
@@ -95,4 +95,4 @@
 @endpush
 
 @push('script')
-@endpush
+@endpush --}}

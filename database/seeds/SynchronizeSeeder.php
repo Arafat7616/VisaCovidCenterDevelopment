@@ -13,22 +13,39 @@ class SynchronizeSeeder extends Seeder
      */
     public function run()
     {
-        $synchronize = new Synchronize();
-        $synchronize->country_id = 17;
-        $synchronize->synchronize_rule = 'Pcr';
-        $synchronize->status = 1;
-        $synchronize->save();
+        Synchronize::create([
+            'synchronize_rule' => 'Booster- physzer',
+            'status' => '1'
+        ]);
 
-        $synchronize = new Synchronize();
-        $synchronize->country_id = 17;
-        $synchronize->synchronize_rule = 'Booster';
-        $synchronize->status = 1;
-        $synchronize->save();
+        Synchronize::create([
+            'synchronize_rule' => 'Booster- Mordana',
+            'status' => '1'
+        ]);
 
-        $synchronize = new Synchronize();
-        $synchronize->country_id = 17;
-        $synchronize->synchronize_rule = 'Vaccination';
-        $synchronize->status = 1;
-        $synchronize->save();
+        Synchronize::create([
+            'synchronize_rule' => 'Booster- Austrazenica',
+            'status' => '1'
+        ]);
+
+        Synchronize::create([
+            'synchronize_rule' => 'Vaccination- physzer',
+            'status' => '1'
+        ]);
+
+        Synchronize::create([
+            'synchronize_rule' => 'Vaccination- Mordana',
+            'status' => '1'
+        ]);
+
+        Synchronize::create([
+            'synchronize_rule' => 'Vaccination- Austrazenica',
+            'status' => '1'
+        ]);
+
+        Synchronize::create([
+            'synchronize_rule' => 'Pcr',
+            'status' => '1'
+        ]);
     }
 }
