@@ -64,7 +64,7 @@ Synchronize rule based on country
                                         @endforelse
                                     </td>
                                     <td class="text-center">
-                                        <a class="btn btn-info" href="{{ route('superAdmin.manageCenter.edit', $country->id) }}">
+                                        <a class="btn btn-info" href="{{ route('superAdmin.synchronize.ruleBasedOnConuntry', $country->id) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
