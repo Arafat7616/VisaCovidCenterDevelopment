@@ -24,7 +24,7 @@ class SynchronizeSeeder extends Seeder
         ]);
 
         Synchronize::create([
-            'synchronize_rule' => 'Booster- Austrazenica',
+            'synchronize_rule' => 'Booster- Astrazeneca',
             'status' => '1'
         ]);
 
@@ -39,7 +39,7 @@ class SynchronizeSeeder extends Seeder
         ]);
 
         Synchronize::create([
-            'synchronize_rule' => 'Vaccination- Austrazenica',
+            'synchronize_rule' => 'Vaccination- Astrazeneca',
             'status' => '1'
         ]);
 
