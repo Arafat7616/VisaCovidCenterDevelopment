@@ -8,23 +8,14 @@ use App\Models\Center;
 use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
-use App\Models\ServiceAvailableNumber;
 use App\Models\User;
 use App\Models\Vaccination;
 use App\Models\VaccineName;
 use Carbon\Carbon;
-use Facade\FlareClient\Http\Response as HttpResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Validation\Rules\Exists;
 use Intervention\Image\ImageManagerStatic as Image;
-
-use function MongoDB\BSON\toJSON;
-
 class ServiceRegistrationController extends Controller
 {
 
@@ -38,7 +29,7 @@ class ServiceRegistrationController extends Controller
         $centerInfo = [];
 
         $i = 0;
-        foreach ($centers as $key=>$center)
+        foreach ($centers as $key => $center)
         {
             $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->first();
         }
