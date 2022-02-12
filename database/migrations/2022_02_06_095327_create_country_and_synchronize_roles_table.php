@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSynchronizesTable extends Migration
+class CreateCountryAndSynchronizeRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSynchronizesTable extends Migration
      */
     public function up()
     {
-        Schema::create('synchronizes', function (Blueprint $table) {
+        Schema::create('country_and_synchronize_roles', function (Blueprint $table) {
             $table->id();
-            $table->string('synchronize_rule')->nullable();
-            $table->string('status')->default(0);
+            $table->unsignedBigInteger('country_id')->nullable();
+            $table->unsignedBigInteger('synchronize_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSynchronizesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('synchronizes');
+        Schema::dropIfExists('country_and_synchronize_roles');
     }
 }

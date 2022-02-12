@@ -1,23 +1,31 @@
 @extends('SuperAdmin.layouts.master')
 
 @push('title')
-    Synchronize
+    Synchronize Rules
 @endpush
 @push('datatableCSS')
-    <!-- DataTables -->
-    <link href="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/super-admin/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/super-admin/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/super-admin/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/super-admin/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endpush
 
-
 @section('content')
+    <style>
+        td,
+        th {
+            text-align: center;
+        }
+        .input-fild-group {
+            display: flex;
+            gap: 10px;
+        }
+        .panel-body {
+            height: 100%;
+            overflow-y: scroll;
+            padding-bottom: 15px;
+        }
+    </style>
+
     <div class="content">
         <div class="container">
-
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
@@ -30,81 +38,131 @@
                     </div>
                 </div>
             </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <form id="lostPasportForm" action="{{ route('superAdmin.synchronize.store') }}" method="POST">
+                        @include('Others.message')
+                        @csrf
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-white">All Synchronize Rules</h3>
 
-            <div class="row m-b-15">
-                <div class="col-sm-12">
-                    <a class="btn btn-primary" href="{{route('superAdmin.synchronize.create')}}"><i class="fa fa-plus"></i> Create Synchronize Rule</a>
-                </div>
-            </div>
+                            </div>
+                            <div class="panel-body">
 
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">All Synchronize Rule Table</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <table id="datatable-buttons" class="table table-striped table-bordered">
-                                        <thead>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
                                         <tr>
-                                            <th style="width: 5%">#SL</th>
-                                            <th style="width: 10%">Country Name</th>
-                                            <th>Rule</th>
-                                            <th style="width: 10%">Status</th>
-                                            <th style="width: 10%">Action</th>
+                                            <th>#SL</th>
+                                            <th>Synchronize Rule</th>
+                                            <th>Status</th>
                                         </tr>
+                                    </thead>
+                                    <tbody id="synchronize_rules">
+                                        @if(isset($synchronizes[0]))
+                                            @foreach ($synchronizes as $key => $synchronize)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <input type="text" name="synchronize_rule[]"
+                                                            value="{{$synchronize->synchronize_rule}}" class="form-control">
+                                                        <input type="hidden" name="id[]" value="{{ $synchronize->id }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-select form-control" name="status[]">
+                                                            <option @if($synchronize->status == 1) selected @endif value="1" class="text-capitalize">Active</option>
+                                                            <option @if($synchronize->status == 0) selected @endif value="0" class="text-capitalize">Inactive</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        @if (!isset($key))
+                                                            <a class="btn btn-danger text-white"
+                                                                onclick="removeItem($(this))"><i
+                                                                    class="fa fa-times"></i></a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5" class="text-center">
+                                                <a class="btn btn-success text-white" onclick="newItem()"><i
+                                                        class="fa fa-plus"></i>&nbsp; Add More</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="panel-footer bg-defult" style="padding: 10px">
 
-                                        </thead>
-                                        <tbody>
-                                        @foreach($synchronizes as $synchronize)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{$synchronize->country->name}}</td>
-                                                <td>{{$synchronize->synchronize_rule}}</td>
-                                                <td><span class="label {{$synchronize->status ? 'label-success':'label-warning'}}">{{$synchronize->status ? 'Active':'Inactive'}}</span></td>
-                                                <td>
-                                                    <a href="{{route('superAdmin.synchronize.edit', $synchronize->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                    <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('superAdmin.synchronize.destroy', $synchronize->id) }}"><i class="fa fa-trash"></i></button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <button class="btn btn-success" type="submit" id="btnLostPassport">SAVE</button>
+
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
+            </div> <!-- End Row -->
         </div>
     </div>
+    <script>
+        // Synchronize
+        function newItem() {
+            $('#synchronize_rules').append(
+                '<tr>' +
+                '<td></td>' +
+                '<td>' +
+                '<input type="text" name="synchronize_rule[]" class="form-control">' +
+                '<input type="hidden" name="id[]" value="" class="form-control">' +
+                '</td>' +
+                '<td>' +
+                    '<select class="form-select form-control" name="status[]">'+
+                    '<option selected value="1" class="text-capitalize">Active</option>'+
+                    '<option value="0" class="text-capitalize">Inactive</option>'+
+                    '</select>' +
+                '</td>' +
+                '<td>' +
+                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '</td>' +
+                '</tr>'
+            );
+        }
+        function removeItem(element) {
+            var count = 0;
+            $.each($('#synchronize_rules tr'), function(index, val) {
+                count++;
+            });
+
+            if (count > 1) {
+                element.parent().parent().remove();
+                maintainSerialRenew();
+            }
+        }
+    </script>
+    @if (session()->has('success'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // notify('{{ session()->get('success') }}','success');
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: '{{ Session::get('success') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            });
+        </script>
+    @endif
 @endsection
 
 @push('css')
 @endpush
 
 @push('datatableJS')
-    <!-- Datatables-->
-    <script src="{{ asset('assets/super-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/jszip.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.fixedHeader.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/super-admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ asset('assets/super-admin/pages/datatables.init.js') }}"></script>
+
 @endpush
 
 @push('script')
+
 @endpush

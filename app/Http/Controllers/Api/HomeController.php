@@ -7,6 +7,7 @@ use App\Models\Booster;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\CountryAndSynchronizeRole;
 use App\Models\PcrTest;
 use App\Models\Slider;
 use App\Models\State;
@@ -684,10 +685,10 @@ class HomeController extends Controller
         ]);
     }
 
-    public function synchronizeInformation($id)
+    public function synchronizeInformation($country_id)
     {
-        $rules = Synchronize::where('country_id', $id)->where('status', '1')->select(['synchronize_rule'])->get();
-        $countryName = Country::where('id', $id)->select(['name'])->first();
+        $rules = CountryAndSynchronizeRole::where('country_id', $country_id)->with('rule')->get();
+        $countryName = Country::where('id', $country_id)->select(['name'])->first();
 
         if (!empty($rules)){
             return response()->json([

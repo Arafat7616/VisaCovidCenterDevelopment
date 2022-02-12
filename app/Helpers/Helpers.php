@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Center;
+use App\Models\CountryAndSynchronizeRole;
 use App\Models\RapidPCRCenter;
 use App\Models\StaticOption;
 use App\Models\User;
@@ -158,5 +159,13 @@ if (!function_exists('random_code')) {
     {
        $rapidPcrCenter = RapidPCRCenter::where('status','!=','1')->count();
        return $rapidPcrCenter;
+    }
+
+    function check_country_and_synchronize_role($country_id,$synchronize_id)
+    {
+        if (CountryAndSynchronizeRole::where('country_id', $country_id)->where('synchronize_id', $synchronize_id)->first()) {
+            return true;
+        }
+        return false;
     }
 }

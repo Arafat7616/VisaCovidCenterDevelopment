@@ -15,6 +15,9 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     Route::resource('centerArea', 'CenterAreaController');
     Route::resource('vaccineName', 'VaccineNameController');
     Route::resource('synchronize', 'SynchronizeController');
+    Route::get('synchronize-countries', 'SynchronizeController@countries')->name('synchronize.countries');
+    Route::get('synchronize-rule-based-on-conuntry/{country_id}', 'SynchronizeController@ruleBasedOnConuntry')->name('synchronize.ruleBasedOnConuntry');
+    Route::post('synchronize-rule-update/{country_id}', 'SynchronizeController@ruleUpdate')->name('synchronize.ruleUpdate');
 
     // route for manage user
     Route::group(['prefix' => 'manage-user/', 'as' => 'manageUser.'], function () {
@@ -84,7 +87,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
             Route::resource('subscriber', 'SubscriberController', [
                 'except' => ['create', 'show', 'edit', 'update', 'store']
             ]);
-           
+
         });
         Route::get('space', 'SpaceController@index')->name('space.index');
         Route::post('space', 'SpaceController@spaceUpdate')->name('spaceUpdate');

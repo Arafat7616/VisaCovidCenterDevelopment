@@ -46,7 +46,7 @@
                         <li><a href="{{route('superAdmin.booster.normal.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/normal') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Registered </span></a></li>
                         <li><a href="{{route('superAdmin.booster.premium.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/booster/premium') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premium </span></a></li>
                     </ul>
-                </li>             
+                </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Slider </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
@@ -105,7 +105,7 @@
                 {{-- routes for setting manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/*') ? 'active subdrop': ''}}"><i class="fa fa-gears"></i> <span> Setting's </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-            
+
                     <ul class="list-unstyled">
                         {{-- routes for Landing-page manage  --}}
                         <li><a href="{{route('superAdmin.setting.space.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/setting/space') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Space </span></a></li>
@@ -128,10 +128,10 @@
                 </li>
                 {{-- routes for Synchronize  --}}
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Synchronize Rule</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchroni*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Synchronize Rule</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.synchronize.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Synchronize Rule </span></a></li>
-                        <li><a href="{{route('superAdmin.synchronize.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create Rule </span></a></li>
+                        <li><a href="{{route('superAdmin.synchronize.countries')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize-rule-based-on-conuntry') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span>Synchronize rule based on country</span></a></li>
                     </ul>
                 </li>
             </ul>
