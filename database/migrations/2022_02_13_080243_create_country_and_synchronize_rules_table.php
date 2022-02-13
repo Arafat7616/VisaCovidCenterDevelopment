@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCountryAndSynchronizeRolesTable extends Migration
+class CreateCountryAndSynchronizeRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCountryAndSynchronizeRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('country_and_synchronize_roles', function (Blueprint $table) {
+        Schema::create('country_and_synchronize_rules', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->unsignedBigInteger('synchronize_id')->nullable();
@@ -28,6 +28,6 @@ class CreateCountryAndSynchronizeRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('country_and_synchronize_roles');
+        Schema::dropIfExists('country_and_synchronize_rules');
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Booster;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\Country;
-use App\Models\CountryAndSynchronizeRole;
+use App\Models\CountryAndSynchronizeRule;
 use App\Models\PcrTest;
 use App\Models\Slider;
 use App\Models\State;
@@ -114,12 +114,12 @@ class HomeController extends Controller
         {
             if ($vaccinationStatus->date_of_first_dose != null && $vaccinationStatus->date_of_second_dose != null)
             {
-                $boosterStatus = '1';
+                $boosterStatus = true;
             }else{
-                $boosterStatus = '0';
+                $boosterStatus = false;
             }
         }else{
-            $boosterStatus = '0';
+            $boosterStatus = false;
         }
 
         if ($vaccinationStatus){
@@ -687,7 +687,7 @@ class HomeController extends Controller
 
     public function synchronizeInformation($country_id)
     {
-        $rules = CountryAndSynchronizeRole::where('country_id', $country_id)->with('rule')->get();
+        $rules = CountryAndSynchronizeRule::where('country_id', $country_id)->with('rule')->get();
         $countryName = Country::where('id', $country_id)->select(['name'])->first();
 
         if (!empty($rules)){

@@ -14,6 +14,6 @@ class Country extends Model
 
     public function countryBasedSynchronizeRules()
     {
-        return $this->hasMany(CountryAndSynchronizeRole::class, 'country_id');
+        return $this->hasMany(CountryAndSynchronizeRule::class, 'country_id');
     }
 }

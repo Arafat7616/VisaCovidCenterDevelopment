@@ -4,7 +4,7 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
-use App\Models\CountryAndSynchronizeRole;
+use App\Models\CountryAndSynchronizeRule;
 use App\Models\Synchronize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -156,12 +156,12 @@ class SynchronizeController extends Controller
     }
 
     public function ruleUpdate(Request $request){
-        CountryAndSynchronizeRole::where('country_id', $request->country_id)->delete();
+        CountryAndSynchronizeRule::where('country_id', $request->country_id)->delete();
         foreach ($request->synchronizes as $key => $synchronize_id) {
-            $countryAndSynchronizeRole = new CountryAndSynchronizeRole();
-            $countryAndSynchronizeRole->country_id = $request->country_id;
-            $countryAndSynchronizeRole->synchronize_id = $synchronize_id;
-            $countryAndSynchronizeRole->save();
+            $countryAndSynchronizeRule = new CountryAndSynchronizeRule();
+            $countryAndSynchronizeRule->country_id = $request->country_id;
+            $countryAndSynchronizeRule->synchronize_id = $synchronize_id;
+            $countryAndSynchronizeRule->save();
         }
 
         return back()->with('success', 'Rule updated successfully.');

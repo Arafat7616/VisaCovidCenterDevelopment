@@ -8,7 +8,9 @@ use App\Models\Center;
 use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
+use App\Models\Synchronize;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use App\Models\Vaccination;
 use App\Models\VaccineName;
 use Carbon\Carbon;
@@ -50,11 +52,11 @@ class ServiceRegistrationController extends Controller
     }
 
     public function vaccineName(){
-        $vaccineName = VaccineName::where('status', '1')->select(['id', 'name'])->get();
-        if (count($vaccineName) > 0)
+        $synchronizes = Synchronize::where('type', 'vaccine')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
         {
             return response()->json([
-                "vaccineName"=>$vaccineName,
+                "vaccineName"=>$synchronizes,
                 "status"=>"1",
             ]);
         }else{
@@ -64,6 +66,21 @@ class ServiceRegistrationController extends Controller
             ]);
         }
     }
+    // public function boosterName(){
+    //     $vaccineName = VaccineName::where('status', '1')->select(['id', 'name'])->get();
+    //     if (count($vaccineName) > 0)
+    //     {
+    //         return response()->json([
+    //             "vaccineName"=>$vaccineName,
+    //             "status"=>"1",
+    //         ]);
+    //     }else{
+    //         return response()->json([
+    //             "message"=>"Something wrong",
+    //             "status"=>"0",
+    //         ]);
+    //     }
+    // }
 
     public function vaccineRegistration(Request $request)
     {
@@ -188,7 +205,8 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
-        $vaccineName = $userArray['vaccineName'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+
         $center = $userArray['center'];
         $firstDose = $userArray['firstDose'];
         $secondDose = $userArray['secondDose'];
@@ -198,6 +216,8 @@ class ServiceRegistrationController extends Controller
 
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
+
+        $vaccineName = $synchronize->synchronize_rule;
 
         if ($existVaccination)
         {
@@ -246,6 +266,13 @@ class ServiceRegistrationController extends Controller
             Image::make($decodedBase64)->save($folder_path.$image_new_name);
             $vaccine->document = $folder_path.$image_new_name;
         }
+
+        // Synchronize record store
+        UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
+        $countryAndSynchronizeRule = new UserAndSynchronizeRule();
+        $countryAndSynchronizeRule->user_id = $user->id;
+        $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
+        $countryAndSynchronizeRule->save();
 
         try {
             if ($vaccine->save())

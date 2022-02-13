@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CountryAndSynchronizeRole extends Model
+class UserAndSynchronizeRule extends Model
 {
     protected $fillable = [
-        'country_id',
+        'user_id',
         'synchronize_id'
     ];
 
-    public function rule()
+    public function rules()
     {
         return $this->belongsTo(Synchronize::class, 'synchronize_id');
     }
