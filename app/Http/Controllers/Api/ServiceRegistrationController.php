@@ -255,6 +255,13 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_second_dose = Carbon::parse($secondDose);
             $vaccine->status = 1;
             $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
+            $countryAndSynchronizeRule = new UserAndSynchronizeRule();
+            $countryAndSynchronizeRule->user_id = $user->id;
+            $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $countryAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
@@ -266,13 +273,6 @@ class ServiceRegistrationController extends Controller
             Image::make($decodedBase64)->save($folder_path.$image_new_name);
             $vaccine->document = $folder_path.$image_new_name;
         }
-
-        // Synchronize record store
-        UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
-        $countryAndSynchronizeRule = new UserAndSynchronizeRule();
-        $countryAndSynchronizeRule->user_id = $user->id;
-        $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
-        $countryAndSynchronizeRule->save();
 
         try {
             if ($vaccine->save())
