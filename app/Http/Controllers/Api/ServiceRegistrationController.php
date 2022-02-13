@@ -300,13 +300,15 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
-        $vaccineName = $userArray['vaccineName'];
+        // $vaccineName = $userArray['vaccineName'];
         $center = $userArray['center'];
         $secondDose = $userArray['secondDose'];
         $selectedDose = $userArray['selectedDose'];
         $description = $userArray['description'];
         $centerLocation = $userArray['centerLocation'];
 
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $vaccineName = $synchronize->synchronize_rule;
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
 
@@ -324,6 +326,13 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_second_dose = Carbon::parse($secondDose);
             $vaccine->status = 1;
             $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
+            $countryAndSynchronizeRule = new UserAndSynchronizeRule();
+            $countryAndSynchronizeRule->user_id = $user->id;
+            $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $countryAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
