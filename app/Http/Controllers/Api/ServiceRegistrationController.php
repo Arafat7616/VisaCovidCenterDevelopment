@@ -88,7 +88,10 @@ class ServiceRegistrationController extends Controller
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
-        $nameOfVaccine = $userArray['vaccineName'];
+
+        // $nameOfVaccine = $userArray['vaccineName'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $nameOfVaccine = $synchronize->synchronize_rule;
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
@@ -124,6 +127,7 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_registration = Carbon::parse($date);
             $vaccine->registration_type = "normal";
             $vaccine->name_of_vaccine = $nameOfVaccine;
+            $vaccine->synchronize_id = $synchronize->id;
 
             $center = Center::where('id', $centerId)->select(['name','address'])->first();
             $userName = $user->name;

@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CenterVaccineName extends Model
+class CenterSynchronizeRule extends Model
 {
     protected $fillable = [
+        'id',
         'center_id',
         'rapid_pcr_center_id',
-        'city_id',
-        'vaccineName',
-        'status'
+        'synchronize_id',
+        'city_id'
     ];
 }

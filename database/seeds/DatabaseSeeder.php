@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CenterAreaSeeder::class);
         $this->call(SynchronizeSeeder::class);
         $this->call(CountryAndSynchronizeRuleSeeder::class);
+        $this->call(CenterSynchronizeRuleSeeder::class);
         // $this->call(SliderSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);

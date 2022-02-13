@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCenterVaccineNamesTable extends Migration
+class CreateCenterSynchronizeRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateCenterVaccineNamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('center_vaccine_names', function (Blueprint $table) {
+        Schema::create('center_synchronize_rules', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('center_id')->nullable();
             $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
+            $table->unsignedBigInteger('synchronize_id')->nullable();
             $table->string('city_id');
-            $table->string('vaccineName');
-            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateCenterVaccineNamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('center_vaccine_names');
+        Schema::dropIfExists('center_synchronize_rules');
     }
 }
