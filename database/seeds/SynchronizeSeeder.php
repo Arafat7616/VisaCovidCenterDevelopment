@@ -15,37 +15,44 @@ class SynchronizeSeeder extends Seeder
     {
         Synchronize::create([
             'synchronize_rule' => 'Booster- physzer',
-            'status' => '1'
+            'type' => 'booster',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Booster- Mordana',
-            'status' => '1'
+            'type' => 'booster',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Booster- Astrazeneca',
-            'status' => '1'
+            'type' => 'booster',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Vaccination- physzer',
-            'status' => '1'
+            'type' => 'vaccine',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Vaccination- Mordana',
-            'status' => '1'
+            'type' => 'vaccine',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Vaccination- Astrazeneca',
-            'status' => '1'
+            'type' => 'vaccine',
+            'status' => '1',
         ]);
 
         Synchronize::create([
             'synchronize_rule' => 'Pcr',
-            'status' => '1'
+            'type' => 'pcr',
+            'status' => '1',
         ]);
     }
 }

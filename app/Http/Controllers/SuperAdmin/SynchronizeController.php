@@ -52,11 +52,13 @@ class SynchronizeController extends Controller
                     if (isset($request->id[$key]) && $request->id[$key]  != null) {
                         $synchronize = Synchronize::where('id', $request->id[$key])->update([
                             'synchronize_rule' => $request->synchronize_rule[$key],
+                            'type' => $request->type[$key],
                             'status' => $request->status[$key],
                         ]);
                     } else {
                         $synchronize = Synchronize::create([
                             'synchronize_rule' => $request->synchronize_rule[$key],
+                            'type' => $request->type[$key],
                             'status' => $request->status[$key],
                         ]);
                     }
