@@ -18,7 +18,7 @@ class CreateCenterSynchronizeRulesTable extends Migration
             $table->unsignedBigInteger('center_id')->nullable();
             $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('synchronize_id')->nullable();
-            $table->string('city_id');
+            $table->string('city_id')->nullable();
             $table->timestamps();
         });
     }

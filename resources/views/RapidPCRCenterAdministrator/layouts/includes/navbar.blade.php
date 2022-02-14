@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.premium.index') }}">Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.centerVaccine.index') }}">Vaccine Name</a>
+                        <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.centerVaccine.index') }}">Services Name</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
@@ -42,7 +42,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('rapidPcrCenterAdministrator.profile') }}">Profile</a></li>
                             <li><a class="dropdown-item" href="{{ route('rapidPcrCenterAdministrator.centerModify') }}">Center Modify</a></li>
-                           
+
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>
                     </li>

@@ -30,7 +30,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('administrator.centerVaccine.index') }}">Vaccine Name</a>
+                        <a class="nav-link" href="{{ route('administrator.synchronize.rules') }}">Services Name</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">
@@ -43,7 +43,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('administrator.profile') }}">Profile</a></li>
                             <li><a class="dropdown-item" href="{{ route('administrator.centerModify') }}">Center Modify</a></li>
-                           
+
                             <li><a class="dropdown-item logout-btn" href="#">Logout</a></li>
                         </ul>
                     </li>

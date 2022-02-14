@@ -149,10 +149,10 @@ class SynchronizeController extends Controller
         return view('SuperAdmin.synchronize.country-list', compact('countries'));
     }
 
-    public function ruleBasedOnConuntry($country_id){
+    public function ruleBasedOnCountry($country_id){
         $country = Country::findOrFail($country_id);
-        $synchronizes = Synchronize::orderBy('id', 'DESC')->get();
-        return view('SuperAdmin.synchronize.ruleBasedOnConuntry', compact('country','synchronizes'));
+        $synchronizes = Synchronize::where('status', true)->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.synchronize.ruleBasedOnCountry', compact('country','synchronizes'));
     }
 
     public function ruleUpdate(Request $request){

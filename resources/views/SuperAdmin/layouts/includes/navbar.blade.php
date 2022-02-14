@@ -131,7 +131,7 @@
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchroni*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Synchronize Rule</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.synchronize.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Synchronize Rule </span></a></li>
-                        <li><a href="{{route('superAdmin.synchronize.countries')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize-rule-based-on-conuntry') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span>Synchronize rule based on country</span></a></li>
+                        <li><a href="{{route('superAdmin.synchronize.countries')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize-rule-based-on-country') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span>Synchronize rule based on country</span></a></li>
                     </ul>
                 </li>
             </ul>
