@@ -48,7 +48,10 @@ Route::group(['prefix' => 'rapid-pcr-center-administrator/', 'namespace' => 'Rap
 
     Route::get('profile', 'DashboardController@profile')->name('profile');
     Route::resource('trustedPeople', 'TrustedPeopleController');
-    Route::resource('centerVaccine', 'CenterVaccineNameController');
+
+    Route::get('synchronize-rules', 'CenterSynchronizeRuleController@rules')->name('synchronize.rules');
+    Route::post('synchronize-rules-update', 'CenterSynchronizeRuleController@rulesUpdate')->name('synchronize.rulesUpdate');
+
     Route::post('trustedPeople/verification', 'TrustedPeopleController@verification');
     Route::post('trustedPeople/resend-otp', 'TrustedPeopleController@resendOtp');
     Route::get('verification/qr-scan', 'QrController@qrScan')->name('qrScan');

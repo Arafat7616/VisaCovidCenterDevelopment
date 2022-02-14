@@ -1,4 +1,4 @@
-@extends('Administrator.layouts.master')
+@extends('RapidPCRCenterAdministrator.layouts.master')
 
 @push('title')
     Services Name
@@ -16,13 +16,13 @@
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="card page-wrapper w-100" style="margin-bottom: 100px" >
-                    <form class="mt-2" action="{{route('administrator.synchronize.rulesUpdate')}}" method="POST" enctype="multipart/form-data">
+                    <form class="mt-2" action="{{route('rapidPcrCenterAdministrator.synchronize.rulesUpdate')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('Others.toaster_message')
                         <div class="row">
                             @foreach ($synchronizes as $key => $synchronize)
                                 <div class="col-lg-4 col-md-4" >
-                                    <input style="margin: 8px;" @if( check_center_and_synchronize_role($center->id,$synchronize->id) )  checked @endif id="synchronize_{{ $synchronize->id }}" type="checkbox" value="{{ $synchronize->id }}" name="synchronizes[]">
+                                    <input style="margin: 8px;" @if( check_rapid_pcr_center_and_synchronize_role($center->id,$synchronize->id) )  checked @endif id="synchronize_{{ $synchronize->id }}" type="checkbox" value="{{ $synchronize->id }}" name="synchronizes[]">
                                     <label for="synchronize_{{ $synchronize->id }}"> {{ $synchronize->synchronize_rule }} </label>
                                 </div>
                             @endforeach

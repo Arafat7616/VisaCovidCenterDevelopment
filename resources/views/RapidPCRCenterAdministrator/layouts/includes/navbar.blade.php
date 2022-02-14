@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.premium.index') }}">Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.centerVaccine.index') }}">Services Name</a>
+                        <a class="nav-link" href="{{ route('rapidPcrCenterAdministrator.synchronize.rules') }}">Services Name</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0" style="line-height: 40px; height: 60px;">

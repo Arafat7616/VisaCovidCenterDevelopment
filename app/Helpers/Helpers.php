@@ -177,4 +177,12 @@ if (!function_exists('random_code')) {
         }
         return false;
     }
+
+    function check_rapid_pcr_center_and_synchronize_role($rapid_pcr_center_id,$synchronize_id)
+    {
+        if (CenterSynchronizeRule::where('rapid_pcr_center_id', $rapid_pcr_center_id)->where('synchronize_id', $synchronize_id)->first()) {
+            return true;
+        }
+        return false;
+    }
 }
