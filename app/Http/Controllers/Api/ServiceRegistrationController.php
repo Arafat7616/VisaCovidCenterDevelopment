@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
 use App\Models\Center;
+use App\Models\CenterSynchronizeRule;
 use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
@@ -25,9 +26,9 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $cityId = $userArray['city_id'];
-        $vaccineName = $userArray['vaccineName'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
 
-        $centers = CenterVaccineName::where('city_id', $cityId)->where('vaccineName', $vaccineName)->select('center_id')->get();
+        $centers = CenterSynchronizeRule::where('center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('center_id')->get();
         $centerInfo = [];
 
         $i = 0;
