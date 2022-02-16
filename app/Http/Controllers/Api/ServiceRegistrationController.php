@@ -263,10 +263,10 @@ class ServiceRegistrationController extends Controller
 
             // Synchronize record store
             UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
-            $countryAndSynchronizeRule = new UserAndSynchronizeRule();
-            $countryAndSynchronizeRule->user_id = $user->id;
-            $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
-            $countryAndSynchronizeRule->save();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $user->id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $userAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
@@ -334,10 +334,10 @@ class ServiceRegistrationController extends Controller
 
             // Synchronize record store
             UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
-            $countryAndSynchronizeRule = new UserAndSynchronizeRule();
-            $countryAndSynchronizeRule->user_id = $user->id;
-            $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
-            $countryAndSynchronizeRule->save();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $user->id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $userAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
