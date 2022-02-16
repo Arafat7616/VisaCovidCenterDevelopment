@@ -34,7 +34,7 @@ class VaccineCenterController extends Controller
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$vaccineRegisteredList->id;
                 $myData[$key]['name_of_vaccine'] = $vaccineRegisteredList->name_of_vaccine;
-                $myData[$key]['synchronize_id'] = $vaccineRegisteredList->synchronize_id;
+                $myData[$key]['synchronize_id'] = (string)$vaccineRegisteredList->synchronize_id;
             }
             return response()->json([
                 "myData" => $myData,
@@ -67,7 +67,7 @@ class VaccineCenterController extends Controller
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$vaccineRegisteredList->id;
                 $myData[$key]['name_of_vaccine'] = $vaccineRegisteredList->name_of_vaccine;
-                $myData[$key]['synchronize_id'] = $vaccineRegisteredList->synchronize_id;
+                $myData[$key]['synchronize_id'] = (string)$vaccineRegisteredList->synchronize_id;
             }
             return response()->json([
                 "myData" => $myData,
@@ -123,9 +123,11 @@ class VaccineCenterController extends Controller
 
     public function vaccinationFrom(Request $request)
     {
+
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $applicationId = $userArray['applicationId'];
+        $synchronize_id = $userArray['synchronizeId'];
         $serviceType = $userArray['serviceType'];
 
         $user = User::where('phone', $phone)->select('id')->first();
@@ -143,16 +145,23 @@ class VaccineCenterController extends Controller
             $vaccine->second_served_by_id = $user->id;
 
             // Synchronize record store
-            UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
-            $countryAndSynchronizeRule = new UserAndSynchronizeRule();
-            $countryAndSynchronizeRule->user_id = $user->id;
-            $countryAndSynchronizeRule->synchronize_id = $synchronize->id;
-            $countryAndSynchronizeRule->save();
+            UserAndSynchronizeRule::where('user_id', $vaccine->user_id)->where('synchronize_id', $synchronize_id)->delete();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $vaccine->user_id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize_id;
+            $userAndSynchronizeRule->save();
         }
-        $vaccine->save();
-        return response()->json([
-            "message"=>'Successfully update',
-            "status"=>'1',
-        ]);
+        try {
+            $vaccine->save();
+            return response()->json([
+                "message"=>'Successfully update',
+                "status"=>'1',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>"Something went wrong .".$exception->getMessage(),
+                "status"=>'1',
+            ]);
+        }
     }
 }

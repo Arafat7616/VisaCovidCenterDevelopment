@@ -82,7 +82,7 @@ Route::post('home/pcrInformation', 'Api\HomeController@pcrInformation');
 Route::post('home/boosterInformation', 'Api\HomeController@boosterInformation');
 
 // Synchronize info
-Route::get('home/synchronizeInformation/{country_id}', 'Api\HomeController@synchronizeInformation');
+Route::get('home/synchronizeInformation/{country_id}/{phone_number}', 'Api\HomeController@synchronizeInformation');
 
 Route::post('otpResend', 'Api\UserController@otpResend');
 

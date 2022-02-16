@@ -685,20 +685,30 @@ class HomeController extends Controller
         ]);
     }
 
-    public function synchronizeInformation($country_id)
+    public function synchronizeInformation($country_id, $phone_number)
     {
-        $rules = CountryAndSynchronizeRule::where('country_id', $country_id)->with('rule')->get();
-        $countryName = Country::where('id', $country_id)->select(['name'])->first();
+        try {
+            $user = User::where('phone',$phone_number)->first();
 
-        if (!empty($rules)){
-            return response()->json([
-                "status"=>'1',
-                "country_name"=>$countryName->name,
-                "rules"=>$rules,
-            ]);
-        }else{
+            $rules = CountryAndSynchronizeRule::where('country_id', $country_id)->with('rule')->get();
+            $countryName = Country::where('id', $country_id)->select(['name'])->first();
+
+            if (!empty($rules)){
+                return response()->json([
+                    "status"=>'1',
+                    "country_name"=>$countryName->name,
+                    "user_synchronizes"=>get_user_synchronize_array_by_user_id($user->id),
+                    "rules"=>$rules,
+                ]);
+            }else{
+                return response()->json([
+                    "status"=>'0',
+                ]);
+            }
+        } catch (\Exception $exception) {
             return response()->json([
                 "status"=>'0',
+                "message"=>'Something went wrong'.$exception.getMessage(),
             ]);
         }
     }

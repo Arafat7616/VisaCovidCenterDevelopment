@@ -5,7 +5,9 @@ use App\Models\CenterSynchronizeRule;
 use App\Models\CountryAndSynchronizeRule;
 use App\Models\RapidPCRCenter;
 use App\Models\StaticOption;
+use App\Models\Synchronize;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Cache;
 // use Illuminate\Support\Facades\Mail;
@@ -184,5 +186,14 @@ if (!function_exists('random_code')) {
             return true;
         }
         return false;
+    }
+
+    function get_user_synchronize_array_by_user_id($user_id){
+        $array = [];
+        $data  = UserAndSynchronizeRule::where('user_id', $user_id)->get();
+        foreach($data as $d){
+            array_push($array,$d->synchronize_id);
+        }
+        return $array;
     }
 }
