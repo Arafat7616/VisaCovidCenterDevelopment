@@ -88,21 +88,21 @@ class HomeController extends Controller
         }
     }
 
-    public function center($id)
-    {
-        $centers = Center::where('city_id', $id)->select(['id', 'name'])->get();
-        if ($centers){
-            return response()->json([
-                "status" => "1",
-                "centers" => $centers,
-            ]);
-        }else{
-            return response()->json([
-                "status" => "0",
-                "message" => "Not found",
-            ]);
-        }
-    }
+    // public function center($id)
+    // {
+    //     $centers = Center::where('city_id', $id)->select(['id', 'name'])->get();
+    //     if ($centers){
+    //         return response()->json([
+    //             "status" => "1",
+    //             "centers" => $centers,
+    //         ]);
+    //     }else{
+    //         return response()->json([
+    //             "status" => "0",
+    //             "message" => "Not found",
+    //         ]);
+    //     }
+    // }
 
     public function VaccineStatusCheck(Request $request)
     {

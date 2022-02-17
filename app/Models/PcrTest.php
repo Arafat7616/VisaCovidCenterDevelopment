@@ -20,6 +20,7 @@ class PcrTest extends Model
         'center_id',
         'rapid_pcr_result',
         'rapid_pcr_center_id',
+        'synchronize_id',
         'tested_by',
         'status',
     ];

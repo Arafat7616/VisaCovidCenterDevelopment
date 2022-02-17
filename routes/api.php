@@ -41,7 +41,7 @@ Route::get('home/slider', 'Api\HomeController@slider');
 Route::get('home/country', 'Api\HomeController@country');
 Route::get('home/state/{id}', 'Api\HomeController@state');
 Route::get('home/city/{id}', 'Api\HomeController@city');
-Route::get('home/center/{id}', 'Api\HomeController@center');
+// Route::get('home/center/{id}', 'Api\HomeController@center');
 
 Route::post('home/vaccine/registration', 'Api\ServiceRegistrationController@vaccineRegistration');
 Route::post('home/vaccine/externalVaccination', 'Api\ServiceRegistrationController@externalVaccination');
@@ -50,11 +50,14 @@ Route::post('test-image-store', 'Api\ServiceRegistrationController@testImageStor
 Route::post('updateProfilePicture', 'Api\ServiceRegistrationController@updateProfilePicture');
 
 
-Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
 Route::post('home/booster/registration', 'Api\ServiceRegistrationController@boosterRegistration');
 
 Route::post('home/vaccine/vaccinationCenterSelect', 'Api\ServiceRegistrationController@vaccinationCenterSelect');
 Route::get('home/vaccine/vaccineName', 'Api\ServiceRegistrationController@vaccineName');
+// prc registration related route
+Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
+Route::post('home/pcr/pcrCenterSelect', 'Api\ServiceRegistrationController@pcrCenterSelect');
+Route::get('home/pcr/pcrName', 'Api\ServiceRegistrationController@pcrName');
 
 
 //Service Status Check
