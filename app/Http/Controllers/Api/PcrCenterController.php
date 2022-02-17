@@ -7,6 +7,7 @@ use App\Models\PcrTest;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\UserAndSynchronizeRule;
 
 class PcrCenterController extends Controller
 {
@@ -16,7 +17,7 @@ class PcrCenterController extends Controller
         $phone = $userArray['phone'];
 
         $user = User::where('phone', $phone)->select(['center_id', 'id'])->first();
-        $pcrRegisteredLists = PcrTest::where('center_id', $user->center_id)->where('date_of_pcr_test', null)->select(['user_id', 'id'])->get();
+        $pcrRegisteredLists = PcrTest::where('center_id', $user->center_id)->where('date_of_pcr_test', null)->select(['user_id', 'id','synchronize_id'])->get();
 
         if (empty($pcrRegisteredLists))
         {
@@ -33,6 +34,7 @@ class PcrCenterController extends Controller
                 $myData[$key]['user_name'] = $regUser->name;
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$pcrRegisteredList->id;
+                $myData[$key]['synchronize_id'] = (string)$pcrRegisteredList->synchronize_id;
             }
 
             return response()->json([
@@ -92,6 +94,7 @@ class PcrCenterController extends Controller
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $applicationId = $userArray['applicationId'];
+        $synchronize_id = $userArray['synchronizeId'];
 
         $user = User::where('phone', $phone)->select('id')->first();
         $pcr = PcrTest::where('id', $applicationId)->first();
@@ -99,11 +102,25 @@ class PcrCenterController extends Controller
         $pcr->sample_collection_date = Carbon::now();
         $pcr->date_of_pcr_test = Carbon::now();
         $pcr->tested_by = $user->id;
-        $pcr->save();
 
-        return response()->json([
-            "message"=>'Successfully update',
-            "status"=>'1',
-        ]);
+        // Synchronize record store
+        UserAndSynchronizeRule::where('user_id', $pcr->user_id)->where('synchronize_id', $synchronize_id)->delete();
+        $userAndSynchronizeRule = new UserAndSynchronizeRule();
+        $userAndSynchronizeRule->user_id = $pcr->user_id;
+        $userAndSynchronizeRule->synchronize_id = $synchronize_id;
+        $userAndSynchronizeRule->save();
+
+        try {
+            $pcr->save();
+            return response()->json([
+                "message"=>'Successfully update',
+                "status"=>'1',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>"Something went wrong .".$exception->getMessage(),
+                "status"=>'1',
+            ]);
+        }
     }
 }
