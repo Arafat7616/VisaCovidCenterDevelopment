@@ -50,8 +50,24 @@ class SynchronizeSeeder extends Seeder
         ]);
 
         Synchronize::create([
-            'synchronize_rule' => 'Pcr',
+            'synchronize_rule' => 'Pcr-varriant-1',
             'type' => 'pcr',
+            'status' => '1',
+        ]);
+
+        Synchronize::create([
+            'synchronize_rule' => 'Pcr-varriant-2',
+            'type' => 'pcr',
+            'status' => '1',
+        ]);
+        Synchronize::create([
+            'synchronize_rule' => 'RT-Pcr-varriant-1',
+            'type' => 'rtpcr',
+            'status' => '1',
+        ]);
+        Synchronize::create([
+            'synchronize_rule' => 'RT-Pcr-varriant-2',
+            'type' => 'rtpcr',
             'status' => '1',
         ]);
     }

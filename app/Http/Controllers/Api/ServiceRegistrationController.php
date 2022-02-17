@@ -317,8 +317,6 @@ class ServiceRegistrationController extends Controller
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
 
-
-
         $vaccine = $existVaccination;
 
         $vaccine->user_id = $user->id;

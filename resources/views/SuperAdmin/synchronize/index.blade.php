@@ -74,6 +74,7 @@
                                                             <option @if($synchronize->type == 'booster') selected @endif value="booster" class="text-capitalize">Booster</option>
                                                             <option @if($synchronize->type == 'vaccine') selected @endif value="vaccine" class="text-capitalize">Vaccine</option>
                                                             <option @if($synchronize->type == 'pcr') selected @endif value="pcr" class="text-capitalize">PCR</option>
+                                                            <option @if($synchronize->type == 'rtpcr') selected @endif value="pcr" class="text-capitalize">RT-PCR</option>
                                                         </select>
                                                     </td>
                                                     <td>
@@ -129,6 +130,7 @@
                     '<option selected value="booster" class="text-capitalize">Booster</option>'+
                     '<option value="vaccine" class="text-capitalize">Vaccine</option>'+
                     '<option value="pcr" class="text-capitalize">PCR</option>'+
+                    '<option value="rtpcr" class="text-capitalize">RT-PCR</option>'+
                     '</select>' +
                 '</td>' +
                 '<td>' +
