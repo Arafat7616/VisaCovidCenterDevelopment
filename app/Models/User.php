@@ -80,5 +80,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(Booster::class, 'user_id');
     }
-
 }

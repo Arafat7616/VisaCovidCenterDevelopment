@@ -19,7 +19,7 @@ class RegularManPowerController extends Controller
     }
 
     public function create(){
-      
+
          $manPowerSchedule = ManPowerSchedule::where('type', 'normal')->where('center_id', Auth::user()->center_id)->orderBy('date', 'DESC')->first();
          $center = auth()->user()->center;
         return view('Administrator.regularManPower.create', compact('manPowerSchedule','center'));
@@ -42,25 +42,25 @@ class RegularManPowerController extends Controller
             'toDate' => 'required',
         ]);
 
-        
+
         $avaiable =  get_available_service_at_a_time(auth()->user()->center->area);
         if ($request->atATimeCapacity <= $avaiable) {
             $d1 = strtotime($request->fromDate);
             $d2 = strtotime($request->toDate);
             $totalDiffDays = abs($d1-$d2)/60/60/24;
-    
+
             $newArray = [];
             for ($i = 0; $i<=$totalDiffDays; $i++) {
                 $d = $d1 + $i * (3600*24);
                 $newArray[$i] = date("Y-m-d", $d);
-                
+
                 $oldManPower = ManPowerSchedule::where('type', 'normal')->where('center_id', Auth::user()->center_id)->where('date', date("Y-m-d", $d))->first();
                 if ($oldManPower) {
                     $manPowerSchedule = $oldManPower;
                 } else {
                     $manPowerSchedule = new ManPowerSchedule();
-                }               
-            
+                }
+
                 $manPowerSchedule->type                     = 'normal';
                 $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
                 $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
@@ -77,9 +77,9 @@ class RegularManPowerController extends Controller
                 $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
                 $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
                 $manPowerSchedule->center_id                = Auth::user()->center_id;
-                $manPowerSchedule->save();      
+                $manPowerSchedule->save();
             }
-    
+
             return response()->json([
                 'type' => 'success',
                 'message' => 'Schedule uploaded successfully !',
@@ -115,7 +115,7 @@ class RegularManPowerController extends Controller
         $avaiable =  get_available_service_at_a_time(auth()->user()->center->area);
         if ($request->atATimeCapacity <= $avaiable) {
             $manPowerSchedule = ManPowerSchedule::findOrFail($id);
-        
+
             $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
             $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
             $manPowerSchedule->day_starting_time        = $request->daySlotStart;
@@ -131,7 +131,7 @@ class RegularManPowerController extends Controller
             $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
 
             try {
-                $manPowerSchedule->save();      
+                $manPowerSchedule->save();
                 return response()->json([
                     'type' => 'success',
                     'message' => 'Schedule uploaded successfully !',
@@ -165,5 +165,4 @@ class RegularManPowerController extends Controller
             ]);
         }
     }
-
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pathologist;
 
 use App\Http\Controllers\Controller;
 use App\Models\PcrTest;
+use App\Models\UserAndSynchronizeRule;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,15 @@ class PcrResultController extends Controller
             $pcrTest->result_published_date = Carbon::now();
             $pcrTest->status = 1;
 
+            if ($request->testResult == 'negative') {
+                // Synchronize record store
+                UserAndSynchronizeRule::where('user_id', $pcrTest->user_id)->where('synchronize_id', $pcrTest->synchronize_id)->delete();
+                $userAndSynchronizeRule = new UserAndSynchronizeRule();
+                $userAndSynchronizeRule->user_id = $pcrTest->user_id;
+                $userAndSynchronizeRule->synchronize_id = $pcrTest->synchronize_id;
+                $userAndSynchronizeRule->save();
+            }
+
             try {
                 $pcrTest->save();
                 return response()->json([
@@ -64,8 +74,5 @@ class PcrResultController extends Controller
                 'message' => 'Have to select Positive or Negative !',
             ]);
         }
-
-
     }
-
 }

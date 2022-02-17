@@ -103,12 +103,12 @@ class PcrCenterController extends Controller
         $pcr->date_of_pcr_test = Carbon::now();
         $pcr->tested_by = $user->id;
 
-        // Synchronize record store
-        UserAndSynchronizeRule::where('user_id', $pcr->user_id)->where('synchronize_id', $synchronize_id)->delete();
-        $userAndSynchronizeRule = new UserAndSynchronizeRule();
-        $userAndSynchronizeRule->user_id = $pcr->user_id;
-        $userAndSynchronizeRule->synchronize_id = $synchronize_id;
-        $userAndSynchronizeRule->save();
+        // // Synchronize record store
+        // UserAndSynchronizeRule::where('user_id', $pcr->user_id)->where('synchronize_id', $synchronize_id)->delete();
+        // $userAndSynchronizeRule = new UserAndSynchronizeRule();
+        // $userAndSynchronizeRule->user_id = $pcr->user_id;
+        // $userAndSynchronizeRule->synchronize_id = $synchronize_id;
+        // $userAndSynchronizeRule->save();
 
         try {
             $pcr->save();
