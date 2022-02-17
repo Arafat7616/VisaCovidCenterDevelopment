@@ -57,7 +57,9 @@ Route::get('home/vaccine/vaccineName', 'Api\ServiceRegistrationController@vaccin
 // prc registration related route
 Route::post('home/prc/registration', 'Api\ServiceRegistrationController@prcRegistration');
 Route::post('home/pcr/pcrCenterSelect', 'Api\ServiceRegistrationController@pcrCenterSelect');
-Route::get('home/pcr/pcrName', 'Api\ServiceRegistrationController@pcrName');
+Route::post('home/booster/boosterCenterSelect', 'Api\ServiceRegistrationController@boosterCenterSelect');
+Route::get('home/pcr/pcrZName', 'Api\ServiceRegistrationController@pcrName');
+Route::get('home/booster/boosterName', 'Api\ServiceRegistrationController@boosterName');
 
 
 //Service Status Check

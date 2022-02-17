@@ -708,7 +708,7 @@ class HomeController extends Controller
         } catch (\Exception $exception) {
             return response()->json([
                 "status"=>'0',
-                "message"=>'Something went wrong'.$exception.getMessage(),
+                "message"=>'Something went wrong'.$exception->getMessage(),
             ]);
         }
     }

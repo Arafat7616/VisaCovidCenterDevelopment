@@ -160,7 +160,7 @@ class VaccineCenterController extends Controller
         } catch (\Exception $exception) {
             return response()->json([
                 "message"=>"Something went wrong .".$exception->getMessage(),
-                "status"=>'1',
+                "status"=>'0',
             ]);
         }
     }

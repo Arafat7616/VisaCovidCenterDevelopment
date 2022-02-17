@@ -50,14 +50,14 @@ class PremiumManPowerController extends Controller
             for ($i = 0; $i<=$totalDiffDays; $i++) {
                 $d = $d1 + $i * (3600*24);
                 $newArray[$i] = date("Y-m-d", $d);
-                
+
                 $oldManPower = ManPowerSchedule::where('type', 'premium')->where('rapid_pcr_center_id', Auth::user()->rapid_pcr_center_id)->where('date', date("Y-m-d", $d))->first();
                 if ($oldManPower) {
                     $manPowerSchedule = $oldManPower;
                 } else {
                     $manPowerSchedule = new ManPowerSchedule();
                 }
-            
+
                 $manPowerSchedule->type                     = 'premium';
                 $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
                 $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
@@ -74,7 +74,7 @@ class PremiumManPowerController extends Controller
                 // $manPowerSchedule->vaccine_available_set    = $request->vaccine_available_set;
                 $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
                 $manPowerSchedule->rapid_pcr_center_id                = Auth::user()->rapid_pcr_center_id;
-                $manPowerSchedule->save();      
+                $manPowerSchedule->save();
             }
 
             return response()->json([
@@ -112,11 +112,11 @@ class PremiumManPowerController extends Controller
         ]);
 
         $avaiable =  get_available_service_at_a_time_in_rtpcr_center(auth()->user()->rapidPcrCenter->area);
-        
+
         if ($request->atATimeCapacity <= $avaiable) {
-                
+
             $manPowerSchedule = ManPowerSchedule::findOrFail($id);
-            
+
             $manPowerSchedule->morning_starting_time    = $request->morningSlotStart;
             $manPowerSchedule->morning_ending_time      = $request->morningSlotEnd;
             $manPowerSchedule->day_starting_time        = $request->daySlotStart;
@@ -132,7 +132,7 @@ class PremiumManPowerController extends Controller
             $manPowerSchedule->pcr_available_set        = $request->pcr_available_set;
 
             try {
-                $manPowerSchedule->save();      
+                $manPowerSchedule->save();
                 return response()->json([
                     'type' => 'success',
                     'message' => 'Schedule uploaded successfully !',
@@ -140,7 +140,7 @@ class PremiumManPowerController extends Controller
             } catch (\Exception $exception) {
                 return response()->json([
                     'type' => 'error',
-                    'message' => 'Something going wrong. ' . $exception.getMessage(),
+                    'message' => 'Something going wrong. ' . $exception->getMessage(),
                 ]);
             }
         }else{
