@@ -235,7 +235,8 @@ class UserController extends Controller
                 "message"=>"Failed to registration. Something wrong",
                 "status"=>"0",
             ]);
-
+        }
+    }
 
     /**
      * Display the specified resource.

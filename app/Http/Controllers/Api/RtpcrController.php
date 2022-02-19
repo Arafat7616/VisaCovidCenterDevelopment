@@ -213,5 +213,6 @@ class RtpcrController extends Controller
                 "status" => "0",
                 "message" => "No fixed you",
             ]);
-
+        }
+    }
 }

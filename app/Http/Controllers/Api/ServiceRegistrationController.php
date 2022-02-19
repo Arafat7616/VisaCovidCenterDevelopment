@@ -164,8 +164,6 @@ class ServiceRegistrationController extends Controller
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
-
-        // $nameOfVaccine = $userArray['vaccineName'];
         $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
         $nameOfVaccine = $synchronize->synchronize_rule;
 
