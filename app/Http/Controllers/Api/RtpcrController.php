@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Center;
 use App\Models\PcrTest;
 use App\Models\RapidPCRCenter;
+use App\Models\Synchronize;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -84,12 +85,13 @@ class RtpcrController extends Controller
         }
     }
 
-    public function rtpcrRegistration(Request $request)
+    public function rtPcrRegistration(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
@@ -121,6 +123,7 @@ class RtpcrController extends Controller
         $existRtPcr->rapid_pcr_center_id = $centerId;
         $existRtPcr->date_of_registration = Carbon::parse($date);
         $existRtPcr->registration_type = "normal";
+        $existRtPcr->synchronize_id = $synchronize->id;
 
         if ($existRtPcr->save()) {
             // send sms via helper function

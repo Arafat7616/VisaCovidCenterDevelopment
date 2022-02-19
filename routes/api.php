@@ -130,7 +130,7 @@ Route::post('vaccination/vaccinationFrom', 'Api\VaccineCenterController@vaccinat
 //rtpcr
 Route::post('rtpcrStatus', 'Api\RtpcrController@rtpcrStatus');
 Route::get('rtpcrCenter/{id}', 'Api\RtpcrController@rtpcrCenter');
-Route::post('rtpcrRegistration', 'Api\RtpcrController@rtpcrRegistration');
+Route::post('rtPcrRegistration', 'Api\RtpcrController@rtPcrRegistration');
 Route::post('rtpcrResult', 'Api\RtpcrController@rtpcrResult');
 Route::post('rtpcrTimeLeft', 'Api\RtpcrController@rtpcrTimeLeft');
 
