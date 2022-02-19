@@ -9,6 +9,7 @@ use App\Models\CenterSynchronizeRule;
 use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
+use App\Models\RapidPCRCenter;
 use App\Models\Synchronize;
 use App\Models\User;
 use App\Models\UserAndSynchronizeRule;
@@ -80,6 +81,35 @@ class ServiceRegistrationController extends Controller
         }
 
     }
+    public function rtPcrCenterSelect(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $cityId = $userArray['city_id'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
+
+        $centers = CenterSynchronizeRule::where('rapid_pcr_center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('rapid_pcr_center_id')->get();
+        $centerInfo = [];
+
+        $i = 0;
+        foreach ($centers as $key => $center)
+        {
+            $centerInfo[$key] = RapidPCRCenter::where('id', $center->rapid_pcr_center_id)->select(['id', 'name'])->first();
+        }
+
+        if (!empty($centerInfo))
+        {
+            return response()->json([
+                "centers"=>$centerInfo,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please select another City Or Rt-PCR",
+                "status"=>"0",
+            ]);
+        }
+
+    }
 
     public function boosterCenterSelect(Request $request)
     {
@@ -132,6 +162,21 @@ class ServiceRegistrationController extends Controller
         {
             return response()->json([
                 "pcrName"=>$synchronizes,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Something wrong",
+                "status"=>"0",
+            ]);
+        }
+    }
+    public function rtPcrName(){
+        $synchronizes = Synchronize::where('type', 'rtpcr')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
+        {
+            return response()->json([
+                "rtPcrName"=>$synchronizes,
                 "status"=>"1",
             ]);
         }else{
@@ -522,75 +567,68 @@ class ServiceRegistrationController extends Controller
 
     public function boosterRegistration(Request $request)
     {
-        try {
-            $userArray = json_decode($request->getContent(), true);
-            $phone = $userArray['phone'];
-            $centerId = $userArray['center_id'];
-            $date = $userArray['date'];
-            $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
-            $nameOfVaccine = $synchronize->synchronize_rule;
+        $userArray = json_decode($request->getContent(), true);
+        $phone = $userArray['phone'];
+        $centerId = $userArray['center_id'];
+        $date = $userArray['date'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $nameOfVaccine = $synchronize->synchronize_rule;
 
-            $user = User::where('phone', $phone)->select(['id', 'name'])->first();
-            $existBooster= Booster::where('user_id', $user->id)->first();
-            if ($existBooster)
-            {
-                return response()->json([
-                    "message"=>"You are already registered for Pcr Booster. Thank You",
-                    "status"=>"2",
-                ]);
-            }
-
-            $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['booster_available_set', 'id'])->first();
-
-            if ($registrationCheck==null){
-                return response()->json([
-                    "message"=>"Sorry ! It is not available.Please Select another date",
-                    "status"=>"0",
-                ]);
-            }elseif(!$registrationCheck->booster_available_set > 0)
-            {
-                return response()->json([
-                    "message"=>"Sorry ! It is not available. Please Select another date",
-                    "status"=>"0",
-                ]);
-
-            }else {
-                $booster = new Booster();
-                $booster->user_id = $user->id;
-                $booster->center_id = $centerId;
-                $booster->date_of_registration = Carbon::parse($date);
-                $booster->registration_type = "normal";
-                $booster->synchronize_id = $synchronize->id;
-                $booster->name_of_vaccine = $nameOfVaccine;
-
-                $center = Center::where('id', $centerId)->select(['name','address'])->first();
-                $userName = $user->name;
-                $centerName = $center->name;
-                $centerAddress = $center->address;
-
-                if ($booster->save()) {
-
-                    ManPowerSchedule::find($registrationCheck->id)->decrement('booster_available_set');
-
-                    // send sms via helper function
-                    send_sms('Congratulation '.$userName.' !! You are successfully registered for Booster dose. Your center name is: '.$centerName.','.$centerAddress.' , date of Booster : '.Carbon::parse($date), $phone);
-
-                    return response()->json([
-                        "message" => "You are successfully registered for Booster",
-                        "status" => "1",
-                    ]);
-                } else {
-                    return response()->json([
-                        "message" => "Something wrong",
-                        "status" => "0",
-                    ]);
-                }
-            }
-        } catch (\Exception $exception) {
+        $user = User::where('phone', $phone)->select(['id', 'name'])->first();
+        $existBooster= Booster::where('user_id', $user->id)->first();
+        if ($existBooster)
+        {
             return response()->json([
-                "status" => "0",
-                'message' => 'Something going wrong. ----' . $exception->getMessage(),
+                "message"=>"You are already registered for Pcr Booster. Thank You",
+                "status"=>"2",
             ]);
+        }
+
+        $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['booster_available_set', 'id'])->first();
+
+        if ($registrationCheck==null){
+            return response()->json([
+                "message"=>"Sorry ! It is not available.Please Select another date",
+                "status"=>"0",
+            ]);
+        }elseif(!$registrationCheck->booster_available_set > 0)
+        {
+            return response()->json([
+                "message"=>"Sorry ! It is not available. Please Select another date",
+                "status"=>"0",
+            ]);
+
+        }else {
+            $booster = new Booster();
+            $booster->user_id = $user->id;
+            $booster->center_id = $centerId;
+            $booster->date_of_registration = Carbon::parse($date);
+            $booster->registration_type = "normal";
+            $booster->synchronize_id = $synchronize->id;
+            $booster->name_of_vaccine = $nameOfVaccine;
+
+            $center = Center::where('id', $centerId)->select(['name','address'])->first();
+            $userName = $user->name;
+            $centerName = $center->name;
+            $centerAddress = $center->address;
+
+            if ($booster->save()) {
+
+                ManPowerSchedule::find($registrationCheck->id)->decrement('booster_available_set');
+
+                // send sms via helper function
+                send_sms('Congratulation '.$userName.' !! You are successfully registered for Booster dose. Your center name is: '.$centerName.','.$centerAddress.' , date of Booster : '.Carbon::parse($date), $phone);
+
+                return response()->json([
+                    "message" => "You are successfully registered for Booster",
+                    "status" => "1",
+                ]);
+            } else {
+                return response()->json([
+                    "message" => "Something wrong",
+                    "status" => "0",
+                ]);
+            }
         }
     }
 }
