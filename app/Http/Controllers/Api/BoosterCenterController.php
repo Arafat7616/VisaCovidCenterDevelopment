@@ -45,51 +45,6 @@ class BoosterCenterController extends Controller
         }
     }
 
-    public function boosterUserOtp(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-
-        $user = User::where('phone', $phone)->first();
-
-        $otp = rand(100000, 990000);
-        $user->otp = $otp;
-        $user->save();
-        $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-        //send_sms($message, $phone);
-
-        return response()->json([
-            "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
-            "status" => "1"
-        ]);
-    }
-
-    public function boosterVolunteerOtp(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-        $otp = $userArray['otp'];
-
-        $existUser = User::where('phone', $phone)->first();
-
-        if ($otp == $existUser->otp)
-        {
-            $existUser->status = "1";
-            $existUser->otp_verified_at = Carbon::now();
-            $existUser->update();
-
-            return response()->json([
-                "message"=>"Otp successfully verified",
-                "status"=>"1",
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Please insert validate otp",
-                "status"=>"0",
-            ]);
-        }
-    }
-
     public function boosterFrom(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);

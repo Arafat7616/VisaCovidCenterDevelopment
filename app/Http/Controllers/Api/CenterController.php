@@ -22,12 +22,8 @@ class CenterController extends Controller
 
         if ($user)
         {
-            if ($user->user_type !== 'trusted-medical-assistant'){
-                return response()->json([
-                    "message" => "Sorry ! Login only trusted medical assistant",
-                    "status" => "0",
-                ]);
-            }else{
+            if ($user->user_type == 'trusted-medical-assistant' || $user->user_type == 'rapid-pcr-center-trusted-medical-assistant'){
+
                 if (Hash::check($password, $user->password))
                 {
                     $otp = rand(100000, 990000);
@@ -47,6 +43,11 @@ class CenterController extends Controller
                         "message" => "Please insert correct password"
                     ]);
                 }
+            }else{
+                return response()->json([
+                    "message" => "Sorry ! Login only trusted medical assistant",
+                    "status" => "0",
+                ]);
             }
         }else{
             return response()->json([
@@ -63,6 +64,11 @@ class CenterController extends Controller
         $otp = $userArray['otp'];
 
         $existUser = User::where('phone', $phone)->first();
+        if($existUser->center_id != null){
+            $centerType = "normal";
+        }elseif($existUser->rapid_pcr_center_id){
+            $centerType = "rtpcr";
+        }
 
         if ($otp == $existUser->otp)
         {
@@ -70,12 +76,12 @@ class CenterController extends Controller
             $existUser->otp_verified_at = Carbon::now();
             $existUser->update();
 
-
             return response()->json([
                 "message"=>"Otp successfully verified",
                 "phone" => $existUser->phone,
                 "status"=>"1",
                 "loginStatus"=>"1",
+                "centerType"=>$centerType,
             ]);
         }else{
             return response()->json([

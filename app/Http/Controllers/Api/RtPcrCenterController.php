@@ -9,15 +9,15 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\UserAndSynchronizeRule;
 
-class PcrCenterController extends Controller
+class RtPcrCenterController extends Controller
 {
-    public function registeredList(Request $request)
+    public function rtPcrRegisteredList(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
 
-        $user = User::where('phone', $phone)->select(['center_id', 'id'])->first();
-        $pcrRegisteredLists = PcrTest::where('center_id', $user->center_id)->where('date_of_pcr_test', null)->select(['user_id', 'id','synchronize_id'])->get();
+        $user = User::where('phone', $phone)->select(['rapid_pcr_center_id', 'id'])->first();
+        $pcrRegisteredLists = PcrTest::where('rapid_pcr_center_id', $user->rapid_pcr_center_id)->where('date_of_pcr_test', null)->select(['user_id', 'id','synchronize_id'])->get();
 
         if (empty($pcrRegisteredLists))
         {
@@ -44,54 +44,10 @@ class PcrCenterController extends Controller
         }
     }
 
-    public function centerOptSend(Request $request)
+    public function rtPcrFrom(Request $request)
     {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-
-        $user = User::where('phone', $phone)->first();
-
-        $otp = rand(100000, 990000);
-        $user->otp = $otp;
-        $user->save();
-        $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-        //send_sms($message, $phone);
-
-        return response()->json([
-            "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
-            "status" => "1"
-        ]);
-    }
-
-    public function centerOptCheck(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-        $otp = $userArray['otp'];
-
-        $existUser = User::where('phone', $phone)->first();
-
-        if ($otp == $existUser->otp)
-        {
-            $existUser->status = "1";
-            $existUser->otp_verified_at = Carbon::now();
-            $existUser->update();
-
-            return response()->json([
-                "message"=>"Otp successfully verified",
-                "status"=>"1",
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Please insert validate otp",
-                "status"=>"0",
-            ]);
-        }
-    }
-
-    public function pcrFrom(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
+        try {
+            $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $applicationId = $userArray['applicationId'];
         $synchronize_id = $userArray['synchronizeId'];
@@ -117,6 +73,12 @@ class PcrCenterController extends Controller
                 "status"=>'1',
             ]);
         } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>"Something went wrong .".$exception->getMessage(),
+                "status"=>'0',
+            ]);
+        }
+    } catch (\Exception $exception) {
             return response()->json([
                 "message"=>"Something went wrong .".$exception->getMessage(),
                 "status"=>'0',
