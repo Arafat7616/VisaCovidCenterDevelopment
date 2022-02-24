@@ -149,7 +149,7 @@ class RtpcrController extends Controller
         $phone = $userArray['phone'];
         $exitUser = User::where('phone',$phone)->first();
 
-        $rtpcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['rapid_pcr_center_id', 'rapid_pcr_result', 'updated_at', 'tested_by'])->first();
+        $rtpcrStatus = PcrTest::where('rapid_pcr_center_id', '!=', null)->where('user_id', $exitUser->id)->select(['rapid_pcr_center_id', 'rapid_pcr_result', 'updated_at', 'tested_by'])->first();
         $rtpcrCenterInfoMame = '';
         $rtpcrCenterInfoAddress = '';
         $rtpcrStatusDate_of_rtpcr_test = '';
