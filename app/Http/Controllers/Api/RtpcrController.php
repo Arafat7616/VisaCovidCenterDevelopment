@@ -20,7 +20,7 @@ class RtpcrController extends Controller
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
-        $rtpcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $rtpcrStatus = PcrTest::where('user_id', $existUser->id)->where('rapid_pcr_center_id' ,'!=', null)->first();
 
         /*if ($rtpcrStatus)
         {
@@ -95,7 +95,7 @@ class RtpcrController extends Controller
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
-        $existRtPcr= PcrTest::where('user_id', $user->id)->where('rapid_pcr_result', null)->first();
+        $existRtPcr= PcrTest::where('rapid_pcr_center_id', '!=' , null)->where('user_id', $user->id)->where('rapid_pcr_result', null)->first();
         if ($existRtPcr)
         {
             return response()->json([
@@ -184,7 +184,7 @@ class RtpcrController extends Controller
         $phone = $userArray['phone'];
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
-        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->where('rapid_pcr_center_id' ,'!=', null)->first();
         $centerAddress = RapidPCRCenter::where('id', $pcrStatus->rapid_pcr_center_id)->select(['address'])->first();
 
 
@@ -202,7 +202,6 @@ class RtpcrController extends Controller
             $leftDay = $interval->format('%a');//now do whatever you like with $days
             $leftHour = $interval->format('%h');//now do whatever you like with $days
         }
-
 
         if ($pcrStatus){
             return response()->json([

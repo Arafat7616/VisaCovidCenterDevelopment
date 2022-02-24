@@ -161,12 +161,18 @@ class HomeController extends Controller
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
-        $pcrStatus = PcrTest::where('user_id', $existUser->id)->orderBy('id', 'desc')->first();
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->where('center_id' ,'!=', null)->orderBy('id', 'desc')->first();
         if ($pcrStatus)
         {
             if($pcrStatus->pcr_result == 'positive') {
                 return response()->json([
                     "navigationPath" => "PCR Test Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
+                    "pcrEfficacyTimeInSecond" => null,
+                ]);
+            if($pcrStatus->pcr_result == null) {
+                return response()->json([
+                    "navigationPath" => "PCR Date Status",
                     "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
                     "pcrEfficacyTimeInSecond" => null,
                 ]);
@@ -178,8 +184,8 @@ class HomeController extends Controller
                 ]);
             }elseif($pcrStatus->result_published_date == null) {
                 return response()->json([
-                    "navigationPath" => "PCR Test Status",
-                    "pcrIcon" => "uploads/images/setting/pcr_success_image.png",
+                    "navigationPath" => "PCR Date Status",
+                    "pcrIcon" => "uploads/images/setting/pcr_error_image.png",
                     "pcrEfficacyTimeInSecond" => null,
                 ]);
             }else{
