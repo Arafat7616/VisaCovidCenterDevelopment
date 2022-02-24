@@ -54,37 +54,13 @@ class CenterSynchronizeRuleSeeder extends Seeder
         $centerSynchronizeRule = new CenterSynchronizeRule();
         $centerSynchronizeRule->rapid_pcr_center_id    = 1;
         $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 1;
+        $centerSynchronizeRule->synchronize_id  = 9;
         $centerSynchronizeRule->save();
 
         $centerSynchronizeRule = new CenterSynchronizeRule();
         $centerSynchronizeRule->rapid_pcr_center_id    = 1;
         $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 4;
-        $centerSynchronizeRule->save();
-
-        $centerSynchronizeRule = new CenterSynchronizeRule();
-        $centerSynchronizeRule->rapid_pcr_center_id    = 1;
-        $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 7;
-        $centerSynchronizeRule->save();
-
-        $centerSynchronizeRule = new CenterSynchronizeRule();
-        $centerSynchronizeRule->rapid_pcr_center_id    = 1;
-        $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 2;
-        $centerSynchronizeRule->save();
-
-        $centerSynchronizeRule = new CenterSynchronizeRule();
-        $centerSynchronizeRule->rapid_pcr_center_id    = 1;
-        $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 3;
-        $centerSynchronizeRule->save();
-
-        $centerSynchronizeRule = new CenterSynchronizeRule();
-        $centerSynchronizeRule->rapid_pcr_center_id    = 1;
-        $centerSynchronizeRule->city_id    = 7291;
-        $centerSynchronizeRule->synchronize_id  = 6;
+        $centerSynchronizeRule->synchronize_id  = 10;
         $centerSynchronizeRule->save();
     }
 }

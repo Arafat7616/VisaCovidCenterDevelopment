@@ -28,6 +28,11 @@ class CountryAndSynchronizeRuleSeeder extends Seeder
         $countryAndSynchronizeRule->save();
 
         $countryAndSynchronizeRule = new CountryAndSynchronizeRule();
+        $countryAndSynchronizeRule->country_id    = 17;
+        $countryAndSynchronizeRule->synchronize_id  = 9;
+        $countryAndSynchronizeRule->save();
+
+        $countryAndSynchronizeRule = new CountryAndSynchronizeRule();
         $countryAndSynchronizeRule->country_id    = 20;
         $countryAndSynchronizeRule->synchronize_id  = 2;
         $countryAndSynchronizeRule->save();
