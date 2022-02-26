@@ -131,5 +131,4 @@ class RegisteredController extends Controller
         else
             return response()->json(['message'=>'Please select Booster.', 'type'=>'warning']);
     }
-
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
-use App\Models\CountryAndSynchronizeRole;
+use App\Models\CountryAndSynchronizeRule;
 use App\Models\Synchronize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -52,11 +52,13 @@ class SynchronizeController extends Controller
                     if (isset($request->id[$key]) && $request->id[$key]  != null) {
                         $synchronize = Synchronize::where('id', $request->id[$key])->update([
                             'synchronize_rule' => $request->synchronize_rule[$key],
+                            'type' => $request->type[$key],
                             'status' => $request->status[$key],
                         ]);
                     } else {
                         $synchronize = Synchronize::create([
                             'synchronize_rule' => $request->synchronize_rule[$key],
+                            'type' => $request->type[$key],
                             'status' => $request->status[$key],
                         ]);
                     }
@@ -147,19 +149,19 @@ class SynchronizeController extends Controller
         return view('SuperAdmin.synchronize.country-list', compact('countries'));
     }
 
-    public function ruleBasedOnConuntry($country_id){
+    public function ruleBasedOnCountry($country_id){
         $country = Country::findOrFail($country_id);
-        $synchronizes = Synchronize::orderBy('id', 'DESC')->get();
-        return view('SuperAdmin.synchronize.ruleBasedOnConuntry', compact('country','synchronizes'));
+        $synchronizes = Synchronize::where('status', true)->orderBy('id', 'DESC')->get();
+        return view('SuperAdmin.synchronize.ruleBasedOnCountry', compact('country','synchronizes'));
     }
 
     public function ruleUpdate(Request $request){
-        CountryAndSynchronizeRole::where('country_id', $request->country_id)->delete();
+        CountryAndSynchronizeRule::where('country_id', $request->country_id)->delete();
         foreach ($request->synchronizes as $key => $synchronize_id) {
-            $countryAndSynchronizeRole = new CountryAndSynchronizeRole();
-            $countryAndSynchronizeRole->country_id = $request->country_id;
-            $countryAndSynchronizeRole->synchronize_id = $synchronize_id;
-            $countryAndSynchronizeRole->save();
+            $countryAndSynchronizeRule = new CountryAndSynchronizeRule();
+            $countryAndSynchronizeRule->country_id = $request->country_id;
+            $countryAndSynchronizeRule->synchronize_id = $synchronize_id;
+            $countryAndSynchronizeRule->save();
         }
 
         return back()->with('success', 'Rule updated successfully.');

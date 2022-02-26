@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use App\Models\Vaccination;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class VaccineCenterController extends Controller
         $phone = $userArray['phone'];
 
         $user = User::where('phone', $phone)->select(['center_id', 'id'])->first();
-        $vaccineRegisteredLists = Vaccination::where('center_id', $user->center_id)->where('date_of_first_dose', null)->select(['user_id', 'id', 'name_of_vaccine'])->get();
+        $vaccineRegisteredLists = Vaccination::where('center_id', $user->center_id)->where('date_of_first_dose', null)->select(['user_id', 'id', 'name_of_vaccine','synchronize_id'])->get();
 
         if (empty($vaccineRegisteredLists))
         {
@@ -33,6 +34,7 @@ class VaccineCenterController extends Controller
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$vaccineRegisteredList->id;
                 $myData[$key]['name_of_vaccine'] = $vaccineRegisteredList->name_of_vaccine;
+                $myData[$key]['synchronize_id'] = (string)$vaccineRegisteredList->synchronize_id;
             }
             return response()->json([
                 "myData" => $myData,
@@ -47,7 +49,7 @@ class VaccineCenterController extends Controller
         $phone = $userArray['phone'];
 
         $user = User::where('phone', $phone)->select(['center_id', 'id'])->first();
-        $vaccineRegisteredLists = Vaccination::where('center_id', $user->center_id)->where('first_dose_status', '1')->where('date_of_second_dose', null)->select(['user_id', 'id', 'name_of_vaccine'])->get();
+        $vaccineRegisteredLists = Vaccination::where('center_id', $user->center_id)->where('first_dose_status', '1')->where('date_of_second_dose', null)->select(['user_id', 'id', 'name_of_vaccine','synchronize_id'])->get();
 
         if (empty($vaccineRegisteredLists))
         {
@@ -65,6 +67,7 @@ class VaccineCenterController extends Controller
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$vaccineRegisteredList->id;
                 $myData[$key]['name_of_vaccine'] = $vaccineRegisteredList->name_of_vaccine;
+                $myData[$key]['synchronize_id'] = (string)$vaccineRegisteredList->synchronize_id;
             }
             return response()->json([
                 "myData" => $myData,
@@ -120,9 +123,11 @@ class VaccineCenterController extends Controller
 
     public function vaccinationFrom(Request $request)
     {
+
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $applicationId = $userArray['applicationId'];
+        $synchronize_id = $userArray['synchronizeId'];
         $serviceType = $userArray['serviceType'];
 
         $user = User::where('phone', $phone)->select('id')->first();
@@ -137,12 +142,26 @@ class VaccineCenterController extends Controller
         }else{
             $vaccine->date_of_second_dose = Carbon::now();
             $vaccine->antibody_last_date = Carbon::now()->addMonths(2);
-            $vaccine->second_served_by_id = $user->id;;
+            $vaccine->second_served_by_id = $user->id;
+
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $vaccine->user_id)->where('synchronize_id', $synchronize_id)->delete();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $vaccine->user_id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize_id;
+            $userAndSynchronizeRule->save();
         }
-        $vaccine->save();
-        return response()->json([
-            "message"=>'Successfully update',
-            "status"=>'1',
-        ]);
+        try {
+            $vaccine->save();
+            return response()->json([
+                "message"=>'Successfully update',
+                "status"=>'1',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>"Something went wrong .".$exception->getMessage(),
+                "status"=>'0',
+            ]);
+        }
     }
 }

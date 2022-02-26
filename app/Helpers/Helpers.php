@@ -1,10 +1,13 @@
 <?php
 
 use App\Models\Center;
-use App\Models\CountryAndSynchronizeRole;
+use App\Models\CenterSynchronizeRule;
+use App\Models\CountryAndSynchronizeRule;
 use App\Models\RapidPCRCenter;
 use App\Models\StaticOption;
+use App\Models\Synchronize;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Cache;
 // use Illuminate\Support\Facades\Mail;
@@ -163,9 +166,34 @@ if (!function_exists('random_code')) {
 
     function check_country_and_synchronize_role($country_id,$synchronize_id)
     {
-        if (CountryAndSynchronizeRole::where('country_id', $country_id)->where('synchronize_id', $synchronize_id)->first()) {
+        if (CountryAndSynchronizeRule::where('country_id', $country_id)->where('synchronize_id', $synchronize_id)->first()) {
             return true;
         }
         return false;
+    }
+
+    function check_center_and_synchronize_role($center_id,$synchronize_id)
+    {
+        if (CenterSynchronizeRule::where('center_id', $center_id)->where('synchronize_id', $synchronize_id)->first()) {
+            return true;
+        }
+        return false;
+    }
+
+    function check_rapid_pcr_center_and_synchronize_role($rapid_pcr_center_id,$synchronize_id)
+    {
+        if (CenterSynchronizeRule::where('rapid_pcr_center_id', $rapid_pcr_center_id)->where('synchronize_id', $synchronize_id)->first()) {
+            return true;
+        }
+        return false;
+    }
+
+    function get_user_synchronize_array_by_user_id($user_id){
+        $array = [];
+        $data  = UserAndSynchronizeRule::where('user_id', $user_id)->get();
+        foreach($data as $d){
+            array_push($array,$d->synchronize_id);
+        }
+        return $array;
     }
 }

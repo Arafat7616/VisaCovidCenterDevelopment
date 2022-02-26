@@ -28,6 +28,8 @@ class CreateVaccinationsTable extends Migration
             $table->unsignedBigInteger('rapid_pcr_center_id')->nullable();
             $table->unsignedBigInteger('first_served_by_id')->nullable();
             $table->unsignedBigInteger('second_served_by_id')->nullable();
+            $table->unsignedBigInteger('synchronize_id')->nullable();
+
 
             $table->string('center_name')->nullable();
             $table->string('document')->nullable();

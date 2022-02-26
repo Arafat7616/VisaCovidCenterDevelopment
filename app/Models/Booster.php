@@ -16,6 +16,7 @@ class Booster extends Model
         'user_id',
         'center_id',
         'served_by_id',
+        'synchronize_id',
         'status',
     ];
 

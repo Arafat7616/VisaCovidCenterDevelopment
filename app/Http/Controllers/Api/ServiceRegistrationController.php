@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
 use App\Models\Center;
+use App\Models\CenterSynchronizeRule;
 use App\Models\CenterVaccineName;
 use App\Models\ManPowerSchedule;
 use App\Models\PcrTest;
+use App\Models\RapidPCRCenter;
+use App\Models\Synchronize;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use App\Models\Vaccination;
 use App\Models\VaccineName;
 use Carbon\Carbon;
@@ -23,9 +27,9 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $cityId = $userArray['city_id'];
-        $vaccineName = $userArray['vaccineName'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
 
-        $centers = CenterVaccineName::where('city_id', $cityId)->where('vaccineName', $vaccineName)->select('center_id')->get();
+        $centers = CenterSynchronizeRule::where('center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('center_id')->get();
         $centerInfo = [];
 
         $i = 0;
@@ -46,15 +50,149 @@ class ServiceRegistrationController extends Controller
                 "status"=>"0",
             ]);
         }
+    }
+
+    public function pcrCenterSelect(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $cityId = $userArray['city_id'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
+
+        $centers = CenterSynchronizeRule::where('center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('center_id')->get();
+        $centerInfo = [];
+
+        $i = 0;
+        foreach ($centers as $key => $center)
+        {
+            $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->first();
+        }
+
+        if (!empty($centerInfo))
+        {
+            return response()->json([
+                "centers"=>$centerInfo,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please select another City Or PCR",
+                "status"=>"0",
+            ]);
+        }
+
+    }
+    public function rtPcrCenterSelect(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $cityId = $userArray['city_id'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
+
+        $centers = CenterSynchronizeRule::where('rapid_pcr_center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('rapid_pcr_center_id')->get();
+        $centerInfo = [];
+
+        $i = 0;
+        foreach ($centers as $key => $center)
+        {
+            $centerInfo[$key] = RapidPCRCenter::where('id', $center->rapid_pcr_center_id)->select(['id', 'name'])->first();
+        }
+
+        if (!empty($centerInfo))
+        {
+            return response()->json([
+                "centers"=>$centerInfo,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please select another City Or Rt-PCR",
+                "status"=>"0",
+            ]);
+        }
 
     }
 
-    public function vaccineName(){
-        $vaccineName = VaccineName::where('status', '1')->select(['id', 'name'])->get();
-        if (count($vaccineName) > 0)
+    public function boosterCenterSelect(Request $request)
+    {
+        $userArray = json_decode($request->getContent(), true);
+        $cityId = $userArray['city_id'];
+        $synchronizeRuleId = $userArray['synchronizeRuleId'];
+
+        $centers = CenterSynchronizeRule::where('center_id', '!=', null)->where('city_id', $cityId)->where('synchronize_id', $synchronizeRuleId)->select('center_id')->get();
+        $centerInfo = [];
+
+        $i = 0;
+        foreach ($centers as $key => $center)
+        {
+            $centerInfo[$key] = Center::where('id', $center->center_id)->select(['id', 'name'])->first();
+        }
+
+        if (!empty($centerInfo))
         {
             return response()->json([
-                "vaccineName"=>$vaccineName,
+                "centers"=>$centerInfo,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Please select another City Or Booster",
+                "status"=>"0",
+            ]);
+        }
+    }
+
+    public function vaccineName(){
+        $synchronizes = Synchronize::where('type', 'vaccine')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
+        {
+            return response()->json([
+                "vaccineName"=>$synchronizes,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Something wrong",
+                "status"=>"0",
+            ]);
+        }
+    }
+
+    public function pcrName(){
+        $synchronizes = Synchronize::where('type', 'pcr')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
+        {
+            return response()->json([
+                "pcrName"=>$synchronizes,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Something wrong",
+                "status"=>"0",
+            ]);
+        }
+    }
+    public function rtPcrName(){
+        $synchronizes = Synchronize::where('type', 'rtpcr')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
+        {
+            return response()->json([
+                "rtPcrName"=>$synchronizes,
+                "status"=>"1",
+            ]);
+        }else{
+            return response()->json([
+                "message"=>"Something wrong",
+                "status"=>"0",
+            ]);
+        }
+    }
+
+    public function boosterName(){
+        $synchronizes = Synchronize::where('type', 'booster')->where('status', '1')->select(['id', 'synchronize_rule'])->get();
+        if (count($synchronizes) > 0)
+        {
+            return response()->json([
+                "boosterName"=>$synchronizes,
                 "status"=>"1",
             ]);
         }else{
@@ -71,7 +209,8 @@ class ServiceRegistrationController extends Controller
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
-        $nameOfVaccine = $userArray['vaccineName'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $nameOfVaccine = $synchronize->synchronize_rule;
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
@@ -107,6 +246,7 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_registration = Carbon::parse($date);
             $vaccine->registration_type = "normal";
             $vaccine->name_of_vaccine = $nameOfVaccine;
+            $vaccine->synchronize_id = $synchronize->id;
 
             $center = Center::where('id', $centerId)->select(['name','address'])->first();
             $userName = $user->name;
@@ -188,7 +328,8 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
-        $vaccineName = $userArray['vaccineName'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+
         $center = $userArray['center'];
         $firstDose = $userArray['firstDose'];
         $secondDose = $userArray['secondDose'];
@@ -198,6 +339,8 @@ class ServiceRegistrationController extends Controller
 
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
+
+        $vaccineName = $synchronize->synchronize_rule;
 
         if ($existVaccination)
         {
@@ -235,6 +378,13 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_second_dose = Carbon::parse($secondDose);
             $vaccine->status = 1;
             $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $user->id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $userAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
@@ -273,17 +423,17 @@ class ServiceRegistrationController extends Controller
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
-        $vaccineName = $userArray['vaccineName'];
+        // $vaccineName = $userArray['vaccineName'];
         $center = $userArray['center'];
         $secondDose = $userArray['secondDose'];
         $selectedDose = $userArray['selectedDose'];
         $description = $userArray['description'];
         $centerLocation = $userArray['centerLocation'];
 
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $vaccineName = $synchronize->synchronize_rule;
         $user = User::where('phone', $phone)->select(['id'])->first();
         $existVaccination = Vaccination::where('user_id', $user->id)->first();
-
-
 
         $vaccine = $existVaccination;
 
@@ -297,6 +447,13 @@ class ServiceRegistrationController extends Controller
             $vaccine->date_of_second_dose = Carbon::parse($secondDose);
             $vaccine->status = 1;
             $vaccine->antibody_last_date = Carbon::parse($secondDose)->addDays(30);
+
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $user->id)->where('synchronize_id', $synchronize->id)->delete();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $user->id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize->id;
+            $userAndSynchronizeRule->save();
         }
 
         if($userArray['document']['type'] && $userArray['document']['data']){
@@ -338,6 +495,8 @@ class ServiceRegistrationController extends Controller
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
 
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
         $existPcr= PcrTest::where('user_id', $user->id)->first();
@@ -350,7 +509,7 @@ class ServiceRegistrationController extends Controller
                     "status"=>"2",
                 ]);
             }
-       }
+        }
 
         $registrationCheck = ManPowerSchedule::where('center_id', $centerId)->where('date', $date)->select(['pcr_available_set', 'id'])->first();
 
@@ -378,6 +537,7 @@ class ServiceRegistrationController extends Controller
             $existPcr->center_id = $centerId;
             $existPcr->date_of_registration = Carbon::parse($date);
             $existPcr->registration_type = "normal";
+            $existPcr->synchronize_id = $synchronize->id;
 
             $center = Center::where('id', $centerId)->select(['name','address'])->first();
             $userName = $user->name;
@@ -402,6 +562,7 @@ class ServiceRegistrationController extends Controller
                 ]);
             }
         }
+
     }
 
     public function boosterRegistration(Request $request)
@@ -410,6 +571,8 @@ class ServiceRegistrationController extends Controller
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
+        $nameOfVaccine = $synchronize->synchronize_rule;
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
         $existBooster= Booster::where('user_id', $user->id)->first();
@@ -441,6 +604,8 @@ class ServiceRegistrationController extends Controller
             $booster->center_id = $centerId;
             $booster->date_of_registration = Carbon::parse($date);
             $booster->registration_type = "normal";
+            $booster->synchronize_id = $synchronize->id;
+            $booster->name_of_vaccine = $nameOfVaccine;
 
             $center = Center::where('id', $centerId)->select(['name','address'])->first();
             $userName = $user->name;
@@ -465,6 +630,5 @@ class ServiceRegistrationController extends Controller
                 ]);
             }
         }
-
     }
 }

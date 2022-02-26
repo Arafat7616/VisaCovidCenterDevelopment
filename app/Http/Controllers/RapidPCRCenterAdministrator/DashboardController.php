@@ -69,7 +69,7 @@ class DashboardController extends Controller
             $rapidPcrCenter->city_id = $request->city;
         }
         $rapidPcrCenter->center_area_id = $center_area_id;
-      
+
         $rapidPcrCenter->name = $request->centerName;
         $rapidPcrCenter->space = $request->space;
         $rapidPcrCenter->waiting_seat_capacity = $request->waitingSeatCapacity;
@@ -84,5 +84,4 @@ class DashboardController extends Controller
         Session::flash('success', 'Updated successfully!');
         return back();
     }
-
 }

@@ -140,10 +140,7 @@ class PaymentMethodController extends Controller
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something went wrong. ' . $exception->getMessage());
-        }
 
-
-    }
 
     /**
      * Remove the specified resource from storage.

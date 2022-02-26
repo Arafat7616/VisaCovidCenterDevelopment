@@ -54,13 +54,13 @@
                         <li><a href="{{route('superAdmin.slider.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/slider/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Slider </span></a></li>
                     </ul>
                 </li>
-                <li class="has_sub">
+                {{-- <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccineName/*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Vaccine Name </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.vaccineName.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccineName/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Vaccine Name </span></a></li>
                         <li><a href="{{route('superAdmin.vaccineName.create')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/vaccineName/create') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Create New Vaccine Name</span></a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/payment/*') ? 'active subdrop': ''}}"><i class="fa fa-credit-card"></i> <span> Payment Method </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
@@ -131,7 +131,7 @@
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchroni*') ? 'active subdrop': ''}}"><i class="fa fa-sliders"></i> <span> Synchronize Rule</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('superAdmin.synchronize.index')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize/index') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> All Synchronize Rule </span></a></li>
-                        <li><a href="{{route('superAdmin.synchronize.countries')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize-rule-based-on-conuntry') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span>Synchronize rule based on country</span></a></li>
+                        <li><a href="{{route('superAdmin.synchronize.countries')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('super-admin/synchronize-rule-based-on-country') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span>Synchronize rule based on country</span></a></li>
                     </ul>
                 </li>
             </ul>

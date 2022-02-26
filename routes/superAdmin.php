@@ -16,7 +16,7 @@ Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => '
     Route::resource('vaccineName', 'VaccineNameController');
     Route::resource('synchronize', 'SynchronizeController');
     Route::get('synchronize-countries', 'SynchronizeController@countries')->name('synchronize.countries');
-    Route::get('synchronize-rule-based-on-conuntry/{country_id}', 'SynchronizeController@ruleBasedOnConuntry')->name('synchronize.ruleBasedOnConuntry');
+    Route::get('synchronize-rule-based-on-country/{country_id}', 'SynchronizeController@ruleBasedOnCountry')->name('synchronize.ruleBasedOnCountry');
     Route::post('synchronize-rule-update/{country_id}', 'SynchronizeController@ruleUpdate')->name('synchronize.ruleUpdate');
 
     // route for manage user

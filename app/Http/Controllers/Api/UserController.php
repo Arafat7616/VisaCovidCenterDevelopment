@@ -236,8 +236,6 @@ class UserController extends Controller
                 "status"=>"0",
             ]);
         }
-
-
     }
 
     /**
@@ -371,6 +369,5 @@ class UserController extends Controller
             ]);
         }
     }
-
 }
 

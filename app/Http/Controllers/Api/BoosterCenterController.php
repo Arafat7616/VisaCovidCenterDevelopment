@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
 use App\Models\User;
+use App\Models\UserAndSynchronizeRule;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class BoosterCenterController extends Controller
         $phone = $userArray['phone'];
 
         $user = User::where('phone', $phone)->select(['center_id', 'id'])->first();
-        $boosterRegisteredLists = Booster::where('center_id', $user->center_id)->where('antibody_last_date', null)->select(['user_id', 'id', 'name_of_vaccine'])->get();
+        $boosterRegisteredLists = Booster::where('center_id', $user->center_id)->where('antibody_last_date', null)->select(['user_id', 'id', 'name_of_vaccine','synchronize_id'])->get();
 
         if (empty($boosterRegisteredLists))
         {
@@ -34,6 +35,7 @@ class BoosterCenterController extends Controller
                 $myData[$key]['user_phone'] = $regUser->phone;
                 $myData[$key]['application_id'] = (string)$boosterRegisteredList->id;
                 $myData[$key]['name_of_vaccine'] = $boosterRegisteredList->name_of_vaccine;
+                $myData[$key]['synchronize_id'] = (string)$boosterRegisteredList->synchronize_id;
             }
 
             return response()->json([
@@ -43,68 +45,37 @@ class BoosterCenterController extends Controller
         }
     }
 
-    public function boosterUserOtp(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-
-        $user = User::where('phone', $phone)->first();
-
-        $otp = rand(100000, 990000);
-        $user->otp = $otp;
-        $user->save();
-        $message = 'Welcome to Visa Covid , your otp is : '. $otp.'. Please don\'t share your otp';
-        //send_sms($message, $phone);
-
-        return response()->json([
-            "message" => "Send otp in your phone : ".$user->phone.'. Please don\'t share your otp',
-            "status" => "1"
-        ]);
-    }
-
-    public function boosterVolunteerOtp(Request $request)
-    {
-        $userArray = json_decode($request->getContent(), true);
-        $phone = $userArray['phone'];
-        $otp = $userArray['otp'];
-
-        $existUser = User::where('phone', $phone)->first();
-
-        if ($otp == $existUser->otp)
-        {
-            $existUser->status = "1";
-            $existUser->otp_verified_at = Carbon::now();
-            $existUser->update();
-
-            return response()->json([
-                "message"=>"Otp successfully verified",
-                "status"=>"1",
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Please insert validate otp",
-                "status"=>"0",
-            ]);
-        }
-    }
-
     public function boosterFrom(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $applicationId = $userArray['applicationId'];
-
+        $synchronize_id = $userArray['synchronizeId'];
         $user = User::where('phone', $phone)->select('id')->first();
         $booster = Booster::where('id', $applicationId)->first();
 
         $booster->date = Carbon::now();
         $booster->antibody_last_date = Carbon::now()->addMonths(1);
         $booster->served_by_id = $user->id;
-        $booster->save();
 
-        return response()->json([
-            "message"=>'Successfully update',
-            "status"=>'1',
-        ]);
+            // Synchronize record store
+            UserAndSynchronizeRule::where('user_id', $booster->user_id)->where('synchronize_id', $synchronize_id)->delete();
+            $userAndSynchronizeRule = new UserAndSynchronizeRule();
+            $userAndSynchronizeRule->user_id = $booster->user_id;
+            $userAndSynchronizeRule->synchronize_id = $synchronize_id;
+            $userAndSynchronizeRule->save();
+
+        try {
+            $booster->save();
+            return response()->json([
+                "message"=>'Successfully update',
+                "status"=>'1',
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message"=>"Something went wrong .".$exception->getMessage(),
+                "status"=>'0',
+            ]);
+        }
     }
 }

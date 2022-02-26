@@ -55,6 +55,7 @@
                                         <tr>
                                             <th>#SL</th>
                                             <th>Synchronize Rule</th>
+                                            <th>Type</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -67,6 +68,14 @@
                                                         <input type="text" name="synchronize_rule[]"
                                                             value="{{$synchronize->synchronize_rule}}" class="form-control">
                                                         <input type="hidden" name="id[]" value="{{ $synchronize->id }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-select form-control" name="type[]">
+                                                            <option @if($synchronize->type == 'booster') selected @endif value="booster" class="text-capitalize">Booster</option>
+                                                            <option @if($synchronize->type == 'vaccine') selected @endif value="vaccine" class="text-capitalize">Vaccine</option>
+                                                            <option @if($synchronize->type == 'pcr') selected @endif value="pcr" class="text-capitalize">PCR</option>
+                                                            <option @if($synchronize->type == 'rtpcr') selected @endif value="pcr" class="text-capitalize">RT-PCR</option>
+                                                        </select>
                                                     </td>
                                                     <td>
                                                         <select class="form-select form-control" name="status[]">
@@ -117,6 +126,14 @@
                 '<input type="hidden" name="id[]" value="" class="form-control">' +
                 '</td>' +
                 '<td>' +
+                    '<select class="form-select form-control" name="type[]">'+
+                    '<option selected value="booster" class="text-capitalize">Booster</option>'+
+                    '<option value="vaccine" class="text-capitalize">Vaccine</option>'+
+                    '<option value="pcr" class="text-capitalize">PCR</option>'+
+                    '<option value="rtpcr" class="text-capitalize">RT-PCR</option>'+
+                    '</select>' +
+                '</td>' +
+                '<td>' +
                     '<select class="form-select form-control" name="status[]">'+
                     '<option selected value="1" class="text-capitalize">Active</option>'+
                     '<option value="0" class="text-capitalize">Inactive</option>'+
@@ -127,6 +144,7 @@
                 '</td>' +
                 '</tr>'
             );
+            maintainSerial();
         }
         function removeItem(element) {
             var count = 0;
@@ -136,8 +154,17 @@
 
             if (count > 1) {
                 element.parent().parent().remove();
-                maintainSerialRenew();
+                maintainSerial();
             }
+        }
+
+        function maintainSerial() {
+            var count = 0;
+            $.each($('#synchronize_rules tr'), function(index, val) {
+                count++;
+                $(this).find("td:first").html(count);
+            });
+            $('#synchronize_rules').find('tr:first').find('td:last').html('');
         }
     </script>
     @if (session()->has('success'))

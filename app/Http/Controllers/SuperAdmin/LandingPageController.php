@@ -158,5 +158,4 @@ class LandingPageController extends Controller
         Session::flash('success', 'Updated successfully!');
         return back();
     }
-
 }

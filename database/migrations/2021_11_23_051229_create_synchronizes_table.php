@@ -16,6 +16,7 @@ class CreateSynchronizesTable extends Migration
         Schema::create('synchronizes', function (Blueprint $table) {
             $table->id();
             $table->string('synchronize_rule')->nullable();
+            $table->string('type')->nullable();
             $table->string('status')->default(0);
             $table->timestamps();
         });

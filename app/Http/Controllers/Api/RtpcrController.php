@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Center;
 use App\Models\PcrTest;
 use App\Models\RapidPCRCenter;
+use App\Models\Synchronize;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class RtpcrController extends Controller
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
 
-        $rtpcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $rtpcrStatus = PcrTest::where('user_id', $existUser->id)->where('rapid_pcr_center_id' ,'!=', null)->first();
 
         /*if ($rtpcrStatus)
         {
@@ -84,16 +85,17 @@ class RtpcrController extends Controller
         }
     }
 
-    public function rtpcrRegistration(Request $request)
+    public function rtPcrRegistration(Request $request)
     {
         $userArray = json_decode($request->getContent(), true);
         $phone = $userArray['phone'];
         $centerId = $userArray['center_id'];
         $date = $userArray['date'];
+        $synchronize = Synchronize::find($userArray['synchronizeRuleId']);
 
         $user = User::where('phone', $phone)->select(['id', 'name'])->first();
 
-        $existRtPcr= PcrTest::where('user_id', $user->id)->where('rapid_pcr_result', null)->first();
+        $existRtPcr= PcrTest::where('rapid_pcr_center_id', '!=' , null)->where('user_id', $user->id)->where('rapid_pcr_result', null)->first();
         if ($existRtPcr)
         {
             return response()->json([
@@ -121,6 +123,7 @@ class RtpcrController extends Controller
         $existRtPcr->rapid_pcr_center_id = $centerId;
         $existRtPcr->date_of_registration = Carbon::parse($date);
         $existRtPcr->registration_type = "normal";
+        $existRtPcr->synchronize_id = $synchronize->id;
 
         if ($existRtPcr->save()) {
             // send sms via helper function
@@ -146,7 +149,7 @@ class RtpcrController extends Controller
         $phone = $userArray['phone'];
         $exitUser = User::where('phone',$phone)->first();
 
-        $rtpcrStatus = PcrTest::where('user_id', $exitUser->id)->select(['rapid_pcr_center_id', 'rapid_pcr_result', 'updated_at', 'tested_by'])->first();
+        $rtpcrStatus = PcrTest::where('rapid_pcr_center_id', '!=', null)->where('user_id', $exitUser->id)->select(['rapid_pcr_center_id', 'rapid_pcr_result', 'updated_at', 'tested_by'])->first();
         $rtpcrCenterInfoMame = '';
         $rtpcrCenterInfoAddress = '';
         $rtpcrStatusDate_of_rtpcr_test = '';
@@ -181,7 +184,7 @@ class RtpcrController extends Controller
         $phone = $userArray['phone'];
 
         $existUser = User::where('phone', $phone)->select(['id'])->first();
-        $pcrStatus = PcrTest::where('user_id', $existUser->id)->first();
+        $pcrStatus = PcrTest::where('user_id', $existUser->id)->where('rapid_pcr_center_id' ,'!=', null)->first();
         $centerAddress = RapidPCRCenter::where('id', $pcrStatus->rapid_pcr_center_id)->select(['address'])->first();
 
 
@@ -200,7 +203,6 @@ class RtpcrController extends Controller
             $leftHour = $interval->format('%h');//now do whatever you like with $days
         }
 
-
         if ($pcrStatus){
             return response()->json([
                 "status" => "1",
@@ -214,7 +216,5 @@ class RtpcrController extends Controller
                 "message" => "No fixed you",
             ]);
         }
-
-
     }
 }
